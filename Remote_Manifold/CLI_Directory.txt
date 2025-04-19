@@ -1,0 +1,55 @@
+Directory for Davy Jones OS:
+
+C:\Windows\System32\runDavyJones.bat
+C:\Windows\System32\runDavyJonesStealth.bat
+C:\Windows\System32\runDavyJonesPrint.bat
+C:\Windows\System32\runDavyJonesStealthPrint.bat
+
+Directory for Console:
+
+C:\CLI_Tools\Console\apktool_v2.10.0\apktool.bat
+C:\CLI_Tools\Console\batch-wifi-brute-forcer\Source Code\bruteforce.cmd
+C:\CLI_Tools\Console\batch-wifi-brute-forcer\Source Code\keycombinator.cmd
+C:\CLI_Tools\Console\cdrtools\align_test.exe
+C:\CLI_Tools\Console\cdrtools\avoffset.exe
+C:\CLI_Tools\Console\cdrtools\btcflash.exe
+C:\CLI_Tools\Console\cdrtools\cdda2wav.exe
+C:\CLI_Tools\Console\cdrtools\cdrecord.exe
+C:\CLI_Tools\Console\cdrtools\devdump.exe
+C:\CLI_Tools\Console\cdrtools\isodebug.exe
+C:\CLI_Tools\Console\cdrtools\isodump.exe
+C:\CLI_Tools\Console\cdrtools\isoinfo.exe
+C:\CLI_Tools\Console\cdrtools\isovfy.exe
+C:\CLI_Tools\Console\cdrtools\mkisofs.exe
+C:\CLI_Tools\Console\cdrtools\readcd.exe
+C:\CLI_Tools\Console\cdrtools\rscsi.exe
+C:\CLI_Tools\Console\cdrtools\scgcheck.exe
+C:\CLI_Tools\Console\cdrtools\scgskeleton.exe
+C:\CLI_Tools\Console\cmder\Cmder.exe
+C:\CLI_Tools\Console\hashcat-v6.2.6\hashcat.exe
+C:\CLI_Tools\Console\jeb-ce-v5.18.0.202410071909-JEBDecompiler\jeb_wincon.bat
+C:\CLI_Tools\Console\jeb-demo-v5.18.0.202410071909-JEBDecompiler\jeb_wincon.bat
+C:\CLI_Tools\Console\john-v1.9.0-jumbo-1-win64\run\john.exe
+C:\CLI_Tools\Console\network-stats\network_stats.bat
+C:\CLI_Tools\Console\radare2-v5.9.6\bin\radare2.exe
+C:\CLI_Tools\Console\unarWindows\lsar.exe
+C:\CLI_Tools\Console\unarWindows\unar.exe
+C:\CLI_Tools\Console\xorriso-exe-for-windows-master\xorriso.exe
+
+Directory for Python:
+
+C:\CLI_Tools\Python\androguard-v4.1.2
+C:\CLI_Tools\Python\angr-master
+C:\CLI_Tools\Python\dewolf-2024-07-01
+C:\CLI_Tools\Python\qiling-master
+C:\CLI_Tools\Python\revng-develop
+C:\CLI_Tools\Python\studio-master
+
+Directory for Other:
+
+C:\CLI_Tools\Other\hashdeep-release-v4.4
+C:\CLI_Tools\Other\nilsteampassnet-TeamPass-a8a99f3
+
+Directory for CryEngine 5.7.1 LTS Resource Compiler:
+
+C:\CLI_Tools\crytek\cryengine-57-lts\5.7.1\Tools\rc\rc.exe
