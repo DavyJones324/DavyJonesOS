@@ -1,8 +1,10 @@
 @echo off
+:: Settings
 Title Applications
 CD C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold
 CHCP 65001 >nul
 SetLocal EnableDelayedExpansion
+:: Start of Batch Script
 :startShortcutRedirectManager
 if "%1"=="instream" (
     goto startMainInstream
@@ -15,6 +17,7 @@ if "%1"=="instream" (
 ) else (
     goto startMain
 )
+:: Main Menu
 :startMain
 call :banner
 call :menuMainScreen
@@ -22,8 +25,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startMain
+cls&goto startMain
 :menuMainScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -48,6 +50,7 @@ echo        [38;2;179;255;179m║[0m
 echo        [38;2;204;255;204m╚╦═════════9) InvokeOther[0m
 echo        [38;2;230;255;230m ║[0m
 goto :eof
+:: Alert Section
 :startAlert
 call :banner
 call :menuAlertScreen
@@ -55,8 +58,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuAlert
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startAlert
+cls&goto startAlert
 :menuAlertScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -183,8 +185,7 @@ call :menuHitmanPro
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startHitmanProPrompt
+cls&goto startHitmanProPrompt
 :startHitmanProPromptDialerMode
 call :banner
 call :menuHitmanProPrompt
@@ -192,8 +193,7 @@ call :menuHitmanPro
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startHitmanProPromptDialerMode
+cls&goto startHitmanProPromptDialerMode
 :menuHitmanProPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under Surfright, now under Sophos
@@ -228,8 +228,7 @@ call :menuESETonlineScanner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startESETonlineScannerPrompt
+cls&goto startESETonlineScannerPrompt
 :startESETonlineScannerPromptDialerMode
 call :banner
 call :menuESETonlineScannerPrompt
@@ -237,8 +236,7 @@ call :menuESETonlineScanner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startESETonlineScannerPromptDialerMode
+cls&goto startESETonlineScannerPromptDialerMode
 :menuESETonlineScannerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: ESET, spol. s.r.o.
@@ -273,8 +271,7 @@ call :menuMWBadwCleaner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startMWBadwCleanerPrompt
+cls&goto startMWBadwCleanerPrompt
 :startMWBadwCleanerPromptDialerMode
 call :banner
 call :menuMWBadwCleanerPrompt
@@ -282,8 +279,7 @@ call :menuMWBadwCleaner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMWBadwCleanerPromptDialerMode
+cls&goto startMWBadwCleanerPromptDialerMode
 :menuMWBadwCleanerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Malwarebytes Inc.
@@ -318,8 +314,7 @@ call :menuNortonPowerEraser
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startNortonPowerEraserPrompt
+cls&goto startNortonPowerEraserPrompt
 :startNortonPowerEraserPromptDialerMode
 call :banner
 call :menuNortonPowerEraserPrompt
@@ -327,8 +322,7 @@ call :menuNortonPowerEraser
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startNortonPowerEraserPromptDialerMode
+cls&goto startNortonPowerEraserPromptDialerMode
 :menuNortonPowerEraserPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Norton, owned by Gen Digital
@@ -363,8 +357,7 @@ call :menuStinger
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startStingerPrompt
+cls&goto startStingerPrompt
 :startStingerPromptDialerMode
 call :banner
 call :menuStingerPrompt
@@ -372,8 +365,7 @@ call :menuStinger
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startStingerPromptDialerMode
+cls&goto startStingerPromptDialerMode
 :menuStingerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under McAfee, now under Trellix
@@ -408,8 +400,7 @@ call :menuKART
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startKARTprompt
+cls&goto startKARTprompt
 :startKARTpromptDialerMode
 call :banner
 call :menuKARTprompt
@@ -417,8 +408,7 @@ call :menuKART
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startKARTpromptDialerMode
+cls&goto startKARTpromptDialerMode
 :menuKARTprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Kaspersky Lab
@@ -453,8 +443,7 @@ call :menuKVRT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startKVRTprompt
+cls&goto startKVRTprompt
 :startKVRTpromptDialerMode
 call :banner
 call :menuKVRTprompt
@@ -462,8 +451,7 @@ call :menuKVRT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startKVRTpromptDialerMode
+cls&goto startKVRTpromptDialerMode
 :menuKVRTprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Kaspersky Lab
@@ -498,8 +486,7 @@ call :menuRevoUninstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startRevoUninstallerPrompt
+cls&goto startRevoUninstallerPrompt
 :startRevoUninstallerPromptDialerMode
 call :banner
 call :menuRevoUninstallerPrompt
@@ -507,8 +494,7 @@ call :menuRevoUninstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startRevoUninstallerPromptDialerMode
+cls&goto startRevoUninstallerPromptDialerMode
 :menuRevoUninstallerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: VS Revo Group
@@ -536,6 +522,7 @@ if /I %input% EQU R start Revo_Uninstaller_R.lnk&set input=alert-8R&&goto startP
 if /I %input% EQU I start Revo_Uninstaller_I.exe&set input=alert-8I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Revo_Uninstaller_O.lnk&set input=alert-8O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: AlertAlt Section
 :startAlertAlt
 call :banner
 call :menuAlertAltScreen
@@ -543,8 +530,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuAlertAlt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startAlertAlt
+cls&goto startAlertAlt
 :menuAlertAltScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -630,8 +616,7 @@ call :menuHitmanProAlert
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
-cls
-goto startHitmanProAlertPrompt
+cls&goto startHitmanProAlertPrompt
 :startHitmanProAlertPromptDeepSubDialerMode
 call :banner
 call :menuHitmanProAlertPrompt
@@ -639,8 +624,7 @@ call :menuHitmanProAlert
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startHitmanProAlertPromptDeepSubDialerMode
+cls&goto startHitmanProAlertPromptDeepSubDialerMode
 :startHitmanProAlertPromptDialerMode
 call :banner
 call :menuHitmanProAlertPrompt
@@ -648,8 +632,7 @@ call :menuHitmanProAlert
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startHitmanProAlertPromptDialerMode
+cls&goto startHitmanProAlertPromptDialerMode
 :menuHitmanProAlertPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under Surfright, now under Sophos
@@ -684,8 +667,7 @@ call :menuESETNOD32AV
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
-cls
-goto startESETNOD32AVprompt
+cls&goto startESETNOD32AVprompt
 :startESETNOD32AVpromptDeepSubDialerMode
 call :banner
 call :menuESETNOD32AVprompt
@@ -693,8 +675,7 @@ call :menuESETNOD32AV
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startESETNOD32AVpromptDeepSubDialerMode
+cls&goto startESETNOD32AVpromptDeepSubDialerMode
 :startESETNOD32AVpromptDialerMode
 call :banner
 call :menuESETNOD32AVprompt
@@ -702,8 +683,7 @@ call :menuESETNOD32AV
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startESETNOD32AVpromptDialerMode
+cls&goto startESETNOD32AVpromptDialerMode
 :menuESETNOD32AVprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: ESET, spol. s.r.o.
@@ -738,8 +718,7 @@ call :menuMBSetup
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
-cls
-goto startMBSetupPrompt
+cls&goto startMBSetupPrompt
 :startMBSetupPromptDeepSubDialerMode
 call :banner
 call :menuMBSetupPrompt
@@ -747,8 +726,7 @@ call :menuMBSetup
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startMBSetupPromptDeepSubDialerMode
+cls&goto startMBSetupPromptDeepSubDialerMode
 :startMBSetupPromptDialerMode
 call :banner
 call :menuMBSetupPrompt
@@ -756,8 +734,7 @@ call :menuMBSetup
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMBSetupPromptDialerMode
+cls&goto startMBSetupPromptDialerMode
 :menuMBSetupPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Malwarebytes
@@ -792,8 +769,7 @@ call :menuBitdefender
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
-cls
-goto startBitdefenderPrompt
+cls&goto startBitdefenderPrompt
 :startBitdefenderPromptDeepSubDialerMode
 call :banner
 call :menuBitdefenderPrompt
@@ -801,8 +777,7 @@ call :menuBitdefender
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startBitdefenderPromptDeepSubDialerMode
+cls&goto startBitdefenderPromptDeepSubDialerMode
 :startBitdefenderPromptDialerMode
 call :banner
 call :menuBitdefenderPrompt
@@ -810,8 +785,7 @@ call :menuBitdefender
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startBitdefenderPromptDialerMode
+cls&goto startBitdefenderPromptDialerMode
 :menuBitdefenderPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Bitdefender
@@ -846,8 +820,7 @@ call :menuAvastAntivirus
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
-cls
-goto startAvastAntivirusPrompt
+cls&goto startAvastAntivirusPrompt
 :startAvastAntivirusPromptDeepSubDialerMode
 call :banner
 call :menuAvastAntivirusPrompt
@@ -855,8 +828,7 @@ call :menuAvastAntivirus
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startAvastAntivirusPromptDeepSubDialerMode
+cls&goto startAvastAntivirusPromptDeepSubDialerMode
 :startAvastAntivirusPromptDialerMode
 call :banner
 call :menuAvastAntivirusPrompt
@@ -864,8 +836,7 @@ call :menuAvastAntivirus
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAvastAntivirusPromptDialerMode
+cls&goto startAvastAntivirusPromptDialerMode
 :menuAvastAntivirusPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Avast (Gen Digital)
@@ -900,8 +871,7 @@ call :menuEmsisoftEmergencyKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
-cls
-goto startEmsisoftEmergencyKitPrompt
+cls&goto startEmsisoftEmergencyKitPrompt
 :startEmsisoftEmergencyKitPromptDeepSubDialerMode
 call :banner
 call :menuEmsisoftEmergencyKitPrompt
@@ -909,8 +879,7 @@ call :menuEmsisoftEmergencyKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startEmsisoftEmergencyKitPromptDeepSubDialerMode
+cls&goto startEmsisoftEmergencyKitPromptDeepSubDialerMode
 :startEmsisoftEmergencyKitPromptDialerMode
 call :banner
 call :menuEmsisoftEmergencyKitPrompt
@@ -918,8 +887,7 @@ call :menuEmsisoftEmergencyKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startEmsisoftEmergencyKitPromptDialerMode
+cls&goto startEmsisoftEmergencyKitPromptDialerMode
 :menuEmsisoftEmergencyKitPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Emsisoft
@@ -955,8 +923,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
 if /I %input% EQU I cls&goto startCCleanerInstallerPrompt1
-cls
-goto startCCleanerPrompt
+cls&goto startCCleanerPrompt
 :startCCleanerPromptDeepSubDialerMode
 call :banner
 call :menuCCleanerPrompt
@@ -965,8 +932,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
 if /I %input% EQU I cls&goto startCCleanerInstallerPrompt2
-cls
-goto startCCleanerPromptDeepSubDialerMode
+cls&goto startCCleanerPromptDeepSubDialerMode
 :startCCleanerPromptDialerMode
 call :banner
 call :menuCCleanerPrompt
@@ -975,8 +941,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startCCleanerInstallerPrompt3
-cls
-goto startCCleanerPromptDialerMode
+cls&goto startCCleanerPromptDialerMode
 :menuCCleanerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Piriform Software
@@ -1012,8 +977,7 @@ call :menuCCleanerInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCCleanerPrompt
-cls
-goto startCCleanerInstallerPrompt1
+cls&goto startCCleanerInstallerPrompt1
 :startCCleanerInstallerPrompt2
 call :banner
 call :menuCCleanerInstallerPrompt
@@ -1021,8 +985,7 @@ call :menuCCleanerInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCCleanerPromptDeepSubDialerMode
-cls
-goto startCCleanerInstallerPrompt2
+cls&goto startCCleanerInstallerPrompt2
 :startCCleanerInstallerPrompt3
 call :banner
 call :menuCCleanerInstallerPrompt
@@ -1030,8 +993,7 @@ call :menuCCleanerInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCCleanerPromptDialerMode
-cls
-goto startCCleanerInstallerPrompt3
+cls&goto startCCleanerInstallerPrompt3
 :startCCleanerInstallerPromptSubDialerMode
 call :banner
 call :menuCCleanerInstallerPrompt
@@ -1039,8 +1001,7 @@ call :menuCCleanerInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
-cls
-goto startCCleanerInstallerPromptSubDialerMode
+cls&goto startCCleanerInstallerPromptSubDialerMode
 :startCCleanerInstallerPromptDeepSubDialerMode
 call :banner
 call :menuCCleanerInstallerPrompt
@@ -1048,8 +1009,7 @@ call :menuCCleanerInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startCCleanerInstallerPromptDeepSubDialerMode
+cls&goto startCCleanerInstallerPromptDeepSubDialerMode
 :startCCleanerInstallerPromptDialerMode
 call :banner
 call :menuCCleanerInstallerPrompt
@@ -1057,8 +1017,7 @@ call :menuCCleanerInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCCleanerInstallerPromptDialerMode
+cls&goto startCCleanerInstallerPromptDialerMode
 :menuCCleanerInstallerPrompt
 echo.
 echo Please input the letter to install CCleaner or the entire Piriform Bundle ("A/B"). Input zero ("0") to cancel.
@@ -1077,8 +1036,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
 if /I %input% EQU I cls&goto startRecuvaInstallerPrompt1
-cls
-goto startRecuvaPrompt
+cls&goto startRecuvaPrompt
 :startRecuvaPromptDeepSubDialerMode
 call :banner
 call :menuRecuvaPrompt
@@ -1087,8 +1045,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
 if /I %input% EQU I cls&goto startRecuvaInstallerPrompt2
-cls
-goto startRecuvaPromptDeepSubDialerMode
+cls&goto startRecuvaPromptDeepSubDialerMode
 :startRecuvaPromptDialerMode
 call :banner
 call :menuRecuvaPrompt
@@ -1097,8 +1054,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startRecuvaInstallerPrompt3
-cls
-goto startRecuvaPromptDialerMode
+cls&goto startRecuvaPromptDialerMode
 :menuRecuvaPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Piriform Software
@@ -1134,8 +1090,7 @@ call :menuRecuvaInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startRecuvaPrompt
-cls
-goto startRecuvaInstallerPrompt1
+cls&goto startRecuvaInstallerPrompt1
 :startRecuvaInstallerPrompt2
 call :banner
 call :menuRecuvaInstallerPrompt
@@ -1143,8 +1098,7 @@ call :menuRecuvaInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startRecuvaPromptDeepSubDialerMode
-cls
-goto startRecuvaInstallerPrompt2
+cls&goto startRecuvaInstallerPrompt2
 :startRecuvaInstallerPrompt3
 call :banner
 call :menuRecuvaInstallerPrompt
@@ -1152,8 +1106,7 @@ call :menuRecuvaInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startRecuvaPromptDialerMode
-cls
-goto startRecuvaInstallerPrompt3
+cls&goto startRecuvaInstallerPrompt3
 :startRecuvaInstallerPromptSubDialerMode
 call :banner
 call :menuRecuvaInstallerPrompt
@@ -1161,8 +1114,7 @@ call :menuRecuvaInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
-cls
-goto startRecuvaInstallerPromptSubDialerMode
+cls&goto startRecuvaInstallerPromptSubDialerMode
 :startRecuvaInstallerPromptDeepSubDialerMode
 call :banner
 call :menuRecuvaInstallerPrompt
@@ -1170,8 +1122,7 @@ call :menuRecuvaInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startRecuvaInstallerPromptDeepSubDialerMode
+cls&goto startRecuvaInstallerPromptDeepSubDialerMode
 :startRecuvaInstallerPromptDialerMode
 call :banner
 call :menuRecuvaInstallerPrompt
@@ -1179,8 +1130,7 @@ call :menuRecuvaInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startRecuvaInstallerPromptDialerMode
+cls&goto startRecuvaInstallerPromptDialerMode
 :menuRecuvaInstallerPrompt
 echo.
 echo Please input the letter to install Recuva or the entire Piriform Bundle ("A/B"). Input zero ("0") to cancel.
@@ -1199,8 +1149,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
 if /I %input% EQU I cls&goto startSpeccyInstallerPrompt1
-cls
-goto startSpeccyPrompt
+cls&goto startSpeccyPrompt
 :startSpeccyPromptDeepSubDialerMode
 call :banner
 call :menuSpeccyPrompt
@@ -1209,8 +1158,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
 if /I %input% EQU I cls&goto startSpeccyInstallerPrompt2
-cls
-goto startSpeccyPromptDeepSubDialerMode
+cls&goto startSpeccyPromptDeepSubDialerMode
 :startSpeccyPromptDialerMode
 call :banner
 call :menuSpeccyPrompt
@@ -1219,8 +1167,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startSpeccyInstallerPrompt3
-cls
-goto startSpeccyPromptDialerMode
+cls&goto startSpeccyPromptDialerMode
 :menuSpeccyPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Piriform Software
@@ -1256,8 +1203,7 @@ call :menuSpeccyInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startSpeccyPrompt
-cls
-goto startSpeccyInstallerPrompt1
+cls&goto startSpeccyInstallerPrompt1
 :startSpeccyInstallerPrompt2
 call :banner
 call :menuSpeccyInstallerPrompt
@@ -1265,8 +1211,7 @@ call :menuSpeccyInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startSpeccyPromptDeepSubDialerMode
-cls
-goto startSpeccyInstallerPrompt2
+cls&goto startSpeccyInstallerPrompt2
 :startSpeccyInstallerPrompt3
 call :banner
 call :menuSpeccyInstallerPrompt
@@ -1274,8 +1219,7 @@ call :menuSpeccyInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startSpeccyPromptDialerMode
-cls
-goto startSpeccyInstallerPrompt3
+cls&goto startSpeccyInstallerPrompt3
 :startSpeccyInstallerPromptSubDialerMode
 call :banner
 call :menuSpeccyInstallerPrompt
@@ -1283,8 +1227,7 @@ call :menuSpeccyInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlertAlt
-cls
-goto startSpeccyInstallerPromptSubDialerMode
+cls&goto startSpeccyInstallerPromptSubDialerMode
 :startSpeccyInstallerPromptDeepSubDialerMode
 call :banner
 call :menuSpeccyInstallerPrompt
@@ -1292,8 +1235,7 @@ call :menuSpeccyInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAlert
-cls
-goto startSpeccyInstallerPromptDeepSubDialerMode
+cls&goto startSpeccyInstallerPromptDeepSubDialerMode
 :startSpeccyInstallerPromptDialerMode
 call :banner
 call :menuSpeccyInstallerPrompt
@@ -1301,8 +1243,7 @@ call :menuSpeccyInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSpeccyInstallerPromptDialerMode
+cls&goto startSpeccyInstallerPromptDialerMode
 :menuSpeccyInstallerPrompt
 echo.
 echo Please input the letter to install Speccy or the entire Piriform Bundle ("A/B"). Input zero ("0") to cancel.
@@ -1313,6 +1254,7 @@ set /p input=%BS%
 if /I %input% EQU A start Speccy_I.exe&set input=alert-99IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start Piriform_I.exe&set input=alert-99IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Background Section
 :startBackground
 call :banner
 call :menuBackgroundScreen
@@ -1320,8 +1262,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuBackground
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startBackground
+cls&goto startBackground
 :menuBackgroundScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -1402,8 +1343,7 @@ call :menu7-Zip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto start7-ZipFMprompt
+cls&goto start7-ZipFMprompt
 :start7-ZipFMpromptDialerMode
 call :banner
 call :menu7-ZipFMprompt
@@ -1411,8 +1351,7 @@ call :menu7-Zip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto start7-ZipFMpromptDialerMode
+cls&goto start7-ZipFMpromptDialerMode
 :menu7-ZipFMprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Igor Pavlov
@@ -1449,8 +1388,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
 if /I %input% EQU D cls&goto startJavaDeveloperKitPrompt1
 if /I %input% EQU R cls&goto startJavaRuntimeEnvironmentPrompt1
-cls
-goto startJavaCompilerToolsPrompt
+cls&goto startJavaCompilerToolsPrompt
 :startJavaCompilerToolsPromptDialerMode
 call :banner
 call :menuJavaCompilerToolsPrompt
@@ -1460,8 +1398,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU D cls&goto startJavaDeveloperKitPrompt2
 if /I %input% EQU R cls&goto startJavaRuntimeEnvironmentPrompt2
-cls
-goto startJavaCompilerToolsPromptDialerMode
+cls&goto startJavaCompilerToolsPromptDialerMode
 :menuJavaCompilerToolsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Oracle Corporation
@@ -1494,8 +1431,7 @@ call :menuJavaDeveloperKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startJavaCompilerToolsPrompt
-cls
-goto startJavaDeveloperKitPrompt1
+cls&goto startJavaDeveloperKitPrompt1
 :startJavaDeveloperKitPrompt2
 call :banner
 call :menuJavaDeveloperKitPrompt
@@ -1503,8 +1439,7 @@ call :menuJavaDeveloperKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startJavaCompilerToolsPromptDialerMode
-cls
-goto startJavaDeveloperKitPrompt2
+cls&goto startJavaDeveloperKitPrompt2
 :startJavaDeveloperKitPromptSubDialerMode
 call :banner
 call :menuJavaDeveloperKitPrompt
@@ -1512,8 +1447,7 @@ call :menuJavaDeveloperKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startJavaDeveloperKitPromptSubDialerMode
+cls&goto startJavaDeveloperKitPromptSubDialerMode
 :startJavaDeveloperKitPromptDialerMode
 call :banner
 call :menuJavaDeveloperKitPrompt
@@ -1521,8 +1455,7 @@ call :menuJavaDeveloperKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startJavaDeveloperKitPromptDialerMode
+cls&goto startJavaDeveloperKitPromptDialerMode
 :menuJavaDeveloperKitPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Oracle Corporation
@@ -1554,8 +1487,7 @@ call :menuJavaRuntimeEnvironment
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startJavaCompilerToolsPrompt
-cls
-goto startJavaRuntimeEnvironmentPrompt1
+cls&goto startJavaRuntimeEnvironmentPrompt1
 :startJavaRuntimeEnvironmentPrompt2
 call :banner
 call :menuJavaRuntimeEnvironmentPrompt
@@ -1563,8 +1495,7 @@ call :menuJavaRuntimeEnvironment
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startJavaCompilerToolsPromptDialerMode
-cls
-goto startJavaRuntimeEnvironmentPrompt2
+cls&goto startJavaRuntimeEnvironmentPrompt2
 :startJavaRuntimeEnvironmentPromptSubDialerMode
 call :banner
 call :menuJavaRuntimeEnvironmentPrompt
@@ -1572,8 +1503,7 @@ call :menuJavaRuntimeEnvironment
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startJavaRuntimeEnvironmentPromptSubDialerMode
+cls&goto startJavaRuntimeEnvironmentPromptSubDialerMode
 :startJavaRuntimeEnvironmentPromptDialerMode
 call :banner
 call :menuJavaRuntimeEnvironmentPrompt
@@ -1581,8 +1511,7 @@ call :menuJavaRuntimeEnvironment
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startJavaRuntimeEnvironmentPromptDialerMode
+cls&goto startJavaRuntimeEnvironmentPromptDialerMode
 :menuJavaRuntimeEnvironmentPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Oracle Corporation
@@ -1614,8 +1543,7 @@ call :menuFlowLauncher
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startFlowLauncherPrompt
+cls&goto startFlowLauncherPrompt
 :startFlowLauncherPromptDialerMode
 call :banner
 call :menuFlowLauncherPrompt
@@ -1623,8 +1551,7 @@ call :menuFlowLauncher
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startFlowLauncherPromptDialerMode
+cls&goto startFlowLauncherPromptDialerMode
 :menuFlowLauncherPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Flow Launcher Team
@@ -1659,8 +1586,7 @@ call :menuSamsungDriver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startSamsungDriverPrompt
+cls&goto startSamsungDriverPrompt
 :startSamsungDriverPromptDialerMode
 call :banner
 call :menuSamsungDriverPrompt
@@ -1668,8 +1594,7 @@ call :menuSamsungDriver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSamsungDriverPromptDialerMode
+cls&goto startSamsungDriverPromptDialerMode
 :menuSamsungDriverPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Samsung
@@ -1701,8 +1626,7 @@ call :menuDirectoryOpus
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startDirectoryOpusPrompt
+cls&goto startDirectoryOpusPrompt
 :startDirectoryOpusPromptDialerMode
 call :banner
 call :menuDirectoryOpusPrompt
@@ -1710,8 +1634,7 @@ call :menuDirectoryOpus
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startDirectoryOpusPromptDialerMode
+cls&goto startDirectoryOpusPromptDialerMode
 :menuDirectoryOpusPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Jonathan Potter/GPSoftware
@@ -1746,8 +1669,7 @@ call :menuOpera
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startOperaPrompt
+cls&goto startOperaPrompt
 :startOperaPromptDialerMode
 call :banner
 call :menuOperaPrompt
@@ -1755,8 +1677,7 @@ call :menuOpera
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startOperaPromptDialerMode
+cls&goto startOperaPromptDialerMode
 :menuOperaPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Opera
@@ -1791,8 +1712,7 @@ call :menuUltraSearch
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startUltraSearchPrompt
+cls&goto startUltraSearchPrompt
 :startUltraSearchPromptDialerMode
 call :banner
 call :menuUltraSearchPrompt
@@ -1800,8 +1720,7 @@ call :menuUltraSearch
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startUltraSearchPromptDialerMode
+cls&goto startUltraSearchPromptDialerMode
 :menuUltraSearchPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JAM Software
@@ -1836,8 +1755,7 @@ call :menuWireGuard
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startWireGuardPrompt
+cls&goto startWireGuardPrompt
 :startWireGuardPromptDialerMode
 call :banner
 call :menuWireGuardPrompt
@@ -1845,8 +1763,7 @@ call :menuWireGuard
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWireGuardPromptDialerMode
+cls&goto startWireGuardPromptDialerMode
 :menuWireGuardPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Jason A. Donenfeld
@@ -1883,8 +1800,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
 if /I %input% EQU M cls&goto startNotepadPrompt1
 if /I %input% EQU P cls&goto startNotepadPlusPlusPrompt1
-cls
-goto startLaunchNotepadPrompt
+cls&goto startLaunchNotepadPrompt
 :startLaunchNotepadPromptDialerMode
 call :banner
 call :menuLaunchNotepadPrompt
@@ -1894,8 +1810,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU M cls&goto startNotepadPrompt2
 if /I %input% EQU P cls&goto startNotepadPlusPlusPrompt2
-cls
-goto startLaunchNotepadPromptDialerMode
+cls&goto startLaunchNotepadPromptDialerMode
 :menuLaunchNotepadPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Depends
@@ -1932,8 +1847,7 @@ call :menuNotepad
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startLaunchNotepadPrompt
-cls
-goto startNotepadPrompt1
+cls&goto startNotepadPrompt1
 :startNotepadPrompt2
 call :banner
 call :menuNotepadPrompt
@@ -1941,8 +1855,7 @@ call :menuNotepad
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startLaunchNotepadPromptDialerMode
-cls
-goto startNotepadPrompt2
+cls&goto startNotepadPrompt2
 :startNotepadPromptSubDialerMode
 call :banner
 call :menuNotepadPrompt
@@ -1950,8 +1863,7 @@ call :menuNotepad
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startNotepadPromptSubDialerMode
+cls&goto startNotepadPromptSubDialerMode
 :startNotepadPromptDialerMode
 call :banner
 call :menuNotepadPrompt
@@ -1959,8 +1871,7 @@ call :menuNotepad
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startNotepadPromptDialerMode
+cls&goto startNotepadPromptDialerMode
 :menuNotepadPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -1993,8 +1904,7 @@ call :menuNotepadPlusPlus
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startLaunchNotepadPrompt
-cls
-goto startNotepadPlusPlusPrompt1
+cls&goto startNotepadPlusPlusPrompt1
 :startNotepadPlusPlusPrompt2
 call :banner
 call :menuNotepadPlusPlusPrompt
@@ -2002,8 +1912,7 @@ call :menuNotepadPlusPlus
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startLaunchNotepadPromptDialerMode
-cls
-goto startNotepadPlusPlusPrompt2
+cls&goto startNotepadPlusPlusPrompt2
 :startNotepadPlusPlusPromptSubDialerMode
 call :banner
 call :menuNotepadPlusPlusPrompt
@@ -2011,8 +1920,7 @@ call :menuNotepadPlusPlus
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startBackground
-cls
-goto startNotepadPlusPlusPromptSubDialerMode
+cls&goto startNotepadPlusPlusPromptSubDialerMode
 :startNotepadPlusPlusPromptDialerMode
 call :banner
 call :menuNotepadPlusPlusPrompt
@@ -2020,8 +1928,7 @@ call :menuNotepadPlusPlus
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startNotepadPlusPlusPromptDialerMode
+cls&goto startNotepadPlusPlusPromptDialerMode
 :menuNotepadPlusPlusPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Don Ho
@@ -2049,6 +1956,7 @@ if /I %input% EQU R start Notepad++_R.lnk&set input=background-9PR&&goto startPr
 if /I %input% EQU I start Notepad++_I.exe&set input=background-9PI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Notepad++_O.lnk&set input=background-9PO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 1
 :start1
 call :banner
 call :menu1Screen
@@ -2056,8 +1964,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu1
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start1
+cls&goto start1
 :menu1Screen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -2143,8 +2050,7 @@ call :menuInternetDownloadManager
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startInternetDownloadManagerPrompt
+cls&goto startInternetDownloadManagerPrompt
 :startInternetDownloadManagerPromptDialerMode
 call :banner
 call :menuInternetDownloadManagerPrompt
@@ -2152,8 +2058,7 @@ call :menuInternetDownloadManager
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startInternetDownloadManagerPromptDialerMode
+cls&goto startInternetDownloadManagerPromptDialerMode
 :menuInternetDownloadManagerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Tonec Inc.
@@ -2188,8 +2093,7 @@ call :menuTor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startTorPrompt
+cls&goto startTorPrompt
 :startTorPromptDialerMode
 call :banner
 call :menuTorPrompt
@@ -2197,8 +2101,7 @@ call :menuTor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startTorPromptDialerMode
+cls&goto startTorPromptDialerMode
 :menuTorPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: The Tor Project
@@ -2233,8 +2136,7 @@ call :menuMullvad
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startMullvadPrompt
+cls&goto startMullvadPrompt
 :startMullvadPromptDialerMode
 call :banner
 call :menuMullvadPrompt
@@ -2242,8 +2144,7 @@ call :menuMullvad
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMullvadPromptDialerMode
+cls&goto startMullvadPromptDialerMode
 :menuMullvadPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Mullvad VPN and The Tor Project
@@ -2278,8 +2179,7 @@ call :menuLibreWolf
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startLibreWolfPrompt
+cls&goto startLibreWolfPrompt
 :startLibreWolfPromptDialerMode
 call :banner
 call :menuLibreWolfPrompt
@@ -2287,8 +2187,7 @@ call :menuLibreWolf
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startLibreWolfPromptDialerMode
+cls&goto startLibreWolfPromptDialerMode
 :menuLibreWolfPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: LibreWolf Community
@@ -2323,8 +2222,7 @@ call :menuFirefox
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startFirefoxPrompt
+cls&goto startFirefoxPrompt
 :startFirefoxPromptDialerMode
 call :banner
 call :menuFirefoxPrompt
@@ -2332,8 +2230,7 @@ call :menuFirefox
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startFirefoxPromptDialerMode
+cls&goto startFirefoxPromptDialerMode
 :menuFirefoxPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Mozilla Foundation/Corporation
@@ -2368,8 +2265,7 @@ call :menuBrave
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startBravePrompt
+cls&goto startBravePrompt
 :startBravePromptDialerMode
 call :banner
 call :menuBravePrompt
@@ -2377,8 +2273,7 @@ call :menuBrave
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startBravePromptDialerMode
+cls&goto startBravePromptDialerMode
 :menuBravePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Brave Software Inc.
@@ -2413,8 +2308,7 @@ call :menuEdge
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startEdgePrompt
+cls&goto startEdgePrompt
 :startEdgePromptDialerMode
 call :banner
 call :menuEdgePrompt
@@ -2422,8 +2316,7 @@ call :menuEdge
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startEdgePromptDialerMode
+cls&goto startEdgePromptDialerMode
 :menuEdgePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -2460,8 +2353,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
 if /I %input% EQU C cls&goto startChromePrompt1
 if /I %input% EQU E cls&goto startEarthPrompt1
-cls
-goto startGooglePrompt
+cls&goto startGooglePrompt
 :startGooglePromptDialerMode
 call :banner
 call :menuGooglePrompt
@@ -2471,8 +2363,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU C cls&goto startChromePrompt2
 if /I %input% EQU E cls&goto startEarthPrompt2
-cls
-goto startGooglePromptDialerMode
+cls&goto startGooglePromptDialerMode
 :menuGooglePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Google
@@ -2511,8 +2402,7 @@ call :menuChrome
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startGooglePrompt
-cls
-goto startChromePrompt1
+cls&goto startChromePrompt1
 :startChromePrompt2
 call :banner
 call :menuChromePrompt
@@ -2520,8 +2410,7 @@ call :menuChrome
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startGooglePromptDialerMode
-cls
-goto startChromePrompt2
+cls&goto startChromePrompt2
 :startChromePromptSubDialerMode
 call :banner
 call :menuChromePrompt
@@ -2529,8 +2418,7 @@ call :menuChrome
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startChromePromptSubDialerMode
+cls&goto startChromePromptSubDialerMode
 :startChromePromptDialerMode
 call :banner
 call :menuChromePrompt
@@ -2538,8 +2426,7 @@ call :menuChrome
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startChromePromptDialerMode
+cls&goto startChromePromptDialerMode
 :menuChromePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Google
@@ -2574,8 +2461,7 @@ call :menuEarth
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startGooglePrompt
-cls
-goto startEarthPrompt1
+cls&goto startEarthPrompt1
 :startEarthPrompt2
 call :banner
 call :menuEarthPrompt
@@ -2583,8 +2469,7 @@ call :menuEarth
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startGooglePromptDialerMode
-cls
-goto startEarthPrompt2
+cls&goto startEarthPrompt2
 :startEarthPromptSubDialerMode
 call :banner
 call :menuEarthPrompt
@@ -2592,8 +2477,7 @@ call :menuEarth
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startEarthPromptSubDialerMode
+cls&goto startEarthPromptSubDialerMode
 :startEarthPromptDialerMode
 call :banner
 call :menuEarthPrompt
@@ -2601,8 +2485,7 @@ call :menuEarth
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startEarthPromptDialerMode
+cls&goto startEarthPromptDialerMode
 :menuEarthPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under Keyhole Inc., now under Google
@@ -2637,8 +2520,7 @@ call :menuqBittorrent
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start1
-cls
-goto startqBittorrentPrompt
+cls&goto startqBittorrentPrompt
 :startqBittorrentPromptDialerMode
 call :banner
 call :menuqBittorrentPrompt
@@ -2646,8 +2528,7 @@ call :menuqBittorrent
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startqBittorrentPromptDialerMode
+cls&goto startqBittorrentPromptDialerMode
 :menuqBittorrentPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under Christophe Dumez, now under Sledgehammer999, Chocobo1, glassez, pmzqla and others
@@ -2675,6 +2556,7 @@ if /I %input% EQU R start qBittorrent_R.lnk&set input=19R&&goto startPreExitProm
 if /I %input% EQU I start qBittorrent_I.exe&set input=19I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start qBittorrent_O.lnk&set input=19O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 2
 :start2
 call :banner
 call :menu2Screen
@@ -2682,8 +2564,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu2
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start2
+cls&goto start2
 :menu2Screen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -2778,8 +2659,7 @@ call :menuVisualStudio
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startVisualStudioPrompt
+cls&goto startVisualStudioPrompt
 :startVisualStudioPromptDialerMode
 call :banner
 call :menuVisualStudioPrompt
@@ -2787,8 +2667,7 @@ call :menuVisualStudio
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startVisualStudioPromptDialerMode
+cls&goto startVisualStudioPromptDialerMode
 :menuVisualStudioPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -2824,8 +2703,7 @@ call :menuVisualStudioCode
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startVisualStudioCodePrompt
+cls&goto startVisualStudioCodePrompt
 :startVisualStudioCodePromptDialerMode
 call :banner
 call :menuVisualStudioCodePrompt
@@ -2833,8 +2711,7 @@ call :menuVisualStudioCode
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startVisualStudioCodePromptDialerMode
+cls&goto startVisualStudioCodePromptDialerMode
 :menuVisualStudioCodePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -2869,8 +2746,7 @@ call :menuWord
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startWordPrompt
+cls&goto startWordPrompt
 :startWordPromptDialerMode
 call :banner
 call :menuWordPrompt
@@ -2878,8 +2754,7 @@ call :menuWord
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWordPromptDialerMode
+cls&goto startWordPromptDialerMode
 :menuWordPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -2914,8 +2789,7 @@ call :menuPowerPoint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startPowerPointPrompt
+cls&goto startPowerPointPrompt
 :startPowerPointPromptDialerMode
 call :banner
 call :menuPowerPointPrompt
@@ -2923,8 +2797,7 @@ call :menuPowerPoint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPowerPointPromptDialerMode
+cls&goto startPowerPointPromptDialerMode
 :menuPowerPointPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -2959,8 +2832,7 @@ call :menuExcel
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startExcelPrompt
+cls&goto startExcelPrompt
 :startExcelPromptDialerMode
 call :banner
 call :menuExcelPrompt
@@ -2968,8 +2840,7 @@ call :menuExcel
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startExcelPromptDialerMode
+cls&goto startExcelPromptDialerMode
 :menuExcelPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -3004,8 +2875,7 @@ call :menuAccess
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startAccessPrompt
+cls&goto startAccessPrompt
 :startAccessPromptDialerMode
 call :banner
 call :menuAccessPrompt
@@ -3013,8 +2883,7 @@ call :menuAccess
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAccessPromptDialerMode
+cls&goto startAccessPromptDialerMode
 :menuAccessPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -3049,8 +2918,7 @@ call :menuPublisher
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startPublisherPrompt
+cls&goto startPublisherPrompt
 :startPublisherPromptDialerMode
 call :banner
 call :menuPublisherPrompt
@@ -3058,8 +2926,7 @@ call :menuPublisher
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPublisherPromptDialerMode
+cls&goto startPublisherPromptDialerMode
 :menuPublisherPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -3094,8 +2961,7 @@ call :menuOneNote
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startOneNotePrompt
+cls&goto startOneNotePrompt
 :startOneNotePromptDialerMode
 call :banner
 call :menuOneNotePrompt
@@ -3103,8 +2969,7 @@ call :menuOneNote
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startOneNotePromptDialerMode
+cls&goto startOneNotePromptDialerMode
 :menuOneNotePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -3143,8 +3008,7 @@ if /I %input% EQU B cls&goto startPowerBIprompt1
 if /I %input% EQU D cls&goto startOneDrivePrompt1
 if /I %input% EQU O cls&goto startOutlookPrompt1
 if /I %input% EQU T cls&goto startTeamsPrompt1
-cls
-goto startOtherMicrosoftToolsPrompt
+cls&goto startOtherMicrosoftToolsPrompt
 :startOtherMicrosoftToolsPromptDialerMode
 call :banner
 call :menuOtherMicrosoftToolsPrompt
@@ -3156,8 +3020,7 @@ if /I %input% EQU B cls&goto startPowerBIprompt2
 if /I %input% EQU D cls&goto startOneDrivePrompt2
 if /I %input% EQU O cls&goto startOutlookPrompt2
 if /I %input% EQU T cls&goto startTeamsPrompt2
-cls
-goto startOtherMicrosoftToolsPromptDialerMode
+cls&goto startOtherMicrosoftToolsPromptDialerMode
 :menuOtherMicrosoftToolsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -3202,8 +3065,7 @@ call :menuPowerBI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOtherMicrosoftToolsPrompt
-cls
-goto startPowerBIprompt1
+cls&goto startPowerBIprompt1
 :startPowerBIprompt2
 call :banner
 call :menuPowerBIprompt
@@ -3211,8 +3073,7 @@ call :menuPowerBI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOtherMicrosoftToolsPromptDialerMode
-cls
-goto startPowerBIprompt2
+cls&goto startPowerBIprompt2
 :startPowerBIpromptSubDialerMode
 call :banner
 call :menuPowerBIprompt
@@ -3220,8 +3081,7 @@ call :menuPowerBI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startPowerBIpromptSubDialerMode
+cls&goto startPowerBIpromptSubDialerMode
 :startPowerBIpromptDialerMode
 call :banner
 call :menuPowerBIprompt
@@ -3229,8 +3089,7 @@ call :menuPowerBI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPowerBIpromptDialerMode
+cls&goto startPowerBIpromptDialerMode
 :menuPowerBIprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -3265,8 +3124,7 @@ call :menuOneDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOtherMicrosoftToolsPrompt
-cls
-goto startOneDrivePrompt1
+cls&goto startOneDrivePrompt1
 :startOneDrivePrompt2
 call :banner
 call :menuOneDrivePrompt
@@ -3274,8 +3132,7 @@ call :menuOneDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOtherMicrosoftToolsPromptDialerMode
-cls
-goto startOneDrivePrompt2
+cls&goto startOneDrivePrompt2
 :startOneDrivePromptSubDialerMode
 call :banner
 call :menuOneDrivePrompt
@@ -3283,8 +3140,7 @@ call :menuOneDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startOneDrivePromptSubDialerMode
+cls&goto startOneDrivePromptSubDialerMode
 :startOneDrivePromptDialerMode
 call :banner
 call :menuOneDrivePrompt
@@ -3292,8 +3148,7 @@ call :menuOneDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startOneDrivePromptDialerMode
+cls&goto startOneDrivePromptDialerMode
 :menuOneDrivePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -3328,8 +3183,7 @@ call :menuOutlook
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOtherMicrosoftToolsPrompt
-cls
-goto startOutlookPrompt1
+cls&goto startOutlookPrompt1
 :startOutlookPrompt2
 call :banner
 call :menuOutlookPrompt
@@ -3337,8 +3191,7 @@ call :menuOutlook
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOtherMicrosoftToolsPromptDialerMode
-cls
-goto startOutlookPrompt2
+cls&goto startOutlookPrompt2
 :startOutlookPromptSubDialerMode
 call :banner
 call :menuOutlookPrompt
@@ -3346,8 +3199,7 @@ call :menuOutlook
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startOutlookPromptSubDialerMode
+cls&goto startOutlookPromptSubDialerMode
 :startOutlookPromptDialerMode
 call :banner
 call :menuOutlookPrompt
@@ -3355,8 +3207,7 @@ call :menuOutlook
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startOutlookPromptDialerMode
+cls&goto startOutlookPromptDialerMode
 :menuOutlookPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -3391,8 +3242,7 @@ call :menuTeams
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOtherMicrosoftToolsPrompt
-cls
-goto startTeamsPrompt1
+cls&goto startTeamsPrompt1
 :startTeamsPrompt2
 call :banner
 call :menuTeamsPrompt
@@ -3400,8 +3250,7 @@ call :menuTeams
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOtherMicrosoftToolsPromptDialerMode
-cls
-goto startTeamsPrompt2
+cls&goto startTeamsPrompt2
 :startTeamsPromptSubDialerMode
 call :banner
 call :menuTeamsPrompt
@@ -3409,8 +3258,7 @@ call :menuTeams
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start2
-cls
-goto startTeamsPromptSubDialerMode
+cls&goto startTeamsPromptSubDialerMode
 :startTeamsPromptDialerMode
 call :banner
 call :menuTeamsPrompt
@@ -3418,8 +3266,7 @@ call :menuTeams
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startTeamsPromptDialerMode
+cls&goto startTeamsPromptDialerMode
 :menuTeamsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -3445,6 +3292,7 @@ set /p input=%BS%
 if /I %input% EQU A start Teams_A.lnk&set input=29TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Teams_R.lnk&set input=29TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 3
 :start3
 call :banner
 call :menu3Screen
@@ -3452,8 +3300,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu3
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start3
+cls&goto start3
 :menu3Screen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -3696,8 +3543,7 @@ call :menu010Editor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto start010EditorPrompt
+cls&goto start010EditorPrompt
 :start010EditorPromptDialerMode
 call :banner
 call :menu010EditorPrompt
@@ -3705,8 +3551,7 @@ call :menu010Editor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto start010EditorPromptDialerMode
+cls&goto start010EditorPromptDialerMode
 :menu010EditorPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Sweetscape Software Inc.
@@ -3741,8 +3586,7 @@ call :menuMATLAB
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startMATLABprompt
+cls&goto startMATLABprompt
 :startMATLABpromptDialerMode
 call :banner
 call :menuMATLABprompt
@@ -3750,8 +3594,7 @@ call :menuMATLAB
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMATLABpromptDialerMode
+cls&goto startMATLABpromptDialerMode
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: MathWorks
 echo     Software Type: Multi-Paradigm Programming Language and Numeric Computing Environment
@@ -3789,8 +3632,7 @@ if /I %input% EQU G cls&goto startGUIOctavePrompt1
 if /I %input% EQU C cls&goto startCLIOctavePrompt1
 if /I %input% EQU CA cls&goto startCLIOctaveRunAdminPrompt1
 if /I %input% EQU CR cls&goto startCLIOctaveRunPrompt1
-cls
-goto startOctavePrompt
+cls&goto startOctavePrompt
 :startOctavePromptDialerMode
 call :banner
 call :menuOctavePrompt
@@ -3802,8 +3644,7 @@ if /I %input% EQU G cls&goto startGUIOctavePrompt2
 if /I %input% EQU C cls&goto startCLIOctavePrompt2
 if /I %input% EQU CA cls&goto startCLIOctaveRunAdminPrompt2
 if /I %input% EQU CR cls&goto startCLIOctaveRunPrompt2
-cls
-goto startOctavePromptDialerMode
+cls&goto startOctavePromptDialerMode
 :menuOctavePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John W. Eaton and others
@@ -3846,8 +3687,7 @@ call :menuGUIOctave
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOctavePrompt
-cls
-goto startGUIOctavePrompt1
+cls&goto startGUIOctavePrompt1
 :startGUIOctavePrompt2
 call :banner
 call :menuGUIOctavePrompt
@@ -3855,8 +3695,7 @@ call :menuGUIOctave
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOctavePromptDialerMode
-cls
-goto startGUIOctavePrompt2
+cls&goto startGUIOctavePrompt2
 :startGUIOctavePromptSubDialerMode
 call :banner
 call :menuGUIOctavePrompt
@@ -3864,8 +3703,7 @@ call :menuGUIOctave
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startGUIOctavePromptSubDialerMode
+cls&goto startGUIOctavePromptSubDialerMode
 :startGUIOctavePromptDialerMode
 call :banner
 call :menuGUIOctavePrompt
@@ -3873,8 +3711,7 @@ call :menuGUIOctave
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startGUIOctavePromptDialerMode
+cls&goto startGUIOctavePromptDialerMode
 :menuGUIOctavePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John W. Eaton and others
@@ -3911,8 +3748,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOctavePrompt
 if /I %input% EQU A cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode1
 if /I %input% EQU R cls&goto startCLIOctaveRunPromptDeepSubDialerMode1
-cls
-goto startCLIOctavePrompt1
+cls&goto startCLIOctavePrompt1
 :startCLIOctavePrompt2
 call :banner
 call :menuCLIOctavePrompt
@@ -3922,8 +3758,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOctavePromptDialerMode
 if /I %input% EQU A cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode2
 if /I %input% EQU R cls&goto startCLIOctaveRunPromptDeepSubDialerMode2
-cls
-goto startCLIOctavePrompt2
+cls&goto startCLIOctavePrompt2
 :startCLIOctavePromptSubDialerMode
 call :banner
 call :menuCLIOctavePrompt
@@ -3933,8 +3768,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU A cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode3
 if /I %input% EQU R cls&goto startCLIOctaveRunPromptDeepSubDialerMode3
-cls
-goto startCLIOctavePromptSubDialerMode
+cls&goto startCLIOctavePromptSubDialerMode
 :startCLIOctavePromptDialerMode
 call :banner
 call :menuCLIOctavePrompt
@@ -3944,8 +3778,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU A cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode4
 if /I %input% EQU R cls&goto startCLIOctaveRunPromptDeepSubDialerMode4
-cls
-goto startCLIOctavePromptDialerMode
+cls&goto startCLIOctavePromptDialerMode
 :menuCLIOctavePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John W. Eaton and others
@@ -3984,8 +3817,7 @@ call :menuCLIOctaveRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOctavePrompt
-cls
-goto startCLIOctaveRunAdminPrompt1
+cls&goto startCLIOctaveRunAdminPrompt1
 :startCLIOctaveRunAdminPrompt2
 call :banner
 call :menuCLIOctaveRunAdminPrompt
@@ -3993,8 +3825,7 @@ call :menuCLIOctaveRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOctavePromptDialerMode
-cls
-goto startCLIOctaveRunAdminPrompt2
+cls&goto startCLIOctaveRunAdminPrompt2
 :startCLIOctaveRunAdminPromptDeepSubDialerMode1
 call :banner
 call :menuCLIOctaveRunAdminPrompt
@@ -4002,8 +3833,7 @@ call :menuCLIOctaveRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCLIOctavePrompt1
-cls
-goto startCLIOctaveRunAdminPromptDeepSubDialerMode1
+cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode1
 :startCLIOctaveRunAdminPromptDeepSubDialerMode2
 call :banner
 call :menuCLIOctaveRunAdminPrompt
@@ -4011,8 +3841,7 @@ call :menuCLIOctaveRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCLIOctavePrompt2
-cls
-goto startCLIOctaveRunAdminPromptDeepSubDialerMode2
+cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode2
 :startCLIOctaveRunAdminPromptDeepSubDialerMode3
 call :banner
 call :menuCLIOctaveRunAdminPrompt
@@ -4020,8 +3849,7 @@ call :menuCLIOctaveRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCLIOctavePromptSubDialerMode
-cls
-goto startCLIOctaveRunAdminPromptDeepSubDialerMode3
+cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode3
 :startCLIOctaveRunAdminPromptDeepSubDialerMode4
 call :banner
 call :menuCLIOctaveRunAdminPrompt
@@ -4029,8 +3857,7 @@ call :menuCLIOctaveRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCLIOctavePromptDialerMode
-cls
-goto startCLIOctaveRunAdminPromptDeepSubDialerMode4
+cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode4
 :startCLIOctaveRunAdminPromptSubDialerMode
 call :banner
 call :menuCLIOctaveRunAdminPrompt
@@ -4038,8 +3865,7 @@ call :menuCLIOctaveRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startCLIOctaveRunAdminPromptSubDialerMode
+cls&goto startCLIOctaveRunAdminPromptSubDialerMode
 :startCLIOctaveRunAdminPromptDialerMode
 call :banner
 call :menuCLIOctaveRunAdminPrompt
@@ -4047,8 +3873,7 @@ call :menuCLIOctaveRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCLIOctaveRunAdminPromptDialerMode
+cls&goto startCLIOctaveRunAdminPromptDialerMode
 :menuCLIOctaveRunAdminPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4067,8 +3892,7 @@ call :menuCLIOctaveRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOctavePrompt
-cls
-goto startCLIOctaveRunPrompt1
+cls&goto startCLIOctaveRunPrompt1
 :startCLIOctaveRunPrompt2
 call :banner
 call :menuCLIOctaveRunPrompt
@@ -4076,8 +3900,7 @@ call :menuCLIOctaveRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startOctavePromptDialerMode
-cls
-goto startCLIOctaveRunPrompt2
+cls&goto startCLIOctaveRunPrompt2
 :startCLIOctaveRunPromptDeepSubDialerMode1
 call :banner
 call :menuCLIOctaveRunPrompt
@@ -4085,8 +3908,7 @@ call :menuCLIOctaveRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCLIOctavePrompt1
-cls
-goto startCLIOctaveRunPromptDeepSubDialerMode1
+cls&goto startCLIOctaveRunPromptDeepSubDialerMode1
 :startCLIOctaveRunPromptDeepSubDialerMode2
 call :banner
 call :menuCLIOctaveRunPrompt
@@ -4094,8 +3916,7 @@ call :menuCLIOctaveRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCLIOctavePrompt2
-cls
-goto startCLIOctaveRunPromptDeepSubDialerMode2
+cls&goto startCLIOctaveRunPromptDeepSubDialerMode2
 :startCLIOctaveRunPromptDeepSubDialerMode3
 call :banner
 call :menuCLIOctaveRunPrompt
@@ -4103,8 +3924,7 @@ call :menuCLIOctaveRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCLIOctavePromptSubDialerMode
-cls
-goto startCLIOctaveRunPromptDeepSubDialerMode3
+cls&goto startCLIOctaveRunPromptDeepSubDialerMode3
 :startCLIOctaveRunPromptDeepSubDialerMode4
 call :banner
 call :menuCLIOctaveRunPrompt
@@ -4112,8 +3932,7 @@ call :menuCLIOctaveRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCLIOctavePromptDialerMode
-cls
-goto startCLIOctaveRunPromptDeepSubDialerMode4
+cls&goto startCLIOctaveRunPromptDeepSubDialerMode4
 :startCLIOctaveRunPromptSubDialerMode
 call :banner
 call :menuCLIOctaveRunPrompt
@@ -4121,8 +3940,7 @@ call :menuCLIOctaveRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startCLIOctaveRunPromptSubDialerMode
+cls&goto startCLIOctaveRunPromptSubDialerMode
 :startCLIOctaveRunPromptDialerMode
 call :banner
 call :menuCLIOctaveRunPrompt
@@ -4130,8 +3948,7 @@ call :menuCLIOctaveRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCLIOctaveRunPromptDialerMode
+cls&goto startCLIOctaveRunPromptDialerMode
 :menuCLIOctaveRunPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4152,8 +3969,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU A cls&goto startMetasploitRunAdminPrompt1
 if /I %input% EQU R cls&goto startMetasploitRunPrompt1
-cls
-goto startMetasploitPrompt
+cls&goto startMetasploitPrompt
 :startMetasploitPromptDialerMode
 call :banner
 call :menuMetasploitPrompt
@@ -4163,8 +3979,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU A cls&goto startMetasploitRunAdminPrompt2
 if /I %input% EQU R cls&goto startMetasploitRunPrompt2
-cls
-goto startMetasploitPromptDialerMode
+cls&goto startMetasploitPromptDialerMode
 :menuMetasploitPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: H. D. Moore/Rapid7, Inc.
@@ -4203,8 +4018,7 @@ call :menuMetasploitRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMetasploitPrompt
-cls
-goto startMetasploitRunAdminPrompt1
+cls&goto startMetasploitRunAdminPrompt1
 :startMetasploitRunAdminPrompt2
 call :banner
 call :menuMetasploitRunAdminPrompt
@@ -4212,8 +4026,7 @@ call :menuMetasploitRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMetasploitPromptDialerMode
-cls
-goto startMetasploitRunAdminPrompt2
+cls&goto startMetasploitRunAdminPrompt2
 :startMetasploitRunAdminPromptSubDialerMode
 call :banner
 call :menuMetasploitRunAdminPrompt
@@ -4221,8 +4034,7 @@ call :menuMetasploitRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startMetasploitRunAdminPromptSubDialerMode
+cls&goto startMetasploitRunAdminPromptSubDialerMode
 :startMetasploitRunAdminPromptDialerMode
 call :banner
 call :menuMetasploitRunAdminPrompt
@@ -4230,8 +4042,7 @@ call :menuMetasploitRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMetasploitRunAdminPromptDialerMode
+cls&goto startMetasploitRunAdminPromptDialerMode
 :menuMetasploitRunAdminPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4250,8 +4061,7 @@ call :menuMetasploitRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMetasploitPrompt
-cls
-goto startMetasploitRunPrompt1
+cls&goto startMetasploitRunPrompt1
 :startMetasploitRunPrompt2
 call :banner
 call :menuMetasploitRunPrompt
@@ -4259,8 +4069,7 @@ call :menuMetasploitRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMetasploitPromptDialerMode
-cls
-goto startMetasploitRunPrompt2
+cls&goto startMetasploitRunPrompt2
 :startMetasploitRunPromptSubDialerMode
 call :banner
 call :menuMetasploitRunPrompt
@@ -4268,8 +4077,7 @@ call :menuMetasploitRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startMetasploitRunPromptSubDialerMode
+cls&goto startMetasploitRunPromptSubDialerMode
 :startMetasploitRunPromptDialerMode
 call :banner
 call :menuMetasploitRunPrompt
@@ -4277,8 +4085,7 @@ call :menuMetasploitRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMetasploitRunPromptDialerMode
+cls&goto startMetasploitRunPromptDialerMode
 :menuMetasploitRunPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4299,8 +4106,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU A cls&goto startCygwinRunAdminPrompt1
 if /I %input% EQU R cls&goto startCygwinRunPrompt1
-cls
-goto startCygwinPrompt
+cls&goto startCygwinPrompt
 :startCygwinPromptDialerMode
 call :banner
 call :menuCygwinPrompt
@@ -4310,8 +4116,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU A cls&goto startCygwinRunAdminPrompt2
 if /I %input% EQU R cls&goto startCygwinRunPrompt2
-cls
-goto startCygwinPromptDialerMode
+cls&goto startCygwinPromptDialerMode
 :menuCygwinPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Steve Chamberlain/Cygnus Solutions, Red Hat, and Cygwin project volunteers
@@ -4350,8 +4155,7 @@ call :menuCygwinRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCygwinPrompt
-cls
-goto startCygwinRunAdminPrompt
+cls&goto startCygwinRunAdminPrompt
 :startCygwinRunAdminPrompt2
 call :banner
 call :menuCygwinRunAdminPrompt
@@ -4359,8 +4163,7 @@ call :menuCygwinRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCygwinPromptDialerMode
-cls
-goto startCygwinRunAdminPrompt2
+cls&goto startCygwinRunAdminPrompt2
 :startCygwinRunAdminPromptSubDialerMode
 call :banner
 call :menuCygwinRunAdminPrompt
@@ -4368,8 +4171,7 @@ call :menuCygwinRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startCygwinRunAdminPromptSubDialerMode
+cls&goto startCygwinRunAdminPromptSubDialerMode
 :startCygwinRunAdminPromptDialerMode
 call :banner
 call :menuCygwinRunAdminPrompt
@@ -4377,8 +4179,7 @@ call :menuCygwinRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCygwinRunAdminPromptDialerMode
+cls&goto startCygwinRunAdminPromptDialerMode
 :menuCygwinRunAdminPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4397,8 +4198,7 @@ call :menuCygwinRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCygwinPrompt
-cls
-goto startCygwinRunPrompt
+cls&goto startCygwinRunPrompt
 :startCygwinRunPrompt2
 call :banner
 call :menuCygwinRunPrompt
@@ -4406,8 +4206,7 @@ call :menuCygwinRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCygwinPromptDialerMode
-cls
-goto startCygwinRunPrompt2
+cls&goto startCygwinRunPrompt2
 :startCygwinRunPromptSubDialerMode
 call :banner
 call :menuCygwinRunPrompt
@@ -4415,8 +4214,7 @@ call :menuCygwinRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startCygwinRunPromptSubDialerMode
+cls&goto startCygwinRunPromptSubDialerMode
 :startCygwinRunPromptDialerMode
 call :banner
 call :menuCygwinRunPrompt
@@ -4424,8 +4222,7 @@ call :menuCygwinRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCygwinRunPromptDialerMode
+cls&goto startCygwinRunPromptDialerMode
 :menuCygwinRunPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4446,8 +4243,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU A cls&goto startPythonRunAdminPrompt1
 if /I %input% EQU R cls&goto startPythonRunPrompt1
-cls
-goto startPythonPrompt
+cls&goto startPythonPrompt
 :startPythonPromptDialerMode
 call :banner
 call :menuPythonPrompt
@@ -4457,8 +4253,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU A cls&goto startPythonRunAdminPrompt2
 if /I %input% EQU R cls&goto startPythonRunPrompt2
-cls
-goto startPythonPromptDialerMode
+cls&goto startPythonPromptDialerMode
 :menuPythonPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Guido van Rossum/Python Software Foundation
@@ -4497,8 +4292,7 @@ call :menuPythonRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPythonPrompt
-cls
-goto startPythonRunAdminPrompt1
+cls&goto startPythonRunAdminPrompt1
 :startPythonRunAdminPrompt2
 call :banner
 call :menuPythonRunAdminPrompt
@@ -4506,8 +4300,7 @@ call :menuPythonRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPythonPromptDialerMode
-cls
-goto startPythonRunAdminPrompt2
+cls&goto startPythonRunAdminPrompt2
 :startPythonRunAdminPromptSubDialerMode
 call :banner
 call :menuPythonRunAdminPrompt
@@ -4515,8 +4308,7 @@ call :menuPythonRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startPythonRunAdminPromptSubDialerMode
+cls&goto startPythonRunAdminPromptSubDialerMode
 :startPythonRunAdminPromptDialerMode
 call :banner
 call :menuPythonRunAdminPrompt
@@ -4524,8 +4316,7 @@ call :menuPythonRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPythonRunAdminPromptDialerMode
+cls&goto startPythonRunAdminPromptDialerMode
 :menuPythonRunAdminPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4544,8 +4335,7 @@ call :menuPythonRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPythonPrompt
-cls
-goto startPythonRunPrompt1
+cls&goto startPythonRunPrompt1
 :startPythonRunPrompt2
 call :banner
 call :menuPythonRunPrompt
@@ -4553,8 +4343,7 @@ call :menuPythonRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPythonPromptDialerMode
-cls
-goto startPythonRunPrompt2
+cls&goto startPythonRunPrompt2
 :startPythonRunPromptSubDialerMode
 call :banner
 call :menuPythonRunPrompt
@@ -4562,8 +4351,7 @@ call :menuPythonRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startPythonRunPromptSubDialerMode
+cls&goto startPythonRunPromptSubDialerMode
 :startPythonRunPromptDialerMode
 call :banner
 call :menuPythonRunPrompt
@@ -4571,8 +4359,7 @@ call :menuPythonRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPythonRunPromptDialerMode
+cls&goto startPythonRunPromptDialerMode
 :menuPythonRunPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4593,8 +4380,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU A cls&goto startPowerShellRunAdminPrompt1
 if /I %input% EQU R cls&goto startPowerShellRunPrompt1
-cls
-goto startPowerShellPrompt
+cls&goto startPowerShellPrompt
 :startPowerShellPromptDialerMode
 call :banner
 call :menuPowerShellPrompt
@@ -4604,8 +4390,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU A cls&goto startPowerShellRunAdminPrompt2
 if /I %input% EQU R cls&goto startPowerShellRunPrompt2
-cls
-goto startPowerShellPromptDialerMode
+cls&goto startPowerShellPromptDialerMode
 :menuPowerShellPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Jeffrey Snover, Bruce Payette, James Truher (et al.)/Microsoft Corporation
@@ -4644,8 +4429,7 @@ call :menuPowerShellRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPowerShellPrompt
-cls
-goto startPowerShellRunAdminPrompt1
+cls&goto startPowerShellRunAdminPrompt1
 :startPowerShellRunAdminPrompt2
 call :banner
 call :menuPowerShellRunAdminPrompt
@@ -4653,8 +4437,7 @@ call :menuPowerShellRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPowerShellPromptDialerMode
-cls
-goto startPowerShellRunAdminPrompt2
+cls&goto startPowerShellRunAdminPrompt2
 :startPowerShellRunAdminPromptSubDialerMode
 call :banner
 call :menuPowerShellRunAdminPrompt
@@ -4662,8 +4445,7 @@ call :menuPowerShellRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startPowerShellRunAdminPromptSubDialerMode
+cls&goto startPowerShellRunAdminPromptSubDialerMode
 :startPowerShellRunAdminPromptDialerMode
 call :banner
 call :menuPowerShellRunAdminPrompt
@@ -4671,8 +4453,7 @@ call :menuPowerShellRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPowerShellRunAdminPromptDialerMode
+cls&goto startPowerShellRunAdminPromptDialerMode
 :menuPowerShellRunAdminPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4691,8 +4472,7 @@ call :menuPowerShellRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPowerShellPrompt
-cls
-goto startPowerShellRunPrompt1
+cls&goto startPowerShellRunPrompt1
 :startPowerShellRunPrompt2
 call :banner
 call :menuPowerShellRunPrompt
@@ -4700,8 +4480,7 @@ call :menuPowerShellRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPowerShellPromptDialerMode
-cls
-goto startPowerShellRunPrompt2
+cls&goto startPowerShellRunPrompt2
 :startPowerShellRunPromptSubDialerMode
 call :banner
 call :menuPowerShellRunPrompt
@@ -4709,8 +4488,7 @@ call :menuPowerShellRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startPowerShellRunPromptSubDialerMode
+cls&goto startPowerShellRunPromptSubDialerMode
 :startPowerShellRunPromptDialerMode
 call :banner
 call :menuPowerShellRunPrompt
@@ -4718,8 +4496,7 @@ call :menuPowerShellRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPowerShellRunPromptDialerMode
+cls&goto startPowerShellRunPromptDialerMode
 :menuPowerShellRunPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4740,8 +4517,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU A cls&goto startCommandRunAdminPrompt1
 if /I %input% EQU R cls&goto startCommandRunPrompt1
-cls
-goto startCommandPrompt
+cls&goto startCommandPrompt
 :startCommandPromptDialerMode
 call :banner
 call :menuCommandPrompt
@@ -4751,8 +4527,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU A cls&goto startCommandRunAdminPrompt2
 if /I %input% EQU R cls&goto startCommandRunPrompt2
-cls
-goto startCommandPromptDialerMode
+cls&goto startCommandPromptDialerMode
 :menuCommandPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation, IBM, ReactOS contributors
@@ -4789,8 +4564,7 @@ call :menuCommandRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCommandPrompt
-cls
-goto startCommandRunAdminPrompt1
+cls&goto startCommandRunAdminPrompt1
 :startCommandRunAdminPrompt2
 call :banner
 call :menuCommandRunAdminPrompt
@@ -4798,8 +4572,7 @@ call :menuCommandRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCommandPromptDialerMode
-cls
-goto startCommandRunAdminPrompt2
+cls&goto startCommandRunAdminPrompt2
 :startCommandRunAdminPromptSubDialerMode
 call :banner
 call :menuCommandRunAdminPrompt
@@ -4807,8 +4580,7 @@ call :menuCommandRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startCommandRunAdminPromptSubDialerMode
+cls&goto startCommandRunAdminPromptSubDialerMode
 :startCommandRunAdminPromptDialerMode
 call :banner
 call :menuCommandRunAdminPrompt
@@ -4816,8 +4588,7 @@ call :menuCommandRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCommandRunAdminPromptDialerMode
+cls&goto startCommandRunAdminPromptDialerMode
 :menuCommandRunAdminPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4836,8 +4607,7 @@ call :menuCommandRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCommandPrompt
-cls
-goto startCommandRunPrompt1
+cls&goto startCommandRunPrompt1
 :startCommandRunPrompt2
 call :banner
 call :menuCommandRunPrompt
@@ -4845,8 +4615,7 @@ call :menuCommandRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCommandPromptDialerMode
-cls
-goto startCommandRunPrompt2
+cls&goto startCommandRunPrompt2
 :startCommandRunPromptSubDialerMode
 call :banner
 call :menuCommandRunPrompt
@@ -4854,8 +4623,7 @@ call :menuCommandRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startCommandRunPromptSubDialerMode
+cls&goto startCommandRunPromptSubDialerMode
 :startCommandRunPromptDialerMode
 call :banner
 call :menuCommandRunPrompt
@@ -4863,8 +4631,7 @@ call :menuCommandRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCommandRunPromptDialerMode
+cls&goto startCommandRunPromptDialerMode
 :menuCommandRunPrompt
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -4876,6 +4643,7 @@ if /I %input% EQU 1 start CLI_Directory.txt&set input=38R1&&goto startPreExitPro
 if /I %input% EQU Y start Command_Prompt_R.lnk&set input=38RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start Command_Prompt_R.lnk&set input=38RN&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 3AltA
 :start3AltA
 call :banner
 call :menu3AltAScreen
@@ -4883,8 +4651,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu3AltA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start3AltA
+cls&goto start3AltA
 :menu3AltAScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -5047,8 +4814,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
 if /I %input% EQU I cls&goto startRiderInstallerPrompt1
-cls
-goto startRiderPrompt
+cls&goto startRiderPrompt
 :startRiderPromptSubDialerMode2
 call :banner
 call :menuRiderPrompt
@@ -5057,8 +4823,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
 if /I %input% EQU I cls&goto startRiderInstallerPrompt2
-cls
-goto startRiderPromptSubDialerMode2
+cls&goto startRiderPromptSubDialerMode2
 :startRiderPromptSubDialerMode3
 call :banner
 call :menuRiderPrompt
@@ -5067,8 +4832,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
 if /I %input% EQU I cls&goto startRiderInstallerPrompt3
-cls
-goto startRiderPromptSubDialerMode3
+cls&goto startRiderPromptSubDialerMode3
 :startRiderPromptDeepSubDialerMode
 call :banner
 call :menuRiderPrompt
@@ -5077,8 +4841,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU I cls&goto startRiderInstallerPrompt4
-cls
-goto startRiderPromptDeepSubDialerMode
+cls&goto startRiderPromptDeepSubDialerMode
 :startRiderPromptDialerMode
 call :banner
 call :menuRiderPrompt
@@ -5087,8 +4850,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startRiderInstallerPrompt5
-cls
-goto startRiderPromptDialerMode
+cls&goto startRiderPromptDialerMode
 :menuRiderPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -5124,8 +4886,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startRiderPrompt
-cls
-goto startRiderInstallerPrompt1
+cls&goto startRiderInstallerPrompt1
 :startRiderInstallerPrompt2
 call :banner
 call :menuRiderInstallerPrompt
@@ -5133,8 +4894,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startRiderPromptSubDialerMode2
-cls
-goto startRiderInstallerPrompt2
+cls&goto startRiderInstallerPrompt2
 :startRiderInstallerPrompt3
 call :banner
 call :menuRiderInstallerPrompt
@@ -5142,8 +4902,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startRiderPromptSubDialerMode3
-cls
-goto startRiderInstallerPrompt3
+cls&goto startRiderInstallerPrompt3
 :startRiderInstallerPrompt4
 call :banner
 call :menuRiderInstallerPrompt
@@ -5151,8 +4910,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startRiderPromptDeepSubDialerMode
-cls
-goto startRiderInstallerPrompt4
+cls&goto startRiderInstallerPrompt4
 :startRiderInstallerPrompt5
 call :banner
 call :menuRiderInstallerPrompt
@@ -5160,8 +4918,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startRiderPromptDialerMode
-cls
-goto startRiderInstallerPrompt5
+cls&goto startRiderInstallerPrompt5
 :startRiderInstallerPromptSubDialerMode1
 call :banner
 call :menuRiderInstallerPrompt
@@ -5169,8 +4926,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startRiderInstallerPromptSubDialerMode1
+cls&goto startRiderInstallerPromptSubDialerMode1
 :startRiderInstallerPromptSubDialerMode2
 call :banner
 call :menuRiderInstallerPrompt
@@ -5178,8 +4934,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startRiderInstallerPromptSubDialerMode2
+cls&goto startRiderInstallerPromptSubDialerMode2
 :startRiderInstallerPromptSubDialerMode3
 call :banner
 call :menuRiderInstallerPrompt
@@ -5187,8 +4942,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startRiderInstallerPromptSubDialerMode3
+cls&goto startRiderInstallerPromptSubDialerMode3
 :startRiderInstallerPromptDeepSubDialerMode
 call :banner
 call :menuRiderInstallerPrompt
@@ -5196,8 +4950,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startRiderInstallerPromptDeepSubDialerMode
+cls&goto startRiderInstallerPromptDeepSubDialerMode
 :startRiderInstallerPromptDialerMode
 call :banner
 call :menuRiderInstallerPrompt
@@ -5205,8 +4958,7 @@ call :menuRiderInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startRiderInstallerPromptDialerMode
+cls&goto startRiderInstallerPromptDialerMode
 :menuRiderInstallerPrompt
 echo.
 echo Please input the letter to install Rider or the entire dotUltimate bundle ("A/B"). Input zero ("0") to cancel.
@@ -5224,8 +4976,7 @@ call :menuRustRover
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startRustRoverPrompt
+cls&goto startRustRoverPrompt
 :startRustRoverPromptSubDialerMode2
 call :banner
 call :menuRustRoverPrompt
@@ -5233,8 +4984,7 @@ call :menuRustRover
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startRustRoverPromptSubDialerMode2
+cls&goto startRustRoverPromptSubDialerMode2
 :startRustRoverPromptSubDialerMode3
 call :banner
 call :menuRustRoverPrompt
@@ -5242,8 +4992,7 @@ call :menuRustRover
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startRustRoverPromptSubDialerMode3
+cls&goto startRustRoverPromptSubDialerMode3
 :startRustRoverPromptDeepSubDialerMode
 call :banner
 call :menuRustRoverPrompt
@@ -5251,8 +5000,7 @@ call :menuRustRover
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startRustRoverPromptDeepSubDialerMode
+cls&goto startRustRoverPromptDeepSubDialerMode
 :startRustRoverPromptDialerMode
 call :banner
 call :menuRustRoverPrompt
@@ -5260,8 +5008,7 @@ call :menuRustRover
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startRustRoverPromptDialerMode
+cls&goto startRustRoverPromptDialerMode
 :menuRustRoverPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -5296,8 +5043,7 @@ call :menuWebStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startWebStormPrompt
+cls&goto startWebStormPrompt
 :startWebStormPromptSubDialerMode2
 call :banner
 call :menuWebStormPrompt
@@ -5305,8 +5051,7 @@ call :menuWebStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startWebStormPromptSubDialerMode2
+cls&goto startWebStormPromptSubDialerMode2
 :startWebStormPromptSubDialerMode3
 call :banner
 call :menuWebStormPrompt
@@ -5314,8 +5059,7 @@ call :menuWebStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startWebStormPromptSubDialerMode3
+cls&goto startWebStormPromptSubDialerMode3
 :startWebStormPromptDeepSubDialerMode
 call :banner
 call :menuWebStormPrompt
@@ -5323,8 +5067,7 @@ call :menuWebStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startWebStormPromptDeepSubDialerMode
+cls&goto startWebStormPromptDeepSubDialerMode
 :startWebStormPromptDialerMode
 call :banner
 call :menuWebStormPrompt
@@ -5332,8 +5075,7 @@ call :menuWebStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWebStormPromptDialerMode
+cls&goto startWebStormPromptDialerMode
 :menuWebStormPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -5369,8 +5111,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
 if /I %input% EQU I cls&goto startdotPeekInstallerPrompt1
-cls
-goto startdotPeekPrompt
+cls&goto startdotPeekPrompt
 :startdotPeekPromptSubDialerMode2
 call :banner
 call :menudotPeekPrompt
@@ -5379,8 +5120,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
 if /I %input% EQU I cls&goto startdotPeekInstallerPrompt2
-cls
-goto startdotPeekPromptSubDialerMode2
+cls&goto startdotPeekPromptSubDialerMode2
 :startdotPeekPromptSubDialerMode3
 call :banner
 call :menudotPeekPrompt
@@ -5389,8 +5129,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
 if /I %input% EQU I cls&goto startdotPeekInstallerPrompt3
-cls
-goto startdotPeekPromptSubDialerMode3
+cls&goto startdotPeekPromptSubDialerMode3
 :startdotPeekPromptDeepSubDialerMode
 call :banner
 call :menudotPeekPrompt
@@ -5399,8 +5138,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU I cls&goto startdotPeekInstallerPrompt4
-cls
-goto startdotPeekPromptDeepSubDialerMode
+cls&goto startdotPeekPromptDeepSubDialerMode
 :startdotPeekPromptDialerMode
 call :banner
 call :menudotPeekPrompt
@@ -5409,8 +5147,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startdotPeekInstallerPrompt5
-cls
-goto startdotPeekPromptDialerMode
+cls&goto startdotPeekPromptDialerMode
 :menudotPeekPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -5446,8 +5183,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotPeekPrompt
-cls
-goto startdotPeekInstallerPrompt1
+cls&goto startdotPeekInstallerPrompt1
 :startdotPeekInstallerPrompt2
 call :banner
 call :menudotPeekInstallerPrompt
@@ -5455,8 +5191,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotPeekPromptSubDialerMode2
-cls
-goto startdotPeekInstallerPrompt2
+cls&goto startdotPeekInstallerPrompt2
 :startdotPeekInstallerPrompt3
 call :banner
 call :menudotPeekInstallerPrompt
@@ -5464,8 +5199,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotPeekPromptSubDialerMode3
-cls
-goto startdotPeekInstallerPrompt3
+cls&goto startdotPeekInstallerPrompt3
 :startdotPeekInstallerPrompt4
 call :banner
 call :menudotPeekInstallerPrompt
@@ -5473,8 +5207,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotPeekPromptDeepSubDialerMode
-cls
-goto startdotPeekInstallerPrompt4
+cls&goto startdotPeekInstallerPrompt4
 :startdotPeekInstallerPrompt5
 call :banner
 call :menudotPeekInstallerPrompt
@@ -5482,8 +5215,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotPeekPromptDialerMode
-cls
-goto startdotPeekInstallerPrompt5
+cls&goto startdotPeekInstallerPrompt5
 :startdotPeekInstallerPromptSubDialerMode1
 call :banner
 call :menudotPeekInstallerPrompt
@@ -5491,8 +5223,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startdotPeekInstallerPromptSubDialerMode1
+cls&goto startdotPeekInstallerPromptSubDialerMode1
 :startdotPeekInstallerPromptSubDialerMode2
 call :banner
 call :menudotPeekInstallerPrompt
@@ -5500,8 +5231,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startdotPeekInstallerPromptSubDialerMode2
+cls&goto startdotPeekInstallerPromptSubDialerMode2
 :startdotPeekInstallerPromptSubDialerMode3
 call :banner
 call :menudotPeekInstallerPrompt
@@ -5509,8 +5239,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startdotPeekInstallerPromptSubDialerMode3
+cls&goto startdotPeekInstallerPromptSubDialerMode3
 :startdotPeekInstallerPromptDeepSubDialerMode
 call :banner
 call :menudotPeekInstallerPrompt
@@ -5518,8 +5247,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startdotPeekInstallerPromptDeepSubDialerMode
+cls&goto startdotPeekInstallerPromptDeepSubDialerMode
 :startdotPeekInstallerPromptDialerMode
 call :banner
 call :menudotPeekInstallerPrompt
@@ -5527,8 +5255,7 @@ call :menudotPeekInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdotPeekInstallerPromptDialerMode
+cls&goto startdotPeekInstallerPromptDialerMode
 :menudotPeekInstallerPrompt
 echo.
 echo Please input the letter to install dotPeek or the entire dotUltimate bundle ("A/B"). Input zero ("0") to cancel.
@@ -5547,8 +5274,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
 if /I %input% EQU I cls&goto startdotCoverInstallerPrompt1
-cls
-goto startdotCoverPrompt
+cls&goto startdotCoverPrompt
 :startdotCoverPromptSubDialerMode2
 call :banner
 call :menudotCoverPrompt
@@ -5557,8 +5283,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
 if /I %input% EQU I cls&goto startdotCoverInstallerPrompt2
-cls
-goto startdotCoverPromptSubDialerMode2
+cls&goto startdotCoverPromptSubDialerMode2
 :startdotCoverPromptSubDialerMode3
 call :banner
 call :menudotCoverPrompt
@@ -5567,8 +5292,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
 if /I %input% EQU I cls&goto startdotCoverInstallerPrompt3
-cls
-goto startdotCoverPromptSubDialerMode3
+cls&goto startdotCoverPromptSubDialerMode3
 :startdotCoverPromptDeepSubDialerMode
 call :banner
 call :menudotCoverPrompt
@@ -5577,8 +5301,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU I cls&goto startdotCoverInstallerPrompt4
-cls
-goto startdotCoverPromptDeepSubDialerMode
+cls&goto startdotCoverPromptDeepSubDialerMode
 :startdotCoverPromptDialerMode
 call :banner
 call :menudotCoverPrompt
@@ -5587,8 +5310,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startdotCoverInstallerPrompt5
-cls
-goto startdotCoverPromptDialerMode
+cls&goto startdotCoverPromptDialerMode
 :menudotCoverPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -5624,8 +5346,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotCoverPrompt
-cls
-goto startdotCoverInstallerPrompt1
+cls&goto startdotCoverInstallerPrompt1
 :startdotCoverInstallerPrompt2
 call :banner
 call :menudotCoverInstallerPrompt
@@ -5633,8 +5354,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotCoverPromptSubDialerMode2
-cls
-goto startdotCoverInstallerPrompt2
+cls&goto startdotCoverInstallerPrompt2
 :startdotCoverInstallerPrompt3
 call :banner
 call :menudotCoverInstallerPrompt
@@ -5642,8 +5362,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotCoverPromptSubDialerMode3
-cls
-goto startdotCoverInstallerPrompt3
+cls&goto startdotCoverInstallerPrompt3
 :startdotCoverInstallerPrompt4
 call :banner
 call :menudotCoverInstallerPrompt
@@ -5651,8 +5370,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotCoverPromptDeepSubDialerMode
-cls
-goto startdotCoverInstallerPrompt4
+cls&goto startdotCoverInstallerPrompt4
 :startdotCoverInstallerPrompt5
 call :banner
 call :menudotCoverInstallerPrompt
@@ -5660,8 +5378,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotCoverPromptDialerMode
-cls
-goto startdotCoverInstallerPrompt5
+cls&goto startdotCoverInstallerPrompt5
 :startdotCoverInstallerPromptSubDialerMode1
 call :banner
 call :menudotCoverInstallerPrompt
@@ -5669,8 +5386,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startdotCoverInstallerPromptSubDialerMode1
+cls&goto startdotCoverInstallerPromptSubDialerMode1
 :startdotCoverInstallerPromptSubDialerMode2
 call :banner
 call :menudotCoverInstallerPrompt
@@ -5678,8 +5394,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startdotCoverInstallerPromptSubDialerMode2
+cls&goto startdotCoverInstallerPromptSubDialerMode2
 :startdotCoverInstallerPromptSubDialerMode3
 call :banner
 call :menudotCoverInstallerPrompt
@@ -5687,8 +5402,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startdotCoverInstallerPromptSubDialerMode3
+cls&goto startdotCoverInstallerPromptSubDialerMode3
 :startdotCoverInstallerPromptDeepSubDialerMode
 call :banner
 call :menudotCoverInstallerPrompt
@@ -5696,8 +5410,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startdotCoverInstallerPromptDeepSubDialerMode
+cls&goto startdotCoverInstallerPromptDeepSubDialerMode
 :startdotCoverInstallerPromptDialerMode
 call :banner
 call :menudotCoverInstallerPrompt
@@ -5705,8 +5418,7 @@ call :menudotCoverInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdotCoverInstallerPromptDialerMode
+cls&goto startdotCoverInstallerPromptDialerMode
 :menudotCoverInstallerPrompt
 echo.
 echo Please input the letter to install dotCover or the entire dotUltimate bundle ("A/B"). Input zero ("0") to cancel.
@@ -5725,8 +5437,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
 if /I %input% EQU I cls&goto startdotMemoryInstallerPrompt1
-cls
-goto startdotMemoryPrompt
+cls&goto startdotMemoryPrompt
 :startdotMemoryPromptSubDialerMode2
 call :banner
 call :menudotMemoryPrompt
@@ -5734,8 +5445,7 @@ call :menudotMemory
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startdotMemoryPromptSubDialerMode2
+cls&goto startdotMemoryPromptSubDialerMode2
 :startdotMemoryPromptSubDialerMode3
 call :banner
 call :menudotMemoryPrompt
@@ -5743,8 +5453,7 @@ call :menudotMemory
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startdotMemoryPromptSubDialerMode3
+cls&goto startdotMemoryPromptSubDialerMode3
 :startdotMemoryPromptDeepSubDialerMode
 call :banner
 call :menudotMemoryPrompt
@@ -5752,8 +5461,7 @@ call :menudotMemory
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startdotMemoryPromptDeepSubDialerMode
+cls&goto startdotMemoryPromptDeepSubDialerMode
 :startdotMemoryPromptDialerMode
 call :banner
 call :menudotMemoryPrompt
@@ -5761,8 +5469,7 @@ call :menudotMemory
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdotMemoryPromptDialerMode
+cls&goto startdotMemoryPromptDialerMode
 :menudotMemoryPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -5798,8 +5505,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotMemoryPrompt
-cls
-goto startdotMemoryInstallerPrompt1
+cls&goto startdotMemoryInstallerPrompt1
 :startdotMemoryInstallerPrompt2
 call :banner
 call :menudotMemoryInstallerPrompt
@@ -5807,8 +5513,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotMemoryPromptSubDialerMode2
-cls
-goto startdotMemoryInstallerPrompt2
+cls&goto startdotMemoryInstallerPrompt2
 :startdotMemoryInstallerPrompt3
 call :banner
 call :menudotMemoryInstallerPrompt
@@ -5816,8 +5521,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotMemoryPromptSubDialerMode3
-cls
-goto startdotMemoryInstallerPrompt3
+cls&goto startdotMemoryInstallerPrompt3
 :startdotMemoryInstallerPrompt4
 call :banner
 call :menudotMemoryInstallerPrompt
@@ -5825,8 +5529,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotMemoryPromptDeepSubDialerMode
-cls
-goto startdotMemoryInstallerPrompt4
+cls&goto startdotMemoryInstallerPrompt4
 :startdotMemoryInstallerPrompt5
 call :banner
 call :menudotMemoryInstallerPrompt
@@ -5834,8 +5537,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotMemoryPromptDialerMode
-cls
-goto startdotMemoryInstallerPrompt5
+cls&goto startdotMemoryInstallerPrompt5
 :startdotMemoryInstallerPromptSubDialerMode1
 call :banner
 call :menudotMemoryInstallerPrompt
@@ -5843,8 +5545,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startdotMemoryInstallerPromptSubDialerMode1
+cls&goto startdotMemoryInstallerPromptSubDialerMode1
 :startdotMemoryInstallerPromptSubDialerMode2
 call :banner
 call :menudotMemoryInstallerPrompt
@@ -5852,8 +5553,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startdotMemoryInstallerPromptSubDialerMode2
+cls&goto startdotMemoryInstallerPromptSubDialerMode2
 :startdotMemoryInstallerPromptSubDialerMode3
 call :banner
 call :menudotMemoryInstallerPrompt
@@ -5861,8 +5561,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startdotMemoryInstallerPromptSubDialerMode3
+cls&goto startdotMemoryInstallerPromptSubDialerMode3
 :startdotMemoryInstallerPromptDeepSubDialerMode
 call :banner
 call :menudotMemoryInstallerPrompt
@@ -5870,8 +5569,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startdotMemoryInstallerPromptDeepSubDialerMode
+cls&goto startdotMemoryInstallerPromptDeepSubDialerMode
 :startdotMemoryInstallerPromptDialerMode
 call :banner
 call :menudotMemoryInstallerPrompt
@@ -5879,8 +5577,7 @@ call :menudotMemoryInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdotMemoryInstallerPromptDialerMode
+cls&goto startdotMemoryInstallerPromptDialerMode
 :menudotMemoryInstallerPrompt
 echo.
 echo Please input the letter to install dotMemory or the entire dotUltimate bundle ("A/B"). Input zero ("0") to cancel.
@@ -5899,8 +5596,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
 if /I %input% EQU I cls&goto startdotTraceInstallerPrompt1
-cls
-goto startdotTracePrompt
+cls&goto startdotTracePrompt
 :startdotTracePromptSubDialerMode2
 call :banner
 call :menudotTracePrompt
@@ -5909,8 +5605,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
 if /I %input% EQU I cls&goto startdotTraceInstallerPrompt2
-cls
-goto startdotTracePromptSubDialerMode2
+cls&goto startdotTracePromptSubDialerMode2
 :startdotTracePromptSubDialerMode3
 call :banner
 call :menudotTracePrompt
@@ -5919,8 +5614,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
 if /I %input% EQU I cls&goto startdotTraceInstallerPrompt3
-cls
-goto startdotTracePromptSubDialerMode3
+cls&goto startdotTracePromptSubDialerMode3
 :startdotTracePromptDeepSubDialerMode
 call :banner
 call :menudotTracePrompt
@@ -5929,8 +5623,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU I cls&goto startdotTraceInstallerPrompt4
-cls
-goto startdotTracePromptDeepSubDialerMode
+cls&goto startdotTracePromptDeepSubDialerMode
 :startdotTracePromptDialerMode
 call :banner
 call :menudotTracePrompt
@@ -5939,8 +5632,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startdotTraceInstallerPrompt5
-cls
-goto startdotTracePromptDialerMode
+cls&goto startdotTracePromptDialerMode
 :menudotTracePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -5976,8 +5668,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotTracePrompt
-cls
-goto startdotTraceInstallerPrompt1
+cls&goto startdotTraceInstallerPrompt1
 :startdotTraceInstallerPrompt2
 call :banner
 call :menudotTraceInstallerPrompt
@@ -5985,8 +5676,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotTracePromptSubDialerMode2
-cls
-goto startdotTraceInstallerPrompt2
+cls&goto startdotTraceInstallerPrompt2
 :startdotTraceInstallerPrompt3
 call :banner
 call :menudotTraceInstallerPrompt
@@ -5994,8 +5684,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotTracePromptSubDialerMode3
-cls
-goto startdotTraceInstallerPrompt3
+cls&goto startdotTraceInstallerPrompt3
 :startdotTraceInstallerPrompt4
 call :banner
 call :menudotTraceInstallerPrompt
@@ -6003,8 +5692,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotTracePromptDeepSubDialerMode
-cls
-goto startdotTraceInstallerPrompt4
+cls&goto startdotTraceInstallerPrompt4
 :startdotTraceInstallerPrompt5
 call :banner
 call :menudotTraceInstallerPrompt
@@ -6012,8 +5700,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdotTracePromptDialerMode
-cls
-goto startdotTraceInstallerPrompt5
+cls&goto startdotTraceInstallerPrompt5
 :startdotTraceInstallerPromptSubDialerMode1
 call :banner
 call :menudotTraceInstallerPrompt
@@ -6021,8 +5708,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startdotTraceInstallerPromptSubDialerMode1
+cls&goto startdotTraceInstallerPromptSubDialerMode1
 :startdotTraceInstallerPromptSubDialerMode2
 call :banner
 call :menudotTraceInstallerPrompt
@@ -6030,8 +5716,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startdotTraceInstallerPromptSubDialerMode2
+cls&goto startdotTraceInstallerPromptSubDialerMode2
 :startdotTraceInstallerPromptSubDialerMode3
 call :banner
 call :menudotTraceInstallerPrompt
@@ -6039,8 +5724,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startdotTraceInstallerPromptSubDialerMode3
+cls&goto startdotTraceInstallerPromptSubDialerMode3
 :startdotTraceInstallerPromptDeepSubDialerMode
 call :banner
 call :menudotTraceInstallerPrompt
@@ -6048,8 +5732,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startdotTraceInstallerPromptDeepSubDialerMode
+cls&goto startdotTraceInstallerPromptDeepSubDialerMode
 :startdotTraceInstallerPromptDialerMode
 call :banner
 call :menudotTraceInstallerPrompt
@@ -6057,8 +5740,7 @@ call :menudotTraceInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdotTraceInstallerPromptDialerMode
+cls&goto startdotTraceInstallerPromptDialerMode
 :menudotTraceInstallerPrompt
 echo.
 echo Please input the letter to install dotTrace or the entire dotUltimate bundle ("A/B"). Input zero ("0") to cancel.
@@ -6069,6 +5751,7 @@ set /p input=%BS%
 if /I %input% EQU A start dotTrace_I.exe&set input=397IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start dotUltimate_I.exe&set input=397IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 3AltB
 :start3AltB
 call :banner
 call :menu3AltBScreen
@@ -6076,8 +5759,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu3AltB
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start3AltB
+cls&goto start3AltB
 :menu3AltBScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -6239,8 +5921,7 @@ call :menuAqua
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startAquaPromptSubDialerMode1
+cls&goto startAquaPromptSubDialerMode1
 :startAquaPrompt
 call :banner
 call :menuAquaPrompt
@@ -6248,8 +5929,7 @@ call :menuAqua
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startAquaPrompt
+cls&goto startAquaPrompt
 :startAquaPromptSubDialerMode3
 call :banner
 call :menuAquaPrompt
@@ -6257,8 +5937,7 @@ call :menuAqua
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startAquaPromptSubDialerMode3
+cls&goto startAquaPromptSubDialerMode3
 :startAquaPromptDeepSubDialerMode
 call :banner
 call :menuAquaPrompt
@@ -6266,8 +5945,7 @@ call :menuAqua
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startAquaPromptDeepSubDialerMode
+cls&goto startAquaPromptDeepSubDialerMode
 :startAquaPromptDialerMode
 call :banner
 call :menuAquaPrompt
@@ -6275,8 +5953,7 @@ call :menuAqua
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAquaPromptDialerMode
+cls&goto startAquaPromptDialerMode
 :menuAquaPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -6315,8 +5992,7 @@ if /I %input% EQU T cls&goto startResharperTraditionalPrompt1
 if /I %input% EQU TI cls&goto startReSharperTraditionalInstallerPrompt1
 if /I %input% EQU C cls&goto startResharperCppPrompt1
 if /I %input% EQU CI cls&goto startReSharperCppInstallerPrompt1
-cls
-goto startReSharperPromptSubDialerMode1
+cls&goto startReSharperPromptSubDialerMode1
 :startReSharperPrompt
 call :banner
 call :menuReSharperPrompt
@@ -6328,8 +6004,7 @@ if /I %input% EQU T cls&goto startResharperTraditionalPrompt2
 if /I %input% EQU TI cls&goto startReSharperTraditionalInstallerPrompt2
 if /I %input% EQU C cls&goto startResharperCppPrompt2
 if /I %input% EQU CI cls&goto startReSharperCppInstallerPrompt2
-cls
-goto startReSharperPrompt
+cls&goto startReSharperPrompt
 :startReSharperPromptSubDialerMode3
 call :banner
 call :menuReSharperPrompt
@@ -6341,8 +6016,7 @@ if /I %input% EQU T cls&goto startResharperTraditionalPrompt3
 if /I %input% EQU TI cls&goto startReSharperTraditionalInstallerPrompt3
 if /I %input% EQU C cls&goto startResharperCppPrompt3
 if /I %input% EQU CI cls&goto startReSharperCppInstallerPrompt3
-cls
-goto startReSharperPromptSubDialerMode3
+cls&goto startReSharperPromptSubDialerMode3
 :startReSharperPromptDeepSubDialerMode
 call :banner
 call :menuReSharperPrompt
@@ -6354,8 +6028,7 @@ if /I %input% EQU T cls&goto startResharperTraditionalPrompt4
 if /I %input% EQU TI cls&goto startReSharperTraditionalInstallerPrompt4
 if /I %input% EQU C cls&goto startResharperCppPrompt4
 if /I %input% EQU CI cls&goto startReSharperCppInstallerPrompt4
-cls
-goto startReSharperPromptDeepSubDialerMode
+cls&goto startReSharperPromptDeepSubDialerMode
 :startReSharperPromptDialerMode
 call :banner
 call :menuReSharperPrompt
@@ -6367,8 +6040,7 @@ if /I %input% EQU T cls&goto startResharperTraditionalPrompt5
 if /I %input% EQU TI cls&goto startReSharperTraditionalInstallerPrompt5
 if /I %input% EQU C cls&goto startResharperCppPrompt5
 if /I %input% EQU CI cls&goto startReSharperCppInstallerPrompt5
-cls
-goto startReSharperPromptDialerMode
+cls&goto startReSharperPromptDialerMode
 :menuReSharperPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -6410,8 +6082,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptSubDialerMode1
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptA
-cls
-goto startReSharperTraditionalPrompt1
+cls&goto startReSharperTraditionalPrompt1
 :startReSharperTraditionalPrompt2
 call :banner
 call :menuReSharperTraditionalPrompt
@@ -6420,8 +6091,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPrompt
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptB
-cls
-goto startReSharperTraditionalPrompt2
+cls&goto startReSharperTraditionalPrompt2
 :startReSharperTraditionalPrompt3
 call :banner
 call :menuReSharperTraditionalPrompt
@@ -6430,8 +6100,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptSubDialerMode3
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptC
-cls
-goto startReSharperTraditionalPrompt3
+cls&goto startReSharperTraditionalPrompt3
 :startReSharperTraditionalPrompt4
 call :banner
 call :menuReSharperTraditionalPrompt
@@ -6440,8 +6109,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptDeepSubDialerMode
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptD
-cls
-goto startReSharperTraditionalPrompt4
+cls&goto startReSharperTraditionalPrompt4
 :startReSharperTraditionalPrompt5
 call :banner
 call :menuReSharperTraditionalPrompt
@@ -6450,8 +6118,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptDialerMode
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptE
-cls
-goto startReSharperTraditionalPrompt5
+cls&goto startReSharperTraditionalPrompt5
 :startReSharperTraditionalPromptSubDialerMode1
 call :banner
 call :menuReSharperTraditionalPrompt
@@ -6460,8 +6127,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptF
-cls
-goto startReSharperTraditionalPromptSubDialerMode1
+cls&goto startReSharperTraditionalPromptSubDialerMode1
 :startReSharperTraditionalPromptSubDialerMode2
 call :banner
 call :menuReSharperTraditionalPrompt
@@ -6470,8 +6136,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptG
-cls
-goto startReSharperTraditionalPromptSubDialerMode2
+cls&goto startReSharperTraditionalPromptSubDialerMode2
 :startReSharperTraditionalPromptSubDialerMode3
 call :banner
 call :menuReSharperTraditionalPrompt
@@ -6480,8 +6145,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptH
-cls
-goto startReSharperTraditionalPromptSubDialerMode3
+cls&goto startReSharperTraditionalPromptSubDialerMode3
 :startReSharperTraditionalPromptDeepSubDialerMode
 call :banner
 call :menuReSharperTraditionalPrompt
@@ -6490,8 +6154,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptI
-cls
-goto startReSharperTraditionalPromptDeepSubDialerMode
+cls&goto startReSharperTraditionalPromptDeepSubDialerMode
 :startReSharperTraditionalPromptDialerMode
 call :banner
 call :menuReSharperTraditionalPrompt
@@ -6500,8 +6163,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startReSharperTraditionalInstallerPromptJ
-cls
-goto startReSharperTraditionalPromptDialerMode
+cls&goto startReSharperTraditionalPromptDialerMode
 :menuReSharperTraditionalPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -6537,8 +6199,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPrompt1
-cls
-goto startReSharperTraditionalInstallerPromptA
+cls&goto startReSharperTraditionalInstallerPromptA
 :startReSharperTraditionalInstallerPromptB
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6546,8 +6207,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPrompt2
-cls
-goto startReSharperTraditionalInstallerPromptB
+cls&goto startReSharperTraditionalInstallerPromptB
 :startReSharperTraditionalInstallerPromptC
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6555,8 +6215,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPrompt3
-cls
-goto startReSharperTraditionalInstallerPromptC
+cls&goto startReSharperTraditionalInstallerPromptC
 :startReSharperTraditionalInstallerPromptD
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6564,8 +6223,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPrompt4
-cls
-goto startReSharperTraditionalInstallerPromptD
+cls&goto startReSharperTraditionalInstallerPromptD
 :startReSharperTraditionalInstallerPromptE
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6573,8 +6231,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPrompt5
-cls
-goto startReSharperTraditionalInstallerPromptE
+cls&goto startReSharperTraditionalInstallerPromptE
 :startReSharperTraditionalInstallerPromptF
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6582,8 +6239,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPromptSubDialerMode1
-cls
-goto startReSharperTraditionalInstallerPromptF
+cls&goto startReSharperTraditionalInstallerPromptF
 :startReSharperTraditionalInstallerPromptG
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6591,8 +6247,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPromptSubDialerMode2
-cls
-goto startReSharperTraditionalInstallerPromptG
+cls&goto startReSharperTraditionalInstallerPromptG
 :startReSharperTraditionalInstallerPromptH
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6600,8 +6255,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPromptSubDialerMode3
-cls
-goto startReSharperTraditionalInstallerPromptH
+cls&goto startReSharperTraditionalInstallerPromptH
 :startReSharperTraditionalInstallerPromptI
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6609,8 +6263,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPromptDeepSubDialerMode
-cls
-goto startReSharperTraditionalInstallerPromptI
+cls&goto startReSharperTraditionalInstallerPromptI
 :startReSharperTraditionalInstallerPromptJ
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6618,8 +6271,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperTraditionalPromptDialerMode
-cls
-goto startReSharperTraditionalInstallerPromptJ
+cls&goto startReSharperTraditionalInstallerPromptJ
 :startReSharperTraditionalInstallerPrompt1
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6627,8 +6279,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptSubDialerMode1
-cls
-goto startReSharperTraditionalInstallerPrompt1
+cls&goto startReSharperTraditionalInstallerPrompt1
 :startReSharperTraditionalInstallerPrompt2
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6636,8 +6287,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPrompt
-cls
-goto startReSharperTraditionalInstallerPrompt2
+cls&goto startReSharperTraditionalInstallerPrompt2
 :startReSharperTraditionalInstallerPrompt3
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6645,8 +6295,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptSubDialerMode3
-cls
-goto startReSharperTraditionalInstallerPrompt3
+cls&goto startReSharperTraditionalInstallerPrompt3
 :startReSharperTraditionalInstallerPrompt4
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6654,8 +6303,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptDeepSubDialerMode
-cls
-goto startReSharperTraditionalInstallerPrompt4
+cls&goto startReSharperTraditionalInstallerPrompt4
 :startReSharperTraditionalInstallerPrompt5
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6663,8 +6311,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptDialerMode
-cls
-goto startReSharperTraditionalInstallerPrompt5
+cls&goto startReSharperTraditionalInstallerPrompt5
 :startReSharperTraditionalInstallerPromptSubDialerMode1
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6672,8 +6319,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startReSharperTraditionalInstallerPromptSubDialerMode1
+cls&goto startReSharperTraditionalInstallerPromptSubDialerMode1
 :startReSharperTraditionalInstallerPromptSubDialerMode2
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6681,8 +6327,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startReSharperTraditionalInstallerPromptSubDialerMode2
+cls&goto startReSharperTraditionalInstallerPromptSubDialerMode2
 :startReSharperTraditionalInstallerPromptSubDialerMode3
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6690,8 +6335,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startReSharperTraditionalInstallerPromptSubDialerMode3
+cls&goto startReSharperTraditionalInstallerPromptSubDialerMode3
 :startReSharperTraditionalInstallerPromptDeepSubDialerMode
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6699,8 +6343,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startReSharperTraditionalInstallerPromptDeepSubDialerMode
+cls&goto startReSharperTraditionalInstallerPromptDeepSubDialerMode
 :startReSharperTraditionalInstallerPromptDialerMode
 call :banner
 call :menuReSharperTraditionalInstallerPrompt
@@ -6708,8 +6351,7 @@ call :menuReSharperTraditionalInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startReSharperTraditionalInstallerPromptDialerMode
+cls&goto startReSharperTraditionalInstallerPromptDialerMode
 :menuReSharperTraditionalInstallerPrompt
 echo.
 echo Please input the letter to install ReSharper or the entire dotUltimate bundle ("A/B"). Input zero ("0") to cancel.
@@ -6728,8 +6370,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptSubDialerMode1
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptA
-cls
-goto startReSharperCppPrompt1
+cls&goto startReSharperCppPrompt1
 :startReSharperCppPrompt2
 call :banner
 call :menuReSharperCppPrompt
@@ -6738,8 +6379,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPrompt
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptB
-cls
-goto startReSharperCppPrompt2
+cls&goto startReSharperCppPrompt2
 :startReSharperCppPrompt3
 call :banner
 call :menuReSharperCppPrompt
@@ -6748,8 +6388,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptSubDialerMode3
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptC
-cls
-goto startReSharperCppPrompt3
+cls&goto startReSharperCppPrompt3
 :startReSharperCppPrompt4
 call :banner
 call :menuReSharperCppPrompt
@@ -6758,8 +6397,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptDeepSubDialerMode
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptD
-cls
-goto startReSharperCppPrompt4
+cls&goto startReSharperCppPrompt4
 :startReSharperCppPrompt5
 call :banner
 call :menuReSharperCppPrompt
@@ -6768,8 +6406,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptDialerMode
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptE
-cls
-goto startReSharperCppPrompt5
+cls&goto startReSharperCppPrompt5
 :startReSharperCppPromptSubDialerMode1
 call :banner
 call :menuReSharperCppPrompt
@@ -6778,8 +6415,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptF
-cls
-goto startReSharperCppPromptSubDialerMode1
+cls&goto startReSharperCppPromptSubDialerMode1
 :startReSharperCppPromptSubDialerMode2
 call :banner
 call :menuReSharperCppPrompt
@@ -6788,8 +6424,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptG
-cls
-goto startReSharperCppPromptSubDialerMode2
+cls&goto startReSharperCppPromptSubDialerMode2
 :startReSharperCppPromptSubDialerMode3
 call :banner
 call :menuReSharperCppPrompt
@@ -6798,8 +6433,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptH
-cls
-goto startReSharperCppPromptSubDialerMode3
+cls&goto startReSharperCppPromptSubDialerMode3
 :startReSharperCppPromptDeepSubDialerMode
 call :banner
 call :menuReSharperCppPrompt
@@ -6808,8 +6442,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptI
-cls
-goto startReSharperCppPromptDeepSubDialerMode
+cls&goto startReSharperCppPromptDeepSubDialerMode
 :startReSharperCppPromptDialerMode
 call :banner
 call :menuReSharperCppPrompt
@@ -6818,8 +6451,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startReSharperCppInstallerPromptJ
-cls
-goto startReSharperCppPromptDialerMode
+cls&goto startReSharperCppPromptDialerMode
 :menuReSharperCppPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -6855,8 +6487,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPrompt1
-cls
-goto startReSharperCppInstallerPromptA
+cls&goto startReSharperCppInstallerPromptA
 :startReSharperCppInstallerPromptB
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6864,8 +6495,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPrompt2
-cls
-goto startReSharperCppInstallerPromptB
+cls&goto startReSharperCppInstallerPromptB
 :startReSharperCppInstallerPromptC
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6873,8 +6503,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPrompt3
-cls
-goto startReSharperCppInstallerPromptC
+cls&goto startReSharperCppInstallerPromptC
 :startReSharperCppInstallerPromptD
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6882,8 +6511,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPrompt4
-cls
-goto startReSharperCppInstallerPromptD
+cls&goto startReSharperCppInstallerPromptD
 :startReSharperCppInstallerPromptE
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6891,8 +6519,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPrompt5
-cls
-goto startReSharperCppInstallerPromptE
+cls&goto startReSharperCppInstallerPromptE
 :startReSharperCppInstallerPromptF
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6900,8 +6527,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPromptSubDialerMode1
-cls
-goto startReSharperCppInstallerPromptF
+cls&goto startReSharperCppInstallerPromptF
 :startReSharperCppInstallerPromptG
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6909,8 +6535,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPromptSubDialerMode2
-cls
-goto startReSharperCppInstallerPromptG
+cls&goto startReSharperCppInstallerPromptG
 :startReSharperCppInstallerPromptH
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6918,8 +6543,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPromptSubDialerMode3
-cls
-goto startReSharperCppInstallerPromptH
+cls&goto startReSharperCppInstallerPromptH
 :startReSharperCppInstallerPromptI
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6927,8 +6551,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPromptDeepSubDialerMode
-cls
-goto startReSharperCppInstallerPromptI
+cls&goto startReSharperCppInstallerPromptI
 :startReSharperCppInstallerPromptJ
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6936,8 +6559,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperCppPromptDialerMode
-cls
-goto startReSharperCppInstallerPromptJ
+cls&goto startReSharperCppInstallerPromptJ
 :startReSharperCppInstallerPrompt1
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6945,8 +6567,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptSubDialerMode1
-cls
-goto startReSharperCppInstallerPrompt1
+cls&goto startReSharperCppInstallerPrompt1
 :startReSharperCppInstallerPrompt2
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6954,8 +6575,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPrompt
-cls
-goto startReSharperCppInstallerPrompt2
+cls&goto startReSharperCppInstallerPrompt2
 :startReSharperCppInstallerPrompt3
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6963,8 +6583,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptSubDialerMode3
-cls
-goto startReSharperCppInstallerPrompt3
+cls&goto startReSharperCppInstallerPrompt3
 :startReSharperCppInstallerPrompt4
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6972,8 +6591,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptDeepSubDialerMode
-cls
-goto startReSharperCppInstallerPrompt4
+cls&goto startReSharperCppInstallerPrompt4
 :startReSharperCppInstallerPrompt5
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6981,8 +6599,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startReSharperPromptDialerMode
-cls
-goto startReSharperCppInstallerPrompt5
+cls&goto startReSharperCppInstallerPrompt5
 :startReSharperCppInstallerPromptSubDialerMode1
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6990,8 +6607,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startReSharperCppInstallerPromptSubDialerMode1
+cls&goto startReSharperCppInstallerPromptSubDialerMode1
 :startReSharperCppInstallerPromptSubDialerMode2
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -6999,8 +6615,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startReSharperCppInstallerPromptSubDialerMode2
+cls&goto startReSharperCppInstallerPromptSubDialerMode2
 :startReSharperCppInstallerPromptSubDialerMode3
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -7008,8 +6623,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startReSharperCppInstallerPromptSubDialerMode3
+cls&goto startReSharperCppInstallerPromptSubDialerMode3
 :startReSharperCppInstallerPromptDeepSubDialerMode
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -7017,8 +6631,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startReSharperCppInstallerPromptDeepSubDialerMode
+cls&goto startReSharperCppInstallerPromptDeepSubDialerMode
 :startReSharperCppInstallerPromptDialerMode
 call :banner
 call :menuReSharperCppInstallerPrompt
@@ -7026,8 +6639,7 @@ call :menuReSharperCppInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startReSharperCppInstallerPromptDialerMode
+cls&goto startReSharperCppInstallerPromptDialerMode
 :menuReSharperCppInstallerPrompt
 echo.
 echo Please input the letter to install ReSharper or the entire dotUltimate bundle ("A/B"). Input zero ("0") to cancel.
@@ -7045,8 +6657,7 @@ call :menuCLion
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startCLionPromptSubDialerMode
+cls&goto startCLionPromptSubDialerMode
 :startCLionPrompt
 call :banner
 call :menuCLionPrompt
@@ -7054,8 +6665,7 @@ call :menuCLion
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startCLionPrompt
+cls&goto startCLionPrompt
 :startCLionPromptSubDialerMode3
 call :banner
 call :menuCLionPrompt
@@ -7063,8 +6673,7 @@ call :menuCLion
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startCLionPromptSubDialerMode3
+cls&goto startCLionPromptSubDialerMode3
 :startCLionPromptDeepSubDialerMode
 call :banner
 call :menuCLionPrompt
@@ -7072,8 +6681,7 @@ call :menuCLion
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startCLionPromptDeepSubDialerMode
+cls&goto startCLionPromptDeepSubDialerMode
 :startCLionPromptDialerMode
 call :banner
 call :menuCLionPrompt
@@ -7081,8 +6689,7 @@ call :menuCLion
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCLionPromptDialerMode
+cls&goto startCLionPromptDialerMode
 :menuCLionPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7117,8 +6724,7 @@ call :menuDataGrip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startDataGripPromptSubDialerMode1
+cls&goto startDataGripPromptSubDialerMode1
 :startDataGripPrompt
 call :banner
 call :menuDataGripPrompt
@@ -7126,8 +6732,7 @@ call :menuDataGrip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startDataGripPrompt
+cls&goto startDataGripPrompt
 :startDataGripPromptSubDialerMode3
 call :banner
 call :menuDataGripPrompt
@@ -7135,8 +6740,7 @@ call :menuDataGrip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startDataGripPromptSubDialerMode3
+cls&goto startDataGripPromptSubDialerMode3
 :startDataGripPromptDeepSubDialerMode
 call :banner
 call :menuDataGripPrompt
@@ -7144,8 +6748,7 @@ call :menuDataGrip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startDataGripPromptDeepSubDialerMode
+cls&goto startDataGripPromptDeepSubDialerMode
 :startDataGripPromptDialerMode
 call :banner
 call :menuDataGripPrompt
@@ -7153,8 +6756,7 @@ call :menuDataGrip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startDataGripPromptDialerMode
+cls&goto startDataGripPromptDialerMode
 :menuDataGripPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7189,8 +6791,7 @@ call :menuDataSpell
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startDataSpellPromptSubDialerMode1
+cls&goto startDataSpellPromptSubDialerMode1
 :startDataSpellPrompt
 call :banner
 call :menuDataSpellPrompt
@@ -7198,8 +6799,7 @@ call :menuDataSpell
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startDataSpellPrompt
+cls&goto startDataSpellPrompt
 :startDataSpellPromptSubDialerMode3
 call :banner
 call :menuDataSpellPrompt
@@ -7207,8 +6807,7 @@ call :menuDataSpell
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startDataSpellPromptSubDialerMode3
+cls&goto startDataSpellPromptSubDialerMode3
 :startDataSpellPromptDeepSubDialerMode
 call :banner
 call :menuDataSpellPrompt
@@ -7216,8 +6815,7 @@ call :menuDataSpell
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startDataSpellPromptDeepSubDialerMode
+cls&goto startDataSpellPromptDeepSubDialerMode
 :startDataSpellPromptDialerMode
 call :banner
 call :menuDataSpellPrompt
@@ -7225,8 +6823,7 @@ call :menuDataSpell
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startDataSpellPromptDialerMode
+cls&goto startDataSpellPromptDialerMode
 :menuDataSpellPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7261,8 +6858,7 @@ call :menuPyCharm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startPyCharmPromptSubDialerMode1
+cls&goto startPyCharmPromptSubDialerMode1
 :startPyCharmPrompt
 call :banner
 call :menuPyCharmPrompt
@@ -7270,8 +6866,7 @@ call :menuPyCharm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startPyCharmPrompt
+cls&goto startPyCharmPrompt
 :startPyCharmPromptSubDialerMode3
 call :banner
 call :menuPyCharmPrompt
@@ -7279,8 +6874,7 @@ call :menuPyCharm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startPyCharmPromptSubDialerMode3
+cls&goto startPyCharmPromptSubDialerMode3
 :startPyCharmPromptDeepSubDialerMode
 call :banner
 call :menuPyCharmPrompt
@@ -7288,8 +6882,7 @@ call :menuPyCharm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startPyCharmPromptDeepSubDialerMode
+cls&goto startPyCharmPromptDeepSubDialerMode
 :startPyCharmPromptDialerMode
 call :banner
 call :menuPyCharmPrompt
@@ -7297,8 +6890,7 @@ call :menuPyCharm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPyCharmPromptDialerMode
+cls&goto startPyCharmPromptDialerMode
 :menuPyCharmPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7333,8 +6925,7 @@ call :menuIntelliJIDEA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startIntelliJIDEApromptSubDialerMode1
+cls&goto startIntelliJIDEApromptSubDialerMode1
 :startIntelliJIDEAprompt
 call :banner
 call :menuIntelliJIDEAprompt
@@ -7342,8 +6933,7 @@ call :menuIntelliJIDEA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startIntelliJIDEAprompt
+cls&goto startIntelliJIDEAprompt
 :startIntelliJIDEApromptSubDialerMode3
 call :banner
 call :menuIntelliJIDEAprompt
@@ -7351,8 +6941,7 @@ call :menuIntelliJIDEA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startIntelliJIDEApromptSubDialerMode3
+cls&goto startIntelliJIDEApromptSubDialerMode3
 :startIntelliJIDEApromptDeepSubDialerMode
 call :banner
 call :menuIntelliJIDEAprompt
@@ -7360,8 +6949,7 @@ call :menuIntelliJIDEA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startIntelliJIDEApromptDeepSubDialerMode
+cls&goto startIntelliJIDEApromptDeepSubDialerMode
 :startIntelliJIDEApromptDialerMode
 call :banner
 call :menuIntelliJIDEAprompt
@@ -7369,8 +6957,7 @@ call :menuIntelliJIDEA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startIntelliJIDEApromptDialerMode
+cls&goto startIntelliJIDEApromptDialerMode
 :menuIntelliJIDEAPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7398,6 +6985,7 @@ if /I %input% EQU R start IntelliJIDEA_R.lnk&set input=3987R&&goto startPreExitP
 if /I %input% EQU I start IntelliJIDEA_I.exe&set input=3987I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O goto startUninstallationInstructions
 goto :eof
+:: Section 3AltC
 :start3AltC
 call :banner
 call :menu3AltCScreen
@@ -7405,8 +6993,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu3AltC
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start3AltC
+cls&goto start3AltC
 :menu3AltCScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -7568,8 +7155,7 @@ call :menuPhpStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startPhpStormPromptSubDialerMode1
+cls&goto startPhpStormPromptSubDialerMode1
 :startPhpStormPromptSubDialerMode2
 call :banner
 call :menuPhpStormPrompt
@@ -7577,8 +7163,7 @@ call :menuPhpStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startPhpStormPromptSubDialerMode2
+cls&goto startPhpStormPromptSubDialerMode2
 :startPhpStormPrompt
 call :banner
 call :menuPhpStormPrompt
@@ -7586,8 +7171,7 @@ call :menuPhpStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startPhpStormPrompt
+cls&goto startPhpStormPrompt
 :startPhpStormPromptDeepSubDialerMode
 call :banner
 call :menuPhpStormPrompt
@@ -7595,8 +7179,7 @@ call :menuPhpStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startPhpStormPromptDeepSubDialerMode
+cls&goto startPhpStormPromptDeepSubDialerMode
 :startPhpStormPromptDialerMode
 call :banner
 call :menuPhpStormPrompt
@@ -7604,8 +7187,7 @@ call :menuPhpStorm
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPhpStormPromptDialerMode
+cls&goto startPhpStormPromptDialerMode
 :menuPhpStormPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7640,8 +7222,7 @@ call :menuGoLand
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startGoLandPromptSubDialerMode1
+cls&goto startGoLandPromptSubDialerMode1
 :startGoLandPromptSubDialerMode2
 call :banner
 call :menuGoLandPrompt
@@ -7649,8 +7230,7 @@ call :menuGoLand
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startGoLandPromptSubDialerMode2
+cls&goto startGoLandPromptSubDialerMode2
 :startGoLandPrompt
 call :banner
 call :menuGoLandPrompt
@@ -7658,8 +7238,7 @@ call :menuGoLand
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startGoLandPrompt
+cls&goto startGoLandPrompt
 :startGoLandPromptDeepSubDialerMode
 call :banner
 call :menuGoLandPrompt
@@ -7667,8 +7246,7 @@ call :menuGoLand
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startGoLandPromptDeepSubDialerMode
+cls&goto startGoLandPromptDeepSubDialerMode
 :startGoLandPromptDialerMode
 call :banner
 call :menuGoLandPrompt
@@ -7676,8 +7254,7 @@ call :menuGoLand
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startGoLandPromptDialerMode
+cls&goto startGoLandPromptDialerMode
 :menuGoLandPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7712,8 +7289,7 @@ call :menuRubyMine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startRubyMinePromptSubDialerMode1
+cls&goto startRubyMinePromptSubDialerMode1
 :startRubyMinePromptSubDialerMode2
 call :banner
 call :menuRubyMinePrompt
@@ -7721,8 +7297,7 @@ call :menuRubyMine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startRubyMinePromptSubDialerMode2
+cls&goto startRubyMinePromptSubDialerMode2
 :startRubyMinePrompt
 call :banner
 call :menuRubyMinePrompt
@@ -7730,8 +7305,7 @@ call :menuRubyMine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startRubyMinePrompt
+cls&goto startRubyMinePrompt
 :startRubyMinePromptDeepSubDialerMode
 call :banner
 call :menuRubyMinePrompt
@@ -7739,8 +7313,7 @@ call :menuRubyMine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startRubyMinePromptDeepSubDialerMode
+cls&goto startRubyMinePromptDeepSubDialerMode
 :startRubyMinePromptDialerMode
 call :banner
 call :menuRubyMinePrompt
@@ -7748,8 +7321,7 @@ call :menuRubyMine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startRubyMinePromptDialerMode
+cls&goto startRubyMinePromptDialerMode
 :menuRubyMinePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7784,8 +7356,7 @@ call :menuGateway
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startGatewayPromptSubDialerMode1
+cls&goto startGatewayPromptSubDialerMode1
 :startGatewayPromptSubDialerMode2
 call :banner
 call :menuGatewayPrompt
@@ -7793,8 +7364,7 @@ call :menuGateway
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startGatewayPromptSubDialerMode2
+cls&goto startGatewayPromptSubDialerMode2
 :startGatewayPrompt
 call :banner
 call :menuGatewayPrompt
@@ -7802,8 +7372,7 @@ call :menuGateway
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startGatewayPrompt
+cls&goto startGatewayPrompt
 :startGatewayPromptDeepSubDialerMode
 call :banner
 call :menuGatewayPrompt
@@ -7811,8 +7380,7 @@ call :menuGateway
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startGatewayPromptDeepSubDialerMode
+cls&goto startGatewayPromptDeepSubDialerMode
 :startGatewayPromptDialerMode
 call :banner
 call :menuGatewayPrompt
@@ -7820,8 +7388,7 @@ call :menuGateway
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startGatewayPromptDialerMode
+cls&goto startGatewayPromptDialerMode
 :menuGatewayPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7856,8 +7423,7 @@ call :menuMetaProgrammingSystem
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startMetaProgrammingSystemPromptSubDialerMode1
+cls&goto startMetaProgrammingSystemPromptSubDialerMode1
 :startMetaProgrammingSystemPromptSubDialerMode2
 call :banner
 call :menuMetaProgrammingSystemPrompt
@@ -7865,8 +7431,7 @@ call :menuMetaProgrammingSystem
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startMetaProgrammingSystemPromptSubDialerMode2
+cls&goto startMetaProgrammingSystemPromptSubDialerMode2
 :startMetaProgrammingSystemPrompt
 call :banner
 call :menuMetaProgrammingSystemPrompt
@@ -7874,8 +7439,7 @@ call :menuMetaProgrammingSystem
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startMetaProgrammingSystemPrompt
+cls&goto startMetaProgrammingSystemPrompt
 :startMetaProgrammingSystemPromptDeepSubDialerMode
 call :banner
 call :menuMetaProgrammingSystemPrompt
@@ -7883,8 +7447,7 @@ call :menuMetaProgrammingSystem
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startMetaProgrammingSystemPromptDeepSubDialerMode
+cls&goto startMetaProgrammingSystemPromptDeepSubDialerMode
 :startMetaProgrammingSystemPromptDialerMode
 call :banner
 call :menuMetaProgrammingSystemPrompt
@@ -7892,8 +7455,7 @@ call :menuMetaProgrammingSystem
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMetaProgrammingSystemPromptDialerMode
+cls&goto startMetaProgrammingSystemPromptDialerMode
 :menuMetaProgrammingSystemPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -7928,8 +7490,7 @@ call :menuToolbox
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startToolboxPromptSubDialerMode1
+cls&goto startToolboxPromptSubDialerMode1
 :startToolboxPromptSubDialerMode2
 call :banner
 call :menuToolboxPrompt
@@ -7937,8 +7498,7 @@ call :menuToolbox
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startToolboxPromptSubDialerMode2
+cls&goto startToolboxPromptSubDialerMode2
 :startToolboxPrompt
 call :banner
 call :menuToolboxPrompt
@@ -7946,8 +7506,7 @@ call :menuToolbox
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startToolboxPrompt
+cls&goto startToolboxPrompt
 :startToolboxPromptDeepSubDialerMode
 call :banner
 call :menuToolboxPrompt
@@ -7955,8 +7514,7 @@ call :menuToolbox
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startToolboxPromptDeepSubDialerMode
+cls&goto startToolboxPromptDeepSubDialerMode
 :startToolboxPromptDialerMode
 call :banner
 call :menuToolboxPrompt
@@ -7964,8 +7522,7 @@ call :menuToolbox
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startToolboxPromptDialerMode
+cls&goto startToolboxPromptDialerMode
 :menuToolboxPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -8000,8 +7557,7 @@ call :menuWriterside
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltA
-cls
-goto startWritersidePromptSubDialerMode1
+cls&goto startWritersidePromptSubDialerMode1
 :startWritersidePromptSubDialerMode2
 call :banner
 call :menuWritersidePrompt
@@ -8009,8 +7565,7 @@ call :menuWriterside
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltB
-cls
-goto startWritersidePromptSubDialerMode2
+cls&goto startWritersidePromptSubDialerMode2
 :startWritersidePrompt
 call :banner
 call :menuWritersidePrompt
@@ -8018,8 +7573,7 @@ call :menuWriterside
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3AltC
-cls
-goto startWritersidePrompt
+cls&goto startWritersidePrompt
 :startWritersidePromptDeepSubDialerMode
 call :banner
 call :menuWritersidePrompt
@@ -8027,8 +7581,7 @@ call :menuWriterside
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start3
-cls
-goto startWritersidePromptDeepSubDialerMode
+cls&goto startWritersidePromptDeepSubDialerMode
 :startWritersidePromptDialerMode
 call :banner
 call :menuWritersidePrompt
@@ -8036,8 +7589,7 @@ call :menuWriterside
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWritersidePromptDialerMode
+cls&goto startWritersidePromptDialerMode
 :menuWritersidePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -8065,6 +7617,7 @@ if /I %input% EQU R start Writerside_R.lnk&set input=3997R&&goto startPreExitPro
 if /I %input% EQU I start Writerside_I.exe&set input=3997I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O goto startUninstallationInstructions
 goto :eof
+:: Section 4
 :start4
 call :banner
 call :menu4Screen
@@ -8072,8 +7625,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu4
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start4
+cls&goto start4
 :menu4Screen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -8212,8 +7764,7 @@ call :menuVMwareWorkstation
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startVMwareWorkstationPrompt
+cls&goto startVMwareWorkstationPrompt
 :startVMwareWorkstationPromptDialerMode
 call :banner
 call :menuVMwareWorkstationPrompt
@@ -8221,8 +7772,7 @@ call :menuVMwareWorkstation
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startVMwareWorkstationPromptDialerMode
+cls&goto startVMwareWorkstationPromptDialerMode
 :menuVMwareWorkstationPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: VMware
@@ -8257,8 +7807,7 @@ call :menuDockerDesktop
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startDockerDesktopPrompt
+cls&goto startDockerDesktopPrompt
 :startDockerDesktopPromptDialerMode
 call :banner
 call :menuDockerDesktopPrompt
@@ -8266,8 +7815,7 @@ call :menuDockerDesktop
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startDockerDesktopPromptDialerMode
+cls&goto startDockerDesktopPromptDialerMode
 :menuDockerDesktopPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Solomon Hykes/Docker Inc.
@@ -8302,8 +7850,7 @@ call :menuAmigaForever
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startAmigaForeverPrompt
+cls&goto startAmigaForeverPrompt
 :startAmigaForeverPromptDialerMode
 call :banner
 call :menuAmigaForeverPrompt
@@ -8311,8 +7858,7 @@ call :menuAmigaForever
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAmigaForeverPromptDialerMode
+cls&goto startAmigaForeverPromptDialerMode
 :menuAmigaForeverPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under Amiga International, now under Cloanto
@@ -8347,8 +7893,7 @@ call :menuPureData
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startPureDataPrompt
+cls&goto startPureDataPrompt
 :startPureDataPromptDialerMode
 call :banner
 call :menuPureDataPrompt
@@ -8356,8 +7901,7 @@ call :menuPureData
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPureDataPromptDialerMode
+cls&goto startPureDataPromptDialerMode
 :menuPureDataPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Miller S. Puckette
@@ -8392,8 +7936,7 @@ call :menuCRYENGINElauncher
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startCRYENGINElauncherPrompt
+cls&goto startCRYENGINElauncherPrompt
 :startCRYENGINElauncherPromptDialerMode
 call :banner
 call :menuCRYENGINElauncherPrompt
@@ -8401,8 +7944,7 @@ call :menuCRYENGINElauncher
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCRYENGINElauncherPromptDialerMode
+cls&goto startCRYENGINElauncherPromptDialerMode
 :menuCRYENGINElauncherPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Crytek
@@ -8437,8 +7979,7 @@ call :menuUnityHub
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startUnityHubPrompt
+cls&goto startUnityHubPrompt
 :startUnityHubPromptDialerMode
 call :banner
 call :menuUnityHubPrompt
@@ -8446,8 +7987,7 @@ call :menuUnityHub
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startUnityHubPromptDialerMode
+cls&goto startUnityHubPromptDialerMode
 :menuUnityHubPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Unity Technologies
@@ -8482,8 +8022,7 @@ call :menuGodot
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startGodotPrompt
+cls&goto startGodotPrompt
 :startGodotPromptDialerMode
 call :banner
 call :menuGodotPrompt
@@ -8491,8 +8030,7 @@ call :menuGodot
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startGodotPromptDialerMode
+cls&goto startGodotPromptDialerMode
 :menuGodotPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Juan Linietsky and Ariel Manzur
@@ -8528,8 +8066,7 @@ if /I %input% EQU 0 cls&goto start4
 if /I %input% EQU C cls&goto startSlic3rPrompt1
 if /I %input% EQU S cls&goto startPrusaSlicerPrompt1
 if /I %input% EQU V cls&goto startPrusaG-codeViewerPrompt1
-cls
-goto startSlic3rToolsPrompt
+cls&goto startSlic3rToolsPrompt
 :startSlic3rToolsPromptDialerMode
 call :banner
 call :menuSlic3rToolsPrompt
@@ -8540,8 +8077,7 @@ if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU C cls&goto startSlic3rPrompt2
 if /I %input% EQU S cls&goto startPrusaSlicerPrompt2
 if /I %input% EQU V cls&goto startPrusaG-codeViewerPrompt2
-cls
-goto startSlic3rToolsPromptDialerMode
+cls&goto startSlic3rToolsPromptDialerMode
 :menuSlic3rToolsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Depends
@@ -8582,8 +8118,7 @@ call :menuSlic3r
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startSlic3rToolsPrompt
-cls
-goto startSlic3rPrompt1
+cls&goto startSlic3rPrompt1
 :startSlic3rPrompt2
 call :banner
 call :menuSlic3rPrompt
@@ -8591,8 +8126,7 @@ call :menuSlic3r
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startSlic3rToolsPromptDialerMode
-cls
-goto startSlic3rPrompt2
+cls&goto startSlic3rPrompt2
 :startSlic3rPromptSubDialerMode
 call :banner
 call :menuSlic3rPrompt
@@ -8600,8 +8134,7 @@ call :menuSlic3r
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startSlic3rPromptSubDialerMode
+cls&goto startSlic3rPromptSubDialerMode
 :startSlic3rPromptDialerMode
 call :banner
 call :menuSlic3rPrompt
@@ -8609,8 +8142,7 @@ call :menuSlic3r
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSlic3rPromptDialerMode
+cls&goto startSlic3rPromptDialerMode
 :menuSlic3rPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Alessandro Ranellucci
@@ -8643,8 +8175,7 @@ call :menuPrusaSlicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startSlic3rToolsPrompt
-cls
-goto startPrusaSlicerPrompt1
+cls&goto startPrusaSlicerPrompt1
 :startPrusaSlicerPrompt2
 call :banner
 call :menuPrusaSlicerPrompt
@@ -8652,8 +8183,7 @@ call :menuPrusaSlicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startSlic3rToolsPromptDialerMode
-cls
-goto startPrusaSlicerPrompt2
+cls&goto startPrusaSlicerPrompt2
 :startPrusaSlicerPromptSubDialerMode
 call :banner
 call :menuPrusaSlicerPrompt
@@ -8661,8 +8191,7 @@ call :menuPrusaSlicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startPrusaSlicerPromptSubDialerMode
+cls&goto startPrusaSlicerPromptSubDialerMode
 :startPrusaSlicerPromptDialerMode
 call :banner
 call :menuPrusaSlicerPrompt
@@ -8670,8 +8199,7 @@ call :menuPrusaSlicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPrusaSlicerPromptDialerMode
+cls&goto startPrusaSlicerPromptDialerMode
 :menuPrusaSlicerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Josef Průša/Prusa Research
@@ -8706,8 +8234,7 @@ call :menuPrusaG-codeViewer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startSlic3rToolsPrompt
-cls
-goto startPrusaG-codeViewerPrompt1
+cls&goto startPrusaG-codeViewerPrompt1
 :startPrusaG-codeViewerPrompt2
 call :banner
 call :menuPrusaG-codeViewerPrompt
@@ -8715,8 +8242,7 @@ call :menuPrusaG-codeViewer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startSlic3rToolsPromptDialerMode
-cls
-goto startPrusaG-codeViewerPrompt2
+cls&goto startPrusaG-codeViewerPrompt2
 :startPrusaG-codeViewerPromptSubDialerMode
 call :banner
 call :menuPrusaG-codeViewerPrompt
@@ -8724,8 +8250,7 @@ call :menuPrusaG-codeViewer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startPrusaG-codeViewerPromptSubDialerMode
+cls&goto startPrusaG-codeViewerPromptSubDialerMode
 :startPrusaG-codeViewerPromptDialerMode
 call :banner
 call :menuPrusaG-codeViewerPrompt
@@ -8733,8 +8258,7 @@ call :menuPrusaG-codeViewer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPrusaG-codeViewerPromptDialerMode
+cls&goto startPrusaG-codeViewerPromptDialerMode
 :menuPrusaG-codeViewerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Josef Průša/Prusa Research
@@ -8762,6 +8286,7 @@ if /I %input% EQU R start Prusa_G-code_Viewer_R.lnk&set input=48VR&&goto startPr
 if /I %input% EQU I start Prusa_I.exe&set input=48VI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Prusa_O.lnk&set input=48VO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 4Alt
 :start4Alt
 call :banner
 call :menu4AltScreen
@@ -8769,8 +8294,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu4Alt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start4Alt
+cls&goto start4Alt
 :menu4AltScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -8862,8 +8386,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
 if /I %input% EQU I cls&goto startAutoCADinstallPrompt1
-cls
-goto startAutoCADprompt
+cls&goto startAutoCADprompt
 :startAutoCADpromptDeepSubDialerMode
 call :banner
 call :menuAutoCADprompt
@@ -8872,8 +8395,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
 if /I %input% EQU I cls&goto startAutoCADinstallPrompt2
-cls
-goto startAutoCADpromptDeepSubDialerMode
+cls&goto startAutoCADpromptDeepSubDialerMode
 :startAutoCADpromptDialerMode
 call :banner
 call :menuAutoCADprompt
@@ -8882,8 +8404,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startAutoCADinstallPrompt3
-cls
-goto startAutoCADpromptDialerMode
+cls&goto startAutoCADpromptDialerMode
 :menuAutoCADPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John Walker/Autodesk, Inc.
@@ -8920,8 +8441,7 @@ call :menuAutoCADinstall
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAutoCADprompt
-cls
-goto startAutoCADinstallPrompt1
+cls&goto startAutoCADinstallPrompt1
 :startAutoCADinstallPrompt2
 call :banner
 call :menuAutoCADinstallPrompt
@@ -8929,8 +8449,7 @@ call :menuAutoCADinstall
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAutoCADpromptDeepSubDialerMode
-cls
-goto startAutoCADinstallPrompt2
+cls&goto startAutoCADinstallPrompt2
 :startAutoCADinstallPrompt3
 call :banner
 call :menuAutoCADinstallPrompt
@@ -8938,8 +8457,7 @@ call :menuAutoCADinstall
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startAutoCADpromptDialerMode
-cls
-goto startAutoCADinstallPrompt3
+cls&goto startAutoCADinstallPrompt3
 :startAutoCADinstallPromptSubDialerMode
 call :banner
 call :menuAutoCADinstallPrompt
@@ -8947,8 +8465,7 @@ call :menuAutoCADinstall
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
-cls
-goto startAutoCADinstallPromptSubDialerMode
+cls&goto startAutoCADinstallPromptSubDialerMode
 :startAutoCADinstallPromptDeepSubDialerMode
 call :banner
 call :menuAutoCADinstallPrompt
@@ -8956,8 +8473,7 @@ call :menuAutoCADinstall
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startAutoCADinstallPromptDeepSubDialerMode
+cls&goto startAutoCADinstallPromptDeepSubDialerMode
 :startAutoCADinstallPromptDialerMode
 call :banner
 call :menuAutoCADinstallPrompt
@@ -8965,8 +8481,7 @@ call :menuAutoCADinstall
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAutoCADinstallPromptDialerMode
+cls&goto startAutoCADinstallPromptDialerMode
 :menuAutoCADinstallPrompt
 echo.
 echo Would you like to install the program itself or the offline help module ("1/2")? Input zero ("0") to cancel.
@@ -8984,8 +8499,7 @@ call :menuAutoCADElectrical
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
-cls
-goto startAutoCADElectricalPrompt
+cls&goto startAutoCADElectricalPrompt
 :startAutoCADElectricalPromptDeepSubDialerMode
 call :banner
 call :menuAutoCADElectricalPrompt
@@ -8993,8 +8507,7 @@ call :menuAutoCADElectrical
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startAutoCADElectricalPromptDeepSubDialerMode
+cls&goto startAutoCADElectricalPromptDeepSubDialerMode
 :startAutoCADElectricalPromptDialerMode
 call :banner
 call :menuAutoCADElectricalPrompt
@@ -9002,8 +8515,7 @@ call :menuAutoCADElectrical
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAutoCADElectricalPromptDialerMode
+cls&goto startAutoCADElectricalPromptDialerMode
 :menuAutoCADElectricalPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John Walker/Autodesk, Inc.
@@ -9039,8 +8551,7 @@ call :menuAutoCADMechanical
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
-cls
-goto startAutoCADMechanicalPrompt
+cls&goto startAutoCADMechanicalPrompt
 :startAutoCADMechanicalPromptDeepSubDialerMode
 call :banner
 call :menuAutoCADMechanicalPrompt
@@ -9048,8 +8559,7 @@ call :menuAutoCADMechanical
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startAutoCADMechanicalPromptDeepSubDialerMode
+cls&goto startAutoCADMechanicalPromptDeepSubDialerMode
 :startAutoCADMechanicalPromptDialerMode
 call :banner
 call :menuAutoCADMechanicalPrompt
@@ -9057,8 +8567,7 @@ call :menuAutoCADMechanical
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAutoCADMechanicalPromptDialerMode
+cls&goto startAutoCADMechanicalPromptDialerMode
 :menuAutoCADMechanicalPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John Walker/Autodesk, Inc.
@@ -9094,8 +8603,7 @@ call :menuSolidWorks3DCADDesign
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
-cls
-goto startSolidWorks3DCADDesignPrompt
+cls&goto startSolidWorks3DCADDesignPrompt
 :startSolidWorks3DCADDesignPromptDeepSubDialerMode
 call :banner
 call :menuSolidWorks3DCADDesignPrompt
@@ -9103,8 +8611,7 @@ call :menuSolidWorks3DCADDesign
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startSolidWorks3DCADDesignPromptDeepSubDialerMode
+cls&goto startSolidWorks3DCADDesignPromptDeepSubDialerMode
 :startSolidWorks3DCADDesignPromptDialerMode
 call :banner
 call :menuSolidWorks3DCADDesignPrompt
@@ -9112,8 +8619,7 @@ call :menuSolidWorks3DCADDesign
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSolidWorks3DCADDesignPromptDialerMode
+cls&goto startSolidWorks3DCADDesignPromptDialerMode
 :menuSolidWorks3DCADDesignPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Dassault Systèmes
@@ -9149,8 +8655,7 @@ call :menuAutodeskFusion360
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
-cls
-goto startAutodeskFusion360Prompt
+cls&goto startAutodeskFusion360Prompt
 :startAutodeskFusion360PromptDeepSubDialerMode
 call :banner
 call :menuAutodeskFusion360Prompt
@@ -9158,8 +8663,7 @@ call :menuAutodeskFusion360
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startAutodeskFusion360PromptDeepSubDialerMode
+cls&goto startAutodeskFusion360PromptDeepSubDialerMode
 :startAutodeskFusion360PromptDialerMode
 call :banner
 call :menuAutodeskFusion360Prompt
@@ -9167,8 +8671,7 @@ call :menuAutodeskFusion360
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAutodeskFusion360PromptDialerMode
+cls&goto startAutodeskFusion360PromptDialerMode
 :menuAutodeskFusion360Prompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John Walker/Autodesk, Inc.
@@ -9204,8 +8707,7 @@ call :menuAutodeskCivil3D
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
-cls
-goto startAutodeskCivil3Dprompt
+cls&goto startAutodeskCivil3Dprompt
 :startAutodeskCivil3DpromptDeepSubDialerMode
 call :banner
 call :menuAutodeskCivil3Dprompt
@@ -9213,8 +8715,7 @@ call :menuAutodeskCivil3D
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startAutodeskCivil3DpromptDeepSubDialerMode
+cls&goto startAutodeskCivil3DpromptDeepSubDialerMode
 :startAutodeskCivil3DpromptDialerMode
 call :banner
 call :menuAutodeskCivil3Dprompt
@@ -9222,8 +8723,7 @@ call :menuAutodeskCivil3D
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAutodeskCivil3DpromptDialerMode
+cls&goto startAutodeskCivil3DpromptDialerMode
 :menuAutodeskCivil3DPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John Walker/Autodesk, Inc.
@@ -9259,8 +8759,7 @@ call :menuAutodeskFeatureCAM
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
-cls
-goto startAutodeskFeatureCAMprompt
+cls&goto startAutodeskFeatureCAMprompt
 :startAutodeskFeatureCAMpromptDeepSubDialerMode
 call :banner
 call :menuAutodeskFeatureCAMprompt
@@ -9268,8 +8767,7 @@ call :menuAutodeskFeatureCAM
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startAutodeskFeatureCAMpromptDeepSubDialerMode
+cls&goto startAutodeskFeatureCAMpromptDeepSubDialerMode
 :startAutodeskFeatureCAMpromptDialerMode
 call :banner
 call :menuAutodeskFeatureCAMprompt
@@ -9277,8 +8775,7 @@ call :menuAutodeskFeatureCAM
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAutodeskFeatureCAMpromptDialerMode
+cls&goto startAutodeskFeatureCAMpromptDialerMode
 :menuAutodeskFeatureCAMprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John Walker/Autodesk, Inc.
@@ -9314,8 +8811,7 @@ call :menuAutodeskMaya
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
-cls
-goto startAutodeskMayaPrompt
+cls&goto startAutodeskMayaPrompt
 :startAutodeskMayaPromptDeepSubDialerMode
 call :banner
 call :menuAutodeskMayaPrompt
@@ -9323,8 +8819,7 @@ call :menuAutodeskMaya
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startAutodeskMayaPromptDeepSubDialerMode
+cls&goto startAutodeskMayaPromptDeepSubDialerMode
 :startAutodeskMayaPromptDialerMode
 call :banner
 call :menuAutodeskMayaPrompt
@@ -9332,8 +8827,7 @@ call :menuAutodeskMaya
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAutodeskMayaPromptDialerMode
+cls&goto startAutodeskMayaPromptDialerMode
 :menuAutodeskMayaPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: John Walker/Autodesk, Inc.
@@ -9369,8 +8863,7 @@ call :menuTeklaStructures
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4Alt
-cls
-goto startTeklaStructuresPrompt
+cls&goto startTeklaStructuresPrompt
 :startTeklaStructuresPromptDeepSubDialerMode
 call :banner
 call :menuTeklaStructuresPrompt
@@ -9378,8 +8871,7 @@ call :menuTeklaStructures
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start4
-cls
-goto startTeklaStructuresPromptDeepSubDialerMode
+cls&goto startTeklaStructuresPromptDeepSubDialerMode
 :startTeklaStructuresPromptDialerMode
 call :banner
 call :menuTeklaStructuresPrompt
@@ -9387,8 +8879,7 @@ call :menuTeklaStructures
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startTeklaStructuresPromptDialerMode
+cls&goto startTeklaStructuresPromptDialerMode
 :menuTeklaStructuresPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Tekla
@@ -9417,6 +8908,7 @@ if /I %input% EQU I start Tekla_Structures_I.exe&set input=499I&&goto startPreEx
 if /I %input% EQU O goto startUninstallationInstructions
 if /I %input% EQU S start Tekla_Structures_S.lnk&set input=499S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 5
 :start5
 call :banner
 call :menu5Screen
@@ -9424,8 +8916,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu5
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start5
+cls&goto start5
 :menu5Screen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -9503,8 +8994,7 @@ call :menuAndroidStudio
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
-cls
-goto startAndroidStudioPrompt
+cls&goto startAndroidStudioPrompt
 :startAndroidStudioPromptDialerMode
 call :banner
 call :menuAndroidStudioPrompt
@@ -9512,8 +9002,7 @@ call :menuAndroidStudio
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAndroidStudioPromptDialerMode
+cls&goto startAndroidStudioPromptDialerMode
 :menuAndroidStudioPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Google and JetBrains
@@ -9548,8 +9037,7 @@ call :menuHex-RaysIDA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
-cls
-goto startHex-RaysIDAprompt
+cls&goto startHex-RaysIDAprompt
 :startHex-RaysIDApromptDialerMode
 call :banner
 call :menuHex-RaysIDAprompt
@@ -9557,8 +9045,7 @@ call :menuHex-RaysIDA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startHex-RaysIDApromptDialerMode
+cls&goto startHex-RaysIDApromptDialerMode
 :menuHex-RaysIDAPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Ilfak Guilfanov/Hex-Rays
@@ -9593,8 +9080,7 @@ call :menuGhidra
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
-cls
-goto startGhidraPrompt
+cls&goto startGhidraPrompt
 :startGhidraPromptDialerMode
 call :banner
 call :menuGhidraPrompt
@@ -9602,8 +9088,7 @@ call :menuGhidra
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startGhidraPromptDialerMode
+cls&goto startGhidraPromptDialerMode
 :menuGhidraPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: National Security Agency (NSA) of the U.S. Federal Government
@@ -9636,8 +9121,7 @@ call :menuON1PhotoRAW
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
-cls
-goto startON1PhotoRAWprompt
+cls&goto startON1PhotoRAWprompt
 :startON1PhotoRAWpromptDialerMode
 call :banner
 call :menuON1PhotoRAWprompt
@@ -9645,8 +9129,7 @@ call :menuON1PhotoRAW
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startON1PhotoRAWpromptDialerMode
+cls&goto startON1PhotoRAWpromptDialerMode
 :menuON1PhotoRAWPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: ON1, Inc.
@@ -9681,8 +9164,7 @@ call :menuPlayerFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
-cls
-goto startPlayerFabPrompt
+cls&goto startPlayerFabPrompt
 :startPlayerFabPromptDialerMode
 call :banner
 call :menuPlayerFabPrompt
@@ -9690,8 +9172,7 @@ call :menuPlayerFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPlayerFabPromptDialerMode
+cls&goto startPlayerFabPromptDialerMode
 :menuPlayerFabPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Fengtao Software Limited
@@ -9726,8 +9207,7 @@ call :menuStreamFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
-cls
-goto startStreamFabPrompt
+cls&goto startStreamFabPrompt
 :startStreamFabPromptDialerMode
 call :banner
 call :menuStreamFabPrompt
@@ -9735,8 +9215,7 @@ call :menuStreamFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startStreamFabPromptDialerMode
+cls&goto startStreamFabPromptDialerMode
 :menuStreamFabPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Fengtao Software Limited
@@ -9771,8 +9250,7 @@ call :menuAvidProTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
-cls
-goto startAvidProToolsPrompt
+cls&goto startAvidProToolsPrompt
 :startAvidProToolsPromptDialerMode
 call :banner
 call :menuAvidProToolsPrompt
@@ -9780,8 +9258,7 @@ call :menuAvidProTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAvidProToolsPromptDialerMode
+cls&goto startAvidProToolsPromptDialerMode
 :menuAvidProToolsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Evan Brooks and Peter Gotcher
@@ -9816,8 +9293,7 @@ call :menuPhotoline
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
-cls
-goto startPhotolinePrompt
+cls&goto startPhotolinePrompt
 :startPhotolinePromptDialerMode
 call :banner
 call :menuPhotolinePrompt
@@ -9825,8 +9301,7 @@ call :menuPhotoline
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPhotolinePromptDialerMode
+cls&goto startPhotolinePromptDialerMode
 :menuPhotolinePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Computerinsel GmbH
@@ -9861,8 +9336,7 @@ call :menuDaVinciResolve
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
-cls
-goto startDaVinciResolvePrompt
+cls&goto startDaVinciResolvePrompt
 :startDaVinciResolvePromptDialerMode
 call :banner
 call :menuDaVinciResolvePrompt
@@ -9870,8 +9344,7 @@ call :menuDaVinciResolve
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startDaVinciResolvePromptDialerMode
+cls&goto startDaVinciResolvePromptDialerMode
 :menuDaVinciResolvePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under da Vinci Systems, now under Blackmagic Design
@@ -9899,6 +9372,7 @@ if /I %input% EQU R start DaVinci_Resolve_R.lnk&set input=59R&&goto startPreExit
 if /I %input% EQU I start DaVinci_Resolve_I.exe&set input=59I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start DaVinci_Resolve_O.lnk&set input=59O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 6a
 :start6a
 call :banner
 call :menu6aScreen
@@ -9906,8 +9380,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu6a
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start6a
+cls&goto start6a
 :menu6aScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -10022,8 +9495,7 @@ call :menuSteam
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startSteamPrompt
+cls&goto startSteamPrompt
 :startSteamPromptSubDialerMode
 call :banner
 call :menuSteamPrompt
@@ -10031,8 +9503,7 @@ call :menuSteam
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startSteamPromptSubDialerMode
+cls&goto startSteamPromptSubDialerMode
 :startSteamPromptDialerMode
 call :banner
 call :menuSteamPrompt
@@ -10040,8 +9511,7 @@ call :menuSteam
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSteamPromptDialerMode
+cls&goto startSteamPromptDialerMode
 :menuSteamPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Valve
@@ -10076,8 +9546,7 @@ call :menuEpicGames
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startEpicGamesPrompt
+cls&goto startEpicGamesPrompt
 :startEpicGamesPromptSubDialerMode
 call :banner
 call :menuEpicGamesPrompt
@@ -10085,8 +9554,7 @@ call :menuEpicGames
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startEpicGamesPromptSubDialerMode
+cls&goto startEpicGamesPromptSubDialerMode
 :startEpicGamesPromptDialerMode
 call :banner
 call :menuEpicGamesPrompt
@@ -10094,8 +9562,7 @@ call :menuEpicGames
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startEpicGamesPromptDialerMode
+cls&goto startEpicGamesPromptDialerMode
 :menuEpicGamesPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Store: Epic Games; Engine: Tim Sweeney/Epic Games
@@ -10130,8 +9597,7 @@ call :menuUbisoftConnect
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startUbisoftConnectPrompt
+cls&goto startUbisoftConnectPrompt
 :startUbisoftConnectPromptSubDialerMode
 call :banner
 call :menuUbisoftConnectPrompt
@@ -10139,8 +9605,7 @@ call :menuUbisoftConnect
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startUbisoftConnectPromptSubDialerMode
+cls&goto startUbisoftConnectPromptSubDialerMode
 :startUbisoftConnectPromptDialerMode
 call :banner
 call :menuUbisoftConnectPrompt
@@ -10148,8 +9613,7 @@ call :menuUbisoftConnect
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startUbisoftConnectPromptDialerMode
+cls&goto startUbisoftConnectPromptDialerMode
 :menuUbisoftConnectPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Massive Entertainment - a Ubisoft Studio
@@ -10184,8 +9648,7 @@ call :menuBlueStacks
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startBlueStacksPrompt
+cls&goto startBlueStacksPrompt
 :startBlueStacksPromptSubDialerMode
 call :banner
 call :menuBlueStacksPrompt
@@ -10193,8 +9656,7 @@ call :menuBlueStacks
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startBlueStacksPromptSubDialerMode
+cls&goto startBlueStacksPromptSubDialerMode
 :startBlueStacksPromptDialerMode
 call :banner
 call :menuBlueStacksPrompt
@@ -10202,8 +9664,7 @@ call :menuBlueStacks
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startBlueStacksPromptDialerMode
+cls&goto startBlueStacksPromptDialerMode
 :menuBlueStacksPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: BlueStacks by now.gg, Inc.
@@ -10238,8 +9699,7 @@ call :menuArena
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startArenaPrompt
+cls&goto startArenaPrompt
 :startArenaPromptSubDialerMode
 call :banner
 call :menuArenaPrompt
@@ -10247,8 +9707,7 @@ call :menuArena
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startArenaPromptSubDialerMode
+cls&goto startArenaPromptSubDialerMode
 :startArenaPromptDialerMode
 call :banner
 call :menuArenaPrompt
@@ -10256,8 +9715,7 @@ call :menuArena
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startArenaPromptDialerMode
+cls&goto startArenaPromptDialerMode
 :menuArenaPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Martin Blume
@@ -10293,8 +9751,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
 if /I %input% EQU I cls&goto startGoInstallerPrompt1
-cls
-goto startGoBoardGamePrompt
+cls&goto startGoBoardGamePrompt
 :startGoBoardGamePromptSubDialerMode
 call :banner
 call :menuGoBoardGamePrompt
@@ -10303,8 +9760,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
 if /I %input% EQU I cls&goto startGoInstallerPrompt2
-cls
-goto startGoBoardGamePromptSubDialerMode
+cls&goto startGoBoardGamePromptSubDialerMode
 :startGoBoardGamePromptDialerMode
 call :banner
 call :menuGoBoardGamePrompt
@@ -10313,8 +9769,7 @@ call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU I cls&goto startGoInstallerPrompt3
-cls
-goto startGoBoardGamePromptDialerMode
+cls&goto startGoBoardGamePromptDialerMode
 :menuGoBoardGamePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Smart Games LLC
@@ -10350,8 +9805,7 @@ call :menuGoBoardGameInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startGoBoardGamePrompt
-cls
-goto startGoInstallerPrompt1
+cls&goto startGoInstallerPrompt1
 :startGoInstallerPrompt2
 call :banner
 call :menuGoBoardGameInstallerPrompt
@@ -10359,8 +9813,7 @@ call :menuGoBoardGameInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startGoBoardGamePromptSubDialerMode
-cls
-goto startGoInstallerPrompt2
+cls&goto startGoInstallerPrompt2
 :startGoInstallerPrompt3
 call :banner
 call :menuGoBoardGameInstallerPrompt
@@ -10368,8 +9821,7 @@ call :menuGoBoardGameInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startGoBoardGamePromptDialerMode
-cls
-goto startGoInstallerPrompt3
+cls&goto startGoInstallerPrompt3
 :startGoInstallerPromptSubDialerMode1
 call :banner
 call :menuGoBoardGameInstallerPrompt
@@ -10377,8 +9829,7 @@ call :menuGoBoardGameInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startGoInstallerPromptSubDialerMode1
+cls&goto startGoInstallerPromptSubDialerMode1
 :startGoInstallerPromptSubDialerMode2
 call :banner
 call :menuGoBoardGameInstallerPrompt
@@ -10386,8 +9837,7 @@ call :menuGoBoardGameInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startGoInstallerPromptSubDialerMode2
+cls&goto startGoInstallerPromptSubDialerMode2
 :startGoInstallerPromptDialerMode
 call :banner
 call :menuGoBoardGameInstallerPrompt
@@ -10395,8 +9845,7 @@ call :menuGoBoardGameInstaller
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startGoInstallerPromptDialerMode
+cls&goto startGoInstallerPromptDialerMode
 :menuGoBoardGameInstallerPrompt
 echo.
 echo Is the Go installer an EXE/MSI file ("E/M")? Input zero ("0") to cancel.
@@ -10414,8 +9863,7 @@ call :menuInkball
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startInkballPrompt
+cls&goto startInkballPrompt
 :startInkballPromptSubDialerMode
 call :banner
 call :menuInkballPrompt
@@ -10423,8 +9871,7 @@ call :menuInkball
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startInkballPromptSubDialerMode
+cls&goto startInkballPromptSubDialerMode
 :startInkballPromptDialerMode
 call :banner
 call :menuInkballPrompt
@@ -10432,8 +9879,7 @@ call :menuInkball
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startInkballPromptDialerMode
+cls&goto startInkballPromptDialerMode
 :menuInkballPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -10466,8 +9912,7 @@ call :menuRiseOfLegends
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startRiseOfLegendsPrompt
+cls&goto startRiseOfLegendsPrompt
 :startRiseOfLegendsPromptSubDialerMode
 call :banner
 call :menuRiseOfLegendsPrompt
@@ -10475,8 +9920,7 @@ call :menuRiseOfLegends
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startRiseOfLegendsPromptSubDialerMode
+cls&goto startRiseOfLegendsPromptSubDialerMode
 :startRiseOfLegendsPromptDialerMode
 call :banner
 call :menuRiseOfLegendsPrompt
@@ -10484,8 +9928,7 @@ call :menuRiseOfLegends
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startRiseOfLegendsPromptDialerMode
+cls&goto startRiseOfLegendsPromptDialerMode
 :menuRiseOfLegendsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Big Huge Games
@@ -10512,6 +9955,7 @@ if /I %input% EQU A start Rise_of_Legends_A.lnk&set input=68A&&goto startPreExit
 if /I %input% EQU R start Rise_of_Legends_R.lnk&set input=68R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Rise_of_Legends_I.lnk&set input=68I&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 6b
 :start6b
 call :banner
 call :menu6bScreen
@@ -10519,8 +9963,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu6b
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start6b
+cls&goto start6b
 :menu6bScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -10635,8 +10078,7 @@ call :menuFreeCell
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startFreeCellPrompt
+cls&goto startFreeCellPrompt
 :startFreeCellPromptSubDialerMode
 call :banner
 call :menuFreeCellPrompt
@@ -10644,8 +10086,7 @@ call :menuFreeCell
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startFreeCellPromptSubDialerMode
+cls&goto startFreeCellPromptSubDialerMode
 :startFreeCellPromptDialerMode
 call :banner
 call :menuFreeCellPrompt
@@ -10653,8 +10094,7 @@ call :menuFreeCell
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startFreeCellPromptDialerMode
+cls&goto startFreeCellPromptDialerMode
 :menuFreeCellPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -10689,8 +10129,7 @@ call :menuHearts
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startHeartsPrompt
+cls&goto startHeartsPrompt
 :startHeartsPromptSubDialerMode
 call :banner
 call :menuHeartsPrompt
@@ -10698,8 +10137,7 @@ call :menuHearts
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startHeartsPromptSubDialerMode
+cls&goto startHeartsPromptSubDialerMode
 :startHeartsPromptDialerMode
 call :banner
 call :menuHeartsPrompt
@@ -10707,8 +10145,7 @@ call :menuHearts
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startHeartsPromptDialerMode
+cls&goto startHeartsPromptDialerMode
 :menuHeartsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -10743,8 +10180,7 @@ call :menuMinesweeper
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startMinesweeperPrompt
+cls&goto startMinesweeperPrompt
 :startMinesweeperPromptSubDialerMode
 call :banner
 call :menuMinesweeperPrompt
@@ -10752,8 +10188,7 @@ call :menuMinesweeper
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startMinesweeperPromptSubDialerMode
+cls&goto startMinesweeperPromptSubDialerMode
 :startMinesweeperPromptDialerMode
 call :banner
 call :menuMinesweeperPrompt
@@ -10761,8 +10196,7 @@ call :menuMinesweeper
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMinesweeperPromptDialerMode
+cls&goto startMinesweeperPromptDialerMode
 :menuMinesweeperPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -10797,8 +10231,7 @@ call :menuMahjongTitans
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startMahjongTitansPrompt
+cls&goto startMahjongTitansPrompt
 :startMahjongTitansPromptSubDialerMode
 call :banner
 call :menuMahjongTitansPrompt
@@ -10806,8 +10239,7 @@ call :menuMahjongTitans
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startMahjongTitansPromptSubDialerMode
+cls&goto startMahjongTitansPromptSubDialerMode
 :startMahjongTitansPromptDialerMode
 call :banner
 call :menuMahjongTitansPrompt
@@ -10815,8 +10247,7 @@ call :menuMahjongTitans
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMahjongTitansPromptDialerMode
+cls&goto startMahjongTitansPromptDialerMode
 :menuMahjongTitansPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -10851,8 +10282,7 @@ call :menuChessTitans
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startChessTitansPrompt
+cls&goto startChessTitansPrompt
 :startChessTitansPromptSubDialerMode
 call :banner
 call :menuChessTitansPrompt
@@ -10860,8 +10290,7 @@ call :menuChessTitans
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startChessTitansPromptSubDialerMode
+cls&goto startChessTitansPromptSubDialerMode
 :startChessTitansPromptDialerMode
 call :banner
 call :menuChessTitansPrompt
@@ -10869,8 +10298,7 @@ call :menuChessTitans
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startChessTitansPromptDialerMode
+cls&goto startChessTitansPromptDialerMode
 :menuChessTitansPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -10905,8 +10333,7 @@ call :menuPurblePlace
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startPurblePlacePrompt
+cls&goto startPurblePlacePrompt
 :startPurblePlacePromptSubDialerMode
 call :banner
 call :menuPurblePlacePrompt
@@ -10914,8 +10341,7 @@ call :menuPurblePlace
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startPurblePlacePromptSubDialerMode
+cls&goto startPurblePlacePromptSubDialerMode
 :startPurblePlacePromptDialerMode
 call :banner
 call :menuPurblePlacePrompt
@@ -10923,8 +10349,7 @@ call :menuPurblePlace
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPurblePlacePromptDialerMode
+cls&goto startPurblePlacePromptDialerMode
 :menuPurblePlacePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -10959,8 +10384,7 @@ call :menuSolitaire
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startSolitairePrompt
+cls&goto startSolitairePrompt
 :startSolitairePromptSubDialerMode
 call :banner
 call :menuSolitairePrompt
@@ -10968,8 +10392,7 @@ call :menuSolitaire
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startSolitairePromptSubDialerMode
+cls&goto startSolitairePromptSubDialerMode
 :startSolitairePromptDialerMode
 call :banner
 call :menuSolitairePrompt
@@ -10977,8 +10400,7 @@ call :menuSolitaire
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSolitairePromptDialerMode
+cls&goto startSolitairePromptDialerMode
 :menuSolitairePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -11013,8 +10435,7 @@ call :menuSpiderSolitaire
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
-cls
-goto startSpiderSolitairePrompt
+cls&goto startSpiderSolitairePrompt
 :startSpiderSolitairePromptSubDialerMode
 call :banner
 call :menuSpiderSolitairePrompt
@@ -11022,8 +10443,7 @@ call :menuSpiderSolitaire
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
-cls
-goto startSpiderSolitairePromptSubDialerMode
+cls&goto startSpiderSolitairePromptSubDialerMode
 :startSpiderSolitairePromptDialerMode
 call :banner
 call :menuSpiderSolitairePrompt
@@ -11031,8 +10451,7 @@ call :menuSpiderSolitaire
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSpiderSolitairePromptDialerMode
+cls&goto startSpiderSolitairePromptDialerMode
 :menuSpiderSolitairePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -11060,6 +10479,7 @@ if /I %input% EQU R start Spider_Solitaire_R.lnk&set input=698R&&goto startPreEx
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=698I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Windows7GamesForWindows11_10_8_O.lnk&set input=698O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 7a
 :start7a
 call :banner
 call :menu7aScreen
@@ -11067,8 +10487,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu7a
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start7a
+cls&goto start7a
 :menu7aScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -11190,8 +10609,7 @@ call :menuWinRAR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startWinRARprompt
+cls&goto startWinRARprompt
 :startWinRARpromptSubDialerMode
 call :banner
 call :menuWinRARprompt
@@ -11199,8 +10617,7 @@ call :menuWinRAR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startWinRARpromptSubDialerMode
+cls&goto startWinRARpromptSubDialerMode
 :startWinRARpromptDialerMode
 call :banner
 call :menuWinRARprompt
@@ -11208,8 +10625,7 @@ call :menuWinRAR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWinRARpromptDialerMode
+cls&goto startWinRARpromptDialerMode
 :menuWinRARPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Eugene Roshal; Distributor: Alexander Roshal
@@ -11244,8 +10660,7 @@ call :menuPeaZip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startPeaZipPrompt
+cls&goto startPeaZipPrompt
 :startPeaZipPromptSubDialerMode
 call :banner
 call :menuPeaZipPrompt
@@ -11253,8 +10668,7 @@ call :menuPeaZip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startPeaZipPromptSubDialerMode
+cls&goto startPeaZipPromptSubDialerMode
 :startPeaZipPromptDialerMode
 call :banner
 call :menuPeaZipPrompt
@@ -11262,8 +10676,7 @@ call :menuPeaZip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPeaZipPromptDialerMode
+cls&goto startPeaZipPromptDialerMode
 :menuPeaZipPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Giorgio Tani
@@ -11298,8 +10711,7 @@ call :menuBandizip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startBandizipPrompt
+cls&goto startBandizipPrompt
 :startBandizipPromptSubDialerMode
 call :banner
 call :menuBandizipPrompt
@@ -11307,8 +10719,7 @@ call :menuBandizip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startBandizipPromptSubDialerMode
+cls&goto startBandizipPromptSubDialerMode
 :startBandizipPromptDialerMode
 call :banner
 call :menuBandizipPrompt
@@ -11316,8 +10727,7 @@ call :menuBandizip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startBandizipPromptDialerMode
+cls&goto startBandizipPromptDialerMode
 :menuBandizipPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Bandisoft International
@@ -11352,8 +10762,7 @@ call :menuALZip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startALZipPrompt
+cls&goto startALZipPrompt
 :startALZipPromptSubDialerMode
 call :banner
 call :menuALZipPrompt
@@ -11361,8 +10770,7 @@ call :menuALZip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startALZipPromptSubDialerMode
+cls&goto startALZipPromptSubDialerMode
 :startALZipPromptDialerMode
 call :banner
 call :menuALZipPrompt
@@ -11370,8 +10778,7 @@ call :menuALZip
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startALZipPromptDialerMode
+cls&goto startALZipPromptDialerMode
 :menuALZipPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: ESTsoft
@@ -11406,8 +10813,7 @@ call :menuPowerArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startPowerArchiverPrompt
+cls&goto startPowerArchiverPrompt
 :startPowerArchiverPromptSubDialerMode
 call :banner
 call :menuPowerArchiverPrompt
@@ -11415,8 +10821,7 @@ call :menuPowerArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startPowerArchiverPromptSubDialerMode
+cls&goto startPowerArchiverPromptSubDialerMode
 :startPowerArchiverPromptDialerMode
 call :banner
 call :menuPowerArchiverPrompt
@@ -11424,8 +10829,7 @@ call :menuPowerArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPowerArchiverPromptDialerMode
+cls&goto startPowerArchiverPromptDialerMode
 :menuPowerArchiverPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: ConeXware Inc.
@@ -11462,8 +10866,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
 if /I %input% EQU T cls&goto startForensicToolkitPrompt1
 if /I %input% EQU L cls&goto startFTKLanguagePrompt1
-cls
-goto startForensicToolkitSetupPrompt
+cls&goto startForensicToolkitSetupPrompt
 :startForensicToolkitSetupPromptSubDialerMode
 call :banner
 call :menuForensicToolkitSetupPrompt
@@ -11473,8 +10876,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
 if /I %input% EQU T cls&goto startForensicToolkitPrompt2
 if /I %input% EQU L cls&goto startFTKLanguagePrompt2
-cls
-goto startForensicToolkitSetupPromptSubDialerMode
+cls&goto startForensicToolkitSetupPromptSubDialerMode
 :startForensicToolkitSetupPromptDialerMode
 call :banner
 call :menuForensicToolkitSetupPrompt
@@ -11484,8 +10886,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU T cls&goto startForensicToolkitPrompt3
 if /I %input% EQU L cls&goto startFTKLanguagePrompt3
-cls
-goto startForensicToolkitSetupPromptDialerMode
+cls&goto startForensicToolkitSetupPromptDialerMode
 :menuForensicToolkitSetupPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under AccessData, now under Exterro
@@ -11524,8 +10925,7 @@ call :menuForensicToolkit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startForensicToolkitSetupPrompt
-cls
-goto startForensicToolkitPrompt1
+cls&goto startForensicToolkitPrompt1
 :startForensicToolkitPrompt2
 call :banner
 call :menuForensicToolkitPrompt
@@ -11533,8 +10933,7 @@ call :menuForensicToolkit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startForensicToolkitSetupPromptSubDialerMode
-cls
-goto startForensicToolkitPrompt2
+cls&goto startForensicToolkitPrompt2
 :startForensicToolkitPrompt3
 call :banner
 call :menuForensicToolkitPrompt
@@ -11542,8 +10941,7 @@ call :menuForensicToolkit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startForensicToolkitSetupPromptDialerMode
-cls
-goto startForensicToolkitPrompt3
+cls&goto startForensicToolkitPrompt3
 :startForensicToolkitPromptSubDialerMode1
 call :banner
 call :menuForensicToolkitPrompt
@@ -11551,8 +10949,7 @@ call :menuForensicToolkit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startForensicToolkitPromptSubDialerMode1
+cls&goto startForensicToolkitPromptSubDialerMode1
 :startForensicToolkitPromptSubDialerMode2
 call :banner
 call :menuForensicToolkitPrompt
@@ -11560,8 +10957,7 @@ call :menuForensicToolkit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startForensicToolkitPromptSubDialerMode
+cls&goto startForensicToolkitPromptSubDialerMode
 :startForensicToolkitPromptDialerMode
 call :banner
 call :menuForensicToolkitPrompt
@@ -11569,8 +10965,7 @@ call :menuForensicToolkit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startForensicToolkitPromptDialerMode
+cls&goto startForensicToolkitPromptDialerMode
 :menuForensicToolkitPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under AccessData, now under Exterro
@@ -11605,8 +11000,7 @@ call :menuFTKLanguage
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startForensicToolkitSetupPrompt
-cls
-goto startFTKLanguagePrompt1
+cls&goto startFTKLanguagePrompt1
 :startFTKLanguagePrompt2
 call :banner
 call :menuFTKLanguagePrompt
@@ -11614,8 +11008,7 @@ call :menuFTKLanguage
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startForensicToolkitSetupPromptSubDialerMode
-cls
-goto startFTKLanguagePrompt2
+cls&goto startFTKLanguagePrompt2
 :startFTKLanguagePrompt3
 call :banner
 call :menuFTKLanguagePrompt
@@ -11623,8 +11016,7 @@ call :menuFTKLanguage
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startForensicToolkitSetupPromptDialerMode
-cls
-goto startFTKLanguagePrompt3
+cls&goto startFTKLanguagePrompt3
 :startFTKLanguagePromptSubDialerMode1
 call :banner
 call :menuFTKLanguagePrompt
@@ -11632,8 +11024,7 @@ call :menuFTKLanguage
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startFTKLanguagePromptSubDialerMode1
+cls&goto startFTKLanguagePromptSubDialerMode1
 :startFTKLanguagePromptSubDialerMode2
 call :banner
 call :menuFTKLanguagePrompt
@@ -11641,8 +11032,7 @@ call :menuFTKLanguage
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startFTKLanguagePromptSubDialerMode2
+cls&goto startFTKLanguagePromptSubDialerMode2
 :startFTKLanguagePromptDialerMode
 call :banner
 call :menuFTKLanguagePrompt
@@ -11650,8 +11040,7 @@ call :menuFTKLanguage
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startFTKLanguagePromptDialerMode
+cls&goto startFTKLanguagePromptDialerMode
 :menuFTKLanguagePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under AccessData, now under Exterro
@@ -11686,8 +11075,7 @@ call :menuPasswareKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startPasswareKitPrompt
+cls&goto startPasswareKitPrompt
 :startPasswareKitPromptSubDialerMode
 call :banner
 call :menuPasswareKitPrompt
@@ -11695,8 +11083,7 @@ call :menuPasswareKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startPasswareKitPromptSubDialerMode
+cls&goto startPasswareKitPromptSubDialerMode
 :startPasswareKitPromptDialerMode
 call :banner
 call :menuPasswareKitPrompt
@@ -11704,8 +11091,7 @@ call :menuPasswareKit
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPasswareKitPromptDialerMode
+cls&goto startPasswareKitPromptDialerMode
 :menuPasswareKitPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Passware
@@ -11740,8 +11126,7 @@ call :menuJRiverMediaCenter
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startJRiverMediaCenterPrompt
+cls&goto startJRiverMediaCenterPrompt
 :startJRiverMediaCenterPromptSubDialerMode
 call :banner
 call :menuJRiverMediaCenterPrompt
@@ -11749,8 +11134,7 @@ call :menuJRiverMediaCenter
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startJRiverMediaCenterPromptSubDialerMode
+cls&goto startJRiverMediaCenterPromptSubDialerMode
 :startJRiverMediaCenterPromptDialerMode
 call :banner
 call :menuJRiverMediaCenterPrompt
@@ -11758,8 +11142,7 @@ call :menuJRiverMediaCenter
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startJRiverMediaCenterPromptDialerMode
+cls&goto startJRiverMediaCenterPromptDialerMode
 :menuJRiverMediaCenterPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JRiver, Inc.
@@ -11787,6 +11170,7 @@ if /I %input% EQU R start JRiver_Media_Center_R.lnk&set input=78R&&goto startPre
 if /I %input% EQU I start JRiver_Media_Center_I.exe&set input=78I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start JRiver_Media_Center_O.lnk&set input=78O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 7b
 :start7b
 call :banner
 call :menu7bScreen
@@ -11794,8 +11178,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu7b
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start7b
+cls&goto start7b
 :menu7bScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -11917,8 +11300,7 @@ call :menuPowerISO
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startPowerISOprompt
+cls&goto startPowerISOprompt
 :startPowerISOpromptSubDialerMode
 call :banner
 call :menuPowerISOprompt
@@ -11926,8 +11308,7 @@ call :menuPowerISO
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startPowerISOpromptSubDialerMode
+cls&goto startPowerISOpromptSubDialerMode
 :startPowerISOpromptDialerMode
 call :banner
 call :menuPowerISOprompt
@@ -11935,8 +11316,7 @@ call :menuPowerISO
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPowerISOpromptDialerMode
+cls&goto startPowerISOpromptDialerMode
 :menuPowerISOPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: PowerISO
@@ -11971,8 +11351,7 @@ call :menuUltraISO
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startUltraISOprompt
+cls&goto startUltraISOprompt
 :startUltraISOpromptSubDialerMode
 call :banner
 call :menuUltraISOprompt
@@ -11980,8 +11359,7 @@ call :menuUltraISO
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startUltraISOpromptSubDialerMode
+cls&goto startUltraISOpromptSubDialerMode
 :startUltraISOpromptDialerMode
 call :banner
 call :menuUltraISOprompt
@@ -11989,8 +11367,7 @@ call :menuUltraISO
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startUltraISOpromptDialerMode
+cls&goto startUltraISOpromptDialerMode
 :menuUltraISOPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: EZB Systems
@@ -12025,8 +11402,7 @@ call :menuAdobeAcrobat
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startAdobeAcrobatPrompt
+cls&goto startAdobeAcrobatPrompt
 :startAdobeAcrobatPromptSubDialerMode
 call :banner
 call :menuAdobeAcrobatPrompt
@@ -12034,8 +11410,7 @@ call :menuAdobeAcrobat
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startAdobeAcrobatPromptSubDialerMode
+cls&goto startAdobeAcrobatPromptSubDialerMode
 :startAdobeAcrobatPromptDialerMode
 call :banner
 call :menuAdobeAcrobatPrompt
@@ -12043,8 +11418,7 @@ call :menuAdobeAcrobat
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAdobeAcrobatPromptDialerMode
+cls&goto startAdobeAcrobatPromptDialerMode
 :menuAdobeAcrobatPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Adobe
@@ -12079,8 +11453,7 @@ call :menuCalibre
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startCalibrePrompt
+cls&goto startCalibrePrompt
 :startCalibrePromptSubDialerMode
 call :banner
 call :menuCalibrePrompt
@@ -12088,8 +11461,7 @@ call :menuCalibre
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startCalibrePromptSubDialerMode
+cls&goto startCalibrePromptSubDialerMode
 :startCalibrePromptDialerMode
 call :banner
 call :menuCalibrePrompt
@@ -12097,8 +11469,7 @@ call :menuCalibre
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCalibrePromptDialerMode
+cls&goto startCalibrePromptDialerMode
 :menuCalibrePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Kovid Goyal
@@ -12133,8 +11504,7 @@ call :menuDVDFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startDVDFabPrompt
+cls&goto startDVDFabPrompt
 :startDVDFabPromptSubDialerMode
 call :banner
 call :menuDVDFabPrompt
@@ -12142,8 +11512,7 @@ call :menuDVDFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startDVDFabPromptSubDialerMode
+cls&goto startDVDFabPromptSubDialerMode
 :startDVDFabPromptDialerMode
 call :banner
 call :menuDVDFabPrompt
@@ -12151,8 +11520,7 @@ call :menuDVDFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startDVDFabPromptDialerMode
+cls&goto startDVDFabPromptDialerMode
 :menuDVDFabPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Fengtao Software Limited
@@ -12187,8 +11555,7 @@ call :menuUniFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startUniFabPrompt
+cls&goto startUniFabPrompt
 :startUniFabPromptSubDialerMode
 call :banner
 call :menuUniFabPrompt
@@ -12196,8 +11563,7 @@ call :menuUniFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startUniFabPromptSubDialerMode
+cls&goto startUniFabPromptSubDialerMode
 :startUniFabPromptDialerMode
 call :banner
 call :menuUniFabPrompt
@@ -12205,8 +11571,7 @@ call :menuUniFab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startUniFabPromptDialerMode
+cls&goto startUniFabPromptDialerMode
 :menuUniFabPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Fengtao Software Limited
@@ -12241,8 +11606,7 @@ call :menuIsoBuster
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startIsoBusterPrompt
+cls&goto startIsoBusterPrompt
 :startIsoBusterPromptSubDialerMode
 call :banner
 call :menuIsoBusterPrompt
@@ -12250,8 +11614,7 @@ call :menuIsoBuster
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startIsoBusterPromptSubDialerMode
+cls&goto startIsoBusterPromptSubDialerMode
 :startIsoBusterPromptDialerMode
 call :banner
 call :menuIsoBusterPrompt
@@ -12259,8 +11622,7 @@ call :menuIsoBuster
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startIsoBusterPromptDialerMode
+cls&goto startIsoBusterPromptDialerMode
 :menuIsoBusterPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Peter Van Hove/Smart Projects
@@ -12295,8 +11657,7 @@ call :menuGameExtractor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7b
-cls
-goto startGameExtractorPrompt
+cls&goto startGameExtractorPrompt
 :startGameExtractorPromptSubDialerMode
 call :banner
 call :menuGameExtractorPrompt
@@ -12304,8 +11665,7 @@ call :menuGameExtractor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start7a
-cls
-goto startGameExtractorPromptSubDialerMode
+cls&goto startGameExtractorPromptSubDialerMode
 :startGameExtractorPromptDialerMode
 call :banner
 call :menuGameExtractorPrompt
@@ -12313,8 +11673,7 @@ call :menuGameExtractor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startGameExtractorPromptDialerMode
+cls&goto startGameExtractorPromptDialerMode
 :menuGameExtractorPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Watto Studios
@@ -12342,6 +11701,7 @@ if /I %input% EQU R start Game_Extractor_R.lnk&set input=798R&&goto startPreExit
 if /I %input% EQU I start Game_Extractor_I.exe&set input=798I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Game_Extractor_O.lnk&set input=798O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 8
 :start8
 call :banner
 call :menu8Screen
@@ -12349,8 +11709,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu8
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start8
+cls&goto start8
 :menu8Screen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -12440,8 +11799,7 @@ call :menuWinZipArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startWinZipArchiverPrompt
+cls&goto startWinZipArchiverPrompt
 :startWinZipArchiverPromptDialerMode
 call :banner
 call :menuWinZipArchiverPrompt
@@ -12449,8 +11807,7 @@ call :menuWinZipArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWinZipArchiverPromptDialerMode
+cls&goto startWinZipArchiverPromptDialerMode
 :menuWinZipArchiverPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: WinZip International LLC/formerly under Corel Corporarion, now under Alludo
@@ -12485,8 +11842,7 @@ call :menuWinZipImageManager
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startWinZipImageManagerPrompt
+cls&goto startWinZipImageManagerPrompt
 :startWinZipImageManagerPromptDialerMode
 call :banner
 call :menuWinZipImageManagerPrompt
@@ -12494,8 +11850,7 @@ call :menuWinZipImageManager
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWinZipImageManagerPromptDialerMode
+cls&goto startWinZipImageManagerPromptDialerMode
 :menuWinZipImageManagerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: WinZip International LLC/formerly under Corel Corporarion, now under Alludo
@@ -12530,8 +11885,7 @@ call :menuWinZipPDFexpress
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startWinZipPDFexpressPrompt
+cls&goto startWinZipPDFexpressPrompt
 :startWinZipPDFexpressPromptDialerMode
 call :banner
 call :menuWinZipPDFexpressPrompt
@@ -12539,8 +11893,7 @@ call :menuWinZipPDFexpress
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWinZipPDFexpressPromptDialerMode
+cls&goto startWinZipPDFexpressPromptDialerMode
 :menuWinZipPDFexpressPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: WinZip International LLC/formerly under Corel Corporarion, now under Alludo
@@ -12575,8 +11928,7 @@ call :menuWinZipDuplicateFileFinder
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startWinZipDuplicateFileFinderPrompt
+cls&goto startWinZipDuplicateFileFinderPrompt
 :startWinZipDuplicateFileFinderPromptDialerMode
 call :banner
 call :menuWinZipDuplicateFileFinderPrompt
@@ -12584,8 +11936,7 @@ call :menuWinZipDuplicateFileFinder
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWinZipDuplicateFileFinderPromptDialerMode
+cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 :menuWinZipDuplicateFileFinderPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: WinZip International LLC/formerly under Corel Corporarion, now under Alludo
@@ -12622,8 +11973,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
 if /I %input% EQU S cls&goto startWinZipSafeSharePrompt1
 if /I %input% EQU B cls&goto startWinZipSecureBackupPrompt1
-cls
-goto startWinZipOnlineToolsPrompt
+cls&goto startWinZipOnlineToolsPrompt
 :startWinZipOnlineToolsPromptDialerMode
 call :banner
 call :menuWinZipOnlineToolsPrompt
@@ -12633,8 +11983,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU S cls&goto startWinZipSafeSharePrompt2
 if /I %input% EQU B cls&goto startWinZipSecureBackupPrompt2
-cls
-goto startWinZipOnlineToolsPromptDialerMode
+cls&goto startWinZipOnlineToolsPromptDialerMode
 :menuWinZipOnlineToolsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: WinZip International LLC/formerly under Corel Corporarion, now under Alludo
@@ -12673,8 +12022,7 @@ call :menuWinZipSafeShare
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWinZipOnlineToolsPrompt
-cls
-goto startWinZipSafeSharePrompt1
+cls&goto startWinZipSafeSharePrompt1
 :startWinZipSafeSharePrompt2
 call :banner
 call :menuWinZipSafeSharePrompt
@@ -12682,8 +12030,7 @@ call :menuWinZipSafeShare
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWinZipOnlineToolsPromptDialerMode
-cls
-goto startWinZipSafeSharePrompt2
+cls&goto startWinZipSafeSharePrompt2
 :startWinZipSafeSharePromptSubDialerMode
 call :banner
 call :menuWinZipSafeSharePrompt
@@ -12691,8 +12038,7 @@ call :menuWinZipSafeShare
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startWinZipSafeSharePromptSubDialerMode
+cls&goto startWinZipSafeSharePromptSubDialerMode
 :startWinZipSafeSharePromptDialerMode
 call :banner
 call :menuWinZipSafeSharePrompt
@@ -12700,8 +12046,7 @@ call :menuWinZipSafeShare
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWinZipSafeSharePromptDialerMode
+cls&goto startWinZipSafeSharePromptDialerMode
 :menuWinZipSafeSharePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: WinZip International LLC/formerly under Corel Corporarion, now under Alludo
@@ -12736,8 +12081,7 @@ call :menuWinZipSecureBackup
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWinZipOnlineToolsPrompt
-cls
-goto startWinZipSecureBackupPrompt1
+cls&goto startWinZipSecureBackupPrompt1
 :startWinZipSecureBackupPrompt2
 call :banner
 call :menuWinZipSecureBackupPrompt
@@ -12745,8 +12089,7 @@ call :menuWinZipSecureBackup
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWinZipOnlineToolsPromptDialerMode
-cls
-goto startWinZipSecureBackupPrompt2
+cls&goto startWinZipSecureBackupPrompt2
 :startWinZipSecureBackupPromptSubDialerMode
 call :banner
 call :menuWinZipSecureBackupPrompt
@@ -12754,8 +12097,7 @@ call :menuWinZipSecureBackup
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startWinZipSecureBackupPromptSubDialerMode
+cls&goto startWinZipSecureBackupPromptSubDialerMode
 :startWinZipSecureBackupPromptDialerMode
 call :banner
 call :menuWinZipSecureBackupPrompt
@@ -12763,8 +12105,7 @@ call :menuWinZipSecureBackup
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWinZipSecureBackupPromptDialerMode
+cls&goto startWinZipSecureBackupPromptDialerMode
 :menuWinZipSecureBackupPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: WinZip International LLC/formerly under Corel Corporarion, now under Alludo
@@ -12801,8 +12142,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
 if /I %input% EQU E cls&goto startPEExplorerPrompt1
 if /I %input% EQU T cls&goto startResourceTunerPrompt1
-cls
-goto startPEExplorerAndResourceTunerPrompt
+cls&goto startPEExplorerAndResourceTunerPrompt
 :startPEExplorerAndResourceTunerPromptDialerMode
 call :banner
 call :menuPEExplorerAndResourceTunerPrompt
@@ -12812,8 +12152,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU E cls&goto startPEExplorerPrompt2
 if /I %input% EQU T cls&goto startResourceTunerPrompt2
-cls
-goto startPEExplorerAndResourceTunerPromptDialerMode
+cls&goto startPEExplorerAndResourceTunerPromptDialerMode
 :menuPEExplorerAndResourceTunerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Depends
@@ -12850,8 +12189,7 @@ call :menuPEExplorer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPEExplorerAndResourceTunerPrompt
-cls
-goto startPEExplorerPrompt1
+cls&goto startPEExplorerPrompt1
 :startPEExplorerPrompt2
 call :banner
 call :menuPEExplorerPrompt
@@ -12859,8 +12197,7 @@ call :menuPEExplorer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPEExplorerAndResourceTunerPromptDialerMode
-cls
-goto startPEExplorerPrompt2
+cls&goto startPEExplorerPrompt2
 :startPEExplorerPromptSubDialerMode
 call :banner
 call :menuPEExplorerPrompt
@@ -12868,8 +12205,7 @@ call :menuPEExplorer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startPEExplorerPromptSubDialerMode
+cls&goto startPEExplorerPromptSubDialerMode
 :startPEExplorerPromptDialerMode
 call :banner
 call :menuPEExplorerPrompt
@@ -12877,8 +12213,7 @@ call :menuPEExplorer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPEExplorerPromptDialerMode
+cls&goto startPEExplorerPromptDialerMode
 :menuPEExplorerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Pavel Yosifovich (GitHub Username: zodiacon)
@@ -12911,8 +12246,7 @@ call :menuResourceTuner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPEExplorerAndResourceTunerPrompt
-cls
-goto startResourceTunerPrompt1
+cls&goto startResourceTunerPrompt1
 :startResourceTunerPrompt2
 call :banner
 call :menuResourceTunerPrompt
@@ -12920,8 +12254,7 @@ call :menuResourceTuner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startPEExplorerAndResourceTunerPromptDialerMode
-cls
-goto startResourceTunerPrompt2
+cls&goto startResourceTunerPrompt2
 :startResourceTunerPromptSubDialerMode
 call :banner
 call :menuResourceTunerPrompt
@@ -12929,8 +12262,7 @@ call :menuResourceTuner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startResourceTunerPromptSubDialerMode
+cls&goto startResourceTunerPromptSubDialerMode
 :startResourceTunerPromptDialerMode
 call :banner
 call :menuResourceTunerPrompt
@@ -12938,8 +12270,7 @@ call :menuResourceTuner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startResourceTunerPromptDialerMode
+cls&goto startResourceTunerPromptDialerMode
 :menuResourceTunerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Heaventools Software
@@ -12974,8 +12305,7 @@ call :menuWinAce
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startWinAcePrompt
+cls&goto startWinAcePrompt
 :startWinAcePromptDialerMode
 call :banner
 call :menuWinAcePrompt
@@ -12983,8 +12313,7 @@ call :menuWinAce
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWinAcePromptDialerMode
+cls&goto startWinAcePromptDialerMode
 :menuWinAcePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: e-merge GmbH
@@ -13019,8 +12348,7 @@ call :menuIZArc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startIZArcPrompt
+cls&goto startIZArcPrompt
 :startIZArcPromptDialerMode
 call :banner
 call :menuIZArcPrompt
@@ -13028,8 +12356,7 @@ call :menuIZArc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startIZArcPromptDialerMode
+cls&goto startIZArcPromptDialerMode
 :menuIZArcPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Ivan Zahariev
@@ -13064,8 +12391,7 @@ call :menuB1Manager
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start8
-cls
-goto startB1ManagerPrompt
+cls&goto startB1ManagerPrompt
 :startB1ManagerPromptDialerMode
 call :banner
 call :menuB1ManagerPrompt
@@ -13073,8 +12399,7 @@ call :menuB1Manager
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startB1ManagerPromptDialerMode
+cls&goto startB1ManagerPromptDialerMode
 :menuB1ManagerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Adam Buyer
@@ -13102,6 +12427,7 @@ if /I %input% EQU R start B1_Manager_R.lnk&set input=89R&&goto startPreExitPromp
 if /I %input% EQU I start B1_Manager_I.exe&set input=89I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start B1_Manager_O.lnk&set input=89O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 9a
 :start9a
 call :banner
 call :menu9aScreen
@@ -13109,8 +12435,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu9a
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start9a
+cls&goto start9a
 :menu9aScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -13388,8 +12713,7 @@ if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU W cls&goto startWindowsToolsPrompt1
 if /I %input% EQU E cls&goto startDriversEtcPrompt1
 if /I %input% EQU S cls&goto startSystemInternalsPrompt1
-cls
-goto startUtilitiesPrompt
+cls&goto startUtilitiesPrompt
 :startUtilitiesPromptSubDialerMode2
 call :banner
 call :menuUtilitiesPrompt
@@ -13400,8 +12724,7 @@ if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU W cls&goto startWindowsToolsPrompt2
 if /I %input% EQU E cls&goto startDriversEtcPrompt2
 if /I %input% EQU S cls&goto startSystemInternalsPrompt2
-cls
-goto startUtilitiesPromptSubDialerMode2
+cls&goto startUtilitiesPromptSubDialerMode2
 :startUtilitiesPromptSubDialerMode3
 call :banner
 call :menuUtilitiesPrompt
@@ -13412,8 +12735,7 @@ if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU W cls&goto startWindowsToolsPrompt3
 if /I %input% EQU E cls&goto startDriversEtcPrompt3
 if /I %input% EQU S cls&goto startSystemInternalsPrompt3
-cls
-goto startUtilitiesPromptSubDialerMode3
+cls&goto startUtilitiesPromptSubDialerMode3
 :startUtilitiesPromptDialerMode
 call :banner
 call :menuUtilitiesPrompt
@@ -13424,8 +12746,7 @@ if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU W cls&goto startWindowsToolsPrompt4
 if /I %input% EQU E cls&goto startDriversEtcPrompt4
 if /I %input% EQU S cls&goto startSystemInternalsPrompt4
-cls
-goto startUtilitiesPromptDialerMode
+cls&goto startUtilitiesPromptDialerMode
 :menuUtilitiesPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Depends
@@ -13463,8 +12784,7 @@ call :menuWindowsTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPrompt
-cls
-goto startWindowsToolsPrompt1
+cls&goto startWindowsToolsPrompt1
 :startWindowsToolsPrompt2
 call :banner
 call :menuWindowsToolsPrompt
@@ -13472,8 +12792,7 @@ call :menuWindowsTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPromptSubDialerMode2
-cls
-goto startWindowsToolsPrompt2
+cls&goto startWindowsToolsPrompt2
 :startWindowsToolsPrompt3
 call :banner
 call :menuWindowsToolsPrompt
@@ -13481,8 +12800,7 @@ call :menuWindowsTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPromptSubDialerMode3
-cls
-goto startWindowsToolsPrompt3
+cls&goto startWindowsToolsPrompt3
 :startWindowsToolsPrompt4
 call :banner
 call :menuWindowsToolsPrompt
@@ -13490,8 +12808,7 @@ call :menuWindowsTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPromptDialerMode
-cls
-goto startWindowsToolsPrompt4
+cls&goto startWindowsToolsPrompt4
 :startWindowsToolsPromptDeepSubDialerMode1
 call :banner
 call :menuWindowsToolsPrompt
@@ -13499,8 +12816,7 @@ call :menuWindowsTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startWindowsToolsPromptDeepSubDialerMode1
+cls&goto startWindowsToolsPromptDeepSubDialerMode1
 :startWindowsToolsPromptDeepSubDialerMode2
 call :banner
 call :menuWindowsToolsPrompt
@@ -13508,8 +12824,7 @@ call :menuWindowsTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startWindowsToolsPromptDeepSubDialerMode2
+cls&goto startWindowsToolsPromptDeepSubDialerMode2
 :startWindowsToolsPromptDeepSubDialerMode3
 call :banner
 call :menuWindowsToolsPrompt
@@ -13517,8 +12832,7 @@ call :menuWindowsTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startWindowsToolsPromptDeepSubDialerMode3
+cls&goto startWindowsToolsPromptDeepSubDialerMode3
 :startWindowsToolsPromptDialerMode
 call :banner
 call :menuWindowsToolsPrompt
@@ -13526,8 +12840,7 @@ call :menuWindowsTools
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWindowsToolsPromptDialerMode
+cls&goto startWindowsToolsPromptDialerMode
 :menuWindowsToolsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -13559,8 +12872,7 @@ call :menuDriversEtc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPrompt
-cls
-goto startDriversEtcPrompt1
+cls&goto startDriversEtcPrompt1
 :startDriversEtcPrompt2
 call :banner
 call :menuDriversEtcPrompt
@@ -13568,8 +12880,7 @@ call :menuDriversEtc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPromptSubDialerMode2
-cls
-goto startDriversEtcPrompt2
+cls&goto startDriversEtcPrompt2
 :startDriversEtcPrompt3
 call :banner
 call :menuDriversEtcPrompt
@@ -13577,8 +12888,7 @@ call :menuDriversEtc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPromptSubDialerMode3
-cls
-goto startDriversEtcPrompt3
+cls&goto startDriversEtcPrompt3
 :startDriversEtcPrompt4
 call :banner
 call :menuDriversEtcPrompt
@@ -13586,8 +12896,7 @@ call :menuDriversEtc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPromptDialerMode
-cls
-goto startDriversEtcPrompt4
+cls&goto startDriversEtcPrompt4
 :startDriversEtcPromptDeepSubDialerMode1
 call :banner
 call :menuDriversEtcPrompt
@@ -13595,8 +12904,7 @@ call :menuDriversEtc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startDriversEtcPromptDeepSubDialerMode1
+cls&goto startDriversEtcPromptDeepSubDialerMode1
 :startDriversEtcPromptDeepSubDialerMode2
 call :banner
 call :menuDriversEtcPrompt
@@ -13604,8 +12912,7 @@ call :menuDriversEtc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startDriversEtcPromptDeepSubDialerMode2
+cls&goto startDriversEtcPromptDeepSubDialerMode2
 :startDriversEtcPromptDeepSubDialerMode3
 call :banner
 call :menuDriversEtcPrompt
@@ -13613,8 +12920,7 @@ call :menuDriversEtc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startDriversEtcPromptDeepSubDialerMode3
+cls&goto startDriversEtcPromptDeepSubDialerMode3
 :startDriversEtcPromptDialerMode
 call :banner
 call :menuDriversEtcPrompt
@@ -13622,8 +12928,7 @@ call :menuDriversEtc
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startDriversEtcPromptDialerMode
+cls&goto startDriversEtcPromptDialerMode
 :menuDriversEtcPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -13655,8 +12960,7 @@ call :menuSystemInternals
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPrompt
-cls
-goto startSystemInternalsPrompt1
+cls&goto startSystemInternalsPrompt1
 :startSystemInternalsPrompt2
 call :banner
 call :menuSystemInternalsPrompt
@@ -13664,8 +12968,7 @@ call :menuSystemInternals
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPromptSubDialerMode2
-cls
-goto startSystemInternalsPrompt2
+cls&goto startSystemInternalsPrompt2
 :startSystemInternalsPrompt3
 call :banner
 call :menuSystemInternalsPrompt
@@ -13673,8 +12976,7 @@ call :menuSystemInternals
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPromptSubDialerMode3
-cls
-goto startSystemInternalsPrompt3
+cls&goto startSystemInternalsPrompt3
 :startSystemInternalsPrompt4
 call :banner
 call :menuSystemInternalsPrompt
@@ -13682,8 +12984,7 @@ call :menuSystemInternals
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startUtilitiesPromptDialerMode
-cls
-goto startSystemInternalsPrompt4
+cls&goto startSystemInternalsPrompt4
 :startSystemInternalsPromptDeepSubDialerMode1
 call :banner
 call :menuSystemInternalsPrompt
@@ -13691,8 +12992,7 @@ call :menuSystemInternals
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startSystemInternalsPromptDeepSubDialerMode1
+cls&goto startSystemInternalsPromptDeepSubDialerMode1
 :startSystemInternalsPromptDeepSubDialerMode2
 call :banner
 call :menuSystemInternalsPrompt
@@ -13700,8 +13000,7 @@ call :menuSystemInternals
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startSystemInternalsPromptDeepSubDialerMode2
+cls&goto startSystemInternalsPromptDeepSubDialerMode2
 :startSystemInternalsPromptDeepSubDialerMode3
 call :banner
 call :menuSystemInternalsPrompt
@@ -13709,8 +13008,7 @@ call :menuSystemInternals
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startSystemInternalsPromptDeepSubDialerMode3
+cls&goto startSystemInternalsPromptDeepSubDialerMode3
 :startSystemInternalsPromptDialerMode
 call :banner
 call :menuSystemInternalsPrompt
@@ -13718,8 +13016,7 @@ call :menuSystemInternals
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSystemInternalsPromptDialerMode
+cls&goto startSystemInternalsPromptDialerMode
 :menuSystemInternalsPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under Bryce Cogswell/Mark Russinovich/Winternals Software, now under Microsoft Corporation
@@ -13751,8 +13048,7 @@ call :menuOpenMPT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startOpenMPTPrompt
+cls&goto startOpenMPTPrompt
 :startOpenMPTSubDialerMode2
 call :banner
 call :menuOpenMPTPrompt
@@ -13760,8 +13056,7 @@ call :menuOpenMPT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startOpenMPTPromptSubDialerMode2
+cls&goto startOpenMPTPromptSubDialerMode2
 :startOpenMPTPromptSubDialerMode3
 call :banner
 call :menuOpenMPTPrompt
@@ -13769,8 +13064,7 @@ call :menuOpenMPT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startOpenMPTPromptSubDialerMode3
+cls&goto startOpenMPTPromptSubDialerMode3
 :startOpenMPTPromptDialerMode
 call :banner
 call :menuOpenMPTPrompt
@@ -13778,8 +13072,7 @@ call :menuOpenMPT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startOpenMPTPromptDialerMode
+cls&goto startOpenMPTPromptDialerMode
 :menuOpenMPTPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Olivier Lapicque
@@ -13814,8 +13107,7 @@ call :menuTreeSize
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startTreeSizePrompt
+cls&goto startTreeSizePrompt
 :startTreeSizePromptSubDialerMode2
 call :banner
 call :menuTreeSizePrompt
@@ -13823,8 +13115,7 @@ call :menuTreeSize
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startTreeSizePromptSubDialerMode2
+cls&goto startTreeSizePromptSubDialerMode2
 :startTreeSizePromptSubDialerMode3
 call :banner
 call :menuTreeSizePrompt
@@ -13832,8 +13123,7 @@ call :menuTreeSize
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startTreeSizePromptSubDialerMode3
+cls&goto startTreeSizePromptSubDialerMode3
 :startTreeSizePromptDialerMode
 call :banner
 call :menuTreeSizePrompt
@@ -13841,8 +13131,7 @@ call :menuTreeSize
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startTreeSizePromptDialerMode
+cls&goto startTreeSizePromptDialerMode
 :menuTreeSizePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JAM Software
@@ -13877,8 +13166,7 @@ call :menuMinitab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startMinitabPrompt
+cls&goto startMinitabPrompt
 :startMinitabPromptSubDialerMode2
 call :banner
 call :menuMinitabPrompt
@@ -13886,8 +13174,7 @@ call :menuMinitab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startMinitabPromptSubDialerMode2
+cls&goto startMinitabPromptSubDialerMode2
 :startMinitabPromptSubDialerMode3
 call :banner
 call :menuMinitabPrompt
@@ -13895,8 +13182,7 @@ call :menuMinitab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startMinitabPromptSubDialerMode3
+cls&goto startMinitabPromptSubDialerMode3
 :startMinitabPromptDialerMode
 call :banner
 call :menuMinitabPrompt
@@ -13904,8 +13190,7 @@ call :menuMinitab
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMinitabPromptDialerMode
+cls&goto startMinitabPromptDialerMode
 :menuMinitabPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Barbara F. Ryan, Thomas A. Ryan, Jr., and Brian L. Joiner/Minitab, LLC
@@ -13940,8 +13225,7 @@ call :menujGRASP
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startjGRASPprompt
+cls&goto startjGRASPprompt
 :startjGRASPpromptSubDialerMode2
 call :banner
 call :menujGRASPprompt
@@ -13949,8 +13233,7 @@ call :menujGRASP
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startjGRASPpromptSubDialerMode2
+cls&goto startjGRASPpromptSubDialerMode2
 :startjGRASPpromptSubDialerMode3
 call :banner
 call :menujGRASPprompt
@@ -13958,8 +13241,7 @@ call :menujGRASP
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startjGRASPpromptSubDialerMode3
+cls&goto startjGRASPpromptSubDialerMode3
 :startjGRASPpromptDialerMode
 call :banner
 call :menujGRASPprompt
@@ -13967,8 +13249,7 @@ call :menujGRASP
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startjGRASPpromptDialerMode
+cls&goto startjGRASPpromptDialerMode
 :menujGRASPprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: jGRASP Team
@@ -14005,8 +13286,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU A cls&goto startEclipseRunAdminPrompt1
 if /I %input% EQU R cls&goto startEclipseRunPrompt1
-cls
-goto startEclipsePrompt
+cls&goto startEclipsePrompt
 :startEclipsePromptSubDialerMode2
 call :banner
 call :menuEclipsePrompt
@@ -14016,8 +13296,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU A cls&goto startEclipseRunAdminPrompt2
 if /I %input% EQU R cls&goto startEclipseRunPrompt2
-cls
-goto startEclipsePromptSubDialerMode2
+cls&goto startEclipsePromptSubDialerMode2
 :startEclipsePromptSubDialerMode3
 call :banner
 call :menuEclipsePrompt
@@ -14027,8 +13306,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU A cls&goto startEclipseRunAdminPrompt3
 if /I %input% EQU R cls&goto startEclipseRunPrompt3
-cls
-goto startEclipsePromptSubDialerMode3
+cls&goto startEclipsePromptSubDialerMode3
 :startEclipsePromptDialerMode
 call :banner
 call :menuEclipsePrompt
@@ -14038,8 +13316,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU A cls&goto startEclipseRunAdminPrompt4
 if /I %input% EQU R cls&goto startEclipseRunPrompt4
-cls
-goto startEclipsePromptDialerMode
+cls&goto startEclipsePromptDialerMode
 :menuEclipsePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: formerly under IBM, now under Eclipse Foundation
@@ -14091,8 +13368,7 @@ call :menuEclipseRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startEclipsePrompt
-cls
-goto startEclipseRunAdminPrompt1
+cls&goto startEclipseRunAdminPrompt1
 :startEclipseRunAdminPrompt2
 call :banner
 call :menuEclipseRunAdminPrompt
@@ -14100,8 +13376,7 @@ call :menuEclipseRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startEclipsePromptSubDialerMode2
-cls
-goto startEclipseRunAdminPrompt2
+cls&goto startEclipseRunAdminPrompt2
 :startEclipseRunAdminPrompt3
 call :banner
 call :menuEclipseRunAdminPrompt
@@ -14109,8 +13384,7 @@ call :menuEclipseRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startEclipsePromptSubDialerMode3
-cls
-goto startEclipseRunAdminPrompt3
+cls&goto startEclipseRunAdminPrompt3
 :startEclipseRunAdminPrompt4
 call :banner
 call :menuEclipseRunAdminPrompt
@@ -14118,8 +13392,7 @@ call :menuEclipseRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startEclipsePromptDialerMode
-cls
-goto startEclipseRunAdminPrompt4
+cls&goto startEclipseRunAdminPrompt4
 :startEclipseRunAdminPromptDeepSubDialerMode1
 call :banner
 call :menuEclipseRunAdminPrompt
@@ -14127,8 +13400,7 @@ call :menuEclipseRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startEclipseRunAdminPromptDeepSubDialerMode1
+cls&goto startEclipseRunAdminPromptDeepSubDialerMode1
 :startEclipseRunAdminPromptDeepSubDialerMode2
 call :banner
 call :menuEclipseRunAdminPrompt
@@ -14136,8 +13408,7 @@ call :menuEclipseRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startEclipseRunAdminPromptDeepSubDialerMode2
+cls&goto startEclipseRunAdminPromptDeepSubDialerMode2
 :startEclipseRunAdminPromptDeepSubDialerMode3
 call :banner
 call :menuEclipseRunAdminPrompt
@@ -14145,8 +13416,7 @@ call :menuEclipseRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startEclipseRunAdminPromptDeepSubDialerMode3
+cls&goto startEclipseRunAdminPromptDeepSubDialerMode3
 :startEclipseRunAdminPromptDialerMode
 call :banner
 call :menuEclipseRunAdminPrompt
@@ -14154,8 +13424,7 @@ call :menuEclipseRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startEclipseRunAdminPromptDialerMode
+cls&goto startEclipseRunAdminPromptDialerMode
 :menuEclipseRunAdminPrompt
 echo.
 echo Please select one of the following options for Eclipse ("A-J") Input zero ("0") to cancel.
@@ -14192,8 +13461,7 @@ call :menuEclipseRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startEclipsePrompt
-cls
-goto startEclipseRunPrompt1
+cls&goto startEclipseRunPrompt1
 :startEclipseRunPrompt2
 call :banner
 call :menuEclipseRunPrompt
@@ -14201,8 +13469,7 @@ call :menuEclipseRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startEclipsePromptSubDialerMode2
-cls
-goto startEclipseRunPrompt2
+cls&goto startEclipseRunPrompt2
 :startEclipseRunPrompt3
 call :banner
 call :menuEclipseRunPrompt
@@ -14210,8 +13477,7 @@ call :menuEclipseRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startEclipsePromptSubDialerMode3
-cls
-goto startEclipseRunPrompt3
+cls&goto startEclipseRunPrompt3
 :startEclipseRunPrompt4
 call :banner
 call :menuEclipseRunPrompt
@@ -14219,8 +13485,7 @@ call :menuEclipseRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startEclipsePromptDialerMode
-cls
-goto startEclipseRunPrompt4
+cls&goto startEclipseRunPrompt4
 :startEclipseRunPromptDeepSubDialerMode1
 call :banner
 call :menuEclipseRunPrompt
@@ -14228,8 +13493,7 @@ call :menuEclipseRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startEclipseRunPromptDeepSubDialerMode1
+cls&goto startEclipseRunPromptDeepSubDialerMode1
 :startEclipseRunPromptDeepSubDialerMode2
 call :banner
 call :menuEclipseRunPrompt
@@ -14237,8 +13501,7 @@ call :menuEclipseRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startEclipseRunPromptDeepSubDialerMode2
+cls&goto startEclipseRunPromptDeepSubDialerMode2
 :startEclipseRunPromptDeepSubDialerMode3
 call :banner
 call :menuEclipseRunPrompt
@@ -14246,8 +13509,7 @@ call :menuEclipseRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startEclipseRunPromptDeepSubDialerMode3
+cls&goto startEclipseRunPromptDeepSubDialerMode3
 :startEclipseRunPromptDialerMode
 call :banner
 call :menuEclipseRunPrompt
@@ -14255,8 +13517,7 @@ call :menuEclipseRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startEclipseRunPromptDialerMode
+cls&goto startEclipseRunPromptDialerMode
 :menuEclipseRunPrompt
 echo.
 echo Please select one of the following options for Eclipse ("A-J") Input zero ("0") to cancel.
@@ -14293,8 +13554,7 @@ call :menuSignal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startSignalPrompt
+cls&goto startSignalPrompt
 :startSignalPromptSubDialerMode2
 call :banner
 call :menuSignalPrompt
@@ -14302,8 +13562,7 @@ call :menuSignal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startSignalPromptSubDialerMode2
+cls&goto startSignalPromptSubDialerMode2
 :startSignalPromptSubDialerMode3
 call :banner
 call :menuSignalPrompt
@@ -14311,8 +13570,7 @@ call :menuSignal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startSignalPromptSubDialerMode3
+cls&goto startSignalPromptSubDialerMode3
 :startSignalPromptDialerMode
 call :banner
 call :menuSignalPrompt
@@ -14320,8 +13578,7 @@ call :menuSignal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSignalPromptDialerMode
+cls&goto startSignalPromptDialerMode
 :menuSignalPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Signal Technology Foundation, Signal Messenger LLC and contributors
@@ -14349,6 +13606,7 @@ if /I %input% EQU R start Signal_R.lnk&set input=97R&&goto startPreExitPrompt||g
 if /I %input% EQU I start Signal_I.exe&set input=97I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Signal_O.lnk&set input=97O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 9b
 :start9b
 call :banner
 call :menu9bScreen
@@ -14356,8 +13614,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu9b
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start9b
+cls&goto start9b
 :menu9bScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -14631,8 +13888,7 @@ call :menuTI-Nspire_CX_CAS_StudentSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startTI-Nspire_CX_CAS_StudentSoftwarePromptSubDialerMode1
+cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptSubDialerMode1
 :startTI-Nspire_CX_CAS_StudentSoftwarePrompt
 call :banner
 call :menuTI-Nspire_CX_CAS_StudentSoftwarePrompt
@@ -14640,8 +13896,7 @@ call :menuTI-Nspire_CX_CAS_StudentSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startTI-Nspire_CX_CAS_StudentSoftwarePrompt
+cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePrompt
 :startTI-Nspire_CX_CAS_StudentSoftwarePromptSubDialerMode3
 call :banner
 call :menuTI-Nspire_CX_CAS_StudentSoftwarePrompt
@@ -14649,8 +13904,7 @@ call :menuTI-Nspire_CX_CAS_StudentSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startTI-Nspire_CX_CAS_StudentSoftwarePromptSubDialerMode3
+cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptSubDialerMode3
 :startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 call :banner
 call :menuTI-Nspire_CX_CAS_StudentSoftwarePrompt
@@ -14658,8 +13912,7 @@ call :menuTI-Nspire_CX_CAS_StudentSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
+cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 :menuTI-Nspire_CX_CAS_StudentSoftwarePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Texas Instruments Incorporated
@@ -14694,8 +13947,7 @@ call :menuTI-Nspire_CX_PremiumTeacherSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptSubDialerMode1
+cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptSubDialerMode1
 :startTI-Nspire_CX_PremiumTeacherSoftwarePrompt
 call :banner
 call :menuTI-Nspire_CX_PremiumTeacherSoftwarePrompt
@@ -14703,8 +13955,7 @@ call :menuTI-Nspire_CX_PremiumTeacherSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startTI-Nspire_CX_PremiumTeacherSoftwarePrompt
+cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePrompt
 :startTI-Nspire_CX_PremiumTeacherSoftwarePromptSubDialerMode3
 call :banner
 call :menuTI-Nspire_CX_PremiumTeacherSoftwarePrompt
@@ -14712,8 +13963,7 @@ call :menuTI-Nspire_CX_PremiumTeacherSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptSubDialerMode3
+cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptSubDialerMode3
 :startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 call :banner
 call :menuTI-Nspire_CX_PremiumTeacherSoftwarePrompt
@@ -14721,8 +13971,7 @@ call :menuTI-Nspire_CX_PremiumTeacherSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
+cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 :menuTI-Nspire_CX_PremiumTeacherSoftwarePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Texas Instruments Incorporated
@@ -14757,8 +14006,7 @@ call :menuTI-Nspire_CX_CAS_PremiumTeacherSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptSubDialerMode1
+cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptSubDialerMode1
 :startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePrompt
 call :banner
 call :menuTI-Nspire_CX_CAS_PremiumTeacherSoftwarePrompt
@@ -14766,8 +14014,7 @@ call :menuTI-Nspire_CX_CAS_PremiumTeacherSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePrompt
+cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePrompt
 :startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptSubDialerMode3
 call :banner
 call :menuTI-Nspire_CX_CAS_PremiumTeacherSoftwarePrompt
@@ -14775,8 +14022,7 @@ call :menuTI-Nspire_CX_CAS_PremiumTeacherSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptSubDialerMode3
+cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptSubDialerMode3
 :startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 call :banner
 call :menuTI-Nspire_CX_CAS_PremiumTeacherSoftwarePrompt
@@ -14784,8 +14030,7 @@ call :menuTI-Nspire_CX_CAS_PremiumTeacherSoftware
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
+cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 :menuTI-Nspire_CX_CAS_PremiumTeacherSoftwarePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Texas Instruments Incorporated
@@ -14820,8 +14065,7 @@ call :menuMaple
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startMaplePromptSubDialerMode1
+cls&goto startMaplePromptSubDialerMode1
 :startMaplePrompt
 call :banner
 call :menuMaplePrompt
@@ -14829,8 +14073,7 @@ call :menuMaple
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startMaplePrompt
+cls&goto startMaplePrompt
 :startMaplePromptSubDialerMode3
 call :banner
 call :menuMaplePrompt
@@ -14838,8 +14081,7 @@ call :menuMaple
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startMaplePromptSubDialerMode3
+cls&goto startMaplePromptSubDialerMode3
 :startMaplePromptDialerMode
 call :banner
 call :menuMaplePrompt
@@ -14847,8 +14089,7 @@ call :menuMaple
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMaplePromptDialerMode
+cls&goto startMaplePromptDialerMode
 :menuMaplePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Waterloo Maple (Maplesoft)
@@ -14883,8 +14124,7 @@ call :menuMapleFlow
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startMapleFlowPromptSubDialerMode1
+cls&goto startMapleFlowPromptSubDialerMode1
 :startMapleFlowPrompt
 call :banner
 call :menuMapleFlowPrompt
@@ -14892,8 +14132,7 @@ call :menuMapleFlow
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startMapleFlowPrompt
+cls&goto startMapleFlowPrompt
 :startMapleFlowPromptSubDialerMode3
 call :banner
 call :menuMapleFlowPrompt
@@ -14901,8 +14140,7 @@ call :menuMapleFlow
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startMapleFlowPromptSubDialerMode3
+cls&goto startMapleFlowPromptSubDialerMode3
 :startMapleFlowPromptDialerMode
 call :banner
 call :menuMapleFlowPrompt
@@ -14910,8 +14148,7 @@ call :menuMapleFlow
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMapleFlowPromptDialerMode
+cls&goto startMapleFlowPromptDialerMode
 :menuMapleFlowPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Waterloo Maple (Maplesoft)
@@ -14948,8 +14185,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU A cls&goto startTelerikRunAdminPrompt1
 if /I %input% EQU R cls&goto startTelerikRunPrompt1
-cls
-goto startTelerikPromptSubDialerMode1
+cls&goto startTelerikPromptSubDialerMode1
 :startTelerikPrompt
 call :banner
 call :menuTelerikPrompt
@@ -14959,8 +14195,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU A cls&goto startTelerikRunAdminPrompt2
 if /I %input% EQU R cls&goto startTelerikRunPrompt2
-cls
-goto startTelerikPrompt
+cls&goto startTelerikPrompt
 :startTelerikPromptSubDialerMode3
 call :banner
 call :menuTelerikPrompt
@@ -14970,8 +14205,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU A cls&goto startTelerikRunAdminPrompt3
 if /I %input% EQU R cls&goto startTelerikRunPrompt3
-cls
-goto startTelerikPromptSubDialerMode3
+cls&goto startTelerikPromptSubDialerMode3
 :startTelerikPromptDialerMode
 call :banner
 call :menuTelerikPrompt
@@ -14981,8 +14215,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU A cls&goto startTelerikRunAdminPrompt4
 if /I %input% EQU R cls&goto startTelerikRunPrompt4
-cls
-goto startTelerikPromptDialerMode
+cls&goto startTelerikPromptDialerMode
 :menuTelerikPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Telerik
@@ -15019,8 +14252,7 @@ call :menuTelerikRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startTelerikPromptSubDialerMode1
-cls
-goto startTelerikRunAdminPrompt1
+cls&goto startTelerikRunAdminPrompt1
 :startTelerikRunAdminPrompt2
 call :banner
 call :menuTelerikRunAdminPrompt
@@ -15028,8 +14260,7 @@ call :menuTelerikRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startTelerikPrompt
-cls
-goto startTelerikRunAdminPrompt2
+cls&goto startTelerikRunAdminPrompt2
 :startTelerikRunAdminPrompt3
 call :banner
 call :menuTelerikRunAdminPrompt
@@ -15037,8 +14268,7 @@ call :menuTelerikRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startTelerikPromptSubDialerMode3
-cls
-goto startTelerikRunAdminPrompt3
+cls&goto startTelerikRunAdminPrompt3
 :startTelerikRunAdminPrompt4
 call :banner
 call :menuTelerikRunAdminPrompt
@@ -15046,8 +14276,7 @@ call :menuTelerikRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startTelerikPromptDialerMode
-cls
-goto startTelerikRunAdminPrompt4
+cls&goto startTelerikRunAdminPrompt4
 :startTelerikRunAdminPromptDeepSubDialerMode1
 call :banner
 call :menuTelerikRunAdminPrompt
@@ -15055,8 +14284,7 @@ call :menuTelerikRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startTelerikRunAdminPromptDeepSubDialerMode1
+cls&goto startTelerikRunAdminPromptDeepSubDialerMode1
 :startTelerikRunAdminPromptDeepSubDialerMode2
 call :banner
 call :menuTelerikRunAdminPrompt
@@ -15064,8 +14292,7 @@ call :menuTelerikRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startTelerikRunAdminPromptDeepSubDialerMode2
+cls&goto startTelerikRunAdminPromptDeepSubDialerMode2
 :startTelerikRunAdminPromptDeepSubDialerMode3
 call :banner
 call :menuTelerikRunAdminPrompt
@@ -15073,8 +14300,7 @@ call :menuTelerikRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startTelerikRunAdminPromptDeepSubDialerMode3
+cls&goto startTelerikRunAdminPromptDeepSubDialerMode3
 :startTelerikRunAdminPromptDialerMode
 call :banner
 call :menuTelerikRunAdminPrompt
@@ -15082,8 +14308,7 @@ call :menuTelerikRunAdmin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startTelerikRunAdminPromptDialerMode
+cls&goto startTelerikRunAdminPromptDialerMode
 :menuTelerikRunAdminPrompt
 echo.
 echo Please select one of the following options for Telerik (A-B). Input zero ("0") to cancel.
@@ -15104,8 +14329,7 @@ call :menuTelerikRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startTelerikPromptSubDialerMode1
-cls
-goto startTelerikRunPrompt1
+cls&goto startTelerikRunPrompt1
 :startTelerikRunPrompt2
 call :banner
 call :menuTelerikRunPrompt
@@ -15113,8 +14337,7 @@ call :menuTelerikRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startTelerikPrompt
-cls
-goto startTelerikRunPrompt2
+cls&goto startTelerikRunPrompt2
 :startTelerikRunPrompt3
 call :banner
 call :menuTelerikRunPrompt
@@ -15122,8 +14345,7 @@ call :menuTelerikRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startTelerikPromptSubDialerMode3
-cls
-goto startTelerikRunPrompt3
+cls&goto startTelerikRunPrompt3
 :startTelerikRunPrompt4
 call :banner
 call :menuTelerikRunPrompt
@@ -15131,8 +14353,7 @@ call :menuTelerikRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startTelerikPromptDialerMode
-cls
-goto startTelerikRunPrompt4
+cls&goto startTelerikRunPrompt4
 :startTelerikRunPromptDeepSubDialerMode1
 call :banner
 call :menuTelerikRunPrompt
@@ -15140,8 +14361,7 @@ call :menuTelerikRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startTelerikRunPromptDeepSubDialerMode1
+cls&goto startTelerikRunPromptDeepSubDialerMode1
 :startTelerikRunPromptDeepSubDialerMode2
 call :banner
 call :menuTelerikRunPrompt
@@ -15149,8 +14369,7 @@ call :menuTelerikRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startTelerikRunPromptDeepSubDialerMode2
+cls&goto startTelerikRunPromptDeepSubDialerMode2
 :startTelerikRunPromptDeepSubDialerMode3
 call :banner
 call :menuTelerikRunPrompt
@@ -15158,8 +14377,7 @@ call :menuTelerikRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startTelerikRunPromptDeepSubDialerMode3
+cls&goto startTelerikRunPromptDeepSubDialerMode3
 :startTelerikRunPromptDialerMode
 call :banner
 call :menuTelerikRunPrompt
@@ -15167,8 +14385,7 @@ call :menuTelerikRun
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startTelerikRunPromptDialerMode
+cls&goto startTelerikRunPromptDialerMode
 :menuTelerikRunPrompt
 echo.
 echo Please select one of the following options for Telerik (A-B). Input zero ("0") to cancel.
@@ -15182,6 +14399,7 @@ set /p input=%BS%
 if /I %input% EQU A start Telerik_Test_Studio_R.lnk&set input=986RA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start Telerik_Test_Studio_APIs_R.lnk&set input=986RB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 9bAlt
 :start9bAlt
 call :banner
 call :menu9bAltScreen
@@ -15189,8 +14407,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu9bAlt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start9bAlt
+cls&goto start9bAlt
 :menu9bAltScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -15282,8 +14499,7 @@ call :menuAgentDVR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startAgentDVRprompt
+cls&goto startAgentDVRprompt
 :startAgentDVRpromptDeepSubDialerMode1
 call :banner
 call :menuAgentDVRprompt
@@ -15291,8 +14507,7 @@ call :menuAgentDVR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startAgentDVRpromptDeepSubDialerMode1
+cls&goto startAgentDVRpromptDeepSubDialerMode1
 :startAgentDVRpromptDeepSubDialerMode2
 call :banner
 call :menuAgentDVRprompt
@@ -15300,8 +14515,7 @@ call :menuAgentDVR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startAgentDVRpromptDeepSubDialerMode2
+cls&goto startAgentDVRpromptDeepSubDialerMode2
 :startAgentDVRpromptDeepSubDialerMode3
 call :banner
 call :menuAgentDVRprompt
@@ -15309,8 +14523,7 @@ call :menuAgentDVR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startAgentDVRpromptDeepSubDialerMode3
+cls&goto startAgentDVRpromptDeepSubDialerMode3
 :startAgentDVRpromptDialerMode
 call :banner
 call :menuAgentDVRprompt
@@ -15318,8 +14531,7 @@ call :menuAgentDVR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAgentDVRpromptDialerMode
+cls&goto startAgentDVRpromptDialerMode
 :menuAgentDVRprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: iSpyConnect
@@ -15354,8 +14566,7 @@ call :menuCisdemAppCrypt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startCisdemAppCryptPrompt
+cls&goto startCisdemAppCryptPrompt
 :startCisdemAppCryptPromptDeepSubDialerMode1
 call :banner
 call :menuCisdemAppCryptPrompt
@@ -15363,8 +14574,7 @@ call :menuCisdemAppCrypt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startCisdemAppCryptPromptDeepSubDialerMode1
+cls&goto startCisdemAppCryptPromptDeepSubDialerMode1
 :startCisdemAppCryptPromptDeepSubDialerMode2
 call :banner
 call :menuCisdemAppCryptPrompt
@@ -15372,8 +14582,7 @@ call :menuCisdemAppCrypt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startCisdemAppCryptPromptDeepSubDialerMode2
+cls&goto startCisdemAppCryptPromptDeepSubDialerMode2
 :startCisdemAppCryptPromptDeepSubDialerMode3
 call :banner
 call :menuCisdemAppCryptPrompt
@@ -15381,8 +14590,7 @@ call :menuCisdemAppCrypt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startCisdemAppCryptPromptDeepSubDialerMode3
+cls&goto startCisdemAppCryptPromptDeepSubDialerMode3
 :startCisdemAppCryptPromptDialerMode
 call :banner
 call :menuCisdemAppCryptPrompt
@@ -15390,8 +14598,7 @@ call :menuCisdemAppCrypt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCisdemAppCryptPromptDialerMode
+cls&goto startCisdemAppCryptPromptDialerMode
 :menuCisdemAppCryptPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Cisdem Inc.
@@ -15426,8 +14633,7 @@ call :menuQFXKeyScrambler
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startQFXKeyScramblerPrompt
+cls&goto startQFXKeyScramblerPrompt
 :startQFXKeyScramblerPromptDeepSubDialerMode1
 call :banner
 call :menuQFXKeyScramblerPrompt
@@ -15435,8 +14641,7 @@ call :menuQFXKeyScrambler
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startQFXKeyScramblerPromptDeepSubDialerMode1
+cls&goto startQFXKeyScramblerPromptDeepSubDialerMode1
 :startQFXKeyScramblerPromptDeepSubDialerMode2
 call :banner
 call :menuQFXKeyScramblerPrompt
@@ -15444,8 +14649,7 @@ call :menuQFXKeyScrambler
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startQFXKeyScramblerPromptDeepSubDialerMode2
+cls&goto startQFXKeyScramblerPromptDeepSubDialerMode2
 :startQFXKeyScramblerPromptDeepSubDialerMode3
 call :banner
 call :menuQFXKeyScramblerPrompt
@@ -15453,8 +14657,7 @@ call :menuQFXKeyScrambler
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startQFXKeyScramblerPromptDeepSubDialerMode3
+cls&goto startQFXKeyScramblerPromptDeepSubDialerMode3
 :startQFXKeyScramblerPromptDialerMode
 call :banner
 call :menuQFXKeyScramblerPrompt
@@ -15462,8 +14665,7 @@ call :menuQFXKeyScrambler
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startQFXKeyScramblerPromptDialerMode
+cls&goto startQFXKeyScramblerPromptDialerMode
 :menuQFXKeyScramblerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: QFX Software Corporation
@@ -15498,8 +14700,7 @@ call :menuReShade
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startReShadePrompt
+cls&goto startReShadePrompt
 :startReShadePromptDeepSubDialerMode1
 call :banner
 call :menuReShadePrompt
@@ -15507,8 +14708,7 @@ call :menuReShade
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startReShadePromptDeepSubDialerMode1
+cls&goto startReShadePromptDeepSubDialerMode1
 :startReShadePromptDeepSubDialerMode2
 call :banner
 call :menuReShadePrompt
@@ -15516,8 +14716,7 @@ call :menuReShade
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startReShadePromptDeepSubDialerMode2
+cls&goto startReShadePromptDeepSubDialerMode2
 :startReShadePromptDeepSubDialerMode3
 call :banner
 call :menuReShadePrompt
@@ -15525,8 +14724,7 @@ call :menuReShade
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startReShadePromptDeepSubDialerMode3
+cls&goto startReShadePromptDeepSubDialerMode3
 :startReShadePromptDialerMode
 call :banner
 call :menuReShadePrompt
@@ -15534,8 +14732,7 @@ call :menuReShade
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startReShadePromptDialerMode
+cls&goto startReShadePromptDialerMode
 :menuReShadePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: crosire
@@ -15570,8 +14767,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
 if /I %input% EQU C cls&goto startCheatEnginePrompt1
 if /I %input% EQU P cls&goto startProcessHackerPrompt1
-cls
-goto startCEPHprompt
+cls&goto startCEPHprompt
 :startCEPHpromptDeepSubDialerMode1
 call :banner
 call :menuCEPHprompt
@@ -15581,8 +14777,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU C cls&goto startCheatEnginePrompt2
 if /I %input% EQU P cls&goto startProcessHackerPrompt2
-cls
-goto startCEPHpromptDeepSubDialerMode1
+cls&goto startCEPHpromptDeepSubDialerMode1
 :startCEPHpromptDeepSubDialerMode2
 call :banner
 call :menuCEPHprompt
@@ -15592,8 +14787,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU C cls&goto startCheatEnginePrompt3
 if /I %input% EQU P cls&goto startProcessHackerPrompt3
-cls
-goto startCEPHpromptDeepSubDialerMode2
+cls&goto startCEPHpromptDeepSubDialerMode2
 :startCEPHpromptDeepSubDialerMode3
 call :banner
 call :menuCEPHprompt
@@ -15603,8 +14797,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU C cls&goto startCheatEnginePrompt4
 if /I %input% EQU P cls&goto startProcessHackerPrompt4
-cls
-goto startCEPHpromptDeepSubDialerMode3
+cls&goto startCEPHpromptDeepSubDialerMode3
 :startCEPHpromptDialerMode
 call :banner
 call :menuCEPHprompt
@@ -15614,8 +14807,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU C cls&goto startCheatEnginePrompt5
 if /I %input% EQU P cls&goto startProcessHackerPrompt5
-cls
-goto startCEPHpromptDialerMode
+cls&goto startCEPHpromptDialerMode
 :menuCEPHprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Depends
@@ -15654,8 +14846,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHprompt
-cls
-goto startCheatEnginePrompt1
+cls&goto startCheatEnginePrompt1
 :startCheatEnginePrompt2
 call :banner
 call :menuCheatEnginePrompt
@@ -15663,8 +14854,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHpromptDeepSubDialerMode1
-cls
-goto startCheatEnginePrompt2
+cls&goto startCheatEnginePrompt2
 :startCheatEnginePrompt3
 call :banner
 call :menuCheatEnginePrompt
@@ -15672,8 +14862,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHpromptDeepSubDialerMode2
-cls
-goto startCheatEnginePrompt3
+cls&goto startCheatEnginePrompt3
 :startCheatEnginePrompt4
 call :banner
 call :menuCheatEnginePrompt
@@ -15681,8 +14870,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHpromptDeepSubDialerMode3
-cls
-goto startCheatEnginePrompt4
+cls&goto startCheatEnginePrompt4
 :startCheatEnginePrompt5
 call :banner
 call :menuCheatEnginePrompt
@@ -15690,8 +14878,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHpromptDialerMode
-cls
-goto startCheatEnginePrompt5
+cls&goto startCheatEnginePrompt5
 :startCheatEnginePromptSubDialerMode
 call :banner
 call :menuCheatEnginePrompt
@@ -15699,8 +14886,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startCheatEnginePromptSubDialerMode
+cls&goto startCheatEnginePromptSubDialerMode
 :startCheatEnginePromptDeepSubDialerMode1
 call :banner
 call :menuCheatEnginePrompt
@@ -15708,8 +14894,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startCheatEnginePromptDeepSubDialerMode1
+cls&goto startCheatEnginePromptDeepSubDialerMode1
 :startCheatEnginePromptDeepSubDialerMode2
 call :banner
 call :menuCheatEnginePrompt
@@ -15717,8 +14902,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startCheatEnginePromptDeepSubDialerMode2
+cls&goto startCheatEnginePromptDeepSubDialerMode2
 :startCheatEnginePromptDeepSubDialerMode3
 call :banner
 call :menuCheatEnginePrompt
@@ -15726,8 +14910,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startCheatEnginePromptDeepSubDialerMode3
+cls&goto startCheatEnginePromptDeepSubDialerMode3
 :startCheatEnginePromptDialerMode
 call :banner
 call :menuCheatEnginePrompt
@@ -15735,8 +14918,7 @@ call :menuCheatEngine
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCheatEnginePromptDialerMode
+cls&goto startCheatEnginePromptDialerMode
 :menuCheatEnginePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Eric "Dark Byte" Heijnen/Community
@@ -15771,8 +14953,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHprompt
-cls
-goto startProcessHackerPrompt1
+cls&goto startProcessHackerPrompt1
 :startProcessHackerPrompt2
 call :banner
 call :menuProcessHackerPrompt
@@ -15780,8 +14961,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHpromptDeepSubDialerMode1
-cls
-goto startProcessHackerPrompt2
+cls&goto startProcessHackerPrompt2
 :startProcessHackerPrompt3
 call :banner
 call :menuProcessHackerPrompt
@@ -15789,8 +14969,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHpromptDeepSubDialerMode2
-cls
-goto startProcessHackerPrompt3
+cls&goto startProcessHackerPrompt3
 :startProcessHackerPrompt4
 call :banner
 call :menuProcessHackerPrompt
@@ -15798,8 +14977,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHpromptDeepSubDialerMode3
-cls
-goto startProcessHackerPrompt4
+cls&goto startProcessHackerPrompt4
 :startProcessHackerPrompt5
 call :banner
 call :menuProcessHackerPrompt
@@ -15807,8 +14985,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCEPHpromptDialerMode
-cls
-goto startProcessHackerPrompt5
+cls&goto startProcessHackerPrompt5
 :startProcessHackerPromptSubDialerMode
 call :banner
 call :menuProcessHackerPrompt
@@ -15816,8 +14993,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startProcessHackerPromptSubDialerMode
+cls&goto startProcessHackerPromptSubDialerMode
 :startProcessHackerPromptDeepSubDialerMode1
 call :banner
 call :menuProcessHackerPrompt
@@ -15825,8 +15001,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startProcessHackerPromptDeepSubDialerMode1
+cls&goto startProcessHackerPromptDeepSubDialerMode1
 :startProcessHackerPromptDeepSubDialerMode2
 call :banner
 call :menuProcessHackerPrompt
@@ -15834,8 +15009,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startProcessHackerPromptDeepSubDialerMode2
+cls&goto startProcessHackerPromptDeepSubDialerMode2
 :startProcessHackerPromptDeepSubDialerMode3
 call :banner
 call :menuProcessHackerPrompt
@@ -15843,8 +15017,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startProcessHackerPromptDeepSubDialerMode3
+cls&goto startProcessHackerPromptDeepSubDialerMode3
 :startProcessHackerPromptDialerMode
 call :banner
 call :menuProcessHackerPrompt
@@ -15852,8 +15025,7 @@ call :menuProcessHacker
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startProcessHackerPromptDialerMode
+cls&goto startProcessHackerPromptDialerMode
 :menuProcessHackerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Wen Jia Liu
@@ -15890,8 +15062,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
 if /I %input% EQU 1 cls&goto startWooGlePrompt1
 if /I %input% EQU 2 cls&goto startLevelJuicerPrompt1
-cls
-goto startWorldOfGooEditorPrompt
+cls&goto startWorldOfGooEditorPrompt
 :startWorldOfGooEditorPromptDeepSubDialerMode1
 call :banner
 call :menuWorldOfGooEditorPrompt
@@ -15901,8 +15072,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU 1 cls&goto startWooGlePrompt2
 if /I %input% EQU 2 cls&goto startLevelJuicerPrompt2
-cls
-goto startWorldOfGooEditorPromptDeepSubDialerMode1
+cls&goto startWorldOfGooEditorPromptDeepSubDialerMode1
 :startWorldOfGooEditorPromptDeepSubDialerMode2
 call :banner
 call :menuWorldOfGooEditorPrompt
@@ -15912,8 +15082,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU 1 cls&goto startWooGlePrompt3
 if /I %input% EQU 2 cls&goto startLevelJuicerPrompt3
-cls
-goto startWorldOfGooEditorPromptDeepSubDialerMode2
+cls&goto startWorldOfGooEditorPromptDeepSubDialerMode2
 :startWorldOfGooEditorPromptDeepSubDialerMode3
 call :banner
 call :menuWorldOfGooEditorPrompt
@@ -15923,8 +15092,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU 1 cls&goto startWooGlePrompt4
 if /I %input% EQU 2 cls&goto startLevelJuicerPrompt4
-cls
-goto startWorldOfGooEditorPromptDeepSubDialerMode3
+cls&goto startWorldOfGooEditorPromptDeepSubDialerMode3
 :startWorldOfGooEditorPromptDialerMode
 call :banner
 call :menuWorldOfGooEditorPrompt
@@ -15934,8 +15102,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU 1 cls&goto startWooGlePrompt5
 if /I %input% EQU 2 cls&goto startLevelJuicerPrompt5
-cls
-goto startWorldOfGooEditorPromptDialerMode
+cls&goto startWorldOfGooEditorPromptDialerMode
 :menuWorldOfGooEditorPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Depends
@@ -15972,8 +15139,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPrompt
-cls
-goto startWooGlePrompt1
+cls&goto startWooGlePrompt1
 :startWooGlePrompt2
 call :banner
 call :menuWooGlePrompt
@@ -15981,8 +15147,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPromptDeepSubDialerMode1
-cls
-goto startWooGlePrompt2
+cls&goto startWooGlePrompt2
 :startWooGlePrompt3
 call :banner
 call :menuWooGlePrompt
@@ -15990,8 +15155,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPromptDeepSubDialerMode2
-cls
-goto startWooGlePrompt3
+cls&goto startWooGlePrompt3
 :startWooGlePrompt4
 call :banner
 call :menuWooGlePrompt
@@ -15999,8 +15163,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPromptDeepSubDialerMode3
-cls
-goto startWooGlePrompt4
+cls&goto startWooGlePrompt4
 :startWooGlePrompt5
 call :banner
 call :menuWooGlePrompt
@@ -16008,8 +15171,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPromptDialerMode
-cls
-goto startWooGlePrompt5
+cls&goto startWooGlePrompt5
 :startWooGlePromptSubDialerMode
 call :banner
 call :menuWooGlePrompt
@@ -16017,8 +15179,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startWooGlePromptSubDialerMode
+cls&goto startWooGlePromptSubDialerMode
 :startWooGlePromptDeepSubDialerMode1
 call :banner
 call :menuWooGlePrompt
@@ -16026,8 +15187,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startWooGlePromptDeepSubDialerMode1
+cls&goto startWooGlePromptDeepSubDialerMode1
 :startWooGlePromptDeepSubDialerMode2
 call :banner
 call :menuWooGlePrompt
@@ -16035,8 +15195,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startWooGlePromptDeepSubDialerMode2
+cls&goto startWooGlePromptDeepSubDialerMode2
 :startWooGlePromptDeepSubDialerMode3
 call :banner
 call :menuWooGlePrompt
@@ -16044,8 +15203,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startWooGlePromptDeepSubDialerMode3
+cls&goto startWooGlePromptDeepSubDialerMode3
 :startWooGlePromptDialerMode
 call :banner
 call :menuWooGlePrompt
@@ -16053,8 +15211,7 @@ call :menuWooGle
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWooGlePromptDialerMode
+cls&goto startWooGlePromptDialerMode
 :menuWooGlePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Mygod and Daft as Brush
@@ -16089,8 +15246,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPrompt
-cls
-goto startLevelJuicerPrompt1
+cls&goto startLevelJuicerPrompt1
 :startLevelJuicerPrompt2
 call :banner
 call :menuLevelJuicerPrompt
@@ -16098,8 +15254,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPromptDeepDialerMode1
-cls
-goto startLevelJuicerPrompt2
+cls&goto startLevelJuicerPrompt2
 :startLevelJuicerPrompt3
 call :banner
 call :menuLevelJuicerPrompt
@@ -16107,8 +15262,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPromptDeepDialerMode2
-cls
-goto startLevelJuicerPrompt3
+cls&goto startLevelJuicerPrompt3
 :startLevelJuicerPrompt4
 call :banner
 call :menuLevelJuicerPrompt
@@ -16116,8 +15270,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPromptDeepDialerMode3
-cls
-goto startLevelJuicerPrompt4
+cls&goto startLevelJuicerPrompt4
 :startLevelJuicerPrompt5
 call :banner
 call :menuLevelJuicerPrompt
@@ -16125,8 +15278,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startWorldOfGooEditorPromptDialerMode
-cls
-goto startLevelJuicerPrompt5
+cls&goto startLevelJuicerPrompt5
 :startLevelJuicerPromptSubDialerMode
 call :banner
 call :menuLevelJuicerPrompt
@@ -16134,8 +15286,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startLevelJuicerPromptSubDialerMode
+cls&goto startLevelJuicerPromptSubDialerMode
 :startLevelJuicerPromptDeepSubDialerMode1
 call :banner
 call :menuLevelJuicerPrompt
@@ -16143,8 +15294,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startLevelJuicerPromptDeepSubDialerMode1
+cls&goto startLevelJuicerPromptDeepSubDialerMode1
 :startLevelJuicerPromptDeepSubDialerMode2
 call :banner
 call :menuLevelJuicerPrompt
@@ -16152,8 +15302,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startLevelJuicerPromptDeepSubDialerMode2
+cls&goto startLevelJuicerPromptDeepSubDialerMode2
 :startLevelJuicerPromptDeepSubDialerMode3
 call :banner
 call :menuLevelJuicerPrompt
@@ -16161,8 +15310,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startLevelJuicerPromptDeepSubDialerMode3
+cls&goto startLevelJuicerPromptDeepSubDialerMode3
 :startLevelJuicerPromptDialerMode
 call :banner
 call :menuLevelJuicerPrompt
@@ -16170,8 +15318,7 @@ call :menuLevelJuicer
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startLevelJuicerPromptDialerMode
+cls&goto startLevelJuicerPromptDialerMode
 :menuLevelJuicerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: VirtuaVirtue's Backlog
@@ -16204,8 +15351,7 @@ call :menuRoLBigArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startRoLBigArchiverPrompt
+cls&goto startRoLBigArchiverPrompt
 :startRoLBigArchiverPromptDeepSubDialerMode1
 call :banner
 call :menuRoLBigArchiverPrompt
@@ -16213,8 +15359,7 @@ call :menuRoLBigArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startRoLBigArchiverPromptDeepSubDialerMode1
+cls&goto startRoLBigArchiverPromptDeepSubDialerMode1
 :startRoLBigArchiverPromptDeepSubDialerMode2
 call :banner
 call :menuRoLBigArchiverPrompt
@@ -16222,8 +15367,7 @@ call :menuRoLBigArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startRoLBigArchiverPromptDeepSubDialerMode2
+cls&goto startRoLBigArchiverPromptDeepSubDialerMode2
 :startRoLBigArchiverPromptDeepSubDialerMode3
 call :banner
 call :menuRoLBigArchiverPrompt
@@ -16231,8 +15375,7 @@ call :menuRoLBigArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startRoLBigArchiverPromptDeepSubDialerMode3
+cls&goto startRoLBigArchiverPromptDeepSubDialerMode3
 :startRoLBigArchiverPromptDialerMode
 call :banner
 call :menuRoLBigArchiverPrompt
@@ -16240,8 +15383,7 @@ call :menuRoLBigArchiver
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startRoLBigArchiverPromptDialerMode
+cls&goto startRoLBigArchiverPromptDialerMode
 :menuRoLBigArchiverPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Petar
@@ -16276,8 +15418,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSSaveEditorPrompt1
 if /I %input% EQU N cls&goto startNMSSaveEditorPrompt1
 if /I %input% EQU P cls&goto startPalworldSavePalPrompt1
-cls
-goto startNMSPLWRLDSaveEditorPrompt
+cls&goto startNMSPLWRLDSaveEditorPrompt
 :startNMSPLWRLDSaveEditorPromptDeepSubDialerMode1
 call :banner
 call :menuNMSPLWRLDSaveEditorPrompt
@@ -16287,8 +15428,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSSaveEditorPrompt2
 if /I %input% EQU N cls&goto startNMSSaveEditorPrompt2
 if /I %input% EQU P cls&goto startPalworldSavePalPrompt2
-cls
-goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode1
+cls&goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode1
 :startNMSPLWRLDSaveEditorPromptDeepSubDialerMode2
 call :banner
 call :menuNMSPLWRLDSaveEditorPrompt
@@ -16298,8 +15438,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSSaveEditorPrompt3
 if /I %input% EQU N cls&goto startNMSSaveEditorPrompt3
 if /I %input% EQU P cls&goto startPalworldSavePalPrompt3
-cls
-goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode2
+cls&goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode2
 :startNMSPLWRLDSaveEditorPromptDeepSubDialerMode3
 call :banner
 call :menuNMSPLWRLDSaveEditorPrompt
@@ -16309,8 +15448,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSSaveEditorPrompt4
 if /I %input% EQU N cls&goto startNMSSaveEditorPrompt4
 if /I %input% EQU P cls&goto startPalworldSavePalPrompt4
-cls
-goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode3
+cls&goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode3
 :startNMSPLWRLDSaveEditorPromptDialerMode
 call :banner
 call :menuNMSPLWRLDSaveEditorPrompt
@@ -16320,8 +15458,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSSaveEditorPrompt5
 if /I %input% EQU N cls&goto startNMSSaveEditorPrompt5
 if /I %input% EQU P cls&goto startPalworldSavePalPrompt5
-cls
-goto startNMSPLWRLDSaveEditorPromptDialerMode
+cls&goto startNMSPLWRLDSaveEditorPromptDialerMode
 :menuNMSPLWRLDSaveEditorPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Depends
@@ -16360,8 +15497,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPrompt
-cls
-goto startNMSSaveEditorPrompt1
+cls&goto startNMSSaveEditorPrompt1
 :startNMSSaveEditorPrompt2
 call :banner
 call :menuNMSSaveEditorPrompt
@@ -16369,8 +15505,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode1
-cls
-goto startNMSSaveEditorPrompt2
+cls&goto startNMSSaveEditorPrompt2
 :startNMSSaveEditorPrompt3
 call :banner
 call :menuNMSSaveEditorPrompt
@@ -16378,8 +15513,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode2
-cls
-goto startNMSSaveEditorPrompt3
+cls&goto startNMSSaveEditorPrompt3
 :startNMSSaveEditorPrompt4
 call :banner
 call :menuNMSSaveEditorPrompt
@@ -16387,8 +15521,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode3
-cls
-goto startNMSSaveEditorPrompt4
+cls&goto startNMSSaveEditorPrompt4
 :startNMSSaveEditorPrompt5
 call :banner
 call :menuNMSSaveEditorPrompt
@@ -16396,8 +15529,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPromptDialerMode
-cls
-goto startNMSSaveEditorPrompt5
+cls&goto startNMSSaveEditorPrompt5
 :startNMSSaveEditorPromptSubDialerMode
 call :banner
 call :menuNMSSaveEditorPrompt
@@ -16405,8 +15537,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startNMSSaveEditorPromptSubDialerMode
+cls&goto startNMSSaveEditorPromptSubDialerMode
 :startNMSSaveEditorPromptDeepSubDialerMode1
 call :banner
 call :menuNMSSaveEditorPrompt
@@ -16414,8 +15545,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startNMSSaveEditorPromptDeepSubDialerMode1
+cls&goto startNMSSaveEditorPromptDeepSubDialerMode1
 :startNMSSaveEditorPromptDeepSubDialerMode2
 call :banner
 call :menuNMSSaveEditorPrompt
@@ -16423,8 +15553,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startNMSSaveEditorPromptDeepSubDialerMode2
+cls&goto startNMSSaveEditorPromptDeepSubDialerMode2
 :startNMSSaveEditorPromptDeepSubDialerMode3
 call :banner
 call :menuNMSSaveEditorPrompt
@@ -16432,8 +15561,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startNMSSaveEditorPromptDeepSubDialerMode3
+cls&goto startNMSSaveEditorPromptDeepSubDialerMode3
 :startNMSSaveEditorPromptDialerMode
 call :banner
 call :menuNMSSaveEditorPrompt
@@ -16441,8 +15569,7 @@ call :menuNMSSaveEditor
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startNMSSaveEditorPromptDialerMode
+cls&goto startNMSSaveEditorPromptDialerMode
 :menuNMSSaveEditorPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: goatfungus
@@ -16477,8 +15604,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPrompt
-cls
-goto startPalworldSavePalPrompt1
+cls&goto startPalworldSavePalPrompt1
 :startPalworldSavePalPrompt2
 call :banner
 call :menuPalworldSavePalPrompt
@@ -16486,8 +15612,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode1
-cls
-goto startPalworldSavePalPrompt2
+cls&goto startPalworldSavePalPrompt2
 :startPalworldSavePalPrompt3
 call :banner
 call :menuPalworldSavePalPrompt
@@ -16495,8 +15620,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode2
-cls
-goto startPalworldSavePalPrompt3
+cls&goto startPalworldSavePalPrompt3
 :startPalworldSavePalPrompt4
 call :banner
 call :menuPalworldSavePalPrompt
@@ -16504,8 +15628,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPromptDeepSubDialerMode3
-cls
-goto startPalworldSavePalPrompt4
+cls&goto startPalworldSavePalPrompt4
 :startPalworldSavePalPrompt5
 call :banner
 call :menuPalworldSavePalPrompt
@@ -16513,8 +15636,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startNMSPLWRLDSaveEditorPromptDialerMode
-cls
-goto startPalworldSavePalPrompt5
+cls&goto startPalworldSavePalPrompt5
 :startPalworldSavePalPromptSubDialerMode
 call :banner
 call :menuPalworldSavePalPrompt
@@ -16522,8 +15644,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startPalworldSavePalPromptSubDialerMode
+cls&goto startPalworldSavePalPromptSubDialerMode
 :startPalworldSavePalPromptDeepSubDialerMode1
 call :banner
 call :menuPalworldSavePalPrompt
@@ -16531,8 +15652,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startPalworldSavePalPromptDeepSubDialerMode1
+cls&goto startPalworldSavePalPromptDeepSubDialerMode1
 :startPalworldSavePalPromptDeepSubDialerMode2
 call :banner
 call :menuPalworldSavePalPrompt
@@ -16540,8 +15660,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startPalworldSavePalPromptDeepSubDialerMode2
+cls&goto startPalworldSavePalPromptDeepSubDialerMode2
 :startPalworldSavePalPromptDeepSubDialerMode3
 call :banner
 call :menuPalworldSavePalPrompt
@@ -16549,8 +15668,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startPalworldSavePalPromptDeepSubDialerMode3
+cls&goto startPalworldSavePalPromptDeepSubDialerMode3
 :startPalworldSavePalPromptDialerMode
 call :banner
 call :menuPalworldSavePalPrompt
@@ -16558,8 +15676,7 @@ call :menuPalworldSavePal
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPalworldSavePalPromptDialerMode
+cls&goto startPalworldSavePalPromptDialerMode
 :menuPalworldSavePalPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: oMan-Rod
@@ -16594,8 +15711,7 @@ call :menuKeePass
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9bAlt
-cls
-goto startKeePassPrompt
+cls&goto startKeePassPrompt
 :startKeePassPromptDeepSubDialerMode1
 call :banner
 call :menuKeePassPrompt
@@ -16603,8 +15719,7 @@ call :menuKeePass
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startKeePassPromptDeepSubDialerMode1
+cls&goto startKeePassPromptDeepSubDialerMode1
 :startKeePassPromptDeepSubDialerMode2
 call :banner
 call :menuKeePassPrompt
@@ -16612,8 +15727,7 @@ call :menuKeePass
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startKeePassPromptDeepSubDialerMode2
+cls&goto startKeePassPromptDeepSubDialerMode2
 :startKeePassPromptDeepSubDialerMode3
 call :banner
 call :menuKeePassPrompt
@@ -16621,8 +15735,7 @@ call :menuKeePass
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startKeePassPromptDeepSubDialerMode3
+cls&goto startKeePassPromptDeepSubDialerMode3
 :startKeePassPromptDialerMode
 call :banner
 call :menuKeePassPrompt
@@ -16630,8 +15743,7 @@ call :menuKeePass
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startKeePassPromptDialerMode
+cls&goto startKeePassPromptDialerMode
 :menuKeePassPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Dominik Reichl
@@ -16659,6 +15771,7 @@ if /I %input% EQU R start KeePass_R.lnk&set input=9879R&&goto startPreExitPrompt
 if /I %input% EQU I start KeePass_I.exe&set input=9879I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start KeePass_O.lnk&set input=9879O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 9c
 :start9c
 call :banner
 call :menu9cScreen
@@ -16666,8 +15779,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu9c
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start9c
+cls&goto start9c
 :menu9cScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -16942,8 +16054,7 @@ call :menuAudialsOne
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startAudialsOnePromptSubDialerMode1
+cls&goto startAudialsOnePromptSubDialerMode1
 :startAudialsOnePromptSubDialerMode2
 call :banner
 call :menuAudialsOnePrompt
@@ -16951,8 +16062,7 @@ call :menuAudialsOne
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startAudialsOnePromptSubDialerMode2
+cls&goto startAudialsOnePromptSubDialerMode2
 :startAudialsOnePrompt
 call :banner
 call :menuAudialsOnePrompt
@@ -16960,8 +16070,7 @@ call :menuAudialsOne
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startAudialsOnePrompt
+cls&goto startAudialsOnePrompt
 :startAudialsOnePromptDialerMode
 call :banner
 call :menuAudialsOnePrompt
@@ -16969,8 +16078,7 @@ call :menuAudialsOne
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAudialsOnePromptDialerMode
+cls&goto startAudialsOnePromptDialerMode
 :menuAudialsOnePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Audials AG
@@ -17007,8 +16115,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU V cls&goto startProtonVPNprompt1
 if /I %input% EQU D cls&goto startProtonDrivePrompt1
-cls
-goto startProtonPromptSubDialerMode1
+cls&goto startProtonPromptSubDialerMode1
 :startProtonPromptSubDialerMode2
 call :banner
 call :menuProtonPrompt
@@ -17018,8 +16125,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU V cls&goto startProtonVPNprompt2
 if /I %input% EQU D cls&goto startProtonDrivePrompt2
-cls
-goto startProtonPromptSubDialerMode2
+cls&goto startProtonPromptSubDialerMode2
 :startProtonPrompt
 call :banner
 call :menuProtonPrompt
@@ -17029,8 +16135,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU V cls&goto startProtonVPNprompt3
 if /I %input% EQU D cls&goto startProtonDrivePrompt3
-cls
-goto startProtonPrompt
+cls&goto startProtonPrompt
 :startProtonPromptDialerMode
 call :banner
 call :menuProtonPrompt
@@ -17040,8 +16145,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU V cls&goto startProtonVPNprompt4
 if /I %input% EQU D cls&goto startProtonDrivePrompt4
-cls
-goto startProtonVPNpromptDialerMode
+cls&goto startProtonVPNpromptDialerMode
 :menuProtonPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Proton AG
@@ -17080,8 +16184,7 @@ call :menuProtonVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startProtonPromptSubDialerMode1
-cls
-goto startProtonVPNprompt1
+cls&goto startProtonVPNprompt1
 :startProtonVPNprompt2
 call :banner
 call :menuProtonVPNprompt
@@ -17089,8 +16192,7 @@ call :menuProtonVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startProtonPromptSubDialerMode2
-cls
-goto startProtonVPNprompt2
+cls&goto startProtonVPNprompt2
 :startProtonVPNprompt3
 call :banner
 call :menuProtonVPNprompt
@@ -17098,8 +16200,7 @@ call :menuProtonVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startProtonPrompt
-cls
-goto startProtonVPNprompt3
+cls&goto startProtonVPNprompt3
 :startProtonVPNprompt4
 call :banner
 call :menuProtonVPNprompt
@@ -17107,8 +16208,7 @@ call :menuProtonVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startProtonPromptDialerMode
-cls
-goto startProtonVPNprompt4
+cls&goto startProtonVPNprompt4
 :startProtonVPNpromptSubDialerMode1
 call :banner
 call :menuProtonVPNprompt
@@ -17116,8 +16216,7 @@ call :menuProtonVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startProtonVPNpromptSubDialerMode1
+cls&goto startProtonVPNpromptSubDialerMode1
 :startProtonVPNpromptSubDialerMode2
 call :banner
 call :menuProtonVPNprompt
@@ -17125,8 +16224,7 @@ call :menuProtonVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startProtonVPNpromptSubDialerMode2
+cls&goto startProtonVPNpromptSubDialerMode2
 :startProtonVPNpromptSubDialerMode3
 call :banner
 call :menuProtonVPNprompt
@@ -17134,8 +16232,7 @@ call :menuProtonVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startProtonVPNpromptSubDialerMode3
+cls&goto startProtonVPNpromptSubDialerMode3
 :startProtonVPNpromptDialerMode
 call :banner
 call :menuProtonVPNprompt
@@ -17143,8 +16240,7 @@ call :menuProtonVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startProtonVPNpromptDialerMode
+cls&goto startProtonVPNpromptDialerMode
 :menuProtonVPNprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Proton AG
@@ -17179,8 +16275,7 @@ call :menuProtonDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startProtonPromptSubDialerMode1
-cls
-goto startProtonDrivePrompt1
+cls&goto startProtonDrivePrompt1
 :startProtonDrivePrompt2
 call :banner
 call :menuProtonDrivePrompt
@@ -17188,8 +16283,7 @@ call :menuProtonDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startProtonPromptSubDialerMode2
-cls
-goto startProtonDrivePrompt2
+cls&goto startProtonDrivePrompt2
 :startProtonDrivePrompt3
 call :banner
 call :menuProtonDrivePrompt
@@ -17197,8 +16291,7 @@ call :menuProtonDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startProtonPrompt
-cls
-goto startProtonDrivePrompt3
+cls&goto startProtonDrivePrompt3
 :startProtonDrivePrompt4
 call :banner
 call :menuProtonDrivePrompt
@@ -17206,8 +16299,7 @@ call :menuProtonDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startProtonPromptDialerMode
-cls
-goto startProtonDrivePrompt4
+cls&goto startProtonDrivePrompt4
 :startProtonDrivePromptSubDialerMode1
 call :banner
 call :menuProtonDrivePrompt
@@ -17215,8 +16307,7 @@ call :menuProtonDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startProtonDrivePromptSubDialerMode1
+cls&goto startProtonDrivePromptSubDialerMode1
 :startProtonDrivePromptSubDialerMode2
 call :banner
 call :menuProtonDrivePrompt
@@ -17224,8 +16315,7 @@ call :menuProtonDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startProtonDrivePromptSubDialerMode2
+cls&goto startProtonDrivePromptSubDialerMode2
 :startProtonDrivePromptSubDialerMode3
 call :banner
 call :menuProtonDrivePrompt
@@ -17233,8 +16323,7 @@ call :menuProtonDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startProtonDrivePromptSubDialerMode3
+cls&goto startProtonDrivePromptSubDialerMode3
 :startProtonDrivePromptDialerMode
 call :banner
 call :menuProtonDrivePrompt
@@ -17242,8 +16331,7 @@ call :menuProtonDrive
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startProtonDrivePromptDialerMode
+cls&goto startProtonDrivePromptDialerMode
 :menuProtonDrivePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Proton AG
@@ -17278,8 +16366,7 @@ call :menuMullvadVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startMullvadVPNpromptSubDialerMode1
+cls&goto startMullvadVPNpromptSubDialerMode1
 :startMullvadVPNpromptSubDialerMode2
 call :banner
 call :menuMullvadVPNprompt
@@ -17287,8 +16374,7 @@ call :menuMullvadVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startMullvadVPNpromptSubDialerMode2
+cls&goto startMullvadVPNpromptSubDialerMode2
 :startMullvadVPNprompt
 call :banner
 call :menuMullvadVPNprompt
@@ -17296,8 +16382,7 @@ call :menuMullvadVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startMullvadVPNprompt
+cls&goto startMullvadVPNprompt
 :startMullvadVPNpromptDialerMode
 call :banner
 call :menuMullvadVPNprompt
@@ -17305,8 +16390,7 @@ call :menuMullvadVPN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMullvadVPNpromptDialerMode
+cls&goto startMullvadVPNpromptDialerMode
 :menuMullvadVPNprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Mullvad VPN AB
@@ -17341,8 +16425,7 @@ call :menuPortmaster
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startPortmasterPromptSubDialerMode1
+cls&goto startPortmasterPromptSubDialerMode1
 :startPortmasterPromptSubDialerMode2
 call :banner
 call :menuPortmasterPrompt
@@ -17350,8 +16433,7 @@ call :menuPortmaster
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startPortmasterPromptSubDialerMode2
+cls&goto startPortmasterPromptSubDialerMode2
 :startPortmasterPrompt
 call :banner
 call :menuPortmasterPrompt
@@ -17359,8 +16441,7 @@ call :menuPortmaster
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startPortmasterPrompt
+cls&goto startPortmasterPrompt
 :startPortmasterPromptDialerMode
 call :banner
 call :menuPortmasterPrompt
@@ -17368,8 +16449,7 @@ call :menuPortmaster
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPortmasterPromptDialerMode
+cls&goto startPortmasterPromptDialerMode
 :menuPortmasterPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Safing
@@ -17404,8 +16484,7 @@ call :menuWireshark
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startWiresharkPromptSubDialerMode1
+cls&goto startWiresharkPromptSubDialerMode1
 :startWiresharkPromptSubDialerMode2
 call :banner
 call :menuWiresharkPrompt
@@ -17413,8 +16492,7 @@ call :menuWireshark
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startWiresharkPromptSubDialerMode2
+cls&goto startWiresharkPromptSubDialerMode2
 :startWiresharkPrompt
 call :banner
 call :menuWiresharkPrompt
@@ -17422,8 +16500,7 @@ call :menuWireshark
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startWiresharkPrompt
+cls&goto startWiresharkPrompt
 :startWiresharkPromptDialerMode
 call :banner
 call :menuWiresharkPrompt
@@ -17431,8 +16508,7 @@ call :menuWireshark
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWiresharkPromptDialerMode
+cls&goto startWiresharkPromptDialerMode
 :menuWiresharkPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Gerald Combs/The Wireshark Team
@@ -17469,8 +16545,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU C cls&goto startCharacterMapPrompt1
 if /I %input% EQU P cls&goto startPaintPrompt1
-cls
-goto startCharacterMapAndPaintPromptSubDialerMode1
+cls&goto startCharacterMapAndPaintPromptSubDialerMode1
 :startCharacterMapAndPaintPromptSubDialerMode2
 call :banner
 call :menuCharacterMapAndPaintPrompt
@@ -17480,8 +16555,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU C cls&goto startCharacterMapPrompt2
 if /I %input% EQU P cls&goto startPaintPrompt2
-cls
-goto startCharacterMapAndPaintPromptSubDialerMode2
+cls&goto startCharacterMapAndPaintPromptSubDialerMode2
 :startCharacterMapAndPaintPrompt
 call :banner
 call :menuCharacterMapAndPaintPrompt
@@ -17491,8 +16565,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU C cls&goto startCharacterMapPrompt3
 if /I %input% EQU P cls&goto startPaintPrompt3
-cls
-goto startCharacterMapAndPaintPrompt
+cls&goto startCharacterMapAndPaintPrompt
 :startCharacterMapAndPaintPromptDialerMode
 call :banner
 call :menuCharacterMapAndPaintPrompt
@@ -17502,8 +16575,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU C cls&goto startCharacterMapPrompt4
 if /I %input% EQU P cls&goto startPaintPrompt4
-cls
-goto startCharacterMapAndPaintPromptDialerMode
+cls&goto startCharacterMapAndPaintPromptDialerMode
 :menuCharacterMapAndPaintPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -17538,8 +16610,7 @@ call :menuCharacterMap
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptSubDialerMode1
-cls
-goto startCharacterMapPrompt1
+cls&goto startCharacterMapPrompt1
 :startCharacterMapPrompt2
 call :banner
 call :menuCharacterMapPrompt
@@ -17547,8 +16618,7 @@ call :menuCharacterMap
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptSubDialerMode2
-cls
-goto startCharacterMapPrompt2
+cls&goto startCharacterMapPrompt2
 :startCharacterMapPrompt3
 call :banner
 call :menuCharacterMapPrompt
@@ -17556,8 +16626,7 @@ call :menuCharacterMap
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPrompt
-cls
-goto startCharacterMapPrompt3
+cls&goto startCharacterMapPrompt3
 :startCharacterMapPrompt4
 call :banner
 call :menuCharacterMapPrompt
@@ -17565,8 +16634,7 @@ call :menuCharacterMap
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptDialerMode
-cls
-goto startCharacterMapPrompt4
+cls&goto startCharacterMapPrompt4
 :startCharacterMapPromptSubDialerMode1
 call :banner
 call :menuCharacterMapPrompt
@@ -17574,8 +16642,7 @@ call :menuCharacterMap
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startCharacterMapPromptSubDialerMode1
+cls&goto startCharacterMapPromptSubDialerMode1
 :startCharacterMapPromptSubDialerMode2
 call :banner
 call :menuCharacterMapPrompt
@@ -17583,8 +16650,7 @@ call :menuCharacterMap
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startCharacterMapPromptSubDialerMode2
+cls&goto startCharacterMapPromptSubDialerMode2
 :startCharacterMapPromptSubDialerMode3
 call :banner
 call :menuCharacterMapPrompt
@@ -17592,8 +16658,7 @@ call :menuCharacterMap
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startCharacterMapPromptSubDialerMode3
+cls&goto startCharacterMapPromptSubDialerMode3
 :startCharacterMapPromptDialerMode
 call :banner
 call :menuCharacterMapPrompt
@@ -17601,8 +16666,7 @@ call :menuCharacterMap
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCharacterMapPromptDialerMode
+cls&goto startCharacterMapPromptDialerMode
 :menuCharacterMapPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -17635,8 +16699,7 @@ call :menuPaint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptSubDialerMode1
-cls
-goto startPaintPrompt1
+cls&goto startPaintPrompt1
 :startPaintPrompt2
 call :banner
 call :menuPaintPrompt
@@ -17644,8 +16707,7 @@ call :menuPaint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptSubDialerMode2
-cls
-goto startPaintPrompt2
+cls&goto startPaintPrompt2
 :startPaintPrompt3
 call :banner
 call :menuPaintPrompt
@@ -17653,8 +16715,7 @@ call :menuPaint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPrompt
-cls
-goto startPaintPrompt3
+cls&goto startPaintPrompt3
 :startPaintPrompt4
 call :banner
 call :menuPaintPrompt
@@ -17662,8 +16723,7 @@ call :menuPaint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptDialerMode
-cls
-goto startPaintPrompt4
+cls&goto startPaintPrompt4
 :startPaintPromptSubDialerMode1
 call :banner
 call :menuPaintPrompt
@@ -17671,8 +16731,7 @@ call :menuPaint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startPaintPromptSubDialerMode1
+cls&goto startPaintPromptSubDialerMode1
 :startPaintPromptSubDialerMode2
 call :banner
 call :menuPaintPrompt
@@ -17680,8 +16739,7 @@ call :menuPaint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startPaintPromptSubDialerMode2
+cls&goto startPaintPromptSubDialerMode2
 :startPaintPromptSubDialerMode3
 call :banner
 call :menuPaintPrompt
@@ -17689,8 +16747,7 @@ call :menuPaint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startPaintPromptSubDialerMode3
+cls&goto startPaintPromptSubDialerMode3
 :startPaintPromptDialerMode
 call :banner
 call :menuPaintPrompt
@@ -17698,8 +16755,7 @@ call :menuPaint
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPaintPromptDialerMode
+cls&goto startPaintPromptDialerMode
 :menuPaintPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -17725,6 +16781,7 @@ set /p input=%BS%
 if /I %input% EQU A start Paint_A.lnk&set input=996PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Paint_R.lnk&set input=996PR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 9cAltA
 :start9cAltA
 call :banner
 call :menu9cAltAScreen
@@ -17732,8 +16789,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu9cAltA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start9cAltA
+cls&goto start9cAltA
 :menu9cAltAScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -17812,12 +16868,6 @@ if /I %input% EQU 98 cls&goto startScannerPromptSubDialerMode
 if /I %input% EQU 98A start Drive_Scanner_A.lnk&set input=99798A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 98R start Drive_Scanner_R.lnk&set input=99798R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
-:menudnSpy
-set /p input=%BS%
-if /I %input% EQU 1 cls&goto startdnSpy_x32_PromptFromSearchMode
-if /I %input% EQU 2 cls&goto startdnSpy_x64_PromptFromSearchMode
-if /I %input% EQU 3 cls&goto startdnSpy_NET_PromptFromSearchMode
-goto :eof
 :startdnSpy_x32_Prompt
 call :banner
 call :menudnSpy_x32_Prompt
@@ -17825,8 +16875,7 @@ call :menudnSpy_x32
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startdnSpy_x32_Prompt
+cls&goto startdnSpy_x32_Prompt
 :startdnSpy_x32_PromptSubDialerMode
 call :banner
 call :menudnSpy_x32_Prompt
@@ -17834,8 +16883,7 @@ call :menudnSpy_x32
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startdnSpy_x32_PromptSubDialerMode
+cls&goto startdnSpy_x32_PromptSubDialerMode
 :startdnSpy_x32_PromptDeepSubDialerMode1
 call :banner
 call :menudnSpy_x32_Prompt
@@ -17843,8 +16891,7 @@ call :menudnSpy_x32
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startdnSpy_x32_PromptDeepSubDialerMode1
+cls&goto startdnSpy_x32_PromptDeepSubDialerMode1
 :startdnSpy_x32_PromptDeepSubDialerMode2
 call :banner
 call :menudnSpy_x32_Prompt
@@ -17852,8 +16899,7 @@ call :menudnSpy_x32
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startdnSpy_x32_PromptDeepSubDialerMode2
+cls&goto startdnSpy_x32_PromptDeepSubDialerMode2
 :startdnSpy_x32_PromptDeepSubDialerMode3
 call :banner
 call :menudnSpy_x32_Prompt
@@ -17861,8 +16907,7 @@ call :menudnSpy_x32
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startdnSpy_x32_PromptDeepSubDialerMode3
+cls&goto startdnSpy_x32_PromptDeepSubDialerMode3
 :startdnSpy_x32_PromptFromSearchMode
 call :banner
 call :menudnSpy_x32_Prompt
@@ -17870,8 +16915,7 @@ call :menudnSpy_x32
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdnSpyPromptDialerMode
-cls
-goto startdnSpy_x32_PromptFromSearchMode
+cls&goto startdnSpy_x32_PromptFromSearchMode
 :startdnSpy_x32_PromptDialerMode
 call :banner
 call :menudnSpy_x32_Prompt
@@ -17879,8 +16923,7 @@ call :menudnSpy_x32
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdnSpy_x32_PromptDialerMode
+cls&goto startdnSpy_x32_PromptDialerMode
 :menudnSpy_x32_Prompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Various contributors
@@ -17913,8 +16956,7 @@ call :menudnSpy_x64
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startdnSpy_x64_Prompt
+cls&goto startdnSpy_x64_Prompt
 :startdnSpy_x64_PromptSubDialerMode
 call :banner
 call :menudnSpy_x64_Prompt
@@ -17922,8 +16964,7 @@ call :menudnSpy_x64
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startdnSpy_x64_PromptSubDialerMode
+cls&goto startdnSpy_x64_PromptSubDialerMode
 :startdnSpy_x64_PromptDeepSubDialerMode1
 call :banner
 call :menudnSpy_x64_Prompt
@@ -17931,8 +16972,7 @@ call :menudnSpy_x64
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startdnSpy_x64_PromptDeepSubDialerMode1
+cls&goto startdnSpy_x64_PromptDeepSubDialerMode1
 :startdnSpy_x64_PromptDeepSubDialerMode2
 call :banner
 call :menudnSpy_x64_Prompt
@@ -17940,8 +16980,7 @@ call :menudnSpy_x64
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startdnSpy_x64_PromptDeepSubDialerMode2
+cls&goto startdnSpy_x64_PromptDeepSubDialerMode2
 :startdnSpy_x64_PromptDeepSubDialerMode3
 call :banner
 call :menudnSpy_x64_Prompt
@@ -17949,8 +16988,7 @@ call :menudnSpy_x64
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startdnSpy_x64_PromptDeepSubDialerMode3
+cls&goto startdnSpy_x64_PromptDeepSubDialerMode3
 :startdnSpy_x64_PromptFromSearchMode
 call :banner
 call :menudnSpy_x64_Prompt
@@ -17958,8 +16996,7 @@ call :menudnSpy_x64
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdnSpyPromptDialerMode
-cls
-goto startdnSpy_x64_PromptFromSearchMode
+cls&goto startdnSpy_x64_PromptFromSearchMode
 :startdnSpy_x64_PromptDialerMode
 call :banner
 call :menudnSpy_x64_Prompt
@@ -17967,8 +17004,7 @@ call :menudnSpy_x64
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdnSpy_x64_PromptDialerMode
+cls&goto startdnSpy_x64_PromptDialerMode
 :menudnSpy_x64_Prompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Various contributors
@@ -18001,8 +17037,7 @@ call :menudnSpy_NET
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startdnSpy_NET_Prompt
+cls&goto startdnSpy_NET_Prompt
 :startdnSpy_NET_PromptSubDialerMode
 call :banner
 call :menudnSpy_NET_Prompt
@@ -18010,8 +17045,7 @@ call :menudnSpy_NET
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startdnSpy_NET_PromptSubDialerMode
+cls&goto startdnSpy_NET_PromptSubDialerMode
 :startdnSpy_NET_PromptDeepSubDialerMode1
 call :banner
 call :menudnSpy_NET_Prompt
@@ -18019,8 +17053,7 @@ call :menudnSpy_NET
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startdnSpy_NET_PromptDeepSubDialerMode1
+cls&goto startdnSpy_NET_PromptDeepSubDialerMode1
 :startdnSpy_NET_PromptDeepSubDialerMode2
 call :banner
 call :menudnSpy_NET_Prompt
@@ -18028,8 +17061,7 @@ call :menudnSpy_NET
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startdnSpy_NET_PromptDeepSubDialerMode2
+cls&goto startdnSpy_NET_PromptDeepSubDialerMode2
 :startdnSpy_NET_PromptDeepSubDialerMode3
 call :banner
 call :menudnSpy_NET_Prompt
@@ -18037,8 +17069,7 @@ call :menudnSpy_NET
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startdnSpy_NET_PromptDeepSubDialerMode3
+cls&goto startdnSpy_NET_PromptDeepSubDialerMode3
 :startdnSpy_NET_PromptFromSearchMode
 call :banner
 call :menudnSpy_NET_Prompt
@@ -18046,8 +17077,7 @@ call :menudnSpy_NET
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startdnSpyPromptDialerMode
-cls
-goto startdnSpy_NET_PromptFromSearchMode
+cls&goto startdnSpy_NET_PromptFromSearchMode
 :startdnSpy_NET_PromptDialerMode
 call :banner
 call :menudnSpy_NET_Prompt
@@ -18055,8 +17085,7 @@ call :menudnSpy_NET
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdnSpy_NET_PromptDialerMode
+cls&goto startdnSpy_NET_PromptDialerMode
 :menudnSpy_NET_Prompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Various contributors
@@ -18089,8 +17118,7 @@ call :menuILSpy
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startILSpyPrompt
+cls&goto startILSpyPrompt
 :startILSpyPromptSubDialerMode
 call :banner
 call :menuILSpyPrompt
@@ -18098,8 +17126,7 @@ call :menuILSpy
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startILSpyPromptSubDialerMode
+cls&goto startILSpyPromptSubDialerMode
 :startILSpyPromptDeepSubDialerMode1
 call :banner
 call :menuILSpyPrompt
@@ -18107,8 +17134,7 @@ call :menuILSpy
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startILSpyPromptDeepSubDialerMode1
+cls&goto startILSpyPromptDeepSubDialerMode1
 :startILSpyPromptDeepSubDialerMode2
 call :banner
 call :menuILSpyPrompt
@@ -18116,8 +17142,7 @@ call :menuILSpy
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startILSpyPromptDeepSubDialerMode2
+cls&goto startILSpyPromptDeepSubDialerMode2
 :startILSpyPromptDeepSubDialerMode3
 call :banner
 call :menuILSpyPrompt
@@ -18125,8 +17150,7 @@ call :menuILSpy
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startILSpyPromptDeepSubDialerMode3
+cls&goto startILSpyPromptDeepSubDialerMode3
 :startILSpyPromptDialerMode
 call :banner
 call :menuILSpyPrompt
@@ -18134,8 +17158,7 @@ call :menuILSpy
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startILSpyPromptDialerMode
+cls&goto startILSpyPromptDialerMode
 :menuILSpyPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: icsharpcode/ILSpy Team
@@ -18168,8 +17191,7 @@ call :menuIl2CppInspector
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startIl2CppInspectorPrompt
+cls&goto startIl2CppInspectorPrompt
 :startIl2CppInspectorPromptSubDialerMode
 call :banner
 call :menuIl2CppInspectorPrompt
@@ -18177,8 +17199,7 @@ call :menuIl2CppInspector
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startIl2CppInspectorPromptSubDialerMode
+cls&goto startIl2CppInspectorPromptSubDialerMode
 :startIl2CppInspectorPromptDeepSubDialerMode1
 call :banner
 call :menuIl2CppInspectorPrompt
@@ -18186,8 +17207,7 @@ call :menuIl2CppInspector
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startIl2CppInspectorPromptDeepSubDialerMode1
+cls&goto startIl2CppInspectorPromptDeepSubDialerMode1
 :startIl2CppInspectorPromptDeepSubDialerMode2
 call :banner
 call :menuIl2CppInspectorPrompt
@@ -18195,8 +17215,7 @@ call :menuIl2CppInspector
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startIl2CppInspectorPromptDeepSubDialerMode2
+cls&goto startIl2CppInspectorPromptDeepSubDialerMode2
 :startIl2CppInspectorPromptDeepSubDialerMode3
 call :banner
 call :menuIl2CppInspectorPrompt
@@ -18204,8 +17223,7 @@ call :menuIl2CppInspector
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startIl2CppInspectorPromptDeepSubDialerMode3
+cls&goto startIl2CppInspectorPromptDeepSubDialerMode3
 :startIl2CppInspectorPromptDialerMode
 call :banner
 call :menuIl2CppInspectorPrompt
@@ -18213,8 +17231,7 @@ call :menuIl2CppInspector
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startIl2CppInspectorPromptDialerMode
+cls&goto startIl2CppInspectorPromptDialerMode
 :menuIl2CppInspectorPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: djkaty
@@ -18247,8 +17264,7 @@ call :menuPEiD
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startPEiDprompt
+cls&goto startPEiDprompt
 :startPEiDpromptSubDialerMode
 call :banner
 call :menuPEiDprompt
@@ -18256,8 +17272,7 @@ call :menuPEiD
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startPEiDpromptSubDialerMode
+cls&goto startPEiDpromptSubDialerMode
 :startPEiDpromptDeepSubDialerMode1
 call :banner
 call :menuPEiDprompt
@@ -18265,8 +17280,7 @@ call :menuPEiD
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startPEiDpromptDeepSubDialerMode1
+cls&goto startPEiDpromptDeepSubDialerMode1
 :startPEiDpromptDeepSubDialerMode2
 call :banner
 call :menuPEiDprompt
@@ -18274,8 +17288,7 @@ call :menuPEiD
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startPEiDpromptDeepSubDialerMode2
+cls&goto startPEiDpromptDeepSubDialerMode2
 :startPEiDpromptDeepSubDialerMode3
 call :banner
 call :menuPEiDprompt
@@ -18283,8 +17296,7 @@ call :menuPEiD
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startPEiDpromptDeepSubDialerMode3
+cls&goto startPEiDpromptDeepSubDialerMode3
 :startPEiDpromptDialerMode
 call :banner
 call :menuPEiDprompt
@@ -18292,8 +17304,7 @@ call :menuPEiD
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPEiDpromptDialerMode
+cls&goto startPEiDpromptDialerMode
 :menuPEiDprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: snaker, Qwerton, Jibz, and xineohP
@@ -18326,8 +17337,7 @@ call :menuOdin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startOdinPrompt
+cls&goto startOdinPrompt
 :startOdinPromptSubDialerMode
 call :banner
 call :menuOdinPrompt
@@ -18335,8 +17345,7 @@ call :menuOdin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startOdinPromptSubDialerMode
+cls&goto startOdinPromptSubDialerMode
 :startOdinPromptDeepSubDialerMode1
 call :banner
 call :menuOdinPrompt
@@ -18344,8 +17353,7 @@ call :menuOdin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startOdinPromptDeepSubDialerMode1
+cls&goto startOdinPromptDeepSubDialerMode1
 :startOdinPromptDeepSubDialerMode2
 call :banner
 call :menuOdinPrompt
@@ -18353,8 +17361,7 @@ call :menuOdin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startOdinPromptDeepSubDialerMode2
+cls&goto startOdinPromptDeepSubDialerMode2
 :startOdinPromptDeepSubDialerMode3
 call :banner
 call :menuOdinPrompt
@@ -18362,8 +17369,7 @@ call :menuOdin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startOdinPromptDeepSubDialerMode3
+cls&goto startOdinPromptDeepSubDialerMode3
 :startOdinPromptDialerMode
 call :banner
 call :menuOdinPrompt
@@ -18371,8 +17377,7 @@ call :menuOdin
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startOdinPromptDialerMode
+cls&goto startOdinPromptDialerMode
 :menuOdinPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Samsung
@@ -18405,8 +17410,7 @@ call :menuOOSU10
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startOOSU10Prompt
+cls&goto startOOSU10Prompt
 :startOOSU10PromptSubDialerMode
 call :banner
 call :menuOOSU10Prompt
@@ -18414,8 +17418,7 @@ call :menuOOSU10
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startOOSU10PromptSubDialerMode
+cls&goto startOOSU10PromptSubDialerMode
 :startOOSU10PromptDeepSubDialerMode1
 call :banner
 call :menuOOSU10Prompt
@@ -18423,8 +17426,7 @@ call :menuOOSU10
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startOOSU10PromptDeepSubDialerMode1
+cls&goto startOOSU10PromptDeepSubDialerMode1
 :startOOSU10PromptDeepSubDialerMode2
 call :banner
 call :menuOOSU10Prompt
@@ -18432,8 +17434,7 @@ call :menuOOSU10
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startOOSU10PromptDeepSubDialerMode2
+cls&goto startOOSU10PromptDeepSubDialerMode2
 :startOOSU10PromptDeepSubDialerMode3
 call :banner
 call :menuOOSU10Prompt
@@ -18441,8 +17442,7 @@ call :menuOOSU10
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startOOSU10PromptDeepSubDialerMode3
+cls&goto startOOSU10PromptDeepSubDialerMode3
 :startOOSU10PromptDialerMode
 call :banner
 call :menuOOSU10Prompt
@@ -18450,8 +17450,7 @@ call :menuOOSU10
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startOOSU10PromptDialerMode
+cls&goto startOOSU10PromptDialerMode
 :menuOOSU10Prompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: O_and_O Software GmbH
@@ -18477,6 +17476,7 @@ set /p input=%BS%
 if /I %input% EQU A start OOSU10_A.lnk&set input=9978A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start OOSU10_R.lnk&set input=9978R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Section 9cAltB
 :start9cAltB
 call :banner
 call :menu9cAltBScreen
@@ -18484,8 +17484,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menu9cAltB
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto start9cAltB
+cls&goto start9cAltB
 :menu9cAltBScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -18571,8 +17570,7 @@ call :menuF2KO_BAT2EXE
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startF2KO_BAT2EXEprompt
+cls&goto startF2KO_BAT2EXEprompt
 :startF2KO_BAT2EXEpromptSubDialerMode
 call :banner
 call :menuF2KO_BAT2EXEprompt
@@ -18580,8 +17578,7 @@ call :menuF2KO_BAT2EXE
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startF2KO_BAT2EXEpromptSubDialerMode
+cls&goto startF2KO_BAT2EXEpromptSubDialerMode
 :startF2KO_BAT2EXEpromptDeepSubDialerMode1
 call :banner
 call :menuF2KO_BAT2EXEprompt
@@ -18589,8 +17586,7 @@ call :menuF2KO_BAT2EXE
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startF2KO_BAT2EXEpromptDeepSubDialerMode1
+cls&goto startF2KO_BAT2EXEpromptDeepSubDialerMode1
 :startF2KO_BAT2EXEpromptDeepSubDialerMode2
 call :banner
 call :menuF2KO_BAT2EXEprompt
@@ -18598,8 +17594,7 @@ call :menuF2KO_BAT2EXE
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startF2KO_BAT2EXEpromptDeepSubDialerMode2
+cls&goto startF2KO_BAT2EXEpromptDeepSubDialerMode2
 :startF2KO_BAT2EXEpromptDeepSubDialerMode3
 call :banner
 call :menuF2KO_BAT2EXEprompt
@@ -18607,8 +17602,7 @@ call :menuF2KO_BAT2EXE
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startF2KO_BAT2EXEpromptDeepSubDialerMode3
+cls&goto startF2KO_BAT2EXEpromptDeepSubDialerMode3
 :startF2KO_BAT2EXEpromptDialerMode
 call :banner
 call :menuF2KO_BAT2EXEprompt
@@ -18616,8 +17610,7 @@ call :menuF2KO_BAT2EXE
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startF2KO_BAT2EXEpromptDialerMode
+cls&goto startF2KO_BAT2EXEpromptDialerMode
 :menuF2KO_BAT2EXEprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: F2KO
@@ -18650,8 +17643,7 @@ call :menuCutter
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startCutterPrompt
+cls&goto startCutterPrompt
 :startCutterPromptSubDialerMode
 call :banner
 call :menuCutterPrompt
@@ -18659,8 +17651,7 @@ call :menuCutter
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startCutterPromptSubDialerMode
+cls&goto startCutterPromptSubDialerMode
 :startCutterPromptDeepSubDialerMode1
 call :banner
 call :menuCutterPrompt
@@ -18668,8 +17659,7 @@ call :menuCutter
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startCutterPromptDeepSubDialerMode1
+cls&goto startCutterPromptDeepSubDialerMode1
 :startCutterPromptDeepSubDialerMode2
 call :banner
 call :menuCutterPrompt
@@ -18677,8 +17667,7 @@ call :menuCutter
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startCutterPromptDeepSubDialerMode2
+cls&goto startCutterPromptDeepSubDialerMode2
 :startCutterPromptDeepSubDialerMode3
 call :banner
 call :menuCutterPrompt
@@ -18686,8 +17675,7 @@ call :menuCutter
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startCutterPromptDeepSubDialerMode3
+cls&goto startCutterPromptDeepSubDialerMode3
 :startCutterPromptDialerMode
 call :banner
 call :menuCutterPrompt
@@ -18695,8 +17683,7 @@ call :menuCutter
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCutterPromptDialerMode
+cls&goto startCutterPromptDialerMode
 :menuCutterPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Cutter
@@ -18729,8 +17716,7 @@ call :menuJDGUI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startJDGUIprompt
+cls&goto startJDGUIprompt
 :startJDGUIpromptSubDialerMode
 call :banner
 call :menuJDGUIprompt
@@ -18738,8 +17724,7 @@ call :menuJDGUI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startJDGUIpromptSubDialerMode
+cls&goto startJDGUIpromptSubDialerMode
 :startJDGUIpromptDeepSubDialerMode1
 call :banner
 call :menuJDGUIprompt
@@ -18747,8 +17732,7 @@ call :menuJDGUI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startJDGUIpromptDeepSubDialerMode1
+cls&goto startJDGUIpromptDeepSubDialerMode1
 :startJDGUIpromptDeepSubDialerMode2
 call :banner
 call :menuJDGUIprompt
@@ -18756,8 +17740,7 @@ call :menuJDGUI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startJDGUIpromptDeepSubDialerMode2
+cls&goto startJDGUIpromptDeepSubDialerMode2
 :startJDGUIpromptDeepSubDialerMode3
 call :banner
 call :menuJDGUIprompt
@@ -18765,8 +17748,7 @@ call :menuJDGUI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startJDGUIpromptDeepSubDialerMode3
+cls&goto startJDGUIpromptDeepSubDialerMode3
 :startJDGUIpromptDialerMode
 call :banner
 call :menuJDGUIprompt
@@ -18774,8 +17756,7 @@ call :menuJDGUI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startJDGUIpromptDialerMode
+cls&goto startJDGUIpromptDialerMode
 :menuJDGUIprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Various contributors
@@ -18808,8 +17789,7 @@ call :menuJavaSnoop
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startJavaSnoopPrompt
+cls&goto startJavaSnoopPrompt
 :startJavaSnoopPromptSubDialerMode
 call :banner
 call :menuJavaSnoopPrompt
@@ -18817,8 +17797,7 @@ call :menuJavaSnoop
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startJavaSnoopPromptSubDialerMode
+cls&goto startJavaSnoopPromptSubDialerMode
 :startJavaSnoopPromptDeepSubDialerMode1
 call :banner
 call :menuJavaSnoopPrompt
@@ -18826,8 +17805,7 @@ call :menuJavaSnoop
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startJavaSnoopPromptDeepSubDialerMode1
+cls&goto startJavaSnoopPromptDeepSubDialerMode1
 :startJavaSnoopPromptDeepSubDialerMode2
 call :banner
 call :menuJavaSnoopPrompt
@@ -18835,8 +17813,7 @@ call :menuJavaSnoop
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startJavaSnoopPromptDeepSubDialerMode2
+cls&goto startJavaSnoopPromptDeepSubDialerMode2
 :startJavaSnoopPromptDeepSubDialerMode3
 call :banner
 call :menuJavaSnoopPrompt
@@ -18844,8 +17821,7 @@ call :menuJavaSnoop
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startJavaSnoopPromptDeepSubDialerMode3
+cls&goto startJavaSnoopPromptDeepSubDialerMode3
 :startJavaSnoopPromptDialerMode
 call :banner
 call :menuJavaSnoopPrompt
@@ -18853,8 +17829,7 @@ call :menuJavaSnoop
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startJavaSnoopPromptDialerMode
+cls&goto startJavaSnoopPromptDialerMode
 :menuJavaSnoopPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Aspect Security, Inc.
@@ -18887,8 +17862,7 @@ call :menux64dbg
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startx64dbgPrompt
+cls&goto startx64dbgPrompt
 :startx64dbgPromptSubDialerMode
 call :banner
 call :menux64dbgPrompt
@@ -18896,8 +17870,7 @@ call :menux64dbg
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startx64dbgPromptSubDialerMode
+cls&goto startx64dbgPromptSubDialerMode
 :startx64dbgPromptDeepSubDialerMode1
 call :banner
 call :menux64dbgPrompt
@@ -18905,8 +17878,7 @@ call :menux64dbg
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startx64dbgPromptDeepSubDialerMode1
+cls&goto startx64dbgPromptDeepSubDialerMode1
 :startx64dbgPromptDeepSubDialerMode2
 call :banner
 call :menux64dbgPrompt
@@ -18914,8 +17886,7 @@ call :menux64dbg
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startx64dbgPromptDeepSubDialerMode2
+cls&goto startx64dbgPromptDeepSubDialerMode2
 :startx64dbgPromptDeepSubDialerMode3
 call :banner
 call :menux64dbgPrompt
@@ -18923,8 +17894,7 @@ call :menux64dbg
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startx64dbgPromptDeepSubDialerMode3
+cls&goto startx64dbgPromptDeepSubDialerMode3
 :startx64dbgPromptDialerMode
 call :banner
 call :menux64dbgPrompt
@@ -18932,8 +17902,7 @@ call :menux64dbg
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startx64dbgPromptDialerMode
+cls&goto startx64dbgPromptDialerMode
 :menux64dbgPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Various contributors
@@ -18966,8 +17935,7 @@ call :menuAutoHotkeyUX
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startAutoHotkeyUXPrompt
+cls&goto startAutoHotkeyUXPrompt
 :startAutoHotkeyUXPromptSubDialerMode
 call :banner
 call :menuAutoHotkeyUXprompt
@@ -18975,8 +17943,7 @@ call :menuAutoHotkeyUX
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startAutoHotkeyUXPromptSubDialerMode
+cls&goto startAutoHotkeyUXPromptSubDialerMode
 :startAutoHotkeyUXPromptDeepSubDialerMode1
 call :banner
 call :menuAutoHotkeyUXprompt
@@ -18984,8 +17951,7 @@ call :menuAutoHotkeyUX
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startAutoHotkeyUXPromptDeepSubDialerMode1
+cls&goto startAutoHotkeyUXPromptDeepSubDialerMode1
 :startAutoHotkeyUXPromptDeepSubDialerMode2
 call :banner
 call :menuAutoHotkeyUXprompt
@@ -18993,8 +17959,7 @@ call :menuAutoHotkeyUX
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startAutoHotkeyUXPromptDeepSubDialerMode2
+cls&goto startAutoHotkeyUXPromptDeepSubDialerMode2
 :startAutoHotkeyUXPromptDeepSubDialerMode3
 call :banner
 call :menuAutoHotkeyUXprompt
@@ -19002,8 +17967,7 @@ call :menuAutoHotkeyUX
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startAutoHotkeyUXPromptDeepSubDialerMode3
+cls&goto startAutoHotkeyUXPromptDeepSubDialerMode3
 :startAutoHotkeyUXPromptDialerMode
 call :banner
 call :menuAutoHotkeyUXprompt
@@ -19011,8 +17975,7 @@ call :menuAutoHotkeyUX
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startAutoHotkeyUXPromptDialerMode
+cls&goto startAutoHotkeyUXPromptDialerMode
 :menuAutoHotkeyUXprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Chris Mallett and other various contributors/AutoHotkey Foundation LLC
@@ -19047,8 +18010,7 @@ call :menuSARDU
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startSARDUprompt
+cls&goto startSARDUprompt
 :startSARDUpromptSubDialerMode
 call :banner
 call :menuSARDUprompt
@@ -19056,8 +18018,7 @@ call :menuSARDU
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startSARDUpromptSubDialerMode
+cls&goto startSARDUpromptSubDialerMode
 :startSARDUpromptDeepSubDialerMode1
 call :banner
 call :menuSARDUprompt
@@ -19065,8 +18026,7 @@ call :menuSARDU
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startSARDUpromptDeepSubDialerMode1
+cls&goto startSARDUpromptDeepSubDialerMode1
 :startSARDUpromptDeepSubDialerMode2
 call :banner
 call :menuSARDUprompt
@@ -19074,8 +18034,7 @@ call :menuSARDU
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startSARDUpromptDeepSubDialerMode2
+cls&goto startSARDUpromptDeepSubDialerMode2
 :startSARDUpromptDeepSubDialerMode3
 call :banner
 call :menuSARDUprompt
@@ -19083,8 +18042,7 @@ call :menuSARDU
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startSARDUpromptDeepSubDialerMode3
+cls&goto startSARDUpromptDeepSubDialerMode3
 :startSARDUpromptDialerMode
 call :banner
 call :menuSARDUprompt
@@ -19092,8 +18050,7 @@ call :menuSARDU
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startSARDUpromptDialerMode
+cls&goto startSARDUpromptDialerMode
 :menuSARDUprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: SARDU Pro srl.
@@ -19126,8 +18083,7 @@ call :menuScanner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltB
-cls
-goto startScannerPrompt
+cls&goto startScannerPrompt
 :startScannerPromptSubDialerMode
 call :banner
 call :menuScannerPrompt
@@ -19135,8 +18091,7 @@ call :menuScanner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9cAltA
-cls
-goto startScannerPromptSubDialerMode
+cls&goto startScannerPromptSubDialerMode
 :startScannerPromptDeepSubDialerMode1
 call :banner
 call :menuScannerPrompt
@@ -19144,8 +18099,7 @@ call :menuScanner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
-cls
-goto startScannerPromptDeepSubDialerMode1
+cls&goto startScannerPromptDeepSubDialerMode1
 :startScannerPromptDeepSubDialerMode2
 call :banner
 call :menuScannerPrompt
@@ -19153,8 +18107,7 @@ call :menuScanner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
-cls
-goto startScannerPromptDeepSubDialerMode2
+cls&goto startScannerPromptDeepSubDialerMode2
 :startScannerPromptDeepSubDialerMode3
 call :banner
 call :menuScannerPrompt
@@ -19162,8 +18115,7 @@ call :menuScanner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
-cls
-goto startScannerPromptDeepSubDialerMode3
+cls&goto startScannerPromptDeepSubDialerMode3
 :startScannerPromptDialerMode
 call :banner
 call :menuScannerPrompt
@@ -19171,8 +18123,7 @@ call :menuScanner
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startScannerPromptDialerMode
+cls&goto startScannerPromptDialerMode
 :menuScannerPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Steffen Gerlach
@@ -19198,6 +18149,7 @@ set /p input=%BS%
 if /I %input% EQU A start Drive_Scanner_A.lnk&set input=99798A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Drive_Scanner_R.lnk&set input=99798R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Other Programs Section
 :startCLIdirectoryPromptDialerMode
 call :banner
 call :menuCLIdirectoryPrompt
@@ -19205,8 +18157,7 @@ call :menuCLIdirectory
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startCLIdirectoryPromptDialerMode
+cls&goto startCLIdirectoryPromptDialerMode
 :menuCLIdirectoryPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: N/A
@@ -19238,8 +18189,7 @@ call :menudotUltimate
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdotUltimatePromptDialerMode
+cls&goto startdotUltimatePromptDialerMode
 :menudotUltimatePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: JetBrains s.r.o.
@@ -19271,8 +18221,7 @@ call :menuMicrosoft365
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startMicrosoft365PromptDialerMode
+cls&goto startMicrosoft365PromptDialerMode
 :menuMicrosoft365Prompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -19304,8 +18253,7 @@ call :menuPiriform
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startPiriformPromptDialerMode
+cls&goto startPiriformPromptDialerMode
 :menuPiriformPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Piriform Software
@@ -19337,8 +18285,7 @@ call :menuWindows7Games
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWindows7GamesPromptDialerMode
+cls&goto startWindows7GamesPromptDialerMode
 :menuWindows7GamesPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Microsoft Corporation
@@ -19371,8 +18318,7 @@ call :menuWinZipSuite
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startWinZipSuitePromptDialerMode
+cls&goto startWinZipSuitePromptDialerMode
 :menuWinZipSuitePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: WinZip International LLC/formerly under Corel Corporarion, now under Alludo
@@ -19405,8 +18351,7 @@ call :menudnSpy
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
-cls
-goto startdnSpyPromptDialerMode
+cls&goto startdnSpyPromptDialerMode
 :menudnSpyPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Various contributors
@@ -19427,6 +18372,54 @@ echo.
 echo Input the number ("1/2/3") for dnSpy x32/x64/.NET program. Input zero ("0") to cancel.
 echo.
 goto :eof
+:menudnSpy
+set /p input=%BS%
+if /I %input% EQU 1 cls&goto startdnSpy_x32_PromptFromSearchMode
+if /I %input% EQU 1A start dnSpy_x32_A.lnk&set input=9971A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 1R start dnSpy_x32_R.lnk&set input=9971R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2 cls&goto startdnSpy_x64_PromptFromSearchMode
+if /I %input% EQU 2A start dnSpy_x64_A.lnk&set input=9972A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2R start dnSpy_x64_R.lnk&set input=9972R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3 cls&goto startdnSpy_NET_PromptFromSearchMode
+if /I %input% EQU 3A start dnSpy_NET_A.lnk&set input=9973A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3R start dnSpy_NET_R.lnk&set input=9973R&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startGitForkPromptDialerMode
+call :banner
+call :menuGitForkPrompt
+call :menuGitFork
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+cls&goto startGitForkPromptDialerMode
+:menuGitForkPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Dan Pristupov and Tanya Pristupova
+echo     Software Type: A Fast and Friendly Git Client
+echo          Category: Trialware
+echo      License Type: Proprietary
+echo           Website: https://git-fork.com/
+echo  Founded/Released: 04/07/2005
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: GitHub_Fork_A.lnk, GitHub_Fork_R.lnk, GitHub_Fork_I.exe
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall GitHub Fork ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuGitFork
+set /p input=%BS%
+if /I %input% EQU A start GitHub_Fork_A.lnk&set input=Git-Fork-A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start GitHub_Fork_R.lnk&set input=Git-Fork-R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start GitHub_Fork_I.exe&set input=Git-Fork-I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O goto startUninstallationInstructions 
+goto :eof
+:: Main Menu Alphabetized Part 1
 :startMainAlphabetized1
 call :banner
 call :menuMainAlphabetized1Screen
@@ -19439,8 +18432,7 @@ if /I %input% EQU - cls&goto startMainAlphabetized3
 if /I %input% EQU -- cls&goto startMainAlphabetized2
 if /I %input% EQU + cls&goto startMainAlphabetized2
 if /I %input% EQU ++ cls&goto startMainAlphabetized3
-cls
-goto startMainAlphabetized1
+cls&goto startMainAlphabetized1
 :menuMainAlphabetized1Screen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19465,6 +18457,7 @@ echo        [38;2;179;255;179m║[0m
 echo        [38;2;204;255;204m╚╦═════════+) Go to Page 2[0m
 echo        [38;2;230;255;230m ║[0m
 goto :eof
+:: Main Menu Alphabetized Part 2
 :startMainAlphabetized2
 call :banner
 call :menuMainAlphabetized2Screen
@@ -19477,8 +18470,7 @@ if /I %input% EQU -- cls&goto startMainAlphabetized3
 if /I %input% EQU - cls&goto startMainAlphabetized1
 if /I %input% EQU + cls&goto startMainAlphabetized3
 if /I %input% EQU ++ cls&goto startMainAlphabetized1
-cls
-goto startMainAlphabetized2
+cls&goto startMainAlphabetized2
 :menuMainAlphabetized2Screen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19503,6 +18495,7 @@ echo        [38;2;179;255;179m║[0m
 echo        [38;2;204;255;204m╚╦═════════+) Go to Page 3[0m
 echo        [38;2;230;255;230m ║[0m
 goto :eof
+:: Main Menu Alphabetized Part 3
 :startMainAlphabetized3
 call :banner
 call :menuMainAlphabetized3Screen
@@ -19515,8 +18508,7 @@ if /I %input% EQU - cls&goto startMainAlphabetized2
 if /I %input% EQU -- cls&goto startMainAlphabetized1
 if /I %input% EQU + cls&goto startMainAlphabetized1
 if /I %input% EQU ++ cls&goto startMainAlphabetized2
-cls
-goto startMainAlphabetized3
+cls&goto startMainAlphabetized3
 :menuMainAlphabetized3Screen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19541,6 +18533,7 @@ echo        [38;2;179;255;179m║[0m
 echo        [38;2;204;255;204m╚╦═════════Z) InvokeStartZ[0m
 echo        [38;2;230;255;230m ║[0m
 goto :eof
+:: Section A; Part 1
 :startA
 call :banner
 call :menuAScreen
@@ -19548,8 +18541,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startA
+cls&goto startA
 :menuAScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19586,6 +18578,7 @@ if /I %input% EQU 7 set input=A7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=A8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=A9&goto startEmptySlotPrompt
 goto :eof
+:: Section B; Part 1
 :startB
 call :banner
 call :menuBScreen
@@ -19593,8 +18586,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuB
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startB
+cls&goto startB
 :menuBScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19631,6 +18623,7 @@ if /I %input% EQU 7 set input=B7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=B8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=B9&goto startEmptySlotPrompt
 goto :eof
+:: Section C; Part 1
 :startC
 call :banner
 call :menuCScreen
@@ -19638,8 +18631,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuC
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startC
+cls&goto startC
 :menuCScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19676,6 +18668,7 @@ if /I %input% EQU 7 set input=C7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=C8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=C9&goto startEmptySlotPrompt
 goto :eof
+:: Section D; Part 1
 :startD
 call :banner
 call :menuDScreen
@@ -19683,8 +18676,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuD
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startD
+cls&goto startD
 :menuDScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19721,6 +18713,7 @@ if /I %input% EQU 7 set input=D7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=D8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=D9&goto startEmptySlotPrompt
 goto :eof
+:: Section E; Part 1
 :startE
 call :banner
 call :menuEScreen
@@ -19728,8 +18721,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuE
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startE
+cls&goto startE
 :menuEScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19766,6 +18758,7 @@ if /I %input% EQU 7 set input=E7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=E8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=E9&goto startEmptySlotPrompt
 goto :eof
+:: Section F; Part 1
 :startF
 call :banner
 call :menuFScreen
@@ -19773,8 +18766,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuF
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startF
+cls&goto startF
 :menuFScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19811,6 +18803,7 @@ if /I %input% EQU 7 set input=F7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=F8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=F9&goto startEmptySlotPrompt
 goto :eof
+:: Section G; Part 1
 :startG
 call :banner
 call :menuGScreen
@@ -19818,8 +18811,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuG
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startG
+cls&goto startG
 :menuGScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19856,6 +18848,7 @@ if /I %input% EQU 7 set input=G7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=G8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=G9&goto startEmptySlotPrompt
 goto :eof
+:: Section H; Part 1
 :startH
 call :banner
 call :menuHScreen
@@ -19863,8 +18856,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuH
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startH
+cls&goto startH
 :menuHScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19901,6 +18893,7 @@ if /I %input% EQU 7 set input=H7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=H8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=H9&goto startEmptySlotPrompt
 goto :eof
+:: Section I; Part 1
 :startI
 call :banner
 call :menuIScreen
@@ -19908,8 +18901,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startI
+cls&goto startI
 :menuIScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19946,6 +18938,7 @@ if /I %input% EQU 7 set input=I7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=I8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=I9&goto startEmptySlotPrompt
 goto :eof
+:: Section J; Part 2
 :startJ
 call :banner
 call :menuJScreen
@@ -19953,8 +18946,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuJ
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startJ
+cls&goto startJ
 :menuJScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -19991,6 +18983,7 @@ if /I %input% EQU 7 set input=J7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=J8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=J9&goto startEmptySlotPrompt
 goto :eof
+:: Section K; Part 2
 :startK
 call :banner
 call :menuKScreen
@@ -19998,8 +18991,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuK
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startK
+cls&goto startK
 :menuKScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20036,6 +19028,7 @@ if /I %input% EQU 7 set input=K7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=K8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=K9&goto startEmptySlotPrompt
 goto :eof
+:: Section L; Part 2
 :startL
 call :banner
 call :menuLScreen
@@ -20043,8 +19036,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuL
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startL
+cls&goto startL
 :menuLScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20081,6 +19073,7 @@ if /I %input% EQU 7 set input=L7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=L8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=L9&goto startEmptySlotPrompt
 goto :eof
+:: Section M; Part 2
 :startM
 call :banner
 call :menuMScreen
@@ -20088,8 +19081,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuM
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startM
+cls&goto startM
 :menuMScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20126,6 +19118,7 @@ if /I %input% EQU 7 set input=M7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=M8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=M9&goto startEmptySlotPrompt
 goto :eof
+:: Section N; Part 2
 :startN
 call :banner
 call :menuNScreen
@@ -20133,8 +19126,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startN
+cls&goto startN
 :menuNScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20171,6 +19163,7 @@ if /I %input% EQU 7 set input=N7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=N8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=N9&goto startEmptySlotPrompt
 goto :eof
+:: Section O; Part 2
 :startO
 call :banner
 call :menuOScreen
@@ -20178,8 +19171,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuO
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startO
+cls&goto startO
 :menuOScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20216,6 +19208,7 @@ if /I %input% EQU 7 set input=O7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=O8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=O9&goto startEmptySlotPrompt
 goto :eof
+:: Section P; Part 2
 :startP
 call :banner
 call :menuPScreen
@@ -20223,8 +19216,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuP
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startP
+cls&goto startP
 :menuPScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20261,6 +19253,7 @@ if /I %input% EQU 7 set input=P7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=P8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=P9&goto startEmptySlotPrompt
 goto :eof
+:: Section Q; Part 2
 :startQ
 call :banner
 call :menuQScreen
@@ -20268,8 +19261,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuQ
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startQ
+cls&goto startQ
 :menuQScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20306,6 +19298,7 @@ if /I %input% EQU 7 set input=Q7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=Q8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=Q9&goto startEmptySlotPrompt
 goto :eof
+:: Section R; Part 3
 :startR
 call :banner
 call :menuRScreen
@@ -20313,8 +19306,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startR
+cls&goto startR
 :menuRScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20351,6 +19343,7 @@ if /I %input% EQU 7 set input=R7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=R8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=R9&goto startEmptySlotPrompt
 goto :eof
+:: Section S; Part 3
 :startS
 call :banner
 call :menuSScreen
@@ -20358,8 +19351,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuS
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startS
+cls&goto startS
 :menuSScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20396,6 +19388,7 @@ if /I %input% EQU 7 set input=S7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=S8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=S9&goto startEmptySlotPrompt
 goto :eof
+:: Section T; Part 3
 :startT
 call :banner
 call :menuTScreen
@@ -20403,8 +19396,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startT
+cls&goto startT
 :menuTScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20441,6 +19433,7 @@ if /I %input% EQU 7 set input=T7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=T8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=T9&goto startEmptySlotPrompt
 goto :eof
+:: Section U; Part 3
 :startU
 call :banner
 call :menuUScreen
@@ -20448,8 +19441,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuU
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startU
+cls&goto startU
 :menuUScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20486,6 +19478,7 @@ if /I %input% EQU 7 set input=U7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=U8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=U9&goto startEmptySlotPrompt
 goto :eof
+:: Section V; Part 3
 :startV
 call :banner
 call :menuVScreen
@@ -20493,8 +19486,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuV
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startV
+cls&goto startV
 :menuVScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20531,6 +19523,7 @@ if /I %input% EQU 7 set input=V7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=V8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=V9&goto startEmptySlotPrompt
 goto :eof
+:: Section W; Part 3
 :startW
 call :banner
 call :menuWScreen
@@ -20538,8 +19531,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuW
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startW
+cls&goto startW
 :menuWScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20576,6 +19568,7 @@ if /I %input% EQU 7 set input=W7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=W8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=W9&goto startEmptySlotPrompt
 goto :eof
+:: Section X; Part 3
 :startX
 call :banner
 call :menuXScreen
@@ -20583,8 +19576,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuX
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startX
+cls&goto startX
 :menuXScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20621,6 +19613,7 @@ if /I %input% EQU 7 set input=X7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=X8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=X9&goto startEmptySlotPrompt
 goto :eof
+:: Section Y; Part 3
 :startY
 call :banner
 call :menuYScreen
@@ -20628,8 +19621,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuY
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startY
+cls&goto startY
 :menuYScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20666,6 +19658,7 @@ if /I %input% EQU 7 set input=Y7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=Y8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=Y9&goto startEmptySlotPrompt
 goto :eof
+:: Section Z; Part 3
 :startZ
 call :banner
 call :menuZScreen
@@ -20673,8 +19666,7 @@ set /p input=.%BS%       [38;2;255;255;255m ╚══════════�
 call :menuZ
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startZ
+cls&goto startZ
 :menuZScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20711,17 +19703,16 @@ if /I %input% EQU 7 set input=Z7&goto startEmptySlotPrompt
 if /I %input% EQU 8 set input=Z8&goto startEmptySlotPrompt
 if /I %input% EQU 9 set input=Z9&goto startEmptySlotPrompt
 goto :eof
+:: From Auxiliary Commands
 :startAbout
 call :banner
 call :About
 pause
-cls
-goto startMain
+cls&goto startMain
 :startCopy0
 call :Copy0
 pause
-cls
-goto startMain
+cls&goto startMain
 :startCopy1
 start Unstealth_Applications.lnk
 goto :eof
@@ -20789,46 +19780,39 @@ goto :eof
 call :banner
 call :menuDisplayScreen
 call :menuDisplay
-cls
-goto startMain
+cls&goto startMain
 :startGuide
 call :Guide
 pause
-cls
-goto startMain
+cls&goto startMain
 :startHelp
 call :Help
 pause
-cls
-goto startMain
+cls&goto startMain
 :startPackageChecker
 call :PackageChecker
 pause
-cls
-goto startMain
+cls&goto startMain
 :startShortcutChecker
 call :ShortcutChecker
 pause
-cls
-goto startMain
+cls&goto startMain
 :startTree
 call :Tree
 pause
-cls
-goto startMain
+cls&goto startMain
 :startWordsort
 call :Wordsort
 pause
-cls
-goto startMain
+cls&goto startMain
+:: Main Menu Instream
 :startMainInstream
 call :banner
 call :menuMainInstreamScreen
 set /p input=.%BS%       [38;2;255;255;255m╚════════════^>[0m
 call :menuMainInstream
 call :menuAuxiliaryCommandsInstream
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :menuMainInstreamScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -20853,17 +19837,16 @@ echo        [38;2;179;255;179m║ Some programs are not available to download d
 echo        [38;2;204;255;204m║ Please plan accordingly. Instream Downloader Awaiting Commands...[0m
 echo        [38;2;230;255;230m║[0m
 goto :eof
+:: From Auxiliary Commands Instream
 :startAboutInstream
 call :banner
 call :About
 pause
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startCopy0Instream
 call :Copy0
 pause
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startCopy1Instream
 start Instream_Applications.lnk
 goto :eof
@@ -20931,44 +19914,37 @@ goto :eof
 call :banner
 call :menuDisplayScreen
 call :menuDisplay
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startGuideInstream
 call :Guide
 pause
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startHelpInstream
 call :Help
 pause
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startPackageCheckerInstream
 call :PackageChecker
 pause
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startShortcutCheckerInstream
 call :ShortcutChecker
 pause
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startTreeInstream
 call :Tree
 pause
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startWordsortInstream
 call :Wordsort
 pause
-cls
-goto startMainInstream
+cls&goto startMainInstream
+:: Main Menu Stealth
 :startMainStealth
 call :bannerStealth
 call :menuMainStealthScreen
 call :menuMainStealth
-cls
-goto startMainStealth
+cls&goto startMainStealth
 :menuMainStealthScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo.
@@ -21026,8 +20002,7 @@ goto :eof
 call :banner
 call :menuCommandPromptStealth
 call :menuCommandStealth
-cls
-goto startCommandPromptStealth
+cls&goto startCommandPromptStealth
 :menuCommandPromptStealth
 echo.
 echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to cancel or one ("1") for just the directory.
@@ -21044,8 +20019,7 @@ goto :eof
 call :banner
 call :menuPrusaPromptStealth
 call :menuPrusaStealth
-cls
-goto startPrusaPromptStealth
+cls&goto startPrusaPromptStealth
 :menuPrusaPromptStealth
 echo.
 echo Input the letter ("S/V") for Prusa Slicer/G-Code Viewer. Input zero ("0") to cancel.
@@ -21057,39 +20031,7 @@ if /I %input% EQU 0 cls&goto startMainStealth
 if /I %input% EQU S start PrusaSlicer_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 if /I %input% EQU V start Prusa_G-code_Viewer_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 goto :eof
-:startDisplayStealth
-call :banner
-call :menuDisplayStealthScreen
-call :menuDisplayStealth
-cls
-goto startMainStealth
-:menuDisplayStealthScreen
-for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-goto :eof
-:menuDisplayStealth
-set /p input=%BS%
-goto :eof
+:: From Auxiliary Commands Stealth
 :startAboutStealth
 call :bannerStealth
 echo.
@@ -21102,15 +20044,13 @@ echo Compatibility: Windows 10 and 11. No administrator privilages required.
 echo Art Design: From "https:\\patorjk.com"
 echo.
 pause
-cls
-goto startMainStealth
+cls&goto startMainStealth
 :startCopy0Stealth
 echo.
 echo Are you insane? "copy0" means you'd break Ebola Man.
 echo.
 pause
-cls
-goto startMainStealth
+cls&goto startMainStealth
 :startCopy1Stealth
 start Stealth_Applications.lnk
 goto :eof
@@ -21174,6 +20114,38 @@ start Stealth_Applications.lnk
 start Stealth_Applications.lnk
 start Stealth_Applications.lnk
 goto :eof
+:startDisplayStealth
+call :banner
+call :menuDisplayStealthScreen
+call :menuDisplayStealth
+cls&goto startMainStealth
+:menuDisplayStealthScreen
+for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+goto :eof
+:menuDisplayStealth
+set /p input=%BS%
+goto :eof
 :startHelpStealth
 echo.
 echo    about - Lists information about the Multi Tool.
@@ -21187,15 +20159,14 @@ echo.
 echo    help - Lists helpful commands, if any.
 echo.
 pause
-cls
-goto startMainStealth
+cls&goto startMainStealth
+:: Main Menu Sample
 :startMainSample
 call :banner
 call :menuMainSampleScreen
 set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuMainSample
-cls
-goto startMainSample
+cls&goto startMainSample
 :menuMainSampleScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo                 [38;2;255;255;0m(Sampling purposes only. Cannot boot up programs. Obfuscation Hex Code: FF FE 26 63 6C 73 0D 0A)[0m
@@ -21242,17 +20213,16 @@ if /I %input% EQU stealth call :startStealthShortcutReplace
 if /I %input% EQU tree cls&goto startTreeSample
 if /I %input% EQU unstealthXXXX call :startUnstealthShortcutReplace
 goto :eof
+:: From Auxiliary Commands Sample
 :startAboutSample
 call :banner
 call :About
 pause
-cls
-goto startMainSample
+cls&goto startMainSample
 :startCopy0Sample
 call :Copy0
 pause
-cls
-goto startMainSample
+cls&goto startMainSample
 :startCopy1Sample
 start Sample_Applications.lnk
 goto :eof
@@ -21320,29 +20290,25 @@ goto :eof
 call :banner
 call :menuDisplaySampleScreen
 call :menuDisplaySample
-cls
-goto startMainSample
+cls&goto startMainSample
 :startGuideSample
 call :Guide
 pause
-cls
-goto startMainSample
+cls&goto startMainSample
 :startHelpSample
 call :Help
 pause
-cls
-goto startMainSample
+cls&goto startMainSample
 :startTreeSample
 call :Tree
 pause
-cls
-goto startMainSample
+cls&goto startMainSample
+:: Main Menu Instream Sample
 :startMainInstreamSample
 call :banner
 call :menuMainInstreamSampleScreen
 call :menuMainInstreamSample
-cls
-goto startMainInstreamSample
+cls&goto startMainInstreamSample
 :menuMainInstreamSampleScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo                 [38;2;255;255;0m(Sampling purposes only. Cannot boot up programs. Obfuscation Hex Code: FF FE 26 63 6C 73 0D 0A)[0m
@@ -21388,17 +20354,16 @@ if /I %input% EQU instreamXXXX call :startInstreamShortcutReplace
 if /I %input% EQU tree cls&goto startTreeInstreamSample
 if /I %input% EQU manager call :startSampleShortcutReplace
 goto :eof
+:: From Auxiliary Commands Instream Sample
 :startAboutInstreamSample
 call :banner
 call :About
 pause
-cls
-goto startMainInstreamSample
+cls&goto startMainInstreamSample
 :startCopy0InstreamSample
 call :Copy0
 pause
-cls
-goto startMainSample
+cls&goto startMainSample
 :startCopy1InstreamSample
 start Instream_Sample_Applications.lnk
 goto :eof
@@ -21466,8 +20431,7 @@ goto :eof
 call :banner
 call :menuDisplaySampleScreen
 call :menuDisplaySample
-cls
-goto startMainInstreamSample
+cls&goto startMainInstreamSample
 :menuDisplaySampleScreen
 for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
 echo                 [38;2;255;255;0m(Sampling purposes only. Cannot boot up programs. Obfuscation Hex Code: FF FE 26 63 6C 73 0D 0A)[0m
@@ -21498,18 +20462,16 @@ goto :eof
 :startGuideInstreamSample
 call :Guide
 pause
-cls
-goto startMainInstreamSample
+cls&goto startMainInstreamSample
 :startHelpInstreamSample
 call :Help
 pause
-cls
-goto startMainInstreamSample
+cls&goto startMainInstreamSample
 :startTreeInstreamSample
 call :Tree
 pause
-cls
-goto startMainInstreamSample
+cls&goto startMainInstreamSample
+:: Exit Prompts
 :startPreExitPrompt
 cls
 call :banner
@@ -21522,8 +20484,7 @@ set /p input=%BS%
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startMain
+cls&goto startMain
 :startEmptySlotPrompt
 cls
 call :banner
@@ -21536,8 +20497,7 @@ set /p input=%BS%
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startMain
+cls&goto startMain
 :startFailedExitPrompt
 cls
 call :banner
@@ -21550,8 +20510,7 @@ set /p input=%BS%
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startMain
+cls&goto startMain
 :startMissingCLIdirectoryPrompt
 cls
 call :banner
@@ -21564,8 +20523,7 @@ set /p input=%BS%
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startMain
+cls&goto startMain
 :startPreExitPromptInstream
 cls
 call :banner
@@ -21576,8 +20534,7 @@ call :startInstreamerTip
 call :startAdditionalTips
 call :menuMainInstream
 call :menuAuxiliaryCommandsInstream
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startUnsuccessfulDownloadPromptInstream
 cls
 call :banner
@@ -21588,8 +20545,7 @@ call :startInstreamerTip
 call :startAdditionalTips
 call :menuMainInstream
 call :menuAuxiliaryCommandsInstream
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startPreExitPromptStealth
 cls
 call :bannerStealth
@@ -21630,8 +20586,7 @@ set /p input=%BS%
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-cls
-goto startMain
+cls&goto startMain
 :startDialerTip
 echo Dialer Mode can also be used from here, or you can close this page if you wish.
 echo.
@@ -21656,6 +20611,7 @@ echo.
 echo Current Input: [%input%]
 echo.
 goto :eof
+:: Main Menu Functions
 :menuMain
 if /I %input% EQU 1 cls&goto start1
 if /I %input% EQU 11 cls&goto startInternetDownloadManagerPromptDialerMode
@@ -22855,6 +21811,7 @@ if /I %input% EQU Z7 goto startEmptySlotPrompt
 if /I %input% EQU Z8 goto startEmptySlotPrompt
 if /I %input% EQU Z9 goto startEmptySlotPrompt
 goto :eof
+:: Auxiliary Commands
 :menuAuxiliaryCommands
 if /I %input% EQU about cls&goto startAbout
 if /I %input% EQU alert cls&goto startAlert
@@ -23025,6 +21982,7 @@ if /I %input% EQU stealth call :startStealthShortcutReplace
 if /I %input% EQU tree cls&goto startTree
 if /I %input% EQU wordsort cls&goto startWordsort
 goto :eof
+:: Search Engine
 :menuSearchEngine
 if /I %input% EQU O1O- cls&goto start010EditorPromptDialerMode
 if /I %input% EQU O1O-E cls&goto start010EditorPromptDialerMode
@@ -23933,6 +22891,24 @@ if /I %input% EQU Ghidra cls&goto startGhidraPromptDialerMode
 if /I %input% EQU Ghidra- cls&goto startGhidraPromptDialerMode
 if /I %input% EQU Ghidra-A start Ghidra_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Ghidra-R start Ghidra_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Git-F cls&goto startGitForkPromptDialerMode
+if /I %input% EQU Git-Fo cls&goto startGitForkPromptDialerMode
+if /I %input% EQU Git-For cls&goto startGitForkPromptDialerMode
+if /I %input% EQU Git-Fork cls&goto startGitForkPromptDialerMode
+if /I %input% EQU Git-Fork- cls&goto startGitForkPromptDialerMode
+if /I %input% EQU Git-Fork-A start GitHub_Fork_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Git-Fork-R start GitHub_Fork_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Git-Fork-I start GitHub_Fork_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Git-Fork-O goto startUninstallationInstructions
+if /I %input% EQU GitHub-F cls&goto startGitForkPromptDialerMode
+if /I %input% EQU GitHub-Fo cls&goto startGitForkPromptDialerMode
+if /I %input% EQU GitHub-For cls&goto startGitForkPromptDialerMode
+if /I %input% EQU GitHub-Fork cls&goto startGitForkPromptDialerMode
+if /I %input% EQU GitHub-Fork- cls&goto startGitForkPromptDialerMode
+if /I %input% EQU GitHub-Fork-A start GitHub_Fork_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GitHub-Fork-R start GitHub_Fork_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GitHub-Fork-I start GitHub_Fork_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GitHub-Fork-O goto startUninstallationInstructions
 if /I %input% EQU Go-B cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Bo cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Boa cls&goto startGoBoardGamePromptDialerMode
@@ -25622,6 +24598,7 @@ if /I %input% EQU x64dbg- cls&goto startx64dbgPromptDialerMode
 if /I %input% EQU x64dbg-A start x64dbg_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU x64dbg-R start x64dbg_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Main Menu Instream Functions
 :menuMainInstream
 set /p input=%BS%
 if /I %input% EQU 0 cls&curl "TEST.zip" -o TEST.filename&&goto startPreExitPromptInstream||goto startUnsuccessfulDownloadPromptInstream
@@ -25725,6 +24702,7 @@ if /I %input% EQU 97 cls&curl "TEST.zip" -o TEST.filename&&goto startPreExitProm
 if /I %input% EQU 98 cls&curl "TEST.zip" -o TEST.filename&&goto startPreExitPromptInstream||goto startUnsuccessfulDownloadPromptInstream
 if /I %input% EQU 99 cls&curl "TEST.zip" -o TEST.filename&&goto startPreExitPromptInstream||goto startUnsuccessfulDownloadPromptInstream
 goto :eof
+:: Auxiliary Commands Instream
 :menuAuxiliaryCommandsInstream
 if /I %input% EQU about cls&goto startAboutInstream
 if /I %input% EQU copy0 cls&goto startCopy0Instream
@@ -25749,119 +24727,24 @@ if /I %input% EQU tree cls&goto startTreeInstream
 if /I %input% EQU wordsort cls&goto startWordsortInstream
 if /I %input% EQU manager call :startUnstealthShortcutReplace
 goto :eof
+:: Auxiliary Command Functions
 :About
 echo.
 echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: DavyJones324 (my real name is Alexander Summers)
-echo     Software Type: Package Manager with Instream Downloader "curl" component
+echo  Author/Developer: DavyJones324 (Alexander R. Summers)
+echo     Software Type: Batch Script Launcher with Instream Downloader "curl" component
 echo          Category: Freeware
 echo      License Type: MIT License
 echo           Website: https://github.com/DavyJones324/DavyJonesOS
-echo  Founded/Released: 04/11/2025
+echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Active
 echo    Current Update: 1.0.0.0
-echo        Patch Date: 03/14/2025
+echo        Patch Date: 04/18/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 and 11. No administrator privilages required.
 echo                 +: Art Design taken from "https:\\patorjk.com". Dot Art does not show for Windows 10.
 echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Hello there.
-echo.
-echo I am the maker of the Davy Jones OS Launcher, made solely with the CLI-menu style batch script. This launcher, which
-echo uses my custom algorithm that I call ARIOS, is capable of taking the displayed parts of all menu functions and
-echo transforming it into a speed dialer system capable of doing anything, whether running, installing, uninstalling, or
-echo setting up a program. When you first start the Davy Jones OS Launcher, you are greeted with a basic menu selection,
-echo with more menus and options given with each number/letter input. In fact, if you could memorize the numbered/lettered
-echo inputs you took to get there, it can be combined into a single mnemonic sequence command for more efficient utility
-echo and ease of access. To complement your learning skills, each letter from ARIOS is a command added to either a shortcut
-echo or a mnemonic number/letter sequence to enhance.
-echo.
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Shortcuts/Code Labeled:
-echo.
-echo FILENAME_A = Admin Shortcut
-echo.
-echo FILENAME_R = Run Shortcut
-echo.
-echo FILENAME_I = Install Executable (not included)
-echo.
-echo FILENAME_O = Uninstall Shortcut
-echo.
-echo FILENAME_S = Setup Shortcut
-echo.
-echo Example Sequence from Main Menu: 9879[A/R/I/O], hit "ENTER"
-echo.
-echo Obfuscation Code: [FF FE 26 63 6C 73 0D 0A]
-echo (optional, but can either be added or is usually found on the first 8 characters of the Batch Script)
-echo.
-echo For convenience in using the Davy Jones OS Launcher, every run shortcut associated with a program, excluding those that
-echo open folders, will come with a matching admin shortcut for certain actions that require administrator privilages. To run
-echo a program as an administrator, instead of pressing the "R" key for Davy Jones OS input, use the "A" key instead. The "A"
-echo key will not be labled on the screen prompt except for programs that use a console screen. Keep in mind that you can
-echo only type commands on the batch script menu when you are not operating a program in full screen mode.
-echo.
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo The Davy Jones OS Launcher is a difficult program to set up, but is very convenient in managing programs when
-echo implemented correctly. This template is to give all developers a general idea on how the program's mnemonic-style
-echo structure works. It is not a final design for any reason, as all menus (and outcomes) are able to be modified as per the
-echo developers' needs. Since the launcher is the only component that is licensed under the MIT License, anyone can freely
-echo view and edit the source code. If you are curious about how to develop the source code even further, just make sure some
-echo of your other installers and/or programs are present/installed, including their shortcuts, before coding them onto the
-echo launcher, or else it will give erroneous output for any components not added or mislabeled. I have also included an
-echo empty alphabetized list of different menus where you can slot other programs inside the Davy Jones OS batch script. This
-echo is designed so that you aren't limited to the predefined selection that I have chosen for myself. For any questions you
-echo have, enter the command "help" from the main menu. Any shortcuts that are missing on the GitHub repository can be filled
-echo in by other developers, assuming they know how the file targeting system works. 
-echo.
-echo Davy Jones OS is currently in its early stages of development, so there may be some bugs and typos that I haven't found
-echo yet. Furthermore, since I am writing each menu as an outcome that a user takes, any issue with ARIOS can only arise
-echo repeatedly by following the same outcome you took to get there. All spaces between commands crashes the program.
-echo Despite being able to provide the vast majority of shortcuts for various programs whether proprietary or not (although
-echo the list is incomplete), I do not condone piracy of any sort out of respect to those big tech software industries out
-echo there. As such, I cannot provide you with the installer packages to run with the assistance of the launcher. You are
-echo solely responsible for adding and renaming your installer packages to be compatible with either the template I provide
-echo or the modified batch script of your choosing; commitment to doing so is entirely at your own risk. Fortunately for
-echo you, I will also provide a list of URL links to visit so you can download from their websites if you desire an
-echo installer to configure to the Davy Jones OS Launcher. More CLI options are also found on the repository and the full
-echo list of compatible programs are listed in the source code.
-echo.
-echo Additionally, the Davy Jones OS Launcher contains a search engine that is based on the wordsort command, accepting
-echo either partial or complete input for compatible programs. Just type the full name of any program and use dashes
-echo instead of spaces (Command-Prompt) and your program will show up in the prompt. You can then add another dash
-echo followed by a mnemonic letter command ("FILENAME"-R) to to perform an immediate command to another program. If you do
-echo not have the name of the program fully memorized, the search engine will have a minimum of four to six starting
-echo characters in most cases (exceptions being three-lettered words such as Tor), while other cases require you typing out
-echo the majority of the search string if it is too broad. There is a special rule regarding searches with the number zero
-echo ("0") present. Because of how Windows handles the number zero, which is a "nul" value itself, the batch script will
-echo give various undesirable erroneous outputs if and only if zero is the first character of a command depending on the
-echo circumstances. A valid workaround is to change the zero ("0") on all searches with the letter "O", since the letter is
-echo not considered a "nul" value, so it will not cause any errors in the batch script.
-echo.
-echo The Instream downloader component that is provided is an optional, yet experimental feature that instantly downloads
-echo files from any stored download links in the URL holders. It contains no stored links to start, but can hold as many as
-echo 100 links within the URL code. When using this tool, you are left with the task of understanding the basics and
-echo complexities of the "curl" command, as well as hard coding those download links with the knowledge of any parameters
-echo that you might want to include. There are no guarantees that the links will function or be active for long. Servers
-echo may be shut down at either their owners' or the financial and political officials' wishes, and you will need to replace
-echo those links with new ones to keep the downloader available for your use.
-echo.
-echo As appreciation, please consider donating to me, the author of the Davy Jones OS. I NEVER sell anything
-echo hoarded/pirated. Any amount of donation money, from 1 to 100 of a valid currency form ($ = dollars) sent to me, helps
-echo out a ton. More programs may even be added to the launcher if need be. Despite the Internet being a beacon of endless
-echo truthful knowledge, it is also full of lies and disinformation. For instance, a username is simply an alias to hide
-echo your true identity and not a real person. Having multiple usernames to display for your own benefit is possible so
-echo long as you are responsible in implementing them. In fact, it is possible to pilot multiple perspectives and
-echo individualities to warp the free market and both the perception of social media and public opinion to one's ends.
-echo And with that, I leave you to experimenting with the Davy Jones OS, and the ARIOS algorithm, in the hopes that you
-echo can adapt to the difficulties in maintaining the code!
-echo.
-echo Enjoy!
-echo.
-echo DavyJones324
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof
@@ -26891,6 +25774,16 @@ if exist AutoHotkey_UX_I.exe (
     echo "AutoHotkey_UX_I.exe" exists.
 ) else (
     echo "AutoHotkey_UX_I.exe" does not exist.
+)
+echo.
+echo.
+echo Other Installers
+echo.
+echo.
+if exist GitHub_Fork_I.exe (
+    echo "GitHub_Fork_I.exe" exists.
+) else (
+    echo "GitHub_Fork_I.exe" does not exist.
 )
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
@@ -29557,6 +28450,21 @@ if exist Drive_Scanner_R.lnk (
     echo "Drive_Scanner_R.lnk" does not exist.
 )
 echo.
+echo.
+echo Other Shortcuts
+echo.
+echo.
+if exist GitHub_Fork_A.lnk (
+    echo "GitHub_Fork_A.lnk" exists.
+) else (
+    echo "GitHub_Fork_A.lnk" does not exist.
+)
+if exist GitHub_Fork_R.lnk (
+    echo "GitHub_Fork_R.lnk" exists.
+) else (
+    echo "GitHub_Fork_R.lnk" does not exist.
+)
+echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof
 :Tree
@@ -29842,6 +28750,12 @@ echo Gateway-R
 echo Gateway-I
 echo Ghidra-A
 echo Ghidra-R
+echo Git-Fork-A
+echo Git-Fork-R
+echo Git-Fork-I
+echo GitHub-Fork-A
+echo GitHub-Fork-R
+echo GitHub-Fork-I
 echo Go-Board-Game-A
 echo Go-Board-Game-R
 echo Go-Board-Game-I
@@ -30259,6 +29173,7 @@ echo x64dbg-R
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof
+:: Shortcut Replacement Functions
 :startInstreamShortcutReplace
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
@@ -30269,8 +29184,7 @@ echo oLink.Arguments = "instream" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
-cls
-goto startMainInstream
+cls&goto startMainInstream
 :startInstreamSampleShortcutReplace
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
@@ -30281,8 +29195,7 @@ echo oLink.Arguments = "instreamsample" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
-cls
-goto startMainInstreamSample
+cls&goto startMainInstreamSample
 :startStealthShortcutReplace
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
@@ -30293,8 +29206,7 @@ echo oLink.Arguments = "stealth" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
-cls
-goto startMainStealth
+cls&goto startMainStealth
 :startSampleShortcutReplace
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
@@ -30305,8 +29217,7 @@ echo oLink.Arguments = "sample" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
-cls
-goto startMainSample
+cls&goto startMainSample
 :startUnstealthShortcutReplace
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
@@ -30317,8 +29228,8 @@ echo oLink.Arguments = "" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
-cls
-goto startMain
+cls&goto startMain
+:: Banners
 :banner
 echo.
 echo.
@@ -30341,6 +29252,7 @@ echo                       [38;2;255;204;0m██║ ╚═╝ ██║╚█�
 echo                       [38;2;255;255;0m╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝   ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝[0m
 echo.
 goto :eof
+:: End of Function
 :exitBatchProgram
 cls
 exit
