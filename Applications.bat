@@ -18351,6 +18351,9 @@ call :menudnSpy
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU 1 cls&goto startdnSpy_x32_PromptFromSearchMode
+if /I %input% EQU 2 cls&goto startdnSpy_x64_PromptFromSearchMode
+if /I %input% EQU 3 cls&goto startdnSpy_NET_PromptFromSearchMode
 cls&goto startdnSpyPromptDialerMode
 :menudnSpyPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
@@ -18374,13 +18377,10 @@ echo.
 goto :eof
 :menudnSpy
 set /p input=%BS%
-if /I %input% EQU 1 cls&goto startdnSpy_x32_PromptFromSearchMode
 if /I %input% EQU 1A start dnSpy_x32_A.lnk&set input=9971A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start dnSpy_x32_R.lnk&set input=9971R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2 cls&goto startdnSpy_x64_PromptFromSearchMode
 if /I %input% EQU 2A start dnSpy_x64_A.lnk&set input=9972A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start dnSpy_x64_R.lnk&set input=9972R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3 cls&goto startdnSpy_NET_PromptFromSearchMode
 if /I %input% EQU 3A start dnSpy_NET_A.lnk&set input=9973A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start dnSpy_NET_R.lnk&set input=9973R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -18418,6 +18418,225 @@ if /I %input% EQU A start GitHub_Fork_A.lnk&set input=Git-Fork-A&&goto startPreE
 if /I %input% EQU R start GitHub_Fork_R.lnk&set input=Git-Fork-R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start GitHub_Fork_I.exe&set input=Git-Fork-I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O goto startUninstallationInstructions 
+goto :eof
+:startInstallerPromptDialerMode
+call :banner
+call :menuInstallerPrompt
+call :menuInstaller
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU C cls&goto startCreateInstallPrompt
+if /I %input% EQU E cls&goto startIExpressPrompt
+if /I %input% EQU M cls&goto startAdvancedInstallerPrompt
+if /I %input% EQU N cls&goto startInnoSetupPrompt
+cls&goto startInstallerPromptDialerMode
+:menuInstallerPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: N/A
+echo     Software Type: N/A
+echo          Category: N/A
+echo      License Type: N/A
+echo           Website: N/A
+echo  Founded/Released: N/A
+echo         Publicity: N/A
+echo            Status: N/A
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: CreateInstall_..., IExpress_..., Advanced_Installer_..., Inno_Setup_...
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the letter for CreateInstall, IExpress, Advanced Installer, or Inno Setup (C/E/M/N). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuInstaller
+set /p input=%BS%
+if /I %input% EQU CA start CreateInstall_A.lnk&set input=installer-CA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CR start CreateInstall_R.lnk&set input=installer-CR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CI start CreateInstall_I.exe&set input=installer-CI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CO start CreateInstall_O.lnk&set input=installer-CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU EA start IExpress_A.lnk&set input=installer-EA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ER start IExpress_R.lnk&set input=installer-ER&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MA start Advanced_Installer_A.lnk&set input=installer-MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MR start Advanced_Installer_R.lnk&set input=installer-MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MI start Advanced_Installer_I.msi&set input=installer-MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MO start Advanced_Installer_O.lnk&set input=installer-MO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NA start Inno_Setup_A.lnk&set input=installer-NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NR start Inno_Setup_R.lnk&set input=installer-NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NI start Inno_Setup_I.exe&set input=installer-NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NO start Inno_Setup_O.lnk&set input=installer-NO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startCreateInstallPrompt
+call :banner
+call :menuCreateInstallPrompt
+call :menuCreateInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startInstallerPromptDialerMode
+cls&goto startCreateInstallPrompt
+:startCreateInstallPromptDialerMode
+call :banner
+call :menuCreateInstallPrompt
+call :menuCreateInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+cls&goto startCreateInstallPromptDialerMode
+:menuCreateInstallPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Novostrim, OOO
+echo     Software Type: Versatile Application Installer and SFX Manager
+echo          Category: Trialware; Freeware Version Available
+echo      License Type: Proprietary
+echo           Website: https://www.createinstall.com/
+echo  Founded/Released: 1998
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: CreateInstall_R.lnk, CreateInstall_I.exe, CreateInstall_O.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall CreateInstall ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuCreateInstall
+set /p input=%BS%
+if /I %input% EQU A start CreateInstall_A.lnk&set input=installer-CA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start CreateInstall_R.lnk&set input=installer-CR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start CreateInstall_I.exe&set input=installer-CI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start CreateInstall_O.lnk&set input=installer-CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startIExpressPrompt
+call :banner
+call :menuIExpressPrompt
+call :menuIExpress
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startInstallerPromptDialerMode
+cls&goto startIExpressPrompt
+:startIExpressPromptDialerMode
+call :banner
+call :menuIExpressPrompt
+call :menuIExpress
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+cls&goto startIExpressPromptDialerMode
+:menuIExpressPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Microsoft Corporation
+echo     Software Type: Default EXE Installer Manager for Windows
+echo          Category: Freeware
+echo      License Type: Proprietary
+echo           Website: N/A
+echo  Founded/Released: 1983
+echo         Publicity: N/A
+echo            Status: N/A
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: IExpress_R.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run IExpress ("R")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuIExpress
+set /p input=%BS%
+if /I %input% EQU A start IExpress_A.lnk&set input=installer-EA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start IExpress_R.lnk&set input=installer-ER&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startAdvancedInstallerPrompt
+call :banner
+call :menuAdvancedInstallerPrompt
+call :menuAdvancedInstaller
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startInstallerPromptDialerMode
+cls&goto startAdvancedInstallerPromptDialerMode
+:startAdvancedInstallerPromptDialerMode
+call :banner
+call :menuAdvancedInstallerPrompt
+call :menuAdvancedInstaller
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+cls&goto startAdvancedInstallerPromptDialerMode
+:menuAdvancedInstallerPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Caphyon
+echo     Software Type: Advanced MSI Installer Manager
+echo          Category: Trialware
+echo      License Type: Proprietary
+echo           Website: https://www.advancedinstaller.com/
+echo  Founded/Released: 2003
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Advanced_Installer_R.lnk, Advanced_Installer_I.msi
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Advanced Installer ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuAdvancedInstaller
+set /p input=%BS%
+if /I %input% EQU A start Advanced_Installer_A.lnk&set input=installer-MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Advanced_Installer_R.lnk&set input=installer-MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Advanced_Installer_I.msi&set input=installer-MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Advanced_Installer_O.lnk&set input=installer-MO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startInnoSetupPrompt
+call :banner
+call :menuInnoSetupPrompt
+call :menuInnoSetup
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startInstallerPromptDialerMode
+cls&goto startInnoSetupPromptDialerMode
+:startInnoSetupPromptDialerMode
+call :banner
+call :menuInnoSetupPrompt
+call :menuInnoSetup
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+cls&goto startInnoSetupPromptDialerMode
+:menuInnoSetupPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Jordan Russell and Martijn Laan
+echo     Software Type: Script-Driven Installation System
+echo          Category: Freeware
+echo      License Type: Inno Setup License
+echo           Website: https://jrsoftware.org/isinfo.php
+echo  Founded/Released: 1997
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Inno_Setup_R.lnk, Inno_Setup_I.exe, Inno_Setup_O.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Inno Setup ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuInnoSetup
+set /p input=%BS%
+if /I %input% EQU A start Inno_Setup_A.lnk&set input=installer-NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Inno_Setup_R.lnk&set input=installer-NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Inno_Setup_I.exe&set input=installer-NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Inno_Setup_O.lnk&set input=installer-NO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :: Main Menu Alphabetized Part 1
 :startMainAlphabetized1
@@ -20474,6 +20693,7 @@ cls&goto startMainInstreamSample
 :: Exit Prompts
 :startPreExitPrompt
 cls
+Title Input=%input%
 call :banner
 echo.
 echo Program executed successfully.
@@ -20481,6 +20701,7 @@ echo.
 call :startDialerTip
 call :startAdditionalTips
 set /p input=%BS%
+Title Applications
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -20513,6 +20734,7 @@ call :menuSearchEngine
 cls&goto startMain
 :startMissingCLIdirectoryPrompt
 cls
+Title Input=%input%
 call :banner
 echo.
 echo Program executed successfully. However, your CLI Directory might be missing. Double check, if you need.
@@ -20520,6 +20742,7 @@ echo.
 call :startDialerTip
 call :startAdditionalTips
 set /p input=%BS%
+Title Applications
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -20575,6 +20798,7 @@ if /I %input% EQU N cls&goto startMainStealth
 goto :eof
 :startUninstallationInstructions
 cls
+Title Input=%input%
 call :banner
 echo.
 echo To uninstall this specific program, please run either the Control Panel or a third-party uninstaller for both
@@ -20583,9 +20807,11 @@ echo.
 call :startDialerTip
 call :startAdditionalTips
 set /p input=%BS%
+Title Applications
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
+Title Applications
 cls&goto startMain
 :startDialerTip
 echo Dialer Mode can also be used from here, or you can close this page if you wish.
@@ -21971,6 +22197,25 @@ if /I %input% EQU exit goto exitBatchProgram
 if /I %input% EQU gamma cls&goto startMainAlphabetized3
 if /I %input% EQU guide cls&goto startGuide
 if /I %input% EQU help cls&goto startHelp
+if /I %input% EQU installer cls&goto startInstallerPromptDialerMode
+if /I %input% EQU installer-C cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU installer-CA start CreateInstall_A.lnk&set input=installer-CA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-CR start CreateInstall_R.lnk&set input=installer-CR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-CI start CreateInstall_I.exe&set input=installer-CI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-CO start CreateInstall_O.lnk&set input=installer-CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-E cls&goto startIExpressPromptDialerMode
+if /I %input% EQU installer-EA start IExpress_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-ER start IExpress_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-M cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU installer-MA start Advanced_Installer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-MR start Advanced_Installer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-MI start Advanced_Installer_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-MO start Advanced_Installer_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-N cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU installer-NA start Inno_Setup_A.lnk&set input=installer-NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-NR start Inno_Setup_R.lnk&set input=installer-NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-NI start Inno_Setup_I.exe&set input=installer-NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU installer-NO start Inno_Setup_O.lnk&set input=installer-NO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU instream call :startInstreamShortcutReplace
 if /I %input% EQU menu cls&goto startMain
 if /I %input% EQU open start Davy_Jones_OS_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -22029,6 +22274,26 @@ if /I %input% EQU Adobe-Acrobat-A start Adobe_Acrobat_A.lnk&&goto startPreExitPr
 if /I %input% EQU Adobe-Acrobat-R start Adobe_Acrobat_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Adobe-Acrobat-I start Adobe_Acrobat_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Adobe-Acrobat-O goto startUninstallationInstructions
+if /I %input% EQU Adva cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advan cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanc cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advance cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced- cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-I cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-In cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-Ins cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-Inst cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-Insta cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-Instal cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-Install cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-Installe cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-Installer cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-Installer- cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-Installer-A start Advanced_Installer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Advanced-Installer-R start Advanced_Installer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Advanced-Installer-I start Advanced_Installer_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Advanced-Installer-O start Advanced_Installer_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ADWc cls&goto startMWBadwCleanerPromptDialerMode
 if /I %input% EQU ADWcl cls&goto startMWBadwCleanerPromptDialerMode
 if /I %input% EQU ADWcle cls&goto startMWBadwCleanerPromptDialerMode
@@ -22442,6 +22707,21 @@ if /I %input% EQU Command-Prompt cls&goto startCommandPromptDialerMode
 if /I %input% EQU Command-Prompt- cls&goto startCommandPromptDialerMode
 if /I %input% EQU Command-Prompt-A start Command_Prompt_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Command-Prompt-R start Command_Prompt_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Crea cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU Creat cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU Create cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU CreateI cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU CreateIn cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU CreateIns cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU CreateInst cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU CreateInsta cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU CreateInstal cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU CreateInstall cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU CreateInstall- cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU CreateInstall-A start CreateInstall_A.lnk&set input=installer-CA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CreateInstall-R start CreateInstall_R.lnk&set input=installer-CR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CreateInstall-I start CreateInstall_I.exe&set input=installer-CI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CreateInstall-O start CreateInstall_O.lnk&set input=installer-CO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CRYE cls&goto startCRYENGINElauncherPromptDialerMode
 if /I %input% EQU CRYEN cls&goto startCRYENGINElauncherPromptDialerMode
 if /I %input% EQU CRYENG cls&goto startCRYENGINElauncherPromptDialerMode
@@ -23016,6 +23296,14 @@ if /I %input% EQU HitmanPro-Alert-A start HitmanPro.Alert_A.lnk&&goto startPreEx
 if /I %input% EQU HitmanPro-Alert-R start HitmanPro.Alert_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU HitmanPro-Alert-I start HitmanPro.Alert_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU HitmanPro-Alert-O start HitmanPro.Alert_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IExp cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IExpr cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IExpre cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IExpres cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IExpress cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IExpress- cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IExpress-A start IExpress_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IExpress-R start IExpress_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Inte cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Inter cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Intern cls&goto startInternetDownloadManagerPromptDialerMode
@@ -23070,6 +23358,18 @@ if /I %input% EQU Inkball cls&goto startInkballPromptDialerMode
 if /I %input% EQU Inkball- cls&goto startInkballPromptDialerMode
 if /I %input% EQU Inkball-A start InkBall_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Inkball-R start InkBall_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Inno cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU Inno- cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU Inno-S cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU Inno-Se cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU Inno-Set cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU Inno-Setu cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU Inno-Setup cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU Inno-Setup- cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU Inno-Setup-A start Inno_Setup_A.lnk&set input=installer-NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Inno-Setup-R start Inno_Setup_R.lnk&set input=installer-NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Inno-Setup-I start Inno_Setup_I.exe&set input=installer-NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Inno-Setup-O start Inno_Setup_O.lnk&set input=installer-NO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Inte cls&goto startIntelliJIDEApromptDialerMode
 if /I %input% EQU Intel cls&goto startIntelliJIDEApromptDialerMode
 if /I %input% EQU Intell cls&goto startIntelliJIDEApromptDialerMode
@@ -24739,8 +25039,8 @@ echo           Website: https://github.com/DavyJones324/DavyJonesOS
 echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Active
-echo    Current Update: 1.0.0.0
-echo        Patch Date: 04/18/2025
+echo    Current Update: 1.0.1.0
+echo        Patch Date: 05/06/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 and 11. No administrator privilages required.
 echo                 +: Art Design taken from "https:\\patorjk.com". Dot Art does not show for Windows 10.
@@ -24882,6 +25182,8 @@ echo.
 echo    guide - Prints instructions for the manual installation of the Davy Jones OS Omnitool.
 echo.
 echo    help - Lists intro and niche commands, including the ARIOS algorithm and Dialer Mode.
+echo.
+echo    installer - Pulls up the list of installer package managers.
 echo.
 echo    instream - Switches to the Instream Downloader Menu from the Omnitool. (Experimental)
 echo.
@@ -25784,6 +26086,21 @@ if exist GitHub_Fork_I.exe (
     echo "GitHub_Fork_I.exe" exists.
 ) else (
     echo "GitHub_Fork_I.exe" does not exist.
+)
+if exist CreateInstall_I.exe (
+    echo "CreateInstall_I.exe" exists.
+) else (
+    echo "CreateInstall_I.exe" does not exist.
+)
+if exist Advanced_Installer_I.exe (
+    echo "Advanced_Installer_I.exe" exists.
+) else (
+    echo "Advanced_Installer_I.exe" does not exist.
+)
+if exist Inno_Setup_I.exe (
+    echo "Inno_Setup_I.exe" exists.
+) else (
+    echo "Inno_Setup_I.exe" does not exist.
 )
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
@@ -28464,6 +28781,46 @@ if exist GitHub_Fork_R.lnk (
 ) else (
     echo "GitHub_Fork_R.lnk" does not exist.
 )
+if exist CreateInstall_A.lnk (
+    echo "CreateInstall_A.lnk" exists.
+) else (
+    echo "CreateInstall_A.lnk" does not exist.
+)
+if exist CreateInstall_R.lnk (
+    echo "CreateInstall_R.lnk" exists.
+) else (
+    echo "CreateInstall_R.lnk" does not exist.
+)
+if exist IExpress_A.lnk (
+    echo "IExpress_A.lnk" exists.
+) else (
+    echo "IExpress_A.lnk" does not exist.
+)
+if exist IExpress_R.lnk (
+    echo "IExpress_R.lnk" exists.
+) else (
+    echo "IExpress_R.lnk" does not exist.
+)
+if exist Advanced_Installer_A.lnk (
+    echo "Advanced_Installer_A.lnk" exists.
+) else (
+    echo "Advanced_Installer_A.lnk" does not exist.
+)
+if exist Advanced_Installer_R.lnk (
+    echo "Advanced_Installer_R.lnk" exists.
+) else (
+    echo "Advanced_Installer_R.lnk" does not exist.
+)
+if exist Inno_Setup_A.lnk (
+    echo "Inno_Setup_A.lnk" exists.
+) else (
+    echo "Inno_Setup_A.lnk" does not exist.
+)
+if exist Inno_Setup_R.lnk (
+    echo "Inno_Setup_R.lnk" exists.
+) else (
+    echo "Inno_Setup_R.lnk" does not exist.
+)
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof
@@ -28513,6 +28870,9 @@ echo Access-R
 echo Adobe-Acrobat-A
 echo Adobe-Acrobat-R
 echo Adobe-Acrobat-I
+echo Advanced-Installer-A
+echo Advanced-Installer-R
+echo Advanced-Installer-I
 echo ADWcleaner-A
 echo ADWcleaner-R
 echo ADWcleaner-I
@@ -28631,6 +28991,9 @@ echo CLion-R
 echo CLion-I
 echo Command-Prompt-A
 echo Command-Prompt-R
+echo CreateInstall-A
+echo CreateInstall-R
+echo CreateInstall-I
 echo CRYENGINE-Launcher-A
 echo CRYENGINE-Launcher-R
 echo CRYENGINE-Launcher-I
@@ -28785,7 +29148,8 @@ echo HitmanPro.Alert-A
 echo HitmanPro.Alert-R
 echo HitmanPro.Alert-I
 echo HitmanPro.Alert-O
-echo Internet-Download-Manager-A
+echo IExpress-A
+echo IExpress-R
 echo Internet-Download-Manager-R
 echo Internet-Download-Manager-I
 echo Internet-Download-Manager-O
@@ -28795,6 +29159,9 @@ echo Il2CppInspector-A
 echo Il2CppInspector-R
 echo Inkball-A
 echo Inkball-R
+echo Inno-Setup-A
+echo Inno-Setup-R
+echo Inno-Setup-I
 echo IntelliJIDEA-A
 echo IntelliJIDEA-R
 echo IntelliJIDEA-I
