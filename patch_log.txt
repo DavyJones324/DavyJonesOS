@@ -1,0 +1,5 @@
+Patch 1.0.1
+
+* Added a label tracker for the taskbar which allows users to remember the input used last time since running the batch script.
+* Added a list of installers that can run with Windows, along with extra shortcuts for most of them.
+* Minor bug fixes
