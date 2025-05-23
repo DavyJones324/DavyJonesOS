@@ -2598,8 +2598,8 @@ if /I %input% EQU 1I start Visual_Studio_I.exe&set input=21I&&goto startPreExitP
 if /I %input% EQU 1O goto startUninstallationInstructions
 if /I %input% EQU 1S start Visual_Studio_S.lnk&set input=21S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2 cls&goto startVisualStudioCodePrompt
-if /I %input% EQU 2A start Visual_Studio_Code_A.lnk&set input=22A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2R start Visual_Studio_Code_R.lnk&set input=22R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2A start Visual_Studio_Code_Launch_Script_A.bat&set input=22A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2R start Visual_Studio_Code_Launch_Script_R.bat&set input=22R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2I start Visual_Studio_Code_I.exe&set input=22I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2O start Visual_Studio_Code_O.lnk&set input=22O&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3 cls&goto startWordPrompt
@@ -2734,8 +2734,8 @@ echo.
 goto :eof
 :menuVisualStudioCode
 set /p input=%BS%
-if /I %input% EQU A start Visual_Studio_Code_A.lnk&set input=22A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start Visual_Studio_Code_R.lnk&set input=22R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU A start Visual_Studio_Code_Launch_Script_A.bat&set input=22A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Visual_Studio_Code_Launch_Script_R.bat&set input=22R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Visual_Studio_Code_I.exe&set input=22I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Visual_Studio_Code_O.lnk&set input=22O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -7683,8 +7683,8 @@ if /I %input% EQU 6R start Unity_Hub_R.lnk&set input=46R&&goto startPreExitPromp
 if /I %input% EQU 6I start Unity_Hub_I.exe&set input=46I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6O start Unity_Hub_O.lnk&set input=46O&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7 cls&goto startGodotPrompt
-if /I %input% EQU 7A start Godot_A.lnk&set input=47A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7R start Godot_R.lnk&set input=47R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 7A start Godot_Launch_Script_A.bat&set input=47A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 7R start Godot_Launch_Script_R.bat&set input=47R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8 cls&goto startSlc3rToolsPrompt
 if /I %input% EQU 8C cls&goto startSlic3rPromptSubDialerMode
 if /I %input% EQU 8CA start Slic3r_A.lnk&set input=48CA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -8053,8 +8053,8 @@ echo.
 goto :eof
 :menuGodot
 set /p input=%BS%
-if /I %input% EQU A start Godot_A.lnk&set input=47A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start Godot_R.lnk&set input=47R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU A start Godot_Launch_Script_A.bat&set input=47A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Godot_Launch_Script_R.bat&set input=47R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startSlic3rToolsPrompt
 call :banner
@@ -20899,8 +20899,8 @@ if /I %input% EQU 21I start Visual_Studio_I.exe&&goto startPreExitPrompt||goto s
 if /I %input% EQU 21O goto startUninstallationInstructions
 if /I %input% EQU 21S start Visual_Studio_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 22 cls&goto startVisualStudioCodePromptDialerMode
-if /I %input% EQU 22A start Visual_Studio_Code_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 22R start Visual_Studio_Code_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 22A start Visual_Studio_Code_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 22R start Visual_Studio_Code_Launch_Script_R.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 22I start Visual_Studio_Code_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 22O start Visual_Studio_Code_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 23 cls&goto startWordPromptDialerMode
@@ -21193,8 +21193,8 @@ if /I %input% EQU 46R start Unity_Hub_R.lnk&&goto startPreExitPrompt||goto start
 if /I %input% EQU 46I start Unity_Hub_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 46O start Unity_Hub_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 47 cls&goto startGodotPromptDialerMode
-if /I %input% EQU 47A start Godot_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 47R start Godot_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 47A start Godot_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 47R start Godot_Launch_Script_R.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 48 cls&goto startSlic3rToolsPromptDialerMode
 if /I %input% EQU 48C cls&goto startSlic3rPromptDialerMode
 if /I %input% EQU 48CA start Slic3r_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -23209,8 +23209,8 @@ if /I %input% EQU Go-Board-Game-O goto startUninstallationInstructions
 if /I %input% EQU Godo cls&goto startGodotPromptDialerMode
 if /I %input% EQU Godot cls&goto startGodotPromptDialerMode
 if /I %input% EQU Godot- cls&goto startGodotPromptDialerMode
-if /I %input% EQU Godot-A start Godot_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Godot-R start Godot_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Godot-A start Godot_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Godot-R start Godot_Launch_Script_R.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GoLa cls&goto startGoLandPromptDialerMode
 if /I %input% EQU GoLan cls&goto startGoLandPromptDialerMode
 if /I %input% EQU GoLand cls&goto startGoLandPromptDialerMode
@@ -24652,8 +24652,8 @@ if /I %input% EQU Visual-Studio-Co cls&goto startVisualStudioCodePromptDialerMod
 if /I %input% EQU Visual-Studio-Cod cls&goto startVisualStudioCodePromptDialerMode
 if /I %input% EQU Visual-Studio-Code cls&goto startVisualStudioCodePromptDialerMode
 if /I %input% EQU Visual-Studio-Code- cls&goto startVisualStudioCodePromptDialerMode
-if /I %input% EQU Visual-Studio-Code-A start Visual_Studio_Code_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Visual-Studio-Code-R start Visual_Studio_Code_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Visual-Studio-Code-A start Visual_Studio_Code_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Visual-Studio-Code-R start Visual_Studio_Code_Launch_Script_R.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Visual-Studio-Code-I start Visual_Studio_Code_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Visual-Studio-Code-O start Visual_Studio_Code_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU VMware-W cls&goto startVMwareWorkstationPromptDialerMode
@@ -25039,8 +25039,8 @@ echo           Website: https://github.com/DavyJones324/DavyJonesOS
 echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Active
-echo    Current Update: 1.0.1.0
-echo        Patch Date: 05/06/2025
+echo    Current Update: 1.0.2.0
+echo        Patch Date: 05/23/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 and 11. No administrator privilages required.
 echo                 +: Art Design taken from "https:\\patorjk.com". Dot Art does not show for Windows 10.
