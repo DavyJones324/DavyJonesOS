@@ -42,3 +42,5 @@ Enjoy!
 DavyJones324
 
 P.S. Shout out to Ebola Man for making the design on the launcher work its magic!
+
+WARNING! Any updates I post for the Davy Jones OS will contain original data from me, the distributor. Any changes you make to your own variations of this Batch Script will not be saved on newer versions. However, what you can do is to treat my versions as suggestions and copy and paste your custom changes from your current version onto the new version if you like these changes so that you will not lose your data. Just a quick heads up so you don't make this mistake!
