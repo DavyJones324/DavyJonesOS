@@ -1,3 +1,7 @@
+Patch 1.0.2
+
+* Added Launch Scripts in Batch for VS Code and Godot Engine in order to separate the automatically generated program scripts from the Davy Jones OS menu display.
+
 Patch 1.0.1
 
 * Added a label tracker for the taskbar which allows users to remember the input used last time since running the batch script.
