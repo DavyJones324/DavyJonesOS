@@ -1,3 +1,7 @@
+Patch 1.0.3
+
+* Updated WoG Editor preview.
+
 Patch 1.0.2
 
 * Added Launch Scripts in Batch for VS Code and Godot Engine in order to separate the automatically generated program scripts from the Davy Jones OS menu display.
