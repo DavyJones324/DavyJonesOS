@@ -15117,7 +15117,7 @@ echo    Current Update:
 echo        Patch Date: 
 echo  Target Filenames: WooGLE_R.lnk, WooGLE_I.exe, WooGLE_O.lnk, Level_Juicer_R.lnk
 echo   Additional Info: You need to own one or both of their matching games in order to edit. Editor 1 can't be used on Game
-echo                 +: 2, and vice versa. (WoG 1: Remastered only for Steam and Epic Games; WoG 2: Epic Games only)
+echo                 +: 2, and vice versa. (WoG 1 and 2: Remastered version only for Steam and Epic Games)
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
 echo Input the numbers ("1/2") to boot WoG Editor for the corresponding game. Input zero ("0") to cancel.
@@ -25039,8 +25039,8 @@ echo           Website: https://github.com/DavyJones324/DavyJonesOS
 echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Active
-echo    Current Update: 1.0.2.0
-echo        Patch Date: 05/23/2025
+echo    Current Update: 1.0.3.0
+echo        Patch Date: 06/21/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 and 11. No administrator privilages required.
 echo                 +: Art Design taken from "https:\\patorjk.com". Dot Art does not show for Windows 10.
