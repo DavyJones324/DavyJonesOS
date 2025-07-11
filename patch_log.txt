@@ -1,3 +1,13 @@
+Patch 1.0.4
+
+* Added the Electronic Arts App to the Games list next to Ubisoft, including the Search Engine.
+* Added the GitHub app for the Search Engine.
+* Fork is now associated with GitHub Fork.
+* Added new shortcuts from the above.
+* Added a scroller feature to scroll between menus for both numbered and alphabetical. It is also listed in the "help" section.
+* Fixed bugs associated with dotMemoryInstallerPrompt.
+* Fixed bug associated with Menu 9.
+
 Patch 1.0.3
 
 * Updated WoG Editor preview.
