@@ -24263,7 +24263,7 @@ if /I %input% EQU 59DA start DaVinci_Resolve_A.lnk&&goto startPreExitPrompt||got
 if /I %input% EQU 59DR start DaVinci_Resolve_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 59DI start DaVinci_Resolve_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 59DO start DaVinci_Resolve_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 59E cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU 59E cls&goto startRemocappStudioPromptDialerMode
 if /I %input% EQU 59EA start Remocapp_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 59ER start Remocapp_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 59EI start Remocapp_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
