@@ -1,3 +1,8 @@
+Patch 1.0.5
+
+* Added two new studio programs with the names Remocapp and Rokoko, including the associated shortcuts.
+* Adjusted the starting default input to zero ("0").
+
 Patch 1.0.4
 
 * Added the Electronic Arts App to the Games list next to Ubisoft, including the Search Engine.

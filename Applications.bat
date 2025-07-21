@@ -4,6 +4,7 @@ Title Applications
 CD C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold
 CHCP 65001 >nul
 SetLocal EnableDelayedExpansion
+Set input=0
 :: Start of Batch Script
 :startShortcutRedirectManager
 if "%1"=="instream" (
@@ -10034,7 +10035,7 @@ echo        [38;2;102;255;102m╠════════7) Avid Pro Tools[0m
 echo        [38;2;128;255;128m║[0m
 echo        [38;2;153;255;153m╠═════════8) Photoline Photoshop[0m
 echo        [38;2;179;255;179m║[0m
-echo        [38;2;204;255;204m╚╦═════════9) DaVinci Resolve[0m
+echo        [38;2;204;255;204m╚╦═════════9) Video Editing/Motion Capture Studios[0m
 echo        [38;2;230;255;230m ║[0m
 goto :eof
 :menu5
@@ -10077,11 +10078,22 @@ if /I %input% EQU 8A start Photoline_A.lnk&set input=58A&&goto startPreExitPromp
 if /I %input% EQU 8R start Photoline_R.lnk&set input=58R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8I start Photoline_I.exe&set input=58I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8O start Photoline_O.lnk&set input=58O&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9 cls&goto startDaVinciResolvePrompt
-if /I %input% EQU 9A start DaVinci_Resolve_A.lnk&set input=59A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9R start DaVinci_Resolve_R.lnk&set input=59R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9I start DaVinci_Resolve_I.exe&set input=59I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9O start DaVinci_Resolve_O.lnk&set input=59O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9 cls&goto startVideoAndMotionCaptureStudiosPrompt
+if /I %input% EQU 9D cls&goto startDaVinciResolvePromptSubDialerMode
+if /I %input% EQU 9DA start DaVinci_Resolve_A.lnk&set input=59DA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9DR start DaVinci_Resolve_R.lnk&set input=59DR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9DI start DaVinci_Resolve_I.exe&set input=59DI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9DO start DaVinci_Resolve_O.lnk&set input=59DO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9E cls&goto startRemocappStudioPromptSubDialerMode
+if /I %input% EQU 9EA start Remocapp_Studio_A.lnk&set input=59EA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9ER start Remocapp_Studio_R.lnk&set input=59ER&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9EI start Remocapp_Studio_I.exe&set input=59EI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9EO start Remocapp_Studio_O.lnk&set input=59EO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9K cls&goto startRokokoStudioPromptSubDialerMode
+if /I %input% EQU 9KA start Rokoko_Studio_A.lnk&set input=59KA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9KR start Rokoko_Studio_R.lnk&set input=59KR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9KI start Rokoko_Studio_I.exe&set input=59KI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9KO start Rokoko_Studio_O.lnk&set input=59KO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU - cls&goto start4
 if /I %input% EQU -- cls&goto start3
 if /I %input% EQU --- cls&goto start2
@@ -10463,7 +10475,88 @@ if /I %input% EQU R start Photoline_R.lnk&set input=58R&&goto startPreExitPrompt
 if /I %input% EQU I start Photoline_I.exe&set input=58I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Photoline_O.lnk&set input=58O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
-:startDaVinciResolvePrompt
+:startVideoAndMotionCaptureStudiosPrompt
+call :banner
+call :menuVideoAndMotionCaptureStudiosPrompt
+call :menuVideoAndMotionCaptureStudios
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start5
+if /I %input% EQU D cls&goto startDaVinciResolvePrompt1
+if /I %input% EQU E cls&goto startRemocappStudioPrompt1
+if /I %input% EQU K cls&goto startRokokoStudioPrompt1
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startVideoAndMotionCaptureStudiosPrompt
+:startVideoAndMotionCaptureStudiosPromptDialerMode
+call :banner
+call :menuVideoAndMotionCaptureStudiosPrompt
+call :menuVideoAndMotionCaptureStudios
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU D cls&goto startDaVinciResolvePrompt2
+if /I %input% EQU E cls&goto startRemocappStudioPrompt2
+if /I %input% EQU K cls&goto startRokokoStudioPrompt2
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startVideoAndMotionCaptureStudiosPromptDialerMode
+:menuVideoAndMotionCaptureStudiosPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Depends
+echo     Software Type: Depends
+echo          Category: Freemium
+echo      License Type: Proprietary
+echo           Website: Depends
+echo  Founded/Released: Depends
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: DaVinci_Resolve_R.lnk, DaVinci_Resolve_I.exe, DaVinci_Resolve_O.lnk
+echo                 +: Remocapp_Studio_R.lnk, Remocapp_Studio_I.exe, Remocapp_Studio_O.lnk
+echo                 +: Rokoko_Studio_R.lnk, Rokoko_Studio_I.exe, Rokoko_Studio_O.lnk
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the letter ("D/E/K") for DaVinci Resolve/Remocapp Studio/Rokoko Studio. Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuVideoAndMotionCaptureStudios
+set /p input=%BS%
+if /I %input% EQU DA start DaVinci_Resolve_A.lnk&set input=59DA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DR start DaVinci_Resolve_R.lnk&set input=59DR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DI start DaVinci_Resolve_I.exe&set input=59DI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DO start DaVinci_Resolve_O.lnk&set input=59DO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU EA start Remocapp_Studio_A.lnk&set input=59EA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ER start Remocapp_Studio_R.lnk&set input=59ER&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU EI start Remocapp_Studio_I.exe&set input=59EI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU EO start Remocapp_Studio_O.lnk&set input=59EO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU KA start Rokoko_Studio_A.lnk&set input=59KA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU KR start Rokoko_Studio_R.lnk&set input=59KR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU KI start Rokoko_Studio_I.exe&set input=59KI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU KO start Rokoko_Studio_O.lnk&set input=59KO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startDaVinciResolvePrompt1
+call :banner
+call :menuDaVinciResolvePrompt
+call :menuDaVinciResolve
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startVideoAndMotionCaptureStudiosPrompt
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startDaVinciResolvePrompt1
+:startDaVinciResolvePrompt2
+call :banner
+call :menuDaVinciResolvePrompt
+call :menuDaVinciResolve
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startVideoAndMotionCaptureStudiosPromptDialerMode
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startDaVinciResolvePrompt2
+:startDaVinciResolvePromptSubDialerMode
 call :banner
 call :menuDaVinciResolvePrompt
 call :menuDaVinciResolve
@@ -10472,7 +10565,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
 if /I %input% EQU -+ cls&goto start5
 if /I %input% EQU +- cls&goto start5
-cls&goto startDaVinciResolvePrompt
+cls&goto startDaVinciResolvePromptSubDialerMode
 :startDaVinciResolvePromptDialerMode
 call :banner
 call :menuDaVinciResolvePrompt
@@ -10505,10 +10598,144 @@ echo.
 goto :eof
 :menuDaVinciResolve
 set /p input=%BS%
-if /I %input% EQU A start DaVinci_Resolve_A.lnk&set input=59A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start DaVinci_Resolve_R.lnk&set input=59R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU I start DaVinci_Resolve_I.exe&set input=59I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O start DaVinci_Resolve_O.lnk&set input=59O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU A start DaVinci_Resolve_A.lnk&set input=59DA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start DaVinci_Resolve_R.lnk&set input=59DR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start DaVinci_Resolve_I.exe&set input=59DI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start DaVinci_Resolve_O.lnk&set input=59DO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startRemocappStudioPrompt1
+call :banner
+call :menuRemocappStudioPrompt
+call :menuRemocappStudio
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startVideoAndMotionCaptureStudiosPrompt
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startRemocappStudioPrompt1
+:startRemocappStudioPrompt2
+call :banner
+call :menuRemocappStudioPrompt
+call :menuRemocappStudio
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startVideoAndMotionCaptureStudiosPromptDialerMode
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startRemocappStudioPrompt2
+:startRemocappStudioPromptSubDialerMode
+call :banner
+call :menuRemocappStudioPrompt
+call :menuRemocappStudio
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start5
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startRemocappStudioPromptSubDialerMode
+:startRemocappStudioPromptDialerMode
+call :banner
+call :menuRemocappStudioPrompt
+call :menuRemocappStudio
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startRemocappStudioPromptDialerMode
+:menuRemocappStudioPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Remocapp
+echo     Software Type: Realtime Motion Capture Studio
+echo          Category: Trialware
+echo      License Type: Proprietary
+echo           Website: https://remocapp.com/
+echo  Founded/Released: 03/15/2023
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Remocapp_Studio_R.lnk, Remocapp_Studio_I.exe, Remocapp_Studio_O.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Remocapp Studio ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuRemocappStudio
+set /p input=%BS%
+if /I %input% EQU A start Remocapp_Studio_A.lnk&set input=59EA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Remocapp_Studio_R.lnk&set input=59ER&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Remocapp_Studio_I.exe&set input=59EI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Remocapp_Studio_O.lnk&set input=59EO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startRokokoStudioPrompt1
+call :banner
+call :menuRokokoStudioPrompt
+call :menuRokokoStudio
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startVideoAndMotionCaptureStudiosPrompt
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startRokokoStudioPrompt1
+:startRokokoStudioPrompt2
+call :banner
+call :menuRokokoStudioPrompt
+call :menuRokokoStudio
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startVideoAndMotionCaptureStudiosPromptDialerMode
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startRokokoStudioPrompt2
+:startRokokoStudioPromptSubDialerMode
+call :banner
+call :menuRokokoStudioPrompt
+call :menuRokokoStudio
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start5
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startRokokoStudioPromptSubDialerMode
+:startRokokoStudioPromptDialerMode
+call :banner
+call :menuRokokoStudioPrompt
+call :menuRokokoStudio
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startRokokoStudioPromptDialerMode
+:menuRokokoStudioPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Jakob Balslev, Matias Søndergaard, and Anders Klok
+echo     Software Type: Motion Capture and Animation Studio
+echo          Category: Freemium
+echo      License Type: Proprietary
+echo           Website: http://rokoko.com/
+echo  Founded/Released: 03/2014
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Rokoko_Studio_R.lnk, Rokoko_Studio_I.exe, Rokoko_Studio_O.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Rokoko Studio ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuRokokoStudio
+set /p input=%BS%
+if /I %input% EQU A start Rokoko_Studio_A.lnk&set input=59KA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Rokoko_Studio_R.lnk&set input=59KR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Rokoko_Studio_I.exe&set input=59KI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Rokoko_Studio_O.lnk&set input=59KO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :: Section 6a
 :start6a
@@ -24030,11 +24257,22 @@ if /I %input% EQU 58A start Photoline_A.lnk&&goto startPreExitPrompt||goto start
 if /I %input% EQU 58R start Photoline_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 58I start Photoline_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 58O start Photoline_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 59 cls&goto startDaVinciResolvePromptDialerMode
-if /I %input% EQU 59A start DaVinci_Resolve_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 59R start DaVinci_Resolve_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 59I start DaVinci_Resolve_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 59O start DaVinci_Resolve_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59 cls&goto startVideoAndMotionCaptureStudiosPromptDialerMode
+if /I %input% EQU 59D cls&goto startDaVinciResolvePromptDialerMode
+if /I %input% EQU 59DA start DaVinci_Resolve_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59DR start DaVinci_Resolve_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59DI start DaVinci_Resolve_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59DO start DaVinci_Resolve_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59E cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU 59EA start Remocapp_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59ER start Remocapp_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59EI start Remocapp_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59EO start Remocapp_Studio_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59K cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU 59KA start Rokoko_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59KR start Rokoko_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59KI start Rokoko_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59KO start Rokoko_Studio_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6 cls&goto start6a
 if /I %input% EQU 61 cls&goto startSteamPromptDialerMode
 if /I %input% EQU 61A start Steam_Games_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -26914,6 +27152,23 @@ if /I %input% EQU Recuva-I cls&goto startRecuvaInstallerPromptDialerMode
 if /I %input% EQU Recuva-I-A start Recuva_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Recuva-I-B start Piriform_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Recuva-O start Recuva_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Remo cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remoc cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remoca cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocap cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp- cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp-S cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp-St cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp-Stu cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp-Stud cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp-Studi cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp-Studio cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp-Studio- cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp-Studio-A start Remocapp_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Remocapp-Studio-R start Remocapp_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Remocapp-Studio-I start Remocapp_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Remocapp-Studio-O start Remocapp_Studio_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ReShad cls&goto startReShadePromptDialerMode
 if /I %input% EQU ReShade cls&goto startReShadePromptDialerMode
 if /I %input% EQU ReShade- cls&goto startReShadePromptDialerMode
@@ -27033,6 +27288,21 @@ if /I %input% EQU Rise-of-Legends-Big-Archiver cls&goto startRoLBigArchiverPromp
 if /I %input% EQU Rise-of-Legends-Big-Archiver- cls&goto startRoLBigArchiverPromptDialerMode
 if /I %input% EQU Rise-of-Legends-Big-Archiver-A start RoL_Big_Archiver_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rise-of-Legends-Big-Archiver-R start RoL_Big_Archiver_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Roko cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokok cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko- cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko-S cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko-St cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko-Stu cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko-Stud cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko-Studi cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko-Studio cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko-Studio- cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko-Studio-A start Rokoko_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rokoko-Studio-R start Rokoko_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rokoko-Studio-I start Rokoko_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rokoko-Studio-O start Rokoko_Studio_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Ruby cls&goto startRubyMinePromptDialerMode
 if /I %input% EQU RubyM cls&goto startRubyMinePromptDialerMode
 if /I %input% EQU RubyMi cls&goto startRubyMinePromptDialerMode
@@ -27815,8 +28085,8 @@ echo           Website: https://github.com/DavyJones324/DavyJonesOS
 echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Active
-echo    Current Update: 1.0.4.0
-echo        Patch Date: 07/11/2025
+echo    Current Update: 1.0.5.0
+echo        Patch Date: 07/21/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 and 11. No administrator privilages required.
 echo                 +: Art Design taken from "https:\\patorjk.com". Dot Art does not show for Windows 10.
