@@ -10505,7 +10505,7 @@ cls&goto startVideoAndMotionCaptureStudiosPromptDialerMode
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Depends
 echo     Software Type: Depends
-echo          Category: Freemium
+echo          Category: Depends
 echo      License Type: Proprietary
 echo           Website: Depends
 echo  Founded/Released: Depends
@@ -20855,6 +20855,7 @@ echo.
 goto :eof
 :menuCLIdirectory
 set /p input=%BS%
+if /I %input% EQU A start CLI_Directory.txt&set input=CLI-Directory-A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start CLI_Directory.txt&set input=CLI-Directory-R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startdotUltimatePromptDialerMode
@@ -21093,7 +21094,7 @@ echo         Publicity: Public
 echo            Status: Active
 echo    Current Update: 
 echo        Patch Date: 
-echo  Target Filenames: GitHub_A.lnk, GitHub_R.lnk, GitHub_I.exe
+echo  Target Filenames: GitHub_R.lnk, GitHub_I.exe
 echo   Additional Info: 
 echo                 +: 
 echo ------------------------------------------------------------------------------------------------------------------------
@@ -21130,7 +21131,7 @@ echo         Publicity: Public
 echo            Status: Active
 echo    Current Update: 
 echo        Patch Date: 
-echo  Target Filenames: GitHub_Fork_A.lnk, GitHub_Fork_R.lnk, GitHub_Fork_I.exe
+echo  Target Filenames: GitHub_Fork_R.lnk, GitHub_Fork_I.exe
 echo   Additional Info: 
 echo                 +: 
 echo ------------------------------------------------------------------------------------------------------------------------
@@ -21381,6 +21382,184 @@ if /I %input% EQU A start Inno_Setup_A.lnk&set input=installer-NA&&goto startPre
 if /I %input% EQU R start Inno_Setup_R.lnk&set input=installer-NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Inno_Setup_I.exe&set input=installer-NI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Inno_Setup_O.lnk&set input=installer-NO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startXmingPromptDialerMode
+call :banner
+call :menuXmingPrompt
+call :menuXming
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU A cls&goto startXmingRunAdminPrompt
+if /I %input% EQU R cls&goto startXmingRunPrompt
+if /I %input% EQU I cls&goto startXmingInstallPrompt
+if /I %input% EQU -+ cls&goto startMain
+if /I %input% EQU +- cls&goto startMain
+cls&goto startXmingPromptDialerMode
+:menuXmingPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
+echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
+echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
+echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
+echo           Website: http://www.straightrunning.com/XmingNotes/
+echo  Founded/Released: 11/09/2004
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Xming_R.lnk, XLaunch_R.lnk, Xming_I.exe, Xming_Fonts_I.exe, Xming_O.lnk
+echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Xming ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuXming
+set /p input=%BS%
+if /I %input% EQU AM start Xming_A.lnk&set input=Xming-A-M&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AL start XLaunch_A.lnk&set input=Xming-A-L&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RM start Xming_R.lnk&set input=Xming-R-M&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RL start XLaunch_R.lnk&set input=Xming-R-L&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IP start Xming_I.exe&set input=Xming-I-P&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IF start Xming_Fonts_I.exe&set input=Xming-I-F&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Xming_O.lnk&set input=Xming-O&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startXmingRunAdminPrompt
+call :banner
+call :menuXmingRunAdminPrompt
+call :menuXmingRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startXmingPromptDialerMode
+if /I %input% EQU -+ cls&goto startMain
+if /I %input% EQU +- cls&goto startMain
+cls&goto startXmingRunAdminPrompt
+:startXmingRunAdminPromptFromSearchMode
+call :banner
+call :menuXmingRunAdminPrompt
+call :menuXmingRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startMain
+if /I %input% EQU +- cls&goto startMain
+cls&goto startXmingRunAdminPromptFromSearchMode
+:menuXmingRunAdminPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
+echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
+echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
+echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
+echo           Website: http://www.straightrunning.com/XmingNotes/
+echo  Founded/Released: 11/09/2004
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Xming_A.lnk, XLaunch_A.lnk
+echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to run Xming/XLaunch ("M/L"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuXmingRunAdmin
+set /p input=%BS%
+if /I %input% EQU M start Xming_A.lnk&set input=Xming-A-M&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU L start XLaunch_A.lnk&set input=Xming-A-L&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startXmingRunPrompt
+call :banner
+call :menuXmingRunPrompt
+call :menuXmingRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startXmingPromptDialerMode
+if /I %input% EQU -+ cls&goto startMain
+if /I %input% EQU +- cls&goto startMain
+cls&goto startXmingRunPrompt
+:startXmingRunPromptFromSearchMode
+call :banner
+call :menuXmingRunPrompt
+call :menuXmingRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startMain
+if /I %input% EQU +- cls&goto startMain
+cls&goto startXmingRunPromptFromSearchMode
+:menuXmingRunPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
+echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
+echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
+echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
+echo           Website: http://www.straightrunning.com/XmingNotes/
+echo  Founded/Released: 11/09/2004
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Xming_R.lnk, XLaunch_R.lnk
+echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to run Xming/XLaunch ("M/L"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuXmingRun
+set /p input=%BS%
+if /I %input% EQU M start Xming_R.lnk&set input=Xming-R-M&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU L start XLaunch_R.lnk&set input=Xming-R-L&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startXmingInstallPrompt
+call :banner
+call :menuXmingInstallPrompt
+call :menuXmingInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startXmingPromptDialerMode
+if /I %input% EQU -+ cls&goto startMain
+if /I %input% EQU +- cls&goto startMain
+cls&goto startXmingInstallPrompt
+:startXmingInstallPromptFromSearchMode
+call :banner
+call :menuXmingInstallPrompt
+call :menuXmingInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startMain
+if /I %input% EQU +- cls&goto startMain
+cls&goto startXmingInstallPromptFromSearchMode
+:menuXmingInstallPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
+echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
+echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
+echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
+echo           Website: http://www.straightrunning.com/XmingNotes/
+echo  Founded/Released: 11/09/2004
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Xming_I.exe, Xming_Fonts_I.exe
+echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to install the Xming program/fonts ("P/F"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuXmingInstall
+set /p input=%BS%
+if /I %input% EQU P start Xming_I.exe&set input=Xming-I-P&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU F start Xming_Fonts_I.exe&set input=Xming-I-F&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :: Main Menu Alphabetized Part 1
 :startMainAlphabetized1
@@ -25654,6 +25833,7 @@ if /I %input% EQU CLI-Directo cls&goto startCLIdirectoryPromptDialerMode
 if /I %input% EQU CLI-Director cls&goto startCLIdirectoryPromptDialerMode
 if /I %input% EQU CLI-Directory cls&goto startCLIdirectoryPromptDialerMode
 if /I %input% EQU CLI-Directory- cls&goto startCLIdirectoryPromptDialerMode
+if /I %input% EQU CLI-Directory-A start CLI_Directory.txt&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CLI-Directory-R start CLI_Directory.txt&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CLio cls&goto startCLionPromptDialerMode
 if /I %input% EQU CLion cls&goto startCLionPromptDialerMode
@@ -27937,6 +28117,22 @@ if /I %input% EQU Writerside-A start Writerside_A.lnk&&goto startPreExitPrompt||
 if /I %input% EQU Writerside-R start Writerside_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Writerside-I start Writerside_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Writerside-O goto startUninstallationInstructions
+if /I %input% EQU Xmin cls&goto startXmingPromptDialerMode
+if /I %input% EQU Xming cls&goto startXmingPromptDialerMode
+if /I %input% EQU Xming- cls&goto startXmingPromptDialerMode
+if /I %input% EQU Xming-A cls&goto startXmingRunAdminPromptFromSearchMode
+if /I %input% EQU Xming-A- cls&goto startXmingRunAdminPromptFromSearchMode
+if /I %input% EQU Xming-A-M start Xming_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-A-L start XLaunch_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-R cls&goto startXmingRunPromptFromSearchMode
+if /I %input% EQU Xming-R- cls&goto startXmingRunPromptFromSearchMode
+if /I %input% EQU Xming-R-M start Xming_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-R-L start XLaunch_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-I cls&goto startXmingInstallPromptFromSearchMode
+if /I %input% EQU Xming-I- cls&goto startXmingInstallPromptFromSearchMode
+if /I %input% EQU Xming-I-P start Xming_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-I-F start Xming_Fonts_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-O start Xming_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU x64d cls&goto startx64dbgPromptDialerMode
 if /I %input% EQU x64db cls&goto startx64dbgPromptDialerMode
 if /I %input% EQU x64dbg cls&goto startx64dbgPromptDialerMode
@@ -28085,8 +28281,8 @@ echo           Website: https://github.com/DavyJones324/DavyJonesOS
 echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Active
-echo    Current Update: 1.0.5.0
-echo        Patch Date: 07/21/2025
+echo    Current Update: 1.0.6.0
+echo        Patch Date: 07/27/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 and 11. No administrator privilages required.
 echo                 +: Art Design taken from "https:\\patorjk.com". Dot Art does not show for Windows 10.
@@ -28801,6 +28997,16 @@ if exist DaVinci_Resolve_I.exe (
 ) else (
     echo "DaVinci_Resolve_I.exe" does not exist.
 )
+if exist Remocapp_Studio_I.exe (
+    echo "Remocapp_Studio_I.exe" exists.
+) else (
+    echo "Remocapp_Studio_I.exe" does not exist.
+)
+if exist Rokoko_Studio_I.exe (
+    echo "Rokoko_Resolve_I.exe" exists.
+) else (
+    echo "Rokoko_Resolve_I.exe" does not exist.
+)
 echo.
 echo.
 echo InvokeGames Shortcut Section
@@ -29141,6 +29347,11 @@ echo.
 echo Other Installers
 echo.
 echo.
+if exist GitHub_I.exe (
+    echo "GitHub_I.exe" exists.
+) else (
+    echo "GitHub_I.exe" does not exist.
+)
 if exist GitHub_Fork_I.exe (
     echo "GitHub_Fork_I.exe" exists.
 ) else (
@@ -29160,6 +29371,16 @@ if exist Inno_Setup_I.exe (
     echo "Inno_Setup_I.exe" exists.
 ) else (
     echo "Inno_Setup_I.exe" does not exist.
+)
+if exist Xming_I.exe (
+    echo "Xming_I.exe" exists.
+) else (
+    echo "Xming_I.exe" does not exist.
+)
+if exist Xming_Fonts_I.exe (
+    echo "Xming_Fonts_I.exe" exists.
+) else (
+    echo "Xming_Fonts_I.exe" does not exist.
 )
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
@@ -30590,6 +30811,36 @@ if exist DaVinci_Resolve_O.lnk (
 ) else (
     echo "DaVinci_Resolve_O.lnk" does not exist.
 )
+if exist Remocapp_Studio_A.lnk (
+    echo "Remocapp_Studio_A.lnk" exists.
+) else (
+    echo "Remocapp_Studio_A.lnk" does not exist.
+)
+if exist Remocapp_Studio_R.lnk (
+    echo "Remocapp_Studio_R.lnk" exists.
+) else (
+    echo "Remocapp_Studio_R.lnk" does not exist.
+)
+if exist Remocapp_Studio_O.lnk (
+    echo "Remocapp_Studio_O.lnk" exists.
+) else (
+    echo "Remocapp_Studio_O.lnk" does not exist.
+)
+if exist Rokoko_Studio_A.lnk (
+    echo "Rokoko_Studio_A.lnk" exists.
+) else (
+    echo "Rokoko_Studio_A.lnk" does not exist.
+)
+if exist Rokoko_Studio_R.lnk (
+    echo "Rokoko_Studio_R.lnk" exists.
+) else (
+    echo "Rokoko_Studio_R.lnk" does not exist.
+)
+if exist Rokoko_Studio_O.lnk (
+    echo "Rokoko_Studio_O.lnk" exists.
+) else (
+    echo "Rokoko_Studio_O.lnk" does not exist.
+)
 echo.
 echo.
 echo InvokeGames Shortcut Section
@@ -31840,6 +32091,16 @@ echo.
 echo Other Shortcuts
 echo.
 echo.
+if exist GitHub_A.lnk (
+    echo "GitHub_A.lnk" exists.
+) else (
+    echo "GitHub_A.lnk" does not exist.
+)
+if exist GitHub_R.lnk (
+    echo "GitHub_R.lnk" exists.
+) else (
+    echo "GitHub_R.lnk" does not exist.
+)
 if exist GitHub_Fork_A.lnk (
     echo "GitHub_Fork_A.lnk" exists.
 ) else (
@@ -31889,6 +32150,31 @@ if exist Inno_Setup_R.lnk (
     echo "Inno_Setup_R.lnk" exists.
 ) else (
     echo "Inno_Setup_R.lnk" does not exist.
+)
+if exist Xming_A.lnk (
+    echo "Xming_A.lnk" exists.
+) else (
+    echo "Xming_A.lnk" does not exist.
+)
+if exist XLaunch_A.lnk (
+    echo "XLaunch_A.lnk" exists.
+) else (
+    echo "XLaunch_A.lnk" does not exist.
+)
+if exist Xming_R.lnk (
+    echo "Xming_R.lnk" exists.
+) else (
+    echo "Xming_R.lnk" does not exist.
+)
+if exist XLaunch_R.lnk (
+    echo "XLaunch_R.lnk" exists.
+) else (
+    echo "XLaunch_R.lnk" does not exist.
+)
+if exist Xming_O.lnk (
+    echo "Xming_O.lnk" exists.
+) else (
+    echo "Xming_O.lnk" does not exist.
 )
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
