@@ -182,8 +182,8 @@ if /I %input% EQU - cls&goto start9a
 if /I %input% EQU -- cls&goto start8
 if /I %input% EQU --- cls&goto start7a
 if /I %input% EQU + cls&goto startBackground
-if /I %input% EQU ++ cls&goto start1
-if /I %input% EQU +++ cls&goto start2
+if /I %input% EQU ++ cls&goto startNetwork
+if /I %input% EQU +++ cls&goto start1
 goto :eof
 :startHitmanProPrompt
 call :banner
@@ -653,8 +653,8 @@ if /I %input% EQU --- cls&goto start7a
 if /I %input% EQU -+ cls&goto startAlert
 if /I %input% EQU +- cls&goto startAlert
 if /I %input% EQU + cls&goto startBackground
-if /I %input% EQU ++ cls&goto start1
-if /I %input% EQU +++ cls&goto start2
+if /I %input% EQU ++ cls&goto startNetwork
+if /I %input% EQU +++ cls&goto start1
 goto :eof
 :startHitmanProAlertPrompt
 call :banner
@@ -1434,7 +1434,7 @@ if /I %input% EQU 3 cls&goto startFlowLauncherPrompt
 if /I %input% EQU 3A start Flow_Launcher_A.lnk&set input=background-3A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start Flow_Launcher_R.lnk&set input=background-3R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3I start Flow_Launcher_I.exe&set input=background-3I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3O goto startUninstallationInstructions
+if /I %input% EQU 3O cls&set input=background-3O&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto startSamsungDriverPrompt
 if /I %input% EQU 4I start Samsung_Driver_I.exe&set input=background-4I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5 cls&goto startDirectoryOpusPrompt
@@ -1456,7 +1456,7 @@ if /I %input% EQU 8 cls&goto startWireGuardPrompt
 if /I %input% EQU 8A start WireGuard_A.lnk&set input=background-8A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8R start WireGuard_R.lnk&set input=background-8R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8I start WireGuard_I.exe&set input=background-8I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 8O goto startUninstallationInstructions
+if /I %input% EQU 8O cls&set input=background-8O&goto startUninstallationInstructions
 if /I %input% EQU 9 cls&goto startLaunchNotepadPrompt
 if /I %input% EQU 9M cls&goto startNotepadPromptSubDialerMode
 if /I %input% EQU 9MA start Notepad_A.lnk&set input=background-9MA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1469,9 +1469,9 @@ if /I %input% EQU 9PO start Notepad++_O.lnk&set input=background-9PO&&goto start
 if /I %input% EQU - cls&goto startAlert
 if /I %input% EQU -- cls&goto start9a
 if /I %input% EQU --- cls&goto start8
-if /I %input% EQU + cls&goto start1
-if /I %input% EQU ++ cls&goto start2
-if /I %input% EQU +++ cls&goto start3
+if /I %input% EQU + cls&goto startNetwork
+if /I %input% EQU ++ cls&goto start1
+if /I %input% EQU +++ cls&goto start2
 goto :eof
 :start7-ZipFMprompt
 call :banner
@@ -1742,7 +1742,7 @@ set /p input=%BS%
 if /I %input% EQU A start Flow_Launcher_A.lnk&set input=background-3A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Flow_Launcher_R.lnk&set input=background-3R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Flow_Launcher_I.exe&set input=background-3I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=background-3O&goto startUninstallationInstructions
 goto :eof
 :startSamsungDriverPrompt
 call :banner
@@ -1974,7 +1974,7 @@ set /p input=%BS%
 if /I %input% EQU A start WireGuard_A.lnk&set input=background-8A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WireGuard_R.lnk&set input=background-8R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WireGuard_I.exe&set input=background-8I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=background-8O&goto startUninstallationInstructions
 goto :eof
 :startLaunchNotepadPrompt
 call :banner
@@ -2161,6 +2161,1512 @@ if /I %input% EQU R start Notepad++_R.lnk&set input=background-9PR&&goto startPr
 if /I %input% EQU I start Notepad++_I.exe&set input=background-9PI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Notepad++_O.lnk&set input=background-9PO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:: Network Section
+:startNetwork
+call :banner
+call :menuNetworkScreen
+set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+call :menuNetwork
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+cls&goto startNetwork
+:menuNetworkScreen
+for /f %%A in ('"prompt $H &echo on &for %%B in (1) do rem"') do set BS=%%A
+echo.
+echo        [38;2;255;255;255m╔═0) Exit Network Menu                 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠤⠴⠶⡇[0m
+echo        [38;2;230;255;230m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣾⣿⡟[0m
+echo        [38;2;204;255;204m╠══1) GitHub Tools                     ⠀⠀⠀⠀⠀⠀⠀⠂⠉⡇⠀⠀⠀⢰⣿⣿⣿⣿⣧⠀⠀⢀⣄⣀[0m
+echo        [38;2;179;255;179m║                                      ⠀⠀⠀⠀⠀⠀⢠⣶⣶⣷⠀⠀⠀⠸⠟⠁⠀⡇⠀⠀⠀⠀⠀⢹[0m
+echo        [38;2;153;255;153m╠═══2) Bitvise                         ⠀⠀⠀⠀⠀⠀⠘⠟⢹⣋⣀⡀⢀⣤⣶⣿⣿⣿⣿⣿⡿⠛⣠⣼⣿⡟[0m
+echo        [38;2;128;255;128m║                                      ⠀⠀⠀⠀⠀⣴⣾⣿⣿⣿⣿⢁⣾⣿⣿⣿⣿⣿⣿⡿⢁⣾⣿⣿⣿⠁[0m
+echo        [38;2;102;255;102m╠════3) PuTTY                          ⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇[0m
+echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠳⣤⣙⠟⠛⢻⠿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣇⠘⠉⠀⢸⠀⢀⣠[0m
+echo        [38;2;51;255;51m╠═════4) SecureCRT                     ⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿[0m
+echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣶⣄⡈⠉⠀⠀⢸⡇⠀⠀⠉⠂⠀⣿⣿⣿⣧[0m
+echo        [38;2;0;255;0m╠══════5) Xming                        ⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣷⣤⣀⣸⣧⣠⣤⣴⣶⣾⣿⣿⣿⡿[0m
+echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇[0m
+echo        [38;2;51;255;51m╠═══════6) Wireshark                   ⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠛⠉[0m
+echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉[0m
+echo        [38;2;102;255;102m╠════════7) TraceX HWID Spoofer[0m
+echo        [38;2;128;255;128m║[0m
+echo        [38;2;153;255;153m╠═════════8) Freegate IP Spoofer[0m
+echo        [38;2;179;255;179m║[0m
+echo        [38;2;204;255;204m╚╦═════════9) Technitium DNS/P2P/MAC Spoofer[0m
+echo        [38;2;230;255;230m ║[0m
+goto :eof
+:menuNetwork
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU 1 cls&goto startGitToolsPrompt
+if /I %input% EQU 1G cls&goto startGitHubPromptSubDialerMode
+if /I %input% EQU 1GA start GitHub_A.lnk&set input=network-1GA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 1GR start GitHub_R.lnk&set input=network-1GR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 1GI start GitHub_I.exe&set input=network-1GI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 1GO cls&set input=network-1GO&goto startUninstallationInstructions
+if /I %input% EQU 1F cls&goto startGitForkPromptSubDialerMode
+if /I %input% EQU 1FA start GitHub_Fork_A.lnk&set input=network-1FA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 1FR start GitHub_Fork_R.lnk&set input=network-1FR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 1FI start GitHub_Fork_I.exe&set input=network-1FI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 1FO cls&set input=network-1FO&goto startUninstallationInstructions
+if /I %input% EQU 2 cls&goto startBitvisePrompt
+if /I %input% EQU 2A cls&goto startBitviseRunAdminPromptSubDialerMode
+if /I %input% EQU 2AC start Bitvise_SSH_Client_A.lnk&set input=network-2AC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2AS start Bitvise_SSH_Server_A.lnk&set input=network-2AS&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2R cls&goto startBitviseRunPromptSubDialerMode
+if /I %input% EQU 2RC start Bitvise_SSH_Client_R.lnk&set input=network-2RC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2RS start Bitvise_SSH_Server_R.lnk&set input=network-2RS&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2I cls&goto startBitviseInstallPromptSubDialerMode
+if /I %input% EQU 2IC start Bitvise_SSH_Client_I.exe&set input=network-2IC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2IS start Bitvise_SSH_Server_I.exe&set input=network-2IS&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2O cls&goto startBitviseUninstallPromptSubDialerMode
+if /I %input% EQU 2OC start Bitvise_SSH_Client_O.lnk&set input=network-2OC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2OS start Bitvise_SSH_Server_O.lnk&set input=network-2OS&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3 cls&goto startPuTTYprompt
+if /I %input% EQU 3A start PuTTY_A.lnk&set input=network-3A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3R start PuTTY_R.lnk&set input=network-3R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3I start PuTTY_I.msi&set input=network-3I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3O cls&set input=network-3O&goto startUninstallationInstructions
+if /I %input% EQU 4 cls&goto startSecureCRTprompt
+if /I %input% EQU 4A cls&goto startSecureCRTrunAdminPromptSubDialerMode
+if /I %input% EQU 4AC start SecureCRT_A.lnk&set input=network-4AC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4AF start SecureFX_A.lnk&set input=network-4AF&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4R cls&goto startSecureCRTrunPromptSubDialerMode
+if /I %input% EQU 4RC start SecureCRT_R.lnk&set input=network-4RC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4RF start SecureFX_R.lnk&set input=network-4RF&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4I start SecureCRT_I.exe&set input=network-4I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4O cls&set input=network-4O&goto startUninstallationInstructions
+if /I %input% EQU 5 cls&goto startXmingPrompt
+if /I %input% EQU 5A cls&goto startXmingRunAdminPromptSubDialerMode
+if /I %input% EQU 5AM start Xming_A.lnk&set input=network-5AM&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5AL start XLaunch_A.lnk&set input=network-5AL&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5R cls&goto startXmingRunPromptSubDialerMode
+if /I %input% EQU 5RM start Xming_R.lnk&set input=network-5RM&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5RL start XLaunch_R.lnk&set input=network-5RL&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5I cls&goto startXmingInstallPromptSubDialerMode
+if /I %input% EQU 5IP start Xming_I.exe&set input=network-5IP&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5IF start Xming_Fonts_I.exe&set input=network-5IF&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5O start Xming_O.lnk&set input=network-5O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 6 cls&goto startWiresharkPrompt
+if /I %input% EQU 6A start Wireshark_A.lnk&set input=network-6A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 6R start Wireshark_R.lnk&set input=network-6R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 6I start Wireshark_I.exe&set input=network-6I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 6O start Wireshark_O.lnk&set input=network-6O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 7 cls&goto startTraceXHWIDspooferPrompt
+if /I %input% EQU 7A start TraceX_HWID_Spoofer_R.lnk&set input=network-7A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 7R start TraceX_HWID_Spoofer_R.lnk&set input=network-7R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 8 cls&goto startFreegateIPspooferPrompt
+if /I %input% EQU 8A start Freegate_IP_Spoofer_A.lnk&set input=network-8A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 8R start Freegate_IP_Spoofer_R.lnk&set input=network-8R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9 cls&goto startTechnitiumPrompt
+if /I %input% EQU 9D cls&goto startTechnitiumDNSserverPromptSubDialerMode
+if /I %input% EQU 9DA start Technitium_DNS_Server_A.lnk&set input=network-9DA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9DR start Technitium_DNS_Server_R.lnk&set input=network-9DR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9DI start Technitium_DNS_Server_I.exe&set input=network-9DI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9DO cls&set input=network-9DO&goto startUninstallationInstructions
+if /I %input% EQU 9S cls&goto startTechnitiumMeshP2PmessagerPromptSubDialerMode
+if /I %input% EQU 9SA start Technitium_Mesh_P2P_Messager_R.lnk&set input=network-9SA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9SR start Technitium_Mesh_P2P_Messager_R.lnk&set input=network-9SR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9SI start Technitium_Mesh_P2P_Messager_I.msi&set input=network-9SI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9SO cls&set input=network-9SO&goto startUninstallationInstructions
+if /I %input% EQU 9M cls&goto startTechnitiumMACspooferPromptSubDialerMode
+if /I %input% EQU 9MA start Technitium_MAC_Spoofer_A.lnk&set input=network-9MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9MR start Technitium_MAC_Spoofer_R.lnk&set input=network-9MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9MI start Technitium_MAC_Spoofer_I.exe&set input=network-9MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9MO cls&set input=network-9MO&goto startUninstallationInstructions
+if /I %input% EQU - cls&goto startBackground
+if /I %input% EQU -- cls&goto startAlert
+if /I %input% EQU --- cls&goto start9a
+if /I %input% EQU + cls&goto start1
+if /I %input% EQU ++ cls&goto start2
+if /I %input% EQU +++ cls&goto start3
+goto :eof
+:startGitToolsPrompt
+call :banner
+call :menuGitToolsPrompt
+call :menuGitTools
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU G cls&goto startGitHubPrompt1
+if /I %input% EQU F cls&goto startGitForkPrompt1
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitToolsPrompt
+:startGitToolsPromptDialerMode
+call :banner
+call :menuGitToolsPrompt
+call :menuGitTools
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU G cls&goto startGitHubPrompt2
+if /I %input% EQU F cls&goto startGitForkPrompt2
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitToolsPromptDialerMode
+:menuGitToolsPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Depends
+echo     Software Type: Depends
+echo          Category: Depends
+echo      License Type: Proprietary
+echo           Website: Depends
+echo           Founded: 04/07/2005; Developed: 10/19/2007; Launched: 02/29/2008
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: GitHub_R.lnk, GitHub_I.exe, GitHub_Fork_R.lnk, GitHub_Fork_I.exe
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the letter for GitHub Program/Fork ("G/F"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuGitTools
+set /p input=%BS%
+if /I %input% EQU GA start GitHub_A.lnk&set input=network-1GA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GR start GitHub_R.lnk&set input=network-1GR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GI start GitHub_I.exe&set input=network-1GI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GO cls&set input=network-1GO&goto startUninstallationInstructions
+if /I %input% EQU FA start GitHub_Fork_A.lnk&set input=network-1FA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FR start GitHub_Fork_R.lnk&set input=network-1FR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FI start GitHub_Fork_I.exe&set input=network-1FI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FO cls&set input=network-1FO&goto startUninstallationInstructions
+goto :eof
+:startGitHubPrompt1
+call :banner
+call :menuGitHubPrompt
+call :menuGitHub
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startGitToolsPrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitHubPrompt1
+:startGitHubPrompt2
+call :banner
+call :menuGitHubPrompt
+call :menuGitHub
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitHubPrompt2
+:startGitHubPromptSubDialerMode
+call :banner
+call :menuGitHubPrompt
+call :menuGitHub
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitHubPromptSubDialerMode
+:startGitHubPromptDialerMode
+call :banner
+call :menuGitHubPrompt
+call :menuGitHub
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitHubPromptDialerMode
+:menuGitHubPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Tom Preston-Werner, Chris Wanstrath, P. J. Hyett, and Scott Chacon
+echo     Software Type: Code Developer Platform for Sharing Code
+echo          Category: Freeware
+echo      License Type: Proprietary
+echo           Website: https://github.com/
+echo           Founded: 04/07/2005; Developed: 10/19/2007; Launched: 02/29/2008
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: GitHub_R.lnk, GitHub_I.exe
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall GitHub ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuGitHub
+set /p input=%BS%
+if /I %input% EQU A start GitHub_A.lnk&set input=network-1GA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start GitHub_R.lnk&set input=network-1GR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start GitHub_I.exe&set input=network-1GI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=network-1GO&goto startUninstallationInstructions
+goto :eof
+:startGitForkPrompt1
+call :banner
+call :menuGitForkPrompt
+call :menuGitFork
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startGitToolsPrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitForkPrompt1
+:startGitForkPrompt2
+call :banner
+call :menuGitForkPrompt
+call :menuGitFork
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitForkPrompt2
+:startGitForkPromptSubDialerMode
+call :banner
+call :menuGitForkPrompt
+call :menuGitFork
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitForkPromptSubDialerMode
+:startGitForkPromptDialerMode
+call :banner
+call :menuGitForkPrompt
+call :menuGitFork
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startGitForkPromptDialerMode
+:menuGitForkPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Dan Pristupov and Tanya Pristupova
+echo     Software Type: A Fast and Friendly Git Client
+echo          Category: Trialware
+echo      License Type: Proprietary
+echo           Website: https://git-fork.com/
+echo           Founded: 04/07/2005; Developed: 10/19/2007; Launched: 02/29/2008
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: GitHub_Fork_R.lnk, GitHub_Fork_I.exe
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall GitHub Fork ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuGitFork
+set /p input=%BS%
+if /I %input% EQU A start GitHub_Fork_A.lnk&set input=network-1FA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start GitHub_Fork_R.lnk&set input=network-1FR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start GitHub_Fork_I.exe&set input=network-1FI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=network-1FO&goto startUninstallationInstructions
+goto :eof
+:startBitvisePrompt
+call :banner
+call :menuBitvisePrompt
+call :menuBitvise
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU A cls&goto startBitviseRunAdminPrompt1
+if /I %input% EQU R cls&goto startBitviseRunPrompt1
+if /I %input% EQU I cls&goto startBitviseInstallPrompt1
+if /I %input% EQU O cls&goto startBitviseUninstallPrompt1
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitvisePrompt
+:startBitvisePromptDialerMode
+call :banner
+call :menuBitvisePrompt
+call :menuBitvise
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU A cls&goto startBitviseRunAdminPrompt2
+if /I %input% EQU R cls&goto startBitviseRunPrompt2
+if /I %input% EQU I cls&goto startBitviseInstallPrompt2
+if /I %input% EQU O cls&goto startBitviseUninstallPrompt2
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitvisePromptDialerMode
+:menuBitvisePrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Bitvise Limited
+echo     Software Type: Secure Remote Access Software for Client/Server
+echo          Category: Freeware for Client Distribution; Trialware for Server Distribution
+echo      License Type: Proprietary
+echo           Website: https://bitvise.com/
+echo  Founded/Released: 2001
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Bitvise_SSH_Client_{A/R/I/O}, Bitvise_SSH_Server_{A/R/I/O}
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Bitvise ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuBitvise
+set /p input=%BS%
+if /I %input% EQU AC start Bitvise_SSH_Client_A.lnk&set input=network-2AC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AS start Bitvise_SSH_Server_A.lnk&set input=network-2AS&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RC start Bitvise_SSH_Client_R.lnk&set input=network-2RC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RS start Bitvise_SSH_Server_R.lnk&set input=network-2RS&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IC start Bitvise_SSH_Client_I.exe&set input=network-2IC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IS start Bitvise_SSH_Server_I.exe&set input=network-2IS&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU OC start Bitvise_SSH_Client_O.lnk&set input=network-2OC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU OS start Bitvise_SSH_Server_O.lnk&set input=network-2OS&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startBitviseRunAdminPrompt1
+call :banner
+call :menuBitviseRunAdminPrompt
+call :menuBitviseRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startBitvisePrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseRunAdminPrompt1
+:startBitviseRunAdminPrompt2
+call :banner
+call :menuBitviseRunAdminPrompt
+call :menuBitviseRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startBitvisePromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseRunAdminPrompt2
+:startBitviseRunAdminPromptSubDialerMode
+call :banner
+call :menuBitviseRunAdminPrompt
+call :menuBitviseRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseRunAdminPromptSubDialerMode
+:startBitviseRunAdminPromptDialerMode
+call :banner
+call :menuBitviseRunAdminPrompt
+call :menuBitviseRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseRunAdminPromptDialerMode
+:menuBitviseRunAdminPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Bitvise Limited
+echo     Software Type: Secure Remote Access Software for Client/Server
+echo          Category: Freeware for Client Distribution; Trialware for Server Distribution
+echo      License Type: Proprietary
+echo           Website: https://bitvise.com/
+echo  Founded/Released: 2001
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Bitvise_SSH_Client_A, Bitvise_SSH_Server_A
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to run Client/Server Distribution ("C/S"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuBitviseRunAdmin
+set /p input=%BS%
+if /I %input% EQU C start Bitvise_SSH_Client_A.lnk&set input=network-2AC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU S start Bitvise_SSH_Server_A.lnk&set input=network-2AS&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startBitviseRunPrompt1
+call :banner
+call :menuBitviseRunPrompt
+call :menuBitviseRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startBitvisePrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseRunPrompt1
+:startBitviseRunPrompt2
+call :banner
+call :menuBitviseRunPrompt
+call :menuBitviseRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startBitvisePromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseRunPrompt2
+:startBitviseRunPromptSubDialerMode
+call :banner
+call :menuBitviseRunPrompt
+call :menuBitviseRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseRunPromptSubDialerMode
+:startBitviseRunPromptDialerMode
+call :banner
+call :menuBitviseRunPrompt
+call :menuBitviseRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseRunPromptDialerMode
+:menuBitviseRunPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Bitvise Limited
+echo     Software Type: Secure Remote Access Software for Client/Server
+echo          Category: Freeware for Client Distribution; Trialware for Server Distribution
+echo      License Type: Proprietary
+echo           Website: https://bitvise.com/
+echo  Founded/Released: 2001
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Bitvise_SSH_Client_R, Bitvise_SSH_Server_R
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to run Client/Server Distribution ("C/S"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuBitviseRun
+set /p input=%BS%
+if /I %input% EQU C start Bitvise_SSH_Client_R.lnk&set input=network-2RC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU S start Bitvise_SSH_Server_R.lnk&set input=network-2RS&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startBitviseInstallPrompt1
+call :banner
+call :menuBitviseInstallPrompt
+call :menuBitviseInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startBitvisePrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseInstallPrompt1
+:startBitviseInstallPrompt2
+call :banner
+call :menuBitviseInstallPrompt
+call :menuBitviseInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startBitvisePromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseInstallPrompt2
+:startBitviseInstallPromptSubDialerMode
+call :banner
+call :menuBitviseInstallPrompt
+call :menuBitviseInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseInstallPromptSubDialerMode
+:startBitviseInstallPromptDialerMode
+call :banner
+call :menuBitviseInstallPrompt
+call :menuBitviseInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseInstallPromptDialerMode
+:menuBitviseInstallPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Bitvise Limited
+echo     Software Type: Secure Remote Access Software for Client/Server
+echo          Category: Freeware for Client Distribution; Trialware for Server Distribution
+echo      License Type: Proprietary
+echo           Website: https://bitvise.com/
+echo  Founded/Released: 2001
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Bitvise_SSH_Client_I, Bitvise_SSH_Server_I
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to install Client/Server Distribution ("C/S"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuBitviseInstall
+set /p input=%BS%
+if /I %input% EQU C start Bitvise_SSH_Client_I.exe&set input=network-2IC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU S start Bitvise_SSH_Server_I.exe&set input=network-2IS&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startBitviseUninstallPrompt1
+call :banner
+call :menuBitviseUninstallPrompt
+call :menuBitviseUninstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startBitvisePrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseUninstallPrompt1
+:startBitviseUninstallPrompt2
+call :banner
+call :menuBitviseUninstallPrompt
+call :menuBitviseUninstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startBitvisePromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseUninstallPrompt2
+:startBitviseUninstallPromptSubDialerMode
+call :banner
+call :menuBitviseUninstallPrompt
+call :menuBitviseUninstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseUninstallPromptSubDialerMode
+:startBitviseUninstallPromptDialerMode
+call :banner
+call :menuBitviseUninstallPrompt
+call :menuBitviseUninstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startBitviseUninstallPromptDialerMode
+:menuBitviseUninstallPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Bitvise Limited
+echo     Software Type: Secure Remote Access Software for Client/Server
+echo          Category: Freeware for Client Distribution; Trialware for Server Distribution
+echo      License Type: Proprietary
+echo           Website: https://bitvise.com/
+echo  Founded/Released: 2001
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Bitvise_SSH_Client_O, Bitvise_SSH_Server_O
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to uninstall Client/Server Distribution ("C/S"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuBitviseUninstall
+set /p input=%BS%
+if /I %input% EQU C start Bitvise_SSH_Client_O.lnk&set input=network-2OC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU S start Bitvise_SSH_Server_O.lnk&set input=network-2OS&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startPuTTYprompt
+call :banner
+call :menuPuTTYprompt
+call :menuPuTTY
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startPuTTYprompt
+:startPuTTYpromptDialerMode
+call :banner
+call :menuPuTTYprompt
+call :menuPuTTY
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startPuTTYpromptDialerMode
+:menuPuTTYprompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Simon Tatham
+echo     Software Type: Terminal Emulator, Serial Console and Network File Transfer Application
+echo          Category: Freeware
+echo      License Type: MIT License
+echo           Website: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+echo  Founded/Released: 01/08/1999
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: PuTTY_R.lnk, PuTTY_I.msi
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall PuTTY ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuPuTTY
+set /p input=%BS%
+if /I %input% EQU A start PuTTY_A.lnk&set input=network-3A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start PuTTY_R.lnk&set input=network-3R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start PuTTY_I.msi&set input=network-3I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=network-3O&goto startUninstallationInstructions
+goto :eof
+:startSecureCRTprompt
+call :banner
+call :menuSecureCRTprompt
+call :menuSecureCRT
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU A cls&goto startSecureCRTrunAdminPrompt1
+if /I %input% EQU R cls&goto startSecureCRTrunPrompt1
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTprompt
+:startSecureCRTpromptDialerMode
+call :banner
+call :menuSecureCRTprompt
+call :menuSecureCRT
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU A cls&goto startSecureCRTrunAdminPrompt2
+if /I %input% EQU R cls&goto startSecureCRTrunPrompt2
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTpromptDialerMode
+:menuSecureCRTprompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: VanDyke Software
+echo     Software Type: GUI-Based Telnet Client and Terminal Emulator
+echo          Category: Trialware
+echo      License Type: Proprietary
+echo           Website: https://www.vandyke.com/
+echo  Founded/Released: 10/04/1995
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: SecureCRT_{A/R/I}, SecureFX_{A/R}
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall SecureCRT ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuSecureCRT
+set /p input=%BS%
+if /I %input% EQU AC start SecureCRT_A.lnk&set input=network-4AC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AF start SecureFX_A.lnk&set input=network-4AF&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RC start SecureCRT_R.lnk&set input=network-4RC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RF start SecureFX_R.lnk&set input=network-4RF&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start SecureCRT_I.exe&set input=network-4I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=network-4O&goto startUninstallationInstructions
+goto :eof
+:startSecureCRTrunAdminPrompt1
+call :banner
+call :menuSecureCRTrunAdminPrompt
+call :menuSecureCRTrunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startSecureCRTprompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTrunAdminPrompt1
+:startSecureCRTrunAdminPrompt2
+call :banner
+call :menuSecureCRTrunAdminPrompt
+call :menuSecureCRTrunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTrunAdminPrompt2
+:startSecureCRTrunAdminPromptSubDialerMode
+call :banner
+call :menuSecureCRTrunAdminPrompt
+call :menuSecureCRTrunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTrunAdminPromptSubDialerMode
+:startSecureCRTrunAdminPromptDialerMode
+call :banner
+call :menuSecureCRTrunAdminPrompt
+call :menuSecureCRTrunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTrunAdminPromptDialerMode
+:menuSecureCRTrunAdminPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: VanDyke Software
+echo     Software Type: GUI-Based Telnet Client and Terminal Emulator
+echo          Category: Trialware
+echo      License Type: Proprietary
+echo           Website: https://www.vandyke.com/
+echo  Founded/Released: 10/04/1995
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: SecureCRT_A, SecureFX_A
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to run SecureCRT/SecureFX ("C/F"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuSecureCRTrunAdmin
+set /p input=%BS%
+if /I %input% EQU C start SecureCRT_A.lnk&set input=network-4AC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU F start SecureFX_A.lnk&set input=network-4AF&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startSecureCRTrunPrompt1
+call :banner
+call :menuSecureCRTrunPrompt
+call :menuSecureCRTrun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startSecureCRTprompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTrunPrompt1
+:startSecureCRTrunPrompt2
+call :banner
+call :menuSecureCRTrunPrompt
+call :menuSecureCRTrun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTrunPrompt2
+:startSecureCRTrunPromptSubDialerMode
+call :banner
+call :menuSecureCRTrunPrompt
+call :menuSecureCRTrun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTrunPromptSubDialerMode
+:startSecureCRTrunPromptDialerMode
+call :banner
+call :menuSecureCRTrunPrompt
+call :menuSecureCRTrun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startSecureCRTrunPromptDialerMode
+:menuSecureCRTrunPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: VanDyke Software
+echo     Software Type: GUI-Based Telnet Client and Terminal Emulator
+echo          Category: Trialware
+echo      License Type: Proprietary
+echo           Website: https://www.vandyke.com/
+echo  Founded/Released: 10/04/1995
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: SecureCRT_R, SecureFX_R
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to run SecureCRT/SecureFX ("C/F"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuSecureCRTrun
+set /p input=%BS%
+if /I %input% EQU C start SecureCRT_R.lnk&set input=network-4RC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU F start SecureFX_R.lnk&set input=network-4RF&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startXmingPrompt
+call :banner
+call :menuXmingPrompt
+call :menuXming
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU A cls&goto startXmingRunAdminPrompt1
+if /I %input% EQU R cls&goto startXmingRunPrompt1
+if /I %input% EQU I cls&goto startXmingInstallPrompt1
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingPrompt
+:startXmingPromptDialerMode
+call :banner
+call :menuXmingPrompt
+call :menuXming
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU A cls&goto startXmingRunAdminPrompt2
+if /I %input% EQU R cls&goto startXmingRunPrompt2
+if /I %input% EQU I cls&goto startXmingInstallPrompt2
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingPromptDialerMode
+:menuXmingPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
+echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
+echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
+echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
+echo           Website: http://www.straightrunning.com/XmingNotes/
+echo  Founded/Released: 11/09/2004
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Xming_R.lnk, XLaunch_R.lnk, Xming_I.exe, Xming_Fonts_I.exe, Xming_O.lnk
+echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Xming ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuXming
+set /p input=%BS%
+if /I %input% EQU AM start Xming_A.lnk&set input=network-5AM&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AL start XLaunch_A.lnk&set input=network-5AL&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RM start Xming_R.lnk&set input=network-5RM&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RL start XLaunch_R.lnk&set input=network-5RL&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IP start Xming_I.exe&set input=network-5IP&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IF start Xming_Fonts_I.exe&set input=network-5IF&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Xming_O.lnk&set input=network-5O&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startXmingRunAdminPrompt1
+call :banner
+call :menuXmingRunAdminPrompt
+call :menuXmingRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startXmingPrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingRunAdminPrompt1
+:startXmingRunAdminPrompt2
+call :banner
+call :menuXmingRunAdminPrompt
+call :menuXmingRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startXmingPromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingRunAdminPrompt2
+:startXmingRunAdminPromptSubDialerMode
+call :banner
+call :menuXmingRunAdminPrompt
+call :menuXmingRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingRunAdminPromptSubDialerMode
+:startXmingRunAdminPromptDialerMode
+call :banner
+call :menuXmingRunAdminPrompt
+call :menuXmingRunAdmin
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingRunAdminPromptDialerMode
+:menuXmingRunAdminPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
+echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
+echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
+echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
+echo           Website: http://www.straightrunning.com/XmingNotes/
+echo  Founded/Released: 11/09/2004
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Xming_A.lnk, XLaunch_A.lnk
+echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to run Xming/XLaunch ("M/L"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuXmingRunAdmin
+set /p input=%BS%
+if /I %input% EQU M start Xming_A.lnk&set input=network-5AM&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU L start XLaunch_A.lnk&set input=network-5AL&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startXmingRunPrompt1
+call :banner
+call :menuXmingRunPrompt
+call :menuXmingRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startXmingPrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingRunPrompt1
+:startXmingRunPrompt2
+call :banner
+call :menuXmingRunPrompt
+call :menuXmingRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startXmingPromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingRunPrompt2
+:startXmingRunPromptSubDialerMode
+call :banner
+call :menuXmingRunPrompt
+call :menuXmingRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingRunPromptSubDialerMode
+:startXmingRunPromptDialerMode
+call :banner
+call :menuXmingRunPrompt
+call :menuXmingRun
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingRunPromptDialerMode
+:menuXmingRunPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
+echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
+echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
+echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
+echo           Website: http://www.straightrunning.com/XmingNotes/
+echo  Founded/Released: 11/09/2004
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Xming_R.lnk, XLaunch_R.lnk
+echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to run Xming/XLaunch ("M/L"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuXmingRun
+set /p input=%BS%
+if /I %input% EQU M start Xming_R.lnk&set input=network-5RM&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU L start XLaunch_R.lnk&set input=network-5RL&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startXmingInstallPrompt1
+call :banner
+call :menuXmingInstallPrompt
+call :menuXmingInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startXmingPrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingInstallPrompt1
+:startXmingInstallPrompt2
+call :banner
+call :menuXmingInstallPrompt
+call :menuXmingInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startXmingPromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingInstallPrompt2
+:startXmingInstallPromptSubDialerMode
+call :banner
+call :menuXmingInstallPrompt
+call :menuXmingInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingInstallPromptSubDialerMode
+:startXmingInstallPromptDialerMode
+call :banner
+call :menuXmingInstallPrompt
+call :menuXmingInstall
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startXmingInstallPromptDialerMode
+:menuXmingInstallPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
+echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
+echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
+echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
+echo           Website: http://www.straightrunning.com/XmingNotes/
+echo  Founded/Released: 11/09/2004
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Xming_I.exe, Xming_Fonts_I.exe
+echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Please enter the letter to install the Xming program/fonts ("P/F"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuXmingInstall
+set /p input=%BS%
+if /I %input% EQU P start Xming_I.exe&set input=network-5IP&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU F start Xming_Fonts_I.exe&set input=network-5IF&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startWiresharkPrompt
+call :banner
+call :menuWiresharkPrompt
+call :menuWireshark
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startWiresharkPrompt
+:startWiresharkPromptDialerMode
+call :banner
+call :menuWiresharkPrompt
+call :menuWireshark
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startWiresharkPromptDialerMode
+:menuWiresharkPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Gerald Combs/The Wireshark Team
+echo     Software Type: Packet Analyzer
+echo          Category: Freeware
+echo      License Type: GNU GPL v2.0
+echo           Website: https://www.wireshark.org/
+echo  Founded/Released: 1998
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Wireshark_R.lnk, Wireshark_I.exe, Wireshark_O.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Wireshark ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuWireshark
+set /p input=%BS%
+if /I %input% EQU A start Wireshark_A.lnk&set input=network-6A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Wireshark_R.lnk&set input=network-6R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Wireshark_I.exe&set input=network-6I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Wireshark_O.lnk&set input=network-6O&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startTraceXHWIDspooferPrompt
+call :banner
+call :menuTraceXHWIDspooferPrompt
+call :menuTraceXHWIDspoofer
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTraceXHWIDspooferPrompt
+:startTraceXHWIDspooferPromptDialerMode
+call :banner
+call :menuTraceXHWIDspooferPrompt
+call :menuTraceXHWIDspoofer
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTraceXHWIDspooferPromptDialerMode
+:menuTraceXHWIDspooferPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: SlothyTech
+echo     Software Type: HWID Spoofer
+echo          Category: Freeware
+echo      License Type: N/A
+echo           Website: https://slothytech.com/tracex/; Download: https://sourceforge.net/projects/hardware-hwid-id-spoofer/
+echo  Founded/Released: N/A
+echo         Publicity: Closed-Source
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: TraceX_HWID_Spoofer_R.lnk
+echo   Additional Info: Always verify the download links from websites before downloading, including the links I provided.
+echo                 +: Some miscellaneous download links contain malware instead of the actual program.
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run TraceX HWID Spoofer ("R")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuTraceXHWIDspoofer
+set /p input=%BS%
+if /I %input% EQU A start TraceX_HWID_Spoofer_R.lnk&set input=network-7A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start TraceX_HWID_Spoofer_R.lnk&set input=network-7R&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startFreegateIPspooferPrompt
+call :banner
+call :menuFreegateIPspooferPrompt
+call :menuFreegateIPspoofer
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startFreegateIPspooferPrompt
+:startFreegateIPspooferPromptDialerMode
+call :banner
+call :menuFreegateIPspooferPrompt
+call :menuFreegateIPspoofer
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startFreegateIPspooferPromptDialerMode
+:menuFreegateIPspooferPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Dynamic Internet Technology Inc.
+echo     Software Type: Proxy IP Spoofer/Anonymizer
+echo          Category: Freeware
+echo      License Type: EULA from Dynamic Internet Technology Inc.
+echo           Website: https://dongtaiwang.com/loc/phome_en.php
+echo  Founded/Released: 2001
+echo         Publicity: Public
+echo            Status: Inactive
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Freegate_IP_Spoofer_R.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run Freegate IP Spoofer ("R")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuFreegateIPspoofer
+set /p input=%BS%
+if /I %input% EQU A start Freegate_IP_Spoofer_A.lnk&set input=network-8A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Freegate_IP_Spoofer_R.lnk&set input=network-8R&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startTechnitiumPrompt
+call :banner
+call :menuTechnitiumPrompt
+call :menuTechnitium
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU D cls&goto startTechnitiumDNSserverPrompt1
+if /I %input% EQU S cls&goto startTechnitiumMeshP2PmessagerPrompt1
+if /I %input% EQU M cls&goto startTechnitiumMACspooferPrompt1
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumPrompt
+:startTechnitiumPromptDialerMode
+call :banner
+call :menuTechnitiumPrompt
+call :menuTechnitium
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU D cls&goto startTechnitiumDNSserverPrompt2
+if /I %input% EQU S cls&goto startTechnitiumMeshP2PmessagerPrompt2
+if /I %input% EQU M cls&goto startTechnitiumMACspooferPrompt2
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumPromptDialerMode
+:menuTechnitiumPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Technitium
+echo     Software Type: Depends
+echo          Category: Freeware
+echo      License Type: EULA from Technitium
+echo           Website: https://technitium.com/
+echo  Founded/Released: N/A
+echo         Publicity: Public
+echo            Status: Inactive
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: 
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the letter for DNS Server/Mesh P2P Messager/MAC Spoofer ("D/S/M"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuTechnitium
+set /p input=%BS%
+if /I %input% EQU DA start Technitium_DNS_Server_A.lnk&set input=network-9DA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DR start Technitium_DNS_Server_R.lnk&set input=network-9DR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DI start Technitium_DNS_Server_I.exe&set input=network-9DI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DO cls&set input=network-9DO&goto startUninstallationInstructions
+if /I %input% EQU SA start Technitium_Mesh_P2P_Messager_R.lnk&set input=network-9SA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SR start Technitium_Mesh_P2P_Messager_R.lnk&set input=network-9SR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SI start Technitium_Mesh_P2P_Messager_I.msi&set input=network-9SI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SO cls&set input=network-9SO&goto startUninstallationInstructions
+if /I %input% EQU MA start Technitium_MAC_Spoofer_A.lnk&set input=network-9MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MR start Technitium_MAC_Spoofer_R.lnk&set input=network-9MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MI start Technitium_MAC_Spoofer_I.exe&set input=network-9MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MO cls&set input=network-9MO&goto startUninstallationInstructions
+goto :eof
+:startTechnitiumDNSserverPrompt1
+call :banner
+call :menuTechnitiumDNSserverPrompt
+call :menuTechnitiumDNSserver
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startTechnitiumPrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumDNSserverPrompt1
+:startTechnitiumDNSserverPrompt2
+call :banner
+call :menuTechnitiumDNSserverPrompt
+call :menuTechnitiumDNSserver
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumDNSserverPrompt2
+:startTechnitiumDNSserverPromptSubDialerMode
+call :banner
+call :menuTechnitiumDNSserverPrompt
+call :menuTechnitiumDNSserver
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumDNSserverPromptSubDialerMode
+:startTechnitiumDNSserverPromptDialerMode
+call :banner
+call :menuTechnitiumDNSserverPrompt
+call :menuTechnitiumDNSserver
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumDNSserverPromptDialerMode
+:menuTechnitiumDNSserverPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Technitium
+echo     Software Type: Recursive DNS Server
+echo          Category: Freeware
+echo      License Type: EULA from Technitium
+echo           Website: https://technitium.com/dns/
+echo  Founded/Released: N/A
+echo         Publicity: Public
+echo            Status: Inactive
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Technitium_DNS_Server_R.lnk, Technitium_DNS_Server_I.exe
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Technitium DNS Server ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuTechnitiumDNSserver
+set /p input=%BS%
+if /I %input% EQU A start Technitium_DNS_Server_A.lnk&set input=network-9DA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Technitium_DNS_Server_R.lnk&set input=network-9DR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Technitium_DNS_Server_I.exe&set input=network-9DI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=network-9DO&goto startUninstallationInstructions
+goto :eof
+:startTechnitiumMeshP2PmessagerPrompt1
+call :banner
+call :menuTechnitiumMeshP2PmessagerPrompt
+call :menuTechnitiumMeshP2Pmessager
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startTechnitiumPrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumMeshP2PmessagerPrompt1
+:startTechnitiumMeshP2PmessagerPrompt2
+call :banner
+call :menuTechnitiumMeshP2PmessagerPrompt
+call :menuTechnitiumMeshP2Pmessager
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumMeshP2PmessagerPrompt2
+:startTechnitiumMeshP2PmessagerPromptSubDialerMode
+call :banner
+call :menuTechnitiumMeshP2PmessagerPrompt
+call :menuTechnitiumMeshP2Pmessager
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumMeshP2PmessagerPromptSubDialerMode
+:startTechnitiumMeshP2PmessagerPromptDialerMode
+call :banner
+call :menuTechnitiumMeshP2PmessagerPrompt
+call :menuTechnitiumMeshP2Pmessager
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumMeshP2PmessagerPromptDialerMode
+:menuTechnitiumMeshP2PmessagerPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Technitium
+echo     Software Type: P2P Messager Program
+echo          Category: Freeware
+echo      License Type: EULA from Technitium
+echo           Website: https://mesh.im/
+echo  Founded/Released: N/A
+echo         Publicity: Public
+echo            Status: Inactive
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Technitium_Mesh_P2P_Messager_R.lnk, Technitium_Mesh_P2P_Messager_I.msi
+echo   Additional Info: Requires the associated "setup.exe" file to function.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Technitium Mesh P2P Messager ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuTechnitiumMeshP2Pmessager
+set /p input=%BS%
+if /I %input% EQU A start Technitium_Mesh_P2P_Messager_R.lnk&set input=network-9SA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Technitium_Mesh_P2P_Messager_R.lnk&set input=network-9SR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Technitium_Mesh_P2P_Messager_I.msi&set input=network-9SI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=network-9SO&goto startUninstallationInstructions
+goto :eof
+:startTechnitiumMACspooferPrompt1
+call :banner
+call :menuTechnitiumMACspooferPrompt
+call :menuTechnitiumMACspoofer
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startTechnitiumPrompt
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumMACspooferPrompt1
+:startTechnitiumMACspooferPrompt2
+call :banner
+call :menuTechnitiumMACspooferPrompt
+call :menuTechnitiumMACspoofer
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumMACspooferPrompt2
+:startTechnitiumMACspooferPromptSubDialerMode
+call :banner
+call :menuTechnitiumMACspooferPrompt
+call :menuTechnitiumMACspoofer
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startNetwork
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumMACspooferPromptSubDialerMode
+:startTechnitiumMACspooferPromptDialerMode
+call :banner
+call :menuTechnitiumMACspooferPrompt
+call :menuTechnitiumMACspoofer
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startNetwork
+if /I %input% EQU +- cls&goto startNetwork
+cls&goto startTechnitiumMACspooferPromptDialerMode
+:menuTechnitiumMACspooferPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Technitium
+echo     Software Type: MAC Address Changer
+echo          Category: Freeware
+echo      License Type: EULA from Technitium
+echo           Website: https://technitium.com/tmac/
+echo  Founded/Released: N/A
+echo         Publicity: Public
+echo            Status: Inactive
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Technitium_MAC_Spoofer_R.lnk, Technitium_MAC_Spoofer_I.exe
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Technitium MAC Spoofer ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuTechnitiumMACspoofer
+set /p input=%BS%
+if /I %input% EQU A start Technitium_MAC_Spoofer_A.lnk&set input=network-9MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Technitium_MAC_Spoofer_R.lnk&set input=network-9MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Technitium_MAC_Spoofer_I.exe&set input=network-9MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=network-9MO&goto startUninstallationInstructions
+goto :eof
 :: Section 1
 :start1
 call :banner
@@ -2205,7 +3711,7 @@ if /I %input% EQU 2 cls&goto startTorPrompt
 if /I %input% EQU 2A start Tor_Browser_A.lnk&set input=12A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start Tor_Browser_R.lnk&set input=12R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2I start Tor_Browser_I.exe&set input=12I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2O goto startUninstallationInstructions
+if /I %input% EQU 2O cls&set input=12O&goto startUninstallationInstructions
 if /I %input% EQU 3 cls&goto startMullvadPrompt
 if /I %input% EQU 3A start Mullvad_Browser_A.lnk&set input=13A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start Mullvad_Browser_R.lnk&set input=13R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2220,23 +3726,23 @@ if /I %input% EQU 5 cls&goto startFirefoxPrompt
 if /I %input% EQU 5A start Firefox_Browser_A.lnk&set input=15A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start Firefox_Browser_R.lnk&set input=15R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5I start Firefox_Browser_I.exe&set input=15I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5O goto startUninstallationInstructions
+if /I %input% EQU 5O cls&set input=15O&goto startUninstallationInstructions
 if /I %input% EQU 6 cls&goto startBravePrompt
 if /I %input% EQU 6A start Brave_Browser_A.lnk&set input=16A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6R start Brave_Browser_R.lnk&set input=16R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6I start Brave_Browser_I.exe&set input=16I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6O goto startUninstallationInstructions
+if /I %input% EQU 6O cls&set input=16O&goto startUninstallationInstructions
 if /I %input% EQU 7 cls&goto startEdgePrompt
 if /I %input% EQU 7A start Edge_Browser_A.lnk&set input=17A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start Edge_Browser_R.lnk&set input=17R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7I start Edge_Browser_I.exe&set input=17I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7O goto startUninstallationInstructions
+if /I %input% EQU 7O cls&set input=17O&goto startUninstallationInstructions
 if /I %input% EQU 8 cls&goto startGooglePrompt
 if /I %input% EQU 8C cls&goto startChromePromptSubDialerMode
 if /I %input% EQU 8CA start Chrome_Browser_A.lnk&set input=18CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8CR start Chrome_Browser_R.lnk&set input=18CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8CI start Chrome_Browser_I.exe&set input=18CI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 8CO goto startUninstallationInstructions
+if /I %input% EQU 8CO cls&set input=18CO&goto startUninstallationInstructions
 if /I %input% EQU 8E cls&goto startEarthPromptSubDialerMode
 if /I %input% EQU 8EA start Google_Earth_Pro_A.lnk&set input=18EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8ER start Google_Earth_Pro_R.lnk&set input=18ER&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2247,9 +3753,9 @@ if /I %input% EQU 9A start qBittorrent_A.lnk&set input=19A&&goto startPreExitPro
 if /I %input% EQU 9R start qBittorrent_R.lnk&set input=19R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9I start qBittorrent_I.exe&set input=19I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9O start qBittorrent_O.lnk&set input=19O&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU - cls&goto startBackground
-if /I %input% EQU -- cls&goto startAlert
-if /I %input% EQU --- cls&goto start9a
+if /I %input% EQU - cls&goto startNetwork
+if /I %input% EQU -- cls&goto startBackground
+if /I %input% EQU --- cls&goto startAlert
 if /I %input% EQU + cls&goto start2
 if /I %input% EQU ++ cls&goto start3
 if /I %input% EQU +++ cls&goto start4
@@ -2346,7 +3852,7 @@ set /p input=%BS%
 if /I %input% EQU A start Tor_Browser_A.lnk&set input=12A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Tor_Browser_R.lnk&set input=12R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Tor_Browser_I.exe&set input=12I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=12O&goto startUninstallationInstructions
 goto :eof
 :startMullvadPrompt
 call :banner
@@ -2487,7 +3993,7 @@ set /p input=%BS%
 if /I %input% EQU A start Firefox_Browser_A.lnk&set input=15A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Firefox_Browser_R.lnk&set input=15R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Firefox_Browser_I.exe&set input=15I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=15O&goto startUninstallationInstructions
 goto :eof
 :startBravePrompt
 call :banner
@@ -2534,7 +4040,7 @@ set /p input=%BS%
 if /I %input% EQU A start Brave_Browser_A.lnk&set input=16A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Brave_Browser_R.lnk&set input=16R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Brave_Browser_I.exe&set input=16I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=16O&goto startUninstallationInstructions
 goto :eof
 :startEdgePrompt
 call :banner
@@ -2581,7 +4087,7 @@ set /p input=%BS%
 if /I %input% EQU A start Edge_Browser_A.lnk&set input=17A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Edge_Browser_R.lnk&set input=17R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Edge_Browser_I.exe&set input=17I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=17O&goto startUninstallationInstructions
 goto :eof
 :startGooglePrompt
 call :banner
@@ -2632,7 +4138,7 @@ set /p input=%BS%
 if /I %input% EQU CA start Chrome_Browser_A.lnk&set input=18CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CR start Chrome_Browser_R.lnk&set input=18CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CI start Chrome_Browser_I.exe&set input=18CI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CO goto startUninstallationInstructions
+if /I %input% EQU CO cls&set input=18CO&goto startUninstallationInstructions
 if /I %input% EQU EA start Google_Earth_Pro_A.lnk&set input=18EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ER start Google_Earth_Pro_R.lnk&set input=18ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU EI start Google_Earth_Pro_I.exe&set input=18EI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2703,7 +4209,7 @@ set /p input=%BS%
 if /I %input% EQU A start Chrome_Browser_A.lnk&set input=18CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Chrome_Browser_R.lnk&set input=18CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Chrome_Browser_I.exe&set input=18CI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=18CO&goto startUninstallationInstructions
 goto :eof
 :startEarthPrompt1
 call :banner
@@ -2858,7 +4364,7 @@ if /I %input% EQU 1 cls&goto startVisualStudioPrompt
 if /I %input% EQU 1A start Visual_Studio_A.lnk&set input=21A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start Visual_Studio_R.lnk&set input=21R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1I start Visual_Studio_I.exe&set input=21I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 1O goto startUninstallationInstructions
+if /I %input% EQU 1O cls&set input=21O&goto startUninstallationInstructions
 if /I %input% EQU 1S start Visual_Studio_S.lnk&set input=21S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2 cls&goto startVisualStudioCodePrompt
 if /I %input% EQU 2A start Visual_Studio_Code_Launch_Script_A.bat&set input=22A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2869,54 +4375,54 @@ if /I %input% EQU 3 cls&goto startWordPrompt
 if /I %input% EQU 3A start Word_A.lnk&set input=23A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start Word_R.lnk&set input=23R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3I start Microsoft365_I.exe&set input=23I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3O goto startUninstallationInstructions
+if /I %input% EQU 3O cls&set input=23O&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto startPowerPointPrompt
 if /I %input% EQU 4A start PowerPoint_A.lnk&set input=24A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start PowerPoint_R.lnk&set input=24R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4I start Microsoft365_I.exe&set input=24I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4O goto startUninstallationInstructions
+if /I %input% EQU 4O cls&set input=24O&goto startUninstallationInstructions
 if /I %input% EQU 5 cls&goto startExcelPrompt
 if /I %input% EQU 5A start Excel_A.lnk&set input=25A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start Excel_R.lnk&set input=25R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5I start Microsoft365_I.exe&set input=25I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5O goto startUninstallationInstructions
+if /I %input% EQU 5O cls&set input=25O&goto startUninstallationInstructions
 if /I %input% EQU 6 cls&goto startAccessPrompt
 if /I %input% EQU 6A start Access_A.lnk&set input=26A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6R start Access_R.lnk&set input=26R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6I start Microsoft365_I.exe&set input=26I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6O goto startUninstallationInstructions
+if /I %input% EQU 6O cls&set input=26O&goto startUninstallationInstructions
 if /I %input% EQU 7 cls&goto startPublisherPrompt
 if /I %input% EQU 7A start Publisher_A.lnk&set input=27A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start Publisher_R.lnk&set input=27R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7I start Microsoft365_I.exe&set input=27I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7O goto startUninstallationInstructions
+if /I %input% EQU 7O cls&set input=27O&goto startUninstallationInstructions
 if /I %input% EQU 8 cls&goto startOneNotePrompt
 if /I %input% EQU 8A start OneNote_A.lnk&set input=28A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8R start OneNote_R.lnk&set input=28R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8I start Microsoft365_I.exe&set input=28I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 8O goto startUninstallationInstructions
+if /I %input% EQU 8O cls&set input=28O&goto startUninstallationInstructions
 if /I %input% EQU 9 cls&goto startOtherMicrosoftToolsPrompt
 if /I %input% EQU 9B cls&goto startPowerBIpromptSubDialerMode
 if /I %input% EQU 9BA start PowerBI_A.lnk&set input=29BA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9BR start PowerBI_R.lnk&set input=29BR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9BI start PowerBI_I.exe&set input=29BI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9BO goto startUninstallationInstructions
+if /I %input% EQU 9BO cls&set input=29BO&goto startUninstallationInstructions
 if /I %input% EQU 9D cls&goto startOneDrivePromptSubDialerMode
 if /I %input% EQU 9DA start OneDrive_A.lnk&set input=29DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9DR start OneDrive_R.lnk&set input=29DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9DI start Microsoft365_I.exe&set input=29DI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9DO goto startUninstallationInstructions
+if /I %input% EQU 9DO cls&set input=29DO&goto startUninstallationInstructions
 if /I %input% EQU 9O cls&goto startOutlookPromptSubDialerMode
 if /I %input% EQU 9OA start Outlook_A.lnk&set input=29OA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9OR start Outlook_R.lnk&set input=29OR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9OI start Microsoft365_I.exe&set input=29OI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9OO goto startUninstallationInstructions
+if /I %input% EQU 9OO cls&set input=29OO&goto startUninstallationInstructions
 if /I %input% EQU 9T cls&goto startTeamsPromptSubDialerMode
 if /I %input% EQU 9TA start Teams_A.lnk&set input=29TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9TR start Teams_R.lnk&set input=29TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU - cls&goto start1
-if /I %input% EQU -- cls&goto startBackground
-if /I %input% EQU --- cls&goto startAlert
+if /I %input% EQU -- cls&goto startNetwork
+if /I %input% EQU --- cls&goto startBackground
 if /I %input% EQU + cls&goto start3
 if /I %input% EQU ++ cls&goto start4
 if /I %input% EQU +++ cls&goto start5
@@ -2966,7 +4472,7 @@ set /p input=%BS%
 if /I %input% EQU A start Visual_Studio_A.lnk&set input=21A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Visual_Studio_R.lnk&set input=21R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Visual_Studio_I.exe&set input=21I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=21O&goto startUninstallationInstructions
 if /I %input% EQU S start Visual_Studio_S.lnk&set input=21S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startVisualStudioCodePrompt
@@ -3061,7 +4567,7 @@ set /p input=%BS%
 if /I %input% EQU A start Word_A.lnk&set input=23A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Word_R.lnk&set input=23R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=23I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=23O&goto startUninstallationInstructions
 goto :eof
 :startPowerPointPrompt
 call :banner
@@ -3108,7 +4614,7 @@ set /p input=%BS%
 if /I %input% EQU A start PowerPoint_A.lnk&set input=24A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PowerPoint_R.lnk&set input=24R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=24I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=24O&goto startUninstallationInstructions
 goto :eof
 :startExcelPrompt
 call :banner
@@ -3155,7 +4661,7 @@ set /p input=%BS%
 if /I %input% EQU A start Excel_A.lnk&set input=25A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Excel_R.lnk&set input=25R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=25I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=25O&goto startUninstallationInstructions
 goto :eof
 :startAccessPrompt
 call :banner
@@ -3202,7 +4708,7 @@ set /p input=%BS%
 if /I %input% EQU A start Access_A.lnk&set input=26A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Access_R.lnk&set input=26R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=26I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=26O&goto startUninstallationInstructions
 goto :eof
 :startPublisherPrompt
 call :banner
@@ -3249,7 +4755,7 @@ set /p input=%BS%
 if /I %input% EQU A start Publisher_A.lnk&set input=27A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Publisher_R.lnk&set input=27R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=27I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=27O&goto startUninstallationInstructions
 goto :eof
 :startOneNotePrompt
 call :banner
@@ -3296,7 +4802,7 @@ set /p input=%BS%
 if /I %input% EQU A start OneNote_A.lnk&set input=28A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start OneNote_R.lnk&set input=28R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=28I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=28O&goto startUninstallationInstructions
 goto :eof
 :startOtherMicrosoftToolsPrompt
 call :banner
@@ -3351,15 +4857,15 @@ set /p input=%BS%
 if /I %input% EQU BA start PowerBI_A.lnk&set input=29BA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU BR start PowerBI_R.lnk&set input=29BR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU BI start PowerBI_I.exe&set input=29BI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU BO goto startUninstallationInstructions
+if /I %input% EQU BO cls&set input=29BO&goto startUninstallationInstructions
 if /I %input% EQU DA start OneDrive_A.lnk&set input=29DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DR start OneDrive_R.lnk&set input=29DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DI start Microsoft365_I.exe&set input=29DI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU DO goto startUninstallationInstructions
+if /I %input% EQU DO cls&set input=29DO&goto startUninstallationInstructions
 if /I %input% EQU OA start Outlook_A.lnk&set input=29OA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OR start Outlook_R.lnk&set input=29OR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OI start Microsoft365_I.exe&set input=29OI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU OO goto startUninstallationInstructions
+if /I %input% EQU OO cls&set input=29OO&goto startUninstallationInstructions
 if /I %input% EQU TA start Teams_A.lnk&set input=29TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TR start Teams_R.lnk&set input=29TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -3428,7 +4934,7 @@ set /p input=%BS%
 if /I %input% EQU A start PowerBI_A.lnk&set input=29BA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PowerBI_R.lnk&set input=29BR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PowerBI_I.exe&set input=29BI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=29BO&goto startUninstallationInstructions
 goto :eof
 :startOneDrivePrompt1
 call :banner
@@ -3495,7 +5001,7 @@ set /p input=%BS%
 if /I %input% EQU A start OneDrive_A.lnk&set input=29DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start OneDrive_R.lnk&set input=29DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=29DI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=29DO&goto startUninstallationInstructions
 goto :eof
 :startOutlookPrompt1
 call :banner
@@ -3562,7 +5068,7 @@ set /p input=%BS%
 if /I %input% EQU A start Outlook_A.lnk&set input=29OA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Outlook_R.lnk&set input=29OR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=29OI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=29OO&goto startUninstallationInstructions
 goto :eof
 :startTeamsPrompt1
 call :banner
@@ -3673,7 +5179,7 @@ if /I %input% EQU 2 cls&goto startMATLABprompt
 if /I %input% EQU 2A start MATLAB_A.lnk&set input=32A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start MATLAB_R.lnk&set input=32R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2I start MATLAB_I.lnk&set input=32I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2O goto startUninstallationInstructions
+if /I %input% EQU 2O cls&set input=32O&goto startUninstallationInstructions
 if /I %input% EQU 3 cls&goto startOctavePrompt
 if /I %input% EQU 3G cls&goto startGUIOctavePromptSubDialerMode
 if /I %input% EQU 3GA start GUI_Octave_A.lnk&set input=33GA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3723,7 +5229,7 @@ if /I %input% EQU 6R1 start CLI_Directory.txt&set input=36R1&&goto startPreExitP
 if /I %input% EQU 6RY start Python_R.lnk&set input=36RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU 6RN start Python_R.lnk&set input=36RN&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6I start Python_I.exe&set input=36I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6O goto startUninstallationInstructions
+if /I %input% EQU 6O cls&set input=36O&goto startUninstallationInstructions
 if /I %input% EQU 7 cls&goto startPowerShellPrompt
 if /I %input% EQU 7A cls&goto startPowerShellRunAdminPromptSubDialerMode
 if /I %input% EQU 7A1 start CLI_Directory.txt&set input=37A1&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3734,7 +5240,7 @@ if /I %input% EQU 7R1 start CLI_Directory.txt&set input=37R1&&goto startPreExitP
 if /I %input% EQU 7RY start PowerShell_R.lnk&set input=37RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU 7RN start PowerShell_R.lnk&set input=37RN&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7I start PowerShell_I.msi&set input=37I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7O goto startUninstallationInstructions
+if /I %input% EQU 7O cls&set input=37O&goto startUninstallationInstructions
 if /I %input% EQU 8 cls&goto startCommandPrompt
 if /I %input% EQU 8A cls&goto startCommandRunAdminPromptSubDialerMode
 if /I %input% EQU 8A1 start CLI_Directory.txt&set input=38A1&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3751,51 +5257,51 @@ if /I %input% EQU 91R start Rider_R.lnk&set input=391R&&goto startPreExitPrompt|
 if /I %input% EQU 91I cls&goto startRiderInstallerPromptDeepSubDialerMode
 if /I %input% EQU 91IA start Rider_I.exe&set input=391IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91IB start dotUltimate_I.exe&set input=391IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 91O goto startUninstallationInstructions
+if /I %input% EQU 91O cls&set input=391O&goto startUninstallationInstructions
 if /I %input% EQU 92 cls&goto startRustRoverPromptDeepSubDialerMode
 if /I %input% EQU 92A start RustRover_A.lnk&set input=392A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92R start RustRover_R.lnk&set input=392R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92I start RustRover_I.exe&set input=392I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 92O goto startUninstallationInstructions
+if /I %input% EQU 92O cls&set input=392O&goto startUninstallationInstructions
 if /I %input% EQU 93 cls&goto startWebStormPromptDeepSubDialerMode
 if /I %input% EQU 93A start WebStorm_A.lnk&set input=393A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93R start WebStorm_R.lnk&set input=393R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93I start WebStorm_I.exe&set input=393I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93O goto startUninstallationInstructions
+if /I %input% EQU 93O cls&set input=393O&goto startUninstallationInstructions
 if /I %input% EQU 94 cls&goto startdotPeekPromptDeepSubDialerMode
 if /I %input% EQU 94A start dotPeek_A.lnk&set input=394A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start dotPeek_R.lnk&set input=394R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94I cls&goto startdotPeekInstallerPromptDeepSubDialerMode
 if /I %input% EQU 94IA start dotPeek_I.exe&set input=394IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94IB start dotUltimate_I.exe&set input=394IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94O goto startUninstallationInstructions
+if /I %input% EQU 94O cls&set input=394O&goto startUninstallationInstructions
 if /I %input% EQU 95 cls&goto startdotCoverPromptDeepSubDialerMode
 if /I %input% EQU 95A start dotCover_A.lnk&set input=395A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95R start dotCover_R.lnk&set input=395R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95I cls&goto startdotCoverInstallerPromptDeepSubDialerMode
 if /I %input% EQU 95IA start dotCover_I.exe&set input=395IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95IB start dotUltimate_I.exe&set input=395IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95O goto startUninstallationInstructions
+if /I %input% EQU 95O cls&set input=395O&goto startUninstallationInstructions
 if /I %input% EQU 96 cls&goto startdotMemoryPromptDeepSubDialerMode
 if /I %input% EQU 96A start dotMemory_A.lnk&set input=396A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96R start dotMemory_R.lnk&set input=396R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96I cls&goto startdotMemoryInstallerPromptDeepSubDialerMode
 if /I %input% EQU 96IA start dotMemory_I.exe&set input=396IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96IB start dotUltimate_I.exe&set input=396IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96O goto startUninstallationInstructions
+if /I %input% EQU 96O cls&set input=396O&goto startUninstallationInstructions
 if /I %input% EQU 97 cls&goto startdotTracePromptDeepSubDialerMode
 if /I %input% EQU 97A start dotTrace_A.lnk&set input=397A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97R start dotTrace_R.lnk&set input=397R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97I cls&goto startdotTraceInstallerPromptDeepSubDialerMode
 if /I %input% EQU 97IA start dotTrace_I.exe&set input=397IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97IB start dotUltimate_I.exe&set input=397IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 97O goto startUninstallationInstructions
+if /I %input% EQU 97O cls&set input=397O&goto startUninstallationInstructions
 if /I %input% EQU 98 cls&goto start3AltB
 if /I %input% EQU 981 cls&goto startAquaPromptDeepSubDialerMode
 if /I %input% EQU 981A start Aqua_A.lnk&set input=3981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 981R start Aqua_R.lnk&set input=3981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 981I start Aqua_I.exe&set input=3981I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 981O goto startUninstallationInstructions
+if /I %input% EQU 981O cls&set input=3981O&goto startUninstallationInstructions
 if /I %input% EQU 982 cls&goto startReSharperPromptDeepSubDialerMode
 if /I %input% EQU 982T cls&goto startResharperTraditionalPromptDeepSubDialerMode
 if /I %input% EQU 982TA start ReSharper_A.lnk&set input=3982TA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3803,78 +5309,78 @@ if /I %input% EQU 982TR start ReSharper_R.lnk&set input=3982TR&&goto startPreExi
 if /I %input% EQU 982TI cls&goto startReSharperTraditionalInstallerPromptDeepSubDialerMode
 if /I %input% EQU 982TIA start ReSharper_I.exe&set input=3982TIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 982TIB start dotUltimate_I.exe&set input=3982TIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 982TO goto startUninstallationInstructions
+if /I %input% EQU 982TO cls&set input=3982TO&goto startUninstallationInstructions
 if /I %input% EQU 982C cls&goto startResharperCppPromptDeepSubDialerMode
 if /I %input% EQU 982CA start Resharper_Cpp_A.lnk&set input=3982CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 982CR start Resharper_Cpp_R.lnk&set input=3982CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 982CI cls&goto startReSharperCppInstallerPromptDeepSubDialerMode
 if /I %input% EQU 982CIA start Resharper_Cpp_I.exe&set input=3982CIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 982CIB start dotUltimate_I.exe&set input=3982CIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 982CO goto startUninstallationInstructions
+if /I %input% EQU 982CO cls&set input=3982CO&goto startUninstallationInstructions
 if /I %input% EQU 983 cls&goto startCLionPromptDeepSubDialerMode
 if /I %input% EQU 983A start CLion_A.lnk&set input=3983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 983R start CLion_R.lnk&set input=3983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 983I start CLion_I.exe&set input=3983I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 983O goto startUninstallationInstructions
+if /I %input% EQU 983O cls&set input=3983O&goto startUninstallationInstructions
 if /I %input% EQU 984 cls&goto startDataGripPromptDeepSubDialerMode
 if /I %input% EQU 984A start DataGrip_A.lnk&set input=3984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 984R start DataGrip_R.lnk&set input=3984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 984I start DataGrip_I.exe&set input=3984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 984O goto startUninstallationInstructions
+if /I %input% EQU 984O cls&set input=3984O&goto startUninstallationInstructions
 if /I %input% EQU 985 cls&goto startDataSpellPromptDeepSubDialerMode
 if /I %input% EQU 985A start DataSpell_A.lnk&set input=3985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 985R start DataSpell_R.lnk&set input=3985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 985I start DataSpell_I.exe&set input=3985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 985O goto startUninstallationInstructions
+if /I %input% EQU 985O cls&set input=3985O&goto startUninstallationInstructions
 if /I %input% EQU 986 cls&goto startPyCharmPromptDeepSubDialerMode
 if /I %input% EQU 986A start PyCharm_A.lnk&set input=3986A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 986R start PyCharm_R.lnk&set input=3986R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 986I start PyCharm_I.exe&set input=3986I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 986O goto startUninstallationInstructions
+if /I %input% EQU 986O cls&set input=3986O&goto startUninstallationInstructions
 if /I %input% EQU 987 cls&goto startIntelliJIDEApromptDeepSubDialerMode
 if /I %input% EQU 987A start IntelliJIDEA_A.lnk&set input=3987A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 987R start IntelliJIDEA_R.lnk&set input=3987R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 987I start IntelliJIDEA_I.exe&set input=3987I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 987O goto startUninstallationInstructions
+if /I %input% EQU 987O cls&set input=3987O&goto startUninstallationInstructions
 if /I %input% EQU 99 cls&goto start3AltC
 if /I %input% EQU 991 cls&goto startPhpStormPromptDeepSubDialerMode
 if /I %input% EQU 991A start PhpStorm_A.lnk&set input=3991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 991R start PhpStorm_R.lnk&set input=3991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 991I start PhpStorm_I.exe&set input=3991I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 991O goto startUninstallationInstructions
+if /I %input% EQU 991O cls&set input=3991O&goto startUninstallationInstructions
 if /I %input% EQU 992 cls&goto startGoLandPromptDeepSubDialerMode
 if /I %input% EQU 992A start GoLand_A.lnk&set input=3992A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 992R start GoLand_R.lnk&set input=3992R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 992I start GoLand_I.exe&set input=3992I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 992O goto startUninstallationInstructions
+if /I %input% EQU 992O cls&set input=3992O&goto startUninstallationInstructions
 if /I %input% EQU 993 cls&goto startRubyMinePromptDeepSubDialerMode
 if /I %input% EQU 993A start RubyMine_A.lnk&set input=3993A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 993R start RubyMine_R.lnk&set input=3993R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 993I start RubyMine_I.exe&set input=3993I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 993O goto startUninstallationInstructions
+if /I %input% EQU 993O cls&set input=3993O&goto startUninstallationInstructions
 if /I %input% EQU 994 cls&goto startGatewayPromptDeepSubDialerMode
 if /I %input% EQU 994A start Gateway_A.lnk&set input=3994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 994R start Gateway_R.lnk&set input=3994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 994I start Gateway_I.exe&set input=3994I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 994O goto startUninstallationInstructions
+if /I %input% EQU 994O cls&set input=3994O&goto startUninstallationInstructions
 if /I %input% EQU 995 cls&goto startMetaProgrammingSystemPromptDeepSubDialerMode
 if /I %input% EQU 995A start MetaProgrammingSystem_A.lnk&set input=3995A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 995R start MetaProgrammingSystem_R.lnk&set input=3995R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 995I start MetaProgrammingSystem_I.exe&set input=3995I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 995O goto startUninstallationInstructions
+if /I %input% EQU 995O cls&set input=3995O&goto startUninstallationInstructions
 if /I %input% EQU 996 cls&goto startToolboxPromptDeepSubDialerMode
 if /I %input% EQU 996A start Toolbox_A.lnk&set input=3996A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 996R start Toolbox_R.lnk&set input=3996R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 996I start Toolbox_I.exe&set input=3996I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 996O goto startUninstallationInstructions
+if /I %input% EQU 996O cls&set input=3996O&goto startUninstallationInstructions
 if /I %input% EQU 997 cls&goto startWritersidePromptDeepSubDialerMode
 if /I %input% EQU 997A start Writerside_A.lnk&set input=3997A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 997R start Writerside_R.lnk&set input=3997R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 997I start Writerside_I.exe&set input=3997I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 997O goto startUninstallationInstructions
+if /I %input% EQU 997O cls&set input=3997O&goto startUninstallationInstructions
 if /I %input% EQU - cls&goto start2
 if /I %input% EQU -- cls&goto start1
-if /I %input% EQU --- cls&goto startBackground
+if /I %input% EQU --- cls&goto startNetwork
 if /I %input% EQU + cls&goto start4
 if /I %input% EQU ++ cls&goto start5
 if /I %input% EQU +++ cls&goto start6a
@@ -3970,7 +5476,7 @@ set /p input=%BS%
 if /I %input% EQU A start MATLAB_A.lnk&set input=32A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start MATLAB_R.lnk&set input=32R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start MATLAB_I.lnk&set input=32I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=32O&goto startUninstallationInstructions
 goto :eof
 :startOctavePrompt
 call :banner
@@ -4730,7 +6236,7 @@ if /I %input% EQU R1 start CLI_Directory.txt&set input=36R1&&goto startPreExitPr
 if /I %input% EQU RY start Python_R.lnk&set input=36RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU RN start Python_R.lnk&set input=36RN&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Python_I.exe&set input=36I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=36O&goto startUninstallationInstructions
 goto :eof
 :startPythonRunAdminPrompt1
 call :banner
@@ -4887,7 +6393,7 @@ if /I %input% EQU R1 start CLI_Directory.txt&set input=37R1&&goto startPreExitPr
 if /I %input% EQU RY start PowerShell_R.lnk&set input=37RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU RN start PowerShell_R.lnk&set input=37RN&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PowerShell_I.msi&set input=37I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=37O&goto startUninstallationInstructions
 goto :eof
 :startPowerShellRunAdminPrompt1
 call :banner
@@ -5187,51 +6693,51 @@ if /I %input% EQU 1R start Rider_R.lnk&set input=391R&&goto startPreExitPrompt||
 if /I %input% EQU 1I cls&goto startRiderInstallerPromptSubDialerMode1
 if /I %input% EQU 1IA start Rider_I.exe&set input=391IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1IB start dotUltimate_I.exe&set input=391IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 1O goto startUninstallationInstructions
+if /I %input% EQU 1O cls&set input=391O&goto startUninstallationInstructions
 if /I %input% EQU 2 cls&goto startRustRoverPrompt
 if /I %input% EQU 2A start RustRover_A.lnk&set input=392A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start RustRover_R.lnk&set input=392R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2I start RustRover_I.exe&set input=392I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2O goto startUninstallationInstructions
+if /I %input% EQU 2O cls&set input=392O&goto startUninstallationInstructions
 if /I %input% EQU 3 cls&goto startWebStormPrompt
 if /I %input% EQU 3A start WebStorm_A.lnk&set input=393A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start WebStorm_R.lnk&set input=393R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3I start WebStorm_I.exe&set input=393I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3O goto startUninstallationInstructions
+if /I %input% EQU 3O cls&set input=393O&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto startdotPeekPrompt
 if /I %input% EQU 4A start dotPeek_A.lnk&set input=394A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start dotPeek_R.lnk&set input=394R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4I cls&goto startdotPeekInstallerPromptSubDialerMode1
 if /I %input% EQU 4IA start dotPeek_I.exe&set input=394IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4IB start dotUltimate_I.exe&set input=394IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4O goto startUninstallationInstructions
+if /I %input% EQU 4O cls&set input=394O&goto startUninstallationInstructions
 if /I %input% EQU 5 cls&goto startdotCoverPrompt
 if /I %input% EQU 5A start dotCover_A.lnk&set input=395A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start dotCover_R.lnk&set input=395R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5I cls&goto startdotCoverInstallerPromptSubDialerMode1
 if /I %input% EQU 5IA start dotCover_I.exe&set input=395IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5IB start dotUltimate_I.exe&set input=395IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5O goto startUninstallationInstructions
+if /I %input% EQU 5O cls&set input=395O&goto startUninstallationInstructions
 if /I %input% EQU 6 cls&goto startdotMemoryPrompt
 if /I %input% EQU 6A start dotMemory_A.lnk&set input=396A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6R start dotMemory_R.lnk&set input=396R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6I cls&goto startdotMemoryInstallerPromptSubDialerMode1
 if /I %input% EQU 6IA start dotMemory_I.exe&set input=396IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6IB start dotUltimate_I.exe&set input=396IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6O goto startUninstallationInstructions
+if /I %input% EQU 6O cls&set input=396O&goto startUninstallationInstructions
 if /I %input% EQU 7 cls&goto startdotTracePrompt
 if /I %input% EQU 7A start dotTrace_A.lnk&set input=397A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start dotTrace_R.lnk&set input=397R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7I cls&goto startdotTraceInstallerPromptSubDialerMode1
 if /I %input% EQU 7IA start dotTrace_I.exe&set input=397IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7IB start dotUltimate_I.exe&set input=397IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7O goto startUninstallationInstructions
+if /I %input% EQU 7O cls&set input=397O&goto startUninstallationInstructions
 if /I %input% EQU 8 cls&goto start3AltB
 if /I %input% EQU 81 cls&goto startAquaPromptSubDialerMode1
 if /I %input% EQU 81A start Aqua_A.lnk&set input=3981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 81R start Aqua_R.lnk&set input=3981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 81I start Aqua_I.exe&set input=3981I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 81O goto startUninstallationInstructions
+if /I %input% EQU 81O cls&set input=3981O&goto startUninstallationInstructions
 if /I %input% EQU 82 cls&goto startReSharperPromptSubDialerMode1
 if /I %input% EQU 82T cls&goto startResharperTraditionalPromptSubDialerMode1
 if /I %input% EQU 82TA start ReSharper_A.lnk&set input=3982TA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5239,78 +6745,78 @@ if /I %input% EQU 82TR start ReSharper_R.lnk&set input=3982TR&&goto startPreExit
 if /I %input% EQU 82TI cls&goto startReSharperTraditionalInstallerPromptSubDialerMode1
 if /I %input% EQU 82TIA start ReSharper_I.exe&set input=3982TIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82TIB start dotUltimate_I.exe&set input=3982TIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 82TO goto startUninstallationInstructions
+if /I %input% EQU 82TO cls&set input=3982TO&goto startUninstallationInstructions
 if /I %input% EQU 82C cls&goto startResharperCppPromptSubDialerMode1
 if /I %input% EQU 82CA start Resharper_Cpp_A.lnk&set input=3982CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82CR start Resharper_Cpp_R.lnk&set input=3982CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82CI cls&goto startReSharperCppInstallerPromptSubDialerMode1
 if /I %input% EQU 82CIA start Resharper_Cpp_I.exe&set input=3982CIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82CIB start dotUltimate_I.exe&set input=3982CIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 82CO goto startUninstallationInstructions
+if /I %input% EQU 82CO cls&set input=3982CO&goto startUninstallationInstructions
 if /I %input% EQU 83 cls&goto startCLionPromptSubDialerMode1
 if /I %input% EQU 83A start CLion_A.lnk&set input=3983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 83R start CLion_R.lnk&set input=3983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 83I start CLion_I.exe&set input=3983I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 83O goto startUninstallationInstructions
+if /I %input% EQU 83O cls&set input=3983O&goto startUninstallationInstructions
 if /I %input% EQU 84 cls&goto startDataGripPromptSubDialerMode1
 if /I %input% EQU 84A start DataGrip_A.lnk&set input=3984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84R start DataGrip_R.lnk&set input=3984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84I start DataGrip_I.exe&set input=3984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 84O goto startUninstallationInstructions
+if /I %input% EQU 84O cls&set input=3984O&goto startUninstallationInstructions
 if /I %input% EQU 85 cls&goto startDataSpellPromptSubDialerMode1
 if /I %input% EQU 85A start DataSpell_A.lnk&set input=3985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85R start DataSpell_R.lnk&set input=3985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85I start DataSpell_I.exe&set input=3985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 85O goto startUninstallationInstructions
+if /I %input% EQU 85O cls&set input=3985O&goto startUninstallationInstructions
 if /I %input% EQU 86 cls&goto startPyCharmPromptSubDialerMode1
 if /I %input% EQU 86A start PyCharm_A.lnk&set input=3986A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 86R start PyCharm_R.lnk&set input=3986R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 86I start PyCharm_I.exe&set input=3986I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 86O goto startUninstallationInstructions
+if /I %input% EQU 86O cls&set input=3986O&goto startUninstallationInstructions
 if /I %input% EQU 87 cls&goto startIntelliJIDEApromptSubDialerMode1
 if /I %input% EQU 87A start IntelliJIDEA_A.lnk&set input=3987A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87R start IntelliJIDEA_R.lnk&set input=3987R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87I start IntelliJIDEA_I.exe&set input=3987I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 87O goto startUninstallationInstructions
+if /I %input% EQU 87O cls&set input=3987O&goto startUninstallationInstructions
 if /I %input% EQU 9 cls&goto start3AltC
 if /I %input% EQU 91 cls&goto startPhpStormPromptSubDialerMode1
 if /I %input% EQU 91A start PhpStorm_A.lnk&set input=3991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91R start PhpStorm_R.lnk&set input=3991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91I start PhpStorm_I.exe&set input=3991I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 91O goto startUninstallationInstructions
+if /I %input% EQU 91O cls&set input=3991O&goto startUninstallationInstructions
 if /I %input% EQU 92 cls&goto startGoLandPromptSubDialerMode1
 if /I %input% EQU 92A start GoLand_A.lnk&set input=3992A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92R start GoLand_R.lnk&set input=3992R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92I start GoLand_I.exe&set input=3992I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 92O goto startUninstallationInstructions
+if /I %input% EQU 92O cls&set input=3992O&goto startUninstallationInstructions
 if /I %input% EQU 93 cls&goto startRubyMinePromptSubDialerMode1
 if /I %input% EQU 93A start RubyMine_A.lnk&set input=3993A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93R start RubyMine_R.lnk&set input=3993R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93I start RubyMine_I.exe&set input=3993I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93O goto startUninstallationInstructions
+if /I %input% EQU 93O cls&set input=3993O&goto startUninstallationInstructions
 if /I %input% EQU 94 cls&goto startGatewayPromptSubDialerMode1
 if /I %input% EQU 94A start Gateway_A.lnk&set input=3994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start Gateway_R.lnk&set input=3994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94I start Gateway_I.exe&set input=3994I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94O goto startUninstallationInstructions
+if /I %input% EQU 94O cls&set input=3994O&goto startUninstallationInstructions
 if /I %input% EQU 95 cls&goto startMetaProgrammingSystemPromptSubDialerMode1
 if /I %input% EQU 95A start MetaProgrammingSystem_A.lnk&set input=3995A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95R start MetaProgrammingSystem_R.lnk&set input=3995R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95I start MetaProgrammingSystem_I.exe&set input=3995I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95O goto startUninstallationInstructions
+if /I %input% EQU 95O cls&set input=3995O&goto startUninstallationInstructions
 if /I %input% EQU 96 cls&goto startToolboxPromptSubDialerMode1
 if /I %input% EQU 96A start Toolbox_A.lnk&set input=3996A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96R start Toolbox_R.lnk&set input=3996R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96I start Toolbox_I.exe&set input=3996I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96O goto startUninstallationInstructions
+if /I %input% EQU 96O cls&set input=3996O&goto startUninstallationInstructions
 if /I %input% EQU 97 cls&goto startWritersidePromptSubDialerMode1
 if /I %input% EQU 97A start Writerside_A.lnk&set input=3997A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97R start Writerside_R.lnk&set input=3997R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97I start Writerside_I.exe&set input=3997I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 97O goto startUninstallationInstructions
+if /I %input% EQU 97O cls&set input=3997O&goto startUninstallationInstructions
 if /I %input% EQU - cls&goto start2
 if /I %input% EQU -- cls&goto start1
-if /I %input% EQU --- cls&goto startBackground
+if /I %input% EQU --- cls&goto startNetwork
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
 if /I %input% EQU + cls&goto start4
@@ -5398,7 +6904,7 @@ if /I %input% EQU A start Rider_A.lnk&set input=391A&&goto startPreExitPrompt||g
 if /I %input% EQU R start Rider_R.lnk&set input=391R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start Rider_I.exe&set input=391IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IB start dotUltimate_I.exe&set input=391IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=391O&goto startUninstallationInstructions
 goto :eof
 :startRiderInstallerPrompt1
 call :banner
@@ -5585,7 +7091,7 @@ set /p input=%BS%
 if /I %input% EQU A start RustRover_A.lnk&set input=392A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start RustRover_R.lnk&set input=392R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start RustRover_I.exe&set input=392I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=392O&goto startUninstallationInstructions
 goto :eof
 :startWebStormPrompt
 call :banner
@@ -5662,7 +7168,7 @@ set /p input=%BS%
 if /I %input% EQU A start WebStorm_A.lnk&set input=393A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WebStorm_R.lnk&set input=393R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WebStorm_I.exe&set input=393I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=393O&goto startUninstallationInstructions
 goto :eof
 :startdotPeekPrompt
 call :banner
@@ -5745,7 +7251,7 @@ if /I %input% EQU A start dotPeek_A.lnk&set input=394A&&goto startPreExitPrompt|
 if /I %input% EQU R start dotPeek_R.lnk&set input=394R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start dotPeek_I.exe&set input=394IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IB start dotUltimate_I.exe&set input=394IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=394O&goto startUninstallationInstructions
 goto :eof
 :startdotPeekInstallerPrompt1
 call :banner
@@ -5938,7 +7444,7 @@ if /I %input% EQU A start dotCover_A.lnk&set input=395A&&goto startPreExitPrompt
 if /I %input% EQU R start dotCover_R.lnk&set input=395R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start dotCover_I.exe&set input=395IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IB start dotUltimate_I.exe&set input=395IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=395O&goto startUninstallationInstructions
 goto :eof
 :startdotCoverInstallerPrompt1
 call :banner
@@ -6131,7 +7637,7 @@ if /I %input% EQU A start dotMemory_A.lnk&set input=396A&&goto startPreExitPromp
 if /I %input% EQU R start dotMemory_R.lnk&set input=396R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start dotMemory_I.exe&set input=396IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IB start dotUltimate_I.exe&set input=396IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=396O&goto startUninstallationInstructions
 goto :eof
 :startdotMemoryInstallerPrompt1
 call :banner
@@ -6324,7 +7830,7 @@ if /I %input% EQU A start dotTrace_A.lnk&set input=397A&&goto startPreExitPrompt
 if /I %input% EQU R start dotTrace_R.lnk&set input=397R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start dotTrace_I.exe&set input=397IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IB start dotUltimate_I.exe&set input=397IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=397O&goto startUninstallationInstructions
 goto :eof
 :startdotTraceInstallerPrompt1
 call :banner
@@ -6475,7 +7981,7 @@ if /I %input% EQU 1 cls&goto startAquaPrompt
 if /I %input% EQU 1A start Aqua_A.lnk&set input=3981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start Aqua_R.lnk&set input=3981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1I start Aqua_I.exe&set input=3981I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 1O goto startUninstallationInstructions
+if /I %input% EQU 1O cls&set input=3981O&goto startUninstallationInstructions
 if /I %input% EQU 2 cls&goto startReSharperPrompt
 if /I %input% EQU 2T cls&goto startResharperTraditionalPromptSubDialerMode2
 if /I %input% EQU 2TA start ReSharper_A.lnk&set input=3982TA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6483,39 +7989,39 @@ if /I %input% EQU 2TR start ReSharper_R.lnk&set input=3982TR&&goto startPreExitP
 if /I %input% EQU 2TI cls&goto startReSharperTraditionalInstallerPromptSubDialerMode2
 if /I %input% EQU 2TIA start ReSharper_I.exe&set input=3982TIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2TIB start dotUltimate_I.exe&set input=3982TIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2TO goto startUninstallationInstructions
+if /I %input% EQU 2TO cls&set input=3982TO&goto startUninstallationInstructions
 if /I %input% EQU 2C cls&goto startResharperCppPromptSubDialerMode2
 if /I %input% EQU 2CA start Resharper_Cpp_A.lnk&set input=3982CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2CR start Resharper_Cpp_R.lnk&set input=3982CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2CI cls&goto startReSharperCppInstallerPromptSubDialerMode2
 if /I %input% EQU 2CIA start Resharper_Cpp_I.exe&set input=3982CIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2CIB start dotUltimate_I.exe&set input=3982CIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2CO goto startUninstallationInstructions
+if /I %input% EQU 2CO cls&set input=3982CO&goto startUninstallationInstructions
 if /I %input% EQU 3 cls&goto startCLionPrompt
 if /I %input% EQU 3A start CLion_A.lnk&set input=3983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start CLion_R.lnk&set input=3983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3I start CLion_I.exe&set input=3983I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3O goto startUninstallationInstructions
+if /I %input% EQU 3O cls&set input=3983O&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto startDataGripPrompt
 if /I %input% EQU 4A start DataGrip_A.lnk&set input=3984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start DataGrip_R.lnk&set input=3984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4I start DataGrip_I.exe&set input=3984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4O goto startUninstallationInstructions
+if /I %input% EQU 4O cls&set input=3984O&goto startUninstallationInstructions
 if /I %input% EQU 5 cls&goto startDataSpellPrompt
 if /I %input% EQU 5A start DataSpell_A.lnk&set input=3985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start DataSpell_R.lnk&set input=3985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5I start DataSpell_I.exe&set input=3985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5O goto startUninstallationInstructions
+if /I %input% EQU 5O cls&set input=3985O&goto startUninstallationInstructions
 if /I %input% EQU 6 cls&goto startPyCharmPrompt
 if /I %input% EQU 6A start PyCharm_A.lnk&set input=3986A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6R start PyCharm_R.lnk&set input=3986R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6I start PyCharm_I.exe&set input=3986I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6O goto startUninstallationInstructions
+if /I %input% EQU 6O cls&set input=3986O&goto startUninstallationInstructions
 if /I %input% EQU 7 cls&goto startIntelliJIDEAprompt
 if /I %input% EQU 7A start IntelliJIDEA_A.lnk&set input=3987A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start IntelliJIDEA_R.lnk&set input=3987R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7I start IntelliJIDEA_I.exe&set input=3987I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7O goto startUninstallationInstructions
+if /I %input% EQU 7O cls&set input=3987O&goto startUninstallationInstructions
 if /I %input% EQU 8 cls&goto start3AltA
 if /I %input% EQU 81 cls&goto startRiderPromptSubDialerMode2
 if /I %input% EQU 81A start Rider_A.lnk&set input=391A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6523,84 +8029,84 @@ if /I %input% EQU 81R start Rider_R.lnk&set input=391R&&goto startPreExitPrompt|
 if /I %input% EQU 81I cls&goto startRiderInstallerPromptSubDialerMode2
 if /I %input% EQU 81IA start Rider_I.exe&set input=391IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 81IB start dotUltimate_I.exe&set input=391IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 81O goto startUninstallationInstructions
+if /I %input% EQU 81O cls&set input=391O&goto startUninstallationInstructions
 if /I %input% EQU 82 cls&goto startRustRoverPromptSubDialerMode2
 if /I %input% EQU 82A start RustRover_A.lnk&set input=392A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82R start RustRover_R.lnk&set input=392R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82I start RustRover_I.exe&set input=392I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 82O goto startUninstallationInstructions
+if /I %input% EQU 82O cls&set input=392O&goto startUninstallationInstructions
 if /I %input% EQU 83 cls&goto startWebStormPromptSubDialerMode2
 if /I %input% EQU 83A start WebStorm_A.lnk&set input=393A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 83R start WebStorm_R.lnk&set input=393R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 83I start WebStorm_I.exe&set input=393I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 83O goto startUninstallationInstructions
+if /I %input% EQU 83O cls&set input=393O&goto startUninstallationInstructions
 if /I %input% EQU 84 cls&goto startdotPeekPromptSubDialerMode2
 if /I %input% EQU 84A start dotPeek_A.lnk&set input=394A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84R start dotPeek_R.lnk&set input=394R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84I cls&goto startdotPeekInstallerPromptSubDialerMode2
 if /I %input% EQU 84IA start dotPeek_I.exe&set input=394IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84IB start dotUltimate_I.exe&set input=394IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 84O goto startUninstallationInstructions
+if /I %input% EQU 84O cls&set input=394O&goto startUninstallationInstructions
 if /I %input% EQU 85 cls&goto startdotCoverPromptSubDialerMode2
 if /I %input% EQU 85A start dotCover_A.lnk&set input=395A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85R start dotCover_R.lnk&set input=395R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85I cls&goto startdotCoverInstallerPromptSubDialerMode2
 if /I %input% EQU 85IA start dotCover_I.exe&set input=395IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85IB start dotUltimate_I.exe&set input=395IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 85O goto startUninstallationInstructions
+if /I %input% EQU 85O cls&set input=395O&goto startUninstallationInstructions
 if /I %input% EQU 86 cls&goto startdotMemoryPromptSubDialerMode2
 if /I %input% EQU 86A start dotMemory_A.lnk&set input=396A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 86R start dotMemory_R.lnk&set input=396R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 86I cls&goto startdotMemoryInstallerPromptSubDialerMode2
 if /I %input% EQU 86IA start dotMemory_I.exe&set input=396IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 86IB start dotUltimate_I.exe&set input=396IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 86O goto startUninstallationInstructions
+if /I %input% EQU 86O cls&set input=396O&goto startUninstallationInstructions
 if /I %input% EQU 87 cls&goto startdotTracePromptSubDialerMode2
 if /I %input% EQU 87A start dotTrace_A.lnk&set input=397A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87R start dotTrace_R.lnk&set input=397R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87I cls&goto startdotTraceInstallerPromptSubDialerMode2
 if /I %input% EQU 87IA start dotTrace_I.exe&set input=397IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87IB start dotUltimate_I.exe&set input=397IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 87O goto startUninstallationInstructions
+if /I %input% EQU 87O cls&set input=397O&goto startUninstallationInstructions
 if /I %input% EQU 9 cls&goto start3AltC
 if /I %input% EQU 91 cls&goto startPhpStormPromptSubDialerMode2
 if /I %input% EQU 91A start PhpStorm_A.lnk&set input=3991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91R start PhpStorm_R.lnk&set input=3991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91I start PhpStorm_I.exe&set input=3991I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 91O goto startUninstallationInstructions
+if /I %input% EQU 91O cls&set input=3991O&goto startUninstallationInstructions
 if /I %input% EQU 92 cls&goto startGoLandPromptSubDialerMode2
 if /I %input% EQU 92A start GoLand_A.lnk&set input=3992A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92R start GoLand_R.lnk&set input=3992R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92I start GoLand_I.exe&set input=3992I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 92O goto startUninstallationInstructions
+if /I %input% EQU 92O cls&set input=3992O&goto startUninstallationInstructions
 if /I %input% EQU 93 cls&goto startRubyMinePromptSubDialerMode2
 if /I %input% EQU 93A start RubyMine_A.lnk&set input=3993A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93R start RubyMine_R.lnk&set input=3993R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93I start RubyMine_I.exe&set input=3993I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93O goto startUninstallationInstructions
+if /I %input% EQU 93O cls&set input=3993O&goto startUninstallationInstructions
 if /I %input% EQU 94 cls&goto startGatewayPromptSubDialerMode2
 if /I %input% EQU 94A start Gateway_A.lnk&set input=3994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start Gateway_R.lnk&set input=3994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94I start Gateway_I.exe&set input=3994I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94O goto startUninstallationInstructions
+if /I %input% EQU 94O cls&set input=3994O&goto startUninstallationInstructions
 if /I %input% EQU 95 cls&goto startMetaProgrammingSystemPromptSubDialerMode2
 if /I %input% EQU 95A start MetaProgrammingSystem_A.lnk&set input=3995A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95R start MetaProgrammingSystem_R.lnk&set input=3995R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95I start MetaProgrammingSystem_I.exe&set input=3995I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95O goto startUninstallationInstructions
+if /I %input% EQU 95O cls&set input=3995O&goto startUninstallationInstructions
 if /I %input% EQU 96 cls&goto startToolboxPromptSubDialerMode2
 if /I %input% EQU 96A start Toolbox_A.lnk&set input=3996A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96R start Toolbox_R.lnk&set input=3996R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96I start Toolbox_I.exe&set input=3996I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96O goto startUninstallationInstructions
+if /I %input% EQU 96O cls&set input=3996O&goto startUninstallationInstructions
 if /I %input% EQU 97 cls&goto startWritersidePromptSubDialerMode2
 if /I %input% EQU 97A start Writerside_A.lnk&set input=3997A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97R start Writerside_R.lnk&set input=3997R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97I start Writerside_I.exe&set input=3997I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 97O goto startUninstallationInstructions
+if /I %input% EQU 97O cls&set input=3997O&goto startUninstallationInstructions
 if /I %input% EQU - cls&goto start2
 if /I %input% EQU -- cls&goto start1
-if /I %input% EQU --- cls&goto startBackground
+if /I %input% EQU --- cls&goto startNetwork
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
 if /I %input% EQU + cls&goto start4
@@ -6682,7 +8188,7 @@ set /p input=%BS%
 if /I %input% EQU A start Aqua_A.lnk&set input=3981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Aqua_R.lnk&set input=3981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Aqua_I.exe&set input=3981I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3981O&goto startUninstallationInstructions
 goto :eof
 :startReSharperPromptSubDialerMode1
 call :banner
@@ -6780,12 +8286,12 @@ if /I %input% EQU TA start ReSharper_A.lnk&set input=3982TA&&goto startPreExitPr
 if /I %input% EQU TR start ReSharper_R.lnk&set input=3982TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TIA start ReSharper_I.exe&set input=3982TIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TIB start dotUltimate_I.exe&set input=3982TIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU TO goto startUninstallationInstructions
+if /I %input% EQU TO cls&set input=3982TO&goto startUninstallationInstructions
 if /I %input% EQU CA start Resharper_Cpp_A.lnk&set input=3982CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CR start Resharper_Cpp_R.lnk&set input=3982CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CIA start Resharper_Cpp_I.exe&set input=3982CIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CIB start dotUltimate_I.exe&set input=3982CIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CO goto startUninstallationInstructions
+if /I %input% EQU CO cls&set input=3982CO&goto startUninstallationInstructions
 goto :eof
 :startReSharperTraditionalPrompt1
 call :banner
@@ -6923,7 +8429,7 @@ if /I %input% EQU A start ReSharper_A.lnk&set input=3982TA&&goto startPreExitPro
 if /I %input% EQU R start ReSharper_R.lnk&set input=3982TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start ReSharper_I.exe&set input=3982TIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IB start dotUltimate_I.exe&set input=3982TIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3982TO&goto startUninstallationInstructions
 goto :eof
 :startReSharperTraditionalInstallerPromptA
 call :banner
@@ -7271,7 +8777,7 @@ if /I %input% EQU A start Resharper_Cpp_A.lnk&set input=3982CA&&goto startPreExi
 if /I %input% EQU R start Resharper_Cpp_R.lnk&set input=3982CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start Resharper_Cpp_I.exe&set input=3982CIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IB start dotUltimate_I.exe&set input=3982CIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3982CO&goto startUninstallationInstructions
 goto :eof
 :startReSharperCppInstallerPromptA
 call :banner
@@ -7558,7 +9064,7 @@ set /p input=%BS%
 if /I %input% EQU A start CLion_A.lnk&set input=3983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start CLion_R.lnk&set input=3983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start CLion_I.exe&set input=3983I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3983O&goto startUninstallationInstructions
 goto :eof
 :startDataGripPromptSubDialerMode1
 call :banner
@@ -7635,7 +9141,7 @@ set /p input=%BS%
 if /I %input% EQU A start DataGrip_A.lnk&set input=3984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start DataGrip_R.lnk&set input=3984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start DataGrip_I.exe&set input=3984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3984O&goto startUninstallationInstructions
 goto :eof
 :startDataSpellPromptSubDialerMode1
 call :banner
@@ -7712,7 +9218,7 @@ set /p input=%BS%
 if /I %input% EQU A start DataSpell_A.lnk&set input=3985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start DataSpell_R.lnk&set input=3985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start DataSpell_I.exe&set input=3985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3985O&goto startUninstallationInstructions
 goto :eof
 :startPyCharmPromptSubDialerMode1
 call :banner
@@ -7789,7 +9295,7 @@ set /p input=%BS%
 if /I %input% EQU A start PyCharm_A.lnk&set input=3986A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PyCharm_R.lnk&set input=3986R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PyCharm_I.exe&set input=3986I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3986O&goto startUninstallationInstructions
 goto :eof
 :startIntelliJIDEApromptSubDialerMode1
 call :banner
@@ -7866,7 +9372,7 @@ set /p input=%BS%
 if /I %input% EQU A start IntelliJIDEA_A.lnk&set input=3987A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start IntelliJIDEA_R.lnk&set input=3987R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start IntelliJIDEA_I.exe&set input=3987I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3987O&goto startUninstallationInstructions
 goto :eof
 :: Section 3AltC
 :start3AltC
@@ -7907,37 +9413,37 @@ if /I %input% EQU 1 cls&goto startPhpStormPrompt
 if /I %input% EQU 1A start PhpStorm_A.lnk&set input=3991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start PhpStorm_R.lnk&set input=3991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1I start PhpStorm_I.exe&set input=3991I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 1O goto startUninstallationInstructions
+if /I %input% EQU 1O cls&set input=3991O&goto startUninstallationInstructions
 if /I %input% EQU 2 cls&goto startGoLandPrompt
 if /I %input% EQU 2A start GoLand_A.lnk&set input=3992A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start GoLand_R.lnk&set input=3992R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2I start GoLand_I.exe&set input=3992I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2O goto startUninstallationInstructions
+if /I %input% EQU 2O cls&set input=3992O&goto startUninstallationInstructions
 if /I %input% EQU 3 cls&goto startRubyMinePrompt
 if /I %input% EQU 3A start RubyMine_A.lnk&set input=3993A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start RubyMine_R.lnk&set input=3993R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3I start RubyMine_I.exe&set input=3993I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3O goto startUninstallationInstructions
+if /I %input% EQU 3O cls&set input=3993O&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto startGatewayPrompt
 if /I %input% EQU 4A start Gateway_A.lnk&set input=3994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start Gateway_R.lnk&set input=3994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4I start Gateway_I.exe&set input=3994I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4O goto startUninstallationInstructions
+if /I %input% EQU 4O cls&set input=3994O&goto startUninstallationInstructions
 if /I %input% EQU 5 cls&goto startMetaProgrammingSystemPrompt
 if /I %input% EQU 5A start MetaProgrammingSystem_A.lnk&set input=3995A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start MetaProgrammingSystem_R.lnk&set input=3995R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5I start MetaProgrammingSystem_I.exe&set input=3995I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5O goto startUninstallationInstructions
+if /I %input% EQU 5O cls&set input=3995O&goto startUninstallationInstructions
 if /I %input% EQU 6 cls&goto startToolboxPrompt
 if /I %input% EQU 6A start Toolbox_A.lnk&set input=3996A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6R start Toolbox_R.lnk&set input=3996R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6I start Toolbox_I.exe&set input=3996I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6O goto startUninstallationInstructions
+if /I %input% EQU 6O cls&set input=3996O&goto startUninstallationInstructions
 if /I %input% EQU 7 cls&goto startWritersidePrompt
 if /I %input% EQU 7A start Writerside_A.lnk&set input=3997A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start Writerside_R.lnk&set input=3997R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7I start Writerside_I.exe&set input=3997I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7O goto startUninstallationInstructions
+if /I %input% EQU 7O cls&set input=3997O&goto startUninstallationInstructions
 if /I %input% EQU 8 cls&goto start3AltA
 if /I %input% EQU 81 cls&goto startRiderPromptSubDialerMode3
 if /I %input% EQU 81A start Rider_A.lnk&set input=391A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -7945,51 +9451,51 @@ if /I %input% EQU 81R start Rider_R.lnk&set input=391R&&goto startPreExitPrompt|
 if /I %input% EQU 81I cls&goto startRiderInstallerPromptSubDialerMode3
 if /I %input% EQU 81IA start Rider_I.exe&set input=391IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 81IB start dotUltimate_I.exe&set input=391IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 81O goto startUninstallationInstructions
+if /I %input% EQU 81O cls&set input=391O&goto startUninstallationInstructions
 if /I %input% EQU 82 cls&goto startRustRoverPromptSubDialerMode3
 if /I %input% EQU 82A start RustRover_A.lnk&set input=392A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82R start RustRover_R.lnk&set input=392R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82I start RustRover_I.exe&set input=392I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 82O goto startUninstallationInstructions
+if /I %input% EQU 82O cls&set input=392O&goto startUninstallationInstructions
 if /I %input% EQU 83 cls&goto startWebStormPromptSubDialerMode3
 if /I %input% EQU 83A start WebStorm_A.lnk&set input=393A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 83R start WebStorm_R.lnk&set input=393R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 83I start WebStorm_I.exe&set input=393I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 83O goto startUninstallationInstructions
+if /I %input% EQU 83O cls&set input=393O&goto startUninstallationInstructions
 if /I %input% EQU 84 cls&goto startdotPeekPromptSubDialerMode3
 if /I %input% EQU 84A start dotPeek_A.lnk&set input=394A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84R start dotPeek_R.lnk&set input=394R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84I cls&goto startdotPeekInstallerPromptSubDialerMode3
 if /I %input% EQU 84IA start dotPeek_I.exe&set input=394IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84IB start dotUltimate_I.exe&set input=394IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 84O goto startUninstallationInstructions
+if /I %input% EQU 84O cls&set input=394O&goto startUninstallationInstructions
 if /I %input% EQU 85 cls&goto startdotCoverPromptSubDialerMode3
 if /I %input% EQU 85A start dotCover_A.lnk&set input=395A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85R start dotCover_R.lnk&set input=395R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85I cls&goto startdotCoverInstallerPromptSubDialerMode3
 if /I %input% EQU 85IA start dotCover_I.exe&set input=395IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85IB start dotUltimate_I.exe&set input=395IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 85O goto startUninstallationInstructions
+if /I %input% EQU 85O cls&set input=395O&goto startUninstallationInstructions
 if /I %input% EQU 86 cls&goto startdotMemoryPromptSubDialerMode3
 if /I %input% EQU 86A start dotMemory_A.lnk&set input=396A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 86R start dotMemory_R.lnk&set input=396R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 86I cls&goto startdotMemoryInstallerPromptSubDialerMode3
 if /I %input% EQU 86IA start dotMemory_I.exe&set input=396IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 86IB start dotUltimate_I.exe&set input=396IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 86O goto startUninstallationInstructions
+if /I %input% EQU 86O cls&set input=396O&goto startUninstallationInstructions
 if /I %input% EQU 87 cls&goto startdotTracePromptSubDialerMode3
 if /I %input% EQU 87A start dotTrace_A.lnk&set input=397A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87R start dotTrace_R.lnk&set input=397R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87I cls&goto startdotTraceInstallerPromptSubDialerMode3
 if /I %input% EQU 87IA start dotTrace_I.exe&set input=397IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87IB start dotUltimate_I.exe&set input=397IB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 87O goto startUninstallationInstructions
+if /I %input% EQU 87O cls&set input=397O&goto startUninstallationInstructions
 if /I %input% EQU 9 cls&goto start3AltB
 if /I %input% EQU 91 cls&goto startAquaPromptSubDialerMode3
 if /I %input% EQU 91A start Aqua_A.lnk&set input=3981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91R start Aqua_R.lnk&set input=3981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91I start Aqua_I.exe&set input=3981I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 91O goto startUninstallationInstructions
+if /I %input% EQU 91O cls&set input=3981O&goto startUninstallationInstructions
 if /I %input% EQU 92 cls&goto startReSharperPromptSubDialerMode3
 if /I %input% EQU 92T cls&goto startResharperTraditionalPromptSubDialerMode3
 if /I %input% EQU 92TA start ReSharper_A.lnk&set input=3982TA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -7997,42 +9503,42 @@ if /I %input% EQU 92TR start ReSharper_R.lnk&set input=3982TR&&goto startPreExit
 if /I %input% EQU 92TI cls&goto startReSharperTraditionalInstallerPromptSubDialerMode3
 if /I %input% EQU 92TIA start ReSharper_I.exe&set input=3982TIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92TIB start dotUltimate_I.exe&set input=3982TIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 92TO goto startUninstallationInstructions
+if /I %input% EQU 92TO cls&set input=3982TO&goto startUninstallationInstructions
 if /I %input% EQU 92C cls&goto startResharperCppPromptSubDialerMode3
 if /I %input% EQU 92CA start Resharper_Cpp_A.lnk&set input=3982CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92CR start Resharper_Cpp_R.lnk&set input=3982CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92CI cls&goto startReSharperCppInstallerPromptSubDialerMode3
 if /I %input% EQU 92CIA start Resharper_Cpp_I.exe&set input=3982CIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92CIB start dotUltimate_I.exe&set input=3982CIB&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 92CO goto startUninstallationInstructions
+if /I %input% EQU 92CO cls&set input=3982CO&goto startUninstallationInstructions
 if /I %input% EQU 93 cls&goto startCLionPromptSubDialerMode3
 if /I %input% EQU 93A start CLion_A.lnk&set input=3983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93R start CLion_R.lnk&set input=3983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93I start CLion_I.exe&set input=3983I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93O goto startUninstallationInstructions
+if /I %input% EQU 93O cls&set input=3983O&goto startUninstallationInstructions
 if /I %input% EQU 94 cls&goto startDataGripPromptSubDialerMode3
 if /I %input% EQU 94A start DataGrip_A.lnk&set input=3984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start DataGrip_R.lnk&set input=3984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94I start DataGrip_I.exe&set input=3984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94O goto startUninstallationInstructions
+if /I %input% EQU 94O cls&set input=3984O&goto startUninstallationInstructions
 if /I %input% EQU 95 cls&goto startDataSpellPromptSubDialerMode3
 if /I %input% EQU 95A start DataSpell_A.lnk&set input=3985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95R start DataSpell_R.lnk&set input=3985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95I start DataSpell_I.exe&set input=3985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95O goto startUninstallationInstructions
+if /I %input% EQU 95O cls&set input=3985O&goto startUninstallationInstructions
 if /I %input% EQU 96 cls&goto startPyCharmPromptSubDialerMode3
 if /I %input% EQU 96A start PyCharm_A.lnk&set input=3986A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96R start PyCharm_R.lnk&set input=3986R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96I start PyCharm_I.exe&set input=3986I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96O goto startUninstallationInstructions
+if /I %input% EQU 96O cls&set input=3986O&goto startUninstallationInstructions
 if /I %input% EQU 97 cls&goto startIntelliJIDEApromptSubDialerMode3
 if /I %input% EQU 97A start IntelliJIDEA_A.lnk&set input=3987A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97R start IntelliJIDEA_R.lnk&set input=3987R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97I start IntelliJIDEA_I.exe&set input=3987I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 97O goto startUninstallationInstructions
+if /I %input% EQU 97O cls&set input=3987O&goto startUninstallationInstructions
 if /I %input% EQU - cls&goto start2
 if /I %input% EQU -- cls&goto start1
-if /I %input% EQU --- cls&goto startBackground
+if /I %input% EQU --- cls&goto startNetwork
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
 if /I %input% EQU + cls&goto start4
@@ -8114,7 +9620,7 @@ set /p input=%BS%
 if /I %input% EQU A start PhpStorm_A.lnk&set input=3991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PhpStorm_R.lnk&set input=3991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PhpStorm_I.exe&set input=3991I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3991O&goto startUninstallationInstructions
 goto :eof
 :startGoLandPromptSubDialerMode1
 call :banner
@@ -8191,7 +9697,7 @@ set /p input=%BS%
 if /I %input% EQU A start GoLand_A.lnk&set input=3992A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start GoLand_R.lnk&set input=3992R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start GoLand_I.exe&set input=3992I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3992O&goto startUninstallationInstructions
 goto :eof
 :startRubyMinePromptSubDialerMode1
 call :banner
@@ -8268,7 +9774,7 @@ set /p input=%BS%
 if /I %input% EQU A start RubyMine_A.lnk&set input=3993A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start RubyMine_R.lnk&set input=3993R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start RubyMine_I.exe&set input=3993I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3993O&goto startUninstallationInstructions
 goto :eof
 :startGatewayPromptSubDialerMode1
 call :banner
@@ -8345,7 +9851,7 @@ set /p input=%BS%
 if /I %input% EQU A start Gateway_A.lnk&set input=3994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Gateway_R.lnk&set input=3994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Gateway_I.exe&set input=3994I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3994O&goto startUninstallationInstructions
 goto :eof
 :startMetaProgrammingSystemPromptSubDialerMode1
 call :banner
@@ -8422,7 +9928,7 @@ set /p input=%BS%
 if /I %input% EQU A start MetaProgrammingSystem_A.lnk&set input=3995A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start MetaProgrammingSystem_R.lnk&set input=3995R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start MetaProgrammingSystem_I.exe&set input=3995I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3995O&goto startUninstallationInstructions
 goto :eof
 :startToolboxPromptSubDialerMode1
 call :banner
@@ -8499,7 +10005,7 @@ set /p input=%BS%
 if /I %input% EQU A start Toolbox_A.lnk&set input=3996A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Toolbox_R.lnk&set input=3996R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Toolbox_I.exe&set input=3996I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3996O&goto startUninstallationInstructions
 goto :eof
 :startWritersidePromptSubDialerMode1
 call :banner
@@ -8576,7 +10082,7 @@ set /p input=%BS%
 if /I %input% EQU A start Writerside_A.lnk&set input=3997A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Writerside_R.lnk&set input=3997R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Writerside_I.exe&set input=3997I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=3997O&goto startUninstallationInstructions
 goto :eof
 :: Section 4
 :start4
@@ -8617,7 +10123,7 @@ if /I %input% EQU 1 cls&goto startVMwareWorkstationPrompt
 if /I %input% EQU 1A start VMware_Workstation_A.lnk&set input=41A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start VMware_Workstation_R.lnk&set input=41R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1I start VMware_Workstation_I.exe&set input=41I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 1O goto startUninstallationInstructions
+if /I %input% EQU 1O cls&set input=41O&goto startUninstallationInstructions
 if /I %input% EQU 2 cls&goto startDockerDesktopPrompt
 if /I %input% EQU 2A start Docker_Desktop_A.lnk&set input=42A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start Docker_Desktop_R.lnk&set input=42R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -8667,55 +10173,55 @@ if /I %input% EQU 91R start AutoCAD_R.lnk&set input=491R&&goto startPreExitPromp
 if /I %input% EQU 91I cls&goto startAutoCADinstallPromptDeepSubDialerMode
 if /I %input% EQU 91I1 start AutoCAD_I.exe&set input=491I1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91I2 start AutoCAD_OfflineHelp_I.exe&set input=491I2&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 91O goto startUninstallationInstructions
+if /I %input% EQU 91O cls&set input=491O&goto startUninstallationInstructions
 if /I %input% EQU 91S start AutoCAD_S.lnk&set input=491S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92 cls&goto startAutoCADElectricalPromptDeepSubDialerMode
 if /I %input% EQU 92A start AutoCAD_Electrical_A.lnk&set input=492A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92R start AutoCAD_Electrical_R.lnk&set input=492R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92I start AutoCAD_Electrical_I.exe&set input=492I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 92O goto startUninstallationInstructions
+if /I %input% EQU 92O cls&set input=492O&goto startUninstallationInstructions
 if /I %input% EQU 92S start AutoCAD_Electrical_S.lnk&set input=492S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93 cls&goto startAutoCADMechanicalPromptDeepSubDialerMode
 if /I %input% EQU 93A start AutoCAD_Mechanical_A.lnk&set input=493A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93R start AutoCAD_Mechanical_R.lnk&set input=493R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93I start AutoCAD_Mechanical_I.exe&set input=493I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93O goto startUninstallationInstructions
+if /I %input% EQU 93O cls&set input=493O&goto startUninstallationInstructions
 if /I %input% EQU 93S start AutoCAD_Mechanical_S.lnk&set input=493S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94 cls&goto startSolidWorks3DCADDesignPromptDeepSubDialerMode
 if /I %input% EQU 94A start Solidworks_3D_CAD_Design_A.lnk&set input=494A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start Solidworks_3D_CAD_Design_R.lnk&set input=494R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94I start Solidworks_3D_CAD_Design_I.exe&set input=494I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94O goto startUninstallationInstructions
+if /I %input% EQU 94O cls&set input=494O&goto startUninstallationInstructions
 if /I %input% EQU 94S start Solidworks_3D_CAD_Design_S.lnk&set input=494S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95 cls&goto startAutodeskFusion360PromptDeepSubDialerMode
 if /I %input% EQU 95A start Autodesk_Fusion_360_A.lnk&set input=495A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95R start Autodesk_Fusion_360_R.lnk&set input=495R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95I start Autodesk_Fusion_360_I.exe&set input=495I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95O goto startUninstallationInstructions
+if /I %input% EQU 95O cls&set input=495O&goto startUninstallationInstructions
 if /I %input% EQU 95S start Autodesk_Fusion_360_S.lnk&set input=495S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96 cls&goto startAutodeskCivil3DpromptDeepSubDialerMode
 if /I %input% EQU 96A start Autodesk_Civil_3D_A.lnk&set input=496A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96R start Autodesk_Civil_3D_R.lnk&set input=496R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96I start Autodesk_Civil_3D_I.exe&set input=496I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96O goto startUninstallationInstructions
+if /I %input% EQU 96O cls&set input=496O&goto startUninstallationInstructions
 if /I %input% EQU 96S start Autodesk_Civil_3D_S.lnk&set input=496S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97 cls&goto startAutodeskFeatureCAMpromptDeepSubDialerMode
 if /I %input% EQU 97A start Autodesk_FeatureCAM_A.lnk&set input=497A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97R start Autodesk_FeatureCAM_R.lnk&set input=497R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97I start Autodesk_FeatureCAM_I.exe&set input=497I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 97O goto startUninstallationInstructions
+if /I %input% EQU 97O cls&set input=497O&goto startUninstallationInstructions
 if /I %input% EQU 97S start Autodesk_FeatureCAM_S.lnk&set input=497S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 98 cls&goto startAutodeskMayaPromptDeepSubDialerMode
 if /I %input% EQU 98A start Autodesk_Maya_A.lnk&set input=498A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 98R start Autodesk_Maya_R.lnk&set input=498R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 98I start Autodesk_Maya_I.exe&set input=498I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 98O goto startUninstallationInstructions
+if /I %input% EQU 98O cls&set input=498O&goto startUninstallationInstructions
 if /I %input% EQU 98S start Autodesk_Maya_S.lnk&set input=498S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 99 cls&goto startTeklaStructuresPromptDeepSubDialerMode
 if /I %input% EQU 99A start Tekla_Structures_A.lnk&set input=499A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 99R start Tekla_Structures_R.lnk&set input=499R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 99I start Tekla_Structures_I.exe&set input=499I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 99O goto startUninstallationInstructions
+if /I %input% EQU 99O cls&set input=499O&goto startUninstallationInstructions
 if /I %input% EQU 99S start Tekla_Structures_S.lnk&set input=499S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU - cls&goto start3
 if /I %input% EQU -- cls&goto start2
@@ -8769,7 +10275,7 @@ set /p input=%BS%
 if /I %input% EQU A start VMware_Workstation_A.lnk&set input=41A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start VMware_Workstation_R.lnk&set input=41R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start VMware_Workstation_I.exe&set input=41R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=41O&goto startUninstallationInstructions
 goto :eof
 :startDockerDesktopPrompt
 call :banner
@@ -9350,55 +10856,55 @@ if /I %input% EQU 1R start AutoCAD_R.lnk&set input=491R&&goto startPreExitPrompt
 if /I %input% EQU 1I cls&goto startAutoCADinstallPromptSubDialerMode
 if /I %input% EQU 1I1 start AutoCAD_I.exe&set input=491I1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1I2 start AutoCAD_OfflineHelp_I.exe&set input=491I2&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 1O goto startUninstallationInstructions
+if /I %input% EQU 1O cls&set input=491O&goto startUninstallationInstructions
 if /I %input% EQU 1S start AutoCAD_S.lnk&set input=491S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2 cls&goto startAutoCADElectricalPrompt
 if /I %input% EQU 2A start AutoCAD_Electrical_A.lnk&set input=492A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start AutoCAD_Electrical_R.lnk&set input=492R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2I start AutoCAD_Electrical_I.exe&set input=492I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2O goto startUninstallationInstructions
+if /I %input% EQU 2O cls&set input=492O&goto startUninstallationInstructions
 if /I %input% EQU 2S start AutoCAD_Electrical_S.lnk&set input=492S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3 cls&goto startAutoCADMechanicalPrompt
 if /I %input% EQU 3A start AutoCAD_Mechanical_A.lnk&set input=493A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start AutoCAD_Mechanical_R.lnk&set input=493R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3I start AutoCAD_Mechanical_I.exe&set input=493I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3O goto startUninstallationInstructions
+if /I %input% EQU 3O cls&set input=493O&goto startUninstallationInstructions
 if /I %input% EQU 3S start AutoCAD_Mechanical_S.lnk&set input=493S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4 cls&goto startSolidWorks3DCADDesignPrompt
 if /I %input% EQU 4A start Solidworks_3D_CAD_Design_A.lnk&set input=494A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start Solidworks_3D_CAD_Design_R.lnk&set input=494R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4I start Solidworks_3D_CAD_Design_I.exe&set input=494I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4O goto startUninstallationInstructions
+if /I %input% EQU 4O cls&set input=494O&goto startUninstallationInstructions
 if /I %input% EQU 4S start Solidworks_3D_CAD_Design_S.lnk&set input=494S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5 cls&goto startAutodeskFusion360Prompt
 if /I %input% EQU 5A start Autodesk_Fusion_360_A.lnk&set input=495A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start Autodesk_Fusion_360_R.lnk&set input=495R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5I start Autodesk_Fusion_360_I.exe&set input=495I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5O goto startUninstallationInstructions
+if /I %input% EQU 5O cls&set input=495O&goto startUninstallationInstructions
 if /I %input% EQU 5S start Autodesk_Fusion_360_S.lnk&set input=495S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6 cls&goto startAutodeskCivil3Dprompt
 if /I %input% EQU 6A start Autodesk_Civil_3D_A.lnk&set input=496A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6R start Autodesk_Civil_3D_R.lnk&set input=496R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6I start Autodesk_Civil_3D_I.exe&set input=496I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6O goto startUninstallationInstructions
+if /I %input% EQU 6O cls&set input=496O&goto startUninstallationInstructions
 if /I %input% EQU 6S start Autodesk_Civil_3D_S.lnk&set input=496S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7 cls&goto startAutodeskFeatureCAMprompt
 if /I %input% EQU 7A start Autodesk_FeatureCAM_A.lnk&set input=497A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start Autodesk_FeatureCAM_R.lnk&set input=497R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7I start Autodesk_FeatureCAM_I.exe&set input=497I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7O goto startUninstallationInstructions
+if /I %input% EQU 7O cls&set input=497O&goto startUninstallationInstructions
 if /I %input% EQU 7S start Autodesk_FeatureCAM_S.lnk&set input=497S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8 cls&goto startAutodeskMayaPrompt
 if /I %input% EQU 8A start Autodesk_Maya_A.lnk&set input=498A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8R start Autodesk_Maya_R.lnk&set input=498R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8I start Autodesk_Maya_I.exe&set input=498I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 8O goto startUninstallationInstructions
+if /I %input% EQU 8O cls&set input=498O&goto startUninstallationInstructions
 if /I %input% EQU 8S start Autodesk_Maya_S.lnk&set input=498S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9 cls&goto startTeklaStructuresPrompt
 if /I %input% EQU 9A start Tekla_Structures_A.lnk&set input=499A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9R start Tekla_Structures_R.lnk&set input=499R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9I start Tekla_Structures_I.exe&set input=499I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9O goto startUninstallationInstructions
+if /I %input% EQU 9O cls&set input=499O&goto startUninstallationInstructions
 if /I %input% EQU 9S start Tekla_Structures_S.lnk&set input=499S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU - cls&goto start3
 if /I %input% EQU -- cls&goto start2
@@ -9468,7 +10974,7 @@ if /I %input% EQU A start AutoCAD_A.lnk&set input=491A&&goto startPreExitPrompt|
 if /I %input% EQU R start AutoCAD_R.lnk&set input=491R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I1 start AutoCAD_I.exe&set input=491I1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I2 start AutoCAD_OfflineHelp_I.exe&set input=491I2&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=491O&goto startUninstallationInstructions
 if /I %input% EQU S start AutoCAD_S.lnk&set input=491S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startAutoCADinstallPrompt1
@@ -9596,7 +11102,7 @@ set /p input=%BS%
 if /I %input% EQU A start AutoCAD_Electrical_A.lnk&set input=492A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start AutoCAD_Electrical_R.lnk&set input=492R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start AutoCAD_Electrical_I.exe&set input=492I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=492O&goto startUninstallationInstructions
 if /I %input% EQU S start AutoCAD_Electrical_S.lnk&set input=492S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startAutoCADMechanicalPrompt
@@ -9654,7 +11160,7 @@ set /p input=%BS%
 if /I %input% EQU A start AutoCAD_Mechanical_A.lnk&set input=493A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start AutoCAD_Mechanical_R.lnk&set input=493R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start AutoCAD_Mechanical_I.exe&set input=493I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=493O&goto startUninstallationInstructions
 if /I %input% EQU S start AutoCAD_Mechanical_S.lnk&set input=493S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startSolidWorks3DCADDesignPrompt
@@ -9712,7 +11218,7 @@ set /p input=%BS%
 if /I %input% EQU A start Solidworks_3D_CAD_Design_A.lnk&set input=494A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Solidworks_3D_CAD_Design_R.lnk&set input=494R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Solidworks_3D_CAD_Design_I.exe&set input=494I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=494O&goto startUninstallationInstructions
 if /I %input% EQU S start Solidworks_3D_CAD_Design_S.lnk&set input=494S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startAutodeskFusion360Prompt
@@ -9770,7 +11276,7 @@ set /p input=%BS%
 if /I %input% EQU A start Autodesk_Fusion_360_A.lnk&set input=495A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Autodesk_Fusion_360_R.lnk&set input=495R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Autodesk_Fusion_360_I.exe&set input=495I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=495O&goto startUninstallationInstructions
 if /I %input% EQU S start Autodesk_Fusion_360_S.lnk&set input=495S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startAutodeskCivil3Dprompt
@@ -9828,7 +11334,7 @@ set /p input=%BS%
 if /I %input% EQU A start Autodesk_Civil_3D_A.lnk&set input=496A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Autodesk_Civil_3D_R.lnk&set input=496R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Autodesk_Civil_3D_I.exe&set input=496I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=496O&goto startUninstallationInstructions
 if /I %input% EQU S start Autodesk_Civil_3D_S.lnk&set input=496S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startAutodeskFeatureCAMprompt
@@ -9886,7 +11392,7 @@ set /p input=%BS%
 if /I %input% EQU A start Autodesk_FeatureCAM_A.lnk&set input=497A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Autodesk_FeatureCAM_R.lnk&set input=497R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Autodesk_FeatureCAM_I.exe&set input=497I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=497O&goto startUninstallationInstructions
 if /I %input% EQU S start Autodesk_FeatureCAM_S.lnk&set input=497S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startAutodeskMayaPrompt
@@ -9944,7 +11450,7 @@ set /p input=%BS%
 if /I %input% EQU A start Autodesk_Maya_A.lnk&set input=498A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Autodesk_Maya_R.lnk&set input=498R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Autodesk_Maya_I.exe&set input=498I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=498O&goto startUninstallationInstructions
 if /I %input% EQU S start Autodesk_Maya_S.lnk&set input=498S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startTeklaStructuresPrompt
@@ -10002,7 +11508,7 @@ set /p input=%BS%
 if /I %input% EQU A start Tekla_Structures_A.lnk&set input=499A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Tekla_Structures_R.lnk&set input=499R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Tekla_Structures_I.exe&set input=499I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=499O&goto startUninstallationInstructions
 if /I %input% EQU S start Tekla_Structures_S.lnk&set input=499S&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :: Section 5
@@ -10057,7 +11563,7 @@ if /I %input% EQU 4 cls&goto startON1PhotoRAWprompt
 if /I %input% EQU 4A start ON1_Photo_RAW_A.lnk&set input=54A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start ON1_Photo_RAW_R.lnk&set input=54R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4I start ON1_Photo_RAW_I.exe&set input=54I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4O goto startUninstallationInstructions
+if /I %input% EQU 4O cls&set input=54O&goto startUninstallationInstructions
 if /I %input% EQU 5 cls&goto startPlayerFabPrompt
 if /I %input% EQU 5A start PlayerFab_A.lnk&set input=55A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start PlayerFab_R.lnk&set input=55R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10285,7 +11791,7 @@ set /p input=%BS%
 if /I %input% EQU A start ON1_Photo_RAW_A.lnk&set input=54A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start ON1_Photo_RAW_R.lnk&set input=54R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start ON1_Photo_RAW_I.exe&set input=54I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=54O&goto startUninstallationInstructions
 goto :eof
 :startPlayerFabPrompt
 call :banner
@@ -10755,7 +12261,7 @@ echo        [38;2;204;255;204m╠══1) Steam Games/Workshop⠀⠀           
 echo        [38;2;179;255;179m║                                      ⠀⠀⠀⠀⠀⠀⢠⣶⣶⣷⠀⠀⠀⠸⠟⠁⠀⡇⠀⠀⠀⠀⠀⢹[0m
 echo        [38;2;153;255;153m╠═══2) Epic Games/Unreal Engine        ⠀⠀⠀⠀⠀⠀⠘⠟⢹⣋⣀⡀⢀⣤⣶⣿⣿⣿⣿⣿⡿⠛⣠⣼⣿⡟[0m
 echo        [38;2;128;255;128m║                                      ⠀⠀⠀⠀⠀⣴⣾⣿⣿⣿⣿⢁⣾⣿⣿⣿⣿⣿⣿⡿⢁⣾⣿⣿⣿⠁[0m
-echo        [38;2;102;255;102m╠════3) Ubisoft/EA/Gaming SMS          ⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇[0m
+echo        [38;2;102;255;102m╠════3) Ubisoft/EA/GOG + SMS           ⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇[0m
 echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠳⣤⣙⠟⠛⢻⠿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣇⠘⠉⠀⢸⠀⢀⣠[0m
 echo        [38;2;51;255;51m╠═════4) BlueStacks/Android VM         ⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣶⣄⡈⠉⠀⠀⢸⡇⠀⠀⠉⠂⠀⣿⣿⣿⣧[0m
@@ -10781,8 +12287,8 @@ if /I %input% EQU 2 cls&goto startEpicGamesPrompt
 if /I %input% EQU 2A start Epic_Games_Launcher_A.lnk&set input=62A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start Epic_Games_Launcher_R.lnk&set input=62R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2I start Epic_Games_Launcher_I.msi&set input=62I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2O goto startUninstallationInstructions
-if /I %input% EQU 3 cls&goto startUbisoftAndElectronicArtsPrompt
+if /I %input% EQU 2O cls&set input=62O&goto startUninstallationInstructions
+if /I %input% EQU 3 cls&goto startUbisoftElectronicArtsGOGPrompt
 if /I %input% EQU 3U cls&goto startUbisoftConnectPromptSubDialerMode1
 if /I %input% EQU 3UA start Ubisoft_Connect_A.lnk&set input=63UA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3UR start Ubisoft_Connect_R.lnk&set input=63UR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10792,7 +12298,12 @@ if /I %input% EQU 3E cls&goto startElectronicArtsPromptSubDialerMode1
 if /I %input% EQU 3EA start Electronic_Arts_Launcher_A.lnk&set input=63EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3ER start Electronic_Arts_Launcher_R.lnk&set input=63ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3EI start Electronic_Arts_Launcher_I.exe&set input=63EI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3EO goto startUninstallationInstructions
+if /I %input% EQU 3EO cls&set input=63EO&goto startUninstallationInstructions
+if /I %input% EQU 3G cls&goto startGoodOldGamesPromptSubDialerMode1
+if /I %input% EQU 3GA start GOG_Galaxy_Launcher_A.lnk&set input=63GA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3GR start GOG_Galaxy_Launcher_R.lnk&set input=63GR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3GI start GOG_Galaxy_Launcher_I.exe&set input=63GI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3GO start GOG_Galaxy_Launcher_O.lnk&set input=63GO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4 cls&goto startBlueStacksPrompt
 if /I %input% EQU 4A start BlueStacks_A.lnk&set input=64A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start BlueStacks_R.lnk&set input=64R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10809,7 +12320,7 @@ if /I %input% EQU 6R start Go_R.lnk&set input=66R&&goto startPreExitPrompt||goto
 if /I %input% EQU 6I cls&goto startGoInstallerPromptSubDialerMode1
 if /I %input% EQU 6IE start Go_I.exe&set input=66IE&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6IM start Go_I.msi&set input=66IM&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6O goto startUninstallationInstructions
+if /I %input% EQU 6O cls&set input=66O&goto startUninstallationInstructions
 if /I %input% EQU 7 cls&goto startInkballPrompt
 if /I %input% EQU 7A start InkBall_A.lnk&set input=67A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start InkBall_R.lnk&set input=67R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10977,45 +12488,48 @@ set /p input=%BS%
 if /I %input% EQU A start Epic_Games_Launcher_A.lnk&set input=62A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Epic_Games_Launcher_R.lnk&set input=62R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Epic_Games_Launcher_I.msi&set input=62I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=62O&goto startUninstallationInstructions
 goto :eof
-:startUbisoftAndElectronicArtsPrompt
+:startUbisoftElectronicArtsGOGPrompt
 call :banner
-call :menuUbisoftAndElectronicArtsrPrompt
-call :menuUbisoftAndElectronicArts
+call :menuUbisoftElectronicArtsGOGrPrompt
+call :menuUbisoftElectronicArtsGOG
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6a
 if /I %input% EQU U cls&goto startUbisoftConnectPrompt1
 if /I %input% EQU E cls&goto startElectronicArtsPrompt1
+if /I %input% EQU G cls&goto startGoodOldGamesPrompt1
 if /I %input% EQU -+ cls&goto start6a
 if /I %input% EQU +- cls&goto start6a
-cls&goto startUbisoftAndElectronicArtsPrompt
-:startUbisoftAndElectronicArtsPromptSubDialerMode
+cls&goto startUbisoftElectronicArtsGOGPrompt
+:startUbisoftElectronicArtsGOGPromptSubDialerMode
 call :banner
-call :menuUbisoftAndElectronicArtsPrompt
-call :menuUbisoftAndElectronicArts
+call :menuUbisoftElectronicArtsGOGPrompt
+call :menuUbisoftElectronicArtsGOG
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start6b
 if /I %input% EQU U cls&goto startUbisoftConnectPrompt2
 if /I %input% EQU E cls&goto startElectronicArtsPrompt2
+if /I %input% EQU G cls&goto startGoodOldGamesPrompt2
 if /I %input% EQU -+ cls&goto start6a
 if /I %input% EQU +- cls&goto start6a
-cls&goto startUbisoftAndElectronicArtsPromptSubDialerMode
-:startUbisoftAndElectronicArtsPromptDialerMode
+cls&goto startUbisoftElectronicArtsGOGPromptSubDialerMode
+:startUbisoftElectronicArtsGOGPromptDialerMode
 call :banner
-call :menuUbisoftAndElectronicArtsPrompt
-call :menuUbisoftAndElectronicArts
+call :menuUbisoftElectronicArtsGOGPrompt
+call :menuUbisoftElectronicArtsGOG
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU U cls&goto startUbisoftConnectPrompt3
 if /I %input% EQU E cls&goto startElectronicArtsPrompt3
+if /I %input% EQU G cls&goto startGoodOldGamesPrompt3
 if /I %input% EQU -+ cls&goto start6a
 if /I %input% EQU +- cls&goto start6a
-cls&goto startUbisoftAndElectronicArtsPromptDialerMode
-:menuUbisoftAndElectronicArtsPrompt
+cls&goto startUbisoftElectronicArtsGOGPromptDialerMode
+:menuUbisoftElectronicArtsGOGPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Depends
 echo     Software Type: Depends
@@ -11029,13 +12543,13 @@ echo    Current Update:
 echo        Patch Date: 
 echo  Target Filenames: Ubisoft_Connect_R.lnk, Ubisoft_Connect_I.exe, Ubisoft_Connect_O.lnk,
 echo                 +: Electronic_Arts_Launcher_R.lnk, Electronic_Arts_Launcher_I.exe
-echo   Additional Info: 
+echo                 +: GOG_Galaxy_Launcher_R.lnk, GOG_Galaxy_Launcher_I.exe
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
-echo Input the letter ("U/E") for Ubisoft Connect/Electronic Arts Game Store. Input zero ("0") to cancel.
+echo Input the letter ("U/E/G") for Ubisoft Connect/Electronic Arts/GOG Game Store. Input zero ("0") to cancel.
 echo.
 goto :eof
-:menuUbisoftAndElectronicArts
+:menuUbisoftElectronicArtsGOG
 set /p input=%BS%
 if /I %input% EQU UA start Ubisoft_Connect_A.lnk&set input=63UA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UR start Ubisoft_Connect_R.lnk&set input=63UR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11044,7 +12558,11 @@ if /I %input% EQU UO start Ubisoft_Connect_O.lnk&set input=63UO&&goto startPreEx
 if /I %input% EQU EA start Electronic_Arts_Launcher_A.lnk&set input=63EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ER start Electronic_Arts_Launcher_R.lnk&set input=63ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU EI start Electronic_Arts_Launcher_I.exe&set input=63EI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU EO goto startUninstallationInstructions
+if /I %input% EQU EO cls&set input=63EO&goto startUninstallationInstructions
+if /I %input% EQU GA start GOG_Galaxy_Launcher_A.lnk&set input=63GA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GR start GOG_Galaxy_Launcher_R.lnk&set input=63GR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GI start GOG_Galaxy_Launcher_I.exe&set input=63GI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GO start GOG_Galaxy_Launcher_O.lnk&set input=63GO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startUbisoftConnectPrompt1
 call :banner
@@ -11052,7 +12570,7 @@ call :menuUbisoftConnectPrompt
 call :menuUbisoftConnect
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startUbisoftAndElectronicArtsPrompt
+if /I %input% EQU 0 cls&goto startUbisoftElectronicArtsGOGPrompt
 if /I %input% EQU -+ cls&goto start6a
 if /I %input% EQU +- cls&goto start6a
 cls&goto startUbisoftConnectPrompt1
@@ -11062,7 +12580,7 @@ call :menuUbisoftConnectPrompt
 call :menuUbisoftConnect
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startUbisoftAndElectronicArtsPromptSubDialerMode
+if /I %input% EQU 0 cls&goto startUbisoftElectronicArtsGOGPromptSubDialerMode
 if /I %input% EQU -+ cls&goto start6a
 if /I %input% EQU +- cls&goto start6a
 cls&goto startUbisoftConnectPrompt2
@@ -11072,7 +12590,7 @@ call :menuUbisoftConnectPrompt
 call :menuUbisoftConnect
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startUbisoftAndElectronicArtsPromptDialerMode
+if /I %input% EQU 0 cls&goto startUbisoftElectronicArtsGOGPromptDialerMode
 if /I %input% EQU -+ cls&goto start6a
 if /I %input% EQU +- cls&goto start6a
 cls&goto startUbisoftConnectPrompt3
@@ -11139,7 +12657,7 @@ call :menuElectronicArtsPrompt
 call :menuElectronicArts
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startUbisoftAndElectronicArtsPrompt
+if /I %input% EQU 0 cls&goto startUbisoftElectronicArtsGOGPrompt
 if /I %input% EQU -+ cls&goto start6a
 if /I %input% EQU +- cls&goto start6a
 cls&goto startElectronicArtsPrompt1
@@ -11149,7 +12667,7 @@ call :menuElectronicArtsPrompt
 call :menuElectronicArts
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startUbisoftAndElectronicArtsPromptSubDialerMode
+if /I %input% EQU 0 cls&goto startUbisoftElectronicArtsGOGPromptSubDialerMode
 if /I %input% EQU -+ cls&goto start6a
 if /I %input% EQU +- cls&goto start6a
 cls&goto startElectronicArtsPrompt2
@@ -11159,7 +12677,7 @@ call :menuElectronicArtsPrompt
 call :menuElectronicArts
 call :menuAuxiliaryCommands
 call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startUbisoftAndElectronicArtsPromptDialerMode
+if /I %input% EQU 0 cls&goto startUbisoftElectronicArtsGOGPromptDialerMode
 if /I %input% EQU -+ cls&goto start6a
 if /I %input% EQU +- cls&goto start6a
 cls&goto startElectronicArtsPrompt3
@@ -11218,7 +12736,94 @@ set /p input=%BS%
 if /I %input% EQU A start Electronic_Arts_Launcher_A.lnk&set input=63EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Electronic_Arts_Launcher_R.lnk&set input=63ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Electronic_Arts_Launcher_I.exe&set input=63EI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=63EO&goto startUninstallationInstructions
+goto :eof
+:startGoodOldGamesPrompt1
+call :banner
+call :menuGoodOldGamesPrompt
+call :menuGoodOldGames
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startUbisoftElectronicArtsGOGPrompt
+if /I %input% EQU -+ cls&goto start6a
+if /I %input% EQU +- cls&goto start6a
+cls&goto startGoodOldGamesPrompt1
+:startGoodOldGamesPrompt2
+call :banner
+call :menuGoodOldGamesPrompt
+call :menuGoodOldGames
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startUbisoftElectronicArtsGOGPromptSubDialerMode
+if /I %input% EQU -+ cls&goto start6a
+if /I %input% EQU +- cls&goto start6a
+cls&goto startGoodOldGamesPrompt2
+:startGoodOldGamesPrompt3
+call :banner
+call :menuGoodOldGamesPrompt
+call :menuGoodOldGames
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startUbisoftElectronicArtsGOGPromptDialerMode
+if /I %input% EQU -+ cls&goto start6a
+if /I %input% EQU +- cls&goto start6a
+cls&goto startGoodOldGamesPrompt3
+:startGoodOldGamesPromptSubDialerMode1
+call :banner
+call :menuGoodOldGamesPrompt
+call :menuGoodOldGames
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start6a
+if /I %input% EQU -+ cls&goto start6a
+if /I %input% EQU +- cls&goto start6a
+cls&goto startGoodOldGamesPromptSubDialerMode1
+:startGoodOldGamesPromptSubDialerMode2
+call :banner
+call :menuGoodOldGamesPrompt
+call :menuGoodOldGames
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start6b
+if /I %input% EQU -+ cls&goto start6a
+if /I %input% EQU +- cls&goto start6a
+cls&goto startGoodOldGamesPromptSubDialerMode2
+:startGoodOldGamesPromptDialerMode
+call :banner
+call :menuGoodOldGamesPrompt
+call :menuGoodOldGames
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start6a
+if /I %input% EQU +- cls&goto start6a
+cls&goto startGoodOldGamesPromptDialerMode
+:menuGoodOldGamesPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Good Old Games (GOG)
+echo     Software Type: Digital Distribution Platform for games made by GOG
+echo          Category: Freeware, with in-app purchases (Most online-only EA manufactured games are licensed, not sold)
+echo      License Type: EULA from GOG
+echo           Website: https://www.gog.com/en
+echo  Founded/Released: 02/22/2008
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: GOG_Galaxy_Launcher_R.lnk, GOG_Galaxy_Launcher_I.exe
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall GOG Game Store ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuGoodOldGames
+set /p input=%BS%
+if /I %input% EQU A start GOG_Galaxy_Launcher_A.lnk&set input=63GA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start GOG_Galaxy_Launcher_R.lnk&set input=63GR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start GOG_Galaxy_Launcher_I.exe&set input=63GI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start GOG_Galaxy_Launcher_O.lnk&set input=63GO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startBlueStacksPrompt
 call :banner
@@ -11393,7 +12998,7 @@ if /I %input% EQU A start Go_A.lnk&set input=66A&&goto startPreExitPrompt||goto 
 if /I %input% EQU R start Go_R.lnk&set input=66R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IE start Go_I.exe&set input=66IE&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IM start Go_I.msi&set input=66IM&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=66O&goto startUninstallationInstructions
 goto :eof
 :startGoInstallerPrompt1
 call :banner
@@ -11661,8 +13266,8 @@ if /I %input% EQU 92 cls&goto startEpicGamesPromptSubDialerMode
 if /I %input% EQU 92A start Epic_Games_Launcher_A.lnk&set input=62A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92R start Epic_Games_Launcher_R.lnk&set input=62R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92I start Epic_Games_Launcher_I.msi&set input=62I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 92O goto startUninstallationInstructions
-if /I %input% EQU 93 cls&goto startUbisoftAndElectronicArtsPromptSubDialerMode
+if /I %input% EQU 92O cls&set input=62O&goto startUninstallationInstructions
+if /I %input% EQU 93 cls&goto startUbisoftElectronicArtsGOGPromptSubDialerMode
 if /I %input% EQU 93U cls&goto startUbisoftConnectPromptSubDialerMode2
 if /I %input% EQU 93UA start Ubisoft_Connect_A.lnk&set input=63UA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93UR start Ubisoft_Connect_R.lnk&set input=63UR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11672,7 +13277,12 @@ if /I %input% EQU 93E cls&goto startElectronicArtsPromptSubDialerMode2
 if /I %input% EQU 93EA start Electronic_Arts_Launcher_A.lnk&set input=63EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93ER start Electronic_Arts_Launcher_R.lnk&set input=63ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93EI start Electronic_Arts_Launcher_I.exe&set input=63EI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93EO goto startUninstallationInstructions
+if /I %input% EQU 93EO cls&set input=63EO&goto startUninstallationInstructions
+if /I %input% EQU 93G cls&goto startGoodOldGamesPromptSubDialerMode2
+if /I %input% EQU 93GA start GOG_Galaxy_Launcher_A.lnk&set input=63GA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93GR start GOG_Galaxy_Launcher_R.lnk&set input=63GR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93GI start GOG_Galaxy_Launcher_I.exe&set input=63GI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93GO start GOG_Galaxy_Launcher_O.lnk&set input=63GO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94 cls&goto startBlueStacksPromptSubDialerMode
 if /I %input% EQU 94A start BlueStacks_A.lnk&set input=64A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start BlueStacks_R.lnk&set input=64R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11689,7 +13299,7 @@ if /I %input% EQU 96R start Go_R.lnk&set input=66R&&goto startPreExitPrompt||got
 if /I %input% EQU 96I cls&goto startGoInstallerPromptSubDialerMode2
 if /I %input% EQU 96IE start Go_I.exe&set input=66IE&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96IM start Go_I.msi&set input=66IM&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96O goto startUninstallationInstructions
+if /I %input% EQU 96O cls&set input=66O&goto startUninstallationInstructions
 if /I %input% EQU 97 cls&goto startInkballPromptSubDialerMode
 if /I %input% EQU 97A start InkBall_A.lnk&set input=67A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97R start InkBall_R.lnk&set input=67R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12227,12 +13837,12 @@ if /I %input% EQU 6T cls&goto startForensicToolkitPromptSubDialerMode1
 if /I %input% EQU 6TA start Forensic_Toolkit_A.lnk&set input=76TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6TR start Forensic_Toolkit_R.lnk&set input=76TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6TI start Forensic_Toolkit_I.lnk&set input=76TI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6TO goto startUninstallationInstructions
+if /I %input% EQU 6TO cls&set input=76TO&goto startUninstallationInstructions
 if /I %input% EQU 6L cls&goto startFTKLanguagePromptSubDialerMode1
 if /I %input% EQU 6LA start FTK_Language_A.lnk&set input=76LA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6LR start FTK_Language_R.lnk&set input=76LR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6LI start FTK_Language_I.lnk&set input=76LI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6LO goto startUninstallationInstructions
+if /I %input% EQU 6LO cls&set input=76LO&goto startUninstallationInstructions
 if /I %input% EQU 7 cls&goto startPasswareKitPrompt
 if /I %input% EQU 7A start Passware_Kit_A.lnk&set input=77A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start Passware_Kit_R.lnk&set input=77R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12258,7 +13868,7 @@ if /I %input% EQU 93 cls&goto startAdobeAcrobatPromptSubDialerMode
 if /I %input% EQU 93A start Adobe_Acrobat_A.lnk&set input=793A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93R start Adobe_Acrobat_R.lnk&set input=793R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93I start Adobe_Acrobat_I.lnk&set input=793I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93O goto startUninstallationInstructions
+if /I %input% EQU 93O cls&set input=793O&goto startUninstallationInstructions
 if /I %input% EQU 94 cls&goto startCalibrePromptSubDialerMode
 if /I %input% EQU 94A start Calibre_A.lnk&set input=794A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start Calibre_R.lnk&set input=794R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12637,11 +14247,11 @@ set /p input=%BS%
 if /I %input% EQU TA start Forensic_Toolkit_A.lnk&set input=76TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TR start Forensic_Toolkit_R.lnk&set input=76TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI start Forensic_Toolkit_I.lnk&set input=76TI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU TO goto startUninstallationInstructions
+if /I %input% EQU TO cls&set input=76TO&goto startUninstallationInstructions
 if /I %input% EQU LA start FTK_Language_A.lnk&set input=76LA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU LR start FTK_Language_R.lnk&set input=76LR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU LI start FTK_Language_I.lnk&set input=76LI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU LO goto startUninstallationInstructions
+if /I %input% EQU LO cls&set input=76LO&goto startUninstallationInstructions
 goto :eof
 :startForensicToolkitPrompt1
 call :banner
@@ -12728,7 +14338,7 @@ set /p input=%BS%
 if /I %input% EQU A start Forensic_Toolkit_A.lnk&set input=76TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Forensic_Toolkit_R.lnk&set input=76TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Forensic_Toolkit_I.lnk&set input=76TI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=76TO&goto startUninstallationInstructions
 goto :eof
 :startFTKLanguagePrompt1
 call :banner
@@ -12815,7 +14425,7 @@ set /p input=%BS%
 if /I %input% EQU A start FTK_Language_A.lnk&set input=76LA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start FTK_Language_R.lnk&set input=76LR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start FTK_Language_I.lnk&set input=76LI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=76LO&goto startUninstallationInstructions
 goto :eof
 :startPasswareKitPrompt
 call :banner
@@ -12980,7 +14590,7 @@ if /I %input% EQU 3 cls&goto startAdobeAcrobatPrompt
 if /I %input% EQU 3A start Adobe_Acrobat_A.lnk&set input=793A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start Adobe_Acrobat_R.lnk&set input=793R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3I start Adobe_Acrobat_I.lnk&set input=793I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3O goto startUninstallationInstructions
+if /I %input% EQU 3O cls&set input=793O&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto startCalibrePrompt
 if /I %input% EQU 4A start Calibre_A.lnk&set input=794A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start Calibre_R.lnk&set input=794R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13037,12 +14647,12 @@ if /I %input% EQU 96T cls&goto startForensicToolkitPromptSubDialerMode2
 if /I %input% EQU 96TA start Forensic_Toolkit_A.lnk&set input=76TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96TR start Forensic_Toolkit_R.lnk&set input=76TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96TI start Forensic_Toolkit_I.lnk&set input=76TI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96TO goto startUninstallationInstructions
+if /I %input% EQU 96TO cls&set input=76TO&goto startUninstallationInstructions
 if /I %input% EQU 96L cls&goto startFTKLanguagePromptSubDialerMode2
 if /I %input% EQU 96LA start FTK_Language_A.lnk&set input=76LA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96LR start FTK_Language_R.lnk&set input=76LR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 96LI start FTK_Language_I.lnk&set input=76LI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96LO goto startUninstallationInstructions
+if /I %input% EQU 96LO cls&set input=76LO&goto startUninstallationInstructions
 if /I %input% EQU 97 cls&goto startPasswareKitPromptSubDialerMode
 if /I %input% EQU 97A start Passware_Kit_A.lnk&set input=77A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97R start Passware_Kit_R.lnk&set input=77R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13231,7 +14841,7 @@ set /p input=%BS%
 if /I %input% EQU A start Adobe_Acrobat_A.lnk&set input=793A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Adobe_Acrobat_R.lnk&set input=793R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Adobe_Acrobat_I.lnk&set input=793I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=793O&goto startUninstallationInstructions
 goto :eof
 :startCalibrePrompt
 call :banner
@@ -13597,7 +15207,7 @@ if /I %input% EQU 7 cls&goto startWinAcePrompt
 if /I %input% EQU 7A start WinAce_A.lnk&set input=87A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start WinAce_R.lnk&set input=87R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7I start WinAce_I.exe&set input=87I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7O goto startUninstallationInstructions
+if /I %input% EQU 7O cls&set input=87O&goto startUninstallationInstructions
 if /I %input% EQU 8 cls&goto startIZArcPrompt
 if /I %input% EQU 8A start IZArc_A.lnk&set input=88A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8R start IZArc_R.lnk&set input=88R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14222,7 +15832,7 @@ set /p input=%BS%
 if /I %input% EQU A start WinAce_A.lnk&set input=87A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WinAce_R.lnk&set input=87R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinAce_I.exe&set input=87I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=87O&goto startUninstallationInstructions
 goto :eof
 :startIZArcPrompt
 call :banner
@@ -14374,7 +15984,7 @@ if /I %input% EQU 4 cls&goto startMinitabPrompt
 if /I %input% EQU 4A start Minitab_A.lnk&set input=94A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start Minitab_R.lnk&set input=94R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4I start Minitab_I.exe&set input=94I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4O goto startUninstallationInstructions
+if /I %input% EQU 4O cls&set input=94O&goto startUninstallationInstructions
 if /I %input% EQU 5 cls&goto startjGRASPprompt
 if /I %input% EQU 5A start jGRASP_A.lnk&set input=95A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start jGRASP_R.lnk&set input=95R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14414,27 +16024,27 @@ if /I %input% EQU 81 cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptSubDial
 if /I %input% EQU 81A start TI-Nspire_CX_CAS_Student_Software_A.lnk&set input=981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 81R start TI-Nspire_CX_CAS_Student_Software_R.lnk&set input=981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 81I start TI-Nspire_CX_CAS_Student_Software_I.exe&set input=981I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 81O goto startUninstallationInstructions
+if /I %input% EQU 81O cls&set input=981O&goto startUninstallationInstructions
 if /I %input% EQU 82 cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptSubDialerMode1
 if /I %input% EQU 82A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&set input=982A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&set input=982R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 82I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=982I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 82O goto startUninstallationInstructions
+if /I %input% EQU 82O cls&set input=982O&goto startUninstallationInstructions
 if /I %input% EQU 83 cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptSubDialerMode1
 if /I %input% EQU 83A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&set input=983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 83R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&set input=983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 83I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=983I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 83O goto startUninstallationInstructions
+if /I %input% EQU 83O cls&set input=983O&goto startUninstallationInstructions
 if /I %input% EQU 84 cls&goto startMaplePromptSubDialerMode1
 if /I %input% EQU 84A start Maple_A.lnk&set input=984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84R start Maple_R.lnk&set input=984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84I start Maple_I.exe&set input=984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 84O goto startUninstallationInstructions
+if /I %input% EQU 84O cls&set input=984O&goto startUninstallationInstructions
 if /I %input% EQU 85 cls&goto startMapleFlowPromptSubDialerMode1
 if /I %input% EQU 85A start Maple_Flow_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85R start Maple_Flow_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85I start Maple_Flow_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 85O goto startUninstallationInstructions
+if /I %input% EQU 85O cls&set input=985O&goto startUninstallationInstructions
 if /I %input% EQU 86 cls&goto startTelerikPromptSubDialerMode1
 if /I %input% EQU 86A cls&goto startTelerikRunAdminPromptSubDialerMode1
 if /I %input% EQU 86AA start Telerik_Test_Studio_A.lnk&set input=986AA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14449,7 +16059,7 @@ if /I %input% EQU 871 cls&goto startAgentDVRpromptDeepSubDialerMode1
 if /I %input% EQU 871A start Agent_DVR_A.lnk&set input=9871A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 871R start Agent_DVR_R.lnk&set input=9871R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 871I start Agent_DVR_I.exe&set input=9871I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 871O goto startUninstallationInstructions
+if /I %input% EQU 871O cls&set input=9871O&goto startUninstallationInstructions
 if /I %input% EQU 872 cls&goto startCisdemAppCryptPromptDeepSubDialerMode1
 if /I %input% EQU 872A start Cisdem_App_Crypt_A.lnk&set input=9872A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 872R start Cisdem_App_Crypt_R.lnk&set input=9872R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14491,7 +16101,7 @@ if /I %input% EQU 878N cls&goto startNMSSaveEditorPromptDeepSubDialerMode1
 if /I %input% EQU 878NA start NMSSaveEditor_A.lnk&set input=9878NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 878NR start NMSSaveEditor_R.lnk&set input=9878NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 878NI start NMSSaveEditor_I.exe&set input=9878NI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 878NO goto startUninstallationInstructions
+if /I %input% EQU 878NO cls&set input=9878NO&goto startUninstallationInstructions
 if /I %input% EQU 878P cls&goto startPalworldSavePalPromptDeepSubDialerMode1
 if /I %input% EQU 878PA start PalworldSavePal_A.lnk&set input=9878PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 878PR start PalworldSavePal_R.lnk&set input=9878PR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14507,7 +16117,7 @@ if /I %input% EQU 91 cls&goto startAudialsOnePromptSubDialerMode1
 if /I %input% EQU 91A start Audials_One_A.lnk&set input=991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91R start Audials_One_R.lnk&set input=991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91I start Audials_One_I.exe&set input=991I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 91O goto startUninstallationInstructions
+if /I %input% EQU 91O cls&set input=991O&goto startUninstallationInstructions
 if /I %input% EQU 92 cls&goto startProtonPromptSubDialerMode1
 if /I %input% EQU 92V cls&goto startProtonVPNpromptSubDialerMode1
 if /I %input% EQU 92VA start Proton_VPN_A.lnk&set input=992VA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14519,28 +16129,33 @@ if /I %input% EQU 92DA start Proton_Drive_A.lnk&set input=992DA&&goto startPreEx
 if /I %input% EQU 92DR start Proton_Drive_R.lnk&set input=992DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92DI start Proton_I.exe&set input=992DI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92DO start Proton_O.lnk&set input=992DO&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93 cls&goto startMullvadVPNpromptSubDialerMode1
-if /I %input% EQU 93A start Mullvad_VPN_A.lnk&set input=993A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93R start Mullvad_VPN_R.lnk&set input=993R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93I start Mullvad_VPN_I.exe&set input=993I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93O start Mullvad_VPN_O.lnk&set input=993O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93 cls&goto startOtherVPNsuitePromptSubDialerMode1
+if /I %input% EQU 93M cls&goto startMullvadVPNpromptSubDialerMode1
+if /I %input% EQU 93MA start Mullvad_VPN_A.lnk&set input=993MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93MR start Mullvad_VPN_R.lnk&set input=993MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93MI start Mullvad_VPN_I.exe&set input=993MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93MO start Mullvad_VPN_O.lnk&set input=993MO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93N cls&goto startNordVPNpromptSubDialerMode1
+if /I %input% EQU 93NA start NordVPN_A.lnk&set input=993NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93NR start NordVPN_R.lnk&set input=993NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93NI start NordVPN_I.exe&set input=993NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93NO cls&set input=993NO&goto startUninstallationInstructions
+if /I %input% EQU 93V cls&goto startOpenVPNpromptSubDialerMode1
+if /I %input% EQU 93VA start OpenVPN_A.lnk&set input=993VA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93VR start OpenVPN_R.lnk&set input=993VR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93VI start OpenVPN_I.msi&set input=993VI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93VO cls&set input=993VO&goto startUninstallationInstructions
 if /I %input% EQU 94 cls&goto startPortmasterPromptSubDialerMode1
 if /I %input% EQU 94A start Portmaster_A.lnk&set input=994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start Portmaster_R.lnk&set input=994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94I start Portmaster_I.exe&set input=994I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94O start Portmaster_O.lnk&set input=994O&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95 cls&goto startWiresharkPromptSubDialerMode1
-if /I %input% EQU 95A start Wireshark_A.lnk&set input=995A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95R start Wireshark_R.lnk&set input=995R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95I start Wireshark_I.exe&set input=995I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95O start Wireshark_O.lnk&set input=995O&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96 cls&goto startCharacterMapAndPaintPromptSubDialerMode1
-if /I %input% EQU 96C cls&goto startCharacterMapPromptSubDialerMode1
-if /I %input% EQU 96CA start Character_Map_A.lnk&set input=996CA&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96CR start Character_Map_R.lnk&set input=996CR&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96P cls&goto startPaintPromptSubDialerMode1
-if /I %input% EQU 96PA start Paint_A.lnk&set input=996PA&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96PR start Paint_Map_R.lnk&set input=996PR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 95 cls&goto startCharacterMapPromptSubDialerMode1
+if /I %input% EQU 95A start Character_Map_A.lnk&set input=996A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 95R start Character_Map_R.lnk&set input=996R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 96 cls&goto startPaintPromptSubDialerMode1
+if /I %input% EQU 96A start Paint_A.lnk&set input=996A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 96R start Paint_R.lnk&set input=996R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97 cls&goto start9cAltA
 if /I %input% EQU 971 cls&goto startdnSpy_x32_PromptDeepSubDialerMode1
 if /I %input% EQU 971A start dnSpy_x32_A.lnk&set input=9971A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14598,7 +16213,7 @@ if /I %input% EQU -- cls&goto start7a
 if /I %input% EQU --- cls&goto start6a
 if /I %input% EQU + cls&goto startAlert
 if /I %input% EQU ++ cls&goto startBackground
-if /I %input% EQU +++ cls&goto start1
+if /I %input% EQU +++ cls&goto startNetwork
 goto :eof
 :startUtilitiesPrompt
 call :banner
@@ -14994,47 +16609,47 @@ goto :eof
 set /p input=%BS%
 if /I %input% EQU R start System_Internals_R.lnk&set input=91SR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
-:startOpenMPTPrompt
+:startOpenMPTprompt
 call :banner
-call :menuOpenMPTPrompt
+call :menuOpenMPTprompt
 call :menuOpenMPT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
-cls&goto startOpenMPTPrompt
-:startOpenMPTSubDialerMode2
+cls&goto startOpenMPTprompt
+:startOpenMPTpromptSubDialerMode2
 call :banner
-call :menuOpenMPTPrompt
+call :menuOpenMPTprompt
 call :menuOpenMPT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
-cls&goto startOpenMPTPromptSubDialerMode2
-:startOpenMPTPromptSubDialerMode3
+cls&goto startOpenMPTpromptSubDialerMode2
+:startOpenMPTpromptSubDialerMode3
 call :banner
-call :menuOpenMPTPrompt
+call :menuOpenMPTprompt
 call :menuOpenMPT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
-cls&goto startOpenMPTPromptSubDialerMode3
-:startOpenMPTPromptDialerMode
+cls&goto startOpenMPTpromptSubDialerMode3
+:startOpenMPTpromptDialerMode
 call :banner
-call :menuOpenMPTPrompt
+call :menuOpenMPTprompt
 call :menuOpenMPT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
-cls&goto startOpenMPTPromptDialerMode
-:menuOpenMPTPrompt
+cls&goto startOpenMPTpromptDialerMode
+:menuOpenMPTprompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Olivier Lapicque
 echo     Software Type: Audio Module Tracker
@@ -15193,7 +16808,7 @@ set /p input=%BS%
 if /I %input% EQU A start Minitab_A.lnk&set input=94A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Minitab_R.lnk&set input=94R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Minitab_I.exe&set input=94I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=94O&goto startUninstallationInstructions
 goto :eof
 :startjGRASPprompt
 call :banner
@@ -15678,27 +17293,27 @@ if /I %input% EQU 1 cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePrompt
 if /I %input% EQU 1A start TI-Nspire_CX_CAS_Student_Software_A.lnk&set input=981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start TI-Nspire_CX_CAS_Student_Software_R.lnk&set input=981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1I start TI-Nspire_CX_CAS_Student_Software_I.exe&set input=981I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 1O goto startUninstallationInstructions
+if /I %input% EQU 1O cls&set input=981O&goto startUninstallationInstructions
 if /I %input% EQU 2 cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePrompt
 if /I %input% EQU 2A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&set input=982A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&set input=982R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=982I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2O goto startUninstallationInstructions
+if /I %input% EQU 2O cls&set input=982O&goto startUninstallationInstructions
 if /I %input% EQU 3 cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePrompt
 if /I %input% EQU 3A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&set input=983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&set input=983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=983I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3O goto startUninstallationInstructions
+if /I %input% EQU 3O cls&set input=983O&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto startMaplePrompt
 if /I %input% EQU 4A start Maple_A.lnk&set input=984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start Maple_R.lnk&set input=984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4I start Maple_I.exe&set input=984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4O goto startUninstallationInstructions
+if /I %input% EQU 4O cls&set input=984O&goto startUninstallationInstructions
 if /I %input% EQU 5 cls&goto startMapleFlowPrompt
 if /I %input% EQU 5A start Maple_Flow_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start Maple_Flow_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5I start Maple_Flow_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5O goto startUninstallationInstructions
+if /I %input% EQU 5O cls&set input=985O&goto startUninstallationInstructions
 if /I %input% EQU 6 cls&goto startTelerikPrompt
 if /I %input% EQU 6A cls&goto startTelerikRunAdminPromptDeepSubDialerMode2
 if /I %input% EQU 6AA start Telerik_Test_Studio_A.lnk&set input=986AA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15713,7 +17328,7 @@ if /I %input% EQU 71 cls&goto startAgentDVRpromptDeepSubDialerMode2
 if /I %input% EQU 71A start Agent_DVR_A.lnk&set input=9871A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 71R start Agent_DVR_R.lnk&set input=9871R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 71I start Agent_DVR_I.exe&set input=9871I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 71O goto startUninstallationInstructions
+if /I %input% EQU 71O cls&set input=9871O&goto startUninstallationInstructions
 if /I %input% EQU 72 cls&goto startCisdemAppCryptPromptDeepSubDialerMode2
 if /I %input% EQU 72A start Cisdem_App_Crypt_A.lnk&set input=9872A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 72R start Cisdem_App_Crypt_R.lnk&set input=9872R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15755,7 +17370,7 @@ if /I %input% EQU 78N cls&goto startNMSSaveEditorPromptDeepSubDialerMode2
 if /I %input% EQU 78NA start NMSSaveEditor_A.lnk&set input=9878NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 78NR start NMSSaveEditor_R.lnk&set input=9878NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 78NI start NMSSaveEditor_I.exe&set input=9878NI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 78NO goto startUninstallationInstructions
+if /I %input% EQU 78NO cls&set input=9878NO&goto startUninstallationInstructions
 if /I %input% EQU 78P cls&goto startPalworldSavePalPromptDeepSubDialerMode2
 if /I %input% EQU 78PA start PalworldSavePal_A.lnk&set input=9878PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 78PR start PalworldSavePal_R.lnk&set input=9878PR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15787,7 +17402,7 @@ if /I %input% EQU 84 cls&goto startMinitabPromptSubDialerMode2
 if /I %input% EQU 84A start Minitab_A.lnk&set input=94A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84R start Minitab_R.lnk&set input=94R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84I start Minitab_I.exe&set input=94I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 84O goto startUninstallationInstructions
+if /I %input% EQU 84O cls&set input=94O&goto startUninstallationInstructions
 if /I %input% EQU 85 cls&goto startjGRASPpromptSubDialerMode2
 if /I %input% EQU 85A start jGRASP_A.lnk&set input=95A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85R start jGRASP_R.lnk&set input=95R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15827,7 +17442,7 @@ if /I %input% EQU 91 cls&goto startAudialsOnePromptSubDialerMode2
 if /I %input% EQU 91A start Audials_One_A.lnk&set input=991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91R start Audials_One_R.lnk&set input=991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91I start Audials_One_I.exe&set input=991I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 91O goto startUninstallationInstructions
+if /I %input% EQU 91O cls&set input=991O&goto startUninstallationInstructions
 if /I %input% EQU 92 cls&goto startProtonPromptSubDialerMode2
 if /I %input% EQU 92V cls&goto startProtonVPNpromptSubDialerMode2
 if /I %input% EQU 92VA start Proton_VPN_A.lnk&set input=992VA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15839,28 +17454,33 @@ if /I %input% EQU 92DA start Proton_Drive_A.lnk&set input=992DA&&goto startPreEx
 if /I %input% EQU 92DR start Proton_Drive_R.lnk&set input=992DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92DI start Proton_I.exe&set input=992DI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92DO start Proton_O.lnk&set input=992DO&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93 cls&goto startMullvadVPNpromptSubDialerMode2
-if /I %input% EQU 93A start Mullvad_VPN_A.lnk&set input=993A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93R start Mullvad_VPN_R.lnk&set input=993R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93I start Mullvad_VPN_I.exe&set input=993I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93O start Mullvad_VPN_O.lnk&set input=993O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93 cls&goto startOtherVPNsuitePromptSubDialerMode2
+if /I %input% EQU 93M cls&goto startMullvadVPNpromptSubDialerMode2
+if /I %input% EQU 93MA start Mullvad_VPN_A.lnk&set input=993A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93MR start Mullvad_VPN_R.lnk&set input=993R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93MI start Mullvad_VPN_I.exe&set input=993I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93MO start Mullvad_VPN_O.lnk&set input=993O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93N cls&goto startNordVPNpromptSubDialerMode2
+if /I %input% EQU 93NA start NordVPN_A.lnk&set input=993NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93NR start NordVPN_R.lnk&set input=993NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93NI start NordVPN_I.exe&set input=993NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93NO cls&set input=993NO&goto startUninstallationInstructions
+if /I %input% EQU 93V cls&goto startOpenVPNpromptSubDialerMode2
+if /I %input% EQU 93VA start OpenVPN_A.lnk&set input=993VA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93VR start OpenVPN_R.lnk&set input=993VR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93VI start OpenVPN_I.msi&set input=993VI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 93VO cls&set input=993VO&goto startUninstallationInstructions
 if /I %input% EQU 94 cls&goto startPortmasterPromptSubDialerMode2
 if /I %input% EQU 94A start Portmaster_A.lnk&set input=994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start Portmaster_R.lnk&set input=994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94I start Portmaster_I.exe&set input=994I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94O start Portmaster_O.lnk&set input=994O&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95 cls&goto startWiresharkPromptSubDialerMode2
-if /I %input% EQU 95A start Wireshark_A.lnk&set input=995A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95R start Wireshark_R.lnk&set input=995R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95I start Wireshark_I.exe&set input=995I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95O start Wireshark_O.lnk&set input=995O&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96 cls&goto startCharacterMapAndPaintPromptSubDialerMode2
-if /I %input% EQU 96C cls&goto startCharacterMapPromptSubDialerMode2
-if /I %input% EQU 96CA start Character_Map_A.lnk&set input=996CA&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96CR start Character_Map_R.lnk&set input=996CR&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96P cls&goto startPaintPromptSubDialerMode2
-if /I %input% EQU 96PA start Paint_A.lnk&set input=996PA&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 96PR start Paint_Map_R.lnk&set input=996PR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 95 cls&goto startCharacterMapPromptSubDialerMode2
+if /I %input% EQU 95A start Character_Map_A.lnk&set input=995A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 95R start Character_Map_R.lnk&set input=995R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 96 cls&goto startPaintPromptSubDialerMode2
+if /I %input% EQU 96A start Paint_A.lnk&set input=996A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 96R start Paint_R.lnk&set input=996R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 97 cls&goto start9cAltA
 if /I %input% EQU 971 cls&goto startdnSpy_x32_PromptDeepSubDialerMode2
 if /I %input% EQU 971A start dnSpy_x32_A.lnk&set input=9971A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15920,7 +17540,7 @@ if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 if /I %input% EQU + cls&goto startAlert
 if /I %input% EQU ++ cls&goto startBackground
-if /I %input% EQU +++ cls&goto start1
+if /I %input% EQU +++ cls&goto startNetwork
 goto :eof
 :startTI-Nspire_CX_CAS_StudentSoftwarePromptSubDialerMode1
 call :banner
@@ -15987,7 +17607,7 @@ set /p input=%BS%
 if /I %input% EQU A start TI-Nspire_CX_CAS_Student_Software_A.lnk&set input=981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start TI-Nspire_CX_CAS_Student_Software_R.lnk&set input=981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start TI-Nspire_CX_CAS_Student_Software_I.exe&set input=981I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=981O&goto startUninstallationInstructions
 goto :eof
 :startTI-Nspire_CX_PremiumTeacherSoftwarePromptSubDialerMode1
 call :banner
@@ -16054,7 +17674,7 @@ set /p input=%BS%
 if /I %input% EQU A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&set input=982A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&set input=982R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=982I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=982O&goto startUninstallationInstructions
 goto :eof
 :startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptSubDialerMode1
 call :banner
@@ -16121,7 +17741,7 @@ set /p input=%BS%
 if /I %input% EQU A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&set input=983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&set input=983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=983I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=983O&goto startUninstallationInstructions
 goto :eof
 :startMaplePromptSubDialerMode1
 call :banner
@@ -16188,7 +17808,7 @@ set /p input=%BS%
 if /I %input% EQU A start Maple_A.lnk&set input=984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Maple_R.lnk&set input=984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Maple_I.exe&set input=984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=984O&goto startUninstallationInstructions
 goto :eof
 :startMapleFlowPromptSubDialerMode1
 call :banner
@@ -16255,7 +17875,7 @@ set /p input=%BS%
 if /I %input% EQU A start Maple_Flow_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Maple_Flow_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Maple_Flow_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=985O&goto startUninstallationInstructions
 goto :eof
 :startTelerikPromptSubDialerMode1
 call :banner
@@ -16559,7 +18179,7 @@ if /I %input% EQU 1 cls&goto startAgentDVRprompt
 if /I %input% EQU 1A start Agent_DVR_A.lnk&set input=9871A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start Agent_DVR_R.lnk&set input=9871R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1I start Agent_DVR_I.exe&set input=9871I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 1O goto startUninstallationInstructions
+if /I %input% EQU 1O cls&set input=9871O&goto startUninstallationInstructions
 if /I %input% EQU 2 cls&goto startCisdemAppCryptPrompt
 if /I %input% EQU 2A start Cisdem_App_Crypt_A.lnk&set input=9872A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2R start Cisdem_App_Crypt_R.lnk&set input=9872R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -16601,7 +18221,7 @@ if /I %input% EQU 8N cls&goto startNMSSaveEditorPromptSubDialerMode
 if /I %input% EQU 8NA start NMSSaveEditor_A.lnk&set input=9878NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8NR start NMSSaveEditor_R.lnk&set input=9878NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8NI start NMSSaveEditor_I.exe&set input=9878NI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 8NO goto startUninstallationInstructions
+if /I %input% EQU 8NO cls&set input=9878NO&goto startUninstallationInstructions
 if /I %input% EQU 8P cls&goto startPalworldSavePalPromptSubDialerMode
 if /I %input% EQU 8PA start PalworldSavePal_A.lnk&set input=9878PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8PR start PalworldSavePal_R.lnk&set input=9878PR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -16619,7 +18239,7 @@ if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 if /I %input% EQU + cls&goto startAlert
 if /I %input% EQU ++ cls&goto startBackground
-if /I %input% EQU +++ cls&goto start1
+if /I %input% EQU +++ cls&goto startNetwork
 goto :eof
 :startAgentDVRprompt
 call :banner
@@ -16696,7 +18316,7 @@ set /p input=%BS%
 if /I %input% EQU A start Agent_DVR_A.lnk&set input=9871A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Agent_DVR_R.lnk&set input=9871R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Agent_DVR_I.exe&set input=9871I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=9871O&goto startUninstallationInstructions
 goto :eof
 :startCisdemAppCryptPrompt
 call :banner
@@ -17773,7 +19393,7 @@ set /p input=%BS%
 if /I %input% EQU NA start NMSSaveEditor_A.lnk&set input=9878NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU NR start NMSSaveEditor_R.lnk&set input=9878NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU NI start NMSSaveEditor_I.exe&set input=9878NI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU NO goto startUninstallationInstructions
+if /I %input% EQU NO cls&set input=9878NO&goto startUninstallationInstructions
 if /I %input% EQU PA start PalworldSavePal_A.lnk&set input=9878PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PR start PalworldSavePal_R.lnk&set input=9878PR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PI start PalworldSavePal_I.msi&set input=9878PI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -17904,7 +19524,7 @@ set /p input=%BS%
 if /I %input% EQU A start NMSSaveEditor_A.lnk&set input=9878NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start NMSSaveEditor_R.lnk&set input=9878NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start NMSSaveEditor_I.exe&set input=9878NI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=9878NO&goto startUninstallationInstructions
 goto :eof
 :startPalworldSavePalPrompt1
 call :banner
@@ -18128,13 +19748,13 @@ echo        [38;2;204;255;204m╠══1) Audials One                      ⠀�
 echo        [38;2;179;255;179m║                                      ⠀⠀⠀⠀⠀⠀⢠⣶⣶⣷⠀⠀⠀⠸⠟⠁⠀⡇⠀⠀⠀⠀⠀⢹[0m
 echo        [38;2;153;255;153m╠═══2) Proton VPN/Drive                ⠀⠀⠀⠀⠀⠀⠘⠟⢹⣋⣀⡀⢀⣤⣶⣿⣿⣿⣿⣿⡿⠛⣠⣼⣿⡟[0m
 echo        [38;2;128;255;128m║                                      ⠀⠀⠀⠀⠀⣴⣾⣿⣿⣿⣿⢁⣾⣿⣿⣿⣿⣿⣿⡿⢁⣾⣿⣿⣿⠁[0m
-echo        [38;2;102;255;102m╠════3) Mullvad VPN                    ⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇[0m
+echo        [38;2;102;255;102m╠════3) Other VPN Suite                ⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇[0m
 echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠳⣤⣙⠟⠛⢻⠿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣇⠘⠉⠀⢸⠀⢀⣠[0m
 echo        [38;2;51;255;51m╠═════4) Portmaster                    ⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣶⣄⡈⠉⠀⠀⢸⡇⠀⠀⠉⠂⠀⣿⣿⣿⣧[0m
-echo        [38;2;0;255;0m╠══════5) Wireshark                    ⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣷⣤⣀⣸⣧⣠⣤⣴⣶⣾⣿⣿⣿⡿[0m
+echo        [38;2;0;255;0m╠══════5) Character Map                ⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣷⣤⣀⣸⣧⣠⣤⣴⣶⣾⣿⣿⣿⡿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇[0m
-echo        [38;2;51;255;51m╠═══════6) Character Map/Paint         ⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠛⠉[0m
+echo        [38;2;51;255;51m╠═══════6) Paint                       ⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠛⠉[0m
 echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉[0m
 echo        [38;2;102;255;102m╠════════7) InvokePortable[0m
 echo        [38;2;128;255;128m║[0m
@@ -18149,7 +19769,7 @@ if /I %input% EQU 1 cls&goto startAudialsOnePrompt
 if /I %input% EQU 1A start Audials_One_A.lnk&set input=991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start Audials_One_R.lnk&set input=991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1I start Audials_One_I.exe&set input=991I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 1O goto startUninstallationInstructions
+if /I %input% EQU 1O cls&set input=991O&goto startUninstallationInstructions
 if /I %input% EQU 2 cls&goto startProtonPrompt
 if /I %input% EQU 2V cls&goto startProtonVPNpromptSubDialerMode3
 if /I %input% EQU 2VA start Proton_VPN_A.lnk&set input=992VA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18161,28 +19781,33 @@ if /I %input% EQU 2DA start Proton_Drive_A.lnk&set input=992DA&&goto startPreExi
 if /I %input% EQU 2DR start Proton_Drive_R.lnk&set input=992DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2DI start Proton_I.exe&set input=992DI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2DO start Proton_O.lnk&set input=992DO&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3 cls&goto startMullvadVPNprompt
-if /I %input% EQU 3A start Mullvad_VPN_A.lnk&set input=993A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3R start Mullvad_VPN_R.lnk&set input=993R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3I start Mullvad_VPN_I.exe&set input=993I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3O start Mullvad_VPN_O.lnk&set input=993O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3 cls&goto startOtherVPNsuitePrompt
+if /I %input% EQU 3M cls&goto startMullvadVPNpromptSubDialerMode3
+if /I %input% EQU 3MA start Mullvad_VPN_A.lnk&set input=993MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3MR start Mullvad_VPN_R.lnk&set input=993MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3MI start Mullvad_VPN_I.exe&set input=993MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3MO start Mullvad_VPN_O.lnk&set input=993MO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3N cls&goto startNordVPNpromptSubDialerMode3
+if /I %input% EQU 3NA start NordVPN_A.lnk&set input=993NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3NR start NordVPN_R.lnk&set input=993NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3NI start NordVPN_I.exe&set input=993NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3NO cls&set input=993NO&goto startUninstallationInstructions
+if /I %input% EQU 3V cls&goto startOpenVPNpromptSubDialerMode3
+if /I %input% EQU 3VA start OpenVPN_A.lnk&set input=993VA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3VR start OpenVPN_R.lnk&set input=993VR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3VI start OpenVPN_I.msi&set input=993VI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3VO cls&set input=993VO&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto startPortmasterPrompt
 if /I %input% EQU 4A start Portmaster_A.lnk&set input=994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4R start Portmaster_R.lnk&set input=994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4I start Portmaster_I.exe&set input=994I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4O start Portmaster_O.lnk&set input=994O&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5 cls&goto startWiresharkPrompt
-if /I %input% EQU 5A start Wireshark_A.lnk&set input=995A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5R start Wireshark_R.lnk&set input=995R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5I start Wireshark_I.exe&set input=995I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5O start Wireshark_O.lnk&set input=995O&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6 cls&goto startCharacterMapAndPaintPrompt
-if /I %input% EQU 6C cls&goto startCharacterMapPrompt
-if /I %input% EQU 6CA start Character_Map_A.lnk&set input=996CA&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6CR start Character_Map_R.lnk&set input=996CR&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6P cls&goto startPaintPrompt
-if /I %input% EQU 6PA start Paint_A.lnk&set input=996PA&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6PR start Paint_Map_R.lnk&set input=996PR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5 cls&goto startCharacterMapPrompt
+if /I %input% EQU 5A start Character_Map_A.lnk&set input=995A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5R start Character_Map_R.lnk&set input=995R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 6 cls&goto startPaintPrompt
+if /I %input% EQU 6A start Paint_A.lnk&set input=996A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 6R start Paint_R.lnk&set input=996R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7 cls&goto start9cAltA
 if /I %input% EQU 71 cls&goto startdnSpy_x32_PromptDeepSubDialerMode3
 if /I %input% EQU 71A start dnSpy_x32_A.lnk&set input=9971A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18257,7 +19882,7 @@ if /I %input% EQU 84 cls&goto startMinitabPromptSubDialerMode3
 if /I %input% EQU 84A start Minitab_A.lnk&set input=94A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84R start Minitab_R.lnk&set input=94R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 84I start Minitab_I.exe&set input=94I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 84O goto startUninstallationInstructions
+if /I %input% EQU 84O cls&set input=94O&goto startUninstallationInstructions
 if /I %input% EQU 85 cls&goto startjGRASPpromptSubDialerMode3
 if /I %input% EQU 85A start jGRASP_A.lnk&set input=95A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 85R start jGRASP_R.lnk&set input=95R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18297,27 +19922,27 @@ if /I %input% EQU 91 cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptSubDial
 if /I %input% EQU 91A start TI-Nspire_CX_CAS_Student_Software_A.lnk&set input=981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91R start TI-Nspire_CX_CAS_Student_Software_R.lnk&set input=981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 91I start TI-Nspire_CX_CAS_Student_Software_I.exe&set input=981I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 91O goto startUninstallationInstructions
+if /I %input% EQU 91O cls&set input=981O&goto startUninstallationInstructions
 if /I %input% EQU 92 cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptSubDialerMode3
 if /I %input% EQU 92A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&set input=982A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&set input=982R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 92I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=982I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 92O goto startUninstallationInstructions
+if /I %input% EQU 92O cls&set input=982O&goto startUninstallationInstructions
 if /I %input% EQU 93 cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptSubDialerMode3
 if /I %input% EQU 93A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&set input=983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&set input=983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=983I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 93O goto startUninstallationInstructions
+if /I %input% EQU 93O cls&set input=983O&goto startUninstallationInstructions
 if /I %input% EQU 94 cls&goto startMaplePromptSubDialerMode3
 if /I %input% EQU 94A start Maple_A.lnk&set input=984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start Maple_R.lnk&set input=984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94I start Maple_I.exe&set input=984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94O goto startUninstallationInstructions
+if /I %input% EQU 94O cls&set input=984O&goto startUninstallationInstructions
 if /I %input% EQU 95 cls&goto startMapleFlowPromptSubDialerMode3
 if /I %input% EQU 95A start Maple_Flow_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95R start Maple_Flow_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95I start Maple_Flow_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95O goto startUninstallationInstructions
+if /I %input% EQU 95O cls&set input=985O&goto startUninstallationInstructions
 if /I %input% EQU 96 cls&goto startTelerikPromptSubDialerMode3
 if /I %input% EQU 96A cls&goto startTelerikRunAdminPromptSubDialerMode3
 if /I %input% EQU 96AA start Telerik_Test_Studio_A.lnk&set input=986AA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18332,7 +19957,7 @@ if /I %input% EQU 971 cls&goto startAgentDVRpromptDeepSubDialerMode3
 if /I %input% EQU 971A start Agent_DVR_A.lnk&set input=9871A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 971R start Agent_DVR_R.lnk&set input=9871R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 971I start Agent_DVR_I.exe&set input=9871I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 971O goto startUninstallationInstructions
+if /I %input% EQU 971O cls&set input=9871O&goto startUninstallationInstructions
 if /I %input% EQU 972 cls&goto startCisdemAppCryptPromptDeepSubDialerMode3
 if /I %input% EQU 972A start Cisdem_App_Crypt_A.lnk&set input=9872A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 972R start Cisdem_App_Crypt_R.lnk&set input=9872R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18374,7 +19999,7 @@ if /I %input% EQU 978N cls&goto startNMSSaveEditorPromptDeepSubDialerMode3
 if /I %input% EQU 978NA start NMSSaveEditor_A.lnk&set input=9878NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 978NR start NMSSaveEditor_R.lnk&set input=9878NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 978NI start NMSSaveEditor_I.exe&set input=9878NI&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 978NO goto startUninstallationInstructions
+if /I %input% EQU 978NO cls&set input=9878NO&goto startUninstallationInstructions
 if /I %input% EQU 978P cls&goto startPalworldSavePalPromptDeepSubDialerMode3
 if /I %input% EQU 978PA start PalworldSavePal_A.lnk&set input=9878PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 978PR start PalworldSavePal_R.lnk&set input=9878PR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18392,7 +20017,7 @@ if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 if /I %input% EQU + cls&goto startAlert
 if /I %input% EQU ++ cls&goto startBackground
-if /I %input% EQU +++ cls&goto start1
+if /I %input% EQU +++ cls&goto startNetwork
 goto :eof
 :startAudialsOnePromptSubDialerMode1
 call :banner
@@ -18459,7 +20084,7 @@ set /p input=%BS%
 if /I %input% EQU A start Audials_One_A.lnk&set input=991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Audials_One_R.lnk&set input=991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Audials_One_I.exe&set input=991I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions
+if /I %input% EQU O cls&set input=991O&goto startUninstallationInstructions
 goto :eof
 :startProtonPromptSubDialerMode1
 call :banner
@@ -18508,7 +20133,7 @@ if /I %input% EQU V cls&goto startProtonVPNprompt4
 if /I %input% EQU D cls&goto startProtonDrivePrompt4
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
-cls&goto startProtonVPNpromptDialerMode
+cls&goto startProtonPromptDialerMode
 :menuProtonPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Proton AG
@@ -18754,6 +20379,133 @@ if /I %input% EQU R start Proton_Drive_R.lnk&set input=992DR&&goto startPreExitP
 if /I %input% EQU I start Proton_I.exe&set input=992DI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Proton_O.lnk&set input=992DO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
+:startOtherVPNsuitePromptSubDialerMode1
+call :banner
+call :menuOtherVPNsuitePrompt
+call :menuOtherVPNsuite
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9a
+if /I %input% EQU M cls&goto startMullvadVPNprompt1
+if /I %input% EQU N cls&goto startNordVPNprompt1
+if /I %input% EQU V cls&goto startOpenVPNprompt1
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOtherVPNsuitePromptSubDialerMode1
+:startOtherVPNsuitePromptSubDialerMode2
+call :banner
+call :menuOtherVPNsuitePrompt
+call :menuOtherVPNsuite
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9b
+if /I %input% EQU M cls&goto startMullvadVPNprompt2
+if /I %input% EQU N cls&goto startNordVPNprompt2
+if /I %input% EQU V cls&goto startOpenVPNprompt2
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOtherVPNsuitePromptSubDialerMode2
+:startOtherVPNsuitePrompt
+call :banner
+call :menuOtherVPNsuitePrompt
+call :menuOtherVPNsuite
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9c
+if /I %input% EQU M cls&goto startMullvadVPNprompt3
+if /I %input% EQU N cls&goto startNordVPNprompt3
+if /I %input% EQU V cls&goto startOpenVPNprompt3
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOtherVPNsuitePrompt
+:startOtherVPNsuitePromptDialerMode
+call :banner
+call :menuOtherVPNsuitePrompt
+call :menuOtherVPNsuite
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU M cls&goto startMullvadVPNprompt4
+if /I %input% EQU N cls&goto startNordVPNprompt4
+if /I %input% EQU V cls&goto startOpenVPNprompt4
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOtherVPNsuitePromptDialerMode
+:menuOtherVPNsuitePrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Depends
+echo     Software Type: Depends
+echo          Category: Depends
+echo      License Type: Depends
+echo           Website: Depends
+echo  Founded/Released: Depends
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Mullvad_VPN_{...}, NordVPN_{...}, OpenVPN_{...}
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the letter for XXXXX VPN ("M/N/V"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuOtherVPNsuite
+set /p input=%BS%
+if /I %input% EQU MA start Mullvad_VPN_A.lnk&set input=993MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MR start Mullvad_VPN_R.lnk&set input=993MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MI start Mullvad_VPN_I.exe&set input=993MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MO start Mullvad_VPN_O.lnk&set input=993MO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NA start NordVPN_A.lnk&set input=993NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NR start NordVPN_R.lnk&set input=993NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NI start NordVPN_I.exe&set input=993NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NO cls&set input=993NO&goto startUninstallationInstructions
+if /I %input% EQU VA start OpenVPN_A.lnk&set input=993VA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VR start OpenVPN_R.lnk&set input=993VR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VI start OpenVPN_I.msi&set input=993VI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VO cls&set input=993VO&goto startUninstallationInstructions
+goto :eof
+:startMullvadVPNprompt1
+call :banner
+call :menuMullvadVPNprompt
+call :menuMullvadVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePromptSubDialerMode1
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMullvadVPNprompt1
+:startMullvadVPNprompt2
+call :banner
+call :menuMullvadVPNprompt
+call :menuMullvadVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePromptSubDialerMode2
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMullvadVPNprompt2
+:startMullvadVPNprompt3
+call :banner
+call :menuMullvadVPNprompt
+call :menuMullvadVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePrompt
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMullvadVPNprompt3
+:startMullvadVPNprompt4
+call :banner
+call :menuMullvadVPNprompt
+call :menuMullvadVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePromptDialerMode
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMullvadVPNprompt4
 :startMullvadVPNpromptSubDialerMode1
 call :banner
 call :menuMullvadVPNprompt
@@ -18774,7 +20526,7 @@ if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 cls&goto startMullvadVPNpromptSubDialerMode2
-:startMullvadVPNprompt
+:startMullvadVPNpromptSubDialerMode3
 call :banner
 call :menuMullvadVPNprompt
 call :menuMullvadVPN
@@ -18783,7 +20535,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
-cls&goto startMullvadVPNprompt
+cls&goto startMullvadVPNpromptSubDialerMode3
 :startMullvadVPNpromptDialerMode
 call :banner
 call :menuMullvadVPNprompt
@@ -18816,10 +20568,224 @@ echo.
 goto :eof
 :menuMullvadVPN
 set /p input=%BS%
-if /I %input% EQU A start Mullvad_VPN_A.lnk&set input=993A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start Mullvad_VPN_R.lnk&set input=993R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU I start Mullvad_VPN_I.exe&set input=993I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O start Mullvad_VPN_O.lnk&set input=993O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU A start Mullvad_VPN_A.lnk&set input=993MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Mullvad_VPN_R.lnk&set input=993MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Mullvad_VPN_I.exe&set input=993MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Mullvad_VPN_O.lnk&set input=993MO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startNordVPNprompt1
+call :banner
+call :menuNordVPNprompt
+call :menuNordVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePromptSubDialerMode1
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startNordVPNprompt1
+:startNordVPNprompt2
+call :banner
+call :menuNordVPNprompt
+call :menuNordVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePromptSubDialerMode2
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startNordVPNprompt2
+:startNordVPNprompt3
+call :banner
+call :menuNordVPNprompt
+call :menuNordVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePrompt
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startNordVPNprompt3
+:startNordVPNprompt4
+call :banner
+call :menuNordVPNprompt
+call :menuNordVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePromptDialerMode
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startNordVPNprompt4
+:startNordVPNpromptSubDialerMode1
+call :banner
+call :menuNordVPNprompt
+call :menuNordVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9a
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startNordVPNpromptSubDialerMode1
+:startNordVPNpromptSubDialerMode2
+call :banner
+call :menuNordVPNprompt
+call :menuNordVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9b
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startNordVPNpromptSubDialerMode2
+:startNordVPNpromptSubDialerMode3
+call :banner
+call :menuNordVPNprompt
+call :menuNordVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9c
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startNordVPNpromptSubDialerMode3
+:startNordVPNpromptDialerMode
+call :banner
+call :menuNordVPNprompt
+call :menuNordVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startNordVPNpromptDialerMode
+:menuNordVPNprompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: 
+echo     Software Type: 
+echo          Category: 
+echo      License Type: 
+echo           Website: 
+echo  Founded/Released: 
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: NordVPN_R.lnk, NordVPN_I.exe, NordVPN_O.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Mullvad VPN ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuNordVPN
+set /p input=%BS%
+if /I %input% EQU A start NordVPN_A.lnk&set input=993NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start NordVPN_R.lnk&set input=993NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start NordVPN_I.exe&set input=993NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start NordVPN_O.lnk&set input=993NO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startOpenVPNprompt1
+call :banner
+call :menuOpenVPNprompt
+call :menuOpenVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePromptSubDialerMode1
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOpenVPNprompt1
+:startOpenVPNprompt2
+call :banner
+call :menuOpenVPNprompt
+call :menuOpenVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePromptSubDialerMode2
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOpenVPNprompt2
+:startOpenVPNprompt3
+call :banner
+call :menuOpenVPNprompt
+call :menuOpenVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePrompt
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOpenVPNprompt3
+:startOpenVPNprompt4
+call :banner
+call :menuOpenVPNprompt
+call :menuOpenVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startOtherVPNsuitePromptDialerMode
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOpenVPNprompt4
+:startOpenVPNpromptSubDialerMode1
+call :banner
+call :menuOpenVPNprompt
+call :menuOpenVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9a
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOpenVPNpromptSubDialerMode1
+:startOpenVPNpromptSubDialerMode2
+call :banner
+call :menuOpenVPNprompt
+call :menuOpenVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9b
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOpenVPNpromptSubDialerMode2
+:startOpenVPNpromptSubDialerMode3
+call :banner
+call :menuOpenVPNprompt
+call :menuOpenVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9c
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOpenVPNpromptSubDialerMode3
+:startOpenVPNpromptDialerMode
+call :banner
+call :menuOpenVPNprompt
+call :menuOpenVPN
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startOpenVPNpromptDialerMode
+:menuOpenVPNprompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: 
+echo     Software Type: 
+echo          Category: 
+echo      License Type: 
+echo           Website: 
+echo  Founded/Released: 
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: OpenVPN_R.lnk, OpenVPN_I.msi, OpenVPN_O.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Mullvad VPN ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuOpenVPN
+set /p input=%BS%
+if /I %input% EQU A start OpenVPN_A.lnk&set input=993VA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start OpenVPN_R.lnk&set input=993VR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start OpenVPN_I.msi&set input=993VI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start OpenVPN_O.lnk&set input=993VO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startPortmasterPromptSubDialerMode1
 call :banner
@@ -18888,188 +20854,6 @@ if /I %input% EQU R start Portmaster_R.lnk&set input=994R&&goto startPreExitProm
 if /I %input% EQU I start Portmaster_I.exe&set input=994I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Portmaster_O.lnk&set input=994O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
-:startWiresharkPromptSubDialerMode1
-call :banner
-call :menuWiresharkPrompt
-call :menuWireshark
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto start9a
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startWiresharkPromptSubDialerMode1
-:startWiresharkPromptSubDialerMode2
-call :banner
-call :menuWiresharkPrompt
-call :menuWireshark
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto start9b
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startWiresharkPromptSubDialerMode2
-:startWiresharkPrompt
-call :banner
-call :menuWiresharkPrompt
-call :menuWireshark
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto start9c
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startWiresharkPrompt
-:startWiresharkPromptDialerMode
-call :banner
-call :menuWiresharkPrompt
-call :menuWireshark
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startMain
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startWiresharkPromptDialerMode
-:menuWiresharkPrompt
-echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: Gerald Combs/The Wireshark Team
-echo     Software Type: Packet Analyzer
-echo          Category: Freeware
-echo      License Type: GNU GPL v2.0
-echo           Website: https://www.wireshark.org/
-echo  Founded/Released: 1998
-echo         Publicity: Public
-echo            Status: Active
-echo    Current Update: 
-echo        Patch Date: 
-echo  Target Filenames: Wireshark_R.lnk, Wireshark_I.exe, Wireshark_O.lnk
-echo   Additional Info: 
-echo                 +: 
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Would you like to run/install/uninstall Wireshark ("R/I/O")? Input zero ("0") to cancel.
-echo.
-goto :eof
-:menuWireshark
-set /p input=%BS%
-if /I %input% EQU A start Wireshark_A.lnk&set input=995A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start Wireshark_R.lnk&set input=995R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU I start Wireshark_I.exe&set input=995I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O start Wireshark_O.lnk&set input=995O&&goto startPreExitPrompt||goto startFailedExitPrompt
-goto :eof
-:startCharacterMapAndPaintPromptSubDialerMode1
-call :banner
-call :menuCharacterMapAndPaintPrompt
-call :menuCharacterMapAndPaint
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto start9a
-if /I %input% EQU C cls&goto startCharacterMapPrompt1
-if /I %input% EQU P cls&goto startPaintPrompt1
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startCharacterMapAndPaintPromptSubDialerMode1
-:startCharacterMapAndPaintPromptSubDialerMode2
-call :banner
-call :menuCharacterMapAndPaintPrompt
-call :menuCharacterMapAndPaint
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto start9b
-if /I %input% EQU C cls&goto startCharacterMapPrompt2
-if /I %input% EQU P cls&goto startPaintPrompt2
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startCharacterMapAndPaintPromptSubDialerMode2
-:startCharacterMapAndPaintPrompt
-call :banner
-call :menuCharacterMapAndPaintPrompt
-call :menuCharacterMapAndPaint
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto start9c
-if /I %input% EQU C cls&goto startCharacterMapPrompt3
-if /I %input% EQU P cls&goto startPaintPrompt3
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startCharacterMapAndPaintPrompt
-:startCharacterMapAndPaintPromptDialerMode
-call :banner
-call :menuCharacterMapAndPaintPrompt
-call :menuCharacterMapAndPaint
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startMain
-if /I %input% EQU C cls&goto startCharacterMapPrompt4
-if /I %input% EQU P cls&goto startPaintPrompt4
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startCharacterMapAndPaintPromptDialerMode
-:menuCharacterMapAndPaintPrompt
-echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: Microsoft Corporation
-echo     Software Type: Character Map and Paint Editor for Windows
-echo          Category: Freeware
-echo      License Type: Proprietary
-echo           Website: N/A
-echo  Founded/Released: 1983
-echo         Publicity: N/A
-echo            Status: N/A
-echo    Current Update: 
-echo        Patch Date: 
-echo  Target Filenames: Character_Map_R.lnk, Paint_R.lnk
-echo   Additional Info: 
-echo                 +: 
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Input the letter ("C/P") for Character Map/Paint. Input zero ("0") to cancel.
-echo.
-goto :eof
-:menuCharacterMapAndPaint
-set /p input=%BS%
-if /I %input% EQU CA start Character_Map_A.lnk&set input=996CA&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CR start Character_Map_R.lnk&set input=996CR&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU PA start Paint_A.lnk&set input=996PA&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU PR start Paint_Map_R.lnk&set input=996PR&&goto startPreExitPrompt||goto startFailedExitPrompt
-goto :eof
-:startCharacterMapPrompt1
-call :banner
-call :menuCharacterMapPrompt
-call :menuCharacterMap
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptSubDialerMode1
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startCharacterMapPrompt1
-:startCharacterMapPrompt2
-call :banner
-call :menuCharacterMapPrompt
-call :menuCharacterMap
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptSubDialerMode2
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startCharacterMapPrompt2
-:startCharacterMapPrompt3
-call :banner
-call :menuCharacterMapPrompt
-call :menuCharacterMap 
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPrompt
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startCharacterMapPrompt3
-:startCharacterMapPrompt4
-call :banner
-call :menuCharacterMapPrompt
-call :menuCharacterMap
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptDialerMode
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startCharacterMapPrompt4
 :startCharacterMapPromptSubDialerMode1
 call :banner
 call :menuCharacterMapPrompt
@@ -19090,7 +20874,7 @@ if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 cls&goto startCharacterMapPromptSubDialerMode2
-:startCharacterMapPromptSubDialerMode3
+:startCharacterMapPrompt
 call :banner
 call :menuCharacterMapPrompt
 call :menuCharacterMap
@@ -19099,7 +20883,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
-cls&goto startCharacterMapPromptSubDialerMode3
+cls&goto startCharacterMapPrompt
 :startCharacterMapPromptDialerMode
 call :banner
 call :menuCharacterMapPrompt
@@ -19135,46 +20919,6 @@ set /p input=%BS%
 if /I %input% EQU A start Character_Map_A.lnk&set input=996CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Character_Map_R.lnk&set input=996CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
-:startPaintPrompt1
-call :banner
-call :menuPaintPrompt
-call :menuPaint
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptSubDialerMode1
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startPaintPrompt1
-:startPaintPrompt2
-call :banner
-call :menuPaintPrompt
-call :menuPaint
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptSubDialerMode2
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startPaintPrompt2
-:startPaintPrompt3
-call :banner
-call :menuPaintPrompt
-call :menuPaint
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPrompt
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startPaintPrompt3
-:startPaintPrompt4
-call :banner
-call :menuPaintPrompt
-call :menuPaint
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startCharacterMapAndPaintPromptDialerMode
-if /I %input% EQU -+ cls&goto start9a
-if /I %input% EQU +- cls&goto start9a
-cls&goto startPaintPrompt4
 :startPaintPromptSubDialerMode1
 call :banner
 call :menuPaintPrompt
@@ -19195,7 +20939,7 @@ if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 cls&goto startPaintPromptSubDialerMode2
-:startPaintPromptSubDialerMode3
+:startPaintPrompt
 call :banner
 call :menuPaintPrompt
 call :menuPaint
@@ -19204,7 +20948,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
-cls&goto startPaintPromptSubDialerMode3
+cls&goto startPaintPrompt
 :startPaintPromptDialerMode
 call :banner
 call :menuPaintPrompt
@@ -19333,7 +21077,7 @@ if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 if /I %input% EQU + cls&goto startAlert
 if /I %input% EQU ++ cls&goto startBackground
-if /I %input% EQU +++ cls&goto start1
+if /I %input% EQU +++ cls&goto startNetwork
 goto :eof
 :startdnSpy_x32_Prompt
 call :banner
@@ -20138,7 +21882,7 @@ if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 if /I %input% EQU + cls&goto startAlert
 if /I %input% EQU ++ cls&goto startBackground
-if /I %input% EQU +++ cls&goto start1
+if /I %input% EQU +++ cls&goto startNetwork
 goto :eof
 :startF2KO_BAT2EXEprompt
 call :banner
@@ -21072,80 +22816,6 @@ if /I %input% EQU 2R start dnSpy_x64_R.lnk&set input=9972R&&goto startPreExitPro
 if /I %input% EQU 3A start dnSpy_NET_A.lnk&set input=9973A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3R start dnSpy_NET_R.lnk&set input=9973R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
-:startGitHubPromptDialerMode
-call :banner
-call :menuGitHubPrompt
-call :menuGitHub
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startMain
-if /I %input% EQU -+ cls&goto startMain
-if /I %input% EQU +- cls&goto startMain
-cls&goto startGitHubPromptDialerMode
-:menuGitHubPrompt
-echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: Tom Preston-Werner, Chris Wanstrath, P. J. Hyett, and Scott Chacon
-echo     Software Type: Code Developer Platform for Sharing Code
-echo          Category: Freeware
-echo      License Type: Proprietary
-echo           Website: https://github.com/
-echo           Founded: 04/07/2005; Developed: 10/19/2007; Launched: 02/29/2008
-echo         Publicity: Public
-echo            Status: Active
-echo    Current Update: 
-echo        Patch Date: 
-echo  Target Filenames: GitHub_R.lnk, GitHub_I.exe
-echo   Additional Info: 
-echo                 +: 
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Would you like to run/install/uninstall GitHub ("R/I/O")? Input zero ("0") to cancel.
-echo.
-goto :eof
-:menuGitHub
-set /p input=%BS%
-if /I %input% EQU A start GitHub_A.lnk&set input=GitHub-A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start GitHub_R.lnk&set input=GitHub-R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU I start GitHub_I.exe&set input=GitHub-I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions 
-goto :eof
-:startGitForkPromptDialerMode
-call :banner
-call :menuGitForkPrompt
-call :menuGitFork
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startMain
-if /I %input% EQU -+ cls&goto startMain
-if /I %input% EQU +- cls&goto startMain
-cls&goto startGitForkPromptDialerMode
-:menuGitForkPrompt
-echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: Dan Pristupov and Tanya Pristupova
-echo     Software Type: A Fast and Friendly Git Client
-echo          Category: Trialware
-echo      License Type: Proprietary
-echo           Website: https://git-fork.com/
-echo           Founded: 04/07/2005; Developed: 10/19/2007; Launched: 02/29/2008
-echo         Publicity: Public
-echo            Status: Active
-echo    Current Update: 
-echo        Patch Date: 
-echo  Target Filenames: GitHub_Fork_R.lnk, GitHub_Fork_I.exe
-echo   Additional Info: 
-echo                 +: 
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Would you like to run/install/uninstall GitHub Fork ("R/I/O")? Input zero ("0") to cancel.
-echo.
-goto :eof
-:menuGitFork
-set /p input=%BS%
-if /I %input% EQU A start GitHub_Fork_A.lnk&set input=Git-Fork-A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start GitHub_Fork_R.lnk&set input=Git-Fork-R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU I start GitHub_Fork_I.exe&set input=Git-Fork-I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O goto startUninstallationInstructions 
-goto :eof
 :startInstallerPromptDialerMode
 call :banner
 call :menuInstallerPrompt
@@ -21382,184 +23052,6 @@ if /I %input% EQU A start Inno_Setup_A.lnk&set input=installer-NA&&goto startPre
 if /I %input% EQU R start Inno_Setup_R.lnk&set input=installer-NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Inno_Setup_I.exe&set input=installer-NI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Inno_Setup_O.lnk&set input=installer-NO&&goto startPreExitPrompt||goto startFailedExitPrompt
-goto :eof
-:startXmingPromptDialerMode
-call :banner
-call :menuXmingPrompt
-call :menuXming
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startMain
-if /I %input% EQU A cls&goto startXmingRunAdminPrompt
-if /I %input% EQU R cls&goto startXmingRunPrompt
-if /I %input% EQU I cls&goto startXmingInstallPrompt
-if /I %input% EQU -+ cls&goto startMain
-if /I %input% EQU +- cls&goto startMain
-cls&goto startXmingPromptDialerMode
-:menuXmingPrompt
-echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
-echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
-echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
-echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
-echo           Website: http://www.straightrunning.com/XmingNotes/
-echo  Founded/Released: 11/09/2004
-echo         Publicity: Public
-echo            Status: Active
-echo    Current Update: 
-echo        Patch Date: 
-echo  Target Filenames: Xming_R.lnk, XLaunch_R.lnk, Xming_I.exe, Xming_Fonts_I.exe, Xming_O.lnk
-echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
-echo                 +: 
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Would you like to run/install/uninstall Xming ("R/I/O")? Input zero ("0") to cancel.
-echo.
-goto :eof
-:menuXming
-set /p input=%BS%
-if /I %input% EQU AM start Xming_A.lnk&set input=Xming-A-M&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU AL start XLaunch_A.lnk&set input=Xming-A-L&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU RM start Xming_R.lnk&set input=Xming-R-M&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU RL start XLaunch_R.lnk&set input=Xming-R-L&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU IP start Xming_I.exe&set input=Xming-I-P&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU IF start Xming_Fonts_I.exe&set input=Xming-I-F&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O start Xming_O.lnk&set input=Xming-O&&goto startPreExitPrompt||goto startFailedExitPrompt
-goto :eof
-:startXmingRunAdminPrompt
-call :banner
-call :menuXmingRunAdminPrompt
-call :menuXmingRunAdmin
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startXmingPromptDialerMode
-if /I %input% EQU -+ cls&goto startMain
-if /I %input% EQU +- cls&goto startMain
-cls&goto startXmingRunAdminPrompt
-:startXmingRunAdminPromptFromSearchMode
-call :banner
-call :menuXmingRunAdminPrompt
-call :menuXmingRunAdmin
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startMain
-if /I %input% EQU -+ cls&goto startMain
-if /I %input% EQU +- cls&goto startMain
-cls&goto startXmingRunAdminPromptFromSearchMode
-:menuXmingRunAdminPrompt
-echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
-echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
-echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
-echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
-echo           Website: http://www.straightrunning.com/XmingNotes/
-echo  Founded/Released: 11/09/2004
-echo         Publicity: Public
-echo            Status: Active
-echo    Current Update: 
-echo        Patch Date: 
-echo  Target Filenames: Xming_A.lnk, XLaunch_A.lnk
-echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
-echo                 +: 
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Please enter the letter to run Xming/XLaunch ("M/L"). Input zero ("0") to cancel.
-echo.
-goto :eof
-:menuXmingRunAdmin
-set /p input=%BS%
-if /I %input% EQU M start Xming_A.lnk&set input=Xming-A-M&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU L start XLaunch_A.lnk&set input=Xming-A-L&&goto startPreExitPrompt||goto startFailedExitPrompt
-goto :eof
-:startXmingRunPrompt
-call :banner
-call :menuXmingRunPrompt
-call :menuXmingRun
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startXmingPromptDialerMode
-if /I %input% EQU -+ cls&goto startMain
-if /I %input% EQU +- cls&goto startMain
-cls&goto startXmingRunPrompt
-:startXmingRunPromptFromSearchMode
-call :banner
-call :menuXmingRunPrompt
-call :menuXmingRun
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startMain
-if /I %input% EQU -+ cls&goto startMain
-if /I %input% EQU +- cls&goto startMain
-cls&goto startXmingRunPromptFromSearchMode
-:menuXmingRunPrompt
-echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
-echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
-echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
-echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
-echo           Website: http://www.straightrunning.com/XmingNotes/
-echo  Founded/Released: 11/09/2004
-echo         Publicity: Public
-echo            Status: Active
-echo    Current Update: 
-echo        Patch Date: 
-echo  Target Filenames: Xming_R.lnk, XLaunch_R.lnk
-echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
-echo                 +: 
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Please enter the letter to run Xming/XLaunch ("M/L"). Input zero ("0") to cancel.
-echo.
-goto :eof
-:menuXmingRun
-set /p input=%BS%
-if /I %input% EQU M start Xming_R.lnk&set input=Xming-R-M&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU L start XLaunch_R.lnk&set input=Xming-R-L&&goto startPreExitPrompt||goto startFailedExitPrompt
-goto :eof
-:startXmingInstallPrompt
-call :banner
-call :menuXmingInstallPrompt
-call :menuXmingInstall
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startXmingPromptDialerMode
-if /I %input% EQU -+ cls&goto startMain
-if /I %input% EQU +- cls&goto startMain
-cls&goto startXmingInstallPrompt
-:startXmingInstallPromptFromSearchMode
-call :banner
-call :menuXmingInstallPrompt
-call :menuXmingInstall
-call :menuAuxiliaryCommands
-call :menuSearchEngine
-if /I %input% EQU 0 cls&goto startMain
-if /I %input% EQU -+ cls&goto startMain
-if /I %input% EQU +- cls&goto startMain
-cls&goto startXmingInstallPromptFromSearchMode
-:menuXmingInstallPrompt
-echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: formerly under Alexander Gottwald; now under Colin Harrison
-echo     Software Type: X11 Display Server for Microsoft Windows Operating Systems
-echo          Category: Payware; all available Public Releases from 2007 and older are considered Freeware
-echo      License Type: Proprietary; MIT License is instead used for Public Releases from 2007 and older
-echo           Website: http://www.straightrunning.com/XmingNotes/
-echo  Founded/Released: 11/09/2004
-echo         Publicity: Public
-echo            Status: Active
-echo    Current Update: 
-echo        Patch Date: 
-echo  Target Filenames: Xming_I.exe, Xming_Fonts_I.exe
-echo   Additional Info: Runs silent in the background. The 2016 Fonts installer package for Xming is also available for free.
-echo                 +: 
-echo ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo Please enter the letter to install the Xming program/fonts ("P/F"). Input zero ("0") to cancel.
-echo.
-goto :eof
-:menuXmingInstall
-set /p input=%BS%
-if /I %input% EQU P start Xming_I.exe&set input=Xming-I-P&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU F start Xming_Fonts_I.exe&set input=Xming-I-F&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :: Main Menu Alphabetized Part 1
 :startMainAlphabetized1
@@ -23059,6 +24551,10 @@ call :banner
 call :About
 pause
 cls&goto startMain
+:startCopy
+call :Copy
+pause
+cls&goto startMain
 :startCopy0
 call :Copy0
 pause
@@ -23191,6 +24687,10 @@ goto :eof
 :startAboutInstream
 call :banner
 call :About
+pause
+cls&goto startMainInstream
+:startCopyInstream
+call :Copy
 pause
 cls&goto startMainInstream
 :startCopy0Instream
@@ -23331,7 +24831,9 @@ if /I %input% EQU 6 start Steam_Games_Launcher_R.lnk&&goto startPreExitPromptSte
 if /I %input% EQU 7 start PeaZip_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 if /I %input% EQU 8 start Notepad_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 if /I %input% EQU 9 start Notepad++_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
+if /I %input% EQU abou cls&goto startAboutStealth
 if /I %input% EQU about cls&goto startAboutStealth
+if /I %input% EQU copy cls&goto startCopyStealth
 if /I %input% EQU copy0 cls&goto startCopy0Stealth
 if /I %input% EQU copy1 call :startCopy1Stealth
 if /I %input% EQU copy2 call :startCopy2Stealth
@@ -23342,9 +24844,17 @@ if /I %input% EQU copy6 call :startCopy6Stealth
 if /I %input% EQU copy7 call :startCopy7Stealth
 if /I %input% EQU copy8 call :startCopy8Stealth
 if /I %input% EQU copy9 call :startCopy9Stealth
+if /I %input% EQU disp cls&goto startDisplayStealth
+if /I %input% EQU displ cls&goto startDisplayStealth
+if /I %input% EQU displa cls&goto startDisplayStealth
 if /I %input% EQU display cls&goto startDisplayStealth
 if /I %input% EQU exit goto exitBatchProgram
 if /I %input% EQU help cls&goto startHelpStealth
+if /I %input% EQU unst call :startSampleShortcutReplace
+if /I %input% EQU unste call :startSampleShortcutReplace
+if /I %input% EQU unstea call :startSampleShortcutReplace
+if /I %input% EQU unsteal call :startSampleShortcutReplace
+if /I %input% EQU unstealt call :startSampleShortcutReplace
 if /I %input% EQU unstealth call :startSampleShortcutReplace
 if /I %input% EQU unstealthXXXX call :startUnstealthShortcutReplace
 goto :eof
@@ -23392,6 +24902,12 @@ echo Last Update: 03/14/2025
 echo Author: Made with a programming specialist like Ebola Man.
 echo Compatibility: Windows 10 and 11. No administrator privilages required.
 echo Art Design: From "https:\\patorjk.com"
+echo.
+pause
+cls&goto startMainStealth
+:startCopyStealth
+echo.
+echo Are you insane? "copy" means you'd break Ebola Man.
 echo.
 pause
 cls&goto startMainStealth
@@ -23542,8 +25058,16 @@ echo        [38;2;204;255;204m╚╦═════════9) InvokeOther[
 echo        [38;2;230;255;230m ║[0m
 goto :eof
 :menuMainSample
+if /I %input% EQU abou cls&goto startAboutSample
 if /I %input% EQU about cls&goto startAboutSample
+if /I %input% EQU back cls&goto startBackgroundSample
+if /I %input% EQU backg cls&goto startBackgroundSample
+if /I %input% EQU backgr cls&goto startBackgroundSample
+if /I %input% EQU backgro cls&goto startBackgroundSample
+if /I %input% EQU backgrou cls&goto startBackgroundSample
+if /I %input% EQU backgroun cls&goto startBackgroundSample
 if /I %input% EQU background cls&goto startBackgroundSample
+if /I %input% EQU copy cls&goto startCopySample
 if /I %input% EQU copy0 cls&goto startCopy0Sample
 if /I %input% EQU copy1 call :startCopy1Sample
 if /I %input% EQU copy2 call :startCopy2Sample
@@ -23554,11 +25078,22 @@ if /I %input% EQU copy6 call :startCopy6Sample
 if /I %input% EQU copy7 call :startCopy7Sample
 if /I %input% EQU copy8 call :startCopy8Sample
 if /I %input% EQU copy9 call :startCopy9Sample
+if /I %input% EQU disp cls&goto startDisplaySample
+if /I %input% EQU displ cls&goto startDisplaySample
+if /I %input% EQU displa cls&goto startDisplaySample
 if /I %input% EQU display cls&goto startDisplaySample
 if /I %input% EQU exit goto exitBatchProgram
+if /I %input% EQU guid cls&goto startGuideSample
 if /I %input% EQU guide cls&goto startGuideSample
 if /I %input% EQU help cls&goto startHelpSample
+if /I %input% EQU inst call :startInstreamSampleShortcutReplace
+if /I %input% EQU instr call :startInstreamSampleShortcutReplace
+if /I %input% EQU instre call :startInstreamSampleShortcutReplace
+if /I %input% EQU instrea call :startInstreamSampleShortcutReplace
 if /I %input% EQU instream call :startInstreamSampleShortcutReplace
+if /I %input% EQU stea call :startStealthShortcutReplace
+if /I %input% EQU steal call :startStealthShortcutReplace
+if /I %input% EQU stealt call :startStealthShortcutReplace
 if /I %input% EQU stealth call :startStealthShortcutReplace
 if /I %input% EQU tree cls&goto startTreeSample
 if /I %input% EQU unstealthXXXX call :startUnstealthShortcutReplace
@@ -23567,6 +25102,10 @@ goto :eof
 :startAboutSample
 call :banner
 call :About
+pause
+cls&goto startMainSample
+:startCopySample
+call :Copy
 pause
 cls&goto startMainSample
 :startCopy0Sample
@@ -23685,7 +25224,9 @@ echo        [38;2;230;255;230m║[0m
 goto :eof
 :menuMainInstreamSample
 set /p input=.%BS%       [38;2;255;255;255m╚════════════^>[0m
+if /I %input% EQU abou cls&goto startAboutInstreamSample
 if /I %input% EQU about cls&goto startAboutInstreamSample
+if /I %input% EQU copy cls&goto startCopyInstreamSample
 if /I %input% EQU copy0 cls&goto startCopy0InstreamSample
 if /I %input% EQU copy1 call :startCopy1InstreamSample
 if /I %input% EQU copy2 call :startCopy2InstreamSample
@@ -23696,12 +25237,19 @@ if /I %input% EQU copy6 call :startCopy6InstreamSample
 if /I %input% EQU copy7 call :startCopy7InstreamSample
 if /I %input% EQU copy8 call :startCopy8InstreamSample
 if /I %input% EQU copy9 call :startCopy9InstreamSample
+if /I %input% EQU disp cls&goto startDisplayInstreamSample
+if /I %input% EQU displ cls&goto startDisplayInstreamSample
+if /I %input% EQU displa cls&goto startDisplayInstreamSample
 if /I %input% EQU display cls&goto startDisplayInstreamSample
 if /I %input% EQU exit goto exitBatchProgram
+if /I %input% EQU guid cls&goto startGuideInstreamSample
 if /I %input% EQU guide cls&goto startGuideInstreamSample
 if /I %input% EQU help cls&goto startHelpInstreamSample
 if /I %input% EQU instreamXXXX call :startInstreamShortcutReplace
 if /I %input% EQU tree cls&goto startTreeInstreamSample
+if /I %input% EQU mana call :startSampleShortcutReplace
+if /I %input% EQU manag call :startSampleShortcutReplace
+if /I %input% EQU manage call :startSampleShortcutReplace
 if /I %input% EQU manager call :startSampleShortcutReplace
 goto :eof
 :: From Auxiliary Commands Instream Sample
@@ -23710,6 +25258,10 @@ call :banner
 call :About
 pause
 cls&goto startMainInstreamSample
+:startCopyInstreamSample
+call :Copy
+pause
+cls&goto startMainSample
 :startCopy0InstreamSample
 call :Copy0
 pause
@@ -23928,7 +25480,6 @@ if /I %input% EQU Y goto exitBatchProgram
 if /I %input% EQU N cls&goto startMainStealth
 goto :eof
 :startUninstallationInstructions
-cls
 Title Input=%input%
 call :banner
 echo.
@@ -23980,7 +25531,7 @@ if /I %input% EQU 12 cls&goto startTorPromptDialerMode
 if /I %input% EQU 12A start Tor_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 12R start Tor_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 12I start Tor_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 12O goto startUninstallationInstructions
+if /I %input% EQU 12O cls&goto startUninstallationInstructions
 if /I %input% EQU 13 cls&goto startMullvadPromptDialerMode
 if /I %input% EQU 13A start Mullvad_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 13R start Mullvad_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -23995,23 +25546,23 @@ if /I %input% EQU 15 cls&goto startFirefoxPromptDialerMode
 if /I %input% EQU 15A start Firefox_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 15R start Firefox_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 15I start Firefox_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 15O goto startUninstallationInstructions
+if /I %input% EQU 15O cls&goto startUninstallationInstructions
 if /I %input% EQU 16 cls&goto startBravePromptDialerMode
 if /I %input% EQU 16A start Brave_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 16R start Brave_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 16I start Brave_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 16O goto startUninstallationInstructions
+if /I %input% EQU 16O cls&goto startUninstallationInstructions
 if /I %input% EQU 17 cls&goto startEdgePromptDialerMode
 if /I %input% EQU 17A start Edge_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 17R start Edge_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 17I start Edge_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 17O goto startUninstallationInstructions
-if /I %input% EQU 18 cls&goto start1GooglePromptDialerMode
+if /I %input% EQU 17O cls&goto startUninstallationInstructions
+if /I %input% EQU 18 cls&goto startGooglePromptDialerMode
 if /I %input% EQU 18C cls&goto startChromePromptDialerMode
 if /I %input% EQU 18CA start Chrome_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 18CR start Chrome_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 18CI start Chrome_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 18CO goto startUninstallationInstructions
+if /I %input% EQU 18CO cls&goto startUninstallationInstructions
 if /I %input% EQU 18E cls&goto startEarthPromptDialerMode
 if /I %input% EQU 18EA start Google_Earth_Pro_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 18ER start Google_Earth_Pro_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24027,7 +25578,7 @@ if /I %input% EQU 21 cls&goto startVisualStudioPromptDialerMode
 if /I %input% EQU 21A start Visual_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 21R start Visual_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 21I start Visual_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 21O goto startUninstallationInstructions
+if /I %input% EQU 21O cls&goto startUninstallationInstructions
 if /I %input% EQU 21S start Visual_Studio_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 22 cls&goto startVisualStudioCodePromptDialerMode
 if /I %input% EQU 22A start Visual_Studio_Code_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24038,48 +25589,48 @@ if /I %input% EQU 23 cls&goto startWordPromptDialerMode
 if /I %input% EQU 23A start Word_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 23R start Word_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 23I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 23O goto startUninstallationInstructions
+if /I %input% EQU 23O cls&goto startUninstallationInstructions
 if /I %input% EQU 24 cls&goto startPowerPointPromptDialerMode
 if /I %input% EQU 24A start PowerPoint_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 24R start PowerPoint_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 24I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 24O goto startUninstallationInstructions
+if /I %input% EQU 24O cls&goto startUninstallationInstructions
 if /I %input% EQU 25 cls&goto startExcelPromptDialerMode
 if /I %input% EQU 25A start Excel_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 25R start Excel_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 25I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 25O goto startUninstallationInstructions
+if /I %input% EQU 25O cls&goto startUninstallationInstructions
 if /I %input% EQU 26 cls&goto startAccessPromptDialerMode
 if /I %input% EQU 26A start Access_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 26R start Access_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 26I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 26O goto startUninstallationInstructions
+if /I %input% EQU 26O cls&goto startUninstallationInstructions
 if /I %input% EQU 27 cls&goto startPublisherPromptDialerMode
 if /I %input% EQU 27A start Publisher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 27R start Publisher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 27I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 27O goto startUninstallationInstructions
+if /I %input% EQU 27O cls&goto startUninstallationInstructions
 if /I %input% EQU 28 cls&goto startOneNotePromptDialerMode
 if /I %input% EQU 28A start OneNote_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 28R start OneNote_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 28I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 28O goto startUninstallationInstructions
+if /I %input% EQU 28O cls&goto startUninstallationInstructions
 if /I %input% EQU 29 cls&goto startOtherMicrosoftToolsPromptDialerMode
 if /I %input% EQU 29B cls&goto startPowerBIpromptDialerMode
 if /I %input% EQU 29BA start PowerBI_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 29BR start PowerBI_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 29BI start PowerBI_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 29BO goto startUninstallationInstructions
+if /I %input% EQU 29BO cls&goto startUninstallationInstructions
 if /I %input% EQU 29D cls&goto startOneDrivePromptDialerMode
 if /I %input% EQU 29DA start OneDrive_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 29DR start OneDrive_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 29DI start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 29DO goto startUninstallationInstructions
+if /I %input% EQU 29DO cls&goto startUninstallationInstructions
 if /I %input% EQU 29O cls&goto startOutlookPromptDialerMode
 if /I %input% EQU 29OA start Outlook_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 29OR start Outlook_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 29OI start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 29OO goto startUninstallationInstructions
+if /I %input% EQU 29OO cls&goto startUninstallationInstructions
 if /I %input% EQU 29T cls&goto startTeamsPromptDialerMode
 if /I %input% EQU 29TA start Teams_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 29TR start Teams_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24093,7 +25644,7 @@ if /I %input% EQU 32 cls&goto startMATLABpromptDialerMode
 if /I %input% EQU 32A start MATLAB_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 32R start MATLAB_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 32I start MATLAB_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 32O goto startUninstallationInstructions
+if /I %input% EQU 32O cls&goto startUninstallationInstructions
 if /I %input% EQU 33 cls&goto startOctavePromptDialerMode
 if /I %input% EQU 33G cls&goto startGUIOctavePromptDialerMode
 if /I %input% EQU 33GA start GUI_Octave_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24143,7 +25694,7 @@ if /I %input% EQU 36R1 start CLI_Directory.txt&&goto startPreExitPrompt||goto st
 if /I %input% EQU 36RY start Python_R.lnk&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU 36RN start Python_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 36I start Python_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 36O goto startUninstallationInstructions
+if /I %input% EQU 36O cls&goto startUninstallationInstructions
 if /I %input% EQU 37 cls&goto startPowerShellPromptDialerMode
 if /I %input% EQU 37A cls&goto startPowerShellRunAdminPromptDialerMode
 if /I %input% EQU 37A1 start CLI_Directory.txt&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24154,7 +25705,7 @@ if /I %input% EQU 37R1 start CLI_Directory.txt&&goto startPreExitPrompt||goto st
 if /I %input% EQU 37RY start PowerShell_R.lnk&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU 37RN start PowerShell_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 37I start PowerShell_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 37O goto startUninstallationInstructions
+if /I %input% EQU 37O cls&goto startUninstallationInstructions
 if /I %input% EQU 38 cls&goto startCommandPromptDialerMode
 if /I %input% EQU 38A cls&goto startCommandRunAdminPromptDialerMode
 if /I %input% EQU 38A1 start CLI_Directory.txt&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24171,51 +25722,51 @@ if /I %input% EQU 391R start Rider_R.lnk&&goto startPreExitPrompt||goto startFai
 if /I %input% EQU 391I cls&goto startRiderInstallerPromptDialerMode
 if /I %input% EQU 391IA start Rider_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 391IB start dotUltimate_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 391O goto startUninstallationInstructions
+if /I %input% EQU 391O cls&goto startUninstallationInstructions
 if /I %input% EQU 392 cls&goto startRustRoverPromptDialerMode
 if /I %input% EQU 392A start RustRover_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 392R start RustRover_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 392I start RustRover_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 392O goto startUninstallationInstructions
+if /I %input% EQU 392O cls&goto startUninstallationInstructions
 if /I %input% EQU 393 cls&goto startWebStormPromptDialerMode
 if /I %input% EQU 393A start WebStorm_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 393R start WebStorm_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 393I start WebStorm_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 393O goto startUninstallationInstructions
+if /I %input% EQU 393O cls&goto startUninstallationInstructions
 if /I %input% EQU 394 cls&goto startdotPeekPromptDialerMode
 if /I %input% EQU 394A start dotPeek_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 394R start dotPeek_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 394I cls&goto startdotPeekInstallerPromptDialerMode
 if /I %input% EQU 394IA start dotPeek_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 394IB start dotUltimate_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 394O goto startUninstallationInstructions
+if /I %input% EQU 394O cls&goto startUninstallationInstructions
 if /I %input% EQU 395 cls&goto startdotCoverPromptDialerMode
 if /I %input% EQU 395A start dotCover_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 395R start dotCover_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 395I cls&goto startdotCoverInstallerPromptDialerMode
 if /I %input% EQU 395IA start dotCover_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 395IB start dotUltimate_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 395O goto startUninstallationInstructions
+if /I %input% EQU 395O cls&goto startUninstallationInstructions
 if /I %input% EQU 396 cls&goto startdotMemoryPromptDialerMode
 if /I %input% EQU 396A start dotMemory_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 396R start dotMemory_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 396I cls&goto startdotMemoryInstallerPromptDialerMode
 if /I %input% EQU 396IA start dotMemory_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 396IB start dotUltimate_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 396O goto startUninstallationInstructions
+if /I %input% EQU 396O cls&goto startUninstallationInstructions
 if /I %input% EQU 397 cls&goto startdotTracePromptDialerMode
 if /I %input% EQU 397A start dotTrace_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 397R start dotTrace_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 397I cls&goto startdotTraceInstallerPromptDialerMode
 if /I %input% EQU 397IA start dotTrace_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 397IB start dotUltimate_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 397O goto startUninstallationInstructions
+if /I %input% EQU 397O cls&goto startUninstallationInstructions
 if /I %input% EQU 398 cls&goto start3AltB
 if /I %input% EQU 3981 cls&goto startAquaPromptDialerMode
 if /I %input% EQU 3981A start Aqua_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3981R start Aqua_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3981I start Aqua_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3981O goto startUninstallationInstructions
+if /I %input% EQU 3981O cls&goto startUninstallationInstructions
 if /I %input% EQU 3982 cls&goto startReSharperPromptDialerMode
 if /I %input% EQU 3982T cls&goto startResharperTraditionalPromptDialerMode
 if /I %input% EQU 3982TA start ReSharper_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24223,81 +25774,81 @@ if /I %input% EQU 3982TR start ReSharper_R.lnk&&goto startPreExitPrompt||goto st
 if /I %input% EQU 3982TI cls&goto startReSharperTraditionalInstallerPromptDialerMode
 if /I %input% EQU 3982TIA start ReSharper_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3982TIB start dotUltimate_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3982TO goto startUninstallationInstructions
+if /I %input% EQU 3982TO cls&goto startUninstallationInstructions
 if /I %input% EQU 3982C cls&goto startResharperCppPromptDialerMode
 if /I %input% EQU 3982CA start Resharper_Cpp_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3982CR start Resharper_Cpp_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3982CI cls&goto startReSharperCppInstallerPromptDialerMode
 if /I %input% EQU 3982CIA start Resharper_Cpp_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3982CIB start dotUltimate_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3982CO goto startUninstallationInstructions
+if /I %input% EQU 3982CO cls&goto startUninstallationInstructions
 if /I %input% EQU 3983 cls&goto startCLionPromptDialerMode
 if /I %input% EQU 3983A start CLion_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3983R start CLion_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3983I start CLion_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3983O goto startUninstallationInstructions
+if /I %input% EQU 3983O cls&goto startUninstallationInstructions
 if /I %input% EQU 3984 cls&goto startDataGripPromptDialerMode
 if /I %input% EQU 3984A start DataGrip_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3984R start DataGrip_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3984I start DataGrip_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3984O goto startUninstallationInstructions
+if /I %input% EQU 3984O cls&goto startUninstallationInstructions
 if /I %input% EQU 3985 cls&goto startDataSpellPromptDialerMode
 if /I %input% EQU 3985A start DataSpell_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3985R start DataSpell_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3985I start DataSpell_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3985O goto startUninstallationInstructions
+if /I %input% EQU 3985O cls&goto startUninstallationInstructions
 if /I %input% EQU 3986 cls&goto startPyCharmPromptDialerMode
 if /I %input% EQU 3986A start PyCharm_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3986R start PyCharm_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3986I start PyCharm_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3986O goto startUninstallationInstructions
+if /I %input% EQU 3986O cls&goto startUninstallationInstructions
 if /I %input% EQU 3987 cls&goto startIntelliJIDEApromptDialerMode
 if /I %input% EQU 3987A start IntelliJIDEA_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3987R start IntelliJIDEA_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3987I start IntelliJIDEA_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3987O goto startUninstallationInstructions
+if /I %input% EQU 3987O cls&goto startUninstallationInstructions
 if /I %input% EQU 399 cls&goto start3AltC
 if /I %input% EQU 3991 cls&goto startPhpStormPromptDialerMode
 if /I %input% EQU 3991A start PhpStorm_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3991R start PhpStorm_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3991I start PhpStorm_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3991O goto startUninstallationInstructions
+if /I %input% EQU 3991O cls&goto startUninstallationInstructions
 if /I %input% EQU 3992 cls&goto startGoLandPromptDialerMode
 if /I %input% EQU 3992A start GoLand_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3992R start GoLand_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3992I start GoLand_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3992O goto startUninstallationInstructions
+if /I %input% EQU 3992O cls&goto startUninstallationInstructions
 if /I %input% EQU 3993 cls&goto startRubyMinePromptDialerMode
 if /I %input% EQU 3993A start RubyMine_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3993R start RubyMine_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3993I start RubyMine_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3993O goto startUninstallationInstructions
+if /I %input% EQU 3993O cls&goto startUninstallationInstructions
 if /I %input% EQU 3994 cls&goto startGatewayPromptDialerMode
 if /I %input% EQU 3994A start Gateway_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3994R start Gateway_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3994I start Gateway_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3994O goto startUninstallationInstructions
+if /I %input% EQU 3994O cls&goto startUninstallationInstructions
 if /I %input% EQU 3995 cls&goto startMetaProgrammingSystemPromptDialerMode
 if /I %input% EQU 3995A start MetaProgrammingSystem_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3995R start MetaProgrammingSystem_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3995I start MetaProgrammingSystem_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3995O goto startUninstallationInstructions
+if /I %input% EQU 3995O cls&goto startUninstallationInstructions
 if /I %input% EQU 3996 cls&goto startToolboxPromptDialerMode
 if /I %input% EQU 3996A start Toolbox_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3996R start Toolbox_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3996I start Toolbox_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3996O goto startUninstallationInstructions
+if /I %input% EQU 3996O cls&goto startUninstallationInstructions
 if /I %input% EQU 3997 cls&goto startWritersidePromptDialerMode
 if /I %input% EQU 3997A start Writerside_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3997R start Writerside_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3997I start Writerside_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 3997O goto startUninstallationInstructions
+if /I %input% EQU 3997O cls&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto start4
 if /I %input% EQU 41 cls&goto startVMwareWorkstationPromptDialerMode
 if /I %input% EQU 41A start VMware_Workstation_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 41R start VMware_Workstation_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 41I start VMware_Workstation_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 41O goto startUninstallationInstructions
+if /I %input% EQU 41O cls&goto startUninstallationInstructions
 if /I %input% EQU 42 cls&goto startDockerDesktopPromptDialerMode
 if /I %input% EQU 42A start Docker_Desktop_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 42R start Docker_Desktop_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24347,55 +25898,55 @@ if /I %input% EQU 491R start AutoCAD_R.lnk&&goto startPreExitPrompt||goto startF
 if /I %input% EQU 491I cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU 491I1 start AutoCAD_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 491I2 start AutoCAD_OfflineHelp_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 491O goto startUninstallationInstructions
+if /I %input% EQU 491O cls&goto startUninstallationInstructions
 if /I %input% EQU 491S start AutoCAD_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 492 cls&goto startAutoCADElectricalPromptDialerMode
 if /I %input% EQU 492A start AutoCAD_Electrical_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 492R start AutoCAD_Electrical_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 492I start AutoCAD_Electrical_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 492O goto startUninstallationInstructions
+if /I %input% EQU 492O cls&goto startUninstallationInstructions
 if /I %input% EQU 492S start AutoCAD_Electrical_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 493 cls&goto startAutoCADMechanicalPromptDialerMode
 if /I %input% EQU 493A start AutoCAD_Mechanical_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 493R start AutoCAD_Mechanical_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 493I start AutoCAD_Mechanical_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 493O goto startUninstallationInstructions
+if /I %input% EQU 493O cls&goto startUninstallationInstructions
 if /I %input% EQU 493S start AutoCAD_Mechanical_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 494 cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU 494A start Solidworks_3D_CAD_Design_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 494R start Solidworks_3D_CAD_Design_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 494I start Solidworks_3D_CAD_Design_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 494O goto startUninstallationInstructions
+if /I %input% EQU 494O cls&goto startUninstallationInstructions
 if /I %input% EQU 494S start Solidworks_3D_CAD_Design_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 495 cls&goto startAutodeskFusion360PromptDialerMode
 if /I %input% EQU 495A start Autodesk_Fusion_360_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 495R start Autodesk_Fusion_360_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 495I start Autodesk_Fusion_360_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 495O goto startUninstallationInstructions
+if /I %input% EQU 495O cls&goto startUninstallationInstructions
 if /I %input% EQU 495S start Autodesk_Fusion_360_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 496 cls&goto startAutodeskCivil3DpromptDialerMode
 if /I %input% EQU 496A start Autodesk_Civil_3D_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 496R start Autodesk_Civil_3D_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 496I start Autodesk_Civil_3D_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 496O goto startUninstallationInstructions
+if /I %input% EQU 496O cls&goto startUninstallationInstructions
 if /I %input% EQU 496S start Autodesk_Civil_3D_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 497 cls&goto startAutodeskFeatureCAMpromptDialerMode
 if /I %input% EQU 497A start Autodesk_FeatureCAM_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 497R start Autodesk_FeatureCAM_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 497I start Autodesk_FeatureCAM_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 497O goto startUninstallationInstructions
+if /I %input% EQU 497O cls&goto startUninstallationInstructions
 if /I %input% EQU 497S start Autodesk_FeatureCAM_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 498 cls&goto startAutodeskMayaPromptDialerMode
 if /I %input% EQU 498A start Autodesk_Maya_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 498R start Autodesk_Maya_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 498I start Autodesk_Maya_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 498O goto startUninstallationInstructions
+if /I %input% EQU 498O cls&goto startUninstallationInstructions
 if /I %input% EQU 498S start Autodesk_Maya_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 499 cls&goto startTeklaStructuresPromptDialerMode
 if /I %input% EQU 499A start Tekla_Structures_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 499R start Tekla_Structures_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 499I start Tekla_Structures_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 499O goto startUninstallationInstructions
+if /I %input% EQU 499O cls&goto startUninstallationInstructions
 if /I %input% EQU 499S start Tekla_Structures_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5 cls&goto start5
 if /I %input% EQU 51 cls&goto startAndroidStudioPromptDialerMode
@@ -24415,7 +25966,7 @@ if /I %input% EQU 54 cls&goto startON1PhotoRAWpromptDialerMode
 if /I %input% EQU 54A start ON1_Photo_RAW_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 54R start ON1_Photo_RAW_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 54I start ON1_Photo_RAW_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 54O goto startUninstallationInstructions
+if /I %input% EQU 54O cls&goto startUninstallationInstructions
 if /I %input% EQU 55 cls&goto startPlayerFabPromptDialerMode
 if /I %input% EQU 55A start PlayerFab_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 55R start PlayerFab_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24462,8 +26013,8 @@ if /I %input% EQU 62 cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU 62A start Epic_Games_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 62R start Epic_Games_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 62I start Epic_Games_Launcher_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 62O goto startUninstallationInstructions
-if /I %input% EQU 63 cls&goto startUbisoftAndElectronicArtsPromptDialerMode
+if /I %input% EQU 62O cls&goto startUninstallationInstructions
+if /I %input% EQU 63 cls&goto startUbisoftElectronicArtsGOGPromptDialerMode
 if /I %input% EQU 63U cls&goto startUbisoftConnectPromptDialerMode
 if /I %input% EQU 63UA start Ubisoft_Connect_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 63UR start Ubisoft_Connect_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24473,7 +26024,12 @@ if /I %input% EQU 63E cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU 63EA start Electronic_Arts_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 63ER start Electronic_Arts_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 63EI start Electronic_Arts_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 63EO goto startUninstallationInstructions
+if /I %input% EQU 63EO cls&goto startUninstallationInstructions
+if /I %input% EQU 63G cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU 63GA start GOG_Galaxy_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 63GR start GOG_Galaxy_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 63GI start GOG_Galaxy_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 63GO start GOG_Galaxy_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 64 cls&goto startBlueStacksPromptDialerMode
 if /I %input% EQU 64A start BlueStacks_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 64R start BlueStacks_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24490,7 +26046,7 @@ if /I %input% EQU 66R start Go_R.lnk&&goto startPreExitPrompt||goto startFailedE
 if /I %input% EQU 66I cls&goto startGoInstallerPromptDialerMode
 if /I %input% EQU 66IE start Go_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 66IM start Go_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 66O goto startUninstallationInstructions
+if /I %input% EQU 66O cls&goto startUninstallationInstructions
 if /I %input% EQU 67 cls&goto startInkballPromptDialerMode
 if /I %input% EQU 67A start InkBall_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 67R start InkBall_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24570,12 +26126,12 @@ if /I %input% EQU 76T cls&goto startForensicToolkitPromptDialerMode
 if /I %input% EQU 76TA start Forensic_Toolkit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 76TR start Forensic_Toolkit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 76TI start Forensic_Toolkit_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 76TO goto startUninstallationInstructions
+if /I %input% EQU 76TO cls&goto startUninstallationInstructions
 if /I %input% EQU 76L cls&goto startFTKLanguagePromptDialerMode
 if /I %input% EQU 76LA start FTK_Language_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 76LR start FTK_Language_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 76LI start FTK_Language_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 76LO goto startUninstallationInstructions
+if /I %input% EQU 76LO cls&goto startUninstallationInstructions
 if /I %input% EQU 77 cls&goto startPasswareKitPromptDialerMode
 if /I %input% EQU 77A start Passware_Kit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 77R start Passware_Kit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24601,7 +26157,7 @@ if /I %input% EQU 793 cls&goto startAdobeAcrobatPromptDialerMode
 if /I %input% EQU 793A start Adobe_Acrobat_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 793R start Adobe_Acrobat_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 793I start Adobe_Acrobat_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 793O goto startUninstallationInstructions
+if /I %input% EQU 793O cls&goto startUninstallationInstructions
 if /I %input% EQU 794 cls&goto startCalibrePromptDialerMode
 if /I %input% EQU 794A start Calibre_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 794R start Calibre_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24672,7 +26228,7 @@ if /I %input% EQU 87 cls&goto startWinAcePromptDialerMode
 if /I %input% EQU 87A start WinAce_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87R start WinAce_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 87I start WinAce_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 87O goto startUninstallationInstructions
+if /I %input% EQU 87O cls&goto startUninstallationInstructions
 if /I %input% EQU 88 cls&goto startIZArcPromptDialerMode
 if /I %input% EQU 88A start IZArc_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 88R start IZArc_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24705,7 +26261,7 @@ if /I %input% EQU 94 cls&goto startMinitabPromptDialerMode
 if /I %input% EQU 94A start Minitab_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94R start Minitab_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 94I start Minitab_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94O goto startUninstallationInstructions
+if /I %input% EQU 94O cls&goto startUninstallationInstructions
 if /I %input% EQU 95 cls&goto startjGRASPpromptDialerMode
 if /I %input% EQU 95A start jGRASP_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 95R start jGRASP_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24745,27 +26301,27 @@ if /I %input% EQU 981 cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialer
 if /I %input% EQU 981A start TI-Nspire_CX_CAS_Student_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 981R start TI-Nspire_CX_CAS_Student_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 981I start TI-Nspire_CX_CAS_Student_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 981O goto startUninstallationInstructions
+if /I %input% EQU 981O cls&goto startUninstallationInstructions
 if /I %input% EQU 982 cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU 982A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 982R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 982I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 982O goto startUninstallationInstructions
+if /I %input% EQU 982O cls&goto startUninstallationInstructions
 if /I %input% EQU 983 cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU 983A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 983R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 983I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 983O goto startUninstallationInstructions
+if /I %input% EQU 983O cls&goto startUninstallationInstructions
 if /I %input% EQU 984 cls&goto startMaplePromptDialerMode
 if /I %input% EQU 984A start Maple_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 984R start Maple_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 984I start Maple_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 984O goto startUninstallationInstructions
+if /I %input% EQU 984O cls&goto startUninstallationInstructions
 if /I %input% EQU 985 cls&goto startMapleFlowPromptDialerMode
 if /I %input% EQU 985A start Maple_Flow_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 985R start Maple_Flow_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 985I start Maple_Flow_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 985O goto startUninstallationInstructions
+if /I %input% EQU 985O cls&goto startUninstallationInstructions
 if /I %input% EQU 986 cls&goto startTelerikPromptDialerMode
 if /I %input% EQU 986A cls&goto startTelerikRunAdminPromptDialerMode
 if /I %input% EQU 986AA start Telerik_Test_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24780,7 +26336,7 @@ if /I %input% EQU 9871 cls&goto startAgentDVRpromptDialerMode
 if /I %input% EQU 9871A start Agent_DVR_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9871R start Agent_DVR_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9871I start Agent_DVR_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9871O goto startUninstallationInstructions
+if /I %input% EQU 9871O cls&goto startUninstallationInstructions
 if /I %input% EQU 9872 cls&goto startCisdemAppCryptPromptDialerMode
 if /I %input% EQU 9872A start Cisdem_App_Crypt_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9872R start Cisdem_App_Crypt_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24822,7 +26378,7 @@ if /I %input% EQU 9878N cls&goto startNMSSaveEditorPromptDialerMode
 if /I %input% EQU 9878NA start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9878NR start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9878NI start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 9878NO goto startUninstallationInstructions
+if /I %input% EQU 9878NO cls&goto startUninstallationInstructions
 if /I %input% EQU 9878P cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU 9878PA start PalworldSavePal_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9878PR start PalworldSavePal_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24838,7 +26394,7 @@ if /I %input% EQU 991 cls&goto startAudialsOnePromptDialerMode
 if /I %input% EQU 991A start Audials_One_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 991R start Audials_One_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 991I start Audials_One_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 991O goto startUninstallationInstructions
+if /I %input% EQU 991O cls&goto startUninstallationInstructions
 if /I %input% EQU 992 cls&goto startProtonPromptDialerMode
 if /I %input% EQU 992V cls&goto startProtonVPNpromptDialerMode
 if /I %input% EQU 992VA start Proton_VPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -24850,28 +26406,33 @@ if /I %input% EQU 992DA start Proton_Drive_A.lnk&&goto startPreExitPrompt||goto 
 if /I %input% EQU 992DR start Proton_Drive_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 992DI start Proton_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 992DO start Proton_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 993 cls&goto startMullvadVPNpromptDialerMode
-if /I %input% EQU 993A start Mullvad_VPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 993R start Mullvad_VPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 993I start Mullvad_VPN_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 993O start Mullvad_VPN_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993 cls&goto startOtherVPNsuitePromptDialerMode
+if /I %input% EQU 993M cls&goto startMullvadVPNpromptDialerMode
+if /I %input% EQU 993MA start Mullvad_VPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993MR start Mullvad_VPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993MI start Mullvad_VPN_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993MO start Mullvad_VPN_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993N cls&goto startNordVPNpromptDialerMode
+if /I %input% EQU 993NA start NordVPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993NR start NordVPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993NI start NordVPN_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993NO cls&set input=993NO&goto startUninstallationInstructions
+if /I %input% EQU 993V cls&goto startOpenVPNpromptDialerMode
+if /I %input% EQU 993VA start OpenVPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993VR start OpenVPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993VI start OpenVPN_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 993VO cls&set input=993VO&goto startUninstallationInstructions
 if /I %input% EQU 994 cls&goto startPortmasterPromptDialerMode
 if /I %input% EQU 994A start Portmaster_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 994R start Portmaster_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 994I start Portmaster_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 994O start Portmaster_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 995 cls&goto startWiresharkPromptDialerMode
-if /I %input% EQU 995A start Wireshark_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 995R start Wireshark_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 995I start Wireshark_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 995O start Wireshark_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 996 cls&goto startCharacterMapAndPaintPromptDialerMode
-if /I %input% EQU 996C cls&goto startCharacterMapPromptDialerMode
-if /I %input% EQU 996CA start Character_Map_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 996CR start Character_Map_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 996P cls&goto startPaintPromptDialerMode
-if /I %input% EQU 996PA start Paint_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 996PR start Paint_Map_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 995 cls&goto startCharacterMapPromptDialerMode
+if /I %input% EQU 995A start Character_Map_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 995R start Character_Map_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 996 cls&goto startPaintPromptDialerMode
+if /I %input% EQU 996A start Paint_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 996R start Paint_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 997 cls&goto start9cAltA
 if /I %input% EQU 9971 cls&goto startdnSpy_x32_PromptDialerMode
 if /I %input% EQU 9971A start dnSpy_x32_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -25187,8 +26748,11 @@ if /I %input% EQU Z9 goto startEmptySlotPrompt
 goto :eof
 :: Auxiliary Commands
 :menuAuxiliaryCommands
+if /I %input% EQU abou cls&goto startAbout
 if /I %input% EQU about cls&goto startAbout
+if /I %input% EQU aler cls&goto startAlert
 if /I %input% EQU alert cls&goto startAlert
+if /I %input% EQU alert- cls&goto startAlert
 if /I %input% EQU alert-1 cls&goto startHitmanProPromptDialerMode
 if /I %input% EQU alert-1A start HitmanPro_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU alert-1R start HitmanPro_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -25281,8 +26845,16 @@ if /I %input% EQU alert-99I cls&goto startSpeccyInstallerPromptDialerMode
 if /I %input% EQU alert-99IA start Speccy_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU alert-99IB start Piriform_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU alert-99O start Speccy_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU alph cls&goto startMainAlphabetized1
 if /I %input% EQU alpha cls&goto startMainAlphabetized1
+if /I %input% EQU back cls&goto startBackground
+if /I %input% EQU backg cls&goto startBackground
+if /I %input% EQU backgr cls&goto startBackground
+if /I %input% EQU backgro cls&goto startBackground
+if /I %input% EQU backgrou cls&goto startBackground
+if /I %input% EQU backgroun cls&goto startBackground
 if /I %input% EQU background cls&goto startBackground
+if /I %input% EQU background- cls&goto startBackground
 if /I %input% EQU background-1 cls&goto start7-ZipFMpromptDialerMode
 if /I %input% EQU background-1A start 7-ZipFM_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-1R start 7-ZipFM_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -25297,7 +26869,7 @@ if /I %input% EQU background-3 cls&goto startFlowLauncherPromptDialerMode
 if /I %input% EQU background-3A start Flow_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-3R start Flow_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-3I start Flow_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU background-3O goto startUninstallationInstructions
+if /I %input% EQU background-3O cls&goto startUninstallationInstructions
 if /I %input% EQU background-4 cls&goto startSamsungDriverPromptDialerMode
 if /I %input% EQU background-4I start Samsung_Driver_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-5 cls&goto startDirectoryOpusPromptDialerMode
@@ -25319,7 +26891,7 @@ if /I %input% EQU background-8 cls&goto startWireGuardPromptDialerMode
 if /I %input% EQU background-8A start WireGuard_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-8R start WireGuard_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-8I start WireGuard_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU background-8O goto startUninstallationInstructions
+if /I %input% EQU background-8O cls&goto startUninstallationInstructions
 if /I %input% EQU background-9 cls&goto startLaunchNotepadPromptDialerMode
 if /I %input% EQU background-9M cls&goto startNotepadPromptDialerMode
 if /I %input% EQU background-9MA start Notepad_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -25330,6 +26902,7 @@ if /I %input% EQU background-9PR start Notepad++_R.lnk&&goto startPreExitPrompt|
 if /I %input% EQU background-9PI start Notepad++_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-9PO start Notepad++_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU beta cls&goto startMainAlphabetized2
+if /I %input% EQU copy cls&goto startCopy
 if /I %input% EQU copy0 cls&goto startCopy0
 if /I %input% EQU copy1 call :startCopy1
 if /I %input% EQU copy2 call :startCopy2
@@ -25340,12 +26913,22 @@ if /I %input% EQU copy6 call :startCopy6
 if /I %input% EQU copy7 call :startCopy7
 if /I %input% EQU copy8 call :startCopy8
 if /I %input% EQU copy9 call :startCopy9
+if /I %input% EQU disp cls&goto startDisplay
+if /I %input% EQU displ cls&goto startDisplay
+if /I %input% EQU displa cls&goto startDisplay
 if /I %input% EQU display cls&goto startDisplay
 if /I %input% EQU exit goto exitBatchProgram
+if /I %input% EQU gamm cls&goto startMainAlphabetized3
 if /I %input% EQU gamma cls&goto startMainAlphabetized3
+if /I %input% EQU guid cls&goto startGuide
 if /I %input% EQU guide cls&goto startGuide
 if /I %input% EQU help cls&goto startHelp
+if /I %input% EQU insta cls&goto startInstallerPromptDialerMode
+if /I %input% EQU instal cls&goto startInstallerPromptDialerMode
+if /I %input% EQU install cls&goto startInstallerPromptDialerMode
+if /I %input% EQU installe cls&goto startInstallerPromptDialerMode
 if /I %input% EQU installer cls&goto startInstallerPromptDialerMode
+if /I %input% EQU installer- cls&goto startInstallerPromptDialerMode
 if /I %input% EQU installer-C cls&goto startCreateInstallPromptDialerMode
 if /I %input% EQU installer-CA start CreateInstall_A.lnk&set input=installer-CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU installer-CR start CreateInstall_R.lnk&set input=installer-CR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -25364,15 +26947,114 @@ if /I %input% EQU installer-NA start Inno_Setup_A.lnk&set input=installer-NA&&go
 if /I %input% EQU installer-NR start Inno_Setup_R.lnk&set input=installer-NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU installer-NI start Inno_Setup_I.exe&set input=installer-NI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU installer-NO start Inno_Setup_O.lnk&set input=installer-NO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU instr call :startInstreamShortcutReplace
+if /I %input% EQU instre call :startInstreamShortcutReplace
+if /I %input% EQU instrea call :startInstreamShortcutReplace
 if /I %input% EQU instream call :startInstreamShortcutReplace
 if /I %input% EQU menu cls&goto startMain
+if /I %input% EQU netw cls&goto startNetwork
+if /I %input% EQU netwo cls&goto startNetwork
+if /I %input% EQU networ cls&goto startNetwork
+if /I %input% EQU network cls&goto startNetwork
+if /I %input% EQU network- cls&goto startNetwork
+if /I %input% EQU network-1 cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU network-1G cls&goto startGitHubPromptDialerMode
+if /I %input% EQU network-1GA start GitHub_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-1GR start GitHub_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-1GI start GitHub_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-1GO cls&goto startUninstallationInstructions
+if /I %input% EQU network-1F cls&goto startGitForkPromptDialerMode
+if /I %input% EQU network-1FA start GitHub_Fork_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-1FR start GitHub_Fork_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-1FI start GitHub_Fork_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-1FO cls&goto startUninstallationInstructions
+if /I %input% EQU network-2 cls&goto startBitvisePromptDialerMode
+if /I %input% EQU network-2A cls&goto startBitviseRunAdminPromptDialerMode
+if /I %input% EQU network-2AC start Bitvise_SSH_Client_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-2AS start Bitvise_SSH_Server_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-2R cls&goto startBitviseRunPromptDialerMode
+if /I %input% EQU network-2RC start Bitvise_SSH_Client_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-2RS start Bitvise_SSH_Server_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-2I cls&goto startBitviseInstallPromptDialerMode
+if /I %input% EQU network-2IC start Bitvise_SSH_Client_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-2IS start Bitvise_SSH_Server_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-2O cls&goto startBitviseUninstallPromptDialerMode
+if /I %input% EQU network-2OC start Bitvise_SSH_Client_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-2OS start Bitvise_SSH_Server_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-3 cls&goto startPuTTYpromptDialerMode
+if /I %input% EQU network-3A start PuTTY_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-3R start PuTTY_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-3I start PuTTY_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-3O cls&goto startUninstallationInstructions
+if /I %input% EQU network-4 cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU network-4A cls&goto startSecureCRTrunAdminPromptDialerMode
+if /I %input% EQU network-4AC start SecureCRT_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-4AF start SecureFX_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-4R cls&goto startSecureCRTrunPromptDialerMode
+if /I %input% EQU network-4RC start SecureCRT_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-4RF start SecureFX_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-4I start SecureCRT_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-4O cls&goto startUninstallationInstructions
+if /I %input% EQU network-5 cls&goto startXmingPromptDialerMode
+if /I %input% EQU network-5A cls&goto startXmingRunAdminPromptDialerMode
+if /I %input% EQU network-5AM start Xming_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-5AL start XLaunch_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-5R cls&goto startXmingRunPromptDialerMode
+if /I %input% EQU network-5RM start Xming_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-5RL start XLaunch_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-5I cls&goto startXmingInstallPromptDialerMode
+if /I %input% EQU network-5IP start Xming_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-5IF start Xming_Fonts_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-5O start Xming_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-6 cls&goto startWiresharkPromptDialerMode
+if /I %input% EQU network-6A start Wireshark_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-6R start Wireshark_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-6I start Wireshark_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-6O start Wireshark_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-7 cls&goto startTraceXHWIDspooferPromptDialerMode
+if /I %input% EQU network-7A start TraceX_HWID_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-7R start TraceX_HWID_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-8 cls&goto startFreegateIPspooferPromptDialerMode
+if /I %input% EQU network-8A start Freegate_IP_Spoofer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-8R start Freegate_IP_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9 cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU network-9D cls&goto startTechnitiumDNSserverPromptDialerMode
+if /I %input% EQU network-9DA start Technitium_DNS_Server_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9DR start Technitium_DNS_Server_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9DI start Technitium_DNS_Server_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9DO cls&goto startUninstallationInstructions
+if /I %input% EQU network-9S cls&goto startTechnitiumMeshP2PmessagerPromptDialerMode
+if /I %input% EQU network-9SA start Technitium_Mesh_P2P_Messager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9SR start Technitium_Mesh_P2P_Messager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9SI start Technitium_Mesh_P2P_Messager_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9SO cls&goto startUninstallationInstructions
+if /I %input% EQU network-9M cls&goto startTechnitiumMACspooferPromptDialerMode
+if /I %input% EQU network-9MA start Technitium_MAC_Spoofer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9MR start Technitium_MAC_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9MI start Technitium_MAC_Spoofer_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU network-9MO cls&goto startUninstallationInstructions
 if /I %input% EQU open start Davy_Jones_OS_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU pack cls&goto startPackageChecker
+if /I %input% EQU packa cls&goto startPackageChecker
+if /I %input% EQU packag cls&goto startPackageChecker
 if /I %input% EQU package cls&goto startPackageChecker
 if /I %input% EQU root start Root_Directory_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU samp call :startSampleShortcutReplace
+if /I %input% EQU sampl call :startSampleShortcutReplace
 if /I %input% EQU sample call :startSampleShortcutReplace
+if /I %input% EQU shor cls&goto startShortcutChecker
+if /I %input% EQU short cls&goto startShortcutChecker
+if /I %input% EQU shortc cls&goto startShortcutChecker
+if /I %input% EQU shortcu cls&goto startShortcutChecker
 if /I %input% EQU shortcut cls&goto startShortcutChecker
+if /I %input% EQU stea call :startStealthShortcutReplace
+if /I %input% EQU steal call :startStealthShortcutReplace
+if /I %input% EQU stealt call :startStealthShortcutReplace
 if /I %input% EQU stealth call :startStealthShortcutReplace
 if /I %input% EQU tree cls&goto startTree
+if /I %input% EQU words cls&goto startWordsort
+if /I %input% EQU wordso cls&goto startWordsort
+if /I %input% EQU wordsor cls&goto startWordsort
 if /I %input% EQU wordsort cls&goto startWordsort
 goto :eof
 :: Search Engine
@@ -25406,7 +27088,7 @@ if /I %input% EQU Access- cls&goto startAccessPromptDialerMode
 if /I %input% EQU Access-A start Access_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Access-R start Access_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Access-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Access-O goto startUninstallationInstructions
+if /I %input% EQU Access-O cls&goto startUninstallationInstructions
 if /I %input% EQU Adob cls&goto startAdobeAcrobatPromptDialerMode
 if /I %input% EQU Adobe cls&goto startAdobeAcrobatPromptDialerMode
 if /I %input% EQU Adobe- cls&goto startAdobeAcrobatPromptDialerMode
@@ -25421,7 +27103,7 @@ if /I %input% EQU Adobe-Acrobat- cls&goto startAdobeAcrobatPromptDialerMode
 if /I %input% EQU Adobe-Acrobat-A start Adobe_Acrobat_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Adobe-Acrobat-R start Adobe_Acrobat_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Adobe-Acrobat-I start Adobe_Acrobat_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Adobe-Acrobat-O goto startUninstallationInstructions
+if /I %input% EQU Adobe-Acrobat-O cls&goto startUninstallationInstructions
 if /I %input% EQU Adva cls&goto startAdvancedInstallerPromptDialerMode
 if /I %input% EQU Advan cls&goto startAdvancedInstallerPromptDialerMode
 if /I %input% EQU Advanc cls&goto startAdvancedInstallerPromptDialerMode
@@ -25464,7 +27146,7 @@ if /I %input% EQU Agent-DVR- cls&goto startAgentDVRpromptDialerMode
 if /I %input% EQU Agent-DVR-A start Agent_DVR_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Agent-DVR-R start Agent_DVR_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Agent-DVR-I start Agent_DVR_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Agent-DVR-O goto startUninstallationInstructions
+if /I %input% EQU Agent-DVR-O cls&goto startUninstallationInstructions
 if /I %input% EQU ALZi cls&goto startALZipPromptDialerMode
 if /I %input% EQU ALZip cls&goto startALZipPromptDialerMode
 if /I %input% EQU ALZip- cls&goto startALZipPromptDialerMode
@@ -25508,7 +27190,7 @@ if /I %input% EQU Aqua- cls&goto startAquaPromptDialerMode
 if /I %input% EQU Aqua-A start Aqua_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Aqua-R start Aqua_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Aqua-I start Aqua_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Aqua-O goto startUninstallationInstructions
+if /I %input% EQU Aqua-O cls&goto startUninstallationInstructions
 if /I %input% EQU Aren cls&goto startArenaPromptDialerMode
 if /I %input% EQU Arena cls&goto startArenaPromptDialerMode
 if /I %input% EQU Arena- cls&goto startArenaPromptDialerMode
@@ -25528,7 +27210,7 @@ if /I %input% EQU Audials-One- cls&goto startAudialsOnePromptDialerMode
 if /I %input% EQU Audials-One-A start Audials_One_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Audials-One-R start Audials_One_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Audials-One-I start Audials_One_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Audials-One-O goto startUninstallationInstructions
+if /I %input% EQU Audials-One-O cls&goto startUninstallationInstructions
 if /I %input% EQU Auto cls&goto startAutoCADpromptDialerMode
 if /I %input% EQU AutoC cls&goto startAutoCADpromptDialerMode
 if /I %input% EQU AutoCA cls&goto startAutoCADpromptDialerMode
@@ -25537,7 +27219,7 @@ if /I %input% EQU AutoCAD- cls&goto startAutoCADpromptDialerMode
 if /I %input% EQU AutoCAD-A start AutoCAD_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-R start AutoCAD_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-I start AutoCAD_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU AutoCAD-O goto startUninstallationInstructions
+if /I %input% EQU AutoCAD-O cls&goto startUninstallationInstructions
 if /I %input% EQU AutoCAD-S start AutoCAD_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-Offl cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-Offli cls&goto startAutoCADinstallPromptDialerMode
@@ -25560,7 +27242,7 @@ if /I %input% EQU AutoCAD-Electrical- cls&goto startAutoCADElectricalPromptDiale
 if /I %input% EQU AutoCAD-Electrical-A start AutoCAD_Electrical_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-Electrical-R start AutoCAD_Electrical_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-Electrical-I start AutoCAD_Electrical_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU AutoCAD-Electrical-O goto startUninstallationInstructions
+if /I %input% EQU AutoCAD-Electrical-O cls&goto startUninstallationInstructions
 if /I %input% EQU AutoCAD-Electrical-S start AutoCAD_Electrical_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-Mech cls&goto startAutoCADMechanicalPromptDialerMode
 if /I %input% EQU AutoCAD-Mecha cls&goto startAutoCADMechanicalPromptDialerMode
@@ -25573,7 +27255,7 @@ if /I %input% EQU AutoCAD-Mechanical- cls&goto startAutoCADMechanicalPromptDiale
 if /I %input% EQU AutoCAD-Mechanical-A start AutoCAD_Mechanical_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-Mechanical-R start AutoCAD_Mechanical_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-Mechanical-I start AutoCAD_Mechanical_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU AutoCAD-Mechanical-O goto startUninstallationInstructions
+if /I %input% EQU AutoCAD-Mechanical-O cls&goto startUninstallationInstructions
 if /I %input% EQU AutoCAD-Mechanical-S start AutoCAD_Mechanical_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Civi cls&goto startAutodeskCivil3DpromptDialerMode
 if /I %input% EQU Autodesk-Civil cls&goto startAutodeskCivil3DpromptDialerMode
@@ -25584,7 +27266,7 @@ if /I %input% EQU Autodesk-Civil-3D- cls&goto startAutodeskCivil3DpromptDialerMo
 if /I %input% EQU Autodesk-Civil-3D-A start Autodesk_Civil_3D_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Civil-3D-R start Autodesk_Civil_3D_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Civil-3D-I start Autodesk_Civil_3D_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Autodesk-Civil-3D-O goto startUninstallationInstructions
+if /I %input% EQU Autodesk-Civil-3D-O cls&goto startUninstallationInstructions
 if /I %input% EQU Autodesk-Civil-3D-S start Autodesk_Civil_3D_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Feat cls&goto startAutodeskFeatureCAMpromptDialerMode
 if /I %input% EQU Autodesk-Featu cls&goto startAutodeskFeatureCAMpromptDialerMode
@@ -25597,7 +27279,7 @@ if /I %input% EQU Autodesk-FeatureCAM- cls&goto startAutodeskFeatureCAMpromptDia
 if /I %input% EQU Autodesk-FeatureCAM-A start Autodesk_FeatureCAM_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-FeatureCAM-R start Autodesk_FeatureCAM_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-FeatureCAM-I start Autodesk_FeatureCAM_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Autodesk-FeatureCAM-O goto startUninstallationInstructions
+if /I %input% EQU Autodesk-FeatureCAM-O cls&goto startUninstallationInstructions
 if /I %input% EQU Autodesk-FeatureCAM-S start Autodesk_FeatureCAM_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Fusi cls&goto startAutodeskFusion360PromptDialerMode
 if /I %input% EQU Autodesk-Fusio cls&goto startAutodeskFusion360PromptDialerMode
@@ -25610,14 +27292,14 @@ if /I %input% EQU Autodesk-Fusion-36O- cls&goto startAutodeskFusion360PromptDial
 if /I %input% EQU Autodesk-Fusion-36O-A start Autodesk_Fusion_360_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Fusion-36O-R start Autodesk_Fusion_360_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Fusion-36O-I start Autodesk_Fusion_360_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Autodesk-Fusion-36O-O goto startUninstallationInstructions
+if /I %input% EQU Autodesk-Fusion-36O-O cls&goto startUninstallationInstructions
 if /I %input% EQU Autodesk-Fusion-36O-S start Autodesk_Fusion_360_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Maya cls&goto startAutodeskMayaPromptDialerMode
 if /I %input% EQU Autodesk-Maya- cls&goto startAutodeskMayaPromptDialerMode
 if /I %input% EQU Autodesk-Maya-A start Autodesk_Maya_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Maya-R start Autodesk_Maya_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Maya-I start Autodesk_Maya_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Autodesk-Maya-O goto startUninstallationInstructions
+if /I %input% EQU Autodesk-Maya-O cls&goto startUninstallationInstructions
 if /I %input% EQU Autodesk-Maya-S start Autodesk_Maya_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoH cls&goto startAutoHotkey_UX_PromptDialerMode
 if /I %input% EQU AutoHo cls&goto startAutoHotkey_UX_PromptDialerMode
@@ -25691,6 +27373,23 @@ if /I %input% EQU Bitdefender-A start Bitdefender_A.lnk&&goto startPreExitPrompt
 if /I %input% EQU Bitdefender-R start Bitdefender_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Bitdefender-I start Bitdefender_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Bitdefender-O start Bitdefender_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Bitv cls&goto startBitvisePromptDialerMode
+if /I %input% EQU Bitvi cls&goto startBitvisePromptDialerMode
+if /I %input% EQU Bitvis cls&goto startBitvisePromptDialerMode
+if /I %input% EQU Bitvise cls&goto startBitvisePromptDialerMode
+if /I %input% EQU Bitvise- cls&goto startBitvisePromptDialerMode
+if /I %input% EQU Bitvise-A cls&goto startBitviseRunAdminPromptFromSearchMode
+if /I %input% EQU Bitvise-AC start Bitvise_SSH_Client_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Bitvise-AS start Bitvise_SSH_Server_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Bitvise-R cls&goto startBitviseRunPromptFromSearchMode
+if /I %input% EQU Bitvise-RC start Bitvise_SSH_Client_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Bitvise-RS start Bitvise_SSH_Server_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Bitvise-I cls&goto startBitviseInstallPromptFromSearchMode
+if /I %input% EQU Bitvise-IC start Bitvise_SSH_Client_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Bitvise-IS start Bitvise_SSH_Server_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Bitvise-O cls&goto startBitviseUninstallPromptFromSearchMode
+if /I %input% EQU Bitvise-OC start Bitvise_SSH_Client_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Bitvise-OS start Bitvise_SSH_Server_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Blue cls&goto startBlueStacksPromptDialerMode
 if /I %input% EQU BlueS cls&goto startBlueStacksPromptDialerMode
 if /I %input% EQU BlueSt cls&goto startBlueStacksPromptDialerMode
@@ -25709,7 +27408,7 @@ if /I %input% EQU Brave- cls&goto startBravePromptDialerMode
 if /I %input% EQU Brave-A start Brave_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Brave-R start Brave_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Brave-I start Brave_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Brave-O goto startUninstallationInstructions
+if /I %input% EQU Brave-O cls&goto startUninstallationInstructions
 if /I %input% EQU Brave-B cls&goto startBravePromptDialerMode
 if /I %input% EQU Brave-Br cls&goto startBravePromptDialerMode
 if /I %input% EQU Brave-Bro cls&goto startBravePromptDialerMode
@@ -25721,7 +27420,7 @@ if /I %input% EQU Brave-Browser- cls&goto startBravePromptDialerMode
 if /I %input% EQU Brave-Browser-A start Brave_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Brave-Browser-R start Brave_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Brave-Browser-I start Brave_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Brave-Browser-O goto startUninstallationInstructions
+if /I %input% EQU Brave-Browser-O cls&goto startUninstallationInstructions
 if /I %input% EQU Cali cls&goto startCalibrePromptDialerMode
 if /I %input% EQU Calib cls&goto startCalibrePromptDialerMode
 if /I %input% EQU Calibr cls&goto startCalibrePromptDialerMode
@@ -25740,8 +27439,8 @@ if /I %input% EQU CCleaner- cls&goto startCCleanerPromptDialerMode
 if /I %input% EQU CCleaner-A start CCleaner_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CCleaner-R start CCleaner_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CCleaner-I cls&goto startCCleanerInstallerPromptDialerMode
-if /I %input% EQU CCleaner-I-A start CCleaner_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CCleaner-I-B start Piriform_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CCleaner-IA start CCleaner_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CCleaner-IB start Piriform_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CCleaner-O start CCleaner_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Char cls&goto startCharacterMapPromptDialerMode
 if /I %input% EQU Chara cls&goto startCharacterMapPromptDialerMode
@@ -25791,7 +27490,7 @@ if /I %input% EQU Chrome- cls&goto startChromePromptDialerMode
 if /I %input% EQU Chrome-A start Chrome_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Chrome-R start Chrome_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Chrome-I start Chrome_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Chrome-O goto startUninstallationInstructions
+if /I %input% EQU Chrome-O cls&goto startUninstallationInstructions
 if /I %input% EQU Chrome-B cls&goto startChromePromptDialerMode
 if /I %input% EQU Chrome-Br cls&goto startChromePromptDialerMode
 if /I %input% EQU Chrome-Bro cls&goto startChromePromptDialerMode
@@ -25803,7 +27502,7 @@ if /I %input% EQU Chrome-Browser- cls&goto startChromePromptDialerMode
 if /I %input% EQU Chrome-Browser-A start Chrome_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Chrome-Browser-R start Chrome_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Chrome-Browser-I start Chrome_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Chrome-Browser-O goto startUninstallationInstructions
+if /I %input% EQU Chrome-Browser-O cls&goto startUninstallationInstructions
 if /I %input% EQU Cisd cls&goto startCisdemAppCryptPromptDialerMode
 if /I %input% EQU Cisde cls&goto startCisdemAppCryptPromptDialerMode
 if /I %input% EQU Cisdem cls&goto startCisdemAppCryptPromptDialerMode
@@ -25841,7 +27540,7 @@ if /I %input% EQU CLion- cls&goto startCLionPromptDialerMode
 if /I %input% EQU CLion-A start CLion_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CLion-R start CLion_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CLion-I start CLion_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CLion-O goto startUninstallationInstructions
+if /I %input% EQU CLion-O cls&goto startUninstallationInstructions
 if /I %input% EQU Comm cls&goto startCommandPromptDialerMode
 if /I %input% EQU Comma cls&goto startCommandPromptDialerMode
 if /I %input% EQU Comman cls&goto startCommandPromptDialerMode
@@ -25913,7 +27612,7 @@ if /I %input% EQU DataGrip- cls&goto startDataGripPromptDialerMode
 if /I %input% EQU DataGrip-A start DataGrip_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DataGrip-R start DataGrip_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DataGrip-I start DataGrip_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU DataGrip-O goto startUninstallationInstructions
+if /I %input% EQU DataGrip-O cls&goto startUninstallationInstructions
 if /I %input% EQU DataS cls&goto startDataSpellPromptDialerMode
 if /I %input% EQU DataSp cls&goto startDataSpellPromptDialerMode
 if /I %input% EQU DataSpe cls&goto startDataSpellPromptDialerMode
@@ -25923,7 +27622,7 @@ if /I %input% EQU DataSpell- cls&goto startDataSpellPromptDialerMode
 if /I %input% EQU DataSpell-A start DataSpell_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DataSpell-R start DataSpell_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DataSpell-I start DataSpell_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU DataSpell-O goto startUninstallationInstructions
+if /I %input% EQU DataSpell-O cls&goto startUninstallationInstructions
 if /I %input% EQU DaVi cls&goto startDaVinciResolvePromptDialerMode
 if /I %input% EQU DaVin cls&goto startDaVinciResolvePromptDialerMode
 if /I %input% EQU DaVinc cls&goto startDaVinciResolvePromptDialerMode
@@ -26001,7 +27700,7 @@ if /I %input% EQU dotPeek- cls&goto startdotPeekPromptDialerMode
 if /I %input% EQU dotPeek-A start dotPeek_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotPeek-R start dotPeek_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotPeek-I start dotPeek_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU dotPeek-O goto startUninstallationInstructions
+if /I %input% EQU dotPeek-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotC cls&goto startdotCoverPromptDialerMode
 if /I %input% EQU dotCo cls&goto startdotCoverPromptDialerMode
 if /I %input% EQU dotCov cls&goto startdotCoverPromptDialerMode
@@ -26011,7 +27710,7 @@ if /I %input% EQU dotCover- cls&goto startdotCoverPromptDialerMode
 if /I %input% EQU dotCover-A start dotCover_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotCover-R start dotCover_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotCover-I start dotCover_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU dotCover-O goto startUninstallationInstructions
+if /I %input% EQU dotCover-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotM cls&goto startdotMemoryPromptDialerMode
 if /I %input% EQU dotMe cls&goto startdotMemoryPromptDialerMode
 if /I %input% EQU dotMem cls&goto startdotMemoryPromptDialerMode
@@ -26022,7 +27721,7 @@ if /I %input% EQU dotMemory- cls&goto startdotMemoryPromptDialerMode
 if /I %input% EQU dotMemory-A start dotMemory_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotMemory-R start dotMemory_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotMemory-I start dotMemory_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU dotMemory-O goto startUninstallationInstructions
+if /I %input% EQU dotMemory-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotT cls&goto startdotTracePromptDialerMode
 if /I %input% EQU dotTr cls&goto startdotTracePromptDialerMode
 if /I %input% EQU dotTra cls&goto startdotTracePromptDialerMode
@@ -26032,7 +27731,7 @@ if /I %input% EQU dotTrace- cls&goto startdotTracePromptDialerMode
 if /I %input% EQU dotTrace-A start dotTrace_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotTrace-R start dotTrace_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotTrace-I start dotTrace_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU dotTrace-O goto startUninstallationInstructions
+if /I %input% EQU dotTrace-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotU cls&goto startdotUltimatePromptDialerMode
 if /I %input% EQU dotUl cls&goto startdotUltimatePromptDialerMode
 if /I %input% EQU dotUlt cls&goto startdotUltimatePromptDialerMode
@@ -26081,34 +27780,34 @@ if /I %input% EQU Eclips cls&goto startEclipsePromptDialerMode
 if /I %input% EQU Eclipse cls&goto startEclipsePromptDialerMode
 if /I %input% EQU Eclipse- cls&goto startEclipsePromptDialerMode
 if /I %input% EQU Eclipse-A cls&goto startEclipseRunAdminPromptDialerMode
-if /I %input% EQU Eclipse-A-A start Eclipse_IDE_Java_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-A-B start Eclipse_IDE_Enterprise_Java_and_Web_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-A-C start Eclipse_IDE_C_and_Cpp_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-A-D start Eclipse_IDE_Embedded_C_and_Cpp_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-A-E start Eclipse_IDE_PHP_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-A-F start Eclipse_IDE_Eclipse_Committers_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-A-G start Eclipse_IDE_Java_and_DSL_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-A-H start Eclipse_IDE_RCP_and_RAP_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-A-I start Eclipse_Modeling_Tools_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-A-J start Eclipse_IDE_Scout_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AA start Eclipse_IDE_Java_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AB start Eclipse_IDE_Enterprise_Java_and_Web_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AC start Eclipse_IDE_C_and_Cpp_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AD start Eclipse_IDE_Embedded_C_and_Cpp_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AE start Eclipse_IDE_PHP_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AF start Eclipse_IDE_Eclipse_Committers_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AG start Eclipse_IDE_Java_and_DSL_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AH start Eclipse_IDE_RCP_and_RAP_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AI start Eclipse_Modeling_Tools_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-AJ start Eclipse_IDE_Scout_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Eclipse-R cls&goto startEclipseRunPromptDialerMode
-if /I %input% EQU Eclipse-R-A start Eclipse_IDE_Java_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-R-B start Eclipse_IDE_Enterprise_Java_and_Web_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-R-C start Eclipse_IDE_C_and_Cpp_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-R-D start Eclipse_IDE_Embedded_C_and_Cpp_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-R-E start Eclipse_IDE_PHP_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-R-F start Eclipse_IDE_Eclipse_Committers_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-R-G start Eclipse_IDE_Java_and_DSL_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-R-H start Eclipse_IDE_RCP_and_RAP_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-R-I start Eclipse_Modeling_Tools_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Eclipse-R-J start Eclipse_IDE_Scout_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RA start Eclipse_IDE_Java_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RB start Eclipse_IDE_Enterprise_Java_and_Web_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RC start Eclipse_IDE_C_and_Cpp_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RD start Eclipse_IDE_Embedded_C_and_Cpp_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RE start Eclipse_IDE_PHP_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RF start Eclipse_IDE_Eclipse_Committers_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RG start Eclipse_IDE_Java_and_DSL_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RH start Eclipse_IDE_RCP_and_RAP_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RI start Eclipse_Modeling_Tools_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Eclipse-RJ start Eclipse_IDE_Scout_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Eclipse-I start Eclipse_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Edge cls&goto startEdgePromptDialerMode
 if /I %input% EQU Edge- cls&goto startEdgePromptDialerMode
 if /I %input% EQU Edge-A start Edge_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Edge-R start Edge_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Edge-I start Edge_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Edge-O goto startUninstallationInstructions
+if /I %input% EQU Edge-O cls&goto startUninstallationInstructions
 if /I %input% EQU Edge-B cls&goto startEdgePromptDialerMode
 if /I %input% EQU Edge-Br cls&goto startEdgePromptDialerMode
 if /I %input% EQU Edge-Bro cls&goto startEdgePromptDialerMode
@@ -26120,7 +27819,7 @@ if /I %input% EQU Edge-Browser- cls&goto startEdgePromptDialerMode
 if /I %input% EQU Edge-Browser-A start Edge_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Edge-Browser-R start Edge_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Edge-Browser-I start Edge_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Edge-Browser-O goto startUninstallationInstructions
+if /I %input% EQU Edge-Browser-O cls&goto startUninstallationInstructions
 if /I %input% EQU Elec cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Elect cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Electr cls&goto startElectronicArtsPromptDialerMode
@@ -26145,7 +27844,7 @@ if /I %input% EQU Electronic-Arts-Launcher- cls&goto startElectronicArtsPromptDi
 if /I %input% EQU Electronic-Arts-Launcher-A start Electronic_Arts_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Electronic-Arts-Launcher-R start Electronic_Arts_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Electronic-Arts-Launcher-I start Electronic_Arts_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Electronic-Arts-Launcher-O goto startUninstallationInstructions
+if /I %input% EQU Electronic-Arts-Launcher-O cls&goto startUninstallationInstructions
 if /I %input% EQU Emsi cls&goto startEmsisoftEmergencyKitPromptDialerMode
 if /I %input% EQU Emsis cls&goto startEmsisoftEmergencyKitPromptDialerMode
 if /I %input% EQU Emsiso cls&goto startEmsisoftEmergencyKitPromptDialerMode
@@ -26188,7 +27887,7 @@ if /I %input% EQU Epic-Games-Launcher- cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU Epic-Games-Launcher-A start Epic_Games_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Epic-Games-Launcher-R start Epic_Games_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Epic-Games-Launcher-I start Epic_Games_Launcher_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Epic-Games-Launcher-O goto startUninstallationInstructions
+if /I %input% EQU Epic-Games-Launcher-O cls&goto startUninstallationInstructions
 if /I %input% EQU ESET-N cls&goto startESETNOD32AVpromptDialerMode
 if /I %input% EQU ESET-NO cls&goto startESETNOD32AVpromptDialerMode
 if /I %input% EQU ESET-NOD cls&goto startESETNOD32AVpromptDialerMode
@@ -26224,7 +27923,7 @@ if /I %input% EQU Excel- cls&goto startExcelPromptDialerMode
 if /I %input% EQU Excel-A start Excel_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Excel-R start Excel_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Excel-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Excel-O goto startUninstallationInstructions
+if /I %input% EQU Excel-O cls&goto startUninstallationInstructions
 if /I %input% EQU F2KO cls&goto startF2KO_BAT2EXEpromptDialerMode
 if /I %input% EQU F2KO- cls&goto startF2KO_BAT2EXEpromptDialerMode
 if /I %input% EQU F2KO-B cls&goto startF2KO_BAT2EXEpromptDialerMode
@@ -26245,7 +27944,7 @@ if /I %input% EQU Firefox- cls&goto startFirefoxPromptDialerMode
 if /I %input% EQU Firefox-A start Firefox_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Firefox-R start Firefox_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Firefox-I start Firefox_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Firefox-O goto startUninstallationInstructions
+if /I %input% EQU Firefox-O cls&goto startUninstallationInstructions
 if /I %input% EQU Firefox-B cls&goto startFirefoxPromptDialerMode
 if /I %input% EQU Firefox-Br cls&goto startFirefoxPromptDialerMode
 if /I %input% EQU Firefox-Bro cls&goto startFirefoxPromptDialerMode
@@ -26257,7 +27956,7 @@ if /I %input% EQU Firefox-Browser- cls&goto startFirefoxPromptDialerMode
 if /I %input% EQU Firefox-Browser-A start Firefox_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Firefox-Browser-R start Firefox_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Firefox-Browser-I start Firefox_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Firefox-Browser-O goto startUninstallationInstructions
+if /I %input% EQU Firefox-Browser-O cls&goto startUninstallationInstructions
 if /I %input% EQU Flow cls&goto startFlowLauncherPromptDialerMode
 if /I %input% EQU Flow- cls&goto startFlowLauncherPromptDialerMode
 if /I %input% EQU Flow-L cls&goto startFlowLauncherPromptDialerMode
@@ -26272,7 +27971,7 @@ if /I %input% EQU Flow-Launcher- cls&goto startFlowLauncherPromptDialerMode
 if /I %input% EQU Flow-Launcher-A start Flow_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Flow-Launcher-R start Flow_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Flow-Launcher-I start Flow_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Flow-Launcher-O goto startUninstallationInstructions
+if /I %input% EQU Flow-Launcher-O cls&goto startUninstallationInstructions
 if /I %input% EQU Fore cls&goto startForensicToolkitPromptDialerMode
 if /I %input% EQU Foren cls&goto startForensicToolkitPromptDialerMode
 if /I %input% EQU Forens cls&goto startForensicToolkitPromptDialerMode
@@ -26290,13 +27989,7 @@ if /I %input% EQU Forensic-Toolkit- cls&goto startForensicToolkitPromptDialerMod
 if /I %input% EQU Forensic-Toolkit-A start Forensic_Toolkit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Forensic-Toolkit-R start Forensic_Toolkit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Forensic-Toolkit-I start Forensic_Toolkit_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Forensic-Toolkit-O goto startUninstallationInstructions
-if /I %input% EQU Fork cls&goto startGitForkPromptDialerMode
-if /I %input% EQU Fork- cls&goto startGitForkPromptDialerMode
-if /I %input% EQU Fork-A start GitHub_Fork_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Fork-R start GitHub_Fork_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Fork-I start GitHub_Fork_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Fork-O goto startUninstallationInstructions
+if /I %input% EQU Forensic-Toolkit-O cls&goto startUninstallationInstructions
 if /I %input% EQU FTK-L cls&goto startFTKLanguagePromptDialerMode
 if /I %input% EQU FTK-La cls&goto startFTKLanguagePromptDialerMode
 if /I %input% EQU FTK-Lan cls&goto startFTKLanguagePromptDialerMode
@@ -26309,8 +28002,13 @@ if /I %input% EQU FTK-Language- cls&goto startFTKLanguagePromptDialerMode
 if /I %input% EQU FTK-Language-A start FTK_Language_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU FTK-Language-R start FTK_Language_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU FTK-Language-I start FTK_Language_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU FTK-Language-O goto startUninstallationInstructions
-if /I %input% EQU Free cls&goto startFreeCellPromptDialerMode
+if /I %input% EQU FTK-Language-O cls&goto startUninstallationInstructions
+if /I %input% EQU Fork cls&goto startGitForkPromptDialerMode
+if /I %input% EQU Fork- cls&goto startGitForkPromptDialerMode
+if /I %input% EQU Fork-A start GitHub_Fork_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Fork-R start GitHub_Fork_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Fork-I start GitHub_Fork_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Fork-O cls&goto startUninstallationInstructions
 if /I %input% EQU FreeC cls&goto startFreeCellPromptDialerMode
 if /I %input% EQU FreeCe cls&goto startFreeCellPromptDialerMode
 if /I %input% EQU FreeCel cls&goto startFreeCellPromptDialerMode
@@ -26320,6 +28018,13 @@ if /I %input% EQU FreeCell-A start FreeCell_A.lnk&&goto startPreExitPrompt||goto
 if /I %input% EQU FreeCell-R start FreeCell_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU FreeCell-I start Windows7GamesForWindows11_10_8_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU FreeCell-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Freeg cls&goto startFreegateIPspooferPromptDialerMode
+if /I %input% EQU Freega cls&goto startFreegateIPspooferPromptDialerMode
+if /I %input% EQU Freegat cls&goto startFreegateIPspooferPromptDialerMode
+if /I %input% EQU Freegate cls&goto startFreegateIPspooferPromptDialerMode
+if /I %input% EQU Freegate- cls&goto startFreegateIPspooferPromptDialerMode
+if /I %input% EQU Freegate-A start Freegate_IP_Spoofer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Freegate-R start Freegate_IP_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Game cls&goto startGameExtractorPromptDialerMode
 if /I %input% EQU Game- cls&goto startGameExtractorPromptDialerMode
 if /I %input% EQU Game-E cls&goto startGameExtractorPromptDialerMode
@@ -26344,7 +28049,7 @@ if /I %input% EQU Gateway- cls&goto startGatewayPromptDialerMode
 if /I %input% EQU Gateway-A start Gateway_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Gateway-R start Gateway_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Gateway-I start Gateway_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Gateway-O goto startUninstallationInstructions
+if /I %input% EQU Gateway-O cls&goto startUninstallationInstructions
 if /I %input% EQU Ghid cls&goto startGhidraPromptDialerMode
 if /I %input% EQU Ghidr cls&goto startGhidraPromptDialerMode
 if /I %input% EQU Ghidra cls&goto startGhidraPromptDialerMode
@@ -26356,7 +28061,12 @@ if /I %input% EQU Git- cls&goto startGitHubPromptDialerMode
 if /I %input% EQU Git-A start GitHub_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Git-R start GitHub_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Git-I start GitHub_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Git-O goto startUninstallationInstructions
+if /I %input% EQU Git-O cls&goto startUninstallationInstructions
+if /I %input% EQU Git-T cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU Git-To cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU Git-Too cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU Git-Tool cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU Git-Tools cls&goto startGitToolsPromptDialerMode
 if /I %input% EQU Git-F cls&goto startGitForkPromptDialerMode
 if /I %input% EQU Git-Fo cls&goto startGitForkPromptDialerMode
 if /I %input% EQU Git-For cls&goto startGitForkPromptDialerMode
@@ -26365,7 +28075,7 @@ if /I %input% EQU Git-Fork- cls&goto startGitForkPromptDialerMode
 if /I %input% EQU Git-Fork-A start GitHub_Fork_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Git-Fork-R start GitHub_Fork_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Git-Fork-I start GitHub_Fork_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Git-Fork-O goto startUninstallationInstructions
+if /I %input% EQU Git-Fork-O cls&goto startUninstallationInstructions
 if /I %input% EQU GitH cls&goto startGitHubPromptDialerMode
 if /I %input% EQU GitHu cls&goto startGitHubPromptDialerMode
 if /I %input% EQU GitHub cls&goto startGitHubPromptDialerMode
@@ -26373,7 +28083,12 @@ if /I %input% EQU GitHub- cls&goto startGitHubPromptDialerMode
 if /I %input% EQU GitHub-A start GitHub_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GitHub-R start GitHub_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GitHub-I start GitHub_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU GitHub-O goto startUninstallationInstructions
+if /I %input% EQU GitHub-O cls&goto startUninstallationInstructions
+if /I %input% EQU GitHub-T cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU GitHub-To cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU GitHub-Too cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU GitHub-Tool cls&goto startGitToolsPromptDialerMode
+if /I %input% EQU GitHub-Tools cls&goto startGitToolsPromptDialerMode
 if /I %input% EQU GitHub-F cls&goto startGitForkPromptDialerMode
 if /I %input% EQU GitHub-Fo cls&goto startGitForkPromptDialerMode
 if /I %input% EQU GitHub-For cls&goto startGitForkPromptDialerMode
@@ -26382,7 +28097,7 @@ if /I %input% EQU GitHub-Fork- cls&goto startGitForkPromptDialerMode
 if /I %input% EQU GitHub-Fork-A start GitHub_Fork_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GitHub-Fork-R start GitHub_Fork_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GitHub-Fork-I start GitHub_Fork_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU GitHub-Fork-O goto startUninstallationInstructions
+if /I %input% EQU GitHub-Fork-O cls&goto startUninstallationInstructions
 if /I %input% EQU Go-B cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Bo cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Boa cls&goto startGoBoardGamePromptDialerMode
@@ -26397,14 +28112,36 @@ if /I %input% EQU Go-Board-Game- cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Board-Game-A start Go_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Go-Board-Game-R start Go_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Go-Board-Game-I cls&goto startGoInstallerPromptDialerMode
-if /I %input% EQU Go-Board-Game-I-E start Go_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Go-Board-Game-I-M start Go_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Go-Board-Game-O goto startUninstallationInstructions
+if /I %input% EQU Go-Board-Game-IE start Go_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-Board-Game-IM start Go_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-Board-Game-O cls&goto startUninstallationInstructions
 if /I %input% EQU Godo cls&goto startGodotPromptDialerMode
 if /I %input% EQU Godot cls&goto startGodotPromptDialerMode
 if /I %input% EQU Godot- cls&goto startGodotPromptDialerMode
 if /I %input% EQU Godot-A start Godot_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Godot-R start Godot_Launch_Script_R.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GOG cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU GOG- cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU GOG-A start GOG_Galaxy_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GOG-R start GOG_Galaxy_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GOG-I start GOG_Galaxy_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GOG-O start GOG_Galaxy_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good- cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-O cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Ol cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old- cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-G cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Ga cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Gam cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Game cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games- cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-A start GOG_Galaxy_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-R start GOG_Galaxy_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-I start GOG_Galaxy_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-O start GOG_Galaxy_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GoLa cls&goto startGoLandPromptDialerMode
 if /I %input% EQU GoLan cls&goto startGoLandPromptDialerMode
 if /I %input% EQU GoLand cls&goto startGoLandPromptDialerMode
@@ -26412,7 +28149,7 @@ if /I %input% EQU GoLand- cls&goto startGoLandPromptDialerMode
 if /I %input% EQU GoLand-A start GoLand_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GoLand-R start GoLand_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GoLand-I start GoLand_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU GoLand-O goto startUninstallationInstructions
+if /I %input% EQU GoLand-O cls&goto startUninstallationInstructions
 if /I %input% EQU Google-C cls&goto startChromePromptDialerMode
 if /I %input% EQU Google-Ch cls&goto startChromePromptDialerMode
 if /I %input% EQU Google-Chr cls&goto startChromePromptDialerMode
@@ -26423,7 +28160,7 @@ if /I %input% EQU Google-Chrome- cls&goto startChromePromptDialerMode
 if /I %input% EQU Google-Chrome-A start Chrome_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Google-Chrome-R start Chrome_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Google-Chrome-I start Chrome_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Google-Chrome-O goto startUninstallationInstructions
+if /I %input% EQU Google-Chrome-O cls&goto startUninstallationInstructions
 if /I %input% EQU Google-Chrome-B cls&goto startChromePromptDialerMode
 if /I %input% EQU Google-Chrome-Br cls&goto startChromePromptDialerMode
 if /I %input% EQU Google-Chrome-Bro cls&goto startChromePromptDialerMode
@@ -26435,7 +28172,7 @@ if /I %input% EQU Google-Chrome-Browser- cls&goto startChromePromptDialerMode
 if /I %input% EQU Google-Chrome-Browser-A start Chrome_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Google-Chrome-Browser-R start Chrome_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Google-Chrome-Browser-I start Chrome_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Google-Chrome-Browser-O goto startUninstallationInstructions
+if /I %input% EQU Google-Chrome-Browser-O cls&goto startUninstallationInstructions
 if /I %input% EQU Google-E cls&goto startEarthPromptDialerMode
 if /I %input% EQU Google-Ea cls&goto startEarthPromptDialerMode
 if /I %input% EQU Google-Ear cls&goto startEarthPromptDialerMode
@@ -26577,7 +28314,7 @@ if /I %input% EQU IntelliJIDEA- cls&goto startIntelliJIDEApromptDialerMode
 if /I %input% EQU IntelliJIDEA-A start IntelliJIDEA_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IntelliJIDEA-R start IntelliJIDEA_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IntelliJIDEA-I start IntelliJIDEA_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU IntelliJIDEA-O goto startUninstallationInstructions
+if /I %input% EQU IntelliJIDEA-O cls&goto startUninstallationInstructions
 if /I %input% EQU IsoB cls&goto startIsoBusterPromptDialerMode
 if /I %input% EQU IsoBu cls&goto startIsoBusterPromptDialerMode
 if /I %input% EQU IsoBus cls&goto startIsoBusterPromptDialerMode
@@ -26769,7 +28506,7 @@ if /I %input% EQU Maple- cls&goto startMaplePromptDialerMode
 if /I %input% EQU Maple-A start Maple_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Maple-R start Maple_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Maple-I start Maple_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Maple-O goto startUninstallationInstructions
+if /I %input% EQU Maple-O cls&goto startUninstallationInstructions
 if /I %input% EQU Maple-F cls&goto startMapleFlowPromptDialerMode
 if /I %input% EQU Maple-Fl cls&goto startMapleFlowPromptDialerMode
 if /I %input% EQU Maple-Flo cls&goto startMapleFlowPromptDialerMode
@@ -26778,7 +28515,7 @@ if /I %input% EQU Maple-Flow- cls&goto startMapleFlowPromptDialerMode
 if /I %input% EQU Maple-Flow-A start Maple_Flow_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Maple-Flow-R start Maple_Flow_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Maple-Flow-I start Maple_Flow_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Maple-Flow-O goto startUninstallationInstructions
+if /I %input% EQU Maple-Flow-O cls&goto startUninstallationInstructions
 if /I %input% EQU MATL cls&goto startMATLABpromptDialerMode
 if /I %input% EQU MATLA cls&goto startMATLABpromptDialerMode
 if /I %input% EQU MATLAB cls&goto startMATLABpromptDialerMode
@@ -26786,7 +28523,7 @@ if /I %input% EQU MATLAB- cls&goto startMATLABpromptDialerMode
 if /I %input% EQU MATLAB-A start MATLAB_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MATLAB-R start MATLAB_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MATLAB-I start MATLAB_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU MATLAB-O goto startUninstallationInstructions
+if /I %input% EQU MATLAB-O cls&goto startUninstallationInstructions
 if /I %input% EQU MetaP cls&goto startMetaProgrammingSystemPromptDialerMode
 if /I %input% EQU MetaPr cls&goto startMetaProgrammingSystemPromptDialerMode
 if /I %input% EQU MetaPro cls&goto startMetaProgrammingSystemPromptDialerMode
@@ -26808,7 +28545,7 @@ if /I %input% EQU MetaProgrammingSystem- cls&goto startMetaProgrammingSystemProm
 if /I %input% EQU MetaProgrammingSystem-A start MetaProgrammingSystem_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MetaProgrammingSystem-R start MetaProgrammingSystem_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MetaProgrammingSystem-I start MetaProgrammingSystem_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU MetaProgrammingSystem-O goto startUninstallationInstructions
+if /I %input% EQU MetaProgrammingSystem-O cls&goto startUninstallationInstructions
 if /I %input% EQU Metas cls&goto startMetasploitPromptDialerMode
 if /I %input% EQU Metasp cls&goto startMetasploitPromptDialerMode
 if /I %input% EQU Metaspl cls&goto startMetasploitPromptDialerMode
@@ -26846,7 +28583,7 @@ if /I %input% EQU Minitab- cls&goto startMinitabPromptDialerMode
 if /I %input% EQU Minitab-A start Minitab_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Minitab-R start Minitab_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Minitab-I start Minitab_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Minitab-O goto startUninstallationInstructions
+if /I %input% EQU Minitab-O cls&goto startUninstallationInstructions
 if /I %input% EQU Mullvad-B cls&goto startMullvadPromptDialerMode
 if /I %input% EQU Mullvad-Br cls&goto startMullvadPromptDialerMode
 if /I %input% EQU Mullvad-Bro cls&goto startMullvadPromptDialerMode
@@ -26881,7 +28618,7 @@ if /I %input% EQU NMSSaveEditor- cls&goto startNMSSaveEditorPromptDialerMode
 if /I %input% EQU NMSSaveEditor-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU NMSSaveEditor-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU NMSSaveEditor-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU NMSSaveEditor-O goto startUninstallationInstructions
+if /I %input% EQU NMSSaveEditor-O cls&goto startUninstallationInstructions
 if /I %input% EQU Note cls&goto startNotepadPromptDialerMode
 if /I %input% EQU Notep cls&goto startNotepadPromptDialerMode
 if /I %input% EQU Notepa cls&goto startNotepadPromptDialerMode
@@ -26896,6 +28633,15 @@ if /I %input% EQU Notepad++-A start Notepad++_A.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU Notepad++-R start Notepad++_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Notepad++-I start Notepad++_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Notepad++-O start Notepad++_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Nord cls&goto startNordVPNpromptDialerMode
+if /I %input% EQU NordV cls&goto startNordVPNpromptDialerMode
+if /I %input% EQU NordVP cls&goto startNordVPNpromptDialerMode
+if /I %input% EQU NordVPN cls&goto startNordVPNpromptDialerMode
+if /I %input% EQU NordVPN- cls&goto startNordVPNpromptDialerMode
+if /I %input% EQU NordVPN-A start NordVPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NordVPN-R start NordVPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NordVPN-I start NordVPN_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NordVPN-O cls&goto startUninstallationInstructions
 if /I %input% EQU Nort cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norto cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton cls&goto startNortonPowerEraserPromptDialerMode
@@ -26952,7 +28698,7 @@ if /I %input% EQU ON1-Photo-RAW- cls&goto startON1PhotoRAWpromptDialerMode
 if /I %input% EQU ON1-Photo-RAW-A start ON1_Photo_RAW_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ON1-Photo-RAW-R start ON1_Photo_RAW_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ON1-Photo-RAW-I start ON1_Photo_RAW_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU ON1-Photo-RAW-O goto startUninstallationInstructions
+if /I %input% EQU ON1-Photo-RAW-O cls&goto startUninstallationInstructions
 if /I %input% EQU OneN cls&goto startOneNotePromptDialerMode
 if /I %input% EQU OneNo cls&goto startOneNotePromptDialerMode
 if /I %input% EQU OneNot cls&goto startOneNotePromptDialerMode
@@ -26961,7 +28707,7 @@ if /I %input% EQU OneNote- cls&goto startOneNotePromptDialerMode
 if /I %input% EQU OneNote-A start OneNote_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OneNote-R start OneNote_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OneNote-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU OneNote-O goto startUninstallationInstructions
+if /I %input% EQU OneNote-O cls&goto startUninstallationInstructions
 if /I %input% EQU OneD cls&goto startOneDrivePromptDialerMode
 if /I %input% EQU OneDr cls&goto startOneDrivePromptDialerMode
 if /I %input% EQU OneDri cls&goto startOneDrivePromptDialerMode
@@ -26971,21 +28717,29 @@ if /I %input% EQU OneDrive- cls&goto startOneDrivePromptDialerMode
 if /I %input% EQU OneDrive-A start OneDrive_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OneDrive-R start OneDrive_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OneDrive-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU OneDrive-O goto startUninstallationInstructions
+if /I %input% EQU OneDrive-O cls&goto startUninstallationInstructions
 if /I %input% EQU OOSU cls&goto startOOSU10PromptDialerMode
 if /I %input% EQU OOSU1 cls&goto startOOSU10PromptDialerMode
 if /I %input% EQU OOSU1O cls&goto startOOSU10PromptDialerMode
 if /I %input% EQU OOSU1O- cls&goto startOOSU10PromptDialerMode
 if /I %input% EQU OOSU1O-A start OOSU10_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OOSU1O-R start OOSU10_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU OpenM cls&goto startOpenMPTPromptDialerMode
-if /I %input% EQU OpenMP cls&goto startOpenMPTPromptDialerMode
-if /I %input% EQU OpenMPT cls&goto startOpenMPTPromptDialerMode
-if /I %input% EQU OpenMPT- cls&goto startOpenMPTPromptDialerMode
+if /I %input% EQU OpenM cls&goto startOpenMPTpromptDialerMode
+if /I %input% EQU OpenMP cls&goto startOpenMPTpromptDialerMode
+if /I %input% EQU OpenMPT cls&goto startOpenMPTpromptDialerMode
+if /I %input% EQU OpenMPT- cls&goto startOpenMPTpromptDialerMode
 if /I %input% EQU OpenMPT-A start OpenMPT_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OpenMPT-R start OpenMPT_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OpenMPT-I start OpenMPT_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU OpenMPT-O start OpenMPT_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU OpenV cls&goto startOpenVPNpromptDialerMode
+if /I %input% EQU OpenVP cls&goto startOpenVPNpromptDialerMode
+if /I %input% EQU OpenVPN cls&goto startOpenVPNpromptDialerMode
+if /I %input% EQU OpenVPN- cls&goto startOpenVPNpromptDialerMode
+if /I %input% EQU OpenVPN-A start OpenVPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU OpenVPN-R start OpenVPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU OpenVPN-I start OpenVPN_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU OpenVPN-O cls&goto startUninstallationInstructions
 if /I %input% EQU Oper cls&goto startOperaPromptDialerMode
 if /I %input% EQU Opera cls&goto startOperaPromptDialerMode
 if /I %input% EQU Opera- cls&goto startOperaPromptDialerMode
@@ -27013,12 +28767,12 @@ if /I %input% EQU Outlook- cls&goto startOutlookPromptDialerMode
 if /I %input% EQU Outlook-A start Outlook_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Outlook-R start Outlook_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Outlook-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Outlook-O goto startUninstallationInstructions
+if /I %input% EQU Outlook-O cls&goto startUninstallationInstructions
 if /I %input% EQU Pain cls&goto startPaintPromptDialerMode
 if /I %input% EQU Paint cls&goto startPaintPromptDialerMode
 if /I %input% EQU Paint- cls&goto startPaintPromptDialerMode
 if /I %input% EQU Paint-A start Paint_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Paint-R start Paint_Map_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Paint-R start Paint_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Palw cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU Palwo cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU Palwor cls&goto startPalworldSavePalPromptDialerMode
@@ -27093,7 +28847,7 @@ if /I %input% EQU PhpStorm- cls&goto startPhpStormPromptDialerMode
 if /I %input% EQU PhpStorm-A start PhpStorm_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PhpStorm-R start PhpStorm_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PhpStorm-I start PhpStorm_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU PhpStorm-O goto startUninstallationInstructions
+if /I %input% EQU PhpStorm-O cls&goto startUninstallationInstructions
 if /I %input% EQU Piri cls&goto startPiriformPromptDialerMode
 if /I %input% EQU Pirif cls&goto startPiriformPromptDialerMode
 if /I %input% EQU Pirifo cls&goto startPiriformPromptDialerMode
@@ -27143,7 +28897,7 @@ if /I %input% EQU PowerBI- cls&goto startPowerBIpromptDialerMode
 if /I %input% EQU PowerBI-A start PowerBI_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerBI-R start PowerBI_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerBI-I start PowerBI_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU PowerBI-O goto startUninstallationInstructions
+if /I %input% EQU PowerBI-O cls&goto startUninstallationInstructions
 if /I %input% EQU PowerI cls&goto startPowerISOpromptDialerMode
 if /I %input% EQU PowerIS cls&goto startPowerISOpromptDialerMode
 if /I %input% EQU PowerISO cls&goto startPowerISOpromptDialerMode
@@ -27161,7 +28915,7 @@ if /I %input% EQU PowerPoint- cls&goto startPowerPointPromptDialerMode
 if /I %input% EQU PowerPoint-A start PowerPoint_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerPoint-R start PowerPoint_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerPoint-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU PowerPoint-O goto startUninstallationInstructions
+if /I %input% EQU PowerPoint-O cls&goto startUninstallationInstructions
 if /I %input% EQU PowerS cls&goto startPowerShellPromptDialerMode
 if /I %input% EQU PowerSh cls&goto startPowerShellPromptDialerMode
 if /I %input% EQU PowerShe cls&goto startPowerShellPromptDialerMode
@@ -27171,7 +28925,7 @@ if /I %input% EQU PowerShell- cls&goto startPowerShellPromptDialerMode
 if /I %input% EQU PowerShell-A start PowerShell_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerShell-R start PowerShell_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerShell-I start PowerShell_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU PowerShell-O goto startUninstallationInstructions
+if /I %input% EQU PowerShell-O cls&goto startUninstallationInstructions
 if /I %input% EQU Proc cls&goto startProcessHackerPromptDialerMode
 if /I %input% EQU Proce cls&goto startProcessHackerPromptDialerMode
 if /I %input% EQU Proces cls&goto startProcessHackerPromptDialerMode
@@ -27248,7 +29002,7 @@ if /I %input% EQU Publisher- cls&goto startPublisherPromptDialerMode
 if /I %input% EQU Publisher-A start Publisher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Publisher-R start Publisher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Publisher-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Publisher-O goto startUninstallationInstructions
+if /I %input% EQU Publisher-O cls&goto startUninstallationInstructions
 if /I %input% EQU Purb cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purbl cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purble cls&goto startPurblePlacePromptDialerMode
@@ -27274,6 +29028,13 @@ if /I %input% EQU Pure-Data-A start Pure_Data_A.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU Pure-Data-R start Pure_Data_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Pure-Data-I start Pure_Data_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Pure-Data-O start Pure_Data_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PuTT cls&goto startPuTTYpromptDialerMode
+if /I %input% EQU PuTTY cls&goto startPuTTYpromptDialerMode
+if /I %input% EQU PuTTY- cls&goto startPuTTYpromptDialerMode
+if /I %input% EQU PuTTY-A start PuTTY_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PuTTY-R start PuTTY_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PuTTY-I start PuTTY_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PuTTY-O cls&goto startUninstallationInstructions
 if /I %input% EQU PyCh cls&goto startPyCharmPromptDialerMode
 if /I %input% EQU PyCha cls&goto startPyCharmPromptDialerMode
 if /I %input% EQU PyChar cls&goto startPyCharmPromptDialerMode
@@ -27282,7 +29043,7 @@ if /I %input% EQU PyCharm- cls&goto startPyCharmPromptDialerMode
 if /I %input% EQU PyCharm-A start PyCharm_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PyCharm-R start PyCharm_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PyCharm-I start PyCharm_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU PyCharm-O goto startUninstallationInstructions
+if /I %input% EQU PyCharm-O cls&goto startUninstallationInstructions
 if /I %input% EQU Pyth cls&goto startPythonPromptDialerMode
 if /I %input% EQU Pytho cls&goto startPythonPromptDialerMode
 if /I %input% EQU Python cls&goto startPythonPromptDialerMode
@@ -27290,7 +29051,7 @@ if /I %input% EQU Python- cls&goto startPythonPromptDialerMode
 if /I %input% EQU Python-A start Python_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Python-R start Python_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Python-I start Python_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Python-O goto startUninstallationInstructions
+if /I %input% EQU Python-O cls&goto startUninstallationInstructions
 if /I %input% EQU qBit cls&goto startqBittorrentPromptDialerMode
 if /I %input% EQU qBitt cls&goto startqBittorrentPromptDialerMode
 if /I %input% EQU qBitto cls&goto startqBittorrentPromptDialerMode
@@ -27329,8 +29090,8 @@ if /I %input% EQU Recuva- cls&goto startRecuvaPromptDialerMode
 if /I %input% EQU Recuva-A start Recuva_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Recuva-R start Recuva_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Recuva-I cls&goto startRecuvaInstallerPromptDialerMode
-if /I %input% EQU Recuva-I-A start Recuva_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Recuva-I-B start Piriform_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Recuva-IA start Recuva_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Recuva-IB start Piriform_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Recuva-O start Recuva_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Remo cls&goto startRemocappStudioPromptDialerMode
 if /I %input% EQU Remoc cls&goto startRemocappStudioPromptDialerMode
@@ -27374,7 +29135,7 @@ if /I %input% EQU ReSharper-Traditional- cls&goto startResharperTraditionalPromp
 if /I %input% EQU Resharper-Traditional-A start ReSharper_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Resharper-Traditional-R start ReSharper_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Resharper-Traditional-I start ReSharper_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Resharper-Traditional-O goto startUninstallationInstructions
+if /I %input% EQU Resharper-Traditional-O cls&goto startUninstallationInstructions
 if /I %input% EQU ReSharper-C cls&goto startResharperCppPromptDialerMode
 if /I %input% EQU ReSharper-Cp cls&goto startResharperCppPromptDialerMode
 if /I %input% EQU ReSharper-Cpp cls&goto startResharperCppPromptDialerMode
@@ -27382,7 +29143,7 @@ if /I %input% EQU ReSharper-Cpp- cls&goto startResharperCppPromptDialerMode
 if /I %input% EQU Resharper-Cpp-A start Resharper_Cpp_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Resharper-Cpp-R start Resharper_Cpp_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Resharper-Cpp-I start Resharper_Cpp_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Resharper-Cpp-O goto startUninstallationInstructions
+if /I %input% EQU Resharper-Cpp-O cls&goto startUninstallationInstructions
 if /I %input% EQU Reso cls&goto startResourceTunerPromptDialerMode
 if /I %input% EQU Resou cls&goto startResourceTunerPromptDialerMode
 if /I %input% EQU Resour cls&goto startResourceTunerPromptDialerMode
@@ -27423,7 +29184,7 @@ if /I %input% EQU Rider- cls&goto startRiderPromptDialerMode
 if /I %input% EQU Rider-A start Rider_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rider-R start Rider_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rider-I start Rider_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Rider-O goto startUninstallationInstructions
+if /I %input% EQU Rider-O cls&goto startUninstallationInstructions
 if /I %input% EQU Rise-o cls&goto startRiseOfLegendsPromptDialerMode
 if /I %input% EQU Rise-of cls&goto startRiseOfLegendsPromptDialerMode
 if /I %input% EQU Rise-of- cls&goto startRiseOfLegendsPromptDialerMode
@@ -27492,7 +29253,7 @@ if /I %input% EQU RubyMine- cls&goto startRubyMinePromptDialerMode
 if /I %input% EQU RubyMine-A start RubyMine_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RubyMine-R start RubyMine_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RubyMine-I start RubyMine_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU RubyMine-O goto startUninstallationInstructions
+if /I %input% EQU RubyMine-O cls&goto startUninstallationInstructions
 if /I %input% EQU Rust cls&goto startRustRoverPromptDialerMode
 if /I %input% EQU RustR cls&goto startRustRoverPromptDialerMode
 if /I %input% EQU RustRo cls&goto startRustRoverPromptDialerMode
@@ -27503,7 +29264,7 @@ if /I %input% EQU RustRover- cls&goto startRustRoverPromptDialerMode
 if /I %input% EQU RustRover-A start RustRover_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RustRover-R start RustRover_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RustRover-I start RustRover_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU RustRover-O goto startUninstallationInstructions
+if /I %input% EQU RustRover-O cls&goto startUninstallationInstructions
 if /I %input% EQU Samsung-D cls&goto startSamsungDriverPromptDialerMode
 if /I %input% EQU Samsung-Dr cls&goto startSamsungDriverPromptDialerMode
 if /I %input% EQU Samsung-Dri cls&goto startSamsungDriverPromptDialerMode
@@ -27517,6 +29278,21 @@ if /I %input% EQU SARDU cls&goto startSARDUpromptDialerMode
 if /I %input% EQU SARDU- cls&goto startSARDUpromptDialerMode
 if /I %input% EQU SARDU-A start SARDU_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU SARDU-R start SARDU_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Secu cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU Secur cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU Secure cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU SecureC cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU SecureCR cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU SecureCRT cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU SecureCRT- cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU SecureCRT-A cls&goto startSecureCRTrunAdminPromptFromSearchMode
+if /I %input% EQU SecureCRT-AC start SecureCRT_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SecureCRT-AF start SecureFX_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SecureCRT-R cls&goto startSecureCRTrunPromptFromSearchMode
+if /I %input% EQU SecureCRT-RC start SecureCRT_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SecureCRT-RF start SecureFX_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SecureCRT-I start SecureCRT_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SecureCRT-O cls&goto startUninstallationInstructions
 if /I %input% EQU Sign cls&goto startSignalPromptDialerMode
 if /I %input% EQU Signa cls&goto startSignalPromptDialerMode
 if /I %input% EQU Signal cls&goto startSignalPromptDialerMode
@@ -27553,7 +29329,7 @@ if /I %input% EQU Solidworks-3D-CAD-Design- cls&goto startSolidWorks3DCADDesignP
 if /I %input% EQU Solidworks-3D-CAD-Design-A start Solidworks_3D_CAD_Design_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Solidworks-3D-CAD-Design-R start Solidworks_3D_CAD_Design_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Solidworks-3D-CAD-Design-I start Solidworks_3D_CAD_Design_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Solidworks-3D-CAD-Design-O goto startUninstallationInstructions
+if /I %input% EQU Solidworks-3D-CAD-Design-O cls&goto startUninstallationInstructions
 if /I %input% EQU Solidworks-3D-CAD-Design-S start Solidworks_3D_CAD_Design_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Solit cls&goto startSolitairePromptDialerMode
 if /I %input% EQU Solita cls&goto startSolitairePromptDialerMode
@@ -27572,8 +29348,8 @@ if /I %input% EQU Speccy- cls&goto startSpeccyPromptDialerMode
 if /I %input% EQU Speccy-A start Speccy_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Speccy-R start Speccy_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Speccy-I cls&goto startSpeccyInstallerPromptDialerMode
-if /I %input% EQU Speccy-I-A start Speccy_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Speccy-I-B start Piriform_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Speccy-IA start Speccy_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Speccy-IB start Piriform_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Speccy-O start Speccy_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Spid cls&goto startSpiderSolitairePromptDialerMode
 if /I %input% EQU Spide cls&goto startSpiderSolitairePromptDialerMode
@@ -27655,6 +29431,29 @@ if /I %input% EQU Teams cls&goto startTeamsPromptDialerMode
 if /I %input% EQU Teams- cls&goto startTeamsPromptDialerMode
 if /I %input% EQU Teams-A start Teams_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Teams-R start Teams_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Techn cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Techni cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Technit cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Techniti cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Technitiu cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Technitium cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Technitium- cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Technitium-D cls&goto startTechnitiumDNSserverPromptDialerMode
+if /I %input% EQU Technitium-DA start Technitium_DNS_Server_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Technitium-DR start Technitium_DNS_Server_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Technitium-DI start Technitium_DNS_Server_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Technitium-DO cls&goto startUninstallationInstructions
+if /I %input% EQU Technitium-S cls&goto startTechnitiumMeshP2PmessagerPromptDialerMode
+if /I %input% EQU Technitium-SA start Technitium_Mesh_P2P_Messager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Technitium-SR start Technitium_Mesh_P2P_Messager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Technitium-SI start Technitium_Mesh_P2P_Messager_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Technitium-SO cls&goto startUninstallationInstructions
+if /I %input% EQU Technitium-M cls&goto startTechnitiumMACspooferPromptDialerMode
+if /I %input% EQU Technitium-MA start Technitium_MAC_Spoofer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Technitium-MR start Technitium_MAC_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Technitium-MI start Technitium_MAC_Spoofer_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Technitium-MO cls&goto startUninstallationInstructions
 if /I %input% EQU Tekl cls&goto startTeklaStructuresPromptDialerMode
 if /I %input% EQU Tekla cls&goto startTeklaStructuresPromptDialerMode
 if /I %input% EQU Tekla- cls&goto startTeklaStructuresPromptDialerMode
@@ -27672,7 +29471,7 @@ if /I %input% EQU Tekla-Structures- cls&goto startTeklaStructuresPromptDialerMod
 if /I %input% EQU Tekla-Structures-A start Tekla_Structures_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tekla-Structures-R start Tekla_Structures_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tekla-Structures-I start Tekla_Structures_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Tekla-Structures-O goto startUninstallationInstructions
+if /I %input% EQU Tekla-Structures-O cls&goto startUninstallationInstructions
 if /I %input% EQU Tekla-Structures-S start Tekla_Structures_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tele cls&goto startTelerikPromptDialerMode
 if /I %input% EQU Teler cls&goto startTelerikPromptDialerMode
@@ -27680,11 +29479,11 @@ if /I %input% EQU Teleri cls&goto startTelerikPromptDialerMode
 if /I %input% EQU Telerik cls&goto startTelerikPromptDialerMode
 if /I %input% EQU Telerik- cls&goto startTelerikPromptDialerMode
 if /I %input% EQU Telerik-A cls&goto startTelerikRunAdminPromptDialerMode
-if /I %input% EQU Telerik-A-A start Telerik_Test_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Telerik-A-B start Telerik_Test_Studio_APIs_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Telerik-AA start Telerik_Test_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Telerik-AB start Telerik_Test_Studio_APIs_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Telerik-R cls&goto startTelerikRunPromptDialerMode
-if /I %input% EQU Telerik-R-A start Telerik_Test_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Telerik-R-B start Telerik_Test_Studio_APIs_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Telerik-RA start Telerik_Test_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Telerik-RB start Telerik_Test_Studio_APIs_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Telerik-I start Telerik_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Telerik-O start Telerik_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-P cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
@@ -27715,7 +29514,7 @@ if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software- cls&goto startTI-Nspire
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software-A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software-R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software-O goto startUninstallationInstructions
+if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-CAS-P cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Pr cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Pre cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
@@ -27744,7 +29543,7 @@ if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Software- cls&goto startTI-Ns
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Software-A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Software-R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Software-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Software-O goto startUninstallationInstructions
+if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Software-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-CAS-S cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-St cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Stu cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
@@ -27765,7 +29564,7 @@ if /I %input% EQU TI-Nspire-CX-CAS-Student-Software- cls&goto startTI-Nspire_CX_
 if /I %input% EQU TI-Nspire-CX-CAS-Student-Software-A start TI-Nspire_CX_CAS_Student_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-CAS-Student-Software-R start TI-Nspire_CX_CAS_Student_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-CAS-Student-Software-I start TI-Nspire_CX_CAS_Student_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU TI-Nspire-CX-CAS-Student-Software-O goto startUninstallationInstructions
+if /I %input% EQU TI-Nspire-CX-CAS-Student-Software-O cls&goto startUninstallationInstructions
 if /I %input% EQU Tool cls&goto startToolboxPromptDialerMode
 if /I %input% EQU Toolb cls&goto startToolboxPromptDialerMode
 if /I %input% EQU Toolbo cls&goto startToolboxPromptDialerMode
@@ -27774,13 +29573,13 @@ if /I %input% EQU Toolbox- cls&goto startToolboxPromptDialerMode
 if /I %input% EQU Toolbox-A start Toolbox_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Toolbox-R start Toolbox_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Toolbox-I start Toolbox_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Toolbox-O goto startUninstallationInstructions
+if /I %input% EQU Toolbox-O cls&goto startUninstallationInstructions
 if /I %input% EQU Tor cls&goto startTorPromptDialerMode
 if /I %input% EQU Tor- cls&goto startTorPromptDialerMode
 if /I %input% EQU Tor-A start Tor_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tor-R start Tor_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tor-I start Tor_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Tor-O goto startUninstallationInstructions
+if /I %input% EQU Tor-O cls&goto startUninstallationInstructions
 if /I %input% EQU Tor-B cls&goto startTorPromptDialerMode
 if /I %input% EQU Tor-Br cls&goto startTorPromptDialerMode
 if /I %input% EQU Tor-Bro cls&goto startTorPromptDialerMode
@@ -27792,7 +29591,13 @@ if /I %input% EQU Tor-Browser- cls&goto startTorPromptDialerMode
 if /I %input% EQU Tor-Browser-A start Tor_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tor-Browser-R start Tor_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tor-Browser-I start Tor_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Tor-Browser-O goto startUninstallationInstructions
+if /I %input% EQU Tor-Browser-O cls&goto startUninstallationInstructions
+if /I %input% EQU Trac cls&goto startTraceXHWIDspooferPromptDialerMode
+if /I %input% EQU Trace cls&goto startTraceXHWIDspooferPromptDialerMode
+if /I %input% EQU TraceX cls&goto startTraceXHWIDspooferPromptDialerMode
+if /I %input% EQU TraceX- cls&goto startTraceXHWIDspooferPromptDialerMode
+if /I %input% EQU TraceX-A start TraceX_HWID_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TraceX-R start TraceX_HWID_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TreeS cls&goto startTreeSizePromptDialerMode
 if /I %input% EQU TreeSi cls&goto startTreeSizePromptDialerMode
 if /I %input% EQU TreeSiz cls&goto startTreeSizePromptDialerMode
@@ -27871,7 +29676,7 @@ if /I %input% EQU Visual-Studio- cls&goto startVisualStudioPromptDialerMode
 if /I %input% EQU Visual-Studio-A start Visual_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Visual-Studio-R start Visual_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Visual-Studio-I start Visual_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Visual-Studio-O goto startUninstallationInstructions
+if /I %input% EQU Visual-Studio-O cls&goto startUninstallationInstructions
 if /I %input% EQU Visual-Studio-S start Visual_Studio_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Visual-Studio-C cls&goto startVisualStudioCodePromptDialerMode
 if /I %input% EQU Visual-Studio-Co cls&goto startVisualStudioCodePromptDialerMode
@@ -27897,7 +29702,7 @@ if /I %input% EQU VMware-Workstation- cls&goto startVMwareWorkstationPromptDiale
 if /I %input% EQU VMware-Workstation-A start VMware_Workstation_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU VMware-Workstation-R start VMware_Workstation_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU VMware-Workstation-I start VMware_Workstation_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU VMware-Workstation-O goto startUninstallationInstructions
+if /I %input% EQU VMware-Workstation-O cls&goto startUninstallationInstructions
 if /I %input% EQU WebS cls&goto startWebStormPromptDialerMode
 if /I %input% EQU WebSt cls&goto startWebStormPromptDialerMode
 if /I %input% EQU WebSto cls&goto startWebStormPromptDialerMode
@@ -27907,7 +29712,7 @@ if /I %input% EQU WebStorm- cls&goto startWebStormPromptDialerMode
 if /I %input% EQU WebStorm-A start WebStorm_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WebStorm-R start WebStorm_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WebStorm-I start WebStorm_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU WebStorm-O goto startUninstallationInstructions
+if /I %input% EQU WebStorm-O cls&goto startUninstallationInstructions
 if /I %input% EQU WinA cls&goto startWinAcePromptDialerMode
 if /I %input% EQU WinAc cls&goto startWinAcePromptDialerMode
 if /I %input% EQU WinAce cls&goto startWinAcePromptDialerMode
@@ -27915,7 +29720,7 @@ if /I %input% EQU WinAce- cls&goto startWinAcePromptDialerMode
 if /I %input% EQU WinAce-A start WinAce_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinAce-R start WinAce_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinAce-I start WinAce_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU WinAce-O goto startUninstallationInstructions
+if /I %input% EQU WinAce-O cls&goto startUninstallationInstructions
 if /I %input% EQU Windows7G cls&goto startWindows7GamesPromptDialerMode
 if /I %input% EQU Windows7Ga cls&goto startWindows7GamesPromptDialerMode
 if /I %input% EQU Windows7Gam cls&goto startWindows7GamesPromptDialerMode
@@ -28080,7 +29885,7 @@ if /I %input% EQU WireGuard- cls&goto startWireGuardPromptDialerMode
 if /I %input% EQU WireGuard-A start WireGuard_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WireGuard-R start WireGuard_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WireGuard-I start WireGuard_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU WireGuard-O goto startUninstallationInstructions
+if /I %input% EQU WireGuard-O cls&goto startUninstallationInstructions
 if /I %input% EQU Wires cls&goto startWiresharkPromptDialerMode
 if /I %input% EQU Wiresh cls&goto startWiresharkPromptDialerMode
 if /I %input% EQU Wiresha cls&goto startWiresharkPromptDialerMode
@@ -28104,7 +29909,7 @@ if /I %input% EQU Word- cls&goto startWordPromptDialerMode
 if /I %input% EQU Word-A start Word_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Word-R start Word_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Word-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Word-O goto startUninstallationInstructions
+if /I %input% EQU Word-O cls&goto startUninstallationInstructions
 if /I %input% EQU Writ cls&goto startWritersidePromptDialerMode
 if /I %input% EQU Write cls&goto startWritersidePromptDialerMode
 if /I %input% EQU Writer cls&goto startWritersidePromptDialerMode
@@ -28116,22 +29921,19 @@ if /I %input% EQU Writerside- cls&goto startWritersidePromptDialerMode
 if /I %input% EQU Writerside-A start Writerside_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Writerside-R start Writerside_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Writerside-I start Writerside_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Writerside-O goto startUninstallationInstructions
+if /I %input% EQU Writerside-O cls&goto startUninstallationInstructions
 if /I %input% EQU Xmin cls&goto startXmingPromptDialerMode
 if /I %input% EQU Xming cls&goto startXmingPromptDialerMode
 if /I %input% EQU Xming- cls&goto startXmingPromptDialerMode
 if /I %input% EQU Xming-A cls&goto startXmingRunAdminPromptFromSearchMode
-if /I %input% EQU Xming-A- cls&goto startXmingRunAdminPromptFromSearchMode
-if /I %input% EQU Xming-A-M start Xming_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Xming-A-L start XLaunch_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-AM start Xming_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-AL start XLaunch_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Xming-R cls&goto startXmingRunPromptFromSearchMode
-if /I %input% EQU Xming-R- cls&goto startXmingRunPromptFromSearchMode
-if /I %input% EQU Xming-R-M start Xming_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Xming-R-L start XLaunch_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-RM start Xming_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-RL start XLaunch_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Xming-I cls&goto startXmingInstallPromptFromSearchMode
-if /I %input% EQU Xming-I- cls&goto startXmingInstallPromptFromSearchMode
-if /I %input% EQU Xming-I-P start Xming_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Xming-I-F start Xming_Fonts_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-IP start Xming_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Xming-IF start Xming_Fonts_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Xming-O start Xming_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU x64d cls&goto startx64dbgPromptDialerMode
 if /I %input% EQU x64db cls&goto startx64dbgPromptDialerMode
@@ -28246,7 +30048,9 @@ if /I %input% EQU 99 cls&curl "TEST.zip" -o TEST.filename&&goto startPreExitProm
 goto :eof
 :: Auxiliary Commands Instream
 :menuAuxiliaryCommandsInstream
+if /I %input% EQU abou cls&goto startAboutInstream
 if /I %input% EQU about cls&goto startAboutInstream
+if /I %input% EQU copy cls&goto startCopyInstream
 if /I %input% EQU copy0 cls&goto startCopy0Instream
 if /I %input% EQU copy1 call :startCopy1Instream
 if /I %input% EQU copy2 call :startCopy2Instream
@@ -28257,16 +30061,34 @@ if /I %input% EQU copy6 call :startCopy6Instream
 if /I %input% EQU copy7 call :startCopy7Instream
 if /I %input% EQU copy8 call :startCopy8Instream
 if /I %input% EQU copy9 call :startCopy9Instream
+if /I %input% EQU disp cls&goto startDisplayInstream
+if /I %input% EQU displ cls&goto startDisplayInstream
+if /I %input% EQU displa cls&goto startDisplayInstream
 if /I %input% EQU display cls&goto startDisplayInstream
 if /I %input% EQU exit goto exitBatchProgram
+if /I %input% EQU guid cls&goto startGuideInstream
 if /I %input% EQU guide cls&goto startGuideInstream
 if /I %input% EQU help cls&goto startHelpInstream
+if /I %input% EQU instreams call :startInstreamSampleShortcutReplace
+if /I %input% EQU instreamsa call :startInstreamSampleShortcutReplace
+if /I %input% EQU instreamsam call :startInstreamSampleShortcutReplace
+if /I %input% EQU instreamsamp call :startInstreamSampleShortcutReplace
+if /I %input% EQU instreamsampl call :startInstreamSampleShortcutReplace
 if /I %input% EQU instreamsample call :startInstreamSampleShortcutReplace
 if /I %input% EQU open start Davy_Jones_OS_R.lnk&&goto startPreExitPromptInstream
+if /I %input% EQU pack cls&goto startPackageChecker
+if /I %input% EQU packa cls&goto startPackageChecker
+if /I %input% EQU packag cls&goto startPackageChecker
 if /I %input% EQU package cls&goto startPackageChecker
 if /I %input% EQU root start Root_Directory_R.lnk&&goto startPreExitPromptInstream
 if /I %input% EQU tree cls&goto startTreeInstream
+if /I %input% EQU words cls&goto startWordsortInstream
+if /I %input% EQU wordso cls&goto startWordsortInstream
+if /I %input% EQU wordsor cls&goto startWordsortInstream
 if /I %input% EQU wordsort cls&goto startWordsortInstream
+if /I %input% EQU mana call :startUnstealthShortcutReplace
+if /I %input% EQU manag call :startUnstealthShortcutReplace
+if /I %input% EQU manage call :startUnstealthShortcutReplace
 if /I %input% EQU manager call :startUnstealthShortcutReplace
 goto :eof
 :: Auxiliary Command Functions
@@ -28281,14 +30103,21 @@ echo           Website: https://github.com/DavyJones324/DavyJonesOS
 echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Active
-echo    Current Update: 1.0.6.0
-echo        Patch Date: 07/27/2025
+echo    Current Update: 1.0.7.0
+echo        Patch Date: 08/3/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 and 11. No administrator privilages required.
 echo                 +: Art Design taken from "https:\\patorjk.com". Dot Art does not show for Windows 10.
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
+goto :eof
+:Copy
+echo.
+echo Are you insane? "copy" means you'd anger Davy Jones himself. He will boot you from his ship and drop you off dead.
+echo.
+echo    - From Ebola Man's polar opposite personality
+echo.
 goto :eof
 :Copy0
 echo.
@@ -28388,8 +30217,8 @@ echo 7-InvokeStandardArchiver
 echo 8-InvokeLegacyArchiver
 echo 9-InvokeOther
 echo 9-AltC-InvokePortable
-echo InvokeAlert
-echo InvokeEmergencyAntivirus
+echo InvokeAlert and InvokeEmergencyAntivirus
+echo InvokeNetwork
 echo.
 echo NOTE: Keep in mind that the installation process is very long, takes a few days, and may be interchangable,
 echo       but this list is a general installation guide for optimal performance.
@@ -28440,6 +30269,8 @@ echo.
 echo    manager - Switches to the Package Manager Menu.#
 echo.
 echo    menu - Returns to the main menu from any other selection menu.*
+echo.
+echo    "network" + "-" + "[any mnemonic sequence]" - Activates Dialer Mode for Network from the root menu.*
 echo.
 echo    open - Opens the file location.
 echo.
@@ -28616,6 +30447,81 @@ if exist Notepad++_I.exe (
     echo "Notepad++_I.exe" exists.
 ) else (
     echo "Notepad++_I.exe" does not exist.
+)
+echo.
+echo.
+echo InvokeNetwork Shortcut Section
+echo.
+echo.
+if exist GitHub_I.exe (
+    echo "GitHub_I.exe" exists.
+) else (
+    echo "GitHub_I.exe" does not exist.
+)
+if exist GitHub_Fork_I.exe (
+    echo "GitHub_Fork_I.exe" exists.
+) else (
+    echo "GitHub_Fork_I.exe" does not exist.
+)
+if exist Bitvise_SSH_Client_I.exe (
+    echo "Bitvise_SSH_Client_I.exe" exists.
+) else (
+    echo "Bitvise_SSH_Client_I.exe" does not exist.
+)
+if exist Bitvise_SSH_Server_I.exe (
+    echo "Bitvise_SSH_Server_I.exe" exists.
+) else (
+    echo "Bitvise_SSH_Server_I.exe" does not exist.
+)
+if exist PuTTY_I.msi (
+    echo "PuTTY_I.msi" exists.
+) else (
+    echo "PuTTY_I.msi" does not exist.
+)
+if exist SecureCRT_I.exe (
+    echo "SecureCRT_I.exe" exists.
+) else (
+    echo "SecureCRT_I.exe" does not exist.
+)
+if exist Xming_I.exe (
+    echo "Xming_I.exe" exists.
+) else (
+    echo "Xming_I.exe" does not exist.
+)
+if exist Xming_Fonts_I.exe (
+    echo "Xming_Fonts_I.exe" exists.
+) else (
+    echo "Xming_Fonts_I.exe" does not exist.
+)
+if exist Wireshark_I.exe (
+    echo "Wireshark_I.exe" exists.
+) else (
+    echo "Wireshark_I.exe" does not exist.
+)
+if exist Freegate_IP_Spoofer_I.exe (
+    echo "Freegate_IP_Spoofer_I.exe" exists.
+) else (
+    echo "Freegate_IP_Spoofer_I.exe" does not exist.
+)
+if exist Technitium_DNS_Server_I.exe (
+    echo "Technitium_DNS_Server_I.exe" exists.
+) else (
+    echo "Technitium_DNS_Server_I.exe" does not exist.
+)
+if exist Technitium_Mesh_P2P_Messager_I.msi (
+    echo "Technitium_Mesh_P2P_Messager_I.msi" exists.
+) else (
+    echo "Technitium_Mesh_P2P_Messager_I.msi" does not exist.
+)
+if exist setup.exe (
+    echo "setup.exe" exists.
+) else (
+    echo "setup.exe" does not exist.
+)
+if exist Technitium_MAC_Spoofer_I.exe (
+    echo "Technitium_MAC_Spoofer_I.exe" exists.
+) else (
+    echo "Technitium_MAC_Spoofer_I.exe" does not exist.
 )
 echo.
 echo.
@@ -29032,6 +30938,11 @@ if exist Electronic_Arts_Launcher_I.exe (
 ) else (
     echo "Electronic_Arts_Launcher_I.exe" does not exist.
 )
+if exist GOG_Galaxy_Launcher_I.exe (
+    echo "GOG_Galaxy_Launcher_I.exe" exists.
+) else (
+    echo "GOG_Galaxy_Launcher_I.exe" does not exist.
+)
 if exist BlueStacks_I.exe (
     echo "BlueStacks_I.exe" exists.
 ) else (
@@ -29267,11 +31178,6 @@ if exist Portmaster_I.exe (
 ) else (
     echo "Portmaster_I.exe" does not exist.
 )
-if exist Wireshark_I.exe (
-    echo "Wireshark_I.exe" exists.
-) else (
-    echo "Wireshark_I.exe" does not exist.
-)
 echo.
 echo.
 echo InvokeKeys Shortcut Section
@@ -29347,16 +31253,6 @@ echo.
 echo Other Installers
 echo.
 echo.
-if exist GitHub_I.exe (
-    echo "GitHub_I.exe" exists.
-) else (
-    echo "GitHub_I.exe" does not exist.
-)
-if exist GitHub_Fork_I.exe (
-    echo "GitHub_Fork_I.exe" exists.
-) else (
-    echo "GitHub_Fork_I.exe" does not exist.
-)
 if exist CreateInstall_I.exe (
     echo "CreateInstall_I.exe" exists.
 ) else (
@@ -29371,16 +31267,6 @@ if exist Inno_Setup_I.exe (
     echo "Inno_Setup_I.exe" exists.
 ) else (
     echo "Inno_Setup_I.exe" does not exist.
-)
-if exist Xming_I.exe (
-    echo "Xming_I.exe" exists.
-) else (
-    echo "Xming_I.exe" does not exist.
-)
-if exist Xming_Fonts_I.exe (
-    echo "Xming_Fonts_I.exe" exists.
-) else (
-    echo "Xming_Fonts_I.exe" does not exist.
 )
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
@@ -29800,6 +31686,176 @@ if exist Notepad++_O.lnk (
     echo "Notepad++_O.lnk" exists.
 ) else (
     echo "Notepad++_O.lnk" does not exist.
+)
+echo.
+echo.
+echo InvokeNetwork Shortcut Section
+echo.
+echo.
+if exist GitHub_A.lnk (
+    echo "GitHub_A.lnk" exists.
+) else (
+    echo "GitHub_A.lnk" does not exist.
+)
+if exist GitHub_R.lnk (
+    echo "GitHub_R.lnk" exists.
+) else (
+    echo "GitHub_R.lnk" does not exist.
+)
+if exist GitHub_Fork_A.lnk (
+    echo "GitHub_Fork_A.lnk" exists.
+) else (
+    echo "GitHub_Fork_A.lnk" does not exist.
+)
+if exist GitHub_Fork_R.lnk (
+    echo "GitHub_Fork_R.lnk" exists.
+) else (
+    echo "GitHub_Fork_R.lnk" does not exist.
+)
+if exist Bitvise_SSH_Client_A.lnk (
+    echo "Bitvise_SSH_Client_A.lnk" exists.
+) else (
+    echo "Bitvise_SSH_Client_A.lnk" does not exist.
+)
+if exist Bitvise_SSH_Server_A.lnk (
+    echo "Bitvise_SSH_Server_A.lnk" exists.
+) else (
+    echo "Bitvise_SSH_Server_A.lnk" does not exist.
+)
+if exist Bitvise_SSH_Client_R.lnk (
+    echo "Bitvise_SSH_Client_R.lnk" exists.
+) else (
+    echo "Bitvise_SSH_Client_R.lnk" does not exist.
+)
+if exist Bitvise_SSH_Server_R.lnk (
+    echo "Bitvise_SSH_Server_R.lnk" exists.
+) else (
+    echo "Bitvise_SSH_Server_R.lnk" does not exist.
+)
+if exist Bitvise_SSH_Client_O.lnk (
+    echo "Bitvise_SSH_Client_O.lnk" exists.
+) else (
+    echo "Bitvise_SSH_Client_O.lnk" does not exist.
+)
+if exist Bitvise_SSH_Server_O.lnk (
+    echo "Bitvise_SSH_Server_O.lnk" exists.
+) else (
+    echo "Bitvise_SSH_Server_O.lnk" does not exist.
+)
+if exist PuTTY_A.lnk (
+    echo "PuTTY_A.lnk" exists.
+) else (
+    echo "PuTTY_A.lnk" does not exist.
+)
+if exist PuTTY_R.lnk (
+    echo "PuTTY_R.lnk" exists.
+) else (
+    echo "PuTTY_R.lnk" does not exist.
+)
+if exist SecureCRT_A.lnk (
+    echo "SecureCRT_A.lnk" exists.
+) else (
+    echo "SecureCRT_A.lnk" does not exist.
+)
+if exist SecureFX_A.lnk (
+    echo "SecureFX_A.lnk" exists.
+) else (
+    echo "SecureFX_A.lnk" does not exist.
+)
+if exist SecureCRT_R.lnk (
+    echo "SecureCRT_R.lnk" exists.
+) else (
+    echo "SecureCRT_R.lnk" does not exist.
+)
+if exist SecureFX_R.lnk (
+    echo "SecureFX_R.lnk" exists.
+) else (
+    echo "SecureFX_R.lnk" does not exist.
+)
+if exist Xming_A.lnk (
+    echo "Xming_A.lnk" exists.
+) else (
+    echo "Xming_A.lnk" does not exist.
+)
+if exist XLaunch_A.lnk (
+    echo "XLaunch_A.lnk" exists.
+) else (
+    echo "XLaunch_A.lnk" does not exist.
+)
+if exist Xming_R.lnk (
+    echo "Xming_R.lnk" exists.
+) else (
+    echo "Xming_R.lnk" does not exist.
+)
+if exist XLaunch_R.lnk (
+    echo "XLaunch_R.lnk" exists.
+) else (
+    echo "XLaunch_R.lnk" does not exist.
+)
+if exist Xming_O.lnk (
+    echo "Xming_O.lnk" exists.
+) else (
+    echo "Xming_O.lnk" does not exist.
+)
+if exist Wireshark_A.lnk (
+    echo "Wireshark_A.lnk" exists.
+) else (
+    echo "Wireshark_A.lnk" does not exist.
+)
+if exist Wireshark_R.lnk (
+    echo "Wireshark_R.lnk" exists.
+) else (
+    echo "Wireshark_R.lnk" does not exist.
+)
+if exist Wireshark_O.lnk (
+    echo "Wireshark_O.lnk" exists.
+) else (
+    echo "Wireshark_O.lnk" does not exist.
+)
+if exist TraceX_HWID_Spoofer_R.lnk (
+    echo "TraceX_HWID_Spoofer_R" exists.
+) else (
+    echo "TraceX_HWID_Spoofer_R" does not exist.
+)
+if exist Freegate_IP_Spoofer_A.lnk (
+    echo "Freegate_IP_Spoofer_A" exists.
+) else (
+    echo "Freegate_IP_Spoofer_A" does not exist.
+)
+if exist Freegate_IP_Spoofer_R.lnk (
+    echo "Freegate_IP_Spoofer_R" exists.
+) else (
+    echo "Freegate_IP_Spoofer_R" does not exist.
+)
+if exist Technitium_DNS_Server_A.lnk (
+    echo "Technitium_DNS_Server_A" exists.
+) else (
+    echo "Technitium_DNS_Server_A" does not exist.
+)
+if exist Technitium_DNS_Server_R.lnk (
+    echo "Technitium_DNS_Server_R" exists.
+) else (
+    echo "Technitium_DNS_Server_R" does not exist.
+)
+if exist Technitium_Mesh_P2P_Messager_R.lnk (
+    echo "Technitium_Mesh_P2P_Messager_A" exists.
+) else (
+    echo "Technitium_Mesh_P2P_Messager_A" does not exist.
+)
+if exist Technitium_Mesh_P2P_Messager_R.lnk (
+    echo "Technitium_Mesh_P2P_Messager_R" exists.
+) else (
+    echo "Technitium_Mesh_P2P_Messager_R" does not exist.
+)
+if exist Technitium_MAC_Spoofer_A.lnk (
+    echo "Technitium_MAC_Spoofer_A" exists.
+) else (
+    echo "Technitium_MAC_Spoofer_A" does not exist.
+)
+if exist Technitium_MAC_Spoofer_R.lnk (
+    echo "Technitium_MAC_Spoofer_R" exists.
+) else (
+    echo "Technitium_MAC_Spoofer_R" does not exist.
 )
 echo.
 echo.
@@ -30896,6 +32952,21 @@ if exist Electronic_Arts_Launcher_R.lnk (
 ) else (
     echo "Electronic_Arts_Launcher_R.lnk" does not exist.
 )
+if exist GOG_Galaxy_Launcher_A.lnk (
+    echo "GOG_Galaxy_Launcher_A.lnk" exists.
+) else (
+    echo "GOG_Galaxy_Launcher_A.lnk" does not exist.
+)
+if exist GOG_Galaxy_Launcher_R.lnk (
+    echo "GOG_Galaxy_Launcher_R.lnk" exists.
+) else (
+    echo "GOG_Galaxy_Launcher_R.lnk" does not exist.
+)
+if exist GOG_Galaxy_Launcher_O.lnk (
+    echo "GOG_Galaxy_Launcher_O.lnk" exists.
+) else (
+    echo "GOG_Galaxy_Launcher_O.lnk" does not exist.
+)
 if exist BlueStacks_A.lnk (
     echo "BlueStacks_A.lnk" exists.
 ) else (
@@ -31736,21 +33807,6 @@ if exist Portmaster_O.lnk (
 ) else (
     echo "Portmaster_O.lnk" does not exist.
 )
-if exist Wireshark_A.lnk (
-    echo "Wireshark_A.lnk" exists.
-) else (
-    echo "Wireshark_A.lnk" does not exist.
-)
-if exist Wireshark_R.lnk (
-    echo "Wireshark_R.lnk" exists.
-) else (
-    echo "Wireshark_R.lnk" does not exist.
-)
-if exist Wireshark_O.lnk (
-    echo "Wireshark_O.lnk" exists.
-) else (
-    echo "Wireshark_O.lnk" does not exist.
-)
 if exist Character_Map_A.lnk (
     echo "Character_Map_A.lnk" exists.
 ) else (
@@ -32091,26 +34147,6 @@ echo.
 echo Other Shortcuts
 echo.
 echo.
-if exist GitHub_A.lnk (
-    echo "GitHub_A.lnk" exists.
-) else (
-    echo "GitHub_A.lnk" does not exist.
-)
-if exist GitHub_R.lnk (
-    echo "GitHub_R.lnk" exists.
-) else (
-    echo "GitHub_R.lnk" does not exist.
-)
-if exist GitHub_Fork_A.lnk (
-    echo "GitHub_Fork_A.lnk" exists.
-) else (
-    echo "GitHub_Fork_A.lnk" does not exist.
-)
-if exist GitHub_Fork_R.lnk (
-    echo "GitHub_Fork_R.lnk" exists.
-) else (
-    echo "GitHub_Fork_R.lnk" does not exist.
-)
 if exist CreateInstall_A.lnk (
     echo "CreateInstall_A.lnk" exists.
 ) else (
@@ -32151,31 +34187,6 @@ if exist Inno_Setup_R.lnk (
 ) else (
     echo "Inno_Setup_R.lnk" does not exist.
 )
-if exist Xming_A.lnk (
-    echo "Xming_A.lnk" exists.
-) else (
-    echo "Xming_A.lnk" does not exist.
-)
-if exist XLaunch_A.lnk (
-    echo "XLaunch_A.lnk" exists.
-) else (
-    echo "XLaunch_A.lnk" does not exist.
-)
-if exist Xming_R.lnk (
-    echo "Xming_R.lnk" exists.
-) else (
-    echo "Xming_R.lnk" does not exist.
-)
-if exist XLaunch_R.lnk (
-    echo "XLaunch_R.lnk" exists.
-) else (
-    echo "XLaunch_R.lnk" does not exist.
-)
-if exist Xming_O.lnk (
-    echo "Xming_O.lnk" exists.
-) else (
-    echo "Xming_O.lnk" does not exist.
-)
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof
@@ -32205,8 +34216,8 @@ echo                    ╠══════(InvokeStandardArchiver {0-8; 2 pag
 echo                    ║                                               ║ └──────────────────────────────────────────────┘
 echo                    ╠═════════(InvokeLegacyArchiver {0-9; 1 page})  ║ 
 echo                    ║                                               ║
-echo                    ╚═════════════════(InvokeOther {0-7; 3 pages})══╩════════(InvokePortable {0-8; 2 pages})
-echo.
+echo                    ╚═══╬╬══╦═════════(InvokeOther {0-7; 3 pages})══╩════════(InvokePortable {0-8; 2 pages})
+echo                            ╚═════════════(InvokeNetwork {0-9; 1 page})   [separate]
 echo    ╬╬ = Never use the number zero ("0") for a menu section, or else you will encounter unfortunate technical glitches.
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
@@ -32309,6 +34320,10 @@ echo Bitdefender-A
 echo Bitdefender-R
 echo Bitdefender-I
 echo Bitdefender-O
+echo Bitvise-A
+echo Bitvise-R
+echo Bitvise-I
+echo Bitvise-O
 echo BlueStacks-A
 echo BlueStacks-R
 echo BlueStacks-I
@@ -32426,6 +34441,9 @@ echo Eclipse-Modeling-Tools-R
 echo Edge-Browser-A
 echo Edge-Browser-R
 echo Edge-Browser-I
+echo Electronic-Arts-Launcher-A
+echo Electronic-Arts-Launcher-R
+echo Electronic-Arts-Launcher-I
 echo EmsisoftEmergencyKit-A
 echo EmsisoftEmergencyKit-R
 echo EmsisoftEmergencyKit-I
@@ -32459,6 +34477,8 @@ echo FTK-Language-R
 echo FTK-Language-I
 echo FreeCell-A
 echo FreeCell-R
+echo Freegate-A
+echo Freegate-R
 echo Game-Extractor-A
 echo Game-Extractor-R
 echo Game-Extractor-I
@@ -32468,9 +34488,9 @@ echo Gateway-R
 echo Gateway-I
 echo Ghidra-A
 echo Ghidra-R
-echo Git-Fork-A
-echo Git-Fork-R
-echo Git-Fork-I
+echo GitHub-A
+echo GitHub-R
+echo GitHub-I
 echo GitHub-Fork-A
 echo GitHub-Fork-R
 echo GitHub-Fork-I
@@ -32480,6 +34500,10 @@ echo Go-Board-Game-I
 echo Go-Board-Game-I
 echo Godot-A
 echo Godot-R
+echo Good-Old-Games-A
+echo Good-Old-Games-R
+echo Good-Old-Games-I
+echo Good-Old-Games-O
 echo GoLand-A
 echo GoLand-R
 echo GoLand-I
@@ -32704,6 +34728,9 @@ echo Pure-Data-A
 echo Pure-Data-R
 echo Pure-Data-I
 echo Pure-Data-O
+echo PuTTY-A
+echo PuTTY-R
+echo PuTTY-I
 echo PyCharm-A
 echo PyCharm-R
 echo PyCharm-I
@@ -32722,6 +34749,10 @@ echo Recuva-A
 echo Recuva-R
 echo Recuva-I
 echo Recuva-O
+echo Remocapp-Studio-A
+echo Remocapp-Studio-R
+echo Remocapp-Studio-I
+echo Remocapp-Studio-O
 echo ReShade-I
 echo ReShade-U
 echo ReSharper-A
@@ -32746,6 +34777,10 @@ echo Rise-of-Legends-R
 echo Rise-of-Legends-I
 echo RoL-Big-Archiver-A
 echo RoL-Big-Archiver-R
+echo Rokoko-Studio-A
+echo Rokoko-Studio-R
+echo Rokoko-Studio-I
+echo Rokoko-Studio-O
 echo RubyMine-A
 echo RubyMine-R
 echo RubyMine-I
@@ -32755,6 +34790,9 @@ echo RustRover-I
 echo Samsung-Driver-I
 echo SARDU-A
 echo SARDU-R
+echo SecureCRT-A
+echo SecureCRT-R
+echo SecureCRT-I
 echo Signal-A
 echo Signal-R
 echo Signal-I
@@ -32788,6 +34826,9 @@ echo StreamFab-O
 echo System-Internals-R
 echo Teams-A
 echo Teams-R
+echo Technitium-A
+echo Technitium-R
+echo Technitium-I
 echo Tekla-Structures-A
 echo Tekla-Structures-R
 echo Tekla-Structures-I
@@ -32811,6 +34852,7 @@ echo Toolbox-I
 echo Tor-Browser-A
 echo Tor-Browser-R
 echo Tor-Browser-I
+echo TraceX-R
 echo TreeSize-A
 echo TreeSize-R
 echo TreeSize-I
@@ -32892,6 +34934,10 @@ echo Writerside-R
 echo Writerside-I
 echo x64dbg-A
 echo x64dbg-R
+echo Xming-A
+echo Xming-R
+echo Xming-I
+echo Xming-O
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof

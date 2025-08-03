@@ -1,3 +1,16 @@
+Patch 1.0.7
+
+* Added a new network menu to the Davy Jones OS Batch Script.
+* Introduced the scripts for GitHub, Fork, and Xming from the search engine script to the network menu.
+* Added the programs Bitvise, PuTTY, SecureCRT, TraceX, Freegate, and the Technitium suite to the network menu, including shortcuts.
+* Relocated Wireshark from menu 9 to the network menu.
+* Added the Good Old Games platform to the Games menu, including shortcuts.
+* Optimized the auxiliary commands to function as though they were on the search engine.
+* Fixed an issue in the search engine where unnecessary dashes in the search engine can mess with muscle memory.
+* Fixed an issue where the input value doesn't show correctly when displaying uninstallation instructions for specific programs.
+* Fixed an issue where entering the value '18' gave an error.
+* Various other issues fixed.
+
 Patch 1.0.6
 
 * Added Xming to the search engine. Unfortunately, it is not able to be fitted into a compatible menu slot, but entering the name
