@@ -30270,6 +30270,8 @@ echo    manager - Switches to the Package Manager Menu.#
 echo.
 echo    menu - Returns to the main menu from any other selection menu.*
 echo.
+echo    network - Pulls up the Network Applications implementation menu.* (ex. "network-6R")
+echo.
 echo    "network" + "-" + "[any mnemonic sequence]" - Activates Dialer Mode for Network from the root menu.*
 echo.
 echo    open - Opens the file location.
