@@ -22,7 +22,7 @@ if "%1"=="instream" (
 :startMain
 call :banner
 call :menuMainScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -55,7 +55,7 @@ goto :eof
 :startAlert
 call :banner
 call :menuAlertScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuAlert
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -226,7 +226,7 @@ echo Would you like to run/install/uninstall Sophos HitmanPro ("R/I/O")? Input z
 echo.
 goto :eof
 :menuHitmanPro
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start HitmanPro_A.lnk&set input=alert-1A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start HitmanPro_R.lnk&set input=alert-1R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start HitmanPro_I.exe&set input=alert-1I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -273,7 +273,7 @@ echo Would you like to run/install/uninstall ESET Online Scanner ("R/I/O")? Inpu
 echo.
 goto :eof
 :menuESETonlineScanner
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start ESET_Online_Scanner_A.lnk&set input=alert-2A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start ESET_Online_Scanner_R.lnk&set input=alert-2R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start ESET_Online_Scanner_I.exe&set input=alert-2I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -320,7 +320,7 @@ echo Would you like to run/install/uninstall Malwarebytes AdwCleaner ("R/I/O")? 
 echo.
 goto :eof
 :menuMWBadwCleaner
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start MWB_ADWcleaner_A.lnk&set input=alert-3A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start MWB_ADWcleaner_R.lnk&set input=alert-3R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start MWB_ADWcleaner_I.exe&set input=alert-3I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -367,7 +367,7 @@ echo Would you like to run/install/uninstall Norton Power Eraser ("R/I/O")? Inpu
 echo.
 goto :eof
 :menuNortonPowerEraser
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Norton_Power_Eraser_A.lnk&set input=alert-4A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Norton_Power_Eraser_R.lnk&set input=alert-4R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Norton_Power_Eraser_I.exe&set input=alert-4I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -414,7 +414,7 @@ echo Would you like to run/install/uninstall Trellix Stinger ("R/I/O")? Input ze
 echo.
 goto :eof
 :menuStinger
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Stinger_A.lnk&set input=alert-5A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Stinger_R.lnk&set input=alert-5R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Stinger_I.exe&set input=alert-5I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -461,7 +461,7 @@ echo Would you like to run/install/uninstall KART ("R/I/O")? Input zero ("0") to
 echo.
 goto :eof
 :menuKART
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start KART_A.lnk&set input=alert-6A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start KART_R.lnk&set input=alert-6R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start KART_I.exe&set input=alert-6I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -508,7 +508,7 @@ echo Would you like to run/install/uninstall KVRT ("R/I/O")? Input zero ("0") to
 echo.
 goto :eof
 :menuKVRT
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start KVRT_A.lnk&set input=alert-7A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start KVRT_R.lnk&set input=alert-7R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start KVRT_I.exe&set input=alert-7I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -555,7 +555,7 @@ echo Would you like to run/install/uninstall Revo Uninstaller Pro ("R/I/O")? Inp
 echo.
 goto :eof
 :menuRevoUninstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Revo_Uninstaller_A.lnk&set input=alert-8A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Revo_Uninstaller_R.lnk&set input=alert-8R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Revo_Uninstaller_I.exe&set input=alert-8I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -565,7 +565,7 @@ goto :eof
 :startAlertAlt
 call :banner
 call :menuAlertAltScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuAlertAlt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -707,7 +707,7 @@ echo Would you like to run/install/uninstall Sophos HitmanPro.Alert ("R/I/O")? I
 echo.
 goto :eof
 :menuHitmanProAlert
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start HitmanPro.Alert_A.lnk&set input=alert-91A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start HitmanPro.Alert_R.lnk&set input=alert-91R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start HitmanPro.Alert_I.exe&set input=alert-91I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -758,7 +758,7 @@ echo Would you like to run/install/uninstall ESET NOD32 Antivirus ("R/I/O")? Inp
 echo.
 goto :eof
 :menuESETNOD32AV
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start ESET_NOD32_A.lnk&set input=alert-92A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start ESET_NOD32_R.lnk&set input=alert-92R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start ESET_NOD32_I.exe&set input=alert-92I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -815,7 +815,7 @@ echo Would you like to run/install/uninstall Malwarebytes Antivirus ("R/I/O")? I
 echo.
 goto :eof
 :menuMBSetup
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Malwarebytes_A.lnk&set input=alert-93A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Malwarebytes_R.lnk&set input=alert-93R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Malwarebytes_I.exe&set input=alert-93I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -872,7 +872,7 @@ echo Would you like to run/install/uninstall Bitdefender Antivirus ("R/I/O")? In
 echo.
 goto :eof
 :menuBitdefender
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Bitdefender_A.lnk&set input=alert-94A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Bitdefender_R.lnk&set input=alert-94R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Bitdefender_I.exe&set input=alert-94I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -929,7 +929,7 @@ echo Would you like to run/install/uninstall Avast Premier Antivirus ("R/I/O")? 
 echo.
 goto :eof
 :menuAvastAntivirus
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Avast_A.lnk&set input=alert-95A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Avast_R.lnk&set input=alert-95R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Avast_I.exe&set input=alert-95I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -986,7 +986,7 @@ echo Would you like to run/install/uninstall Emsisoft Emergency Kit ("R/I/O")? I
 echo.
 goto :eof
 :menuEmsisoftEmergencyKit
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start EmsisoftEmergencyKit_A.lnk&set input=alert-96A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start EmsisoftEmergencyKit_R.lnk&set input=alert-96R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start EmsisoftEmergencyKit_I.exe&set input=alert-96I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1046,7 +1046,7 @@ echo Would you like to run/install/uninstall CCleaner ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuCCleaner
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start CCleaner_A.lnk&set input=alert-97A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start CCleaner_R.lnk&set input=alert-97R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start CCleaner_I.exe&set input=alert-97IA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1119,7 +1119,7 @@ echo Please input the letter to install CCleaner or the entire Piriform Bundle (
 echo.
 goto :eof
 :menuCCleanerInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start CCleaner_I.exe&set input=alert-97IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start Piriform_I.exe&set input=alert-97IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -1177,7 +1177,7 @@ echo Would you like to run/install/uninstall Recuva ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuRecuva
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Recuva_A.lnk&set input=alert-98A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Recuva_R.lnk&set input=alert-98R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start Recuva_I.exe&set input=alert-98IA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1250,7 +1250,7 @@ echo Please input the letter to install Recuva or the entire Piriform Bundle ("A
 echo.
 goto :eof
 :menuRecuvaInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Recuva_I.exe&set input=alert-98IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start Piriform_I.exe&set input=alert-98IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -1308,7 +1308,7 @@ echo Would you like to run/install/uninstall Speccy ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuSpeccy
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Speccy_A.lnk&set input=alert-99A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Speccy_R.lnk&set input=alert-99R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start Speccy_I.exe&set input=alert-99IA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1381,7 +1381,7 @@ echo Please input the letter to install Speccy or the entire Piriform Bundle ("A
 echo.
 goto :eof
 :menuSpeccyInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Speccy_I.exe&set input=alert-99IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start Piriform_I.exe&set input=alert-99IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -1389,7 +1389,7 @@ goto :eof
 :startBackground
 call :banner
 call :menuBackgroundScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuBackground
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -1446,7 +1446,7 @@ if /I %input% EQU 6 cls&goto startOperaPrompt
 if /I %input% EQU 6A start Opera_Browser_A.lnk&set input=background-6A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6R start Opera_Browser_R.lnk&set input=background-6R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6I start Opera_Browser_I.exe&set input=background-6I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 6O start Opera_Browser_O.lnk&set input=background-6O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 6O cls&set input=background-6O&goto startUninstallationInstructions
 if /I %input% EQU 7 cls&goto startUltraSearchPrompt
 if /I %input% EQU 7A start UltraSearch_A.lnk&set input=background-7A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7R start UltraSearch_R.lnk&set input=background-7R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1514,7 +1514,7 @@ echo Would you like to run/install/uninstall 7-Zip ("R/I/O")? Input zero ("0") t
 echo.
 goto :eof
 :menu7-Zip
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start 7-ZipFM_A.lnk&set input=background-1A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start 7-ZipFM_R.lnk&set input=background-1R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start 7-ZipFM_I.exe&set input=background-1I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1565,7 +1565,7 @@ echo Input the letter ("D/R") for Java Developer Kit/Java Runtime Environment ("
 echo.
 goto :eof
 :menuJavaCompilerTools
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU DI start JDK_I.exe&set input=background-2DI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RI start JRE_I.exe&set input=background-2RI&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -1630,7 +1630,7 @@ echo Would you like to install Java Development Kit ("I")? Input zero ("0") to c
 echo.
 goto :eof
 :menuJavaDeveloperKit
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU I start JDK_I.exe&set input=background-2DI&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startJavaRuntimeEnvironmentPrompt1
@@ -1694,7 +1694,7 @@ echo Would you like to install Java Runtime Environment ("I")? Input zero ("0") 
 echo.
 goto :eof
 :menuJavaRuntimeEnvironment
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU I start JRE_I.exe&set input=background-2RI&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startFlowLauncherPrompt
@@ -1738,7 +1738,7 @@ echo Would you like to run/install/uninstall Flow Launcher ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuFlowLauncher
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Flow_Launcher_A.lnk&set input=background-3A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Flow_Launcher_R.lnk&set input=background-3R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Flow_Launcher_I.exe&set input=background-3I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1785,7 +1785,7 @@ echo Would you like to install Samsung Driver ("I")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuSamsungDriver
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU I start Samsung_Driver_I.exe&set input=background-4I&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startDirectoryOpusPrompt
@@ -1829,7 +1829,7 @@ echo Would you like to run/install/uninstall Directory Opus ("R/I/O")? Input zer
 echo.
 goto :eof
 :menuDirectoryOpus
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Directory_Opus_A.lnk&set input=background-5A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Directory_Opus_R.lnk&set input=background-5R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Directory_Opus_I.exe&set input=background-5I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1876,11 +1876,11 @@ echo Would you like to run/install/uninstall Opera Browser ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuOpera
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Opera_Browser_A.lnk&set input=background-6A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Opera_Browser_R.lnk&set input=background-6R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Opera_Browser_I.exe&set input=background-6I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O start Opera_Browser_O.lnk&set input=background-6O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=background-6O&goto startUninstallationInstructions
 goto :eof
 :startUltraSearchPrompt
 call :banner
@@ -1923,7 +1923,7 @@ echo Would you like to run/install/uninstall UltraSearch ("R/I/O")? Input zero (
 echo.
 goto :eof
 :menuUltraSearch
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start UltraSearch_A.lnk&set input=background-7A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start UltraSearch_R.lnk&set input=background-7R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start UltraSearch_I.exe&set input=background-7I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1970,7 +1970,7 @@ echo Would you like to run/install/uninstall WireGuard ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuWireGuard
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WireGuard_A.lnk&set input=background-8A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WireGuard_R.lnk&set input=background-8R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WireGuard_I.exe&set input=background-8I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2021,7 +2021,7 @@ echo Input the letter ("M/P") for Notepad/Notepad++. Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuLaunchNotepad
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU MA start Notepad_A.lnk&set input=background-9MA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MR start Notepad_R.lnk&set input=background-9MR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PA start Notepad++_A.lnk&set input=background-9PA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2090,7 +2090,7 @@ echo Would you like to run Notepad ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuNotepad
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Notepad_A.lnk&set input=background-9MA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Notepad_R.lnk&set input=background-9MR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -2155,7 +2155,7 @@ echo Would you like to run/install/uninstall Notepad++ ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuNotepadPlusPlus
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Notepad++_A.lnk&set input=background-9PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Notepad++_R.lnk&set input=background-9PR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Notepad++_I.exe&set input=background-9PI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2165,7 +2165,7 @@ goto :eof
 :startNetwork
 call :banner
 call :menuNetworkScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuNetwork
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -2324,7 +2324,7 @@ echo Input the letter for GitHub Program/Fork ("G/F"). Input zero ("0") to cance
 echo.
 goto :eof
 :menuGitTools
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU GA start GitHub_A.lnk&set input=network-1GA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GR start GitHub_R.lnk&set input=network-1GR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GI start GitHub_I.exe&set input=network-1GI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2395,7 +2395,7 @@ echo Would you like to run/install/uninstall GitHub ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuGitHub
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start GitHub_A.lnk&set input=network-1GA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start GitHub_R.lnk&set input=network-1GR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start GitHub_I.exe&set input=network-1GI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2462,7 +2462,7 @@ echo Would you like to run/install/uninstall GitHub Fork ("R/I/O")? Input zero (
 echo.
 goto :eof
 :menuGitFork
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start GitHub_Fork_A.lnk&set input=network-1FA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start GitHub_Fork_R.lnk&set input=network-1FR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start GitHub_Fork_I.exe&set input=network-1FI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2517,7 +2517,7 @@ echo Would you like to run/install/uninstall Bitvise ("R/I/O")? Input zero ("0")
 echo.
 goto :eof
 :menuBitvise
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU AC start Bitvise_SSH_Client_A.lnk&set input=network-2AC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AS start Bitvise_SSH_Server_A.lnk&set input=network-2AS&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RC start Bitvise_SSH_Client_R.lnk&set input=network-2RC&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2588,7 +2588,7 @@ echo Please enter the letter to run Client/Server Distribution ("C/S"). Input ze
 echo.
 goto :eof
 :menuBitviseRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU C start Bitvise_SSH_Client_A.lnk&set input=network-2AC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU S start Bitvise_SSH_Server_A.lnk&set input=network-2AS&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -2653,7 +2653,7 @@ echo Please enter the letter to run Client/Server Distribution ("C/S"). Input ze
 echo.
 goto :eof
 :menuBitviseRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU C start Bitvise_SSH_Client_R.lnk&set input=network-2RC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU S start Bitvise_SSH_Server_R.lnk&set input=network-2RS&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -2718,7 +2718,7 @@ echo Please enter the letter to install Client/Server Distribution ("C/S"). Inpu
 echo.
 goto :eof
 :menuBitviseInstall
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU C start Bitvise_SSH_Client_I.exe&set input=network-2IC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU S start Bitvise_SSH_Server_I.exe&set input=network-2IS&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -2783,7 +2783,7 @@ echo Please enter the letter to uninstall Client/Server Distribution ("C/S"). In
 echo.
 goto :eof
 :menuBitviseUninstall
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU C start Bitvise_SSH_Client_O.lnk&set input=network-2OC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU S start Bitvise_SSH_Server_O.lnk&set input=network-2OS&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -2828,7 +2828,7 @@ echo Would you like to run/install/uninstall PuTTY ("R/I/O")? Input zero ("0") t
 echo.
 goto :eof
 :menuPuTTY
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PuTTY_A.lnk&set input=network-3A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PuTTY_R.lnk&set input=network-3R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PuTTY_I.msi&set input=network-3I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2879,7 +2879,7 @@ echo Would you like to run/install/uninstall SecureCRT ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuSecureCRT
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU AC start SecureCRT_A.lnk&set input=network-4AC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AF start SecureFX_A.lnk&set input=network-4AF&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RC start SecureCRT_R.lnk&set input=network-4RC&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2948,7 +2948,7 @@ echo Please enter the letter to run SecureCRT/SecureFX ("C/F"). Input zero ("0")
 echo.
 goto :eof
 :menuSecureCRTrunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU C start SecureCRT_A.lnk&set input=network-4AC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU F start SecureFX_A.lnk&set input=network-4AF&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -3013,7 +3013,7 @@ echo Please enter the letter to run SecureCRT/SecureFX ("C/F"). Input zero ("0")
 echo.
 goto :eof
 :menuSecureCRTrun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU C start SecureCRT_R.lnk&set input=network-4RC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU F start SecureFX_R.lnk&set input=network-4RF&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -3064,7 +3064,7 @@ echo Would you like to run/install/uninstall Xming ("R/I/O")? Input zero ("0") t
 echo.
 goto :eof
 :menuXming
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU AM start Xming_A.lnk&set input=network-5AM&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AL start XLaunch_A.lnk&set input=network-5AL&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RM start Xming_R.lnk&set input=network-5RM&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3134,7 +3134,7 @@ echo Please enter the letter to run Xming/XLaunch ("M/L"). Input zero ("0") to c
 echo.
 goto :eof
 :menuXmingRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU M start Xming_A.lnk&set input=network-5AM&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU L start XLaunch_A.lnk&set input=network-5AL&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -3199,7 +3199,7 @@ echo Please enter the letter to run Xming/XLaunch ("M/L"). Input zero ("0") to c
 echo.
 goto :eof
 :menuXmingRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU M start Xming_R.lnk&set input=network-5RM&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU L start XLaunch_R.lnk&set input=network-5RL&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -3264,7 +3264,7 @@ echo Please enter the letter to install the Xming program/fonts ("P/F"). Input z
 echo.
 goto :eof
 :menuXmingInstall
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU P start Xming_I.exe&set input=network-5IP&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU F start Xming_Fonts_I.exe&set input=network-5IF&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -3309,7 +3309,7 @@ echo Would you like to run/install/uninstall Wireshark ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuWireshark
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Wireshark_A.lnk&set input=network-6A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Wireshark_R.lnk&set input=network-6R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Wireshark_I.exe&set input=network-6I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3356,7 +3356,7 @@ echo Would you like to run TraceX HWID Spoofer ("R")? Input zero ("0") to cancel
 echo.
 goto :eof
 :menuTraceXHWIDspoofer
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start TraceX_HWID_Spoofer_R.lnk&set input=network-7A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start TraceX_HWID_Spoofer_R.lnk&set input=network-7R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -3401,7 +3401,7 @@ echo Would you like to run Freegate IP Spoofer ("R")? Input zero ("0") to cancel
 echo.
 goto :eof
 :menuFreegateIPspoofer
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Freegate_IP_Spoofer_A.lnk&set input=network-8A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Freegate_IP_Spoofer_R.lnk&set input=network-8R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -3452,7 +3452,7 @@ echo Input the letter for DNS Server/Mesh P2P Messager/MAC Spoofer ("D/S/M"). In
 echo.
 goto :eof
 :menuTechnitium
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU DA start Technitium_DNS_Server_A.lnk&set input=network-9DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DR start Technitium_DNS_Server_R.lnk&set input=network-9DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DI start Technitium_DNS_Server_I.exe&set input=network-9DI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3527,7 +3527,7 @@ echo Would you like to run/install/uninstall Technitium DNS Server ("R/I/O")? In
 echo.
 goto :eof
 :menuTechnitiumDNSserver
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Technitium_DNS_Server_A.lnk&set input=network-9DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Technitium_DNS_Server_R.lnk&set input=network-9DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Technitium_DNS_Server_I.exe&set input=network-9DI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3594,7 +3594,7 @@ echo Would you like to run/install/uninstall Technitium Mesh P2P Messager ("R/I/
 echo.
 goto :eof
 :menuTechnitiumMeshP2Pmessager
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Technitium_Mesh_P2P_Messager_R.lnk&set input=network-9SA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Technitium_Mesh_P2P_Messager_R.lnk&set input=network-9SR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Technitium_Mesh_P2P_Messager_I.msi&set input=network-9SI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3661,7 +3661,7 @@ echo Would you like to run/install/uninstall Technitium MAC Spoofer ("R/I/O")? I
 echo.
 goto :eof
 :menuTechnitiumMACspoofer
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Technitium_MAC_Spoofer_A.lnk&set input=network-9MA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Technitium_MAC_Spoofer_R.lnk&set input=network-9MR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Technitium_MAC_Spoofer_I.exe&set input=network-9MI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3671,7 +3671,7 @@ goto :eof
 :start1
 call :banner
 call :menu1Screen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu1
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -3801,7 +3801,7 @@ echo Would you like to run/install/uninstall Internet Download Manager ("R/I/O")
 echo.
 goto :eof
 :menuInternetDownloadManager
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Internet_Download_Manager_A.lnk&set input=11A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Internet_Download_Manager_R.lnk&set input=11R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Internet_Download_Manager_I.exe&set input=11I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3848,7 +3848,7 @@ echo Would you like to run/install/uninstall Tor Browser ("R/I/O")? Input zero (
 echo.
 goto :eof
 :menuTor
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Tor_Browser_A.lnk&set input=12A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Tor_Browser_R.lnk&set input=12R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Tor_Browser_I.exe&set input=12I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3895,7 +3895,7 @@ echo Would you like to run/install/uninstall Mullvad Browser ("R/I/O")? Input ze
 echo.
 goto :eof
 :menuMullvad
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Mullvad_Browser_A.lnk&set input=13A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Mullvad_Browser_R.lnk&set input=13R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Mullvad_Browser_I.exe&set input=13I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3942,7 +3942,7 @@ echo Would you like to run/install/uninstall LibreWolf Browser ("R/I/O")? Input 
 echo.
 goto :eof
 :menuLibreWolf
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start LibreWolf_Browser_A.lnk&set input=14A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start LibreWolf_Browser_R.lnk&set input=14R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start LibreWolf_Browser_I.exe&set input=14I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -3989,7 +3989,7 @@ echo Would you like to run/install/uninstall Firefox Browser ("R/I/O")? Input ze
 echo.
 goto :eof
 :menuFirefox
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Firefox_Browser_A.lnk&set input=15A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Firefox_Browser_R.lnk&set input=15R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Firefox_Browser_I.exe&set input=15I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4036,7 +4036,7 @@ echo Would you like to run/install/uninstall Brave Browser ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuBrave
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Brave_Browser_A.lnk&set input=16A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Brave_Browser_R.lnk&set input=16R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Brave_Browser_I.exe&set input=16I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4083,7 +4083,7 @@ echo Would you like to run/install/uninstall Edge Browser ("R/I/O")? Input zero 
 echo.
 goto :eof
 :menuEdge
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Edge_Browser_A.lnk&set input=17A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Edge_Browser_R.lnk&set input=17R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Edge_Browser_I.exe&set input=17I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4134,7 +4134,7 @@ echo Would you like to select Google Chrome or Google Earth ("C/E")? Input zero 
 echo.
 goto :eof
 :menuGoogle
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU CA start Chrome_Browser_A.lnk&set input=18CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CR start Chrome_Browser_R.lnk&set input=18CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CI start Chrome_Browser_I.exe&set input=18CI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4205,7 +4205,7 @@ echo Would you like to run/install/uninstall Google Chrome ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuChrome
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Chrome_Browser_A.lnk&set input=18CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Chrome_Browser_R.lnk&set input=18CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Chrome_Browser_I.exe&set input=18CI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4272,7 +4272,7 @@ echo Would you like to run/install/uninstall Google Earth ("R/I/O")? Input zero 
 echo.
 goto :eof
 :menuEarth
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Google_Earth_Pro_A.lnk&set input=18EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Google_Earth_Pro_R.lnk&set input=18ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Google_Earth_Pro_I.exe&set input=18EI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4319,7 +4319,7 @@ echo Would you like to run/install/uninstall qBittorrent ("R/I/O")? Input zero (
 echo.
 goto :eof
 :menuqBittorrent
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start qBittorrent_A.lnk&set input=19A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start qBittorrent_R.lnk&set input=19R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start qBittorrent_I.exe&set input=19I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4329,7 +4329,7 @@ goto :eof
 :start2
 call :banner
 call :menu2Screen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu2
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -4367,8 +4367,8 @@ if /I %input% EQU 1I start Visual_Studio_I.exe&set input=21I&&goto startPreExitP
 if /I %input% EQU 1O cls&set input=21O&goto startUninstallationInstructions
 if /I %input% EQU 1S start Visual_Studio_S.lnk&set input=21S&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2 cls&goto startVisualStudioCodePrompt
-if /I %input% EQU 2A start Visual_Studio_Code_Launch_Script_A.bat&set input=22A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2R start Visual_Studio_Code_Launch_Script_R.bat&set input=22R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2A start /min Visual_Studio_Code_Launch_Script_A.bat&set input=22A&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2R start /min Visual_Studio_Code_Launch_Script_R.bat&set input=22R&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2I start Visual_Studio_Code_I.exe&set input=22I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2O start Visual_Studio_Code_O.lnk&set input=22O&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3 cls&goto startWordPrompt
@@ -4468,7 +4468,7 @@ echo Would you like to run/install/uninstall/setup Microsoft Visual Studio ("R/I
 echo.
 goto :eof
 :menuVisualStudio
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Visual_Studio_A.lnk&set input=21A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Visual_Studio_R.lnk&set input=21R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Visual_Studio_I.exe&set input=21I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4516,9 +4516,9 @@ echo Would you like to run/install/uninstall Microsoft Visual Studio Code ("R/I/
 echo.
 goto :eof
 :menuVisualStudioCode
-set /p input=%BS%
-if /I %input% EQU A start Visual_Studio_Code_Launch_Script_A.bat&set input=22A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start Visual_Studio_Code_Launch_Script_R.bat&set input=22R&&goto startPreExitPrompt||goto startFailedExitPrompt
+set /P input=%BS%
+if /I %input% EQU A start /min Visual_Studio_Code_Launch_Script_A.bat&set input=22A&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start /min Visual_Studio_Code_Launch_Script_R.bat&set input=22R&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Visual_Studio_Code_I.exe&set input=22I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Visual_Studio_Code_O.lnk&set input=22O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -4563,7 +4563,7 @@ echo Would you like to run/install/uninstall Word ("R/I/O")? Input zero ("0") to
 echo.
 goto :eof
 :menuWord
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Word_A.lnk&set input=23A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Word_R.lnk&set input=23R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=23I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4610,7 +4610,7 @@ echo Would you like to run/install/uninstall PowerPoint from Microsoft 365 ("R/I
 echo.
 goto :eof
 :menuPowerPoint
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PowerPoint_A.lnk&set input=24A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PowerPoint_R.lnk&set input=24R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=24I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4657,7 +4657,7 @@ echo Would you like to run/install/uninstall Excel from Microsoft 365 ("R/I/O")?
 echo.
 goto :eof
 :menuExcel
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Excel_A.lnk&set input=25A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Excel_R.lnk&set input=25R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=25I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4704,7 +4704,7 @@ echo Would you like to run/install/uninstall Access from Microsoft 365 ("R/I/O")
 echo.
 goto :eof
 :menuAccess
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Access_A.lnk&set input=26A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Access_R.lnk&set input=26R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=26I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4751,7 +4751,7 @@ echo Would you like to run/install/uninstall Publisher from Microsoft 365 ("R/I/
 echo.
 goto :eof
 :menuPublisher
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Publisher_A.lnk&set input=27A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Publisher_R.lnk&set input=27R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=27I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4798,7 +4798,7 @@ echo Would you like to run/install/uninstall OneNote from Microsoft 365 ("R/I/O"
 echo.
 goto :eof
 :menuOneNote
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start OneNote_A.lnk&set input=28A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start OneNote_R.lnk&set input=28R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=28I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4853,7 +4853,7 @@ echo Input the letter to implement the program PowerBI/OneDrive/Outlook/Teams ("
 echo.
 goto :eof
 :menuOtherMicrosoftTools
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU BA start PowerBI_A.lnk&set input=29BA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU BR start PowerBI_R.lnk&set input=29BR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU BI start PowerBI_I.exe&set input=29BI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4930,7 +4930,7 @@ echo Would you like to run/install/uninstall PowerBI ("R/I/O")? Input zero ("0")
 echo.
 goto :eof
 :menuPowerBI
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PowerBI_A.lnk&set input=29BA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PowerBI_R.lnk&set input=29BR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PowerBI_I.exe&set input=29BI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -4997,7 +4997,7 @@ echo Would you like to run/install/uninstall OneDrive ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuOneDrive
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start OneDrive_A.lnk&set input=29DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start OneDrive_R.lnk&set input=29DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=29DI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5064,7 +5064,7 @@ echo Would you like to run/install/uninstall Outlook ("R/I/O")? Input zero ("0")
 echo.
 goto :eof
 :menuOutlook
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Outlook_A.lnk&set input=29OA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Outlook_R.lnk&set input=29OR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Microsoft365_I.exe&set input=29OI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5131,7 +5131,7 @@ echo Would you like to run Microsoft Teams ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuTeams
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Teams_A.lnk&set input=29TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Teams_R.lnk&set input=29TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -5139,7 +5139,7 @@ goto :eof
 :start3
 call :banner
 call :menu3Screen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu3
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -5426,7 +5426,7 @@ echo Would you like to run/install/uninstall 010 Editor ("R/I/O")? Input zero ("
 echo.
 goto :eof
 :menu010Editor
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start 010_Editor_A.lnk&set input=31A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start 010_Editor_R.lnk&set input=31R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start 010_Editor_I.exe&set input=31I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5472,7 +5472,7 @@ echo Would you like to run/install/uninstall MATLAB ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuMATLAB
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start MATLAB_A.lnk&set input=32A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start MATLAB_R.lnk&set input=32R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start MATLAB_I.lnk&set input=32I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5527,7 +5527,7 @@ echo Input the Octave interface (GUI/CLI) you wish to run at the time ("G/C"). I
 echo.
 goto :eof
 :menuOctave
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU GA start GUI_Octave_A.lnk&set input=33GA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GR start GUI_Octave_R.lnk&set input=33GR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GI start Octave_I.exe&set input=33GI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5602,7 +5602,7 @@ echo Would you like to run/install/uninstall GNU Octave [GUI] ("R/I/O")? Input z
 echo.
 goto :eof
 :menuGUIOctave
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start GUI_Octave_A.lnk&set input=33GA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start GUI_Octave_R.lnk&set input=33GR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Octave_I.exe&set input=33GI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5677,7 +5677,7 @@ echo Would you like to administrate/run/install/uninstall GNU Octave [CLI] ("A/R
 echo.
 goto :eof
 :menuCLIOctave
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A1 start CLI_Directory.txt&set input=33CA1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AY start CLI_Octave_A.lnk&set input=33CAY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU AN start CLI_Octave_A.lnk&set input=33CAN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5773,7 +5773,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuCLIOctaveRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=33CA1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start CLI_Octave_A.lnk&set input=33CAY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start CLI_Octave_A.lnk&set input=33CAN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5864,7 +5864,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuCLIOctaveRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=33CR1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start CLI_Octave_R.lnk&set input=33CRY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start CLI_Octave_R.lnk&set input=33CRN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5914,7 +5914,7 @@ echo Would you like to administrate/run/install/uninstall Metasploit Console ("A
 echo.
 goto :eof
 :menuMetasploit
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A1 start CLI_Directory.txt&set input=34A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AY start Metasploit_A.lnk&set input=34AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU AN start Metasploit_A.lnk&set input=34AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -5970,7 +5970,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuMetasploitRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=34A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start Metasploit_A.lnk&set input=34AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start Metasploit_A.lnk&set input=34AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6021,7 +6021,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuMetasploitRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=34R1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start Metasploit_R.lnk&set input=34RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start Metasploit_R.lnk&set input=34RN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6071,7 +6071,7 @@ echo Would you like to administrate/run/install/uninstall Cygwin Console ("A/R/I
 echo.
 goto :eof
 :menuCygwin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A1 start CLI_Directory.txt&set input=35A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AY start Cygwin_A.lnk&set input=35AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU AN start Cygwin_A.lnk&set input=35AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6127,7 +6127,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuCygwinRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=35A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start Cygwin_A.lnk&set input=35AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start Cygwin_R.lnk&set input=35AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6178,7 +6178,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuCygwinRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=35R1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start Cygwin_R.lnk&set input=35RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start Cygwin_R.lnk&set input=35RN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6228,7 +6228,7 @@ echo Would you like to administrate/run/install/uninstall Python Console ("A/R/I
 echo.
 goto :eof
 :menuPython
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A1 start CLI_Directory.txt&set input=36A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AY start Python_A.lnk&set input=36AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU AN start Python_A.lnk&set input=36AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6284,7 +6284,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuPythonRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=36A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start Python_A.lnk&set input=36AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start Python_A.lnk&set input=36AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6335,7 +6335,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuPythonRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=36R1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start Python_R.lnk&set input=36RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start Python_R.lnk&set input=36RN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6385,7 +6385,7 @@ echo Would you like to administrate/run/install/uninstall PowerShell Console ("A
 echo.
 goto :eof
 :menuPowerShell
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A1 start CLI_Directory.txt&set input=37A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AY start PowerShell_A.lnk&set input=37AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU AN start PowerShell_A.lnk&set input=37AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6441,7 +6441,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuPowerShellRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=37A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start PowerShell_A.lnk&set input=37AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start PowerShell_A.lnk&set input=37AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6492,7 +6492,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuPowerShellRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=37R1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start PowerShell_R.lnk&set input=37RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start PowerShell_R.lnk&set input=37RN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6542,7 +6542,7 @@ echo Would you like to administrate/run the Command Prompt Console ("A/R")? Inpu
 echo.
 goto :eof
 :menuCommand
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A1 start CLI_Directory.txt&set input=38A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AY start Command_Prompt_A.lnk&set input=38AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU AN start Command_Prompt_A.lnk&set input=38AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6596,7 +6596,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuCommandRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=38A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start Command_Prompt_A.lnk&set input=38AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start Command_Prompt_A.lnk&set input=38AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6647,7 +6647,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuCommandRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start CLI_Directory.txt&set input=38R1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start Command_Prompt_R.lnk&set input=38RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start Command_Prompt_R.lnk&set input=38RN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -6656,7 +6656,7 @@ goto :eof
 :start3AltA
 call :banner
 call :menu3AltAScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu3AltA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -6899,7 +6899,7 @@ echo Would you like to run/install/uninstall Rider ("R/I/O")? Input zero ("0") t
 echo.
 goto :eof
 :menuRider
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Rider_A.lnk&set input=391A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Rider_R.lnk&set input=391R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start Rider_I.exe&set input=391IA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -7012,7 +7012,7 @@ echo Please input the letter to install Rider or the entire dotUltimate bundle (
 echo.
 goto :eof
 :menuRiderInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Rider_I.exe&set input=391IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start dotUltimate_I.exe&set input=391IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -7087,7 +7087,7 @@ echo Would you like to run/install/uninstall RustRover ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuRustRover
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start RustRover_A.lnk&set input=392A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start RustRover_R.lnk&set input=392R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start RustRover_I.exe&set input=392I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -7164,7 +7164,7 @@ echo Would you like to run/install/uninstall WebStorm ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuWebStorm
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WebStorm_A.lnk&set input=393A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WebStorm_R.lnk&set input=393R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WebStorm_I.exe&set input=393I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -7246,7 +7246,7 @@ echo Would you like to run/install/uninstall dotPeek ("R/I/O")? Input zero ("0")
 echo.
 goto :eof
 :menudotPeek
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dotPeek_A.lnk&set input=394A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start dotPeek_R.lnk&set input=394R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start dotPeek_I.exe&set input=394IA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -7359,7 +7359,7 @@ echo Please input the letter to install dotPeek or the entire dotUltimate bundle
 echo.
 goto :eof
 :menudotPeekInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dotPeek_I.exe&set input=394IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start dotUltimate_I.exe&set input=394IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -7439,7 +7439,7 @@ echo Would you like to run/install/uninstall dotCover ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menudotCover
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dotCover_A.lnk&set input=395A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start dotCover_R.lnk&set input=395R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start dotCover_I.exe&set input=395IA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -7552,7 +7552,7 @@ echo Please input the letter to install dotCover or the entire dotUltimate bundl
 echo.
 goto :eof
 :menudotCoverInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dotCover_I.exe&set input=395IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start dotUltimate_I.exe&set input=395IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -7632,7 +7632,7 @@ echo Would you like to run/install/uninstall dotMemory ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menudotMemory
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dotMemory_A.lnk&set input=396A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start dotMemory_R.lnk&set input=396R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start dotMemory_I.exe&set input=396IA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -7745,7 +7745,7 @@ echo Please input the letter to install dotMemory or the entire dotUltimate bund
 echo.
 goto :eof
 :menudotMemoryInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dotMemory_I.exe&set input=396IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start dotUltimate_I.exe&set input=396IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -7825,7 +7825,7 @@ echo Would you like to run/install/uninstall dotTrace ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menudotTrace
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dotTrace_A.lnk&set input=397A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start dotTrace_R.lnk&set input=397R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start dotTrace_I.exe&set input=397IA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -7938,7 +7938,7 @@ echo Please input the letter to install dotTrace or the entire dotUltimate bundl
 echo.
 goto :eof
 :menudotTraceInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dotTrace_I.exe&set input=397IA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start dotUltimate_I.exe&set input=397IB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -7946,7 +7946,7 @@ goto :eof
 :start3AltB
 call :banner
 call :menu3AltBScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu3AltB
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -8184,7 +8184,7 @@ echo Would you like to run/install/uninstall Aqua ("R/I/O")? Input zero ("0") to
 echo.
 goto :eof
 :menuAqua
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Aqua_A.lnk&set input=3981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Aqua_R.lnk&set input=3981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Aqua_I.exe&set input=3981I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -8281,7 +8281,7 @@ echo Input the letter for ReSharper Traditional/C++ ("T/C")? Input zero ("0") to
 echo.
 goto :eof
 :menuReSharper
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU TA start ReSharper_A.lnk&set input=3982TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TR start ReSharper_R.lnk&set input=3982TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TIA start ReSharper_I.exe&set input=3982TIA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -8424,7 +8424,7 @@ echo Would you like to run/install/uninstall Resharper Traditional ("R/I/O")? In
 echo.
 goto :eof
 :menuReSharperTraditional
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start ReSharper_A.lnk&set input=3982TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start ReSharper_R.lnk&set input=3982TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start ReSharper_I.exe&set input=3982TIA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -8637,7 +8637,7 @@ echo Please input the letter to install ReSharper or the entire dotUltimate bund
 echo.
 goto :eof
 :menuReSharperTraditionalInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start ReSharper_I.exe&set input=3982TIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start dotUltimate_I.exe&set input=3982TIB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -8772,7 +8772,7 @@ echo Would you like to run/install/uninstall Resharper C++ ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuReSharperCpp
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Resharper_Cpp_A.lnk&set input=3982CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Resharper_Cpp_R.lnk&set input=3982CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IA start Resharper_Cpp_I.exe&set input=3982CIA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -8985,7 +8985,7 @@ echo Please input the letter to install ReSharper or the entire dotUltimate bund
 echo.
 goto :eof
 :menuReSharperCppInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start ReSharper_I.exe&set input=3982CIA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start dotUltimate_I.exe&set input=3982CIB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -9060,7 +9060,7 @@ echo Would you like to run/install/uninstall CLion ("R/I/O")? Input zero ("0") t
 echo.
 goto :eof
 :menuCLion
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start CLion_A.lnk&set input=3983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start CLion_R.lnk&set input=3983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start CLion_I.exe&set input=3983I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9137,7 +9137,7 @@ echo Would you like to run/install/uninstall DataGrip ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuDataGrip
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start DataGrip_A.lnk&set input=3984A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start DataGrip_R.lnk&set input=3984R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start DataGrip_I.exe&set input=3984I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9214,7 +9214,7 @@ echo Would you like to run/install/uninstall DataSpell ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuDataSpell
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start DataSpell_A.lnk&set input=3985A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start DataSpell_R.lnk&set input=3985R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start DataSpell_I.exe&set input=3985I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9291,7 +9291,7 @@ echo Would you like to run/install/uninstall PyCharm ("R/I/O")? Input zero ("0")
 echo.
 goto :eof
 :menuPyCharm
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PyCharm_A.lnk&set input=3986A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PyCharm_R.lnk&set input=3986R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PyCharm_I.exe&set input=3986I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9368,7 +9368,7 @@ echo Would you like to run/install/uninstall IntelliJ IDEA ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuIntelliJIDEA
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start IntelliJIDEA_A.lnk&set input=3987A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start IntelliJIDEA_R.lnk&set input=3987R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start IntelliJIDEA_I.exe&set input=3987I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9378,7 +9378,7 @@ goto :eof
 :start3AltC
 call :banner
 call :menu3AltCScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu3AltC
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -9616,7 +9616,7 @@ echo Would you like to run/install/uninstall PhpStorm ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuPhpStorm
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PhpStorm_A.lnk&set input=3991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PhpStorm_R.lnk&set input=3991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PhpStorm_I.exe&set input=3991I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9693,7 +9693,7 @@ echo Would you like to run/install/uninstall GoLand ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuGoLand
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start GoLand_A.lnk&set input=3992A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start GoLand_R.lnk&set input=3992R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start GoLand_I.exe&set input=3992I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9770,7 +9770,7 @@ echo Would you like to run/install/uninstall RubyMine ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuRubyMine
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start RubyMine_A.lnk&set input=3993A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start RubyMine_R.lnk&set input=3993R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start RubyMine_I.exe&set input=3993I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9847,7 +9847,7 @@ echo Would you like to run/install/uninstall Gateway ("R/I/O")? Input zero ("0")
 echo.
 goto :eof
 :menuGateway
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Gateway_A.lnk&set input=3994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Gateway_R.lnk&set input=3994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Gateway_I.exe&set input=3994I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9924,7 +9924,7 @@ echo Would you like to run/install/uninstall Meta Programming System ("R/I/O")? 
 echo.
 goto :eof
 :menuMetaProgrammingSystem
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start MetaProgrammingSystem_A.lnk&set input=3995A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start MetaProgrammingSystem_R.lnk&set input=3995R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start MetaProgrammingSystem_I.exe&set input=3995I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10001,7 +10001,7 @@ echo Would you like to run/install/uninstall Toolbox ("R/I/O")? Input zero ("0")
 echo.
 goto :eof
 :menuToolbox
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Toolbox_A.lnk&set input=3996A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Toolbox_R.lnk&set input=3996R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Toolbox_I.exe&set input=3996I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10078,7 +10078,7 @@ echo Would you like to run/install/uninstall Writerside ("R/I/O")? Input zero ("
 echo.
 goto :eof
 :menuWriterside
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Writerside_A.lnk&set input=3997A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Writerside_R.lnk&set input=3997R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Writerside_I.exe&set input=3997I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10088,7 +10088,7 @@ goto :eof
 :start4
 call :banner
 call :menu4Screen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu4
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -10150,8 +10150,8 @@ if /I %input% EQU 6R start Unity_Hub_R.lnk&set input=46R&&goto startPreExitPromp
 if /I %input% EQU 6I start Unity_Hub_I.exe&set input=46I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 6O start Unity_Hub_O.lnk&set input=46O&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7 cls&goto startGodotPrompt
-if /I %input% EQU 7A start Godot_Launch_Script_A.bat&set input=47A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 7R start Godot_Launch_Script_R.bat&set input=47R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 7A start /min Godot_Launch_Script_A.bat&set input=47A&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU 7R start /min Godot_Launch_Script_R.bat&set input=47R&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8 cls&goto startSlc3rToolsPrompt
 if /I %input% EQU 8C cls&goto startSlic3rPromptSubDialerMode
 if /I %input% EQU 8CA start Slic3r_A.lnk&set input=48CA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10271,7 +10271,7 @@ echo Would you like to run/install/uninstall VMware Workstation ("R/I/O")? Input
 echo.
 goto :eof
 :menuVMwareWorkstation
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start VMware_Workstation_A.lnk&set input=41A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start VMware_Workstation_R.lnk&set input=41R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start VMware_Workstation_I.exe&set input=41R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10318,7 +10318,7 @@ echo Would you like to run/install/uninstall Docker Desktop ("R/I/O")? Input zer
 echo.
 goto :eof
 :menuDockerDesktop
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Docker_Desktop_A.lnk&set input=42A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Docker_Desktop_R.lnk&set input=42R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Docker_Desktop_I.exe&set input=42I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10365,7 +10365,7 @@ echo Would you like to run/[install and uninstall] Amiga Forever ("R/I/O")? Inpu
 echo.
 goto :eof
 :menuAmigaForever
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Amiga_Forever_A.lnk&set input=43A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Amiga_Forever_R.lnk&set input=43R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Amiga_Forever_I.msi&set input=43I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10412,7 +10412,7 @@ echo Would you like to run/install/uninstall Pure Data ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuPureData
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Pure_Data_A.lnk&set input=44A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Pure_Data_R.lnk&set input=44R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Pure_Data_I.exe&set input=44I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10459,7 +10459,7 @@ echo Would you like to run/install/uninstall CRYENGINE ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuCRYENGINElauncher
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start CRYENGINE_Launcher_A.lnk&set input=45A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start CRYENGINE_Launcher_R.lnk&set input=45R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start CRYENGINE_Launcher_I.exe&set input=45I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10506,7 +10506,7 @@ echo Would you like to run/install/uninstall Unity Hub ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuUnityHub
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Unity_Hub_A.lnk&set input=46A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Unity_Hub_R.lnk&set input=46R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Unity_Hub_I.exe&set input=46I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10538,7 +10538,7 @@ echo  Author/Developer: Juan Linietsky and Ariel Manzur
 echo     Software Type: Cross-platform 2D/3D Game Engine
 echo          Category: Freeware
 echo      License Type: MIT License
-echo           Website: https://godotengine.org/
+echo           Website: https://godotengine.org/; Steam: https://store.steampowered.com/app/404790/Godot_Engine/
 echo  Founded/Released: 01/14/2014
 echo         Publicity: Public
 echo            Status: Active
@@ -10546,16 +10546,16 @@ echo    Current Update:
 echo        Patch Date: 
 echo  Target Filenames: Godot_R.lnk
 echo   Additional Info: The Godot Console Executable requires exactly the "Godot.exe" executable next to it in order to use.
-echo                 +: 
+echo                 +: Also found on Steam.
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
 echo Would you like to run Godot Engine ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuGodot
-set /p input=%BS%
-if /I %input% EQU A start Godot_Launch_Script_A.bat&set input=47A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start Godot_Launch_Script_R.bat&set input=47R&&goto startPreExitPrompt||goto startFailedExitPrompt
+set /P input=%BS%
+if /I %input% EQU A start /min Godot_Launch_Script_A.bat&set input=47A&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start /min Godot_Launch_Script_R.bat&set input=47R&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
 goto :eof
 :startSlic3rToolsPrompt
 call :banner
@@ -10604,7 +10604,7 @@ echo Input the letter ("C/S/V") for Slic3r/Prusa Slicer/Prusa G-Code Viewer. Inp
 echo.
 goto :eof
 :menuSlic3rTools
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU CA start Slic3r_A.lnk&set input=48CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CR start Slic3r_R.lnk&set input=48CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU SA start PrusaSlicer_A.lnk&set input=48SA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10677,7 +10677,7 @@ echo Would you like to run/install/uninstall Slic3r ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuSlic3r
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Slic3r_A.lnk&set input=48CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Slic3r_R.lnk&set input=48CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -10742,7 +10742,7 @@ echo Would you like to run/install/uninstall Prusa Slicer ("R/I/O")? Input zero 
 echo.
 goto :eof
 :menuPrusaSlicer
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PrusaSlicer_A.lnk&set input=48SA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PrusaSlicer_R.lnk&set input=48SR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Prusa_I.exe&set input=48SI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10809,7 +10809,7 @@ echo Would you like to run/install/uninstall Prusa G-code Viewer ("R/I/O")? Inpu
 echo.
 goto :eof
 :menuPrusaG-codeViewer
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Prusa_G-code_Viewer_A.lnk&set input=48VA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Prusa_G-code_Viewer_R.lnk&set input=48VR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Prusa_I.exe&set input=48VI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -10819,7 +10819,7 @@ goto :eof
 :start4Alt
 call :banner
 call :menu4AltScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu4Alt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -10969,7 +10969,7 @@ echo Would you like to run/install/uninstall/setup Autodesk AutoCAD ("R/I/O/S")?
 echo.
 goto :eof
 :menuAutoCAD
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start AutoCAD_A.lnk&set input=491A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start AutoCAD_R.lnk&set input=491R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I1 start AutoCAD_I.exe&set input=491I1&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11043,7 +11043,7 @@ echo Would you like to install the program itself or the offline help module ("1
 echo.
 goto :eof
 :menuAutoCADinstall
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1 start AutoCAD_I.exe&set input=491I1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2 start AutoCAD_OfflineHelp_I.exe&set input=491I2&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -11098,7 +11098,7 @@ echo Would you like to run/install/uninstall/setup AutoCAD Electrical ("R/I/O/S"
 echo.
 goto :eof
 :menuAutoCADElectrical
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start AutoCAD_Electrical_A.lnk&set input=492A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start AutoCAD_Electrical_R.lnk&set input=492R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start AutoCAD_Electrical_I.exe&set input=492I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11156,7 +11156,7 @@ echo Would you like to run/install/uninstall/setup AutoCAD Mechanical ("R/I/O/S"
 echo.
 goto :eof
 :menuAutoCADMechanical
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start AutoCAD_Mechanical_A.lnk&set input=493A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start AutoCAD_Mechanical_R.lnk&set input=493R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start AutoCAD_Mechanical_I.exe&set input=493I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11214,7 +11214,7 @@ echo Would you like to run/install/uninstall/setup SolidWorks 3D CAD Design ("R/
 echo.
 goto :eof
 :menuSolidWorks3DCADDesign
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Solidworks_3D_CAD_Design_A.lnk&set input=494A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Solidworks_3D_CAD_Design_R.lnk&set input=494R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Solidworks_3D_CAD_Design_I.exe&set input=494I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11272,7 +11272,7 @@ echo Would you like to run/install/uninstall/setup Autodesk Fusion 360 ("R/I/O/S
 echo.
 goto :eof
 :menuAutodeskFusion360
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Autodesk_Fusion_360_A.lnk&set input=495A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Autodesk_Fusion_360_R.lnk&set input=495R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Autodesk_Fusion_360_I.exe&set input=495I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11330,7 +11330,7 @@ echo Would you like to run/install/uninstall/setup Autodesk Civil 3D ("R/I/O/S")
 echo.
 goto :eof
 :menuAutodeskCivil3D
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Autodesk_Civil_3D_A.lnk&set input=496A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Autodesk_Civil_3D_R.lnk&set input=496R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Autodesk_Civil_3D_I.exe&set input=496I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11388,7 +11388,7 @@ echo Would you like to run/install/uninstall/setup Autodesk FeatureCAM ("R/I/O/S
 echo.
 goto :eof
 :menuAutodeskFeatureCAM
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Autodesk_FeatureCAM_A.lnk&set input=497A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Autodesk_FeatureCAM_R.lnk&set input=497R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Autodesk_FeatureCAM_I.exe&set input=497I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11446,7 +11446,7 @@ echo Would you like to run/install/uninstall/setup Autodesk Maya ("R/I/O/S")? In
 echo.
 goto :eof
 :menuAutodeskMaya
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Autodesk_Maya_A.lnk&set input=498A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Autodesk_Maya_R.lnk&set input=498R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Autodesk_Maya_I.exe&set input=498I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11504,7 +11504,7 @@ echo Would you like to run/install/uninstall/setup Tekla Structures ("R/I/O/S")?
 echo.
 goto :eof
 :menuTeklaStructures
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Tekla_Structures_A.lnk&set input=499A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Tekla_Structures_R.lnk&set input=499R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Tekla_Structures_I.exe&set input=499I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11515,7 +11515,7 @@ goto :eof
 :start5
 call :banner
 call :menu5Screen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu5
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -11585,6 +11585,11 @@ if /I %input% EQU 8R start Photoline_R.lnk&set input=58R&&goto startPreExitPromp
 if /I %input% EQU 8I start Photoline_I.exe&set input=58I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8O start Photoline_O.lnk&set input=58O&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9 cls&goto startVideoAndMotionCaptureStudiosPrompt
+if /I %input% EQU 9B cls&goto startBlenderPromptSubDialerMode
+if /I %input% EQU 9BA start Blender_A.lnk&set input=59BA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9BR start Blender_R.lnk&set input=59BR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9BI start Blender_I.exe&set input=59BI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 9BO cls&set input=59BO&goto startUninstallationInstructions
 if /I %input% EQU 9D cls&goto startDaVinciResolvePromptSubDialerMode
 if /I %input% EQU 9DA start DaVinci_Resolve_A.lnk&set input=59DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 9DR start DaVinci_Resolve_R.lnk&set input=59DR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11648,7 +11653,7 @@ echo Would you like to run/install/uninstall Android Studio ("R/I/O")? Input zer
 echo.
 goto :eof
 :menuAndroidStudio
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Android_Studio_A.lnk&set input=51A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Android_Studio_R.lnk&set input=51R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Android_Studio_I.exe&set input=51I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11695,7 +11700,7 @@ echo Would you like to run/install/uninstall Hex-Rays IDA Professional ("R/I/O")
 echo.
 goto :eof
 :menuHex-RaysIDA
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Hex-Rays_IDA_A.lnk&set input=52A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Hex-Rays_IDA_R.lnk&set input=52R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Hex-Rays_IDA_I.exe&set input=52I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11742,7 +11747,7 @@ echo Would you like to run Ghidra from NSA ("R")? Requires Ghidra to be manually
 echo.
 goto :eof
 :menuGhidra
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Ghidra_A.lnk&set input=53A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Ghidra_R.lnk&set input=53R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -11787,7 +11792,7 @@ echo Would you like to run/install/uninstall ON1 Photo RAW ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuON1PhotoRAW
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start ON1_Photo_RAW_A.lnk&set input=54A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start ON1_Photo_RAW_R.lnk&set input=54R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start ON1_Photo_RAW_I.exe&set input=54I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11834,7 +11839,7 @@ echo Would you like to run/install/uninstall PlayerFab ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuPlayerFab
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PlayerFab_A.lnk&set input=55A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PlayerFab_R.lnk&set input=55R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PlayerFab_I.exe&set input=55I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11881,7 +11886,7 @@ echo Would you like to run/install/uninstall StreamFab ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuStreamFab
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start StreamFab_A.lnk&set input=56A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start StreamFab_R.lnk&set input=56R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start StreamFab_I.exe&set input=56I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11928,7 +11933,7 @@ echo Would you like to run/install/uninstall Avid Pro Tools ("R/I/O")? Input zer
 echo.
 goto :eof
 :menuAvidProTools
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Avid_Pro_Tools_A.lnk&set input=57A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Avid_Pro_Tools_R.lnk&set input=57R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Avid_Pro_Tools_I.lnk&set input=57I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11975,7 +11980,7 @@ echo Would you like to run/install/uninstall Photoline ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuPhotoline
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Photoline_A.lnk&set input=58A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Photoline_R.lnk&set input=58R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Photoline_I.exe&set input=58I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -11988,6 +11993,7 @@ call :menuVideoAndMotionCaptureStudios
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start5
+if /I %input% EQU B cls&goto startBlenderPrompt1
 if /I %input% EQU D cls&goto startDaVinciResolvePrompt1
 if /I %input% EQU E cls&goto startRemocappStudioPrompt1
 if /I %input% EQU K cls&goto startRokokoStudioPrompt1
@@ -12001,6 +12007,7 @@ call :menuVideoAndMotionCaptureStudios
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU B cls&goto startBlenderPrompt2
 if /I %input% EQU D cls&goto startDaVinciResolvePrompt2
 if /I %input% EQU E cls&goto startRemocappStudioPrompt2
 if /I %input% EQU K cls&goto startRokokoStudioPrompt2
@@ -12019,16 +12026,20 @@ echo         Publicity: Public
 echo            Status: Active
 echo    Current Update: 
 echo        Patch Date: 
-echo  Target Filenames: DaVinci_Resolve_R.lnk, DaVinci_Resolve_I.exe, DaVinci_Resolve_O.lnk
-echo                 +: Remocapp_Studio_R.lnk, Remocapp_Studio_I.exe, Remocapp_Studio_O.lnk
-echo                 +: Rokoko_Studio_R.lnk, Rokoko_Studio_I.exe, Rokoko_Studio_O.lnk
+echo  Target Filenames: Blender_R.lnk, Blender_I.msi, DaVinci_Resolve_R.lnk, DaVinci_Resolve_I.exe, DaVinci_Resolve_O.lnk,
+echo                 +: Remocapp_Studio_R.lnk, Remocapp_Studio_I.exe, Remocapp_Studio_O.lnk, Rokoko_Studio_R.lnk,
+echo                 +: Rokoko_Studio_I.exe, Rokoko_Studio_O.lnk
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
-echo Input the letter ("D/E/K") for DaVinci Resolve/Remocapp Studio/Rokoko Studio. Input zero ("0") to cancel.
+echo Input the letter ("B/D/E/K") for Blender/DaVinci Resolve/Remocapp Studio/Rokoko Studio. Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuVideoAndMotionCaptureStudios
-set /p input=%BS%
+set /P input=%BS%
+if /I %input% EQU BA start Blender_A.lnk&set input=59BA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU BR start Blender_R.lnk&set input=59BR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU BI start Blender_I.msi&set input=59BI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU BO cls&set input=59BO&goto startUninstallationInstructions
 if /I %input% EQU DA start DaVinci_Resolve_A.lnk&set input=59DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DR start DaVinci_Resolve_R.lnk&set input=59DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DI start DaVinci_Resolve_I.exe&set input=59DI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12041,6 +12052,73 @@ if /I %input% EQU KA start Rokoko_Studio_A.lnk&set input=59KA&&goto startPreExit
 if /I %input% EQU KR start Rokoko_Studio_R.lnk&set input=59KR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU KI start Rokoko_Studio_I.exe&set input=59KI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU KO start Rokoko_Studio_O.lnk&set input=59KO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startBlenderPrompt1
+call :banner
+call :menuBlenderPrompt
+call :menuBlender
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startVideoAndMotionCaptureStudiosPrompt
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startBlenderPrompt1
+:startBlenderPrompt2
+call :banner
+call :menuBlenderPrompt
+call :menuBlender
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startVideoAndMotionCaptureStudiosPromptDialerMode
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startBlenderPrompt2
+:startBlenderPromptSubDialerMode
+call :banner
+call :menuBlenderPrompt
+call :menuBlender
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start5
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startBlenderPromptSubDialerMode
+:startBlenderPromptDialerMode
+call :banner
+call :menuBlenderPrompt
+call :menuBlender
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start5
+if /I %input% EQU +- cls&goto start5
+cls&goto startBlenderPromptDialerMode
+:menuBlenderPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: formerly under Ton Roosendaal, now under the Blender Foundation and its contributors
+echo     Software Type: 3D Computer Graphics Software Tool
+echo          Category: Freeware
+echo      License Type: GPL-2.0-or-later
+echo           Website: https://www.blender.org/; Steam: https://store.steampowered.com/app/365670/Blender/
+echo  Founded/Released: 01/02/1994
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Blender_R.lnk, Blender_I.msi
+echo   Additional Info: Also found on Steam.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Blender ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuBlender
+set /P input=%BS%
+if /I %input% EQU A start Blender_A.lnk&set input=59BA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Blender_R.lnk&set input=59BR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Blender_I.msi&set input=59BI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=59BO&goto startUninstallationInstructions
 goto :eof
 :startDaVinciResolvePrompt1
 call :banner
@@ -12103,7 +12181,7 @@ echo Would you like to run/install/uninstall DaVinci Resolve ("R/I/O")? Input ze
 echo.
 goto :eof
 :menuDaVinciResolve
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start DaVinci_Resolve_A.lnk&set input=59DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start DaVinci_Resolve_R.lnk&set input=59DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start DaVinci_Resolve_I.exe&set input=59DI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12170,7 +12248,7 @@ echo Would you like to run/install/uninstall Remocapp Studio ("R/I/O")? Input ze
 echo.
 goto :eof
 :menuRemocappStudio
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Remocapp_Studio_A.lnk&set input=59EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Remocapp_Studio_R.lnk&set input=59ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Remocapp_Studio_I.exe&set input=59EI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12237,7 +12315,7 @@ echo Would you like to run/install/uninstall Rokoko Studio ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuRokokoStudio
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Rokoko_Studio_A.lnk&set input=59KA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Rokoko_Studio_R.lnk&set input=59KR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Rokoko_Studio_I.exe&set input=59KI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12247,7 +12325,7 @@ goto :eof
 :start6a
 call :banner
 call :menu6aScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu6a
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -12427,7 +12505,7 @@ echo Would you like to run/install/uninstall Steam Games/Workshop ("R/I/O")? Inp
 echo.
 goto :eof
 :menuSteam
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Steam_Games_Launcher_A.lnk&set input=61A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Steam_Games_Launcher_R.lnk&set input=61R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Steam_Games_Launcher_I.exe&set input=61I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12484,7 +12562,7 @@ echo Would you like to run/install/uninstall Epic Games/Unreal Engine ("R/I/O")?
 echo.
 goto :eof
 :menuEpicGames
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Epic_Games_Launcher_A.lnk&set input=62A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Epic_Games_Launcher_R.lnk&set input=62R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Epic_Games_Launcher_I.msi&set input=62I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12550,7 +12628,7 @@ echo Input the letter ("U/E/G") for Ubisoft Connect/Electronic Arts/GOG Game Sto
 echo.
 goto :eof
 :menuUbisoftElectronicArtsGOG
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU UA start Ubisoft_Connect_A.lnk&set input=63UA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UR start Ubisoft_Connect_R.lnk&set input=63UR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UI start Ubisoft_Connect_I.exe&set input=63UI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12645,7 +12723,7 @@ echo Would you like to run/install/uninstall Ubisoft Connect/Gaming SMS ("R/I/O"
 echo.
 goto :eof
 :menuUbisoftConnect
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Ubisoft_Connect_A.lnk&set input=63UA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Ubisoft_Connect_R.lnk&set input=63UR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Ubisoft_Connect_I.exe&set input=63UI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12732,7 +12810,7 @@ echo Would you like to run/install/uninstall Electronic Arts Game Store ("R/I/O"
 echo.
 goto :eof
 :menuElectronicArts
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Electronic_Arts_Launcher_A.lnk&set input=63EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Electronic_Arts_Launcher_R.lnk&set input=63ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Electronic_Arts_Launcher_I.exe&set input=63EI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12819,7 +12897,7 @@ echo Would you like to run/install/uninstall GOG Game Store ("R/I/O")? Input zer
 echo.
 goto :eof
 :menuGoodOldGames
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start GOG_Galaxy_Launcher_A.lnk&set input=63GA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start GOG_Galaxy_Launcher_R.lnk&set input=63GR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start GOG_Galaxy_Launcher_I.exe&set input=63GI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12876,7 +12954,7 @@ echo Would you like to run/install/uninstall Bluestacks/Android VM ("R/I/O")? In
 echo.
 goto :eof
 :menuBlueStacks
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start BlueStacks_A.lnk&set input=64A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start BlueStacks_R.lnk&set input=64R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start BlueStacks_I.exe&set input=64I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12933,7 +13011,7 @@ echo Would you like to run/install/uninstall Chess Arena ("R/I/O")? Input zero (
 echo.
 goto :eof
 :menuArena
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Arena_A.lnk&set input=65A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Arena_R.lnk&set input=65R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Arena_I.exe&set input=65I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -12993,7 +13071,7 @@ echo Would you like to run/install/uninstall Go ("R/I/O")? Input zero ("0") to c
 echo.
 goto :eof
 :menuGoBoardGame
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Go_A.lnk&set input=66A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Go_R.lnk&set input=66R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IE start Go_I.exe&set input=66IE&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13066,7 +13144,7 @@ echo Is the Go installer an EXE/MSI file ("E/M")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuGoBoardGameInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU E start Go_I.exe&set input=66IE&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU M start Go_I.msi&set input=66IM&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -13121,7 +13199,7 @@ echo Would you like to run Inkball ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuInkball
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Inkball_A.lnk&set input=67A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Inkball_R.lnk&set input=67R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -13176,7 +13254,7 @@ echo Would you like to run/install Rise of Legends ("R/I")? Input zero ("0") to 
 echo.
 goto :eof
 :menuRiseOfLegends
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Rise_of_Legends_A.lnk&set input=68A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Rise_of_Legends_R.lnk&set input=68R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Rise_of_Legends_I.lnk&set input=68I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13185,7 +13263,7 @@ goto :eof
 :start6b
 call :banner
 call :menu6bScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu6b
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -13367,7 +13445,7 @@ echo Would you like to run/install/uninstall FreeCell from the collection ("R/I/
 echo.
 goto :eof
 :menuFreeCell
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start FreeCell_A.lnk&set input=691A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start FreeCell_R.lnk&set input=691R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=691I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13424,7 +13502,7 @@ echo Would you like to run/install/uninstall Hearts from the collection ("R/I/O"
 echo.
 goto :eof
 :menuHearts
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Hearts_A.lnk&set input=692A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Hearts_R.lnk&set input=692R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=692I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13481,7 +13559,7 @@ echo Would you like to run/install/uninstall Minesweeper from the collection ("R
 echo.
 goto :eof
 :menuMinesweeper
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Minesweeper_A.lnk&set input=693A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Minesweeper_R.lnk&set input=693R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=693I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13538,7 +13616,7 @@ echo Would you like to run/install/uninstall Mahjong Titans from the collection 
 echo.
 goto :eof
 :menuMahjongTitans
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Mahjong_Titans_A.lnk&set input=694A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Mahjong_Titans_R.lnk&set input=694R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=694I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13595,7 +13673,7 @@ echo Would you like to run/install/uninstall Chess Titans from the collection ("
 echo.
 goto :eof
 :menuChessTitans
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Chess_Titans_A.lnk&set input=695A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Chess_Titans_R.lnk&set input=695R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=695I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13652,7 +13730,7 @@ echo Would you like to run/install/uninstall Purble Place from the collection ("
 echo.
 goto :eof
 :menuPurblePlace
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Purble_Place_A.lnk&set input=696A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Purble_Place_R.lnk&set input=696R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=696I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13709,7 +13787,7 @@ echo Would you like to run/install/uninstall Solitaire from the collection ("R/I
 echo.
 goto :eof
 :menuSolitaire
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Solitaire_A.lnk&set input=697A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Solitaire_R.lnk&set input=697R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=697I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13766,7 +13844,7 @@ echo Would you like to run/install/uninstall Spider Solitaire from the collectio
 echo.
 goto :eof
 :menuSpiderSolitaire
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Spider_Solitaire_A.lnk&set input=698A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Spider_Solitaire_R.lnk&set input=698R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=698I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -13776,7 +13854,7 @@ goto :eof
 :start7a
 call :banner
 call :menu7aScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu7a
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -13952,7 +14030,7 @@ echo Would you like to run/install/uninstall WinRAR ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuWinRAR
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WinRAR_A.lnk&set input=71A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WinRAR_R.lnk&set input=71R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinRAR_I.exe&set input=71I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14009,7 +14087,7 @@ echo Would you like to run/install/uninstall PeaZip ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuPeaZip
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PeaZip_A.lnk&set input=72A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PeaZip_R.lnk&set input=72R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PeaZip_I.exe&set input=72I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14066,7 +14144,7 @@ echo Would you like to run/install/uninstall Bandizip ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuBandizip
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Bandizip_A.lnk&set input=73A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Bandizip_R.lnk&set input=73R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Bandizip_I.exe&set input=73I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14123,7 +14201,7 @@ echo Would you like to run/install/uninstall ALZip ("R/I/O")? Input zero ("0") t
 echo.
 goto :eof
 :menuALZip
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start ALZip_A.lnk&set input=74A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start ALZip_R.lnk&set input=74R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start ALZip_I.exe&set input=74I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14180,7 +14258,7 @@ echo Would you like to run/install/uninstall PowerArchiver ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuPowerArchiver
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PowerArchiver_A.lnk&set input=75A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PowerArchiver_R.lnk&set input=75R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PowerArchiver_I.exe&set input=75I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14243,7 +14321,7 @@ echo Input the letters ("T/L") to manage Forensic Toolkit/Language Selector. Inp
 echo.
 goto :eof
 :menuForensicToolkitSetup
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU TA start Forensic_Toolkit_A.lnk&set input=76TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TR start Forensic_Toolkit_R.lnk&set input=76TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI start Forensic_Toolkit_I.lnk&set input=76TI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14334,7 +14412,7 @@ echo Would you like to run/install/uninstall Forensic Toolkit ("R/I/O")? Input z
 echo.
 goto :eof
 :menuForensicToolkit
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Forensic_Toolkit_A.lnk&set input=76TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Forensic_Toolkit_R.lnk&set input=76TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Forensic_Toolkit_I.lnk&set input=76TI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14421,7 +14499,7 @@ echo Would you like to run/install/uninstall FTK Language Selector ("R/I/O")? In
 echo.
 goto :eof
 :menuFTKLanguage
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start FTK_Language_A.lnk&set input=76LA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start FTK_Language_R.lnk&set input=76LR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start FTK_Language_I.lnk&set input=76LI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14478,7 +14556,7 @@ echo Would you like to run/[install and uninstall] Passware Kit Forensic ("R/I/O
 echo.
 goto :eof
 :menuPasswareKit
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Passware_Kit_A.lnk&set input=77A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Passware_Kit_R.lnk&set input=77R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Passware_Kit_I.msi&set input=77I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14535,7 +14613,7 @@ echo Would you like to run/install/uninstall JRiver Media Center ("R/I/O")? Inpu
 echo.
 goto :eof
 :menuJRiverMediaCenter
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start JRiver_Media_Center_A.lnk&set input=78A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start JRiver_Media_Center_R.lnk&set input=78R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start JRiver_Media_Center_I.exe&set input=78I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14545,7 +14623,7 @@ goto :eof
 :start7b
 call :banner
 call :menu7bScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu7b
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -14723,7 +14801,7 @@ echo Would you like to run/install/uninstall PowerISO ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuPowerISO
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PowerISO_A.lnk&set input=791A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PowerISO_R.lnk&set input=791R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PowerISO_I.exe&set input=791I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14780,7 +14858,7 @@ echo Would you like to run/install/uninstall UltraISO ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuUltraISO
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start UltraISO_A.lnk&set input=792A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start UltraISO_R.lnk&set input=792R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start UltraISO_I.exe&set input=792I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14837,7 +14915,7 @@ echo Would you like to run/install/uninstall Adobe Acrobat ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuAdobeAcrobat
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Adobe_Acrobat_A.lnk&set input=793A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Adobe_Acrobat_R.lnk&set input=793R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Adobe_Acrobat_I.lnk&set input=793I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14894,7 +14972,7 @@ echo Would you like to run/[install and uninstall] Calibre ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuCalibre
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Calibre_A.lnk&set input=794A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Calibre_R.lnk&set input=794R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Calibre_I.msi&set input=794I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -14951,7 +15029,7 @@ echo Would you like to run/install/uninstall DVDFab ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuDVDFab
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start DVDFab_A.lnk&set input=795A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start DVDFab_R.lnk&set input=795R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start DVDFab_I.exe&set input=795I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15008,7 +15086,7 @@ echo Would you like to run/install/uninstall UniFab ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuUniFab
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start UniFab_A.lnk&set input=796A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start UniFab_R.lnk&set input=796R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start UniFab_I.exe&set input=796I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15065,7 +15143,7 @@ echo Would you like to run/install/uninstall IsoBuster ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuIsoBuster
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start IsoBuster_A.lnk&set input=797A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start IsoBuster_R.lnk&set input=797R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start IsoBuster_I.exe&set input=797I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15122,7 +15200,7 @@ echo Would you like to run/install/uninstall Game Extractor ("R/I/O")? Input zer
 echo.
 goto :eof
 :menuGameExtractor
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Game_Extractor_A.lnk&set input=798A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Game_Extractor_R.lnk&set input=798R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Game_Extractor_I.exe&set input=798I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15132,7 +15210,7 @@ goto :eof
 :start8
 call :banner
 call :menu8Screen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu8
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -15266,7 +15344,7 @@ echo Would you like to run/install/uninstall WinZip Archiver from Suite ("R/I/O"
 echo.
 goto :eof
 :menuWinZipArchiver
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WinZip_Archiver_A.lnk&set input=81A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WinZip_Archiver_R.lnk&set input=81R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinZip_I.msi&set input=81I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15313,7 +15391,7 @@ echo Would you like to run/install/uninstall WinZip Image Manager from Suite ("R
 echo.
 goto :eof
 :menuWinZipImageManager
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WinZip_Image_Manager_A.lnk&set input=82A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WinZip_Image_Manager_R.lnk&set input=82R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinZip_I.msi&set input=82I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15360,7 +15438,7 @@ echo Would you like to run/install/uninstall WinZip PDF Express from Suite ("R/I
 echo.
 goto :eof
 :menuWinZipPDFexpress
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WinZip_PDF_Express_A.lnk&set input=83A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WinZip_PDF_Express_R.lnk&set input=83R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinZip_I.msi&set input=83I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15407,7 +15485,7 @@ echo Would you like to run/install/uninstall WinZip Duplicate File Finder from S
 echo.
 goto :eof
 :menuWinZipDuplicateFileFinder
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WinZip_Duplicate_File_Finder_A.lnk&set input=84A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WinZip_Duplicate_File_Finder_R.lnk&set input=84R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinZip_I.msi&set input=84I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15458,7 +15536,7 @@ echo Input the letter ("S/B") for WinZip SafeShare/Secure Backup. Input zero ("0
 echo.
 goto :eof
 :menuWinZipOnlineTools
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU SA start WinZip_SafeShare_A.lnk&set input=85SA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU SR start WinZip_SafeShare_R.lnk&set input=85SR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU SI start WinZip_I.msi&set input=85SI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15529,7 +15607,7 @@ echo Would you like to run/install/uninstall WinZip PDF Express from Suite ("R/I
 echo.
 goto :eof
 :menuWinZipSafeShare
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WinZip_SafeShare_A.lnk&set input=85SA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WinZip_SafeShare_R.lnk&set input=85SR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinZip_I.msi&set input=85SI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15596,7 +15674,7 @@ echo Would you like to run/install/uninstall WinZip Duplicate File Finder from S
 echo.
 goto :eof
 :menuWinZipSecureBackup
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WinZip_Secure_Backup_A.lnk&set input=85BA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WinZip_Secure_Backup_R.lnk&set input=85BR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinZip_I.msi&set input=85BI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15647,7 +15725,7 @@ echo Input the letter ("E/T") for PE Explorer/Resource Tuner. Input zero ("0") t
 echo.
 goto :eof
 :menuPEExplorerAndResourceTuner
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU EA start PE_Explorer_A.lnk&set input=86EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ER start PE_Explorer_R.lnk&set input=86ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TA start Resource_Tuner_A.lnk&set input=86TA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15716,7 +15794,7 @@ echo Would you like to run PE Explorer ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuPEExplorer
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PE_Explorer_A.lnk&set input=86EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PE_Explorer_R.lnk&set input=86ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -15781,7 +15859,7 @@ echo Would you like to run/install/uninstall Resource Tuner ("R/I/O")? Input zer
 echo.
 goto :eof
 :menuResourceTuner
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Resource_Tuner_A.lnk&set input=86TA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Resource_Tuner_R.lnk&set input=86TR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Resource_Tuner_I.exe&set input=86TI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15828,7 +15906,7 @@ echo Would you like to run/install/uninstall WinAce ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuWinAce
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WinAce_A.lnk&set input=87A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WinAce_R.lnk&set input=87R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinAce_I.exe&set input=87I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15875,7 +15953,7 @@ echo Would you like to run/install/uninstall IZArc ("R/I/O")? Input zero ("0") t
 echo.
 goto :eof
 :menuIZArc
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start IZArc_A.lnk&set input=88A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start IZArc_R.lnk&set input=88R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start IZArc_I.exe&set input=88I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15922,7 +16000,7 @@ echo Would you like to run/install/uninstall B1 Manager ("R/I/O")? Input zero ("
 echo.
 goto :eof
 :menuB1Manager
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start B1_Manager_A.lnk&set input=89A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start B1_Manager_R.lnk&set input=89R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start B1_Manager_I.exe&set input=89I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -15932,7 +16010,7 @@ goto :eof
 :start9a
 call :banner
 call :menu9aScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu9a
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -16036,15 +16114,21 @@ if /I %input% EQU 83R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&set 
 if /I %input% EQU 83I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=983I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 83O cls&set input=983O&goto startUninstallationInstructions
 if /I %input% EQU 84 cls&goto startMaplePromptSubDialerMode1
-if /I %input% EQU 84A start Maple_A.lnk&set input=984A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 84R start Maple_R.lnk&set input=984R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 84I start Maple_I.exe&set input=984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 84O cls&set input=984O&goto startUninstallationInstructions
-if /I %input% EQU 85 cls&goto startMapleFlowPromptSubDialerMode1
-if /I %input% EQU 85A start Maple_Flow_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 85R start Maple_Flow_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 85I start Maple_Flow_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 85O cls&set input=985O&goto startUninstallationInstructions
+if /I %input% EQU 84T cls&goto startMapleTraditionalPromptSubDialerMode1
+if /I %input% EQU 84TA start Maple_A.lnk&set input=984TA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 84TR start Maple_R.lnk&set input=984TR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 84TI start Maple_I.exe&set input=984TI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 84TO cls&set input=984TO&goto startUninstallationInstructions
+if /I %input% EQU 84F cls&goto startMapleFlowPromptSubDialerMode1
+if /I %input% EQU 84FA start Maple_Flow_A.lnk&set input=984FA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 84FR start Maple_Flow_R.lnk&set input=984FR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 84FI start Maple_Flow_I.exe&set input=984FI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 84FO cls&set input=984FO&goto startUninstallationInstructions
+if /I %input% EQU 85 cls&goto startWallpaperEnginePromptSubDialerMode1
+if /I %input% EQU 85A start Wallpaper_Engine_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 85R start Wallpaper_Engine_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 85I start Wallpaper_Engine_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 85O cls&&set input=985O&goto startUninstallationInstructions
 if /I %input% EQU 86 cls&goto startTelerikPromptSubDialerMode1
 if /I %input% EQU 86A cls&goto startTelerikRunAdminPromptSubDialerMode1
 if /I %input% EQU 86AA start Telerik_Test_Studio_A.lnk&set input=986AA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -16292,7 +16376,7 @@ echo (S): System Internals
 echo.
 goto :eof
 :menuUtilities
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU WR start Windows_Tools_R.lnk&set input=91WR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ER start Windows-System32-drivers-etc_R.lnk&set input=91ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU SR start System_Internals_R.lnk&set input=91SR&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -16398,7 +16482,7 @@ echo Would you like to open the containing folder Windows Tools ("R")? Input zer
 echo.
 goto :eof
 :menuWindowsTools
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU R start Windows_Tools_R.lnk&set input=91WR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startDriversEtcPrompt1
@@ -16502,7 +16586,7 @@ echo Would you like to open the containing folder Windows\System32\drivers\etc (
 echo.
 goto :eof
 :menuDriversEtc
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU R start Windows-System32-drivers-etc_R.lnk&set input=91ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startSystemInternalsPrompt1
@@ -16606,7 +16690,7 @@ echo Would you like to open the containing folder System Internals ("R")? Input 
 echo.
 goto :eof
 :menuSystemInternals
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU R start System_Internals_R.lnk&set input=91SR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startOpenMPTprompt
@@ -16670,7 +16754,7 @@ echo Would you like to run/install/uninstall OpenMPT ("R/I/O")? Input zero ("0")
 echo.
 goto :eof
 :menuOpenMPT
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start OpenMPT_A.lnk&set input=92A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start OpenMPT_R.lnk&set input=92R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start OpenMPT_I.exe&set input=92I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -16737,7 +16821,7 @@ echo Would you like to run/install/uninstall TreeSize ("R/I/O")? Input zero ("0"
 echo.
 goto :eof
 :menuTreeSize
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start TreeSize_A.lnk&set input=93A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start TreeSize_R.lnk&set input=93R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start TreeSize_I.exe&set input=93I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -16804,7 +16888,7 @@ echo Would you like to run/install/uninstall Minitab ("R/I/O")? Input zero ("0")
 echo.
 goto :eof
 :menuMinitab
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Minitab_A.lnk&set input=94A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Minitab_R.lnk&set input=94R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Minitab_I.exe&set input=94I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -16871,7 +16955,7 @@ echo Would you like to run/install/uninstall jGRASP ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menujGRASP
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start jGRASP_A.lnk&set input=95A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start jGRASP_R.lnk&set input=95R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start jGRASP_I.exe&set input=95I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -16946,7 +17030,7 @@ echo Would you like to run/install the programs from the Eclipse Suite ("R/I")? 
 echo.
 goto :eof
 :menuEclipse
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU AA start Eclipse_IDE_Java_A.lnk&set input=96AA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AB start Eclipse_IDE_Enterprise_Java_and_Web_A.lnk&set input=96AB&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AC start Eclipse_IDE_C_and_Cpp_A.lnk&set input=96AC&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -17066,7 +17150,7 @@ echo (J): Eclipse IDE Scout
 echo.
 goto :eof
 :menuEclipseRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Eclipse_IDE_Java_A.lnk&set input=96AA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start Eclipse_IDE_Enterprise_Java_and_Web_A.lnk&set input=96AB&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU C start Eclipse_IDE_C_and_Cpp_A.lnk&set input=96AC&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -17175,7 +17259,7 @@ echo (J): Eclipse IDE Scout
 echo.
 goto :eof
 :menuEclipseRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Eclipse_IDE_Java_R.lnk&set input=96RA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start Eclipse_IDE_Enterprise_Java_and_Web_R.lnk&set input=96RB&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU C start Eclipse_IDE_C_and_Cpp_R.lnk&set input=96RC&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -17248,7 +17332,7 @@ echo Would you like to run/install/uninstall Signal Messaging System ("R/I/O")? 
 echo.
 goto :eof
 :menuSignal
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Signal_A.lnk&set input=97A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Signal_R.lnk&set input=97R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Signal_I.exe&set input=97I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -17258,7 +17342,7 @@ goto :eof
 :start9b
 call :banner
 call :menu9bScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu9b
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -17274,9 +17358,9 @@ echo        [38;2;153;255;153m╠═══2) TI-Nspire CX Teacher            �
 echo        [38;2;128;255;128m║                                      ⠀⠀⠀⠀⠀⣴⣾⣿⣿⣿⣿⢁⣾⣿⣿⣿⣿⣿⣿⡿⢁⣾⣿⣿⣿⠁[0m
 echo        [38;2;102;255;102m╠════3) TI-Nspire CX/CAS Teacher       ⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇[0m
 echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠳⣤⣙⠟⠛⢻⠿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣇⠘⠉⠀⢸⠀⢀⣠[0m
-echo        [38;2;51;255;51m╠═════4) Maple                         ⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿[0m
+echo        [38;2;51;255;51m╠═════4) Maple Traditional/Flow        ⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣶⣄⡈⠉⠀⠀⢸⡇⠀⠀⠉⠂⠀⣿⣿⣿⣧[0m
-echo        [38;2;0;255;0m╠══════5) Maple Flow                   ⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣷⣤⣀⣸⣧⣠⣤⣴⣶⣾⣿⣿⣿⡿[0m
+echo        [38;2;0;255;0m╠══════5) Wallpaper Engine             ⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣷⣤⣀⣸⣧⣠⣤⣴⣶⣾⣿⣿⣿⡿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇[0m
 echo        [38;2;51;255;51m╠═══════6) Telerik Test Studio         ⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠛⠉[0m
 echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉[0m
@@ -17305,15 +17389,21 @@ if /I %input% EQU 3R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&set i
 if /I %input% EQU 3I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=983I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3O cls&set input=983O&goto startUninstallationInstructions
 if /I %input% EQU 4 cls&goto startMaplePrompt
-if /I %input% EQU 4A start Maple_A.lnk&set input=984A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4R start Maple_R.lnk&set input=984R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4I start Maple_I.exe&set input=984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4O cls&set input=984O&goto startUninstallationInstructions
-if /I %input% EQU 5 cls&goto startMapleFlowPrompt
-if /I %input% EQU 5A start Maple_Flow_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5R start Maple_Flow_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5I start Maple_Flow_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 5O cls&set input=985O&goto startUninstallationInstructions
+if /I %input% EQU 4T cls&goto startMapleTraditionalPrompt
+if /I %input% EQU 4TA start Maple_A.lnk&set input=984TA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4TR start Maple_R.lnk&set input=984TR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4TI start Maple_I.exe&set input=984TI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4TO cls&set input=984TO&goto startUninstallationInstructions
+if /I %input% EQU 4F cls&goto startMapleFlowPrompt
+if /I %input% EQU 4FA start Maple_Flow_A.lnk&set input=984FA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4FR start Maple_Flow_R.lnk&set input=984FR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4FI start Maple_Flow_I.exe&set input=984FI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 4FO cls&set input=984FO&goto startUninstallationInstructions
+if /I %input% EQU 5 cls&goto startWallpaperEnginePrompt
+if /I %input% EQU 5A start Wallpaper_Engine_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5R start Wallpaper_Engine_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5I start Wallpaper_Engine_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 5O cls&&set input=985O&goto startUninstallationInstructions
 if /I %input% EQU 6 cls&goto startTelerikPrompt
 if /I %input% EQU 6A cls&goto startTelerikRunAdminPromptDeepSubDialerMode2
 if /I %input% EQU 6AA start Telerik_Test_Studio_A.lnk&set input=986AA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -17603,7 +17693,7 @@ echo Would you like to run/install/uninstall TI-Nspire CX/CAS Student Software (
 echo.
 goto :eof
 :menuTI-Nspire_CX_CAS_StudentSoftware
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start TI-Nspire_CX_CAS_Student_Software_A.lnk&set input=981A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start TI-Nspire_CX_CAS_Student_Software_R.lnk&set input=981R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start TI-Nspire_CX_CAS_Student_Software_I.exe&set input=981I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -17670,7 +17760,7 @@ echo Would you like to run/install/uninstall TI-Nspire CX Teacher Software ("R/I
 echo.
 goto :eof
 :menuTI-Nspire_CX_PremiumTeacherSoftware
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&set input=982A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&set input=982R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=982I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -17737,7 +17827,7 @@ echo Would you like to run/install/uninstall TI-Nspire CX/CAS Teacher Software (
 echo.
 goto :eof
 :menuTI-Nspire_CX_CAS_PremiumTeacherSoftware
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&set input=983A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&set input=983R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=983I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -17750,6 +17840,8 @@ call :menuMaple
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9a
+if /I %input% EQU T cls&goto startMapleTraditionalPrompt1
+if /I %input% EQU F cls&goto startMapleFlowPrompt1
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 cls&goto startMaplePromptSubDialerMode1
@@ -17760,6 +17852,8 @@ call :menuMaple
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
+if /I %input% EQU T cls&goto startMapleTraditionalPrompt2
+if /I %input% EQU F cls&goto startMapleFlowPrompt2
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 cls&goto startMaplePrompt
@@ -17770,6 +17864,8 @@ call :menuMaple
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9c
+if /I %input% EQU T cls&goto startMapleTraditionalPrompt3
+if /I %input% EQU F cls&goto startMapleFlowPrompt3
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 cls&goto startMaplePromptSubDialerMode3
@@ -17780,10 +17876,123 @@ call :menuMaple
 call :menuAuxiliaryCommands
 call :menuSearchEngine
 if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU T cls&goto startMapleTraditionalPrompt4
+if /I %input% EQU F cls&goto startMapleFlowPrompt4
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 cls&goto startMaplePromptDialerMode
 :menuMaplePrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Waterloo Maple (Maplesoft)
+echo     Software Type: Depends
+echo          Category: Commercialware
+echo      License Type: Proprietary
+echo           Website: https://www.maplesoft.com/
+echo  Founded/Released: 1982
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Maple_R.lnk, Maple_I.exe, Maple_Flow_R.lnk, Maple_Flow_I.exe
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the letter for Maple Traditional/Flow ("T/F"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuMaple
+set /P input=%BS%
+if /I %input% EQU TA start Maple_A.lnk&set input=984TA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TR start Maple_R.lnk&set input=984TR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI start Maple_I.exe&set input=984TI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TO cls&set input=984TO&goto startUninstallationInstructions
+if /I %input% EQU FA start Maple_Flow_A.lnk&set input=984FA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FR start Maple_Flow_R.lnk&set input=984FR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FI start Maple_Flow_I.exe&set input=984FI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FO cls&set input=984FO&goto startUninstallationInstructions
+goto :eof
+:startMapleTraditionalPrompt1
+call :banner
+call :menuMapleTraditionalPrompt
+call :menuMapleTraditional
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMaplePromptSubDialerMode1
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleTraditionalPrompt1
+:startMapleTraditionalPrompt2
+call :banner
+call :menuMapleTraditionalPrompt
+call :menuMapleTraditional
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMaplePrompt
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleTraditionalPrompt2
+:startMapleTraditionalPrompt3
+call :banner
+call :menuMapleTraditionalPrompt
+call :menuMapleTraditional
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMaplePromptSubDialerMode3
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleTraditionalPrompt3
+:startMapleTraditionalPrompt4
+call :banner
+call :menuMapleTraditionalPrompt
+call :menuMapleTraditional
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMaplePromptDialerMode
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleTraditionalPrompt4
+:startMapleTraditionalPromptSubDialerMode1
+call :banner
+call :menuMapleTraditionalPrompt
+call :menuMapleTraditional
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9a
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleTraditionalPromptSubDialerMode1
+:startMapleTraditionalPromptSubDialerMode2
+call :banner
+call :menuMapleTraditionalPrompt
+call :menuMapleTraditional
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9b
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleTraditionalPromptSubDialerMode2
+:startMapleTraditionalPromptSubDialerMode3
+call :banner
+call :menuMapleTraditionalPrompt
+call :menuMapleTraditional
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9c
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleTraditionalPromptSubDialerMode3
+:startMapleTraditionalPromptDialerMode
+call :banner
+call :menuMapleTraditionalPrompt
+call :menuMapleTraditional
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleTraditionalPromptDialerMode
+:menuMapleTraditionalPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
 echo  Author/Developer: Waterloo Maple (Maplesoft)
 echo     Software Type: Symbolic and Numeric Computing Environment and Multi-Paradigm Programming Language
@@ -17803,13 +18012,53 @@ echo.
 echo Would you like to run/install/uninstall Maple ("R/I/O")? Input zero ("0") to cancel.
 echo.
 goto :eof
-:menuMaple
-set /p input=%BS%
-if /I %input% EQU A start Maple_A.lnk&set input=984A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start Maple_R.lnk&set input=984R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU I start Maple_I.exe&set input=984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O cls&set input=984O&goto startUninstallationInstructions
+:menuMapleTraditional
+set /P input=%BS%
+if /I %input% EQU A start Maple_A.lnk&set input=984TA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Maple_R.lnk&set input=984TR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Maple_I.exe&set input=984TI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=984TO&goto startUninstallationInstructions
 goto :eof
+:startMapleFlowPrompt1
+call :banner
+call :menuMapleFlowPrompt
+call :menuMapleFlow
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMaplePromptSubDialerMode1
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleFlowPrompt1
+:startMapleFlowPrompt2
+call :banner
+call :menuMapleFlowPrompt
+call :menuMapleFlow
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMaplePrompt
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleFlowPrompt2
+:startMapleFlowPrompt3
+call :banner
+call :menuMapleFlowPrompt
+call :menuMapleFlow
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMaplePromptSubDialerMode3
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleFlowPrompt3
+:startMapleFlowPrompt4
+call :banner
+call :menuMapleFlowPrompt
+call :menuMapleFlow
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMaplePromptDialerMode
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startMapleFlowPrompt4
 :startMapleFlowPromptSubDialerMode1
 call :banner
 call :menuMapleFlowPrompt
@@ -17820,7 +18069,7 @@ if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 cls&goto startMapleFlowPromptSubDialerMode1
-:startMapleFlowPrompt
+:startMapleFlowPromptSubDialerMode2
 call :banner
 call :menuMapleFlowPrompt
 call :menuMapleFlow
@@ -17829,7 +18078,7 @@ call :menuSearchEngine
 if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
-cls&goto startMapleFlowPrompt
+cls&goto startMapleFlowPromptSubDialerMode2
 :startMapleFlowPromptSubDialerMode3
 call :banner
 call :menuMapleFlowPrompt
@@ -17871,11 +18120,78 @@ echo Would you like to run/install/uninstall Maple Flow ("R/I/O")? Input zero ("
 echo.
 goto :eof
 :menuMapleFlow
-set /p input=%BS%
-if /I %input% EQU A start Maple_Flow_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start Maple_Flow_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU I start Maple_Flow_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O cls&set input=985O&goto startUninstallationInstructions
+set /P input=%BS%
+if /I %input% EQU A start Maple_Flow_A.lnk&set input=984FA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Maple_Flow_R.lnk&set input=984FR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Maple_Flow_I.exe&set input=984FI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=984FO&goto startUninstallationInstructions
+goto :eof
+:startWallpaperEnginePromptSubDialerMode1
+call :banner
+call :menuWallpaperEnginePrompt
+call :menuWallpaperEngine
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9a
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startWallpaperEnginePromptSubDialerMode1
+:startWallpaperEnginePrompt
+call :banner
+call :menuWallpaperEnginePrompt
+call :menuWallpaperEngine
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9b
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startWallpaperEnginePrompt
+:startWallpaperEnginePromptSubDialerMode3
+call :banner
+call :menuWallpaperEnginePrompt
+call :menuWallpaperEngine
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto start9c
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startWallpaperEnginePromptSubDialerMode3
+:startWallpaperEnginePromptDialerMode
+call :banner
+call :menuWallpaperEnginePrompt
+call :menuWallpaperEngine
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start9a
+if /I %input% EQU +- cls&goto start9a
+cls&goto startWallpaperEnginePromptDialerMode
+:menuWallpaperEnginePrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Kristjan Skutta, Tim Eulitz
+echo     Software Type: Animated and Interactive Wallpaper Creation and Distribution Software
+echo          Category: Payware
+echo      License Type: Proprietary
+echo           Website: https://www.wallpaperengine.io/; Steam: https://store.steampowered.com/app/431960/Wallpaper_Engine/
+echo  Founded/Released: 10/10/2016
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Wallpaper_Engine_R.lnk, Wallpaper_Engine_I.exe
+echo   Additional Info: Also found on Steam. Pricing is found either in the website's description or on the Steam store page.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Wallpaper Engine ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuWallpaperEngine
+set /P input=%BS%
+if /I %input% EQU A start Wallpaper_Engine_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Wallpaper_Engine_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Wallpaper_Engine_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&&set input=985O&goto startUninstallationInstructions
 goto :eof
 :startTelerikPromptSubDialerMode1
 call :banner
@@ -17946,7 +18262,7 @@ echo Would you like to run/[install and uninstall] Telerik Test Studio ("R/I/O")
 echo.
 goto :eof
 :menuTelerik
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU AA start Telerik_Test_Studio_A.lnk&set input=986AA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AB start Telerik_Test_Studio_APIs_A.lnk&set input=986AB&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RA start Telerik_Test_Studio_R.lnk&set input=986RA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18043,7 +18359,7 @@ echo (B): Telerik Test Studio APIs
 echo.
 goto :eof
 :menuTelerikRunAdmin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Telerik_Test_Studio_A.lnk&set input=986AA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start Telerik_Test_Studio_APIs_A.lnk&set input=986AB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -18136,7 +18452,7 @@ echo (B): Telerik Test Studio APIs
 echo.
 goto :eof
 :menuTelerikRun
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Telerik_Test_Studio_R.lnk&set input=986RA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B start Telerik_Test_Studio_APIs_R.lnk&set input=986RB&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -18144,7 +18460,7 @@ goto :eof
 :start9bAlt
 call :banner
 call :menu9bAltScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu9bAlt
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -18312,7 +18628,7 @@ echo Would you like to run/install/uninstall Agent DVR ("R/I/O")? Input zero ("0
 echo.
 goto :eof
 :menuAgentDVR
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Agent_DVR_A.lnk&set input=9871A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Agent_DVR_R.lnk&set input=9871R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Agent_DVR_I.exe&set input=9871I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18389,7 +18705,7 @@ echo Would you like to run/install/uninstall Cisdem App Crypt ("R/I/O")? Input z
 echo.
 goto :eof
 :menuCisdemAppCrypt
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Cisdem_App_Crypt_A.lnk&set input=9872A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Cisdem_App_Crypt_R.lnk&set input=9872R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Cisdem_App_Crypt_I.exe&set input=9872I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18466,7 +18782,7 @@ echo Would you like to run/install/uninstall QFX Key Scrambler ("R/I/O")? Input 
 echo.
 goto :eof
 :menuQFXKeyScrambler
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start QFX_Key_Scrambler_A.lnk&set input=9873A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start QFX_Key_Scrambler_R.lnk&set input=9873R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start QFX_Key_Scrambler_I.exe&set input=9873I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18543,7 +18859,7 @@ echo Input the letter ("I/U") to install/include Reshade add-ons. Input zero ("0
 echo.
 goto :eof
 :menuReShade
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU I start ReShade_I.lnk&set input=9874I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU U start ReShade_I_Addons.lnk&set input=9874U&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -18628,7 +18944,7 @@ echo Input the letter ("C/P") for Cheat Engine/Process Hacker. Input zero ("0") 
 echo.
 goto :eof
 :menuCEPH
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU CA start Cheat_Engine_A.lnk&set input=9875CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CR start Cheat_Engine_R.lnk&set input=9875CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CI start Cheat_Engine_I.exe&set input=9875CI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18759,7 +19075,7 @@ echo Would you like to run/install/uninstall Cheat Engine ("R/I/O")? Input zero 
 echo.
 goto :eof
 :menuCheatEngine
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Cheat_Engine_A.lnk&set input=9875CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Cheat_Engine_R.lnk&set input=9875CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Cheat_Engine_I.exe&set input=9875CI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18886,7 +19202,7 @@ echo Would you like to run/install/uninstall Process Hacker ("R/I/O")? Input zer
 echo.
 goto :eof
 :menuProcessHacker
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Process_Hacker_A.lnk&set input=9875PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Process_Hacker_R.lnk&set input=9875PR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Process_Hacker_I.exe&set input=9875PI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -18973,7 +19289,7 @@ echo Input the numbers ("1/2") to boot WoG Editor for the corresponding game. In
 echo.
 goto :eof
 :menuWorldOfGooEditor
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1A start WooGLE_A.lnk&set input=98761A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start WooGLE_R.lnk&set input=98761R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1I start WooGLE_I.exe&set input=98761I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -19102,7 +19418,7 @@ echo Would you like to run/install/uninstall WooGle ("R/I/O")? Input zero ("0") 
 echo.
 goto :eof
 :menuWooGle
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start WooGLE_A.lnk&set input=98761A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start WooGLE_R.lnk&set input=98761R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WooGLE_I.exe&set input=98761I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -19229,7 +19545,7 @@ echo Input the letter ("R") to boot Level Juicer. Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuLevelJuicer
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Level_Juicer_A.lnk&set input=98762A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Level_Juicer_R.lnk&set input=98762R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -19304,7 +19620,7 @@ echo Input the letter ("R") to boot RoL Big Archiver. Input zero ("0") to cancel
 echo.
 goto :eof
 :menuRoLBigArchiver
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start RoL_Big_Archiver_A.lnk&set input=9877A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start RoL_Big_Archiver_R.lnk&set input=9877R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -19389,7 +19705,7 @@ echo Input the letter ("N/P") for NMS Save Editor/Palworld Save Pal. Input zero 
 echo.
 goto :eof
 :menuNMSPLWRLDSaveEditor
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU NA start NMSSaveEditor_A.lnk&set input=9878NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU NR start NMSSaveEditor_R.lnk&set input=9878NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU NI start NMSSaveEditor_I.exe&set input=9878NI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -19520,7 +19836,7 @@ echo Would you like to run/install/uninstall NMS Save Editor ("R/I/O")? Input ze
 echo.
 goto :eof
 :menuNMSSaveEditor
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start NMSSaveEditor_A.lnk&set input=9878NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start NMSSaveEditor_R.lnk&set input=9878NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start NMSSaveEditor_I.exe&set input=9878NI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -19647,7 +19963,7 @@ echo Would you like to run/[install and uninstall] Palworld Save Pal ("R/I/O")? 
 echo.
 goto :eof
 :menuPalworldSavePal
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PalworldSavePal_A.lnk&set input=9878PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PalworldSavePal_R.lnk&set input=9878PR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start PalworldSavePal_I.msi&set input=9878PI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -19724,7 +20040,7 @@ echo Would you like to run/install/uninstall KeePass Manager ("R/I/O")? Input ze
 echo.
 goto :eof
 :menuKeePass
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start KeePass_A.lnk&set input=9879A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start KeePass_R.lnk&set input=9879R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start KeePass_I.exe&set input=9879I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -19734,7 +20050,7 @@ goto :eof
 :start9c
 call :banner
 call :menu9cScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu9c
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -19934,15 +20250,21 @@ if /I %input% EQU 93R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&set 
 if /I %input% EQU 93I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&set input=983I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 93O cls&set input=983O&goto startUninstallationInstructions
 if /I %input% EQU 94 cls&goto startMaplePromptSubDialerMode3
-if /I %input% EQU 94A start Maple_A.lnk&set input=984A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94R start Maple_R.lnk&set input=984R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94I start Maple_I.exe&set input=984I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 94O cls&set input=984O&goto startUninstallationInstructions
-if /I %input% EQU 95 cls&goto startMapleFlowPromptSubDialerMode3
-if /I %input% EQU 95A start Maple_Flow_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95R start Maple_Flow_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95I start Maple_Flow_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 95O cls&set input=985O&goto startUninstallationInstructions
+if /I %input% EQU 94T cls&goto startMapleTraditionalPromptSubDialerMode3
+if /I %input% EQU 94TA start Maple_A.lnk&set input=984TA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 94TR start Maple_R.lnk&set input=984TR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 94TI start Maple_I.exe&set input=984TI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 94TO cls&set input=984TO&goto startUninstallationInstructions
+if /I %input% EQU 94F cls&goto startMapleFlowPromptSubDialerMode3
+if /I %input% EQU 94FA start Maple_Flow_A.lnk&set input=984FA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 94FR start Maple_Flow_R.lnk&set input=984FR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 94FI start Maple_Flow_I.exe&set input=984FI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 94FO cls&set input=984FO&goto startUninstallationInstructions
+if /I %input% EQU 95 cls&goto startWallpaperEnginePromptSubDialerMode3
+if /I %input% EQU 95A start Wallpaper_Engine_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 95R start Wallpaper_Engine_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 95I start Wallpaper_Engine_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 95O cls&&set input=985O&goto startUninstallationInstructions
 if /I %input% EQU 96 cls&goto startTelerikPromptSubDialerMode3
 if /I %input% EQU 96A cls&goto startTelerikRunAdminPromptSubDialerMode3
 if /I %input% EQU 96AA start Telerik_Test_Studio_A.lnk&set input=986AA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20080,7 +20402,7 @@ echo Would you like to run/install/uninstall Audials One ("R/I/O")? Input zero (
 echo.
 goto :eof
 :menuAudialsOne
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Audials_One_A.lnk&set input=991A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Audials_One_R.lnk&set input=991R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Audials_One_I.exe&set input=991I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20155,7 +20477,7 @@ echo Input the letter for Proton VPN/Drive ("V/D"). Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuProton
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU VA start Proton_VPN_A.lnk&set input=992VA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU VR start Proton_VPN_R.lnk&set input=992VR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU VI start Proton_I.exe&set input=992VI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20266,7 +20588,7 @@ echo Would you like to run/install/uninstall Proton VPN ("R/I/O")? Input zero ("
 echo.
 goto :eof
 :menuProtonVPN
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Proton_VPN_A.lnk&set input=992VA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Proton_VPN_R.lnk&set input=992VR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Proton_I.exe&set input=992VI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20373,7 +20695,7 @@ echo Would you like to run/install/uninstall Proton Drive ("R/I/O")? Input zero 
 echo.
 goto :eof
 :menuProtonDrive
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Proton_Drive_A.lnk&set input=992DA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Proton_Drive_R.lnk&set input=992DR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Proton_I.exe&set input=992DI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20452,7 +20774,7 @@ echo Input the letter for XXXXX VPN ("M/N/V"). Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuOtherVPNsuite
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU MA start Mullvad_VPN_A.lnk&set input=993MA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MR start Mullvad_VPN_R.lnk&set input=993MR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MI start Mullvad_VPN_I.exe&set input=993MI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20567,7 +20889,7 @@ echo Would you like to run/install/uninstall Mullvad VPN ("R/I/O")? Input zero (
 echo.
 goto :eof
 :menuMullvadVPN
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Mullvad_VPN_A.lnk&set input=993MA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Mullvad_VPN_R.lnk&set input=993MR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Mullvad_VPN_I.exe&set input=993MI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20674,7 +20996,7 @@ echo Would you like to run/install/uninstall Mullvad VPN ("R/I/O")? Input zero (
 echo.
 goto :eof
 :menuNordVPN
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start NordVPN_A.lnk&set input=993NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start NordVPN_R.lnk&set input=993NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start NordVPN_I.exe&set input=993NI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20781,7 +21103,7 @@ echo Would you like to run/install/uninstall Mullvad VPN ("R/I/O")? Input zero (
 echo.
 goto :eof
 :menuOpenVPN
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start OpenVPN_A.lnk&set input=993VA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start OpenVPN_R.lnk&set input=993VR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start OpenVPN_I.msi&set input=993VI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20848,7 +21170,7 @@ echo Would you like to run/install/uninstall Portmaster ("R/I/O")? Input zero ("
 echo.
 goto :eof
 :menuPortmaster
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Portmaster_A.lnk&set input=994A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Portmaster_R.lnk&set input=994R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Portmaster_I.exe&set input=994I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -20915,7 +21237,7 @@ echo Would you like to run Character Map ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuCharacterMap
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Character_Map_A.lnk&set input=996CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Character_Map_R.lnk&set input=996CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -20980,7 +21302,7 @@ echo Would you like to run Paint ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuPaint
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Paint_A.lnk&set input=996PA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Paint_R.lnk&set input=996PR&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -20988,7 +21310,7 @@ goto :eof
 :start9cAltA
 call :banner
 call :menu9cAltAScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu9cAltA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -21170,7 +21492,7 @@ echo Would you like to run dnSpy x32 ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menudnSpy_x32
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dnSpy_x32_A.lnk&set input=9971A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start dnSpy_x32_R.lnk&set input=9971R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -21265,7 +21587,7 @@ echo Would you like to run dnSpy x64 ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menudnSpy_x64
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dnSpy_x64_A.lnk&set input=9972A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start dnSpy_x64_R.lnk&set input=9972R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -21360,7 +21682,7 @@ echo Would you like to run dnSpy .NET ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menudnSpy_NET
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start dnSpy_NET_A.lnk&set input=9973A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start dnSpy_NET_R.lnk&set input=9973R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -21445,7 +21767,7 @@ echo Would you like to run ILSpy ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuILSpy
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start ILSpy_A.lnk&set input=9974A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start ILSpy_R.lnk&set input=9974R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -21530,7 +21852,7 @@ echo Would you like to run Il2CppInspector ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuIl2CppInspector
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Il2CppInspector_A.lnk&set input=9975A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Il2CppInspector_R.lnk&set input=9975R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -21615,7 +21937,7 @@ echo Would you like to run PEiD ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuPEiD
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start PEiD_A.lnk&set input=9976A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start PEiD_R.lnk&set input=9976R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -21700,7 +22022,7 @@ echo Would you like to run Odin ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuOdin
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Odin_A.lnk&set input=9977A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Odin_R.lnk&set input=9977R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -21785,7 +22107,7 @@ echo Would you like to run OOSU10 ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuOOSU10
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start OOSU10_A.lnk&set input=9978A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start OOSU10_R.lnk&set input=9978R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -21793,7 +22115,7 @@ goto :eof
 :start9cAltB
 call :banner
 call :menu9cAltBScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menu9cAltB
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -21965,7 +22287,7 @@ echo Would you like to run F2KO Bat to Exe ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuF2KO_BAT2EXE
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start F2KO_BAT2EXE_A.lnk&set input=99791A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start F2KO_BAT2EXE_R.lnk&set input=99791R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22050,7 +22372,7 @@ echo Would you like to run Cutter Decompiler ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuCutter
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Cutter_A.lnk&set input=99792A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Cutter_R.lnk&set input=99792R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22135,7 +22457,7 @@ echo Would you like to run Java GUI Decompiler ("R")? Input zero ("0") to cancel
 echo.
 goto :eof
 :menuJDGUI
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start JD_GUI_A.lnk&set input=99793A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start JD_GUI_R.lnk&set input=99793R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22220,7 +22542,7 @@ echo Would you like to run JavaSnoop ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuJavaSnoop
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start JavaSnoop_A.lnk&set input=99794A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start JavaSnoop_R.lnk&set input=99794R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22305,7 +22627,7 @@ echo Would you like to run x64 dbg ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menux64dbg
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start x64dbg_A.lnk&set input=99795A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start x64dbg_R.lnk&set input=99795R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22390,7 +22712,7 @@ echo Would you like to run/install/uninstall AutoHotkey UX ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuAutoHotkeyUX
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start AutoHotkey_UX_A.lnk&set input=99796A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start AutoHotkey_UX_R.lnk&set input=99796R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start AutoHotkey_UX_I.exe&set input=99796I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -22477,7 +22799,7 @@ echo Would you like to run SARDU ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuSARDU
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start SARDU_A.lnk&set input=99797A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start SARDU_R.lnk&set input=99797R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22562,7 +22884,7 @@ echo Would you like to run Drive Scanner ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuScanner
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Drive_Scanner_A.lnk&set input=99798A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Drive_Scanner_R.lnk&set input=99798R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22598,7 +22920,7 @@ echo Would you like to open CLI Directory text file ("R")? Input zero ("0") to c
 echo.
 goto :eof
 :menuCLIdirectory
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start CLI_Directory.txt&set input=CLI-Directory-A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start CLI_Directory.txt&set input=CLI-Directory-R&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22633,7 +22955,7 @@ echo Would you like to install dotUltimate ("I")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menudotUltimate
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU I start dotUltimate_I.exe&set input=dotUltimate-I&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startMicrosoft365PromptDialerMode
@@ -22667,7 +22989,7 @@ echo Would you like to install Microsoft 365 ("I")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuMicrosoft365
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU I start Microsoft365_I.exe&set input=Microsoft365-I&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startPiriformPromptDialerMode
@@ -22701,7 +23023,7 @@ echo Would you like to install the CCleaner Professional Plus Bundle ("I")? Inpu
 echo.
 goto :eof
 :menuPiriform
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU I start Piriform_I.exe&set input=Piriform-I&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startWindows7GamesPromptDialerMode
@@ -22735,7 +23057,7 @@ echo Would you like to install/uninstall these Classic Games from the Windows 7 
 echo.
 goto :eof
 :menuWindows7Games
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU I start Windows7GamesForWindows11_10_8_I.exe&set input=Windows7GamesForWindows11-10-8-I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Windows7GamesForWindows11_10_8_O.lnk&set input=Windows7GamesForWindows11-10-8-O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22770,7 +23092,7 @@ echo Would you like to install/uninstall the entire WinZip Suite ("I/O")? Input 
 echo.
 goto :eof
 :menuWinZipSuite
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU I start WinZip_I.msi&set input=WinZip-I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start WinZip_O.lnk&set input=WinZip-O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -22808,7 +23130,7 @@ echo Input the number ("1/2/3") for dnSpy x32/x64/.NET program. Input zero ("0")
 echo.
 goto :eof
 :menudnSpy
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 1A start dnSpy_x32_A.lnk&set input=9971A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1R start dnSpy_x32_R.lnk&set input=9971R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 2A start dnSpy_x64_A.lnk&set input=9972A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -22851,7 +23173,7 @@ echo Input the letter for CreateInstall, IExpress, Advanced Installer, or Inno S
 echo.
 goto :eof
 :menuInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU CA start CreateInstall_A.lnk&set input=installer-CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CR start CreateInstall_R.lnk&set input=installer-CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CI start CreateInstall_I.exe&set input=installer-CI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -22908,7 +23230,7 @@ echo Would you like to run/install/uninstall CreateInstall ("R/I/O")? Input zero
 echo.
 goto :eof
 :menuCreateInstall
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start CreateInstall_A.lnk&set input=installer-CA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start CreateInstall_R.lnk&set input=installer-CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start CreateInstall_I.exe&set input=installer-CI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -22955,7 +23277,7 @@ echo Would you like to run IExpress ("R")? Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuIExpress
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start IExpress_A.lnk&set input=installer-EA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start IExpress_R.lnk&set input=installer-ER&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
@@ -23000,7 +23322,7 @@ echo Would you like to run/install/uninstall Advanced Installer ("R/I/O")? Input
 echo.
 goto :eof
 :menuAdvancedInstaller
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Advanced_Installer_A.lnk&set input=installer-MA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Advanced_Installer_R.lnk&set input=installer-MR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Advanced_Installer_I.msi&set input=installer-MI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -23047,7 +23369,7 @@ echo Would you like to run/install/uninstall Inno Setup ("R/I/O")? Input zero ("
 echo.
 goto :eof
 :menuInnoSetup
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU A start Inno_Setup_A.lnk&set input=installer-NA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU R start Inno_Setup_R.lnk&set input=installer-NR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start Inno_Setup_I.exe&set input=installer-NI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -23057,7 +23379,7 @@ goto :eof
 :startMainAlphabetized1
 call :banner
 call :menuMainAlphabetized1Screen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23095,7 +23417,7 @@ goto :eof
 :startMainAlphabetized2
 call :banner
 call :menuMainAlphabetized2Screen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23133,7 +23455,7 @@ goto :eof
 :startMainAlphabetized3
 call :banner
 call :menuMainAlphabetized3Screen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23171,7 +23493,7 @@ goto :eof
 :startA
 call :banner
 call :menuAScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuA
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23224,7 +23546,7 @@ goto :eof
 :startB
 call :banner
 call :menuBScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuB
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23277,7 +23599,7 @@ goto :eof
 :startC
 call :banner
 call :menuCScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuC
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23330,7 +23652,7 @@ goto :eof
 :startD
 call :banner
 call :menuDScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuD
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23383,7 +23705,7 @@ goto :eof
 :startE
 call :banner
 call :menuEScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuE
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23436,7 +23758,7 @@ goto :eof
 :startF
 call :banner
 call :menuFScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuF
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23489,7 +23811,7 @@ goto :eof
 :startG
 call :banner
 call :menuGScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuG
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23542,7 +23864,7 @@ goto :eof
 :startH
 call :banner
 call :menuHScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuH
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23595,7 +23917,7 @@ goto :eof
 :startI
 call :banner
 call :menuIScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuI
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23648,7 +23970,7 @@ goto :eof
 :startJ
 call :banner
 call :menuJScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuJ
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23701,7 +24023,7 @@ goto :eof
 :startK
 call :banner
 call :menuKScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuK
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23754,7 +24076,7 @@ goto :eof
 :startL
 call :banner
 call :menuLScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuL
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23807,7 +24129,7 @@ goto :eof
 :startM
 call :banner
 call :menuMScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuM
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23860,7 +24182,7 @@ goto :eof
 :startN
 call :banner
 call :menuNScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuN
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23913,7 +24235,7 @@ goto :eof
 :startO
 call :banner
 call :menuOScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuO
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -23966,7 +24288,7 @@ goto :eof
 :startP
 call :banner
 call :menuPScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuP
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24019,7 +24341,7 @@ goto :eof
 :startQ
 call :banner
 call :menuQScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuQ
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24072,7 +24394,7 @@ goto :eof
 :startR
 call :banner
 call :menuRScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuR
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24125,7 +24447,7 @@ goto :eof
 :startS
 call :banner
 call :menuSScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuS
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24178,7 +24500,7 @@ goto :eof
 :startT
 call :banner
 call :menuTScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuT
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24231,7 +24553,7 @@ goto :eof
 :startU
 call :banner
 call :menuUScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuU
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24284,7 +24606,7 @@ goto :eof
 :startV
 call :banner
 call :menuVScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuV
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24337,7 +24659,7 @@ goto :eof
 :startW
 call :banner
 call :menuWScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuW
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24390,7 +24712,7 @@ goto :eof
 :startX
 call :banner
 call :menuXScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuX
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24443,7 +24765,7 @@ goto :eof
 :startY
 call :banner
 call :menuYScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuY
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24496,7 +24818,7 @@ goto :eof
 :startZ
 call :banner
 call :menuZScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuZ
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -24655,7 +24977,7 @@ cls&goto startMain
 :startMainInstream
 call :banner
 call :menuMainInstreamScreen
-set /p input=.%BS%       [38;2;255;255;255m╚════════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m╚════════════^>[0m
 call :menuMainInstream
 call :menuAuxiliaryCommandsInstream
 cls&goto startMainInstream
@@ -24820,7 +25142,7 @@ echo        [38;2;255;255;0m╚╦═════════9) Notepad++[0m
 echo        [38;2;255;255;0m ║[0m
 goto :eof
 :menuMainStealth
-set /p input=.%BS%       [38;2;255;255;0m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;0m ╚═══════════^>[0m
 if /I %input% EQU 0 start EmsisoftEmergencyKit_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 if /I %input% EQU 1 start Brave_Browser_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 if /I %input% EQU 2 start Visual_Studio_Code_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
@@ -24831,8 +25153,10 @@ if /I %input% EQU 6 start Steam_Games_Launcher_R.lnk&&goto startPreExitPromptSte
 if /I %input% EQU 7 start PeaZip_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 if /I %input% EQU 8 start Notepad_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 if /I %input% EQU 9 start Notepad++_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
+if /I %input% EQU abo cls&goto startAboutStealth
 if /I %input% EQU abou cls&goto startAboutStealth
 if /I %input% EQU about cls&goto startAboutStealth
+if /I %input% EQU cop cls&goto startCopyStealth
 if /I %input% EQU copy cls&goto startCopyStealth
 if /I %input% EQU copy0 cls&goto startCopy0Stealth
 if /I %input% EQU copy1 call :startCopy1Stealth
@@ -24844,11 +25168,14 @@ if /I %input% EQU copy6 call :startCopy6Stealth
 if /I %input% EQU copy7 call :startCopy7Stealth
 if /I %input% EQU copy8 call :startCopy8Stealth
 if /I %input% EQU copy9 call :startCopy9Stealth
+if /I %input% EQU dis cls&goto startDisplayStealth
 if /I %input% EQU disp cls&goto startDisplayStealth
 if /I %input% EQU displ cls&goto startDisplayStealth
 if /I %input% EQU displa cls&goto startDisplayStealth
 if /I %input% EQU display cls&goto startDisplayStealth
+if /I %input% EQU exi goto exitBatchProgram
 if /I %input% EQU exit goto exitBatchProgram
+if /I %input% EQU hel cls&goto startHelpStealth
 if /I %input% EQU help cls&goto startHelpStealth
 if /I %input% EQU unst call :startSampleShortcutReplace
 if /I %input% EQU unste call :startSampleShortcutReplace
@@ -24869,7 +25196,7 @@ echo Would you like to display the CLI Directory ("Y/N")? Input zero ("0") to ca
 echo.
 goto :eof
 :menuCommandStealth
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 0 cls&goto startMainStealth
 if /I %input% EQU 1 start Stealth_CLI_Directory.txt&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 if /I %input% EQU Y start Command_Prompt_R.lnk&&start Stealth_CLI_Directory.txt&goto startPreExitPromptStealth
@@ -24886,7 +25213,7 @@ echo Input the letter ("S/V") for Prusa Slicer/G-Code Viewer. Input zero ("0") t
 echo.
 goto :eof
 :menuPrusaStealth
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 0 cls&goto startMainStealth
 if /I %input% EQU S start PrusaSlicer_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
 if /I %input% EQU V start Prusa_G-code_Viewer_R.lnk&&goto startPreExitPromptStealth||goto startFailedExitPromptStealth
@@ -25010,7 +25337,7 @@ echo.
 echo.
 goto :eof
 :menuDisplayStealth
-set /p input=%BS%
+set /P input=%BS%
 goto :eof
 :startHelpStealth
 echo.
@@ -25030,7 +25357,7 @@ cls&goto startMainStealth
 :startMainSample
 call :banner
 call :menuMainSampleScreen
-set /p input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m ╚═══════════^>[0m
 call :menuMainSample
 cls&goto startMainSample
 :menuMainSampleScreen
@@ -25058,6 +25385,7 @@ echo        [38;2;204;255;204m╚╦═════════9) InvokeOther[
 echo        [38;2;230;255;230m ║[0m
 goto :eof
 :menuMainSample
+if /I %input% EQU abo cls&goto startAboutSample
 if /I %input% EQU abou cls&goto startAboutSample
 if /I %input% EQU about cls&goto startAboutSample
 if /I %input% EQU back cls&goto startBackgroundSample
@@ -25067,6 +25395,7 @@ if /I %input% EQU backgro cls&goto startBackgroundSample
 if /I %input% EQU backgrou cls&goto startBackgroundSample
 if /I %input% EQU backgroun cls&goto startBackgroundSample
 if /I %input% EQU background cls&goto startBackgroundSample
+if /I %input% EQU cop cls&goto startCopySample
 if /I %input% EQU copy cls&goto startCopySample
 if /I %input% EQU copy0 cls&goto startCopy0Sample
 if /I %input% EQU copy1 call :startCopy1Sample
@@ -25078,23 +25407,29 @@ if /I %input% EQU copy6 call :startCopy6Sample
 if /I %input% EQU copy7 call :startCopy7Sample
 if /I %input% EQU copy8 call :startCopy8Sample
 if /I %input% EQU copy9 call :startCopy9Sample
+if /I %input% EQU dis cls&goto startDisplaySample
 if /I %input% EQU disp cls&goto startDisplaySample
 if /I %input% EQU displ cls&goto startDisplaySample
 if /I %input% EQU displa cls&goto startDisplaySample
 if /I %input% EQU display cls&goto startDisplaySample
+if /I %input% EQU exi goto exitBatchProgram
 if /I %input% EQU exit goto exitBatchProgram
+if /I %input% EQU gui cls&goto startGuideSample
 if /I %input% EQU guid cls&goto startGuideSample
 if /I %input% EQU guide cls&goto startGuideSample
+if /I %input% EQU hel cls&goto startHelpSample
 if /I %input% EQU help cls&goto startHelpSample
 if /I %input% EQU inst call :startInstreamSampleShortcutReplace
 if /I %input% EQU instr call :startInstreamSampleShortcutReplace
 if /I %input% EQU instre call :startInstreamSampleShortcutReplace
 if /I %input% EQU instrea call :startInstreamSampleShortcutReplace
 if /I %input% EQU instream call :startInstreamSampleShortcutReplace
+if /I %input% EQU ste call :startStealthShortcutReplace
 if /I %input% EQU stea call :startStealthShortcutReplace
 if /I %input% EQU steal call :startStealthShortcutReplace
 if /I %input% EQU stealt call :startStealthShortcutReplace
 if /I %input% EQU stealth call :startStealthShortcutReplace
+if /I %input% EQU tre cls&goto startTreeSample
 if /I %input% EQU tree cls&goto startTreeSample
 if /I %input% EQU unstealthXXXX call :startUnstealthShortcutReplace
 goto :eof
@@ -25223,9 +25558,11 @@ echo        [38;2;204;255;204m║ Please plan accordingly. Instream Downloader 
 echo        [38;2;230;255;230m║[0m
 goto :eof
 :menuMainInstreamSample
-set /p input=.%BS%       [38;2;255;255;255m╚════════════^>[0m
+set /P input=.%BS%       [38;2;255;255;255m╚════════════^>[0m
+if /I %input% EQU abo cls&goto startAboutInstreamSample
 if /I %input% EQU abou cls&goto startAboutInstreamSample
 if /I %input% EQU about cls&goto startAboutInstreamSample
+if /I %input% EQU cop cls&goto startCopyInstreamSample
 if /I %input% EQU copy cls&goto startCopyInstreamSample
 if /I %input% EQU copy0 cls&goto startCopy0InstreamSample
 if /I %input% EQU copy1 call :startCopy1InstreamSample
@@ -25237,16 +25574,22 @@ if /I %input% EQU copy6 call :startCopy6InstreamSample
 if /I %input% EQU copy7 call :startCopy7InstreamSample
 if /I %input% EQU copy8 call :startCopy8InstreamSample
 if /I %input% EQU copy9 call :startCopy9InstreamSample
+if /I %input% EQU dis cls&goto startDisplayInstreamSample
 if /I %input% EQU disp cls&goto startDisplayInstreamSample
 if /I %input% EQU displ cls&goto startDisplayInstreamSample
 if /I %input% EQU displa cls&goto startDisplayInstreamSample
 if /I %input% EQU display cls&goto startDisplayInstreamSample
+if /I %input% EQU exi goto exitBatchProgram
 if /I %input% EQU exit goto exitBatchProgram
+if /I %input% EQU gui cls&goto startGuideInstreamSample
 if /I %input% EQU guid cls&goto startGuideInstreamSample
 if /I %input% EQU guide cls&goto startGuideInstreamSample
+if /I %input% EQU hel cls&goto startHelpInstreamSample
 if /I %input% EQU help cls&goto startHelpInstreamSample
 if /I %input% EQU instreamXXXX call :startInstreamShortcutReplace
+if /I %input% EQU tre cls&goto startTreeInstreamSample
 if /I %input% EQU tree cls&goto startTreeInstreamSample
+if /I %input% EQU man call :startSampleShortcutReplace
 if /I %input% EQU mana call :startSampleShortcutReplace
 if /I %input% EQU manag call :startSampleShortcutReplace
 if /I %input% EQU manage call :startSampleShortcutReplace
@@ -25359,7 +25702,7 @@ echo.
 echo.
 goto :eof
 :menuDisplaySample
-set /p input=%BS%
+set /P input=%BS%
 goto :eof
 :startGuideInstreamSample
 call :Guide
@@ -25379,11 +25722,26 @@ cls
 Title Input=%input%
 call :banner
 echo.
-echo Program executed successfully.
+echo [38;2;0;255;0mProgram executed successfully.[0m
 echo.
 call :startDialerTip
 call :startAdditionalTips
-set /p input=%BS%
+set /P input=%BS%
+Title Applications
+call :menuMain
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+cls&goto startMain
+:startPreExitPlusAdditionalBatchPrompt
+cls
+Title Input=%input%
+call :banner
+echo.
+echo [38;2;0;255;0mProgram executed successfully. [38;2;0;255;255mBe sure to close out the additional generated batch script when done.[0m
+echo.
+call :startDialerTip
+call :startAdditionalTips
+set /P input=%BS%
 Title Applications
 call :menuMain
 call :menuAuxiliaryCommands
@@ -25393,11 +25751,11 @@ cls&goto startMain
 cls
 call :banner
 echo.
-echo This option is not available. Please try a different combination. You may even fill in the blanks here.
+echo [38;2;255;128;0mThis option is not available. Please try a different combination. You may even fill in the blanks here.[0m
 echo.
 call :startDialerTip
 call :startAdditionalTips
-set /p input=%BS%
+set /P input=%BS%
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -25406,11 +25764,24 @@ cls&goto startMain
 cls
 call :banner
 echo.
-echo Program did not execute successfully. There might be either a shortcut missing or your coding is faulty.
+echo [38;2;255;0;0mProgram did not execute successfully. There might be either a shortcut missing or your coding is faulty.[0m
 echo.
 call :startDialerTip
 call :startAdditionalTips
-set /p input=%BS%
+set /P input=%BS%
+call :menuMain
+call :menuAuxiliaryCommands
+call :menuSearchEngine
+cls&goto startMain
+:startSpecificationPrompt
+cls
+call :banner
+echo.
+echo [38;2;0;255;255mSpecify the exact name, acronym, or search term of the program you wish to use.[0m
+echo.
+call :startDialerTip
+call :startAdditionalTips
+set /P input=%BS%
 call :menuMain
 call :menuAuxiliaryCommands
 call :menuSearchEngine
@@ -25420,11 +25791,11 @@ cls
 Title Input=%input%
 call :banner
 echo.
-echo Program executed successfully. However, your CLI Directory might be missing. Double check, if you need.
+echo [38;2;0;255;0mProgram executed successfully. [38;2;255;128;0mHowever, your CLI Directory might be missing. Double check, if you need.[0m
 echo.
 call :startDialerTip
 call :startAdditionalTips
-set /p input=%BS%
+set /P input=%BS%
 Title Applications
 call :menuMain
 call :menuAuxiliaryCommands
@@ -25434,7 +25805,7 @@ cls&goto startMain
 cls
 call :banner
 echo.
-echo Operation executed successfully.
+echo [38;2;0;255;0mOperation executed successfully.[0m
 echo.
 call :startInstreamerTip
 call :startAdditionalTips
@@ -25445,7 +25816,7 @@ cls&goto startMainInstream
 cls
 call :banner
 echo.
-echo Download operation failed. It could mean that you used the wrong URL, or the link has expired.
+echo [38;2;255;0;0mDownload operation failed. It could mean that you used the wrong URL, or the link has expired.[0m
 echo.
 call :startInstreamerTip
 call :startAdditionalTips
@@ -25456,7 +25827,7 @@ cls&goto startMainInstream
 cls
 call :bannerStealth
 echo.
-echo Program executed successfully.
+echo [38;2;0;255;0mProgram executed successfully.[0m
 echo.
 call :menuPreExitPromptStealth
 call :menuPreExitStealth
@@ -25465,7 +25836,7 @@ goto startPreExitPromptStealth
 cls
 call :bannerStealth
 echo.
-echo Program did not execute successfully.
+echo [38;2;255;0;0mProgram did not execute successfully.[0m
 echo.
 call :menuPreExitPromptStealth
 call :menuPreExitStealth
@@ -25475,7 +25846,7 @@ echo Exit the Batch Script? ("Y/N")
 echo.
 goto :eof
 :menuPreExitStealth
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU Y goto exitBatchProgram
 if /I %input% EQU N cls&goto startMainStealth
 goto :eof
@@ -25483,12 +25854,12 @@ goto :eof
 Title Input=%input%
 call :banner
 echo.
-echo To uninstall this specific program, please run either the Control Panel or a third-party uninstaller for both
-echo complete and not-so-absolute deactivation. Only then can it await for further reinstallation commands.
+echo [38;2;255;255;0mTo uninstall this specific program, please run either the Control Panel or a third-party uninstaller for both
+echo complete and not-so-absolute deactivation. Only then can it await for further reinstallation commands.[0m
 echo.
 call :startDialerTip
 call :startAdditionalTips
-set /p input=%BS%
+set /P input=%BS%
 Title Applications
 call :menuMain
 call :menuAuxiliaryCommands
@@ -25581,8 +25952,8 @@ if /I %input% EQU 21I start Visual_Studio_I.exe&&goto startPreExitPrompt||goto s
 if /I %input% EQU 21O cls&goto startUninstallationInstructions
 if /I %input% EQU 21S start Visual_Studio_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 22 cls&goto startVisualStudioCodePromptDialerMode
-if /I %input% EQU 22A start Visual_Studio_Code_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 22R start Visual_Studio_Code_Launch_Script_R.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 22A start /min Visual_Studio_Code_Launch_Script_A.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU 22R start /min Visual_Studio_Code_Launch_Script_R.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
 if /I %input% EQU 22I start Visual_Studio_Code_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 22O start Visual_Studio_Code_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 23 cls&goto startWordPromptDialerMode
@@ -25875,8 +26246,8 @@ if /I %input% EQU 46R start Unity_Hub_R.lnk&&goto startPreExitPrompt||goto start
 if /I %input% EQU 46I start Unity_Hub_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 46O start Unity_Hub_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 47 cls&goto startGodotPromptDialerMode
-if /I %input% EQU 47A start Godot_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 47R start Godot_Launch_Script_R.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 47A start /min Godot_Launch_Script_A.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU 47R start /min Godot_Launch_Script_R.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
 if /I %input% EQU 48 cls&goto startSlic3rToolsPromptDialerMode
 if /I %input% EQU 48C cls&goto startSlic3rPromptDialerMode
 if /I %input% EQU 48CA start Slic3r_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -25988,6 +26359,11 @@ if /I %input% EQU 58R start Photoline_R.lnk&&goto startPreExitPrompt||goto start
 if /I %input% EQU 58I start Photoline_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 58O start Photoline_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 59 cls&goto startVideoAndMotionCaptureStudiosPromptDialerMode
+if /I %input% EQU 59B cls&goto startBlenderPromptDialerMode
+if /I %input% EQU 59BA start Blender_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59BR start Blender_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59BI start Blender_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 59BO cls&goto startUninstallationInstructions
 if /I %input% EQU 59D cls&goto startDaVinciResolvePromptDialerMode
 if /I %input% EQU 59DA start DaVinci_Resolve_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 59DR start DaVinci_Resolve_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -26313,15 +26689,21 @@ if /I %input% EQU 983R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&&go
 if /I %input% EQU 983I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 983O cls&goto startUninstallationInstructions
 if /I %input% EQU 984 cls&goto startMaplePromptDialerMode
-if /I %input% EQU 984A start Maple_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 984R start Maple_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 984I start Maple_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 984O cls&goto startUninstallationInstructions
-if /I %input% EQU 985 cls&goto startMapleFlowPromptDialerMode
-if /I %input% EQU 985A start Maple_Flow_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 985R start Maple_Flow_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 985I start Maple_Flow_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 985O cls&goto startUninstallationInstructions
+if /I %input% EQU 984T cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU 984TA start Maple_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 984TR start Maple_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 984TI start Maple_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 984TO cls&goto startUninstallationInstructions
+if /I %input% EQU 984F cls&goto startMapleFlowPromptDialerMode
+if /I %input% EQU 984FA start Maple_Flow_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 984FR start Maple_Flow_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 984FI start Maple_Flow_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 984FO cls&goto startUninstallationInstructions
+if /I %input% EQU 985 cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU 985A start Wallpaper_Engine_A.lnk&set input=985A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 985R start Wallpaper_Engine_R.lnk&set input=985R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 985I start Wallpaper_Engine_I.exe&set input=985I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 985O cls&&set input=985O&goto startUninstallationInstructions
 if /I %input% EQU 986 cls&goto startTelerikPromptDialerMode
 if /I %input% EQU 986A cls&goto startTelerikRunAdminPromptDialerMode
 if /I %input% EQU 986AA start Telerik_Test_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -26748,8 +27130,10 @@ if /I %input% EQU Z9 goto startEmptySlotPrompt
 goto :eof
 :: Auxiliary Commands
 :menuAuxiliaryCommands
+if /I %input% EQU abo cls&goto startAbout
 if /I %input% EQU abou cls&goto startAbout
 if /I %input% EQU about cls&goto startAbout
+if /I %input% EQU ale cls&goto startAlert
 if /I %input% EQU aler cls&goto startAlert
 if /I %input% EQU alert cls&goto startAlert
 if /I %input% EQU alert- cls&goto startAlert
@@ -26845,8 +27229,10 @@ if /I %input% EQU alert-99I cls&goto startSpeccyInstallerPromptDialerMode
 if /I %input% EQU alert-99IA start Speccy_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU alert-99IB start Piriform_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU alert-99O start Speccy_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU alp cls&goto startMainAlphabetized1
 if /I %input% EQU alph cls&goto startMainAlphabetized1
 if /I %input% EQU alpha cls&goto startMainAlphabetized1
+if /I %input% EQU bac cls&goto startBackground
 if /I %input% EQU back cls&goto startBackground
 if /I %input% EQU backg cls&goto startBackground
 if /I %input% EQU backgr cls&goto startBackground
@@ -26881,7 +27267,7 @@ if /I %input% EQU background-6 cls&goto startOperaPromptDialerMode
 if /I %input% EQU background-6A start Opera_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-6R start Opera_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-6I start Opera_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU background-6O start Opera_Browser_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU background-6O cls&goto startUninstallationInstructions
 if /I %input% EQU background-7 cls&goto startUltraSearchPromptDialerMode
 if /I %input% EQU background-7A start UltraSearch_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-7R start UltraSearch_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -26901,7 +27287,9 @@ if /I %input% EQU background-9PA start Notepad++_A.lnk&&goto startPreExitPrompt|
 if /I %input% EQU background-9PR start Notepad++_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-9PI start Notepad++_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-9PO start Notepad++_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU bet cls&goto startMainAlphabetized2
 if /I %input% EQU beta cls&goto startMainAlphabetized2
+if /I %input% EQU cop cls&goto startCopy
 if /I %input% EQU copy cls&goto startCopy
 if /I %input% EQU copy0 cls&goto startCopy0
 if /I %input% EQU copy1 call :startCopy1
@@ -26913,15 +27301,20 @@ if /I %input% EQU copy6 call :startCopy6
 if /I %input% EQU copy7 call :startCopy7
 if /I %input% EQU copy8 call :startCopy8
 if /I %input% EQU copy9 call :startCopy9
+if /I %input% EQU dis cls&goto startDisplay
 if /I %input% EQU disp cls&goto startDisplay
 if /I %input% EQU displ cls&goto startDisplay
 if /I %input% EQU displa cls&goto startDisplay
 if /I %input% EQU display cls&goto startDisplay
+if /I %input% EQU exi goto exitBatchProgram
 if /I %input% EQU exit goto exitBatchProgram
+if /I %input% EQU gam cls&goto startMainAlphabetized3
 if /I %input% EQU gamm cls&goto startMainAlphabetized3
 if /I %input% EQU gamma cls&goto startMainAlphabetized3
+if /I %input% EQU gui cls&goto startGuide
 if /I %input% EQU guid cls&goto startGuide
 if /I %input% EQU guide cls&goto startGuide
+if /I %input% EQU hel cls&goto startHelp
 if /I %input% EQU help cls&goto startHelp
 if /I %input% EQU insta cls&goto startInstallerPromptDialerMode
 if /I %input% EQU instal cls&goto startInstallerPromptDialerMode
@@ -26951,7 +27344,9 @@ if /I %input% EQU instr call :startInstreamShortcutReplace
 if /I %input% EQU instre call :startInstreamShortcutReplace
 if /I %input% EQU instrea call :startInstreamShortcutReplace
 if /I %input% EQU instream call :startInstreamShortcutReplace
+if /I %input% EQU men cls&goto startMain
 if /I %input% EQU menu cls&goto startMain
+if /I %input% EQU net cls&goto startNetwork
 if /I %input% EQU netw cls&goto startNetwork
 if /I %input% EQU netwo cls&goto startNetwork
 if /I %input% EQU networ cls&goto startNetwork
@@ -27033,24 +27428,30 @@ if /I %input% EQU network-9MA start Technitium_MAC_Spoofer_A.lnk&&goto startPreE
 if /I %input% EQU network-9MR start Technitium_MAC_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU network-9MI start Technitium_MAC_Spoofer_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU network-9MO cls&goto startUninstallationInstructions
+if /I %input% EQU ope start Davy_Jones_OS_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU open start Davy_Jones_OS_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU pac cls&goto startPackageChecker
 if /I %input% EQU pack cls&goto startPackageChecker
 if /I %input% EQU packa cls&goto startPackageChecker
 if /I %input% EQU packag cls&goto startPackageChecker
 if /I %input% EQU package cls&goto startPackageChecker
+if /I %input% EQU roo start Root_Directory_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU root start Root_Directory_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU samp call :startSampleShortcutReplace
 if /I %input% EQU sampl call :startSampleShortcutReplace
 if /I %input% EQU sample call :startSampleShortcutReplace
+if /I %input% EQU sho cls&goto startShortcutChecker
 if /I %input% EQU shor cls&goto startShortcutChecker
 if /I %input% EQU short cls&goto startShortcutChecker
 if /I %input% EQU shortc cls&goto startShortcutChecker
 if /I %input% EQU shortcu cls&goto startShortcutChecker
 if /I %input% EQU shortcut cls&goto startShortcutChecker
+if /I %input% EQU ste call :startStealthShortcutReplace
 if /I %input% EQU stea call :startStealthShortcutReplace
 if /I %input% EQU steal call :startStealthShortcutReplace
 if /I %input% EQU stealt call :startStealthShortcutReplace
 if /I %input% EQU stealth call :startStealthShortcutReplace
+if /I %input% EQU tre cls&goto startTree
 if /I %input% EQU tree cls&goto startTree
 if /I %input% EQU words cls&goto startWordsort
 if /I %input% EQU wordso cls&goto startWordsort
@@ -27060,6 +27461,10 @@ goto :eof
 :: Search Engine
 :menuSearchEngine
 if /I %input% EQU O1O- cls&goto start010EditorPromptDialerMode
+if /I %input% EQU O1O-A start 010_Editor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O1O-R start 010_Editor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O1O-I start 010_Editor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O1O-O start 010_Editor_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O1O-E cls&goto start010EditorPromptDialerMode
 if /I %input% EQU O1O-Ed cls&goto start010EditorPromptDialerMode
 if /I %input% EQU O1O-Edi cls&goto start010EditorPromptDialerMode
@@ -27074,6 +27479,10 @@ if /I %input% EQU O1O-Editor-O start 010_Editor_O.lnk&&goto startPreExitPrompt||
 if /I %input% EQU 7-Zi cls&goto start7-ZipFMpromptDialerMode
 if /I %input% EQU 7-Zip cls&goto start7-ZipFMpromptDialerMode
 if /I %input% EQU 7-Zip- cls&goto start7-ZipFMpromptDialerMode
+if /I %input% EQU 7-Zip-A start 7-ZipFM_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 7-Zip-R start 7-ZipFM_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 7-Zip-I start 7-ZipFM_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 7-Zip-O start 7-ZipFM_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 7-Zip-F cls&goto start7-ZipFMpromptDialerMode
 if /I %input% EQU 7-Zip-FM cls&goto start7-ZipFMpromptDialerMode
 if /I %input% EQU 7-Zip-FM- cls&goto start7-ZipFMpromptDialerMode
@@ -27092,7 +27501,10 @@ if /I %input% EQU Access-O cls&goto startUninstallationInstructions
 if /I %input% EQU Adob cls&goto startAdobeAcrobatPromptDialerMode
 if /I %input% EQU Adobe cls&goto startAdobeAcrobatPromptDialerMode
 if /I %input% EQU Adobe- cls&goto startAdobeAcrobatPromptDialerMode
-if /I %input% EQU Adobe-A cls&goto startAdobeAcrobatPromptDialerMode
+if /I %input% EQU Adobe-A start Adobe_Acrobat_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Adobe-R start Adobe_Acrobat_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Adobe-I start Adobe_Acrobat_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Adobe-O cls&goto startUninstallationInstructions
 if /I %input% EQU Adobe-Ac cls&goto startAdobeAcrobatPromptDialerMode
 if /I %input% EQU Adobe-Acr cls&goto startAdobeAcrobatPromptDialerMode
 if /I %input% EQU Adobe-Acro cls&goto startAdobeAcrobatPromptDialerMode
@@ -27110,6 +27522,10 @@ if /I %input% EQU Advanc cls&goto startAdvancedInstallerPromptDialerMode
 if /I %input% EQU Advance cls&goto startAdvancedInstallerPromptDialerMode
 if /I %input% EQU Advanced cls&goto startAdvancedInstallerPromptDialerMode
 if /I %input% EQU Advanced- cls&goto startAdvancedInstallerPromptDialerMode
+if /I %input% EQU Advanced-A start Advanced_Installer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Advanced-R start Advanced_Installer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Advanced-I start Advanced_Installer_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Advanced-O start Advanced_Installer_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Advanced-I cls&goto startAdvancedInstallerPromptDialerMode
 if /I %input% EQU Advanced-In cls&goto startAdvancedInstallerPromptDialerMode
 if /I %input% EQU Advanced-Ins cls&goto startAdvancedInstallerPromptDialerMode
@@ -27124,6 +27540,12 @@ if /I %input% EQU Advanced-Installer-A start Advanced_Installer_A.lnk&&goto star
 if /I %input% EQU Advanced-Installer-R start Advanced_Installer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Advanced-Installer-I start Advanced_Installer_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Advanced-Installer-O start Advanced_Installer_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ADW cls&goto startMWBadwCleanerPromptDialerMode
+if /I %input% EQU ADW- cls&goto startMWBadwCleanerPromptDialerMode
+if /I %input% EQU ADW-A start MWB_ADWcleaner_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ADW-R start MWB_ADWcleaner_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ADW-I start MWB_ADWcleaner_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ADW-O start MWB_ADWcleaner_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ADWc cls&goto startMWBadwCleanerPromptDialerMode
 if /I %input% EQU ADWcl cls&goto startMWBadwCleanerPromptDialerMode
 if /I %input% EQU ADWcle cls&goto startMWBadwCleanerPromptDialerMode
@@ -27139,6 +27561,10 @@ if /I %input% EQU ADWcleaner-O start MWB_ADWcleaner_O.lnk&&goto startPreExitProm
 if /I %input% EQU Agen cls&goto startAgentDVRpromptDialerMode
 if /I %input% EQU Agent cls&goto startAgentDVRpromptDialerMode
 if /I %input% EQU Agent- cls&goto startAgentDVRpromptDialerMode
+if /I %input% EQU Agent-A start Agent_DVR_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Agent-R start Agent_DVR_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Agent-I start Agent_DVR_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Agent-O cls&goto startUninstallationInstructions
 if /I %input% EQU Agent-D cls&goto startAgentDVRpromptDialerMode
 if /I %input% EQU Agent-DV cls&goto startAgentDVRpromptDialerMode
 if /I %input% EQU Agent-DVR cls&goto startAgentDVRpromptDialerMode
@@ -27157,6 +27583,10 @@ if /I %input% EQU ALZip-O start ALZip_O.lnk&&goto startPreExitPrompt||goto start
 if /I %input% EQU Amig cls&goto startAmigaForeverPromptDialerMode
 if /I %input% EQU Amiga cls&goto startAmigaForeverPromptDialerMode
 if /I %input% EQU Amiga- cls&goto startAmigaForeverPromptDialerMode
+if /I %input% EQU Amiga-A start Amiga_Forever_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Amiga-R start Amiga_Forever_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Amiga-I start Amiga_Forever_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Amiga-O start Amiga_Forever_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Amiga-F cls&goto startAmigaForeverPromptDialerMode
 if /I %input% EQU Amiga-Fo cls&goto startAmigaForeverPromptDialerMode
 if /I %input% EQU Amiga-For cls&goto startAmigaForeverPromptDialerMode
@@ -27174,6 +27604,10 @@ if /I %input% EQU Andro cls&goto startAndroidStudioPromptDialerMode
 if /I %input% EQU Androi cls&goto startAndroidStudioPromptDialerMode
 if /I %input% EQU Android cls&goto startAndroidStudioPromptDialerMode
 if /I %input% EQU Android- cls&goto startAndroidStudioPromptDialerMode
+if /I %input% EQU Android-A start Android_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Android-R start Android_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Android-I start Android_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Android-O start Android_Studio_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Android-S cls&goto startAndroidStudioPromptDialerMode
 if /I %input% EQU Android-St cls&goto startAndroidStudioPromptDialerMode
 if /I %input% EQU Android-Stu cls&goto startAndroidStudioPromptDialerMode
@@ -27203,7 +27637,10 @@ if /I %input% EQU Audia cls&goto startAudialsOnePromptDialerMode
 if /I %input% EQU Audial cls&goto startAudialsOnePromptDialerMode
 if /I %input% EQU Audials cls&goto startAudialsOnePromptDialerMode
 if /I %input% EQU Audials- cls&goto startAudialsOnePromptDialerMode
-if /I %input% EQU Audials-O cls&goto startAudialsOnePromptDialerMode
+if /I %input% EQU Audials-A start Audials_One_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Audials-R start Audials_One_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Audials-I start Audials_One_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Audials-O cls&goto startUninstallationInstructions
 if /I %input% EQU Audials-On cls&goto startAudialsOnePromptDialerMode
 if /I %input% EQU Audials-One cls&goto startAudialsOnePromptDialerMode
 if /I %input% EQU Audials-One- cls&goto startAudialsOnePromptDialerMode
@@ -27211,8 +27648,14 @@ if /I %input% EQU Audials-One-A start Audials_One_A.lnk&&goto startPreExitPrompt
 if /I %input% EQU Audials-One-R start Audials_One_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Audials-One-I start Audials_One_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Audials-One-O cls&goto startUninstallationInstructions
-if /I %input% EQU Auto cls&goto startAutoCADpromptDialerMode
+if /I %input% EQU Auto cls&goto startSpecificationPrompt
 if /I %input% EQU AutoC cls&goto startAutoCADpromptDialerMode
+if /I %input% EQU AutoC- cls&goto startAutoCADpromptDialerMode
+if /I %input% EQU AutoC-A start AutoCAD_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoC-R start AutoCAD_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoC-I start AutoCAD_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoC-O cls&goto startUninstallationInstructions
+if /I %input% EQU AutoC-S start AutoCAD_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCA cls&goto startAutoCADpromptDialerMode
 if /I %input% EQU AutoCAD cls&goto startAutoCADpromptDialerMode
 if /I %input% EQU AutoCAD- cls&goto startAutoCADpromptDialerMode
@@ -27221,16 +27664,35 @@ if /I %input% EQU AutoCAD-R start AutoCAD_R.lnk&&goto startPreExitPrompt||goto s
 if /I %input% EQU AutoCAD-I start AutoCAD_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-O cls&goto startUninstallationInstructions
 if /I %input% EQU AutoCAD-S start AutoCAD_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-Of cls&goto startAutoCADinstallPromptDialerMode
+if /I %input% EQU AutoCAD-Off cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-Offl cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-Offli cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-Offlin cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-Offline cls&goto startAutoCADinstallPromptDialerMode
+if /I %input% EQU AutoCAD-Offline- cls&goto startAutoCADinstallPromptDialerMode
+if /I %input% EQU AutoCAD-Offline-I start AutoCAD_OfflineHelp_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-OfflineH cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-OfflineHe cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-OfflineHel cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-OfflineHelp cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-OfflineHelp- cls&goto startAutoCADinstallPromptDialerMode
 if /I %input% EQU AutoCAD-OfflineHelp-I start AutoCAD_OfflineHelp_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-Offline-H cls&goto startAutoCADinstallPromptDialerMode
+if /I %input% EQU AutoCAD-Offline-He cls&goto startAutoCADinstallPromptDialerMode
+if /I %input% EQU AutoCAD-Offline-Hel cls&goto startAutoCADinstallPromptDialerMode
+if /I %input% EQU AutoCAD-Offline-Help cls&goto startAutoCADinstallPromptDialerMode
+if /I %input% EQU AutoCAD-Offline-Help- cls&goto startAutoCADinstallPromptDialerMode
+if /I %input% EQU AutoCAD-Offline-Help-I start AutoCAD_OfflineHelp_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-E cls&goto startAutoCADElectricalPromptDialerMode
+if /I %input% EQU AutoCAD-E- cls&goto startAutoCADElectricalPromptDialerMode
+if /I %input% EQU AutoCAD-E-A start AutoCAD_Electrical_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-E-R start AutoCAD_Electrical_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-E-I start AutoCAD_Electrical_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-E-O cls&goto startUninstallationInstructions
+if /I %input% EQU AutoCAD-E-S start AutoCAD_Electrical_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-El cls&goto startAutoCADElectricalPromptDialerMode
+if /I %input% EQU AutoCAD-Ele cls&goto startAutoCADElectricalPromptDialerMode
 if /I %input% EQU AutoCAD-Elec cls&goto startAutoCADElectricalPromptDialerMode
 if /I %input% EQU AutoCAD-Elect cls&goto startAutoCADElectricalPromptDialerMode
 if /I %input% EQU AutoCAD-Electr cls&goto startAutoCADElectricalPromptDialerMode
@@ -27244,6 +27706,15 @@ if /I %input% EQU AutoCAD-Electrical-R start AutoCAD_Electrical_R.lnk&&goto star
 if /I %input% EQU AutoCAD-Electrical-I start AutoCAD_Electrical_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-Electrical-O cls&goto startUninstallationInstructions
 if /I %input% EQU AutoCAD-Electrical-S start AutoCAD_Electrical_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-M cls&goto startAutoCADMechanicalPromptDialerMode
+if /I %input% EQU AutoCAD-M- cls&goto startAutoCADMechanicalPromptDialerMode
+if /I %input% EQU AutoCAD-M-A start AutoCAD_Mechanical_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-M-R start AutoCAD_Mechanical_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-M-I start AutoCAD_Mechanical_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-M-O cls&goto startUninstallationInstructions
+if /I %input% EQU AutoCAD-M-S start AutoCAD_Mechanical_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoCAD-Me cls&goto startAutoCADMechanicalPromptDialerMode
+if /I %input% EQU AutoCAD-Mec cls&goto startAutoCADMechanicalPromptDialerMode
 if /I %input% EQU AutoCAD-Mech cls&goto startAutoCADMechanicalPromptDialerMode
 if /I %input% EQU AutoCAD-Mecha cls&goto startAutoCADMechanicalPromptDialerMode
 if /I %input% EQU AutoCAD-Mechan cls&goto startAutoCADMechanicalPromptDialerMode
@@ -27257,9 +27728,23 @@ if /I %input% EQU AutoCAD-Mechanical-R start AutoCAD_Mechanical_R.lnk&&goto star
 if /I %input% EQU AutoCAD-Mechanical-I start AutoCAD_Mechanical_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoCAD-Mechanical-O cls&goto startUninstallationInstructions
 if /I %input% EQU AutoCAD-Mechanical-S start AutoCAD_Mechanical_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-C cls&goto startAutodeskCivil3DpromptDialerMode
+if /I %input% EQU Autodesk-C- cls&goto startAutodeskCivil3DpromptDialerMode
+if /I %input% EQU Autodesk-C-A start Autodesk_Civil_3D_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-C-R start Autodesk_Civil_3D_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-C-I start Autodesk_Civil_3D_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-C-O cls&goto startUninstallationInstructions
+if /I %input% EQU Autodesk-C-S start Autodesk_Civil_3D_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Ci cls&goto startAutodeskCivil3DpromptDialerMode
+if /I %input% EQU Autodesk-Civ cls&goto startAutodeskCivil3DpromptDialerMode
 if /I %input% EQU Autodesk-Civi cls&goto startAutodeskCivil3DpromptDialerMode
 if /I %input% EQU Autodesk-Civil cls&goto startAutodeskCivil3DpromptDialerMode
 if /I %input% EQU Autodesk-Civil- cls&goto startAutodeskCivil3DpromptDialerMode
+if /I %input% EQU Autodesk-Civil-A start Autodesk_Civil_3D_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Civil-R start Autodesk_Civil_3D_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Civil-I start Autodesk_Civil_3D_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Civil-O cls&goto startUninstallationInstructions
+if /I %input% EQU Autodesk-Civil-S start Autodesk_Civil_3D_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Civil-3 cls&goto startAutodeskCivil3DpromptDialerMode
 if /I %input% EQU Autodesk-Civil-3D cls&goto startAutodeskCivil3DpromptDialerMode
 if /I %input% EQU Autodesk-Civil-3D- cls&goto startAutodeskCivil3DpromptDialerMode
@@ -27268,10 +27753,25 @@ if /I %input% EQU Autodesk-Civil-3D-R start Autodesk_Civil_3D_R.lnk&&goto startP
 if /I %input% EQU Autodesk-Civil-3D-I start Autodesk_Civil_3D_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Civil-3D-O cls&goto startUninstallationInstructions
 if /I %input% EQU Autodesk-Civil-3D-S start Autodesk_Civil_3D_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-F cls&goto startSpecificationPrompt
+if /I %input% EQU Autodesk-Fe cls&goto startAutodeskFeatureCAMpromptDialerMode
+if /I %input% EQU Autodesk-Fe- cls&goto startAutodeskFeatureCAMpromptDialerMode
+if /I %input% EQU Autodesk-Fe-A start Autodesk_FeatureCAM_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fe-R start Autodesk_FeatureCAM_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fe-I start Autodesk_FeatureCAM_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fe-O cls&goto startUninstallationInstructions
+if /I %input% EQU Autodesk-Fe-S start Autodesk_FeatureCAM_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fea cls&goto startAutodeskFeatureCAMpromptDialerMode
 if /I %input% EQU Autodesk-Feat cls&goto startAutodeskFeatureCAMpromptDialerMode
 if /I %input% EQU Autodesk-Featu cls&goto startAutodeskFeatureCAMpromptDialerMode
 if /I %input% EQU Autodesk-Featur cls&goto startAutodeskFeatureCAMpromptDialerMode
 if /I %input% EQU Autodesk-Feature cls&goto startAutodeskFeatureCAMpromptDialerMode
+if /I %input% EQU Autodesk-Feature- cls&goto startAutodeskFeatureCAMpromptDialerMode
+if /I %input% EQU Autodesk-Feature-A start Autodesk_FeatureCAM_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Feature-R start Autodesk_FeatureCAM_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Feature-I start Autodesk_FeatureCAM_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Feature-O cls&goto startUninstallationInstructions
+if /I %input% EQU Autodesk-Feature-S start Autodesk_FeatureCAM_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-FeatureC cls&goto startAutodeskFeatureCAMpromptDialerMode
 if /I %input% EQU Autodesk-FeatureCA cls&goto startAutodeskFeatureCAMpromptDialerMode
 if /I %input% EQU Autodesk-FeatureCAM cls&goto startAutodeskFeatureCAMpromptDialerMode
@@ -27281,10 +27781,23 @@ if /I %input% EQU Autodesk-FeatureCAM-R start Autodesk_FeatureCAM_R.lnk&&goto st
 if /I %input% EQU Autodesk-FeatureCAM-I start Autodesk_FeatureCAM_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-FeatureCAM-O cls&goto startUninstallationInstructions
 if /I %input% EQU Autodesk-FeatureCAM-S start Autodesk_FeatureCAM_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fu cls&goto startAutodeskFusion360PromptDialerMode
+if /I %input% EQU Autodesk-Fu- cls&goto startAutodeskFusion360PromptDialerMode
+if /I %input% EQU Autodesk-Fu-A start Autodesk_Fusion_360_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fu-R start Autodesk_Fusion_360_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fu-I start Autodesk_Fusion_360_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fu-O cls&goto startUninstallationInstructions
+if /I %input% EQU Autodesk-Fu-S start Autodesk_Fusion_360_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fus cls&goto startAutodeskFusion360PromptDialerMode
 if /I %input% EQU Autodesk-Fusi cls&goto startAutodeskFusion360PromptDialerMode
 if /I %input% EQU Autodesk-Fusio cls&goto startAutodeskFusion360PromptDialerMode
 if /I %input% EQU Autodesk-Fusion cls&goto startAutodeskFusion360PromptDialerMode
 if /I %input% EQU Autodesk-Fusion- cls&goto startAutodeskFusion360PromptDialerMode
+if /I %input% EQU Autodesk-Fusion-A start Autodesk_Fusion_360_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fusion-R start Autodesk_Fusion_360_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fusion-I start Autodesk_Fusion_360_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Fusion-O cls&goto startUninstallationInstructions
+if /I %input% EQU Autodesk-Fusion-S start Autodesk_Fusion_360_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Fusion-3 cls&goto startAutodeskFusion360PromptDialerMode
 if /I %input% EQU Autodesk-Fusion-36 cls&goto startAutodeskFusion360PromptDialerMode
 if /I %input% EQU Autodesk-Fusion-36O cls&goto startAutodeskFusion360PromptDialerMode
@@ -27294,6 +27807,15 @@ if /I %input% EQU Autodesk-Fusion-36O-R start Autodesk_Fusion_360_R.lnk&&goto st
 if /I %input% EQU Autodesk-Fusion-36O-I start Autodesk_Fusion_360_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Autodesk-Fusion-36O-O cls&goto startUninstallationInstructions
 if /I %input% EQU Autodesk-Fusion-36O-S start Autodesk_Fusion_360_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-M cls&goto startAutodeskMayaPromptDialerMode
+if /I %input% EQU Autodesk-M- cls&goto startAutodeskMayaPromptDialerMode
+if /I %input% EQU Autodesk-M-A start Autodesk_Maya_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-M-R start Autodesk_Maya_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-M-I start Autodesk_Maya_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-M-O cls&goto startUninstallationInstructions
+if /I %input% EQU Autodesk-M-S start Autodesk_Maya_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Autodesk-Ma cls&goto startAutodeskMayaPromptDialerMode
+if /I %input% EQU Autodesk-May cls&goto startAutodeskMayaPromptDialerMode
 if /I %input% EQU Autodesk-Maya cls&goto startAutodeskMayaPromptDialerMode
 if /I %input% EQU Autodesk-Maya- cls&goto startAutodeskMayaPromptDialerMode
 if /I %input% EQU Autodesk-Maya-A start Autodesk_Maya_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -27302,12 +27824,21 @@ if /I %input% EQU Autodesk-Maya-I start Autodesk_Maya_I.exe&&goto startPreExitPr
 if /I %input% EQU Autodesk-Maya-O cls&goto startUninstallationInstructions
 if /I %input% EQU Autodesk-Maya-S start Autodesk_Maya_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoH cls&goto startAutoHotkey_UX_PromptDialerMode
+if /I %input% EQU AutoH- cls&goto startAutoHotkey_UX_PromptDialerMode
+if /I %input% EQU AutoH-A start AutoHotkey_UX_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoH-R start AutoHotkey_UX_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoH-I start AutoHotkey_UX_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoH-O start AutoHotkey_UX_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoHo cls&goto startAutoHotkey_UX_PromptDialerMode
 if /I %input% EQU AutoHot cls&goto startAutoHotkey_UX_PromptDialerMode
 if /I %input% EQU AutoHotk cls&goto startAutoHotkey_UX_PromptDialerMode
 if /I %input% EQU AutoHotke cls&goto startAutoHotkey_UX_PromptDialerMode
 if /I %input% EQU AutoHotkey cls&goto startAutoHotkey_UX_PromptDialerMode
 if /I %input% EQU AutoHotkey- cls&goto startAutoHotkey_UX_PromptDialerMode
+if /I %input% EQU AutoHotkey-A start AutoHotkey_UX_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoHotkey-R start AutoHotkey_UX_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoHotkey-I start AutoHotkey_UX_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AutoHotkey-O start AutoHotkey_UX_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU AutoHotkey-U cls&goto startAutoHotkey_UX_PromptDialerMode
 if /I %input% EQU AutoHotkey-UX cls&goto startAutoHotkey_UX_PromptDialerMode
 if /I %input% EQU AutoHotkey-UX- cls&goto startAutoHotkey_UX_PromptDialerMode
@@ -27324,6 +27855,10 @@ if /I %input% EQU Avast-I start Avast_I.exe&&goto startPreExitPrompt||goto start
 if /I %input% EQU Avast-O start Avast_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Avid cls&goto startAvidProToolsPromptDialerMode
 if /I %input% EQU Avid- cls&goto startAvidProToolsPromptDialerMode
+if /I %input% EQU Avid-A start Avid_Pro_Tools_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Avid-R start Avid_Pro_Tools_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Avid-I start Avid_Pro_Tools_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Avid-O start Avid_Pro_Tools_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Avid-P cls&goto startAvidProToolsPromptDialerMode
 if /I %input% EQU Avid-Pr cls&goto startAvidProToolsPromptDialerMode
 if /I %input% EQU Avid-Pro cls&goto startAvidProToolsPromptDialerMode
@@ -27338,6 +27873,10 @@ if /I %input% EQU Avid-Pro-Tools-A start Avid_Pro_Tools_A.lnk&&goto startPreExit
 if /I %input% EQU Avid-Pro-Tools-R start Avid_Pro_Tools_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Avid-Pro-Tools-I start Avid_Pro_Tools_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Avid-Pro-Tools-O start Avid_Pro_Tools_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU B1-A start B1_Manager_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU B1-R start B1_Manager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU B1-I start B1_Manager_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU B1-O start B1_Manager_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU B1-M cls&goto startB1ManagerPromptDialerMode
 if /I %input% EQU B1-Ma cls&goto startB1ManagerPromptDialerMode
 if /I %input% EQU B1-Man cls&goto startB1ManagerPromptDialerMode
@@ -27360,6 +27899,7 @@ if /I %input% EQU Bandizip-A start Bandizip_A.lnk&&goto startPreExitPrompt||goto
 if /I %input% EQU Bandizip-R start Bandizip_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Bandizip-I start Bandizip_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Bandizip-O start Bandizip_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Bit cls&goto startSpecificationPrompt
 if /I %input% EQU Bitd cls&goto startBitdefenderPromptDialerMode
 if /I %input% EQU Bitde cls&goto startBitdefenderPromptDialerMode
 if /I %input% EQU Bitdef cls&goto startBitdefenderPromptDialerMode
@@ -27390,7 +27930,21 @@ if /I %input% EQU Bitvise-IS start Bitvise_SSH_Server_I.exe&&goto startPreExitPr
 if /I %input% EQU Bitvise-O cls&goto startBitviseUninstallPromptFromSearchMode
 if /I %input% EQU Bitvise-OC start Bitvise_SSH_Client_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Bitvise-OS start Bitvise_SSH_Server_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Blen cls&goto startBlenderPromptDialerMode
+if /I %input% EQU Blend cls&goto startBlenderPromptDialerMode
+if /I %input% EQU Blende cls&goto startBlenderPromptDialerMode
+if /I %input% EQU Blender cls&goto startBlenderPromptDialerMode
+if /I %input% EQU Blender- cls&goto startBlenderPromptDialerMode
+if /I %input% EQU Blender-A start Blender_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Blender-R start Blender_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Blender-I start Blender_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Blender-O cls&goto startUninstallationInstructions
 if /I %input% EQU Blue cls&goto startBlueStacksPromptDialerMode
+if /I %input% EQU Blue- cls&goto startBlueStacksPromptDialerMode
+if /I %input% EQU Blue-A start BlueStacks_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Blue-R start BlueStacks_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Blue-I start BlueStacks_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Blue-O start BlueStacks_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU BlueS cls&goto startBlueStacksPromptDialerMode
 if /I %input% EQU BlueSt cls&goto startBlueStacksPromptDialerMode
 if /I %input% EQU BlueSta cls&goto startBlueStacksPromptDialerMode
@@ -27449,6 +28003,8 @@ if /I %input% EQU Charact cls&goto startCharacterMapPromptDialerMode
 if /I %input% EQU Characte cls&goto startCharacterMapPromptDialerMode
 if /I %input% EQU Character cls&goto startCharacterMapPromptDialerMode
 if /I %input% EQU Character- cls&goto startCharacterMapPromptDialerMode
+if /I %input% EQU Character-A start Character_Map_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Character-R start Character_Map_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Character-M cls&goto startCharacterMapPromptDialerMode
 if /I %input% EQU Character-Ma cls&goto startCharacterMapPromptDialerMode
 if /I %input% EQU Character-Map cls&goto startCharacterMapPromptDialerMode
@@ -27458,6 +28014,10 @@ if /I %input% EQU Character-Map-R start Character_Map_R.lnk&&goto startPreExitPr
 if /I %input% EQU Chea cls&goto startCheatEnginePromptDialerMode
 if /I %input% EQU Cheat cls&goto startCheatEnginePromptDialerMode
 if /I %input% EQU Cheat- cls&goto startCheatEnginePromptDialerMode
+if /I %input% EQU Cheat-A start Cheat_Engine_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Cheat-R start Cheat_Engine_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Cheat-I start Cheat_Engine_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Cheat-O start Cheat_Engine_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Cheat-E cls&goto startCheatEnginePromptDialerMode
 if /I %input% EQU Cheat-En cls&goto startCheatEnginePromptDialerMode
 if /I %input% EQU Cheat-Eng cls&goto startCheatEnginePromptDialerMode
@@ -27472,6 +28032,10 @@ if /I %input% EQU Cheat-Engine-O start Cheat_Engine_O.lnk&&goto startPreExitProm
 if /I %input% EQU Ches cls&goto startChessTitansPromptDialerMode
 if /I %input% EQU Chess cls&goto startChessTitansPromptDialerMode
 if /I %input% EQU Chess- cls&goto startChessTitansPromptDialerMode
+if /I %input% EQU Chess-A start Chess_Titans_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Chess-R start Chess_Titans_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Chess-I start Windows7GamesForWindows11_10_8_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Chess-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Chess-T cls&goto startChessTitansPromptDialerMode
 if /I %input% EQU Chess-Ti cls&goto startChessTitansPromptDialerMode
 if /I %input% EQU Chess-Tit cls&goto startChessTitansPromptDialerMode
@@ -27507,7 +28071,10 @@ if /I %input% EQU Cisd cls&goto startCisdemAppCryptPromptDialerMode
 if /I %input% EQU Cisde cls&goto startCisdemAppCryptPromptDialerMode
 if /I %input% EQU Cisdem cls&goto startCisdemAppCryptPromptDialerMode
 if /I %input% EQU Cisdem- cls&goto startCisdemAppCryptPromptDialerMode
-if /I %input% EQU Cisdem-A cls&goto startCisdemAppCryptPromptDialerMode
+if /I %input% EQU Cisdem-A start Cisdem_App_Crypt_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Cisdem-R start Cisdem_App_Crypt_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Cisdem-I start Cisdem_App_Crypt_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Cisdem-O start Cisdem_App_Crypt_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Cisdem-Ap cls&goto startCisdemAppCryptPromptDialerMode
 if /I %input% EQU Cisdem-App cls&goto startCisdemAppCryptPromptDialerMode
 if /I %input% EQU Cisdem-App- cls&goto startCisdemAppCryptPromptDialerMode
@@ -27521,8 +28088,21 @@ if /I %input% EQU Cisdem-App-Crypt-A start Cisdem_App_Crypt_A.lnk&&goto startPre
 if /I %input% EQU Cisdem-App-Crypt-R start Cisdem_App_Crypt_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Cisdem-App-Crypt-I start Cisdem_App_Crypt_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Cisdem-App-Crypt-O start Cisdem_App_Crypt_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CLI- cls&goto startCLIdirectoryPromptDialerMode
+if /I %input% EQU CLio cls&goto startCLionPromptDialerMode
+if /I %input% EQU CLion cls&goto startCLionPromptDialerMode
+if /I %input% EQU CLion- cls&goto startCLionPromptDialerMode
+if /I %input% EQU CLion-A start CLion_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CLion-R start CLion_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CLion-I start CLion_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CLion-O cls&goto startUninstallationInstructions
+if /I %input% EQU CLI cls&goto startCommandPromptDialerMode
+if /I %input% EQU CLI- cls&goto startCommandPromptDialerMode
+if /I %input% EQU CLI-A start Command_Prompt_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CLI-R start Command_Prompt_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CLI-D cls&goto startCLIdirectoryPromptDialerMode
+if /I %input% EQU CLI-D- cls&goto startCLIdirectoryPromptDialerMode
+if /I %input% EQU CLI-D-A start CLI_Directory.txt&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CLI-D-R start CLI_Directory.txt&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CLI-Di cls&goto startCLIdirectoryPromptDialerMode
 if /I %input% EQU CLI-Dir cls&goto startCLIdirectoryPromptDialerMode
 if /I %input% EQU CLI-Dire cls&goto startCLIdirectoryPromptDialerMode
@@ -27534,18 +28114,22 @@ if /I %input% EQU CLI-Directory cls&goto startCLIdirectoryPromptDialerMode
 if /I %input% EQU CLI-Directory- cls&goto startCLIdirectoryPromptDialerMode
 if /I %input% EQU CLI-Directory-A start CLI_Directory.txt&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CLI-Directory-R start CLI_Directory.txt&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CLio cls&goto startCLionPromptDialerMode
-if /I %input% EQU CLion cls&goto startCLionPromptDialerMode
-if /I %input% EQU CLion- cls&goto startCLionPromptDialerMode
-if /I %input% EQU CLion-A start CLion_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CLion-R start CLion_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CLion-I start CLion_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU CLion-O cls&goto startUninstallationInstructions
+if /I %input% EQU CLI-O cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU CLI-Oc cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU CLI-Oct cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU CLI-Octa cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU CLI-Octav cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU CLI-Octave cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU CLI-Octave- cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU CLI-Octave-A start CLI_Octave_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CLI-Octave-R start CLI_Octave_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Comm cls&goto startCommandPromptDialerMode
 if /I %input% EQU Comma cls&goto startCommandPromptDialerMode
 if /I %input% EQU Comman cls&goto startCommandPromptDialerMode
 if /I %input% EQU Command cls&goto startCommandPromptDialerMode
 if /I %input% EQU Command- cls&goto startCommandPromptDialerMode
+if /I %input% EQU Command-A start Command_Prompt_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Command-R start Command_Prompt_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Command-P cls&goto startCommandPromptDialerMode
 if /I %input% EQU Command-Pr cls&goto startCommandPromptDialerMode
 if /I %input% EQU Command-Pro cls&goto startCommandPromptDialerMode
@@ -27558,6 +28142,10 @@ if /I %input% EQU Command-Prompt-R start Command_Prompt_R.lnk&&goto startPreExit
 if /I %input% EQU Crea cls&goto startCreateInstallPromptDialerMode
 if /I %input% EQU Creat cls&goto startCreateInstallPromptDialerMode
 if /I %input% EQU Create cls&goto startCreateInstallPromptDialerMode
+if /I %input% EQU Create-A start CreateInstall_A.lnk&set input=installer-CA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Create-R start CreateInstall_R.lnk&set input=installer-CR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Create-I start CreateInstall_I.exe&set input=installer-CI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Create-O start CreateInstall_O.lnk&set input=installer-CO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CreateI cls&goto startCreateInstallPromptDialerMode
 if /I %input% EQU CreateIn cls&goto startCreateInstallPromptDialerMode
 if /I %input% EQU CreateIns cls&goto startCreateInstallPromptDialerMode
@@ -27570,6 +28158,12 @@ if /I %input% EQU CreateInstall-A start CreateInstall_A.lnk&set input=installer-
 if /I %input% EQU CreateInstall-R start CreateInstall_R.lnk&set input=installer-CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CreateInstall-I start CreateInstall_I.exe&set input=installer-CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CreateInstall-O start CreateInstall_O.lnk&set input=installer-CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CRY cls&goto startCRYENGINElauncherPromptDialerMode
+if /I %input% EQU CRY- cls&goto startCRYENGINElauncherPromptDialerMode
+if /I %input% EQU CRY-A start CRYENGINE_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CRY-R start CRYENGINE_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CRY-I start CRYENGINE_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CRY-O start CRYENGINE_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CRYE cls&goto startCRYENGINElauncherPromptDialerMode
 if /I %input% EQU CRYEN cls&goto startCRYENGINElauncherPromptDialerMode
 if /I %input% EQU CRYENG cls&goto startCRYENGINElauncherPromptDialerMode
@@ -27577,6 +28171,10 @@ if /I %input% EQU CRYENGI cls&goto startCRYENGINElauncherPromptDialerMode
 if /I %input% EQU CRYENGIN cls&goto startCRYENGINElauncherPromptDialerMode
 if /I %input% EQU CRYENGINE cls&goto startCRYENGINElauncherPromptDialerMode
 if /I %input% EQU CRYENGINE- cls&goto startCRYENGINElauncherPromptDialerMode
+if /I %input% EQU CRYENGINE-A start CRYENGINE_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CRYENGINE-R start CRYENGINE_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CRYENGINE-I start CRYENGINE_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU CRYENGINE-O start CRYENGINE_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CRYENGINE-L cls&goto startCRYENGINElauncherPromptDialerMode
 if /I %input% EQU CRYENGINE-La cls&goto startCRYENGINElauncherPromptDialerMode
 if /I %input% EQU CRYENGINE-Lau cls&goto startCRYENGINElauncherPromptDialerMode
@@ -27604,6 +28202,7 @@ if /I %input% EQU Cygwin-A start Cygwin_A.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU Cygwin-R start Cygwin_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Cygwin-I start Cygwin_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Cygwin-O start Cygwin_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Data cls&goto startSpecificationPrompt
 if /I %input% EQU DataG cls&goto startDataGripPromptDialerMode
 if /I %input% EQU DataGr cls&goto startDataGripPromptDialerMode
 if /I %input% EQU DataGri cls&goto startDataGripPromptDialerMode
@@ -27624,11 +28223,19 @@ if /I %input% EQU DataSpell-R start DataSpell_R.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU DataSpell-I start DataSpell_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DataSpell-O cls&goto startUninstallationInstructions
 if /I %input% EQU DaVi cls&goto startDaVinciResolvePromptDialerMode
+if /I %input% EQU DaVi- cls&goto startDaVinciResolvePromptDialerMode
+if /I %input% EQU DaVi-A start DaVinci_Resolve_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DaVi-R start DaVinci_Resolve_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DaVi-I start DaVinci_Resolve_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DaVi-O start DaVinci_Resolve_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DaVin cls&goto startDaVinciResolvePromptDialerMode
 if /I %input% EQU DaVinc cls&goto startDaVinciResolvePromptDialerMode
 if /I %input% EQU DaVinci cls&goto startDaVinciResolvePromptDialerMode
 if /I %input% EQU DaVinci- cls&goto startDaVinciResolvePromptDialerMode
-if /I %input% EQU DaVinci-R cls&goto startDaVinciResolvePromptDialerMode
+if /I %input% EQU DaVinci-A start DaVinci_Resolve_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DaVinci-R start DaVinci_Resolve_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DaVinci-I start DaVinci_Resolve_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DaVinci-O start DaVinci_Resolve_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DaVinci-Re cls&goto startDaVinciResolvePromptDialerMode
 if /I %input% EQU DaVinci-Res cls&goto startDaVinciResolvePromptDialerMode
 if /I %input% EQU DaVinci-Reso cls&goto startDaVinciResolvePromptDialerMode
@@ -27647,7 +28254,10 @@ if /I %input% EQU Directo cls&goto startDirectoryOpusPromptDialerMode
 if /I %input% EQU Director cls&goto startDirectoryOpusPromptDialerMode
 if /I %input% EQU Directory cls&goto startDirectoryOpusPromptDialerMode
 if /I %input% EQU Directory- cls&goto startDirectoryOpusPromptDialerMode
-if /I %input% EQU Directory-O cls&goto startDirectoryOpusPromptDialerMode
+if /I %input% EQU Directory-A start Directory_Opus_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Directory-R start Directory_Opus_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Directory-I start Directory_Opus_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Directory-O start Directory_Opus_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Directory-Op cls&goto startDirectoryOpusPromptDialerMode
 if /I %input% EQU Directory-Opu cls&goto startDirectoryOpusPromptDialerMode
 if /I %input% EQU Directory-Opus cls&goto startDirectoryOpusPromptDialerMode
@@ -27680,6 +28290,10 @@ if /I %input% EQU Dock cls&goto startDockerDesktopPromptDialerMode
 if /I %input% EQU Docke cls&goto startDockerDesktopPromptDialerMode
 if /I %input% EQU Docker cls&goto startDockerDesktopPromptDialerMode
 if /I %input% EQU Docker- cls&goto startDockerDesktopPromptDialerMode
+if /I %input% EQU Docker-A start Docker_Desktop_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Docker-R start Docker_Desktop_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Docker-I start Docker_Desktop_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Docker-O start Docker_Desktop_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Docker-D cls&goto startDockerDesktopPromptDialerMode
 if /I %input% EQU Docker-De cls&goto startDockerDesktopPromptDialerMode
 if /I %input% EQU Docker-Des cls&goto startDockerDesktopPromptDialerMode
@@ -27692,7 +28306,13 @@ if /I %input% EQU Docker-Desktop-A start Docker_Desktop_A.lnk&&goto startPreExit
 if /I %input% EQU Docker-Desktop-R start Docker_Desktop_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Docker-Desktop-I start Docker_Desktop_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Docker-Desktop-O start Docker_Desktop_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dot cls&goto startSpecificationPrompt
 if /I %input% EQU dotP cls&goto startdotPeekPromptDialerMode
+if /I %input% EQU dotP- cls&goto startdotPeekPromptDialerMode
+if /I %input% EQU dotP-A start dotPeek_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotP-R start dotPeek_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotP-I start dotPeek_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotP-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotPe cls&goto startdotPeekPromptDialerMode
 if /I %input% EQU dotPee cls&goto startdotPeekPromptDialerMode
 if /I %input% EQU dotPeek cls&goto startdotPeekPromptDialerMode
@@ -27702,6 +28322,11 @@ if /I %input% EQU dotPeek-R start dotPeek_R.lnk&&goto startPreExitPrompt||goto s
 if /I %input% EQU dotPeek-I start dotPeek_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotPeek-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotC cls&goto startdotCoverPromptDialerMode
+if /I %input% EQU dotC- cls&goto startdotCoverPromptDialerMode
+if /I %input% EQU dotC-A start dotCover_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotC-R start dotCover_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotC-I start dotCover_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotC-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotCo cls&goto startdotCoverPromptDialerMode
 if /I %input% EQU dotCov cls&goto startdotCoverPromptDialerMode
 if /I %input% EQU dotCove cls&goto startdotCoverPromptDialerMode
@@ -27712,6 +28337,11 @@ if /I %input% EQU dotCover-R start dotCover_R.lnk&&goto startPreExitPrompt||goto
 if /I %input% EQU dotCover-I start dotCover_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotCover-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotM cls&goto startdotMemoryPromptDialerMode
+if /I %input% EQU dotM- cls&goto startdotMemoryPromptDialerMode
+if /I %input% EQU dotM-A start dotMemory_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotM-R start dotMemory_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotM-I start dotMemory_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotM-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotMe cls&goto startdotMemoryPromptDialerMode
 if /I %input% EQU dotMem cls&goto startdotMemoryPromptDialerMode
 if /I %input% EQU dotMemo cls&goto startdotMemoryPromptDialerMode
@@ -27723,6 +28353,11 @@ if /I %input% EQU dotMemory-R start dotMemory_R.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU dotMemory-I start dotMemory_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotMemory-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotT cls&goto startdotTracePromptDialerMode
+if /I %input% EQU dotT- cls&goto startdotTracePromptDialerMode
+if /I %input% EQU dotT-A start dotTrace_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotT-R start dotTrace_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotT-I start dotTrace_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU dotT-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotTr cls&goto startdotTracePromptDialerMode
 if /I %input% EQU dotTra cls&goto startdotTracePromptDialerMode
 if /I %input% EQU dotTrac cls&goto startdotTracePromptDialerMode
@@ -27733,6 +28368,8 @@ if /I %input% EQU dotTrace-R start dotTrace_R.lnk&&goto startPreExitPrompt||goto
 if /I %input% EQU dotTrace-I start dotTrace_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotTrace-O cls&goto startUninstallationInstructions
 if /I %input% EQU dotU cls&goto startdotUltimatePromptDialerMode
+if /I %input% EQU dotU- cls&goto startdotUltimatePromptDialerMode
+if /I %input% EQU dotU-I start dotUltimate_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU dotUl cls&goto startdotUltimatePromptDialerMode
 if /I %input% EQU dotUlt cls&goto startdotUltimatePromptDialerMode
 if /I %input% EQU dotUlti cls&goto startdotUltimatePromptDialerMode
@@ -27745,6 +28382,8 @@ if /I %input% EQU dotUltimate-I start dotUltimate_I.exe&&goto startPreExitPrompt
 if /I %input% EQU Driv cls&goto startScannerPromptDialerMode
 if /I %input% EQU Drive cls&goto startScannerPromptDialerMode
 if /I %input% EQU Drive- cls&goto startScannerPromptDialerMode
+if /I %input% EQU Drive-A start Drive_Scanner_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Drive-R start Drive_Scanner_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Drive-S cls&goto startScannerPromptDialerMode
 if /I %input% EQU Drive-Sc cls&goto startScannerPromptDialerMode
 if /I %input% EQU Drive-Sca cls&goto startScannerPromptDialerMode
@@ -27756,6 +28395,11 @@ if /I %input% EQU Drive-Scanner- cls&goto startScannerPromptDialerMode
 if /I %input% EQU Drive-Scanner-A start Drive_Scanner_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Drive-Scanner-R start Drive_Scanner_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DVDF cls&goto startDVDFabPromptDialerMode
+if /I %input% EQU DVDF- cls&goto startDVDFabPromptDialerMode
+if /I %input% EQU DVDF-A start DVDFab_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DVDF-R start DVDFab_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DVDF-I start DVDFab_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU DVDF-O start DVDFab_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU DVDFa cls&goto startDVDFabPromptDialerMode
 if /I %input% EQU DVDFab cls&goto startDVDFabPromptDialerMode
 if /I %input% EQU DVDFab- cls&goto startDVDFabPromptDialerMode
@@ -27766,6 +28410,10 @@ if /I %input% EQU DVDFab-O start DVDFab_O.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU Eart cls&goto startEarthPromptDialerMode
 if /I %input% EQU Earth cls&goto startEarthPromptDialerMode
 if /I %input% EQU Earth- cls&goto startEarthPromptDialerMode
+if /I %input% EQU Earth-A start Google_Earth_Pro_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Earth-R start Google_Earth_Pro_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Earth-I start Google_Earth_Pro_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Earth-O start Google_Earth_Pro_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Earth-P cls&goto startEarthPromptDialerMode
 if /I %input% EQU Earth-Pr cls&goto startEarthPromptDialerMode
 if /I %input% EQU Earth-Pro cls&goto startEarthPromptDialerMode
@@ -27828,11 +28476,18 @@ if /I %input% EQU Electron cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Electroni cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Electronic cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Electronic- cls&goto startElectronicArtsPromptDialerMode
-if /I %input% EQU Electronic-A cls&goto startElectronicArtsPromptDialerMode
+if /I %input% EQU Electronic-A start Electronic_Arts_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Electronic-R start Electronic_Arts_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Electronic-I start Electronic_Arts_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Electronic-O cls&goto startUninstallationInstructions
 if /I %input% EQU Electronic-Ar cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Electronic-Art cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Electronic-Arts cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Electronic-Arts- cls&goto startElectronicArtsPromptDialerMode
+if /I %input% EQU Electronic-Arts-A start Electronic_Arts_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Electronic-Arts-R start Electronic_Arts_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Electronic-Arts-I start Electronic_Arts_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Electronic-Arts-O cls&goto startUninstallationInstructions
 if /I %input% EQU Electronic-Arts-L cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Electronic-Arts-La cls&goto startElectronicArtsPromptDialerMode
 if /I %input% EQU Electronic-Arts-Lau cls&goto startElectronicArtsPromptDialerMode
@@ -27846,10 +28501,20 @@ if /I %input% EQU Electronic-Arts-Launcher-R start Electronic_Arts_Launcher_R.ln
 if /I %input% EQU Electronic-Arts-Launcher-I start Electronic_Arts_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Electronic-Arts-Launcher-O cls&goto startUninstallationInstructions
 if /I %input% EQU Emsi cls&goto startEmsisoftEmergencyKitPromptDialerMode
+if /I %input% EQU Emsi- cls&goto startEmsisoftEmergencyKitPromptDialerMode
+if /I %input% EQU Emsi-A start EmsisoftEmergencyKit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Emsi-R start EmsisoftEmergencyKit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Emsi-I start EmsisoftEmergencyKit_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Emsi-O start EmsisoftEmergencyKit_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Emsis cls&goto startEmsisoftEmergencyKitPromptDialerMode
 if /I %input% EQU Emsiso cls&goto startEmsisoftEmergencyKitPromptDialerMode
 if /I %input% EQU Emsisof cls&goto startEmsisoftEmergencyKitPromptDialerMode
 if /I %input% EQU Emsisoft cls&goto startEmsisoftEmergencyKitPromptDialerMode
+if /I %input% EQU Emsisoft- cls&goto startEmsisoftEmergencyKitPromptDialerMode
+if /I %input% EQU Emsisoft-A start EmsisoftEmergencyKit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Emsisoft-R start EmsisoftEmergencyKit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Emsisoft-I start EmsisoftEmergencyKit_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Emsisoft-O start EmsisoftEmergencyKit_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU EmsisoftE cls&goto startEmsisoftEmergencyKitPromptDialerMode
 if /I %input% EQU EmsisoftEm cls&goto startEmsisoftEmergencyKitPromptDialerMode
 if /I %input% EQU EmsisoftEme cls&goto startEmsisoftEmergencyKitPromptDialerMode
@@ -27869,12 +28534,20 @@ if /I %input% EQU EmsisoftEmergencyKit-I start EmsisoftEmergencyKit_I.exe&&goto 
 if /I %input% EQU EmsisoftEmergencyKit-O start EmsisoftEmergencyKit_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Epic cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU Epic- cls&goto startEpicGamesPromptDialerMode
+if /I %input% EQU Epic-A start Epic_Games_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Epic-R start Epic_Games_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Epic-I start Epic_Games_Launcher_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Epic-O cls&goto startUninstallationInstructions
 if /I %input% EQU Epic-G cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU Epic-Ga cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU Epic-Gam cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU Epic-Game cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU Epic-Games cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU Epic-Games- cls&goto startEpicGamesPromptDialerMode
+if /I %input% EQU Epic-Games-A start Epic_Games_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Epic-Games-R start Epic_Games_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Epic-Games-I start Epic_Games_Launcher_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Epic-Games-O cls&goto startUninstallationInstructions
 if /I %input% EQU Epic-Games-L cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU Epic-Games-La cls&goto startEpicGamesPromptDialerMode
 if /I %input% EQU Epic-Games-Lau cls&goto startEpicGamesPromptDialerMode
@@ -27888,7 +28561,13 @@ if /I %input% EQU Epic-Games-Launcher-A start Epic_Games_Launcher_A.lnk&&goto st
 if /I %input% EQU Epic-Games-Launcher-R start Epic_Games_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Epic-Games-Launcher-I start Epic_Games_Launcher_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Epic-Games-Launcher-O cls&goto startUninstallationInstructions
+if /I %input% EQU ESET cls&goto startSpecificationPrompt
+if /I %input% EQU ESET- cls&goto startSpecificationPrompt
 if /I %input% EQU ESET-N cls&goto startESETNOD32AVpromptDialerMode
+if /I %input% EQU ESET-N-A start ESET_NOD32_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ESET-N-R start ESET_NOD32_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ESET-N-I start ESET_NOD32_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ESET-N-O start ESET_NOD32_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ESET-NO cls&goto startESETNOD32AVpromptDialerMode
 if /I %input% EQU ESET-NOD cls&goto startESETNOD32AVpromptDialerMode
 if /I %input% EQU ESET-NOD3 cls&goto startESETNOD32AVpromptDialerMode
@@ -27899,12 +28578,21 @@ if /I %input% EQU ESET-NOD32-R start ESET_NOD32_R.lnk&&goto startPreExitPrompt||
 if /I %input% EQU ESET-NOD32-I start ESET_NOD32_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ESET-NOD32-O start ESET_NOD32_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ESET-O cls&goto startESETonlineScannerPromptDialerMode
+if /I %input% EQU ESET-O- cls&goto startESETonlineScannerPromptDialerMode
+if /I %input% EQU ESET-O-A start ESET_Online_Scanner_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ESET-O-R start ESET_Online_Scanner_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ESET-O-I start ESET_Online_Scanner_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ESET-O-O start ESET_Online_Scanner_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ESET-On cls&goto startESETonlineScannerPromptDialerMode
 if /I %input% EQU ESET-Onl cls&goto startESETonlineScannerPromptDialerMode
 if /I %input% EQU ESET-Onli cls&goto startESETonlineScannerPromptDialerMode
 if /I %input% EQU ESET-Onlin cls&goto startESETonlineScannerPromptDialerMode
 if /I %input% EQU ESET-Online cls&goto startESETonlineScannerPromptDialerMode
 if /I %input% EQU ESET-Online- cls&goto startESETonlineScannerPromptDialerMode
+if /I %input% EQU ESET-Online-A start ESET_Online_Scanner_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ESET-Online-R start ESET_Online_Scanner_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ESET-Online-I start ESET_Online_Scanner_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ESET-Online-O start ESET_Online_Scanner_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ESET-Online-S cls&goto startESETonlineScannerPromptDialerMode
 if /I %input% EQU ESET-Online-Sc cls&goto startESETonlineScannerPromptDialerMode
 if /I %input% EQU ESET-Online-Sca cls&goto startESETonlineScannerPromptDialerMode
@@ -27926,6 +28614,8 @@ if /I %input% EQU Excel-I start Microsoft365_I.exe&&goto startPreExitPrompt||got
 if /I %input% EQU Excel-O cls&goto startUninstallationInstructions
 if /I %input% EQU F2KO cls&goto startF2KO_BAT2EXEpromptDialerMode
 if /I %input% EQU F2KO- cls&goto startF2KO_BAT2EXEpromptDialerMode
+if /I %input% EQU F2KO-A start F2KO_BAT2EXE_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU F2KO-R start F2KO_BAT2EXE_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU F2KO-B cls&goto startF2KO_BAT2EXEpromptDialerMode
 if /I %input% EQU F2KO-BA cls&goto startF2KO_BAT2EXEpromptDialerMode
 if /I %input% EQU F2KO-BAT cls&goto startF2KO_BAT2EXEpromptDialerMode
@@ -27959,6 +28649,10 @@ if /I %input% EQU Firefox-Browser-I start Firefox_Browser_I.exe&&goto startPreEx
 if /I %input% EQU Firefox-Browser-O cls&goto startUninstallationInstructions
 if /I %input% EQU Flow cls&goto startFlowLauncherPromptDialerMode
 if /I %input% EQU Flow- cls&goto startFlowLauncherPromptDialerMode
+if /I %input% EQU Flow-A start Flow_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Flow-R start Flow_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Flow-I start Flow_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Flow-O cls&goto startUninstallationInstructions
 if /I %input% EQU Flow-L cls&goto startFlowLauncherPromptDialerMode
 if /I %input% EQU Flow-La cls&goto startFlowLauncherPromptDialerMode
 if /I %input% EQU Flow-Lau cls&goto startFlowLauncherPromptDialerMode
@@ -27972,13 +28666,18 @@ if /I %input% EQU Flow-Launcher-A start Flow_Launcher_A.lnk&&goto startPreExitPr
 if /I %input% EQU Flow-Launcher-R start Flow_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Flow-Launcher-I start Flow_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Flow-Launcher-O cls&goto startUninstallationInstructions
-if /I %input% EQU Fore cls&goto startForensicToolkitPromptDialerMode
-if /I %input% EQU Foren cls&goto startForensicToolkitPromptDialerMode
-if /I %input% EQU Forens cls&goto startForensicToolkitPromptDialerMode
-if /I %input% EQU Forensi cls&goto startForensicToolkitPromptDialerMode
-if /I %input% EQU Forensic cls&goto startForensicToolkitPromptDialerMode
-if /I %input% EQU Forensic- cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU Fore cls&goto startSpecificationPrompt
+if /I %input% EQU Foren cls&goto startSpecificationPrompt
+if /I %input% EQU Forens cls&goto startSpecificationPrompt
+if /I %input% EQU Forensi cls&goto startSpecificationPrompt
+if /I %input% EQU Forensic cls&goto startSpecificationPrompt
+if /I %input% EQU Forensic- cls&goto startSpecificationPrompt
 if /I %input% EQU Forensic-T cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU Forensic-T- cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU Forensic-T-A start Forensic_Toolkit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Forensic-T-R start Forensic_Toolkit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Forensic-T-I start Forensic_Toolkit_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Forensic-T-O cls&goto startUninstallationInstructions
 if /I %input% EQU Forensic-To cls&goto startForensicToolkitPromptDialerMode
 if /I %input% EQU Forensic-Too cls&goto startForensicToolkitPromptDialerMode
 if /I %input% EQU Forensic-Tool cls&goto startForensicToolkitPromptDialerMode
@@ -27990,7 +28689,49 @@ if /I %input% EQU Forensic-Toolkit-A start Forensic_Toolkit_A.lnk&&goto startPre
 if /I %input% EQU Forensic-Toolkit-R start Forensic_Toolkit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Forensic-Toolkit-I start Forensic_Toolkit_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Forensic-Toolkit-O cls&goto startUninstallationInstructions
+if /I %input% EQU Forensic-L cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-L- cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-L-A start FTK_Language_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Forensic-L-R start FTK_Language_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Forensic-L-I start FTK_Language_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Forensic-L-O cls&goto startUninstallationInstructions
+if /I %input% EQU Forensic-La cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-Lan cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-Lang cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-Langu cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-Langua cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-Languag cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-Language cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-Language- cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU Forensic-Language-A start FTK_Language_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Forensic-Language-R start FTK_Language_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Forensic-Language-I start FTK_Language_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Forensic-Language-O cls&goto startUninstallationInstructions
+if /I %input% EQU FTK cls&goto startSpecificationPrompt
+if /I %input% EQU FTK- cls&goto startSpecificationPrompt
+if /I %input% EQU FTK-T cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU FTK-T- cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU FTK-T-A start Forensic_Toolkit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FTK-T-R start Forensic_Toolkit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FTK-T-I start Forensic_Toolkit_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FTK-T-O cls&goto startUninstallationInstructions
+if /I %input% EQU FTK-To cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU FTK-Too cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU FTK-Tool cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU FTK-Toolk cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU FTK-Toolki cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU FTK-Toolkit cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU FTK-Toolkit- cls&goto startForensicToolkitPromptDialerMode
+if /I %input% EQU FTK-Toolkit-A start Forensic_Toolkit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FTK-Toolkit-R start Forensic_Toolkit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FTK-Toolkit-I start Forensic_Toolkit_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FTK-Toolkit-O cls&goto startUninstallationInstructions
 if /I %input% EQU FTK-L cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU FTK-L- cls&goto startFTKLanguagePromptDialerMode
+if /I %input% EQU FTK-L-A start FTK_Language_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FTK-L-R start FTK_Language_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FTK-L-I start FTK_Language_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU FTK-L-O cls&goto startUninstallationInstructions
 if /I %input% EQU FTK-La cls&goto startFTKLanguagePromptDialerMode
 if /I %input% EQU FTK-Lan cls&goto startFTKLanguagePromptDialerMode
 if /I %input% EQU FTK-Lang cls&goto startFTKLanguagePromptDialerMode
@@ -28009,6 +28750,7 @@ if /I %input% EQU Fork-A start GitHub_Fork_A.lnk&&goto startPreExitPrompt||goto 
 if /I %input% EQU Fork-R start GitHub_Fork_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Fork-I start GitHub_Fork_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Fork-O cls&goto startUninstallationInstructions
+if /I %input% EQU Free cls&goto startSpecificationPrompt
 if /I %input% EQU FreeC cls&goto startFreeCellPromptDialerMode
 if /I %input% EQU FreeCe cls&goto startFreeCellPromptDialerMode
 if /I %input% EQU FreeCel cls&goto startFreeCellPromptDialerMode
@@ -28027,6 +28769,10 @@ if /I %input% EQU Freegate-A start Freegate_IP_Spoofer_A.lnk&&goto startPreExitP
 if /I %input% EQU Freegate-R start Freegate_IP_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Game cls&goto startGameExtractorPromptDialerMode
 if /I %input% EQU Game- cls&goto startGameExtractorPromptDialerMode
+if /I %input% EQU Game-A start Game_Extractor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Game-R start Game_Extractor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Game-I start Game_Extractor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Game-O start Game_Extractor_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Game-E cls&goto startGameExtractorPromptDialerMode
 if /I %input% EQU Game-Ex cls&goto startGameExtractorPromptDialerMode
 if /I %input% EQU Game-Ext cls&goto startGameExtractorPromptDialerMode
@@ -28042,6 +28788,11 @@ if /I %input% EQU Game-Extractor-R start Game_Extractor_R.lnk&&goto startPreExit
 if /I %input% EQU Game-Extractor-I start Game_Extractor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Game-Extractor-O start Game_Extractor_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Gate cls&goto startGatewayPromptDialerMode
+if /I %input% EQU Gate- cls&goto startGatewayPromptDialerMode
+if /I %input% EQU Gate-A start Gateway_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Gate-R start Gateway_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Gate-I start Gateway_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Gate-O cls&goto startUninstallationInstructions
 if /I %input% EQU Gatew cls&goto startGatewayPromptDialerMode
 if /I %input% EQU Gatewa cls&goto startGatewayPromptDialerMode
 if /I %input% EQU Gateway cls&goto startGatewayPromptDialerMode
@@ -28098,12 +28849,24 @@ if /I %input% EQU GitHub-Fork-A start GitHub_Fork_A.lnk&&goto startPreExitPrompt
 if /I %input% EQU GitHub-Fork-R start GitHub_Fork_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GitHub-Fork-I start GitHub_Fork_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GitHub-Fork-O cls&goto startUninstallationInstructions
+if /I %input% EQU Go-A start Go_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-R start Go_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-I cls&goto startGoInstallerPromptDialerMode
+if /I %input% EQU Go-IE start Go_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-IM start Go_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-O cls&goto startUninstallationInstructions
 if /I %input% EQU Go-B cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Bo cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Boa cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Boar cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Board cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Board- cls&goto startGoBoardGamePromptDialerMode
+if /I %input% EQU Go-Board-A start Go_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-Board-R start Go_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-Board-I cls&goto startGoInstallerPromptDialerMode
+if /I %input% EQU Go-Board-IE start Go_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-Board-IM start Go_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Go-Board-O cls&goto startUninstallationInstructions
 if /I %input% EQU Go-Board-G cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Board-Ga cls&goto startGoBoardGamePromptDialerMode
 if /I %input% EQU Go-Board-Gam cls&goto startGoBoardGamePromptDialerMode
@@ -28118,8 +28881,17 @@ if /I %input% EQU Go-Board-Game-O cls&goto startUninstallationInstructions
 if /I %input% EQU Godo cls&goto startGodotPromptDialerMode
 if /I %input% EQU Godot cls&goto startGodotPromptDialerMode
 if /I %input% EQU Godot- cls&goto startGodotPromptDialerMode
-if /I %input% EQU Godot-A start Godot_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Godot-R start Godot_Launch_Script_R.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Godot-A start /min Godot_Launch_Script_A.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU Godot-R start /min Godot_Launch_Script_R.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU Godot-E cls&goto startGodotPromptDialerMode
+if /I %input% EQU Godot-En cls&goto startGodotPromptDialerMode
+if /I %input% EQU Godot-Eng cls&goto startGodotPromptDialerMode
+if /I %input% EQU Godot-Engi cls&goto startGodotPromptDialerMode
+if /I %input% EQU Godot-Engin cls&goto startGodotPromptDialerMode
+if /I %input% EQU Godot-Engine cls&goto startGodotPromptDialerMode
+if /I %input% EQU Godot-Engine- cls&goto startGodotPromptDialerMode
+if /I %input% EQU Godot-Engine-A start /min Godot_Launch_Script_A.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU Godot-Engine-R start /min Godot_Launch_Script_R.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
 if /I %input% EQU GOG cls&goto startGoodOldGamesPromptDialerMode
 if /I %input% EQU GOG- cls&goto startGoodOldGamesPromptDialerMode
 if /I %input% EQU GOG-A start GOG_Galaxy_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -28128,10 +28900,17 @@ if /I %input% EQU GOG-I start GOG_Galaxy_Launcher_I.exe&&goto startPreExitPrompt
 if /I %input% EQU GOG-O start GOG_Galaxy_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Good cls&goto startGoodOldGamesPromptDialerMode
 if /I %input% EQU Good- cls&goto startGoodOldGamesPromptDialerMode
-if /I %input% EQU Good-O cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-A start GOG_Galaxy_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-R start GOG_Galaxy_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-I start GOG_Galaxy_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-O start GOG_Galaxy_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Good-Ol cls&goto startGoodOldGamesPromptDialerMode
 if /I %input% EQU Good-Old cls&goto startGoodOldGamesPromptDialerMode
 if /I %input% EQU Good-Old- cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-A start GOG_Galaxy_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-R start GOG_Galaxy_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-I start GOG_Galaxy_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-O start GOG_Galaxy_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Good-Old-G cls&goto startGoodOldGamesPromptDialerMode
 if /I %input% EQU Good-Old-Ga cls&goto startGoodOldGamesPromptDialerMode
 if /I %input% EQU Good-Old-Gam cls&goto startGoodOldGamesPromptDialerMode
@@ -28142,6 +28921,30 @@ if /I %input% EQU Good-Old-Games-A start GOG_Galaxy_Launcher_A.lnk&&goto startPr
 if /I %input% EQU Good-Old-Games-R start GOG_Galaxy_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Good-Old-Games-I start GOG_Galaxy_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Good-Old-Games-O start GOG_Galaxy_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-G cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Ga cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Gal cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Gala cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galax cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy- cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-A start GOG_Galaxy_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-Galaxy-R start GOG_Galaxy_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-Galaxy-I start GOG_Galaxy_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-Galaxy-O start GOG_Galaxy_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-Galaxy-L cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-La cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-Lau cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-Laun cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-Launc cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-Launch cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-Launche cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-Launcher cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-Launcher- cls&goto startGoodOldGamesPromptDialerMode
+if /I %input% EQU Good-Old-Games-Galaxy-Launcher-A start GOG_Galaxy_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-Galaxy-Launcher-R start GOG_Galaxy_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-Galaxy-Launcher-I start GOG_Galaxy_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Good-Old-Games-Galaxy-Launcher-O start GOG_Galaxy_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GoLa cls&goto startGoLandPromptDialerMode
 if /I %input% EQU GoLan cls&goto startGoLandPromptDialerMode
 if /I %input% EQU GoLand cls&goto startGoLandPromptDialerMode
@@ -28151,6 +28954,11 @@ if /I %input% EQU GoLand-R start GoLand_R.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU GoLand-I start GoLand_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU GoLand-O cls&goto startUninstallationInstructions
 if /I %input% EQU Google-C cls&goto startChromePromptDialerMode
+if /I %input% EQU Google-C- cls&goto startChromePromptDialerMode
+if /I %input% EQU Google-C-A start Chrome_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Google-C-R start Chrome_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Google-C-I start Chrome_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Google-C-O cls&goto startUninstallationInstructions
 if /I %input% EQU Google-Ch cls&goto startChromePromptDialerMode
 if /I %input% EQU Google-Chr cls&goto startChromePromptDialerMode
 if /I %input% EQU Google-Chro cls&goto startChromePromptDialerMode
@@ -28174,11 +28982,20 @@ if /I %input% EQU Google-Chrome-Browser-R start Chrome_Browser_R.lnk&&goto start
 if /I %input% EQU Google-Chrome-Browser-I start Chrome_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Google-Chrome-Browser-O cls&goto startUninstallationInstructions
 if /I %input% EQU Google-E cls&goto startEarthPromptDialerMode
+if /I %input% EQU Google-E- cls&goto startEarthPromptDialerMode
+if /I %input% EQU Google-E-A start Google_Earth_Pro_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Google-E-R start Google_Earth_Pro_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Google-E-I start Google_Earth_Pro_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Google-E-O start Google_Earth_Pro_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Google-Ea cls&goto startEarthPromptDialerMode
 if /I %input% EQU Google-Ear cls&goto startEarthPromptDialerMode
 if /I %input% EQU Google-Eart cls&goto startEarthPromptDialerMode
 if /I %input% EQU Google-Earth cls&goto startEarthPromptDialerMode
 if /I %input% EQU Google-Earth- cls&goto startEarthPromptDialerMode
+if /I %input% EQU Google-Earth-A start Google_Earth_Pro_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Google-Earth-R start Google_Earth_Pro_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Google-Earth-I start Google_Earth_Pro_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Google-Earth-O start Google_Earth_Pro_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Google-Earth-P cls&goto startEarthPromptDialerMode
 if /I %input% EQU Google-Earth-Pr cls&goto startEarthPromptDialerMode
 if /I %input% EQU Google-Earth-Pro cls&goto startEarthPromptDialerMode
@@ -28187,6 +29004,15 @@ if /I %input% EQU Google-Earth-Pro-A start Google_Earth_Pro_A.lnk&&goto startPre
 if /I %input% EQU Google-Earth-Pro-R start Google_Earth_Pro_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Google-Earth-Pro-I start Google_Earth_Pro_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Google-Earth-Pro-O start Google_Earth_Pro_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GUI-O cls&goto startGUIOctavePromptDialerMode
+if /I %input% EQU GUI-Oc cls&goto startGUIOctavePromptDialerMode
+if /I %input% EQU GUI-Oct cls&goto startGUIOctavePromptDialerMode
+if /I %input% EQU GUI-Octa cls&goto startGUIOctavePromptDialerMode
+if /I %input% EQU GUI-Octav cls&goto startGUIOctavePromptDialerMode
+if /I %input% EQU GUI-Octave cls&goto startGUIOctavePromptDialerMode
+if /I %input% EQU GUI-Octave- cls&goto startGUIOctavePromptDialerMode
+if /I %input% EQU GUI-Octave-A start GUI_Octave_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU GUI-Octave-R start GUI_Octave_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Hear cls&goto startHeartsPromptDialerMode
 if /I %input% EQU Heart cls&goto startHeartsPromptDialerMode
 if /I %input% EQU Hearts cls&goto startHeartsPromptDialerMode
@@ -28195,13 +29021,20 @@ if /I %input% EQU Hearts-A start Hearts_A.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU Hearts-R start Hearts_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Hearts-I start Windows7GamesForWindows11_10_8_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Hearts-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hex cls&goto startHex-RaysIDApromptDialerMode
 if /I %input% EQU Hex- cls&goto startHex-RaysIDApromptDialerMode
-if /I %input% EQU Hex-R cls&goto startHex-RaysIDApromptDialerMode
+if /I %input% EQU Hex-A start Hex-Rays_IDA_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hex-R start Hex-Rays_IDA_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hex-I start Hex-Rays_IDA_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hex-O start Hex-Rays_IDA_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Hex-Ra cls&goto startHex-RaysIDApromptDialerMode
 if /I %input% EQU Hex-Ray cls&goto startHex-RaysIDApromptDialerMode
 if /I %input% EQU Hex-Rays cls&goto startHex-RaysIDApromptDialerMode
 if /I %input% EQU Hex-Rays- cls&goto startHex-RaysIDApromptDialerMode
-if /I %input% EQU Hex-Rays-I cls&goto startHex-RaysIDApromptDialerMode
+if /I %input% EQU Hex-Rays-A start Hex-Rays_IDA_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hex-Rays-R start Hex-Rays_IDA_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hex-Rays-I start Hex-Rays_IDA_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hex-Rays-O start Hex-Rays_IDA_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Hex-Rays-ID cls&goto startHex-RaysIDApromptDialerMode
 if /I %input% EQU Hex-Rays-IDA cls&goto startHex-RaysIDApromptDialerMode
 if /I %input% EQU Hex-Rays-IDA- cls&goto startHex-RaysIDApromptDialerMode
@@ -28212,6 +29045,11 @@ if /I %input% EQU Hex-Rays-IDA-O start Hex-Rays_IDA_O.lnk&&goto startPreExitProm
 if /I %input% EQU Hitm cls&goto startHitmanProPromptDialerMode
 if /I %input% EQU Hitma cls&goto startHitmanProPromptDialerMode
 if /I %input% EQU Hitman cls&goto startHitmanProPromptDialerMode
+if /I %input% EQU Hitman- cls&goto startHitmanProPromptDialerMode
+if /I %input% EQU Hitman-A start HitmanPro_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hitman-R start HitmanPro_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hitman-I start HitmanPro_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Hitman-O start HitmanPro_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU HitmanP cls&goto startHitmanProPromptDialerMode
 if /I %input% EQU HitmanPr cls&goto startHitmanProPromptDialerMode
 if /I %input% EQU HitmanPro cls&goto startHitmanProPromptDialerMode
@@ -28220,6 +29058,13 @@ if /I %input% EQU HitmanPro-A start HitmanPro_A.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU HitmanPro-R start HitmanPro_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU HitmanPro-I start HitmanPro_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU HitmanPro-O start HitmanPro_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU HitmanPro-A- cls&goto startHitmanProAlertPromptDialerMode
+if /I %input% EQU HitmanPro-A-A start HitmanPro.Alert_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU HitmanPro-A-R start HitmanPro.Alert_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU HitmanPro-A-I start HitmanPro.Alert_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU HitmanPro-A-O start HitmanPro.Alert_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU HitmanPro-Al cls&goto startHitmanProAlertPromptDialerMode
+if /I %input% EQU HitmanPro-Ale cls&goto startHitmanProAlertPromptDialerMode
 if /I %input% EQU HitmanPro-Aler cls&goto startHitmanProAlertPromptDialerMode
 if /I %input% EQU HitmanPro-Alert cls&goto startHitmanProAlertPromptDialerMode
 if /I %input% EQU HitmanPro-Alert- cls&goto startHitmanProAlertPromptDialerMode
@@ -28227,6 +29072,16 @@ if /I %input% EQU HitmanPro-Alert-A start HitmanPro.Alert_A.lnk&&goto startPreEx
 if /I %input% EQU HitmanPro-Alert-R start HitmanPro.Alert_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU HitmanPro-Alert-I start HitmanPro.Alert_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU HitmanPro-Alert-O start HitmanPro.Alert_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IDM cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IDM- cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IDM-A start Internet_Download_Manager_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IDM-R start Internet_Download_Manager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IDM-I start Internet_Download_Manager_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IDM-O start Internet_Download_Manager_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IEx cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IEx- cls&goto startIExpressPromptDialerMode
+if /I %input% EQU IEx-A start IExpress_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IEx-R start IExpress_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU IExp cls&goto startIExpressPromptDialerMode
 if /I %input% EQU IExpr cls&goto startIExpressPromptDialerMode
 if /I %input% EQU IExpre cls&goto startIExpressPromptDialerMode
@@ -28241,6 +29096,10 @@ if /I %input% EQU Intern cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Interne cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Internet cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Internet- cls&goto startInternetDownloadManagerPromptDialerMode
+if /I %input% EQU Internet-A start Internet_Download_Manager_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Internet-R start Internet_Download_Manager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Internet-I start Internet_Download_Manager_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Internet-O start Internet_Download_Manager_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Internet-D cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Internet-Do cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Internet-Dow cls&goto startInternetDownloadManagerPromptDialerMode
@@ -28250,6 +29109,10 @@ if /I %input% EQU Internet-Downlo cls&goto startInternetDownloadManagerPromptDia
 if /I %input% EQU Internet-Downloa cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Internet-Download cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Internet-Download- cls&goto startInternetDownloadManagerPromptDialerMode
+if /I %input% EQU Internet-Download-A start Internet_Download_Manager_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Internet-Download-R start Internet_Download_Manager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Internet-Download-I start Internet_Download_Manager_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Internet-Download-O start Internet_Download_Manager_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Internet-Download-M cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Internet-Download-Ma cls&goto startInternetDownloadManagerPromptDialerMode
 if /I %input% EQU Internet-Download-Man cls&goto startInternetDownloadManagerPromptDialerMode
@@ -28267,9 +29130,13 @@ if /I %input% EQU ILSpy cls&goto startILSpyPromptDialerMode
 if /I %input% EQU ILSpy- cls&goto startILSpyPromptDialerMode
 if /I %input% EQU ILSpy-A start ILSpy_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ILSpy-R start ILSpy_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Il2 cls&goto startIl2CppInspectorPromptDialerMode
 if /I %input% EQU Il2C cls&goto startIl2CppInspectorPromptDialerMode
 if /I %input% EQU Il2Cp cls&goto startIl2CppInspectorPromptDialerMode
 if /I %input% EQU Il2Cpp cls&goto startIl2CppInspectorPromptDialerMode
+if /I %input% EQU Il2Cpp- cls&goto startIl2CppInspectorPromptDialerMode
+if /I %input% EQU Il2Cpp-A start Il2CppInspector_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Il2Cpp-R start Il2CppInspector_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Il2CppI cls&goto startIl2CppInspectorPromptDialerMode
 if /I %input% EQU Il2CppIn cls&goto startIl2CppInspectorPromptDialerMode
 if /I %input% EQU Il2CppIns cls&goto startIl2CppInspectorPromptDialerMode
@@ -28291,6 +29158,10 @@ if /I %input% EQU Inkball-A start InkBall_A.lnk&&goto startPreExitPrompt||goto s
 if /I %input% EQU Inkball-R start InkBall_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Inno cls&goto startInnoSetupPromptDialerMode
 if /I %input% EQU Inno- cls&goto startInnoSetupPromptDialerMode
+if /I %input% EQU Inno-A start Inno_Setup_A.lnk&set input=installer-NA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Inno-R start Inno_Setup_R.lnk&set input=installer-NR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Inno-I start Inno_Setup_I.exe&set input=installer-NI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Inno-O start Inno_Setup_O.lnk&set input=installer-NO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Inno-S cls&goto startInnoSetupPromptDialerMode
 if /I %input% EQU Inno-Se cls&goto startInnoSetupPromptDialerMode
 if /I %input% EQU Inno-Set cls&goto startInnoSetupPromptDialerMode
@@ -28306,6 +29177,11 @@ if /I %input% EQU Intel cls&goto startIntelliJIDEApromptDialerMode
 if /I %input% EQU Intell cls&goto startIntelliJIDEApromptDialerMode
 if /I %input% EQU Intelli cls&goto startIntelliJIDEApromptDialerMode
 if /I %input% EQU IntelliJ cls&goto startIntelliJIDEApromptDialerMode
+if /I %input% EQU IntelliJ- cls&goto startIntelliJIDEApromptDialerMode
+if /I %input% EQU IntelliJ-A start IntelliJIDEA_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IntelliJ-R start IntelliJIDEA_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IntelliJ-I start IntelliJIDEA_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU IntelliJ-O cls&goto startUninstallationInstructions
 if /I %input% EQU IntelliJI cls&goto startIntelliJIDEApromptDialerMode
 if /I %input% EQU IntelliJID cls&goto startIntelliJIDEApromptDialerMode
 if /I %input% EQU IntelliJIDE cls&goto startIntelliJIDEApromptDialerMode
@@ -28341,6 +29217,10 @@ if /I %input% EQU JavaSnoop cls&goto startJavaSnoopPromptDialerMode
 if /I %input% EQU JavaSnoop- cls&goto startJavaSnoopPromptDialerMode
 if /I %input% EQU JavaSnoop-A start JavaSnoop_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU JavaSnoop-R start JavaSnoop_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Java-Dec cls&goto startJDGUIpromptDialerMode
+if /I %input% EQU Java-Dec- cls&goto startJDGUIpromptDialerMode
+if /I %input% EQU Java-Dec-A start JD_GUI_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Java-Dec-R start JD_GUI_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Java-Deco cls&goto startJDGUIpromptDialerMode
 if /I %input% EQU Java-Decom cls&goto startJDGUIpromptDialerMode
 if /I %input% EQU Java-Decomp cls&goto startJDGUIpromptDialerMode
@@ -28351,6 +29231,9 @@ if /I %input% EQU Java-Decompiler cls&goto startJDGUIpromptDialerMode
 if /I %input% EQU Java-Decompiler- cls&goto startJDGUIpromptDialerMode
 if /I %input% EQU Java-Decompiler-A start JD_GUI_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Java-Decompiler-R start JD_GUI_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Java-Dev cls&goto startJavaDeveloperKitPromptDialerMode
+if /I %input% EQU Java-Dev- cls&goto startJavaDeveloperKitPromptDialerMode
+if /I %input% EQU Java-Dev-I start JDK_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Java-Deve cls&goto startJavaDeveloperKitPromptDialerMode
 if /I %input% EQU Java-Devel cls&goto startJavaDeveloperKitPromptDialerMode
 if /I %input% EQU Java-Develo cls&goto startJavaDeveloperKitPromptDialerMode
@@ -28371,11 +29254,15 @@ if /I %input% EQU jGRASP-A start jGRASP_A.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU jGRASP-R start jGRASP_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU jGRASP-I start jGRASP_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU jGRASP-O start jGRASP_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Java-Run cls&goto startJavaRuntimeEnvironmentPromptDialerMode
+if /I %input% EQU Java-Run- cls&goto startJavaRuntimeEnvironmentPromptDialerMode
+if /I %input% EQU Java-Run-I start JRE_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Java-Runt cls&goto startJavaRuntimeEnvironmentPromptDialerMode
 if /I %input% EQU Java-Runti cls&goto startJavaRuntimeEnvironmentPromptDialerMode
 if /I %input% EQU Java-Runtim cls&goto startJavaRuntimeEnvironmentPromptDialerMode
 if /I %input% EQU Java-Runtime cls&goto startJavaRuntimeEnvironmentPromptDialerMode
 if /I %input% EQU Java-Runtime- cls&goto startJavaRuntimeEnvironmentPromptDialerMode
+if /I %input% EQU Java-Runtime-I start JRE_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Java-Runtime-E cls&goto startJavaRuntimeEnvironmentPromptDialerMode
 if /I %input% EQU Java-Runtime-En cls&goto startJavaRuntimeEnvironmentPromptDialerMode
 if /I %input% EQU Java-Runtime-Env cls&goto startJavaRuntimeEnvironmentPromptDialerMode
@@ -28393,12 +29280,20 @@ if /I %input% EQU JRiv cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRive cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRiver cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRiver- cls&goto startJRiverMediaCenterPromptDialerMode
+if /I %input% EQU JRiver-A start JRiver_Media_Center_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU JRiver-R start JRiver_Media_Center_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU JRiver-I start JRiver_Media_Center_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU JRiver-O start JRiver_Media_Center_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU JRiver-M cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRiver-Me cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRiver-Med cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRiver-Medi cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRiver-Media cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRiver-Media- cls&goto startJRiverMediaCenterPromptDialerMode
+if /I %input% EQU JRiver-Media-A start JRiver_Media_Center_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU JRiver-Media-R start JRiver_Media_Center_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU JRiver-Media-I start JRiver_Media_Center_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU JRiver-Media-O start JRiver_Media_Center_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU JRiver-Media-C cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRiver-Media-Ce cls&goto startJRiverMediaCenterPromptDialerMode
 if /I %input% EQU JRiver-Media-Cen cls&goto startJRiverMediaCenterPromptDialerMode
@@ -28416,6 +29311,50 @@ if /I %input% EQU KART-A start KART_A.lnk&&goto startPreExitPrompt||goto startFa
 if /I %input% EQU KART-R start KART_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU KART-I start KART_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU KART-O start KART_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kasp cls&goto startSpecificationPrompt
+if /I %input% EQU Kaspe cls&goto startSpecificationPrompt
+if /I %input% EQU Kasper cls&goto startSpecificationPrompt
+if /I %input% EQU Kaspers cls&goto startSpecificationPrompt
+if /I %input% EQU Kaspersk cls&goto startSpecificationPrompt
+if /I %input% EQU Kaspersky cls&goto startSpecificationPrompt
+if /I %input% EQU Kaspersky- cls&goto startSpecificationPrompt
+if /I %input% EQU Kaspersky-A cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-A-A start KART_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-A-R start KART_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-A-I start KART_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-A-O start KART_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-An cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Ant cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti- cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-A start KART_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-R start KART_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-I start KART_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-O start KART_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-R cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ra cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ran cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Rans cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ranso cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransom cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomw cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomwa cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomwar cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomware cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomware- cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomware-A start KART_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-Ransomware-R start KART_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-Ransomware-I start KART_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-Ransomware-O start KART_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-Ransomware-T cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomware-To cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomware-Too cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomware-Tool cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomware-Tool- cls&goto startKARTpromptDialerMode
+if /I %input% EQU Kaspersky-Anti-Ransomware-Tool-A start KART_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-Ransomware-Tool-R start KART_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-Ransomware-Tool-I start KART_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Anti-Ransomware-Tool-O start KART_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU KeeP cls&goto startKeePassPromptDialerMode
 if /I %input% EQU KeePa cls&goto startKeePassPromptDialerMode
 if /I %input% EQU KeePas cls&goto startKeePassPromptDialerMode
@@ -28431,9 +29370,46 @@ if /I %input% EQU KVRT-A start KVRT_A.lnk&&goto startPreExitPrompt||goto startFa
 if /I %input% EQU KVRT-R start KVRT_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU KVRT-I start KVRT_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU KVRT-O start KVRT_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-V cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-V-A start KVRT_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-V-R start KVRT_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-V-I start KVRT_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-V-O start KVRT_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Vi cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Vir cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Viru cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus- cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-A start KVRT_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-R start KVRT_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-I start KVRT_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-O start KVRT_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-R cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Re cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Rem cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Remo cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Remov cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Remova cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Removal cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Removal- cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Removal-A start KVRT_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-Removal-R start KVRT_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-Removal-I start KVRT_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-Removal-O start KVRT_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-Removal-T cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Removal-To cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Removal-Too cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Removal-Tool cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Removal-Tool- cls&goto startKVRTpromptDialerMode
+if /I %input% EQU Kaspersky-Virus-Removal-Tool-A start KVRT_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-Removal-Tool-R start KVRT_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-Removal-Tool-I start KVRT_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Kaspersky-Virus-Removal-Tool-O start KVRT_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Leve cls&goto startLevelJuicerPromptDialerMode
 if /I %input% EQU Level cls&goto startLevelJuicerPromptDialerMode
 if /I %input% EQU Level- cls&goto startLevelJuicerPromptDialerMode
+if /I %input% EQU Level-A start Level_Juicer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Level-R start Level_Juicer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Level-J cls&goto startLevelJuicerPromptDialerMode
 if /I %input% EQU Level-Ju cls&goto startLevelJuicerPromptDialerMode
 if /I %input% EQU Level-Jui cls&goto startLevelJuicerPromptDialerMode
@@ -28445,6 +29421,10 @@ if /I %input% EQU Level-Juicer-A start Level_Juicer_A.lnk&&goto startPreExitProm
 if /I %input% EQU Level-Juicer-R start Level_Juicer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Libr cls&goto startLibreWolfPromptDialerMode
 if /I %input% EQU Libre cls&goto startLibreWolfPromptDialerMode
+if /I %input% EQU Libre-A start LibreWolf_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Libre-R start LibreWolf_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Libre-I start LibreWolf_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Libre-O start LibreWolf_Browser_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU LibreW cls&goto startLibreWolfPromptDialerMode
 if /I %input% EQU LibreWo cls&goto startLibreWolfPromptDialerMode
 if /I %input% EQU LibreWol cls&goto startLibreWolfPromptDialerMode
@@ -28486,6 +29466,12 @@ if /I %input% EQU Mahjong-Titans-A start Mahjong_Titans_A.lnk&&goto startPreExit
 if /I %input% EQU Mahjong-Titans-R start Mahjong_Titans_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mahjong-Titans-I start Windows7GamesForWindows11_10_8_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mahjong-Titans-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MWB cls&goto startMBSetupPromptDialerMode
+if /I %input% EQU MWB- cls&goto startMBSetupPromptDialerMode
+if /I %input% EQU MWB-A start Malwarebytes_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MWB-R start Malwarebytes_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MWB-I start Malwarebytes_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MWB-O start Malwarebytes_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Malw cls&goto startMBSetupPromptDialerMode
 if /I %input% EQU Malwa cls&goto startMBSetupPromptDialerMode
 if /I %input% EQU Malwar cls&goto startMBSetupPromptDialerMode
@@ -28503,11 +29489,33 @@ if /I %input% EQU Malwarebytes-O start Malwarebytes_O.lnk&&goto startPreExitProm
 if /I %input% EQU Mapl cls&goto startMaplePromptDialerMode
 if /I %input% EQU Maple cls&goto startMaplePromptDialerMode
 if /I %input% EQU Maple- cls&goto startMaplePromptDialerMode
-if /I %input% EQU Maple-A start Maple_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Maple-R start Maple_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Maple-I start Maple_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Maple-O cls&goto startUninstallationInstructions
+if /I %input% EQU Maple-T cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-T- cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-T-A start Maple_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Maple-T-R start Maple_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Maple-T-I start Maple_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Maple-T-O cls&goto startUninstallationInstructions
+if /I %input% EQU Maple-Tr cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Tra cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Trad cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Tradi cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Tradit cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Traditi cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Traditio cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Tradition cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Traditiona cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Traditional cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Traditional- cls&goto startMapleTraditionalPromptDialerMode
+if /I %input% EQU Maple-Traditional-A start Maple_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Maple-Traditional-R start Maple_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Maple-Traditional-I start Maple_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Maple-Traditional-O cls&goto startUninstallationInstructions
 if /I %input% EQU Maple-F cls&goto startMapleFlowPromptDialerMode
+if /I %input% EQU Maple-F- cls&goto startMapleFlowPromptDialerMode
+if /I %input% EQU Maple-F-A start Maple_Flow_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Maple-F-R start Maple_Flow_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Maple-F-I start Maple_Flow_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Maple-F-O cls&goto startUninstallationInstructions
 if /I %input% EQU Maple-Fl cls&goto startMapleFlowPromptDialerMode
 if /I %input% EQU Maple-Flo cls&goto startMapleFlowPromptDialerMode
 if /I %input% EQU Maple-Flow cls&goto startMapleFlowPromptDialerMode
@@ -28516,6 +29524,12 @@ if /I %input% EQU Maple-Flow-A start Maple_Flow_A.lnk&&goto startPreExitPrompt||
 if /I %input% EQU Maple-Flow-R start Maple_Flow_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Maple-Flow-I start Maple_Flow_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Maple-Flow-O cls&goto startUninstallationInstructions
+if /I %input% EQU MAT cls&goto startMATLABpromptDialerMode
+if /I %input% EQU MAT- cls&goto startMATLABpromptDialerMode
+if /I %input% EQU MAT-A start MATLAB_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MAT-R start MATLAB_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MAT-I start MATLAB_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MAT-O cls&goto startUninstallationInstructions
 if /I %input% EQU MATL cls&goto startMATLABpromptDialerMode
 if /I %input% EQU MATLA cls&goto startMATLABpromptDialerMode
 if /I %input% EQU MATLAB cls&goto startMATLABpromptDialerMode
@@ -28524,7 +29538,13 @@ if /I %input% EQU MATLAB-A start MATLAB_A.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU MATLAB-R start MATLAB_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MATLAB-I start MATLAB_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MATLAB-O cls&goto startUninstallationInstructions
+if /I %input% EQU Meta cls&goto startSpecificationPrompt
 if /I %input% EQU MetaP cls&goto startMetaProgrammingSystemPromptDialerMode
+if /I %input% EQU MetaP- cls&goto startMetaProgrammingSystemPromptDialerMode
+if /I %input% EQU MetaP-A start MetaProgrammingSystem_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MetaP-R start MetaProgrammingSystem_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MetaP-I start MetaProgrammingSystem_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MetaP-O cls&goto startUninstallationInstructions
 if /I %input% EQU MetaPr cls&goto startMetaProgrammingSystemPromptDialerMode
 if /I %input% EQU MetaPro cls&goto startMetaProgrammingSystemPromptDialerMode
 if /I %input% EQU MetaProg cls&goto startMetaProgrammingSystemPromptDialerMode
@@ -28535,6 +29555,10 @@ if /I %input% EQU MetaProgramm cls&goto startMetaProgrammingSystemPromptDialerMo
 if /I %input% EQU MetaProgrammi cls&goto startMetaProgrammingSystemPromptDialerMode
 if /I %input% EQU MetaProgrammin cls&goto startMetaProgrammingSystemPromptDialerMode
 if /I %input% EQU MetaProgramming cls&goto startMetaProgrammingSystemPromptDialerMode
+if /I %input% EQU MetaProgramming-A start MetaProgrammingSystem_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MetaProgramming-R start MetaProgrammingSystem_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MetaProgramming-I start MetaProgrammingSystem_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MetaProgramming-O cls&goto startUninstallationInstructions
 if /I %input% EQU MetaProgrammingS cls&goto startMetaProgrammingSystemPromptDialerMode
 if /I %input% EQU MetaProgrammingSy cls&goto startMetaProgrammingSystemPromptDialerMode
 if /I %input% EQU MetaProgrammingSys cls&goto startMetaProgrammingSystemPromptDialerMode
@@ -28546,7 +29570,12 @@ if /I %input% EQU MetaProgrammingSystem-A start MetaProgrammingSystem_A.lnk&&got
 if /I %input% EQU MetaProgrammingSystem-R start MetaProgrammingSystem_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MetaProgrammingSystem-I start MetaProgrammingSystem_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MetaProgrammingSystem-O cls&goto startUninstallationInstructions
-if /I %input% EQU Metas cls&goto startMetasploitPromptDialerMode
+if /I %input% EQU MetaS cls&goto startMetasploitPromptDialerMode
+if /I %input% EQU MetaS- cls&goto startMetasploitPromptDialerMode
+if /I %input% EQU MetaS-A start Metasploit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MetaS-R start Metasploit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MetaS-I start Metasploit_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MetaS-O start Metasploit_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Metasp cls&goto startMetasploitPromptDialerMode
 if /I %input% EQU Metaspl cls&goto startMetasploitPromptDialerMode
 if /I %input% EQU Metasplo cls&goto startMetasploitPromptDialerMode
@@ -28564,6 +29593,11 @@ if /I %input% EQU Microsoft365- cls&goto startMicrosoft365PromptDialerMode
 if /I %input% EQU Microsoft365-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mine cls&goto startMinesweeperPromptDialerMode
 if /I %input% EQU Mines cls&goto startMinesweeperPromptDialerMode
+if /I %input% EQU Mines- cls&goto startMinesweeperPromptDialerMode
+if /I %input% EQU Mines-A start Minesweeper_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mines-R start Minesweeper_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mines-I start Windows7GamesForWindows11_10_8_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mines-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Minesw cls&goto startMinesweeperPromptDialerMode
 if /I %input% EQU Mineswe cls&goto startMinesweeperPromptDialerMode
 if /I %input% EQU Mineswee cls&goto startMinesweeperPromptDialerMode
@@ -28576,6 +29610,11 @@ if /I %input% EQU Minesweeper-R start Minesweeper_R.lnk&&goto startPreExitPrompt
 if /I %input% EQU Minesweeper-I start Windows7GamesForWindows11_10_8_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Minesweeper-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mini cls&goto startMinitabPromptDialerMode
+if /I %input% EQU Mini- cls&goto startMinitabPromptDialerMode
+if /I %input% EQU Mini-A start Minitab_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mini-R start Minitab_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mini-I start Minitab_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mini-O cls&goto startUninstallationInstructions
 if /I %input% EQU Minit cls&goto startMinitabPromptDialerMode
 if /I %input% EQU Minita cls&goto startMinitabPromptDialerMode
 if /I %input% EQU Minitab cls&goto startMinitabPromptDialerMode
@@ -28584,7 +29623,17 @@ if /I %input% EQU Minitab-A start Minitab_A.lnk&&goto startPreExitPrompt||goto s
 if /I %input% EQU Minitab-R start Minitab_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Minitab-I start Minitab_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Minitab-O cls&goto startUninstallationInstructions
+if /I %input% EQU Mull cls&goto startSpecificationPrompt
+if /I %input% EQU Mullv cls&goto startSpecificationPrompt
+if /I %input% EQU Mullva cls&goto startSpecificationPrompt
+if /I %input% EQU Mullvad cls&goto startSpecificationPrompt
+if /I %input% EQU Mullvad- cls&goto startSpecificationPrompt
 if /I %input% EQU Mullvad-B cls&goto startMullvadPromptDialerMode
+if /I %input% EQU Mullvad-B- cls&goto startMullvadPromptDialerMode
+if /I %input% EQU Mullvad-B-A start Mullvad_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mullvad-B-R start Mullvad_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mullvad-B-I start Mullvad_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mullvad-B-O start Mullvad_Browser_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mullvad-Br cls&goto startMullvadPromptDialerMode
 if /I %input% EQU Mullvad-Bro cls&goto startMullvadPromptDialerMode
 if /I %input% EQU Mullvad-Brow cls&goto startMullvadPromptDialerMode
@@ -28597,6 +29646,11 @@ if /I %input% EQU Mullvad-Browser-R start Mullvad_Browser_R.lnk&&goto startPreEx
 if /I %input% EQU Mullvad-Browser-I start Mullvad_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mullvad-Browser-O start Mullvad_Browser_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mullvad-V cls&goto startMullvadVPNpromptDialerMode
+if /I %input% EQU Mullvad-V- cls&goto startMullvadVPNpromptDialerMode
+if /I %input% EQU Mullvad-V-A start Mullvad_VPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mullvad-V-R start Mullvad_VPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mullvad-V-I start Mullvad_VPN_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Mullvad-V-O start Mullvad_VPN_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mullvad-VP cls&goto startMullvadVPNpromptDialerMode
 if /I %input% EQU Mullvad-VPN cls&goto startMullvadVPNpromptDialerMode
 if /I %input% EQU Mullvad-VPN- cls&goto startMullvadVPNpromptDialerMode
@@ -28604,21 +29658,79 @@ if /I %input% EQU Mullvad-VPN-A start Mullvad_VPN_A.lnk&&goto startPreExitPrompt
 if /I %input% EQU Mullvad-VPN-R start Mullvad_VPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mullvad-VPN-I start Mullvad_VPN_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Mullvad-VPN-O start Mullvad_VPN_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU NMSS cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSa cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSav cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSave cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSaveE cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSaveEd cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSaveEdi cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSaveEdit cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSaveEdito cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSaveEditor cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSaveEditor- cls&goto startNMSSaveEditorPromptDialerMode
-if /I %input% EQU NMSSaveEditor-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU NMSSaveEditor-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU NMSSaveEditor-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU NMSSaveEditor-O cls&goto startUninstallationInstructions
+if /I %input% EQU NMSSE cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMSSE- cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMSSE-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMSSE-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMSSE-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMSSE-O cls&goto startUninstallationInstructions
+if /I %input% EQU NMS-S cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-S- cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-S-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMS-S-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMS-S-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMS-S-O cls&goto startUninstallationInstructions
+if /I %input% EQU NMS-Sa cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Sav cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save- cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMS-Save-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMS-Save-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMS-Save-O cls&goto startUninstallationInstructions
+if /I %input% EQU NMS-Save-E cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save-Ed cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save-Edi cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save-Edit cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save-Edito cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save-Editor cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save-Editor- cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU NMS-Save-Editor-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMS-Save-Editor-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMS-Save-Editor-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NMS-Save-Editor-O cls&goto startUninstallationInstructions
+if /I %input% EQU No-M cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-M- cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-M-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-M-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-M-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-M-O cls&goto startUninstallationInstructions
+if /I %input% EQU No-Ma cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Man cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans- cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-O cls&goto startUninstallationInstructions
+if /I %input% EQU No-Mans-S cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sk cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky- cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-Sky-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-Sky-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-Sky-O cls&goto startUninstallationInstructions
+if /I %input% EQU No-Mans-Sky-S cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Sa cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Sav cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save- cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-Sky-Save-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-Sky-Save-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-Sky-Save-O cls&goto startUninstallationInstructions
+if /I %input% EQU No-Mans-Sky-Save-E cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save-Ed cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save-Edi cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save-Edit cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save-Edito cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save-Editor cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save-Editor- cls&goto startNMSSaveEditorPromptDialerMode
+if /I %input% EQU No-Mans-Sky-Save-Editor-A start NMSSaveEditor_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-Sky-Save-Editor-R start NMSSaveEditor_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-Sky-Save-Editor-I start NMSSaveEditor_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU No-Mans-Sky-Save-Editor-O cls&goto startUninstallationInstructions
 if /I %input% EQU Note cls&goto startNotepadPromptDialerMode
 if /I %input% EQU Notep cls&goto startNotepadPromptDialerMode
 if /I %input% EQU Notepa cls&goto startNotepadPromptDialerMode
@@ -28634,6 +29746,11 @@ if /I %input% EQU Notepad++-R start Notepad++_R.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU Notepad++-I start Notepad++_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Notepad++-O start Notepad++_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Nord cls&goto startNordVPNpromptDialerMode
+if /I %input% EQU Nord- cls&goto startNordVPNpromptDialerMode
+if /I %input% EQU Nord-A start NordVPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Nord-R start NordVPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Nord-I start NordVPN_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Nord-O cls&goto startUninstallationInstructions
 if /I %input% EQU NordV cls&goto startNordVPNpromptDialerMode
 if /I %input% EQU NordVP cls&goto startNordVPNpromptDialerMode
 if /I %input% EQU NordVPN cls&goto startNordVPNpromptDialerMode
@@ -28646,12 +29763,20 @@ if /I %input% EQU Nort cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norto cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton- cls&goto startNortonPowerEraserPromptDialerMode
+if /I %input% EQU Norton-A start Norton_Power_Eraser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Norton-R start Norton_Power_Eraser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Norton-I start Norton_Power_Eraser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Norton-O start Norton_Power_Eraser_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Norton-P cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton-Po cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton-Pow cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton-Powe cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton-Power cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton-Power- cls&goto startNortonPowerEraserPromptDialerMode
+if /I %input% EQU Norton-Power-A start Norton_Power_Eraser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Norton-Power-R start Norton_Power_Eraser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Norton-Power-I start Norton_Power_Eraser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Norton-Power-O start Norton_Power_Eraser_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Norton-Power-E cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton-Power-Er cls&goto startNortonPowerEraserPromptDialerMode
 if /I %input% EQU Norton-Power-Era cls&goto startNortonPowerEraserPromptDialerMode
@@ -28668,12 +29793,18 @@ if /I %input% EQU Octav cls&goto startOctavePromptDialerMode
 if /I %input% EQU Octave cls&goto startOctavePromptDialerMode
 if /I %input% EQU Octave- cls&goto startOctavePromptDialerMode
 if /I %input% EQU Octave-G cls&goto startGUIOctavePromptDialerMode
+if /I %input% EQU Octave-G- cls&goto startGUIOctavePromptDialerMode
+if /I %input% EQU Octave-G-A start GUI_Octave_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Octave-G-R start GUI_Octave_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Octave-GU cls&goto startGUIOctavePromptDialerMode
 if /I %input% EQU Octave-GUI cls&goto startGUIOctavePromptDialerMode
 if /I %input% EQU Octave-GUI- cls&goto startGUIOctavePromptDialerMode
 if /I %input% EQU Octave-GUI-A start GUI_Octave_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Octave-GUI-R start GUI_Octave_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Octave-C cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU Octave-C- cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU Octave-C-A start CLI_Octave_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Octave-C-R start CLI_Octave_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Octave-CL cls&goto startCLIOctavePromptDialerMode
 if /I %input% EQU Octave-CLI cls&goto startCLIOctavePromptDialerMode
 if /I %input% EQU Octave-CLI- cls&goto startCLIOctavePromptDialerMode
@@ -28685,13 +29816,22 @@ if /I %input% EQU Odin cls&goto startOdinPromptDialerMode
 if /I %input% EQU Odin- cls&goto startOdinPromptDialerMode
 if /I %input% EQU Odin-A start Odin_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Odin-R start Odin_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ON1 cls&goto startON1PhotoRAWpromptDialerMode
+if /I %input% EQU ON1- cls&goto startON1PhotoRAWpromptDialerMode
+if /I %input% EQU ON1-A start ON1_Photo_RAW_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ON1-R start ON1_Photo_RAW_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ON1-I start ON1_Photo_RAW_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ON1-O cls&goto startUninstallationInstructions
 if /I %input% EQU ON1-P cls&goto startON1PhotoRAWpromptDialerMode
 if /I %input% EQU ON1-Ph cls&goto startON1PhotoRAWpromptDialerMode
 if /I %input% EQU ON1-Pho cls&goto startON1PhotoRAWpromptDialerMode
 if /I %input% EQU ON1-Phot cls&goto startON1PhotoRAWpromptDialerMode
 if /I %input% EQU ON1-Photo cls&goto startON1PhotoRAWpromptDialerMode
 if /I %input% EQU ON1-Photo- cls&goto startON1PhotoRAWpromptDialerMode
-if /I %input% EQU ON1-Photo-R cls&goto startON1PhotoRAWpromptDialerMode
+if /I %input% EQU ON1-Photo-A start ON1_Photo_RAW_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ON1-Photo-R start ON1_Photo_RAW_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ON1-Photo-I start ON1_Photo_RAW_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ON1-Photo-O cls&goto startUninstallationInstructions
 if /I %input% EQU ON1-Photo-RA cls&goto startON1PhotoRAWpromptDialerMode
 if /I %input% EQU ON1-Photo-RAW cls&goto startON1PhotoRAWpromptDialerMode
 if /I %input% EQU ON1-Photo-RAW- cls&goto startON1PhotoRAWpromptDialerMode
@@ -28699,6 +29839,7 @@ if /I %input% EQU ON1-Photo-RAW-A start ON1_Photo_RAW_A.lnk&&goto startPreExitPr
 if /I %input% EQU ON1-Photo-RAW-R start ON1_Photo_RAW_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ON1-Photo-RAW-I start ON1_Photo_RAW_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU ON1-Photo-RAW-O cls&goto startUninstallationInstructions
+if /I %input% EQU One cls&goto startSpecificationPrompt
 if /I %input% EQU OneN cls&goto startOneNotePromptDialerMode
 if /I %input% EQU OneNo cls&goto startOneNotePromptDialerMode
 if /I %input% EQU OneNot cls&goto startOneNotePromptDialerMode
@@ -28746,7 +29887,7 @@ if /I %input% EQU Opera- cls&goto startOperaPromptDialerMode
 if /I %input% EQU Opera-A start Opera_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Opera-R start Opera_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Opera-I start Opera_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Opera-O start Opera_Browser_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Opera-O cls&goto startUninstallationInstructions
 if /I %input% EQU Opera-B cls&goto startOperaPromptDialerMode
 if /I %input% EQU Opera-Br cls&goto startOperaPromptDialerMode
 if /I %input% EQU Opera-Bro cls&goto startOperaPromptDialerMode
@@ -28758,7 +29899,7 @@ if /I %input% EQU Opera-Browser- cls&goto startOperaPromptDialerMode
 if /I %input% EQU Opera-Browser-A start Opera_Browser_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Opera-Browser-R start Opera_Browser_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Opera-Browser-I start Opera_Browser_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Opera-Browser-O start Opera_Browser_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Opera-Browser-O cls&goto startUninstallationInstructions
 if /I %input% EQU Outl cls&goto startOutlookPromptDialerMode
 if /I %input% EQU Outlo cls&goto startOutlookPromptDialerMode
 if /I %input% EQU Outloo cls&goto startOutlookPromptDialerMode
@@ -28773,15 +29914,31 @@ if /I %input% EQU Paint cls&goto startPaintPromptDialerMode
 if /I %input% EQU Paint- cls&goto startPaintPromptDialerMode
 if /I %input% EQU Paint-A start Paint_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Paint-R start Paint_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PWSP cls&goto startPalworldSavePalPromptDialerMode
+if /I %input% EQU PWSP- cls&goto startPalworldSavePalPromptDialerMode
+if /I %input% EQU PWSP-A start PalworldSavePal_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PWSP-R start PalworldSavePal_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PWSP-I start PalworldSavePal_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PWSP-O start PalworldSavePal_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Palw cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU Palwo cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU Palwor cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU Palworl cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU Palworld cls&goto startPalworldSavePalPromptDialerMode
+if /I %input% EQU Palworld- cls&goto startPalworldSavePalPromptDialerMode
+if /I %input% EQU Palworld-A start PalworldSavePal_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Palworld-R start PalworldSavePal_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Palworld-I start PalworldSavePal_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Palworld-O start PalworldSavePal_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PalworldS cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU PalworldSa cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU PalworldSav cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU PalworldSave cls&goto startPalworldSavePalPromptDialerMode
+if /I %input% EQU PalworldSave- cls&goto startPalworldSavePalPromptDialerMode
+if /I %input% EQU PalworldSave-A start PalworldSavePal_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PalworldSave-R start PalworldSavePal_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PalworldSave-I start PalworldSavePal_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PalworldSave-O start PalworldSavePal_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PalworldSaveP cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU PalworldSavePa cls&goto startPalworldSavePalPromptDialerMode
 if /I %input% EQU PalworldSavePal cls&goto startPalworldSavePalPromptDialerMode
@@ -28796,6 +29953,10 @@ if /I %input% EQU Passwa cls&goto startPasswareKitPromptDialerMode
 if /I %input% EQU Passwar cls&goto startPasswareKitPromptDialerMode
 if /I %input% EQU Passware cls&goto startPasswareKitPromptDialerMode
 if /I %input% EQU Passware- cls&goto startPasswareKitPromptDialerMode
+if /I %input% EQU Passware-A start Passware_Kit_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Passware-R start Passware_Kit_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Passware-I start Passware_Kit_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Passware-O start Passware_Kit_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Passware-K cls&goto startPasswareKitPromptDialerMode
 if /I %input% EQU Passware-Ki cls&goto startPasswareKitPromptDialerMode
 if /I %input% EQU Passware-Kit cls&goto startPasswareKitPromptDialerMode
@@ -28813,6 +29974,9 @@ if /I %input% EQU PeaZip-R start PeaZip_R.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU PeaZip-I start PeaZip_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PeaZip-O start PeaZip_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PE-E cls&goto startPEExplorerPromptDialerMode
+if /I %input% EQU PE-E- cls&goto startPEExplorerPromptDialerMode
+if /I %input% EQU PE-E-A start PE_Explorer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PE-E-R start PE_Explorer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PE-Ex cls&goto startPEExplorerPromptDialerMode
 if /I %input% EQU PE-Exp cls&goto startPEExplorerPromptDialerMode
 if /I %input% EQU PE-Expl cls&goto startPEExplorerPromptDialerMode
@@ -28829,6 +29993,11 @@ if /I %input% EQU PEiD-A start PEiD_A.lnk&&goto startPreExitPrompt||goto startFa
 if /I %input% EQU PEiD-R start PEiD_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Phot cls&goto startPhotolinePromptDialerMode
 if /I %input% EQU Photo cls&goto startPhotolinePromptDialerMode
+if /I %input% EQU Photo- cls&goto startPhotolinePromptDialerMode
+if /I %input% EQU Photo-A start Photoline_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Photo-R start Photoline_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Photo-I start Photoline_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Photo-O start Photoline_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Photol cls&goto startPhotolinePromptDialerMode
 if /I %input% EQU Photoli cls&goto startPhotolinePromptDialerMode
 if /I %input% EQU Photolin cls&goto startPhotolinePromptDialerMode
@@ -28839,6 +30008,11 @@ if /I %input% EQU Photoline-R start Photoline_R.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU Photoline-I start Photoline_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Photoline-O start Photoline_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PhpS cls&goto startPhpStormPromptDialerMode
+if /I %input% EQU PhpS- cls&goto startPhpStormPromptDialerMode
+if /I %input% EQU PhpS-A start PhpStorm_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PhpS-R start PhpStorm_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PhpS-I start PhpStorm_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PhpS-O cls&goto startUninstallationInstructions
 if /I %input% EQU PhpSt cls&goto startPhpStormPromptDialerMode
 if /I %input% EQU PhpSto cls&goto startPhpStormPromptDialerMode
 if /I %input% EQU PhpStor cls&goto startPhpStormPromptDialerMode
@@ -28859,6 +30033,11 @@ if /I %input% EQU Play cls&goto startPlayerFabPromptDialerMode
 if /I %input% EQU Playe cls&goto startPlayerFabPromptDialerMode
 if /I %input% EQU Player cls&goto startPlayerFabPromptDialerMode
 if /I %input% EQU PlayerF cls&goto startPlayerFabPromptDialerMode
+if /I %input% EQU PlayerF- cls&goto startPlayerFabPromptDialerMode
+if /I %input% EQU PlayerF-A start PlayerFab_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PlayerF-R start PlayerFab_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PlayerF-I start PlayerFab_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PlayerF-O start PlayerFab_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PlayerFa cls&goto startPlayerFabPromptDialerMode
 if /I %input% EQU PlayerFab cls&goto startPlayerFabPromptDialerMode
 if /I %input% EQU PlayerFab- cls&goto startPlayerFabPromptDialerMode
@@ -28867,6 +30046,11 @@ if /I %input% EQU PlayerFab-R start PlayerFab_R.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU PlayerFab-I start PlayerFab_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PlayerFab-O start PlayerFab_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Port cls&goto startPortmasterPromptDialerMode
+if /I %input% EQU Port- cls&goto startPortmasterPromptDialerMode
+if /I %input% EQU Port-A start Portmaster_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Port-R start Portmaster_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Port-I start Portmaster_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Port-O start Portmaster_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Portm cls&goto startPortmasterPromptDialerMode
 if /I %input% EQU Portma cls&goto startPortmasterPromptDialerMode
 if /I %input% EQU Portmas cls&goto startPortmasterPromptDialerMode
@@ -28878,7 +30062,13 @@ if /I %input% EQU Portmaster-A start Portmaster_A.lnk&&goto startPreExitPrompt||
 if /I %input% EQU Portmaster-R start Portmaster_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Portmaster-I start Portmaster_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Portmaster-O start Portmaster_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Power cls&goto startSpecificationPrompt
 if /I %input% EQU PowerA cls&goto startPowerArchiverPromptDialerMode
+if /I %input% EQU PowerA- cls&goto startPowerArchiverPromptDialerMode
+if /I %input% EQU PowerA-A start PowerArchiver_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerA-R start PowerArchiver_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerA-I start PowerArchiver_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerA-O start PowerArchiver_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerAr cls&goto startPowerArchiverPromptDialerMode
 if /I %input% EQU PowerArc cls&goto startPowerArchiverPromptDialerMode
 if /I %input% EQU PowerArch cls&goto startPowerArchiverPromptDialerMode
@@ -28892,6 +30082,11 @@ if /I %input% EQU PowerArchiver-R start PowerArchiver_R.lnk&&goto startPreExitPr
 if /I %input% EQU PowerArchiver-I start PowerArchiver_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerArchiver-O start PowerArchiver_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerB cls&goto startPowerBIpromptDialerMode
+if /I %input% EQU PowerB- cls&goto startPowerBIpromptDialerMode
+if /I %input% EQU PowerB-A start PowerBI_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerB-R start PowerBI_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerB-I start PowerBI_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerB-O cls&goto startUninstallationInstructions
 if /I %input% EQU PowerBI cls&goto startPowerBIpromptDialerMode
 if /I %input% EQU PowerBI- cls&goto startPowerBIpromptDialerMode
 if /I %input% EQU PowerBI-A start PowerBI_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -28899,6 +30094,11 @@ if /I %input% EQU PowerBI-R start PowerBI_R.lnk&&goto startPreExitPrompt||goto s
 if /I %input% EQU PowerBI-I start PowerBI_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerBI-O cls&goto startUninstallationInstructions
 if /I %input% EQU PowerI cls&goto startPowerISOpromptDialerMode
+if /I %input% EQU PowerI- cls&goto startPowerISOpromptDialerMode
+if /I %input% EQU PowerI-A start PowerISO_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerI-R start PowerISO_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerI-I start PowerISO_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerI-O start PowerISO_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerIS cls&goto startPowerISOpromptDialerMode
 if /I %input% EQU PowerISO cls&goto startPowerISOpromptDialerMode
 if /I %input% EQU PowerISO- cls&goto startPowerISOpromptDialerMode
@@ -28907,6 +30107,11 @@ if /I %input% EQU PowerISO-R start PowerISO_R.lnk&&goto startPreExitPrompt||goto
 if /I %input% EQU PowerISO-I start PowerISO_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerISO-O start PowerISO_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerP cls&goto startPowerPointPromptDialerMode
+if /I %input% EQU PowerP- cls&goto startPowerPointPromptDialerMode
+if /I %input% EQU PowerP-A start PowerPoint_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerP-R start PowerPoint_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerP-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerP-O cls&goto startUninstallationInstructions
 if /I %input% EQU PowerPo cls&goto startPowerPointPromptDialerMode
 if /I %input% EQU PowerPoi cls&goto startPowerPointPromptDialerMode
 if /I %input% EQU PowerPoin cls&goto startPowerPointPromptDialerMode
@@ -28917,6 +30122,11 @@ if /I %input% EQU PowerPoint-R start PowerPoint_R.lnk&&goto startPreExitPrompt||
 if /I %input% EQU PowerPoint-I start Microsoft365_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU PowerPoint-O cls&goto startUninstallationInstructions
 if /I %input% EQU PowerS cls&goto startPowerShellPromptDialerMode
+if /I %input% EQU PowerS- cls&goto startPowerShellPromptDialerMode
+if /I %input% EQU PowerS-A start PowerShell_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerS-R start PowerShell_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerS-I start PowerShell_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PowerS-O cls&goto startUninstallationInstructions
 if /I %input% EQU PowerSh cls&goto startPowerShellPromptDialerMode
 if /I %input% EQU PowerShe cls&goto startPowerShellPromptDialerMode
 if /I %input% EQU PowerShel cls&goto startPowerShellPromptDialerMode
@@ -28931,6 +30141,10 @@ if /I %input% EQU Proce cls&goto startProcessHackerPromptDialerMode
 if /I %input% EQU Proces cls&goto startProcessHackerPromptDialerMode
 if /I %input% EQU Process cls&goto startProcessHackerPromptDialerMode
 if /I %input% EQU Process- cls&goto startProcessHackerPromptDialerMode
+if /I %input% EQU Process-A start Process_Hacker_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Process-R start Process_Hacker_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Process-I start Process_Hacker_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Process-O start Process_Hacker_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Process-H cls&goto startProcessHackerPromptDialerMode
 if /I %input% EQU Process-Ha cls&goto startProcessHackerPromptDialerMode
 if /I %input% EQU Process-Hac cls&goto startProcessHackerPromptDialerMode
@@ -28947,12 +30161,18 @@ if /I %input% EQU Proto cls&goto startProtonPromptDialerMode
 if /I %input% EQU Proton cls&goto startProtonPromptDialerMode
 if /I %input% EQU Proton- cls&goto startProtonPromptDialerMode
 if /I %input% EQU Proton-V cls&goto startProtonVPNpromptDialerMode
+if /I %input% EQU Proton-V- cls&goto startProtonVPNpromptDialerMode
+if /I %input% EQU Proton-V-A start Proton_VPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Proton-V-R start Proton_VPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Proton-VP cls&goto startProtonVPNpromptDialerMode
 if /I %input% EQU Proton-VPN cls&goto startProtonVPNpromptDialerMode
 if /I %input% EQU Proton-VPN- cls&goto startProtonVPNpromptDialerMode
 if /I %input% EQU Proton-VPN-A start Proton_VPN_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Proton-VPN-R start Proton_VPN_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Proton-D cls&goto startProtonDrivePromptDialerMode
+if /I %input% EQU Proton-D- cls&goto startProtonDrivePromptDialerMode
+if /I %input% EQU Proton-D-A start Proton_Drive_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Proton-D-R start Proton_Drive_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Proton-Dr cls&goto startProtonDrivePromptDialerMode
 if /I %input% EQU Proton-Dri cls&goto startProtonDrivePromptDialerMode
 if /I %input% EQU Proton-Driv cls&goto startProtonDrivePromptDialerMode
@@ -28966,6 +30186,9 @@ if /I %input% EQU Prus cls&goto startSlic3rToolsPromptDialerMode
 if /I %input% EQU Prusa cls&goto startSlic3rToolsPromptDialerMode
 if /I %input% EQU Prusa- cls&goto startSlic3rToolsPromptDialerMode
 if /I %input% EQU Prusa-S cls&goto startPrusaSlicerPromptDialerMode
+if /I %input% EQU Prusa-S- cls&goto startPrusaSlicerPromptDialerMode
+if /I %input% EQU Prusa-S-A start PrusaSlicer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Prusa-S-R start PrusaSlicer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Prusa-Sl cls&goto startPrusaSlicerPromptDialerMode
 if /I %input% EQU Prusa-Sli cls&goto startPrusaSlicerPromptDialerMode
 if /I %input% EQU Prusa-Slic cls&goto startPrusaSlicerPromptDialerMode
@@ -28976,6 +30199,8 @@ if /I %input% EQU Prusa-Slicer-A start PrusaSlicer_A.lnk&&goto startPreExitPromp
 if /I %input% EQU Prusa-Slicer-R start PrusaSlicer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Prusa-G cls&goto startPrusaG-codeViewerPromptDialerMode
 if /I %input% EQU Prusa-G- cls&goto startPrusaG-codeViewerPromptDialerMode
+if /I %input% EQU Prusa-G-A start Prusa_G-code_Viewer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Prusa-G-R start Prusa_G-code_Viewer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Prusa-G-c cls&goto startPrusaG-codeViewerPromptDialerMode
 if /I %input% EQU Prusa-G-co cls&goto startPrusaG-codeViewerPromptDialerMode
 if /I %input% EQU Prusa-G-cod cls&goto startPrusaG-codeViewerPromptDialerMode
@@ -29007,6 +30232,10 @@ if /I %input% EQU Purb cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purbl cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purble cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purble- cls&goto startPurblePlacePromptDialerMode
+if /I %input% EQU Purble-A start Purble_Place_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Purble-R start Purble_Place_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Purble-I start Windows7GamesForWindows10and11_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Purble-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Purble-P cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purble-Pl cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purble-Pla cls&goto startPurblePlacePromptDialerMode
@@ -29019,6 +30248,10 @@ if /I %input% EQU Purble-Place-I start Windows7GamesForWindows10and11_I.exe&&got
 if /I %input% EQU Purble-Place-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Pure cls&goto startPureDataPromptDialerMode
 if /I %input% EQU Pure- cls&goto startPureDataPromptDialerMode
+if /I %input% EQU Pure-A start Pure_Data_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Pure-R start Pure_Data_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Pure-I start Pure_Data_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Pure-O start Pure_Data_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Pure-D cls&goto startPureDataPromptDialerMode
 if /I %input% EQU Pure-Da cls&goto startPureDataPromptDialerMode
 if /I %input% EQU Pure-Dat cls&goto startPureDataPromptDialerMode
@@ -29053,6 +30286,11 @@ if /I %input% EQU Python-R start Python_R.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU Python-I start Python_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Python-O cls&goto startUninstallationInstructions
 if /I %input% EQU qBit cls&goto startqBittorrentPromptDialerMode
+if /I %input% EQU qBit- cls&goto startqBittorrentPromptDialerMode
+if /I %input% EQU qBit-A start qBittorrent_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU qBit-R start qBittorrent_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU qBit-I start qBittorrent_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU qBit-O start qBittorrent_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU qBitt cls&goto startqBittorrentPromptDialerMode
 if /I %input% EQU qBitto cls&goto startqBittorrentPromptDialerMode
 if /I %input% EQU qBittor cls&goto startqBittorrentPromptDialerMode
@@ -29065,10 +30303,20 @@ if /I %input% EQU qBittorrent-A start qBittorrent_A.lnk&&goto startPreExitPrompt
 if /I %input% EQU qBittorrent-R start qBittorrent_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU qBittorrent-I start qBittorrent_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU qBittorrent-O start qBittorrent_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU QFX cls&goto startQFXKeyScramblerPromptDialerMode
+if /I %input% EQU QFX- cls&goto startQFXKeyScramblerPromptDialerMode
+if /I %input% EQU QFX-A start QFX_Key_Scrambler_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU QFX-R start QFX_Key_Scrambler_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU QFX-I start QFX_Key_Scrambler_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU QFX-O start QFX_Key_Scrambler_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU QFX-K cls&goto startQFXKeyScramblerPromptDialerMode
 if /I %input% EQU QFX-Ke cls&goto startQFXKeyScramblerPromptDialerMode
 if /I %input% EQU QFX-Key cls&goto startQFXKeyScramblerPromptDialerMode
 if /I %input% EQU QFX-Key- cls&goto startQFXKeyScramblerPromptDialerMode
+if /I %input% EQU QFX-Key-A start QFX_Key_Scrambler_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU QFX-Key-R start QFX_Key_Scrambler_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU QFX-Key-I start QFX_Key_Scrambler_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU QFX-Key-O start QFX_Key_Scrambler_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU QFX-Key-S cls&goto startQFXKeyScramblerPromptDialerMode
 if /I %input% EQU QFX-Key-Sc cls&goto startQFXKeyScramblerPromptDialerMode
 if /I %input% EQU QFX-Key-Scr cls&goto startQFXKeyScramblerPromptDialerMode
@@ -29099,6 +30347,10 @@ if /I %input% EQU Remoca cls&goto startRemocappStudioPromptDialerMode
 if /I %input% EQU Remocap cls&goto startRemocappStudioPromptDialerMode
 if /I %input% EQU Remocapp cls&goto startRemocappStudioPromptDialerMode
 if /I %input% EQU Remocapp- cls&goto startRemocappStudioPromptDialerMode
+if /I %input% EQU Remocapp-A start Remocapp_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Remocapp-R start Remocapp_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Remocapp-I start Remocapp_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Remocapp-O start Remocapp_Studio_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Remocapp-S cls&goto startRemocappStudioPromptDialerMode
 if /I %input% EQU Remocapp-St cls&goto startRemocappStudioPromptDialerMode
 if /I %input% EQU Remocapp-Stu cls&goto startRemocappStudioPromptDialerMode
@@ -29110,6 +30362,8 @@ if /I %input% EQU Remocapp-Studio-A start Remocapp_Studio_A.lnk&&goto startPreEx
 if /I %input% EQU Remocapp-Studio-R start Remocapp_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Remocapp-Studio-I start Remocapp_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Remocapp-Studio-O start Remocapp_Studio_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU ReSh cls&goto startSpecificationPrompt
+if /I %input% EQU ReSha cls&goto startSpecificationPrompt
 if /I %input% EQU ReShad cls&goto startReShadePromptDialerMode
 if /I %input% EQU ReShade cls&goto startReShadePromptDialerMode
 if /I %input% EQU ReShade- cls&goto startReShadePromptDialerMode
@@ -29121,6 +30375,11 @@ if /I %input% EQU ReSharpe cls&goto startReSharperPromptDialerMode
 if /I %input% EQU ReSharper cls&goto startReSharperPromptDialerMode
 if /I %input% EQU ReSharper- cls&goto startReSharperPromptDialerMode
 if /I %input% EQU ReSharper-T cls&goto startResharperTraditionalPromptDialerMode
+if /I %input% EQU ReSharper-T- cls&goto startResharperTraditionalPromptDialerMode
+if /I %input% EQU Resharper-T-A start ReSharper_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Resharper-T-R start ReSharper_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Resharper-T-I start ReSharper_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Resharper-T-O cls&goto startUninstallationInstructions
 if /I %input% EQU ReSharper-Tr cls&goto startResharperTraditionalPromptDialerMode
 if /I %input% EQU ReSharper-Tra cls&goto startResharperTraditionalPromptDialerMode
 if /I %input% EQU ReSharper-Trad cls&goto startResharperTraditionalPromptDialerMode
@@ -29137,6 +30396,11 @@ if /I %input% EQU Resharper-Traditional-R start ReSharper_R.lnk&&goto startPreEx
 if /I %input% EQU Resharper-Traditional-I start ReSharper_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Resharper-Traditional-O cls&goto startUninstallationInstructions
 if /I %input% EQU ReSharper-C cls&goto startResharperCppPromptDialerMode
+if /I %input% EQU ReSharper-C- cls&goto startResharperCppPromptDialerMode
+if /I %input% EQU Resharper-C-A start Resharper_Cpp_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Resharper-C-R start Resharper_Cpp_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Resharper-C-I start Resharper_Cpp_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Resharper-C-O cls&goto startUninstallationInstructions
 if /I %input% EQU ReSharper-Cp cls&goto startResharperCppPromptDialerMode
 if /I %input% EQU ReSharper-Cpp cls&goto startResharperCppPromptDialerMode
 if /I %input% EQU ReSharper-Cpp- cls&goto startResharperCppPromptDialerMode
@@ -29150,6 +30414,10 @@ if /I %input% EQU Resour cls&goto startResourceTunerPromptDialerMode
 if /I %input% EQU Resourc cls&goto startResourceTunerPromptDialerMode
 if /I %input% EQU Resource cls&goto startResourceTunerPromptDialerMode
 if /I %input% EQU Resource- cls&goto startResourceTunerPromptDialerMode
+if /I %input% EQU Resource-A start Resource_Tuner_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Resource-R start Resource_Tuner_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Resource-I start Resource_Tuner_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Resource-O start Resource_Tuner_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Resource-T cls&goto startResourceTunerPromptDialerMode
 if /I %input% EQU Resource-Tu cls&goto startResourceTunerPromptDialerMode
 if /I %input% EQU Resource-Tun cls&goto startResourceTunerPromptDialerMode
@@ -29162,6 +30430,10 @@ if /I %input% EQU Resource-Tuner-I start Resource_Tuner_I.exe&&goto startPreExit
 if /I %input% EQU Resource-Tuner-O start Resource_Tuner_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Revo cls&goto startRevoUninstallerPromptDialerMode
 if /I %input% EQU Revo- cls&goto startRevoUninstallerPromptDialerMode
+if /I %input% EQU Revo-A start Revo_Uninstaller_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Revo-R start Revo_Uninstaller_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Revo-I start Revo_Uninstaller_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Revo-O start Revo_Uninstaller_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Revo-U cls&goto startRevoUninstallerPromptDialerMode
 if /I %input% EQU Revo-Un cls&goto startRevoUninstallerPromptDialerMode
 if /I %input% EQU Revo-Uni cls&goto startRevoUninstallerPromptDialerMode
@@ -29185,9 +30457,17 @@ if /I %input% EQU Rider-A start Rider_A.lnk&&goto startPreExitPrompt||goto start
 if /I %input% EQU Rider-R start Rider_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rider-I start Rider_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rider-O cls&goto startUninstallationInstructions
+if /I %input% EQU Rise cls&goto startRiseOfLegendsPromptDialerMode
+if /I %input% EQU Rise- cls&goto startRiseOfLegendsPromptDialerMode
+if /I %input% EQU Rise-A start Rise_of_Legends_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rise-R start Rise_of_Legends_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rise-I start Rise_of_Legends_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rise-o cls&goto startRiseOfLegendsPromptDialerMode
 if /I %input% EQU Rise-of cls&goto startRiseOfLegendsPromptDialerMode
 if /I %input% EQU Rise-of- cls&goto startRiseOfLegendsPromptDialerMode
+if /I %input% EQU Rise-of-A start Rise_of_Legends_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rise-of-R start Rise_of_Legends_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rise-of-I start Rise_of_Legends_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rise-of-L cls&goto startRiseOfLegendsPromptDialerMode
 if /I %input% EQU Rise-of-Le cls&goto startRiseOfLegendsPromptDialerMode
 if /I %input% EQU Rise-of-Leg cls&goto startRiseOfLegendsPromptDialerMode
@@ -29199,6 +30479,11 @@ if /I %input% EQU Rise-of-Legends- cls&goto startRiseOfLegendsPromptDialerMode
 if /I %input% EQU Rise-of-Legends-A start Rise_of_Legends_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rise-of-Legends-R start Rise_of_Legends_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rise-of-Legends-I start Rise_of_Legends_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RoL cls&goto startRiseOfLegendsPromptDialerMode
+if /I %input% EQU RoL- cls&goto startRiseOfLegendsPromptDialerMode
+if /I %input% EQU RoL-A start Rise_of_Legends_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RoL-R start Rise_of_Legends_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU RoL-I start Rise_of_Legends_I.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RoL-B cls&goto startRoLBigArchiverPromptDialerMode
 if /I %input% EQU RoL-Bi cls&goto startRoLBigArchiverPromptDialerMode
 if /I %input% EQU RoL-Big cls&goto startRoLBigArchiverPromptDialerMode
@@ -29233,6 +30518,10 @@ if /I %input% EQU Roko cls&goto startRokokoStudioPromptDialerMode
 if /I %input% EQU Rokok cls&goto startRokokoStudioPromptDialerMode
 if /I %input% EQU Rokoko cls&goto startRokokoStudioPromptDialerMode
 if /I %input% EQU Rokoko- cls&goto startRokokoStudioPromptDialerMode
+if /I %input% EQU Rokoko-A start Rokoko_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rokoko-R start Rokoko_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rokoko-I start Rokoko_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rokoko-O start Rokoko_Studio_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rokoko-S cls&goto startRokokoStudioPromptDialerMode
 if /I %input% EQU Rokoko-St cls&goto startRokokoStudioPromptDialerMode
 if /I %input% EQU Rokoko-Stu cls&goto startRokokoStudioPromptDialerMode
@@ -29245,6 +30534,11 @@ if /I %input% EQU Rokoko-Studio-R start Rokoko_Studio_R.lnk&&goto startPreExitPr
 if /I %input% EQU Rokoko-Studio-I start Rokoko_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Rokoko-Studio-O start Rokoko_Studio_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Ruby cls&goto startRubyMinePromptDialerMode
+if /I %input% EQU Ruby- cls&goto startRubyMinePromptDialerMode
+if /I %input% EQU Ruby-A start RubyMine_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Ruby-R start RubyMine_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Ruby-I start RubyMine_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Ruby-O cls&goto startUninstallationInstructions
 if /I %input% EQU RubyM cls&goto startRubyMinePromptDialerMode
 if /I %input% EQU RubyMi cls&goto startRubyMinePromptDialerMode
 if /I %input% EQU RubyMin cls&goto startRubyMinePromptDialerMode
@@ -29255,6 +30549,11 @@ if /I %input% EQU RubyMine-R start RubyMine_R.lnk&&goto startPreExitPrompt||goto
 if /I %input% EQU RubyMine-I start RubyMine_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RubyMine-O cls&goto startUninstallationInstructions
 if /I %input% EQU Rust cls&goto startRustRoverPromptDialerMode
+if /I %input% EQU Rust- cls&goto startRustRoverPromptDialerMode
+if /I %input% EQU Rust-A start RustRover_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rust-R start RustRover_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rust-I start RustRover_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Rust-O cls&goto startUninstallationInstructions
 if /I %input% EQU RustR cls&goto startRustRoverPromptDialerMode
 if /I %input% EQU RustRo cls&goto startRustRoverPromptDialerMode
 if /I %input% EQU RustRov cls&goto startRustRoverPromptDialerMode
@@ -29265,6 +30564,12 @@ if /I %input% EQU RustRover-A start RustRover_A.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU RustRover-R start RustRover_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RustRover-I start RustRover_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RustRover-O cls&goto startUninstallationInstructions
+if /I %input% EQU Sams cls&goto startSamsungDriverPromptDialerMode
+if /I %input% EQU Samsu cls&goto startSamsungDriverPromptDialerMode
+if /I %input% EQU Samsun cls&goto startSamsungDriverPromptDialerMode
+if /I %input% EQU Samsung cls&goto startSamsungDriverPromptDialerMode
+if /I %input% EQU Samsung- cls&goto startSamsungDriverPromptDialerMode
+if /I %input% EQU Samsung-I start Samsung_Driver_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Samsung-D cls&goto startSamsungDriverPromptDialerMode
 if /I %input% EQU Samsung-Dr cls&goto startSamsungDriverPromptDialerMode
 if /I %input% EQU Samsung-Dri cls&goto startSamsungDriverPromptDialerMode
@@ -29281,6 +30586,15 @@ if /I %input% EQU SARDU-R start SARDU_R.lnk&&goto startPreExitPrompt||goto start
 if /I %input% EQU Secu cls&goto startSecureCRTpromptDialerMode
 if /I %input% EQU Secur cls&goto startSecureCRTpromptDialerMode
 if /I %input% EQU Secure cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU Secure- cls&goto startSecureCRTpromptDialerMode
+if /I %input% EQU Secure-A cls&goto startSecureCRTrunAdminPromptFromSearchMode
+if /I %input% EQU Secure-AC start SecureCRT_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Secure-AF start SecureFX_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Secure-R cls&goto startSecureCRTrunPromptFromSearchMode
+if /I %input% EQU Secure-RC start SecureCRT_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Secure-RF start SecureFX_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Secure-I start SecureCRT_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Secure-O cls&goto startUninstallationInstructions
 if /I %input% EQU SecureC cls&goto startSecureCRTpromptDialerMode
 if /I %input% EQU SecureCR cls&goto startSecureCRTpromptDialerMode
 if /I %input% EQU SecureCRT cls&goto startSecureCRTpromptDialerMode
@@ -29306,19 +30620,36 @@ if /I %input% EQU Slic3r cls&goto startSlic3rPromptDialerMode
 if /I %input% EQU Slic3r- cls&goto startSlic3rPromptDialerMode
 if /I %input% EQU Slic3r-A start Slic3r_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Slic3r-R start Slic3r_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Soli cls&goto startSpecificationPrompt
+if /I %input% EQU Solid cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidw cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidwo cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidwor cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidwork cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidworks cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidworks- cls&goto startSolidWorks3DCADDesignPromptDialerMode
+if /I %input% EQU Solidworks-A start Solidworks_3D_CAD_Design_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Solidworks-R start Solidworks_3D_CAD_Design_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Solidworks-I start Solidworks_3D_CAD_Design_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Solidworks-O cls&goto startUninstallationInstructions
+if /I %input% EQU Solidworks-S start Solidworks_3D_CAD_Design_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Solidworks-3 cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidworks-3D cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidworks-3D- cls&goto startSolidWorks3DCADDesignPromptDialerMode
+if /I %input% EQU Solidworks-3D-A start Solidworks_3D_CAD_Design_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Solidworks-3D-R start Solidworks_3D_CAD_Design_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Solidworks-3D-I start Solidworks_3D_CAD_Design_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Solidworks-3D-O cls&goto startUninstallationInstructions
+if /I %input% EQU Solidworks-3D-S start Solidworks_3D_CAD_Design_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Solidworks-3D-C cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidworks-3D-CA cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidworks-3D-CAD cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidworks-3D-CAD- cls&goto startSolidWorks3DCADDesignPromptDialerMode
+if /I %input% EQU Solidworks-3D-CAD-A start Solidworks_3D_CAD_Design_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Solidworks-3D-CAD-R start Solidworks_3D_CAD_Design_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Solidworks-3D-CAD-I start Solidworks_3D_CAD_Design_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Solidworks-3D-CAD-O cls&goto startUninstallationInstructions
+if /I %input% EQU Solidworks-3D-CAD-S start Solidworks_3D_CAD_Design_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Solidworks-3D-CAD-D cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidworks-3D-CAD-De cls&goto startSolidWorks3DCADDesignPromptDialerMode
 if /I %input% EQU Solidworks-3D-CAD-Des cls&goto startSolidWorks3DCADDesignPromptDialerMode
@@ -29355,6 +30686,10 @@ if /I %input% EQU Spid cls&goto startSpiderSolitairePromptDialerMode
 if /I %input% EQU Spide cls&goto startSpiderSolitairePromptDialerMode
 if /I %input% EQU Spider cls&goto startSpiderSolitairePromptDialerMode
 if /I %input% EQU Spider- cls&goto startSpiderSolitairePromptDialerMode
+if /I %input% EQU Spider-A start Spider_Solitaire_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Spider-R start Spider_Solitaire_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Spider-I start Windows7GamesForWindows11_10_8_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Spider-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Spider-S cls&goto startSpiderSolitairePromptDialerMode
 if /I %input% EQU Spider-So cls&goto startSpiderSolitairePromptDialerMode
 if /I %input% EQU Spider-Sol cls&goto startSpiderSolitairePromptDialerMode
@@ -29372,12 +30707,20 @@ if /I %input% EQU Spider-Solitaire-O start Windows7GamesForWindows11_10_8_O.lnk&
 if /I %input% EQU Stea cls&goto startSteamPromptDialerMode
 if /I %input% EQU Steam cls&goto startSteamPromptDialerMode
 if /I %input% EQU Steam- cls&goto startSteamPromptDialerMode
+if /I %input% EQU Steam-A start Steam_Games_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Steam-R start Steam_Games_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Steam-I start Steam_Games_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Steam-O start Steam_Games_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Steam-G cls&goto startSteamPromptDialerMode
 if /I %input% EQU Steam-Ga cls&goto startSteamPromptDialerMode
 if /I %input% EQU Steam-Gam cls&goto startSteamPromptDialerMode
 if /I %input% EQU Steam-Game cls&goto startSteamPromptDialerMode
 if /I %input% EQU Steam-Games cls&goto startSteamPromptDialerMode
 if /I %input% EQU Steam-Games- cls&goto startSteamPromptDialerMode
+if /I %input% EQU Steam-Games-A start Steam_Games_Launcher_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Steam-Games-R start Steam_Games_Launcher_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Steam-Games-I start Steam_Games_Launcher_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Steam-Games-O start Steam_Games_Launcher_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Steam-Games-L cls&goto startSteamPromptDialerMode
 if /I %input% EQU Steam-Games-La cls&goto startSteamPromptDialerMode
 if /I %input% EQU Steam-Games-Lau cls&goto startSteamPromptDialerMode
@@ -29404,6 +30747,11 @@ if /I %input% EQU Stre cls&goto startStreamFabPromptDialerMode
 if /I %input% EQU Strea cls&goto startStreamFabPromptDialerMode
 if /I %input% EQU Stream cls&goto startStreamFabPromptDialerMode
 if /I %input% EQU StreamF cls&goto startStreamFabPromptDialerMode
+if /I %input% EQU StreamF- cls&goto startStreamFabPromptDialerMode
+if /I %input% EQU StreamF-A start StreamFab_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU StreamF-R start StreamFab_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU StreamF-I start StreamFab_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU StreamF-O start StreamFab_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU StreamFa cls&goto startStreamFabPromptDialerMode
 if /I %input% EQU StreamFab cls&goto startStreamFabPromptDialerMode
 if /I %input% EQU StreamFab- cls&goto startStreamFabPromptDialerMode
@@ -29415,6 +30763,7 @@ if /I %input% EQU Syst cls&goto startSystemInternalsPromptDialerMode
 if /I %input% EQU Syste cls&goto startSystemInternalsPromptDialerMode
 if /I %input% EQU System cls&goto startSystemInternalsPromptDialerMode
 if /I %input% EQU System- cls&goto startSystemInternalsPromptDialerMode
+if /I %input% EQU System-R start SystemInternals_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU System-I cls&goto startSystemInternalsPromptDialerMode
 if /I %input% EQU System-In cls&goto startSystemInternalsPromptDialerMode
 if /I %input% EQU System-Int cls&goto startSystemInternalsPromptDialerMode
@@ -29432,6 +30781,22 @@ if /I %input% EQU Teams- cls&goto startTeamsPromptDialerMode
 if /I %input% EQU Teams-A start Teams_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Teams-R start Teams_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tech cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Tech- cls&goto startTechnitiumPromptDialerMode
+if /I %input% EQU Tech-D cls&goto startTechnitiumDNSserverPromptDialerMode
+if /I %input% EQU Tech-DA start Technitium_DNS_Server_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech-DR start Technitium_DNS_Server_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech-DI start Technitium_DNS_Server_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech-DO cls&goto startUninstallationInstructions
+if /I %input% EQU Tech-S cls&goto startTechnitiumMeshP2PmessagerPromptDialerMode
+if /I %input% EQU Tech-SA start Technitium_Mesh_P2P_Messager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech-SR start Technitium_Mesh_P2P_Messager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech-SI start Technitium_Mesh_P2P_Messager_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech-SO cls&goto startUninstallationInstructions
+if /I %input% EQU Tech-M cls&goto startTechnitiumMACspooferPromptDialerMode
+if /I %input% EQU Tech-MA start Technitium_MAC_Spoofer_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech-MR start Technitium_MAC_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech-MI start Technitium_MAC_Spoofer_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tech-MO cls&goto startUninstallationInstructions
 if /I %input% EQU Techn cls&goto startTechnitiumPromptDialerMode
 if /I %input% EQU Techni cls&goto startTechnitiumPromptDialerMode
 if /I %input% EQU Technit cls&goto startTechnitiumPromptDialerMode
@@ -29457,7 +30822,11 @@ if /I %input% EQU Technitium-MO cls&goto startUninstallationInstructions
 if /I %input% EQU Tekl cls&goto startTeklaStructuresPromptDialerMode
 if /I %input% EQU Tekla cls&goto startTeklaStructuresPromptDialerMode
 if /I %input% EQU Tekla- cls&goto startTeklaStructuresPromptDialerMode
-if /I %input% EQU Tekla-S cls&goto startTeklaStructuresPromptDialerMode
+if /I %input% EQU Tekla-A start Tekla_Structures_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tekla-R start Tekla_Structures_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tekla-I start Tekla_Structures_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tekla-O cls&goto startUninstallationInstructions
+if /I %input% EQU Tekla-S start Tekla_Structures_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tekla-St cls&goto startTeklaStructuresPromptDialerMode
 if /I %input% EQU Tekla-Str cls&goto startTeklaStructuresPromptDialerMode
 if /I %input% EQU Tekla-Stru cls&goto startTeklaStructuresPromptDialerMode
@@ -29474,6 +30843,15 @@ if /I %input% EQU Tekla-Structures-I start Tekla_Structures_I.exe&&goto startPre
 if /I %input% EQU Tekla-Structures-O cls&goto startUninstallationInstructions
 if /I %input% EQU Tekla-Structures-S start Tekla_Structures_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Tele cls&goto startTelerikPromptDialerMode
+if /I %input% EQU Tele- cls&goto startTelerikPromptDialerMode
+if /I %input% EQU Tele-A cls&goto startTelerikRunAdminPromptDialerMode
+if /I %input% EQU Tele-AA start Telerik_Test_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tele-AB start Telerik_Test_Studio_APIs_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tele-R cls&goto startTelerikRunPromptDialerMode
+if /I %input% EQU Tele-RA start Telerik_Test_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tele-RB start Telerik_Test_Studio_APIs_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tele-I start Telerik_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Tele-O start Telerik_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Teler cls&goto startTelerikPromptDialerMode
 if /I %input% EQU Teleri cls&goto startTelerikPromptDialerMode
 if /I %input% EQU Telerik cls&goto startTelerikPromptDialerMode
@@ -29486,7 +30864,22 @@ if /I %input% EQU Telerik-RA start Telerik_Test_Studio_R.lnk&&goto startPreExitP
 if /I %input% EQU Telerik-RB start Telerik_Test_Studio_APIs_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Telerik-I start Telerik_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Telerik-O start Telerik_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-N cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Ns cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nsp cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspi cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspir cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspire cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspire- cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspire-C cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspire-CX cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspire-CX- cls&goto startSpecificationPrompt
 if /I %input% EQU TI-Nspire-CX-P cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-P- cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-P-A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-P-R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-P-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-P-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-Pr cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Pre cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Prem cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
@@ -29494,6 +30887,10 @@ if /I %input% EQU TI-Nspire-CX-Premi cls&goto startTI-Nspire_CX_PremiumTeacherSo
 if /I %input% EQU TI-Nspire-CX-Premiu cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Premium cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Premium- cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-Premium-A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-Premium-R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-Premium-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-Premium-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-Premium-T cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Premium-Te cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Premium-Tea cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
@@ -29502,6 +30899,10 @@ if /I %input% EQU TI-Nspire-CX-Premium-Teach cls&goto startTI-Nspire_CX_PremiumT
 if /I %input% EQU TI-Nspire-CX-Premium-Teache cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher- cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-Premium-Teacher-A start TI-Nspire_CX_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-Premium-Teacher-R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-Premium-Teacher-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-Premium-Teacher-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher-S cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher-So cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Sof cls&goto startTI-Nspire_CX_PremiumTeacherSoftwarePromptDialerMode
@@ -29515,7 +30916,16 @@ if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software-A start TI-Nspire_CX_Pre
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software-R start TI-Nspire_CX_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-Premium-Teacher-Software-O cls&goto startUninstallationInstructions
+if /I %input% EQU TI-Nspire-CX-C cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspire-CX-CA cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspire-CX-CAS cls&goto startSpecificationPrompt
+if /I %input% EQU TI-Nspire-CX-CAS- cls&goto startSpecificationPrompt
 if /I %input% EQU TI-Nspire-CX-CAS-P cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-CAS-P- cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-CAS-P-A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-P-R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-P-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-P-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-CAS-Pr cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Pre cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Prem cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
@@ -29523,6 +30933,10 @@ if /I %input% EQU TI-Nspire-CX-CAS-Premi cls&goto startTI-Nspire_CX_CAS_PremiumT
 if /I %input% EQU TI-Nspire-CX-CAS-Premiu cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Premium cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Premium- cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-CAS-Premium-A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-Premium-R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-Premium-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-Premium-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-T cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Te cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Tea cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
@@ -29531,6 +30945,10 @@ if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teach cls&goto startTI-Nspire_CX_CAS_
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teache cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher- cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-A start TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-R start TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-S cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-So cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Sof cls&goto startTI-Nspire_CX_CAS_PremiumTeacherSoftwarePromptDialerMode
@@ -29545,6 +30963,11 @@ if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Software-R start TI-Nspire_CX
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Software-I start TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TI-Nspire-CX-CAS-Premium-Teacher-Software-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-CAS-S cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-CAS-S- cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-CAS-S-A start TI-Nspire_CX_CAS_Student_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-S-R start TI-Nspire_CX_CAS_Student_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-S-I start TI-Nspire_CX_CAS_Student_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-S-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-CAS-St cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Stu cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Stud cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
@@ -29552,6 +30975,10 @@ if /I %input% EQU TI-Nspire-CX-CAS-Stude cls&goto startTI-Nspire_CX_CAS_StudentS
 if /I %input% EQU TI-Nspire-CX-CAS-Studen cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Student cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Student- cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
+if /I %input% EQU TI-Nspire-CX-CAS-Student-A start TI-Nspire_CX_CAS_Student_Software_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-Student-R start TI-Nspire_CX_CAS_Student_Software_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-Student-I start TI-Nspire_CX_CAS_Student_Software_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TI-Nspire-CX-CAS-Student-O cls&goto startUninstallationInstructions
 if /I %input% EQU TI-Nspire-CX-CAS-Student-S cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Student-So cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
 if /I %input% EQU TI-Nspire-CX-CAS-Student-Sof cls&goto startTI-Nspire_CX_CAS_StudentSoftwarePromptDialerMode
@@ -29599,6 +31026,11 @@ if /I %input% EQU TraceX- cls&goto startTraceXHWIDspooferPromptDialerMode
 if /I %input% EQU TraceX-A start TraceX_HWID_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TraceX-R start TraceX_HWID_Spoofer_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TreeS cls&goto startTreeSizePromptDialerMode
+if /I %input% EQU TreeS- cls&goto startTreeSizePromptDialerMode
+if /I %input% EQU TreeS-A start TreeSize_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TreeS-R start TreeSize_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TreeS-I start TreeSize_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU TreeS-O start TreeSize_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU TreeSi cls&goto startTreeSizePromptDialerMode
 if /I %input% EQU TreeSiz cls&goto startTreeSizePromptDialerMode
 if /I %input% EQU TreeSize cls&goto startTreeSizePromptDialerMode
@@ -29612,6 +31044,10 @@ if /I %input% EQU Ubiso cls&goto startUbisoftConnectPromptDialerMode
 if /I %input% EQU Ubisof cls&goto startUbisoftConnectPromptDialerMode
 if /I %input% EQU Ubisoft cls&goto startUbisoftConnectPromptDialerMode
 if /I %input% EQU Ubisoft- cls&goto startUbisoftConnectPromptDialerMode
+if /I %input% EQU Ubisoft-A start Ubisoft_Connect_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Ubisoft-R start Ubisoft_Connect_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Ubisoft-I start Ubisoft_Connect_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Ubisoft-O start Ubisoft_Connect_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Ubisoft-C cls&goto startUbisoftConnectPromptDialerMode
 if /I %input% EQU Ubisoft-Co cls&goto startUbisoftConnectPromptDialerMode
 if /I %input% EQU Ubisoft-Con cls&goto startUbisoftConnectPromptDialerMode
@@ -29625,6 +31061,11 @@ if /I %input% EQU Ubisoft-Connect-R start Ubisoft_Connect_R.lnk&&goto startPreEx
 if /I %input% EQU Ubisoft-Connect-I start Ubisoft_Connect_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Ubisoft-Connect-O start Ubisoft_Connect_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UltraI cls&goto startUltraISOpromptDialerMode
+if /I %input% EQU UltraI- cls&goto startUltraISOpromptDialerMode
+if /I %input% EQU UltraI-A start UltraISO_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU UltraI-R start UltraISO_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU UltraI-I start UltraISO_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU UltraI-O start UltraISO_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UltraIS cls&goto startUltraISOpromptDialerMode
 if /I %input% EQU UltraISO cls&goto startUltraISOpromptDialerMode
 if /I %input% EQU UltraISO- cls&goto startUltraISOpromptDialerMode
@@ -29633,6 +31074,11 @@ if /I %input% EQU UltraISO-R start UltraISO_R.lnk&&goto startPreExitPrompt||goto
 if /I %input% EQU UltraISO-I start UltraISO_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UltraISO-O start UltraISO_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UltraS cls&goto startUltraSearchPromptDialerMode
+if /I %input% EQU UltraS- cls&goto startUltraSearchPromptDialerMode
+if /I %input% EQU UltraS-A start UltraSearch_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU UltraS-R start UltraSearch_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU UltraS-I start UltraSearch_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU UltraS-O start UltraSearch_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UltraSe cls&goto startUltraSearchPromptDialerMode
 if /I %input% EQU UltraSea cls&goto startUltraSearchPromptDialerMode
 if /I %input% EQU UltraSear cls&goto startUltraSearchPromptDialerMode
@@ -29644,6 +31090,11 @@ if /I %input% EQU UltraSearch-R start UltraSearch_R.lnk&&goto startPreExitPrompt
 if /I %input% EQU UltraSearch-I start UltraSearch_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UltraSearch-O start UltraSearch_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UniF cls&goto startUniFabPromptDialerMode
+if /I %input% EQU UniF- cls&goto startUniFabPromptDialerMode
+if /I %input% EQU UniF-A start UniFab_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU UniF-R start UniFab_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU UniF-I start UniFab_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU UniF-O start UniFab_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU UniFa cls&goto startUniFabPromptDialerMode
 if /I %input% EQU UniFab cls&goto startUniFabPromptDialerMode
 if /I %input% EQU UniFab- cls&goto startUniFabPromptDialerMode
@@ -29654,6 +31105,10 @@ if /I %input% EQU UniFab-O start UniFab_O.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU Unit cls&goto startUnityHubPromptDialerMode
 if /I %input% EQU Unity cls&goto startUnityHubPromptDialerMode
 if /I %input% EQU Unity- cls&goto startUnityHubPromptDialerMode
+if /I %input% EQU Unity-A start Unity_Hub_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Unity-R start Unity_Hub_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Unity-I start Unity_Hub_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Unity-O start Unity_Hub_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Unity-H cls&goto startUnityHubPromptDialerMode
 if /I %input% EQU Unity-Hu cls&goto startUnityHubPromptDialerMode
 if /I %input% EQU Unity-Hub cls&goto startUnityHubPromptDialerMode
@@ -29666,7 +31121,11 @@ if /I %input% EQU Visu cls&goto startVisualStudioPromptDialerMode
 if /I %input% EQU Visua cls&goto startVisualStudioPromptDialerMode
 if /I %input% EQU Visual cls&goto startVisualStudioPromptDialerMode
 if /I %input% EQU Visual- cls&goto startVisualStudioPromptDialerMode
-if /I %input% EQU Visual-S cls&goto startVisualStudioPromptDialerMode
+if /I %input% EQU Visual-A start Visual_Studio_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Visual-R start Visual_Studio_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Visual-I start Visual_Studio_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Visual-O cls&goto startUninstallationInstructions
+if /I %input% EQU Visual-S start Visual_Studio_S.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Visual-St cls&goto startVisualStudioPromptDialerMode
 if /I %input% EQU Visual-Stu cls&goto startVisualStudioPromptDialerMode
 if /I %input% EQU Visual-Stud cls&goto startVisualStudioPromptDialerMode
@@ -29683,10 +31142,18 @@ if /I %input% EQU Visual-Studio-Co cls&goto startVisualStudioCodePromptDialerMod
 if /I %input% EQU Visual-Studio-Cod cls&goto startVisualStudioCodePromptDialerMode
 if /I %input% EQU Visual-Studio-Code cls&goto startVisualStudioCodePromptDialerMode
 if /I %input% EQU Visual-Studio-Code- cls&goto startVisualStudioCodePromptDialerMode
-if /I %input% EQU Visual-Studio-Code-A start Visual_Studio_Code_Launch_Script_A.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU Visual-Studio-Code-R start Visual_Studio_Code_Launch_Script_R.bat&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Visual-Studio-Code-A start /min Visual_Studio_Code_Launch_Script_A.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
+if /I %input% EQU Visual-Studio-Code-R start /min Visual_Studio_Code_Launch_Script_R.bat&&goto startPreExitPlusAdditionalBatchPrompt||goto startFailedExitPrompt
 if /I %input% EQU Visual-Studio-Code-I start Visual_Studio_Code_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Visual-Studio-Code-O start Visual_Studio_Code_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VMwa cls&goto startVMwareWorkstationPromptDialerMode
+if /I %input% EQU VMwar cls&goto startVMwareWorkstationPromptDialerMode
+if /I %input% EQU VMware cls&goto startVMwareWorkstationPromptDialerMode
+if /I %input% EQU VMware- cls&goto startVMwareWorkstationPromptDialerMode
+if /I %input% EQU VMware-A start VMware_Workstation_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VMware-R start VMware_Workstation_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VMware-I start VMware_Workstation_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VMware-O cls&goto startUninstallationInstructions
 if /I %input% EQU VMware-W cls&goto startVMwareWorkstationPromptDialerMode
 if /I %input% EQU VMware-Wo cls&goto startVMwareWorkstationPromptDialerMode
 if /I %input% EQU VMware-Wor cls&goto startVMwareWorkstationPromptDialerMode
@@ -29703,6 +31170,33 @@ if /I %input% EQU VMware-Workstation-A start VMware_Workstation_A.lnk&&goto star
 if /I %input% EQU VMware-Workstation-R start VMware_Workstation_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU VMware-Workstation-I start VMware_Workstation_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU VMware-Workstation-O cls&goto startUninstallationInstructions
+if /I %input% EQU Wall cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wall- cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wall-A start Wallpaper_Engine_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wall-R start Wallpaper_Engine_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wall-I start Wallpaper_Engine_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wall-O cls&goto startUninstallationInstructions
+if /I %input% EQU Wallp cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpa cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpap cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpape cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper- cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper-A start Wallpaper_Engine_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wallpaper-R start Wallpaper_Engine_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wallpaper-I start Wallpaper_Engine_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wallpaper-O cls&goto startUninstallationInstructions
+if /I %input% EQU Wallpaper-E cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper-En cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper-Eng cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper-Engi cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper-Engin cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper-Engine cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper-Engine- cls&goto startWallpaperEnginePromptDialerMode
+if /I %input% EQU Wallpaper-Engine-A start Wallpaper_Engine_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wallpaper-Engine-R start Wallpaper_Engine_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wallpaper-Engine-I start Wallpaper_Engine_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wallpaper-Engine-O cls&goto startUninstallationInstructions
 if /I %input% EQU WebS cls&goto startWebStormPromptDialerMode
 if /I %input% EQU WebSt cls&goto startWebStormPromptDialerMode
 if /I %input% EQU WebSto cls&goto startWebStormPromptDialerMode
@@ -29721,6 +31215,7 @@ if /I %input% EQU WinAce-A start WinAce_A.lnk&&goto startPreExitPrompt||goto sta
 if /I %input% EQU WinAce-R start WinAce_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinAce-I start WinAce_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinAce-O cls&goto startUninstallationInstructions
+if /I %input% EQU Windows7 cls&goto startSpecificationPrompt
 if /I %input% EQU Windows7G cls&goto startWindows7GamesPromptDialerMode
 if /I %input% EQU Windows7Ga cls&goto startWindows7GamesPromptDialerMode
 if /I %input% EQU Windows7Gam cls&goto startWindows7GamesPromptDialerMode
@@ -29746,11 +31241,24 @@ if /I %input% EQU Windows7GamesForWindows11-1O-8 cls&goto startWindows7GamesProm
 if /I %input% EQU Windows7GamesForWindows11-1O-8- cls&goto startWindows7GamesPromptDialerMode
 if /I %input% EQU Windows7GamesForWindows11-1O-8-I start Windows7GamesForWindows11_10_8_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Windows7GamesForWindows11-1O-8-O start Windows7GamesForWindows11_10_8_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wind cls&goto startSpecificationPrompt
+if /I %input% EQU Windo cls&goto startSpecificationPrompt
+if /I %input% EQU Window cls&goto startSpecificationPrompt
+if /I %input% EQU Windows cls&goto startSpecificationPrompt
+if /I %input% EQU Windows- cls&goto startSpecificationPrompt
+if /I %input% EQU Windows-T cls&goto startWindowsToolsPromptDialerMode
+if /I %input% EQU Windows-T- cls&goto startWindowsToolsPromptDialerMode
+if /I %input% EQU Windows-T-R start Windows_Tools_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Windows-To cls&goto startWindowsToolsPromptDialerMode
 if /I %input% EQU Windows-Too cls&goto startWindowsToolsPromptDialerMode
 if /I %input% EQU Windows-Tool cls&goto startWindowsToolsPromptDialerMode
 if /I %input% EQU Windows-Tools cls&goto startWindowsToolsPromptDialerMode
 if /I %input% EQU Windows-Tools- cls&goto startWindowsToolsPromptDialerMode
 if /I %input% EQU Windows-Tools-R start Windows_Tools_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Windows-S cls&goto startDriversEtcPromptDialerMode
+if /I %input% EQU Windows-S- cls&goto startDriversEtcPromptDialerMode
+if /I %input% EQU Windows-S-R start Windows-System32-drivers-etc_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Windows-Sy cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-Sys cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-Syst cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-Syste cls&goto startDriversEtcPromptDialerMode
@@ -29758,6 +31266,7 @@ if /I %input% EQU Windows-System cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-System3 cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-System32 cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-System32- cls&goto startDriversEtcPromptDialerMode
+if /I %input% EQU Windows-System32-R start Windows-System32-drivers-etc_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Windows-System32-d cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-System32-dr cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-System32-dri cls&goto startDriversEtcPromptDialerMode
@@ -29766,6 +31275,7 @@ if /I %input% EQU Windows-System32-drive cls&goto startDriversEtcPromptDialerMod
 if /I %input% EQU Windows-System32-driver cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-System32-drivers cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-System32-drivers- cls&goto startDriversEtcPromptDialerMode
+if /I %input% EQU Windows-System32-drivers-R start Windows-System32-drivers-etc_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Windows-System32-drivers-e cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-System32-drivers-et cls&goto startDriversEtcPromptDialerMode
 if /I %input% EQU Windows-System32-drivers-etc cls&goto startDriversEtcPromptDialerMode
@@ -29784,6 +31294,9 @@ if /I %input% EQU WinZi cls&goto startWinZipSuitePromptDialerMode
 if /I %input% EQU WinZip cls&goto startWinZipSuitePromptDialerMode
 if /I %input% EQU WinZip- cls&goto startWinZipSuitePromptDialerMode
 if /I %input% EQU WinZip-A cls&goto startWinZipArchiverPromptDialerMode
+if /I %input% EQU WinZip-A- cls&goto startWinZipArchiverPromptDialerMode
+if /I %input% EQU WinZip-A-A start WinZip_Archiver_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-A-R start WinZip_Archiver_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Ar cls&goto startWinZipArchiverPromptDialerMode
 if /I %input% EQU WinZip-Arc cls&goto startWinZipArchiverPromptDialerMode
 if /I %input% EQU WinZip-Arch cls&goto startWinZipArchiverPromptDialerMode
@@ -29795,6 +31308,9 @@ if /I %input% EQU WinZip-Archiver- cls&goto startWinZipArchiverPromptDialerMode
 if /I %input% EQU WinZip-Archiver-A start WinZip_Archiver_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Archiver-R start WinZip_Archiver_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-D cls&goto startWinZipDuplicateFileFinderPromptDialerMode
+if /I %input% EQU WinZip-D- cls&goto startWinZipDuplicateFileFinderPromptDialerMode
+if /I %input% EQU WinZip-D-A start WinZip_Duplicate_File_Finder_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-D-R start WinZip_Duplicate_File_Finder_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Du cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Dup cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Dupl cls&goto startWinZipDuplicateFileFinderPromptDialerMode
@@ -29804,11 +31320,15 @@ if /I %input% EQU WinZip-Duplica cls&goto startWinZipDuplicateFileFinderPromptDi
 if /I %input% EQU WinZip-Duplicat cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Duplicate cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Duplicate- cls&goto startWinZipDuplicateFileFinderPromptDialerMode
+if /I %input% EQU WinZip-Duplicate-A start WinZip_Duplicate_File_Finder_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-Duplicate-R start WinZip_Duplicate_File_Finder_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Duplicate-F cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Duplicate-Fi cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Duplicate-Fil cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Duplicate-File cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Duplicate-File- cls&goto startWinZipDuplicateFileFinderPromptDialerMode
+if /I %input% EQU WinZip-Duplicate-File-A start WinZip_Duplicate_File_Finder_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-Duplicate-File-R start WinZip_Duplicate_File_Finder_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Duplicate-File-F cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Duplicate-File-Fi cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Duplicate-File-Fin cls&goto startWinZipDuplicateFileFinderPromptDialerMode
@@ -29818,11 +31338,16 @@ if /I %input% EQU WinZip-Duplicate-File-Finder cls&goto startWinZipDuplicateFile
 if /I %input% EQU WinZip-Duplicate-File-Finder- cls&goto startWinZipDuplicateFileFinderPromptDialerMode
 if /I %input% EQU WinZip-Duplicate-File-Finder-A start WinZip_Duplicate_File_Finder_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Duplicate-File-Finder-R start WinZip_Duplicate_File_Finder_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-I- cls&goto startWinZipImageManagerPromptDialerMode
+if /I %input% EQU WinZip-I-A start WinZip_Image_Manager_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-I-R start WinZip_Image_Manager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Im cls&goto startWinZipImageManagerPromptDialerMode
 if /I %input% EQU WinZip-Ima cls&goto startWinZipImageManagerPromptDialerMode
 if /I %input% EQU WinZip-Imag cls&goto startWinZipImageManagerPromptDialerMode
 if /I %input% EQU WinZip-Image cls&goto startWinZipImageManagerPromptDialerMode
 if /I %input% EQU WinZip-Image- cls&goto startWinZipImageManagerPromptDialerMode
+if /I %input% EQU WinZip-Image-A start WinZip_Image_Manager_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-Image-R start WinZip_Image_Manager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Image-M cls&goto startWinZipImageManagerPromptDialerMode
 if /I %input% EQU WinZip-Image-Ma cls&goto startWinZipImageManagerPromptDialerMode
 if /I %input% EQU WinZip-Image-Man cls&goto startWinZipImageManagerPromptDialerMode
@@ -29834,9 +31359,14 @@ if /I %input% EQU WinZip-Image-Manager- cls&goto startWinZipImageManagerPromptDi
 if /I %input% EQU WinZip-Image-Manager-A start WinZip_Image_Manager_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Image-Manager-R start WinZip_Image_Manager_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-P cls&goto startWinZipPDFexpressPromptDialerMode
+if /I %input% EQU WinZip-P- cls&goto startWinZipPDFexpressPromptDialerMode
+if /I %input% EQU WinZip-P-A start WinZip_PDF_Express_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-P-R start WinZip_PDF_Express_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-PD cls&goto startWinZipPDFexpressPromptDialerMode
 if /I %input% EQU WinZip-PDF cls&goto startWinZipPDFexpressPromptDialerMode
 if /I %input% EQU WinZip-PDF- cls&goto startWinZipPDFexpressPromptDialerMode
+if /I %input% EQU WinZip-PDF-A start WinZip_PDF_Express_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-PDF-R start WinZip_PDF_Express_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-PDF-E cls&goto startWinZipPDFexpressPromptDialerMode
 if /I %input% EQU WinZip-PDF-Ex cls&goto startWinZipPDFexpressPromptDialerMode
 if /I %input% EQU WinZip-PDF-Exp cls&goto startWinZipPDFexpressPromptDialerMode
@@ -29847,10 +31377,17 @@ if /I %input% EQU WinZip-PDF-Express cls&goto startWinZipPDFexpressPromptDialerM
 if /I %input% EQU WinZip-PDF-Express- cls&goto startWinZipPDFexpressPromptDialerMode
 if /I %input% EQU WinZip-PDF-Express-A start WinZip_PDF_Express_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-PDF-Express-R start WinZip_PDF_Express_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU WinZip-S cls&goto startWinZipSafeSharePromptDialerMode
+if /I %input% EQU WinZip-S cls&goto startSpecificationPrompt
+if /I %input% EQU WinZip-S- cls&goto startSpecificationPrompt
 if /I %input% EQU WinZip-Sa cls&goto startWinZipSafeSharePromptDialerMode
+if /I %input% EQU WinZip-Sa- cls&goto startWinZipSafeSharePromptDialerMode
+if /I %input% EQU WinZip-Sa-A start WinZip_SafeShare_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-Sa-R start WinZip_SafeShare_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Saf cls&goto startWinZipSafeSharePromptDialerMode
 if /I %input% EQU WinZip-Safe cls&goto startWinZipSafeSharePromptDialerMode
+if /I %input% EQU WinZip-Safe- cls&goto startWinZipSafeSharePromptDialerMode
+if /I %input% EQU WinZip-Safe-A start WinZip_SafeShare_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-Safe-R start WinZip_SafeShare_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-SafeS cls&goto startWinZipSafeSharePromptDialerMode
 if /I %input% EQU WinZip-SafeSh cls&goto startWinZipSafeSharePromptDialerMode
 if /I %input% EQU WinZip-SafeSha cls&goto startWinZipSafeSharePromptDialerMode
@@ -29860,11 +31397,16 @@ if /I %input% EQU WinZip-SafeShare- cls&goto startWinZipSafeSharePromptDialerMod
 if /I %input% EQU WinZip-SafeShare-A start WinZip_SafeShare_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-SafeShare-R start WinZip_SafeShare_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Se cls&goto startWinZipSecureBackupPromptDialerMode
+if /I %input% EQU WinZip-Se- cls&goto startWinZipSecureBackupPromptDialerMode
+if /I %input% EQU WinZip-Se-A start WinZip_Secure_Backup_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-Se-R start WinZip_Secure_Backup_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Sec cls&goto startWinZipSecureBackupPromptDialerMode
 if /I %input% EQU WinZip-Secu cls&goto startWinZipSecureBackupPromptDialerMode
 if /I %input% EQU WinZip-Secur cls&goto startWinZipSecureBackupPromptDialerMode
 if /I %input% EQU WinZip-Secure cls&goto startWinZipSecureBackupPromptDialerMode
 if /I %input% EQU WinZip-Secure- cls&goto startWinZipSecureBackupPromptDialerMode
+if /I %input% EQU WinZip-Secure-A start WinZip_Secure_Backup_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WinZip-Secure-R start WinZip_Secure_Backup_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-Secure-B cls&goto startWinZipSecureBackupPromptDialerMode
 if /I %input% EQU WinZip-Secure-Ba cls&goto startWinZipSecureBackupPromptDialerMode
 if /I %input% EQU WinZip-Secure-Bac cls&goto startWinZipSecureBackupPromptDialerMode
@@ -29877,6 +31419,11 @@ if /I %input% EQU WinZip-Secure-Backup-R start WinZip_Secure_Backup_R.lnk&&goto 
 if /I %input% EQU WinZip-I start WinZip_I.msi&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WinZip-O start WinZip_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WireG cls&goto startWireGuardPromptDialerMode
+if /I %input% EQU WireG- cls&goto startWireGuardPromptDialerMode
+if /I %input% EQU WireG-A start WireGuard_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WireG-R start WireGuard_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WireG-I start WireGuard_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WireG-O cls&goto startUninstallationInstructions
 if /I %input% EQU WireGu cls&goto startWireGuardPromptDialerMode
 if /I %input% EQU WireGua cls&goto startWireGuardPromptDialerMode
 if /I %input% EQU WireGuar cls&goto startWireGuardPromptDialerMode
@@ -29886,7 +31433,12 @@ if /I %input% EQU WireGuard-A start WireGuard_A.lnk&&goto startPreExitPrompt||go
 if /I %input% EQU WireGuard-R start WireGuard_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WireGuard-I start WireGuard_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WireGuard-O cls&goto startUninstallationInstructions
-if /I %input% EQU Wires cls&goto startWiresharkPromptDialerMode
+if /I %input% EQU WireS cls&goto startWiresharkPromptDialerMode
+if /I %input% EQU WireS- cls&goto startWiresharkPromptDialerMode
+if /I %input% EQU WireS-A start Wireshark_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WireS-R start Wireshark_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WireS-I start Wireshark_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WireS-O start Wireshark_O.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Wiresh cls&goto startWiresharkPromptDialerMode
 if /I %input% EQU Wiresha cls&goto startWiresharkPromptDialerMode
 if /I %input% EQU Wireshar cls&goto startWiresharkPromptDialerMode
@@ -29913,6 +31465,11 @@ if /I %input% EQU Word-O cls&goto startUninstallationInstructions
 if /I %input% EQU Writ cls&goto startWritersidePromptDialerMode
 if /I %input% EQU Write cls&goto startWritersidePromptDialerMode
 if /I %input% EQU Writer cls&goto startWritersidePromptDialerMode
+if /I %input% EQU Writer- cls&goto startWritersidePromptDialerMode
+if /I %input% EQU Writer-A start Writerside_A.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Writer-R start Writerside_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Writer-I start Writerside_I.exe&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Writer-O cls&goto startUninstallationInstructions
 if /I %input% EQU Writers cls&goto startWritersidePromptDialerMode
 if /I %input% EQU Writersi cls&goto startWritersidePromptDialerMode
 if /I %input% EQU Writersid cls&goto startWritersidePromptDialerMode
@@ -29944,7 +31501,7 @@ if /I %input% EQU x64dbg-R start x64dbg_R.lnk&&goto startPreExitPrompt||goto sta
 goto :eof
 :: Main Menu Instream Functions
 :menuMainInstream
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU 0 cls&curl "TEST.zip" -o TEST.filename&&goto startPreExitPromptInstream||goto startUnsuccessfulDownloadPromptInstream
 if /I %input% EQU 1 cls&curl "TEST.zip" -o TEST.filename&&goto startPreExitPromptInstream||goto startUnsuccessfulDownloadPromptInstream
 if /I %input% EQU 2 cls&curl "TEST.zip" -o TEST.filename&&goto startPreExitPromptInstream||goto startUnsuccessfulDownloadPromptInstream
@@ -30048,8 +31605,10 @@ if /I %input% EQU 99 cls&curl "TEST.zip" -o TEST.filename&&goto startPreExitProm
 goto :eof
 :: Auxiliary Commands Instream
 :menuAuxiliaryCommandsInstream
+if /I %input% EQU abo cls&goto startAboutInstream
 if /I %input% EQU abou cls&goto startAboutInstream
 if /I %input% EQU about cls&goto startAboutInstream
+if /I %input% EQU cop cls&goto startCopyInstream
 if /I %input% EQU copy cls&goto startCopyInstream
 if /I %input% EQU copy0 cls&goto startCopy0Instream
 if /I %input% EQU copy1 call :startCopy1Instream
@@ -30061,13 +31620,17 @@ if /I %input% EQU copy6 call :startCopy6Instream
 if /I %input% EQU copy7 call :startCopy7Instream
 if /I %input% EQU copy8 call :startCopy8Instream
 if /I %input% EQU copy9 call :startCopy9Instream
+if /I %input% EQU dis cls&goto startDisplayInstream
 if /I %input% EQU disp cls&goto startDisplayInstream
 if /I %input% EQU displ cls&goto startDisplayInstream
 if /I %input% EQU displa cls&goto startDisplayInstream
 if /I %input% EQU display cls&goto startDisplayInstream
+if /I %input% EQU exi goto exitBatchProgram
 if /I %input% EQU exit goto exitBatchProgram
+if /I %input% EQU gui cls&goto startGuideInstream
 if /I %input% EQU guid cls&goto startGuideInstream
 if /I %input% EQU guide cls&goto startGuideInstream
+if /I %input% EQU hel cls&goto startHelpInstream
 if /I %input% EQU help cls&goto startHelpInstream
 if /I %input% EQU instreams call :startInstreamSampleShortcutReplace
 if /I %input% EQU instreamsa call :startInstreamSampleShortcutReplace
@@ -30075,17 +31638,22 @@ if /I %input% EQU instreamsam call :startInstreamSampleShortcutReplace
 if /I %input% EQU instreamsamp call :startInstreamSampleShortcutReplace
 if /I %input% EQU instreamsampl call :startInstreamSampleShortcutReplace
 if /I %input% EQU instreamsample call :startInstreamSampleShortcutReplace
+if /I %input% EQU ope start Davy_Jones_OS_R.lnk&&goto startPreExitPromptInstream
 if /I %input% EQU open start Davy_Jones_OS_R.lnk&&goto startPreExitPromptInstream
+if /I %input% EQU pac cls&goto startPackageChecker
 if /I %input% EQU pack cls&goto startPackageChecker
 if /I %input% EQU packa cls&goto startPackageChecker
 if /I %input% EQU packag cls&goto startPackageChecker
 if /I %input% EQU package cls&goto startPackageChecker
+if /I %input% EQU roo start Root_Directory_R.lnk&&goto startPreExitPromptInstream
 if /I %input% EQU root start Root_Directory_R.lnk&&goto startPreExitPromptInstream
+if /I %input% EQU tre cls&goto startTreeInstream
 if /I %input% EQU tree cls&goto startTreeInstream
 if /I %input% EQU words cls&goto startWordsortInstream
 if /I %input% EQU wordso cls&goto startWordsortInstream
 if /I %input% EQU wordsor cls&goto startWordsortInstream
 if /I %input% EQU wordsort cls&goto startWordsortInstream
+if /I %input% EQU man call :startUnstealthShortcutReplace
 if /I %input% EQU mana call :startUnstealthShortcutReplace
 if /I %input% EQU manag call :startUnstealthShortcutReplace
 if /I %input% EQU manage call :startUnstealthShortcutReplace
@@ -30103,8 +31671,8 @@ echo           Website: https://github.com/DavyJones324/DavyJonesOS
 echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Active
-echo    Current Update: 1.0.7.0
-echo        Patch Date: 08/3/2025
+echo    Current Update: 1.0.8.0
+echo        Patch Date: 08/15/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 and 11. No administrator privilages required.
 echo                 +: Art Design taken from "https:\\patorjk.com". Dot Art does not show for Windows 10.
@@ -30114,16 +31682,16 @@ powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Win
 goto :eof
 :Copy
 echo.
-echo Are you insane? "copy" means you'd anger Davy Jones himself. He will boot you from his ship and drop you off dead.
+echo [38;2;255;128;0mAre you insane? "copy" means you'd anger Davy Jones himself. He will boot you from his ship and drop you off dead.[0m
 echo.
-echo    - From Ebola Man's polar opposite personality
+echo [38;2;0;255;255m   - From Ebola Man's polar opposite personality[0m
 echo.
 goto :eof
 :Copy0
 echo.
-echo Are you insane? "copy0" means you'd anger Davy Jones himself. He will boot you from his ship and drop you off dead.
+echo [38;2;255;128;0mAre you insane? "copy0" means you'd anger Davy Jones himself. He will boot you from his ship and drop you off dead.[0m
 echo.
-echo    - From Ebola Man's polar opposite personality
+echo [38;2;0;255;255m   - From Ebola Man's polar opposite personality[0m
 echo.
 goto :eof
 :menuDisplayScreen
@@ -30151,7 +31719,7 @@ echo.
 echo.
 goto :eof
 :menuDisplay
-set /p input=%BS%
+set /P input=%BS%
 if /I %input% EQU testrun0 start TEST_0_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU testrun1 start TEST_1_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU testrun2 start TEST_2_R.lnk&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -30195,100 +31763,100 @@ if /I %input% EQU testsetup9 start TEST_9_S.lnk&&goto startPreExitPrompt||goto s
 goto :eof
 :Guide
 echo.
-echo Installation/Assembly Method: Manual Configuration
-echo Installation Directory: C:\CLI_Tools\Davy_Jones_OS
-echo Installation Priority for Listed Non-Portable GUI Executables (from First to Last):
+echo [38;2;255;255;255mInstallation/Assembly Method: Manual Configuration[0m
+echo [38;2;255;255;255mInstallation Directory: C:\CLI_Tools\Davy_Jones_OS[0m
+echo [38;2;230;255;230mInstallation Priority for Listed Non-Portable GUI Executables (from First to Last):[0m
 echo.
-echo Extraction of Original Registry Backup with Pre-installed Antivirus Software
-echo Removal of Pre-installed Antivirus Software with the exception of Windows Defender (ex. Norton, McAfee)
-echo Extraction of Original Registry Backup without Pre-installed Antivirus Software
-echo Import/Modify "hosts" Firewall Settings
-echo InvokeBackground (7-Zip, Directory Opus, Notepad++, etc.)
-echo 9-AltB-InvokeKeys
-echo 1-InvokeInternetTools
-echo 2-InvokeMicrosoft
-echo 3-InvokeCoding
-echo 3-Alt-InvokeJetBrains
-echo 4-InvokeSandbox
-echo 4-Alt-InvokeEngineeringTools
-echo 5-InvokeStudio
-echo 6-InvokeGames
-echo 7-InvokeStandardArchiver
-echo 8-InvokeLegacyArchiver
-echo 9-InvokeOther
-echo 9-AltC-InvokePortable
-echo InvokeAlert and InvokeEmergencyAntivirus
-echo InvokeNetwork
+echo [38;2;230;255;230mExtraction of Original Registry Backup with Pre-installed Antivirus Software[0m
+echo [38;2;204;255;204mRemoval of Pre-installed Antivirus Software with the exception of Windows Defender (ex. Norton, McAfee)[0m
+echo [38;2;179;255;179mExtraction of Original Registry Backup without Pre-installed Antivirus Software[0m
+echo [38;2;153;255;153mImport/Modify "hosts" Firewall Settings[0m
+echo [38;2;128;255;128mInvokeBackground (7-Zip, Directory Opus, Notepad++, etc.)[0m
+echo [38;2;102;255;102m9-AltB-InvokeKeys[0m
+echo [38;2;77;255;77m1-InvokeInternetTools[0m
+echo [38;2;51;255;51m2-InvokeMicrosoft[0m
+echo [38;2;26;255;26m3-InvokeCoding[0m
+echo [38;2;0;255;0m3-Alt-InvokeJetBrains[0m
+echo [38;2;26;255;26m4-InvokeSandbox[0m
+echo [38;2;51;255;51m4-Alt-InvokeEngineeringTools[0m
+echo [38;2;77;255;77m5-InvokeStudio[0m
+echo [38;2;102;255;102m6-InvokeGames[0m
+echo [38;2;128;255;128m7-InvokeStandardArchiver[0m
+echo [38;2;153;255;153m8-InvokeLegacyArchiver[0m
+echo [38;2;179;255;179m9-InvokeOther[0m
+echo [38;2;204;255;204m9-AltC-InvokePortable[0m
+echo [38;2;230;255;230mInvokeAlert and InvokeEmergencyAntivirus[0m
+echo [38;2;230;255;230mInvokeNetwork[0m
 echo.
-echo NOTE: Keep in mind that the installation process is very long, takes a few days, and may be interchangable,
-echo       but this list is a general installation guide for optimal performance.
+echo [38;2;255;255;255mNOTE: Keep in mind that the installation process is very long, takes a few days, and may be interchangable,[0m
+echo [38;2;255;255;255m      but this list is a general installation guide for optimal performance.[0m
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof
 :Help
-echo    * - from Omnitool                                                                                   # - from Instream
+echo [38;2;255;191;0m   * - from Omnitool                                                                                   # - from Instream[0m
 echo.
-echo    "+" / "-" - Scrolls through the list of other menu options available by one step (Does not work from root menu)
+echo [38;2;0;128;0m   "+" / "-" - Scrolls through the list of other menu options available by one step (Does not work from root menu)[0m
 echo.
-echo    "++" / "--" - Scrolls through the list of other menu options available by two steps
+echo [38;2;0;191;0m   "++" / "--" - Scrolls through the list of other menu options available by two steps[0m
 echo.
-echo    "+++" / "---" - Scrolls through the list of other menu options available by three steps
+echo [38;2;0;255;0m   "+++" / "---" - Scrolls through the list of other menu options available by three steps[0m
 echo.
-echo    "+-" / "-+" - Returns to the selection menu from any other associated program or menu
+echo [38;2;0;128;128m   "+-" / "-+" - Returns to the selection menu from any other associated program or menu[0m
 echo.
-echo    about - Lists information about the Davy Jones OS Omnitool.
+echo [38;2;255;255;255m   about - Lists information about the Davy Jones OS Omnitool.[0m
 echo.
-echo    alert - Pulls up the Alert Applications implementation menu.* (dialer also works, but use something like "alert-8R")
+echo [38;2;128;0;255m   alert - Pulls up the Alert Applications implementation menu.* (dialer also works, but use something like "alert-8R")[0m
 echo.
-echo    "alert" + "-" + "[any mnemonic sequence]" - Activates Dialer Mode for Alert from the root menu.*
+echo [38;2;255;0;0m   "alert" + "-" + "[any mnemonic sequence]" - Activates Dialer Mode for Alert from the root menu.*[0m
 echo.
-echo    alpha - Pulls up the [incomplete] alphabetized menu for more root menu options (Page 1) (Input "0" to go back.)
+echo [38;2;0;0;255m   alpha - Pulls up the [incomplete] alphabetized menu for more root menu options (Page 1) (Input "0" to go back.)[0m
 echo.
-echo    background - Pulls up the Background Applications implementation menu.* (ex. "background-9PR")
+echo [38;2;128;0;255m   background - Pulls up the Background Applications implementation menu.* (ex. "background-9PR")[0m
 echo.
-echo    "background" + "-" + "[any mnemonic sequence]" - Activates Dialer Mode for Background from the root menu.*
+echo [38;2;255;0;0m   "background" + "-" + "[any mnemonic sequence]" - Activates Dialer Mode for Background from the root menu.*[0m
 echo.
-echo    beta - Pulls up the [incomplete] alphabetized menu for more root menu options (Page 2) (Input "0" to go back.)
+echo [38;2;0;0;255m   beta - Pulls up the [incomplete] alphabetized menu for more root menu options (Page 2) (Input "0" to go back.)[0m
 echo.
-echo    copy[1-9] - Generates this many copies of the Davy Jones OS Omnitool main menu, up to 9.
+echo [38;2;0;255;255m   copy[1-9] - Generates this many copies of the Davy Jones OS Omnitool main menu, up to 9.[0m
 echo.
-echo    display - Pulls up the blank display menu, which can be canceled with any input.*
+echo [38;2;0;255;255m   display - Pulls up the blank display menu, which can be canceled with any input.*[0m
 echo.
-echo    exit - exits the program.
+echo [38;2;128;128;128m   exit - exits the program.[0m
 echo.
-echo    gamma - Pulls up the [incomplete] alphabetized menu for more root menu options (Page 3) (Input "0" to go back.)
+echo [38;2;0;0;255m   gamma - Pulls up the [incomplete] alphabetized menu for more root menu options (Page 3) (Input "0" to go back.)[0m
 echo.
-echo    guide - Prints instructions for the manual installation of the Davy Jones OS Omnitool.
+echo [38;2;255;255;255m   guide - Prints instructions for the manual installation of the Davy Jones OS Omnitool.[0m
 echo.
-echo    help - Lists intro and niche commands, including the ARIOS algorithm and Dialer Mode.
+echo [38;2;255;255;255m   help - Lists intro and niche commands, including the ARIOS algorithm and Dialer Mode.[0m
 echo.
-echo    installer - Pulls up the list of installer package managers.
+echo [38;2;255;128;0m   installer - Pulls up the list of installer package managers.[0m
 echo.
-echo    instream - Switches to the Instream Downloader Menu from the Omnitool. (Experimental)
+echo [38;2;0;255;255m   instream - Switches to the Instream Downloader Menu from the Omnitool. (Experimental)[0m
 echo.
-echo    manager - Switches to the Package Manager Menu.#
+echo [38;2;0;255;255m   manager - Switches to the Package Manager Menu.#[0m
 echo.
-echo    menu - Returns to the main menu from any other selection menu.*
+echo [38;2;0;255;0m   menu - Returns to the main menu from any other selection menu.*[0m
 echo.
-echo    network - Pulls up the Network Applications implementation menu.* (ex. "network-6R")
+echo [38;2;128;0;255m   network - Pulls up the Network Applications implementation menu.* (ex. "network-6R")[0m
 echo.
-echo    "network" + "-" + "[any mnemonic sequence]" - Activates Dialer Mode for Network from the root menu.*
+echo [38;2;255;0;0m   "network" + "-" + "[any mnemonic sequence]" - Activates Dialer Mode for Network from the root menu.*[0m
 echo.
-echo    open - Opens the file location.
+echo [38;2;255;255;255m   open - Opens the file location.[0m
 echo.
-echo    package - Checks the calling directory if any compatible filenames for executable installers exist.
+echo [38;2;0;255;255m   package - Checks the calling directory if any compatible filenames for executable installers exist.[0m
 echo.
-echo    root - Opens the root directory.
+echo [38;2;255;255;255m   root - Opens the root directory.[0m
 echo.
-echo    sample - Enters/leaves sample mode. Good medium for advertising campaigns.*
+echo [38;2;128;64;0m   sample - Enters/leaves sample mode. Good medium for advertising campaigns.*[0m
 echo.
-echo    shortcut - Checks the calling directory if any compatible filenames for program shortcuts exist.
+echo [38;2;0;255;255m   shortcut - Checks the calling directory if any compatible filenames for program shortcuts exist.[0m
 echo.
-echo    stealth/unstealth[PIN] - Enters/leaves stealth mode. Generates a fake menu and a shortcut as well.*
+echo [38;2;128;64;0m   stealth/unstealth[PIN] - Enters/leaves stealth mode. Generates a fake menu and a shortcut as well.*[0m
 echo.
-echo    tree - Shows a tree of the current layout.
+echo [38;2;255;255;255m   tree - Shows a tree of the current layout.[0m
 echo.
-echo    wordsort - Displays the alphabetized list of all searchable filenames used in the calling directory.
+echo [38;2;0;255;255m   wordsort - Displays the alphabetized list of all searchable filenames used in the calling directory.[0m
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof
@@ -30301,44 +31869,44 @@ echo InvokeAlert Shortcut Section
 echo.
 echo.
 if exist HitmanPro_I.exe (
-    echo "HitmanPro_I.exe" exists.
+    echo "HitmanPro_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "HitmanPro_I.exe" does not exist.
+    echo "HitmanPro_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ESET_Online_Scanner_I.exe (
-    echo "ESET_Online_Scanner_I.exe" exists.
+    echo "ESET_Online_Scanner_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ESET_Online_Scanner_I.exe" does not exist.
+    echo "ESET_Online_Scanner_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MWB_ADWcleaner_I.exe (
-    echo "MWB_ADWcleaner_I.exe" exists.
+    echo "MWB_ADWcleaner_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MWB_ADWcleaner_I.exe" does not exist.
+    echo "MWB_ADWcleaner_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Norton_Power_Eraser_I.exe (
-    echo "Norton_Power_Eraser_I.exe" exists.
+    echo "Norton_Power_Eraser_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Norton_Power_Eraser_I.exe" does not exist.
+    echo "Norton_Power_Eraser_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Stinger_I.exe (
-    echo "Stinger_I.exe" exists.
+    echo "Stinger_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Stinger_I.exe" does not exist.
+    echo "Stinger_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KART_I.exe (
-    echo "KART_I.exe" exists.
+    echo "KART_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KART_I.exe" does not exist.
+    echo "KART_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KVRT_I.exe (
-    echo "KVRT_I.exe" exists.
+    echo "KVRT_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KVRT_I.exe" does not exist.
+    echo "KVRT_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Revo_Uninstaller_I.exe (
-    echo "Revo_Uninstaller_I.exe" exists.
+    echo "Revo_Uninstaller_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Revo_Uninstaller_I.exe" does not exist.
+    echo "Revo_Uninstaller_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30346,54 +31914,54 @@ echo InvokeEmergencyAntivirus Shortcut Section
 echo.
 echo.
 if exist HitmanPro.Alert_I.exe (
-    echo "HitmanPro.Alert_I.exe" exists.
+    echo "HitmanPro.Alert_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "HitmanPro.Alert_I.exe" does not exist.
+    echo "HitmanPro.Alert_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ESET_NOD32_I.exe (
-    echo "ESET_NOD32_I.exe" exists.
+    echo "ESET_NOD32_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ESET_NOD32_I.exe" does not exist.
+    echo "ESET_NOD32_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Malwarebytes_I.exe (
-    echo "Malwarebytes_I.exe" exists.
+    echo "Malwarebytes_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Malwarebytes_I.exe" does not exist.
+    echo "Malwarebytes_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitdefender_I.exe (
-    echo "Bitdefender_I.exe" exists.
+    echo "Bitdefender_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitdefender_I.exe" does not exist.
+    echo "Bitdefender_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Avast_I.exe (
-    echo "Avast_I.exe" exists.
+    echo "Avast_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Avast_I.exe" does not exist.
+    echo "Avast_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist EmsisoftEmergencyKit_I.exe (
-    echo "EmsisoftEmergencyKit_I.exe" exists.
+    echo "EmsisoftEmergencyKit_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "EmsisoftEmergencyKit_I.exe" does not exist.
+    echo "EmsisoftEmergencyKit_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CCleaner_I.exe (
-    echo "CCleaner_I.exe" exists.
+    echo "CCleaner_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CCleaner_I.exe" does not exist.
+    echo "CCleaner_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Recuva_I.exe (
-    echo "Recuva_I.exe" exists.
+    echo "Recuva_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Recuva_I.exe" does not exist.
+    echo "Recuva_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Speccy_I.exe (
-    echo "Speccy_I.exe" exists.
+    echo "Speccy_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Speccy_I.exe" does not exist.
+    echo "Speccy_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Piriform_I.exe (
-    echo "Piriform_I.exe" exists.
+    echo "Piriform_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Piriform_I.exe" does not exist.
+    echo "Piriform_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30401,54 +31969,54 @@ echo InvokeBackground Shortcut Section
 echo.
 echo.
 if exist 7-ZipFM_I.exe (
-    echo "7-ZipFM_I.exe" exists.
+    echo "7-ZipFM_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "7-ZipFM_I.exe" does not exist.
+    echo "7-ZipFM_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JDK_I.exe (
-    echo "JDK_I.exe" exists.
+    echo "JDK_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JDK_I.exe" does not exist.
+    echo "JDK_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JRE_I.exe (
-    echo "JRE_I.exe" exists.
+    echo "JRE_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JRE_I.exe" does not exist.
+    echo "JRE_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Flow_Launcher_I.exe (
-    echo "Flow_Launcher_I.exe" exists.
+    echo "Flow_Launcher_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Flow_Launcher_I.exe" does not exist.
+    echo "Flow_Launcher_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Samsung_Driver_I.exe (
-    echo "Samsung_Driver_I.exe" exists.
+    echo "Samsung_Driver_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Samsung_Driver_I.exe" does not exist.
+    echo "Samsung_Driver_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Directory_Opus_I.exe (
-    echo "Directory_Opus_I.exe" exists.
+    echo "Directory_Opus_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Directory_Opus_I.exe" does not exist.
+    echo "Directory_Opus_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Opera_Browser_I.exe (
-    echo "Opera_Browser_I.exe" exists.
+    echo "Opera_Browser_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Opera_Browser_I.exe" does not exist.
+    echo "Opera_Browser_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UltraSearch_I.exe (
-    echo "UltraSearch_I.exe" exists.
+    echo "UltraSearch_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UltraSearch_I.exe" does not exist.
+    echo "UltraSearch_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WireGuard_I.exe (
-    echo "WireGuard_I.exe" exists.
+    echo "WireGuard_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WireGuard_I.exe" does not exist.
+    echo "WireGuard_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Notepad++_I.exe (
-    echo "Notepad++_I.exe" exists.
+    echo "Notepad++_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Notepad++_I.exe" does not exist.
+    echo "Notepad++_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30456,74 +32024,74 @@ echo InvokeNetwork Shortcut Section
 echo.
 echo.
 if exist GitHub_I.exe (
-    echo "GitHub_I.exe" exists.
+    echo "GitHub_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GitHub_I.exe" does not exist.
+    echo "GitHub_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GitHub_Fork_I.exe (
-    echo "GitHub_Fork_I.exe" exists.
+    echo "GitHub_Fork_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GitHub_Fork_I.exe" does not exist.
+    echo "GitHub_Fork_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitvise_SSH_Client_I.exe (
-    echo "Bitvise_SSH_Client_I.exe" exists.
+    echo "Bitvise_SSH_Client_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitvise_SSH_Client_I.exe" does not exist.
+    echo "Bitvise_SSH_Client_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitvise_SSH_Server_I.exe (
-    echo "Bitvise_SSH_Server_I.exe" exists.
+    echo "Bitvise_SSH_Server_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitvise_SSH_Server_I.exe" does not exist.
+    echo "Bitvise_SSH_Server_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PuTTY_I.msi (
-    echo "PuTTY_I.msi" exists.
+    echo "PuTTY_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PuTTY_I.msi" does not exist.
+    echo "PuTTY_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist SecureCRT_I.exe (
-    echo "SecureCRT_I.exe" exists.
+    echo "SecureCRT_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "SecureCRT_I.exe" does not exist.
+    echo "SecureCRT_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Xming_I.exe (
-    echo "Xming_I.exe" exists.
+    echo "Xming_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Xming_I.exe" does not exist.
+    echo "Xming_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Xming_Fonts_I.exe (
-    echo "Xming_Fonts_I.exe" exists.
+    echo "Xming_Fonts_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Xming_Fonts_I.exe" does not exist.
+    echo "Xming_Fonts_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Wireshark_I.exe (
-    echo "Wireshark_I.exe" exists.
+    echo "Wireshark_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Wireshark_I.exe" does not exist.
+    echo "Wireshark_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Freegate_IP_Spoofer_I.exe (
-    echo "Freegate_IP_Spoofer_I.exe" exists.
+    echo "Freegate_IP_Spoofer_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Freegate_IP_Spoofer_I.exe" does not exist.
+    echo "Freegate_IP_Spoofer_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Technitium_DNS_Server_I.exe (
-    echo "Technitium_DNS_Server_I.exe" exists.
+    echo "Technitium_DNS_Server_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Technitium_DNS_Server_I.exe" does not exist.
+    echo "Technitium_DNS_Server_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Technitium_Mesh_P2P_Messager_I.msi (
-    echo "Technitium_Mesh_P2P_Messager_I.msi" exists.
+    echo "Technitium_Mesh_P2P_Messager_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Technitium_Mesh_P2P_Messager_I.msi" does not exist.
+    echo "Technitium_Mesh_P2P_Messager_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist setup.exe (
-    echo "setup.exe" exists.
+    echo "setup.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "setup.exe" does not exist.
+    echo "setup.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Technitium_MAC_Spoofer_I.exe (
-    echo "Technitium_MAC_Spoofer_I.exe" exists.
+    echo "Technitium_MAC_Spoofer_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Technitium_MAC_Spoofer_I.exe" does not exist.
+    echo "Technitium_MAC_Spoofer_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30531,54 +32099,54 @@ echo InvokeInternetTools Shortcut Section
 echo.
 echo.
 if exist Internet_Download_Manager_I.exe (
-    echo "Internet_Download_Manager_I.exe" exists.
+    echo "Internet_Download_Manager_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Internet_Download_Manager_I.exe" does not exist.
+    echo "Internet_Download_Manager_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Tor_Browser_I.exe (
-    echo "Tor_Browser_I.exe" exists.
+    echo "Tor_Browser_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Tor_Browser_I.exe" does not exist.
+    echo "Tor_Browser_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mullvad_Browser_I.exe (
-    echo "Mullvad_Browser_I.exe" exists.
+    echo "Mullvad_Browser_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mullvad_Browser_I.exe" does not exist.
+    echo "Mullvad_Browser_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist LibreWolf_Browser_I.exe (
-    echo "LibreWolf_Browser_I.exe" exists.
+    echo "LibreWolf_Browser_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "LibreWolf_Browser_I.exe" does not exist.
+    echo "LibreWolf_Browser_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Firefox_Browser_I.exe (
-    echo "Firefox_Browser_I.exe" exists.
+    echo "Firefox_Browser_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Firefox_Browser_I.exe" does not exist.
+    echo "Firefox_Browser_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Brave_Browser_I.exe (
-    echo "Brave_Browser_I.exe" exists.
+    echo "Brave_Browser_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Brave_Browser_I.exe" does not exist.
+    echo "Brave_Browser_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Edge_Browser_I.exe (
-    echo "Edge_Browser_I.exe" exists.
+    echo "Edge_Browser_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Edge_Browser_I.exe" does not exist.
+    echo "Edge_Browser_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Chrome_Browser_I.exe (
-    echo "Chrome_Browser_I.exe" exists.
+    echo "Chrome_Browser_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Chrome_Browser_I.exe" does not exist.
+    echo "Chrome_Browser_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Google_Earth_Pro_I.exe (
-    echo "Google_Earth_Pro_I.exe" exists.
+    echo "Google_Earth_Pro_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Google_Earth_Pro_I.exe" does not exist.
+    echo "Google_Earth_Pro_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist qBittorrent_I.exe (
-    echo "qBittorrent_I.exe" exists.
+    echo "qBittorrent_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "qBittorrent_I.exe" does not exist.
+    echo "qBittorrent_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30586,24 +32154,24 @@ echo InvokeMicrosoft Shortcut Section
 echo.
 echo.
 if exist Visual_Studio_I.exe (
-    echo "Visual_Studio_I.exe" exists.
+    echo "Visual_Studio_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Visual_Studio_I.exe" does not exist.
+    echo "Visual_Studio_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Visual_Studio_Code_I.exe (
-    echo "Visual_Studio_Code_I.exe" exists.
+    echo "Visual_Studio_Code_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Visual_Studio_Code_I.exe" does not exist.
+    echo "Visual_Studio_Code_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Microsoft365_I.exe (
-    echo "Microsoft365_I.exe" exists.
+    echo "Microsoft365_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Microsoft365_I.exe" does not exist.
+    echo "Microsoft365_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerBI_I.exe (
-    echo "PowerBI_I.exe" exists.
+    echo "PowerBI_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerBI_I.exe" does not exist.
+    echo "PowerBI_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30611,39 +32179,39 @@ echo InvokeCoding Shortcut Section
 echo.
 echo.
 if exist 010_Editor_I.exe (
-    echo "010_Editor_I.exe" exists.
+    echo "010_Editor_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "010_Editor_I.exe" does not exist.
+    echo "010_Editor_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MATLAB_I.lnk (
-    echo "MATLAB_I.lnk" exists.
+    echo "MATLAB_I.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MATLAB_I.lnk" does not exist.
+    echo "MATLAB_I.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Octave_I.exe (
-    echo "Octave_I.exe" exists.
+    echo "Octave_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Octave_I.exe" does not exist.
+    echo "Octave_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Metasploit_I.msi (
-    echo "Metasploit_I.msi" exists.
+    echo "Metasploit_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Metasploit_I.msi" does not exist.
+    echo "Metasploit_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cygwin_I.exe (
-    echo "Cygwin_I.exe" exists.
+    echo "Cygwin_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cygwin_I.exe" does not exist.
+    echo "Cygwin_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Python_I.exe (
-    echo "Python_I.exe" exists.
+    echo "Python_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Python_I.exe" does not exist.
+    echo "Python_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerShell_I.msi (
-    echo "PowerShell_I.msi" exists.
+    echo "PowerShell_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerShell_I.msi" does not exist.
+    echo "PowerShell_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30651,119 +32219,119 @@ echo InvokeJetBrains Shortcut Section
 echo.
 echo.
 if exist Rider_I.exe (
-    echo "Rider_I.exe" exists.
+    echo "Rider_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rider_I.exe" does not exist.
+    echo "Rider_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist RustRover_I.exe (
-    echo "RustRover_I.exe" exists.
+    echo "RustRover_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "RustRover_I.exe" does not exist.
+    echo "RustRover_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WebStorm_I.exe (
-    echo "WebStorm_I.exe" exists.
+    echo "WebStorm_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WebStorm_I.exe" does not exist.
+    echo "WebStorm_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotPeek_I.exe (
-    echo "dotPeek_I.exe" exists.
+    echo "dotPeek_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotPeek_I.exe" does not exist.
+    echo "dotPeek_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotCover_I.exe (
-    echo "dotCover_I.exe" exists.
+    echo "dotCover_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotCover_I.exe" does not exist.
+    echo "dotCover_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotMemory_I.exe (
-    echo "dotMemory_I.exe" exists.
+    echo "dotMemory_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotMemory_I.exe" does not exist.
+    echo "dotMemory_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotTrace_I.exe (
-    echo "dotTrace_I.exe" exists.
+    echo "dotTrace_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotTrace_I.exe" does not exist.
+    echo "dotTrace_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotUltimate_I.exe (
-    echo "dotUltimate_I.exe" exists.
+    echo "dotUltimate_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotUltimate_I.exe" does not exist.
+    echo "dotUltimate_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Aqua_I.exe (
-    echo "Aqua_I.exe" exists.
+    echo "Aqua_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Aqua_I.exe" does not exist.
+    echo "Aqua_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ReSharper_I.exe (
-    echo "ReSharper_I.exe" exists.
+    echo "ReSharper_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ReSharper_I.exe" does not exist.
+    echo "ReSharper_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Resharper_Cpp_I.exe (
-    echo "ReSharper_Cpp_I.exe" exists.
+    echo "ReSharper_Cpp_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ReSharper_Cpp_I.exe" does not exist.
+    echo "ReSharper_Cpp_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CLion_I.exe (
-    echo "CLion_I.exe" exists.
+    echo "CLion_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CLion_I.exe" does not exist.
+    echo "CLion_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DataGrip_I.exe (
-    echo "DataGrip_I.exe" exists.
+    echo "DataGrip_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DataGrip_I.exe" does not exist.
+    echo "DataGrip_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DataSpell_I.exe (
-    echo "DataSpell_I.exe" exists.
+    echo "DataSpell_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DataSpell_I.exe" does not exist.
+    echo "DataSpell_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PyCharm_I.exe (
-    echo "PyCharm_I.exe" exists.
+    echo "PyCharm_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PyCharm_I.exe" does not exist.
+    echo "PyCharm_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IntelliJIDEA_I.exe (
-    echo "IntelliJIDEA_I.exe" exists.
+    echo "IntelliJIDEA_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IntelliJIDEA_I.exe" does not exist.
+    echo "IntelliJIDEA_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PhpStorm_I.exe (
-    echo "PhpStorm_I.exe" exists.
+    echo "PhpStorm_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PhpStorm_I.exe" does not exist.
+    echo "PhpStorm_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GoLand_I.exe (
-    echo "GoLand_I.exe" exists.
+    echo "GoLand_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GoLand_I.exe" does not exist.
+    echo "GoLand_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist RubyMine_I.exe (
-    echo "RubyMine_I.exe" exists.
+    echo "RubyMine_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "RubyMine_I.exe" does not exist.
+    echo "RubyMine_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Gateway_I.exe (
-    echo "Gateway_I.exe" exists.
+    echo "Gateway_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Gateway_I.exe" does not exist.
+    echo "Gateway_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MetaProgrammingSystem_I.exe (
-    echo "MetaProgrammingSystem_I.exe" exists.
+    echo "MetaProgrammingSystem_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MetaProgrammingSystem_I.exe" does not exist.
+    echo "MetaProgrammingSystem_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Toolbox_I.exe (
-    echo "Toolbox_I.exe" exists.
+    echo "Toolbox_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Toolbox_I.exe" does not exist.
+    echo "Toolbox_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Writerside_I.exe (
-    echo "Writerside_I.exe" exists.
+    echo "Writerside_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Writerside_I.exe" does not exist.
+    echo "Writerside_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30771,89 +32339,89 @@ echo InvokeSandbox Shortcut Section
 echo.
 echo.
 if exist VMware_Workstation_I.exe (
-    echo "VMware_Workstation_I.exe" exists.
+    echo "VMware_Workstation_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "VMware_Workstation_I.exe" does not exist.
+    echo "VMware_Workstation_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Docker_Desktop_I.exe (
-    echo "Docker_Desktop_I.exe" exists.
+    echo "Docker_Desktop_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Docker_Desktop_I.exe" does not exist.
+    echo "Docker_Desktop_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Amiga_Forever_I.msi (
-    echo "Amiga_Forever_I.msi" exists.
+    echo "Amiga_Forever_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Amiga_Forever_I.msi" does not exist.
+    echo "Amiga_Forever_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Pure_Data_I.exe (
-    echo "Pure_Data_I.exe" exists.
+    echo "Pure_Data_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Pure_Data_I.exe" does not exist.
+    echo "Pure_Data_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CRYENGINE_Launcher_I.exe (
-    echo "CRYENGINE_Launcher_I.exe" exists.
+    echo "CRYENGINE_Launcher_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CRYENGINE_Launcher_I.exe" does not exist.
+    echo "CRYENGINE_Launcher_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Unity_Hub_I.exe (
-    echo "Unity_Hub_I.exe" exists.
+    echo "Unity_Hub_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Unity_Hub_I.exe" does not exist.
+    echo "Unity_Hub_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Prusa_I.exe (
-    echo "Prusa_I.exe" exists.
+    echo "Prusa_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Prusa_I.exe" does not exist.
+    echo "Prusa_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_I.exe (
-    echo "AutoCAD_I.exe" exists.
+    echo "AutoCAD_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_I.exe" does not exist.
+    echo "AutoCAD_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_OfflineHelp_I.exe (
-    echo "AutoCAD_OfflineHelp_I.exe" exists.
+    echo "AutoCAD_OfflineHelp_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_OfflineHelp_I.exe" does not exist.
+    echo "AutoCAD_OfflineHelp_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_Electrical_I.exe (
-    echo "AutoCAD_Electrical_I.exe" exists.
+    echo "AutoCAD_Electrical_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_Electrical_I.exe" does not exist.
+    echo "AutoCAD_Electrical_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_Mechanical_I.exe (
-    echo "AutoCAD_Mechanical_I.exe" exists.
+    echo "AutoCAD_Mechanical_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_Mechanical_I.exe" does not exist.
+    echo "AutoCAD_Mechanical_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Solidworks_3D_CAD_Design_I.exe (
-    echo "Solidworks_3D_CAD_Design_I.exe" exists.
+    echo "Solidworks_3D_CAD_Design_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Solidworks_3D_CAD_Design_I.exe" does not exist.
+    echo "Solidworks_3D_CAD_Design_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Fusion_360_I.exe (
-    echo "Fusion_360_I.exe" exists.
+    echo "Fusion_360_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Fusion_360_I.exe" does not exist.
+    echo "Fusion_360_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_Civil_3D_I.exe (
-    echo "Autodesk_Civil_3D_I.exe" exists.
+    echo "Autodesk_Civil_3D_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_Civil_3D_I.exe" does not exist.
+    echo "Autodesk_Civil_3D_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_FeatureCAM_I.exe (
-    echo "Autodesk_FeatureCAM_I.exe" exists.
+    echo "Autodesk_FeatureCAM_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_FeatureCAM_I.exe" does not exist.
+    echo "Autodesk_FeatureCAM_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_Maya_I.exe (
-    echo "Autodesk_Maya_I.exe" exists.
+    echo "Autodesk_Maya_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_Maya_I.exe" does not exist.
+    echo "Autodesk_Maya_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Tekla_Structures_I.exe (
-    echo "Tekla_Structures_I.exe" exists.
+    echo "Tekla_Structures_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Tekla_Structures_I.exe" does not exist.
+    echo "Tekla_Structures_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30861,59 +32429,64 @@ echo InvokeStudio Shortcut Section
 echo.
 echo.
 if exist Android_Studio_I.exe (
-    echo "Android_Studio_I.exe" exists.
+    echo "Android_Studio_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Android_Studio_I.exe" does not exist.
+    echo "Android_Studio_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Hex-Rays_IDA_I.exe (
-    echo "Hex-Rays_IDA_I.exe" exists.
+    echo "Hex-Rays_IDA_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Hex-Rays_IDA_I.exe" does not exist.
+    echo "Hex-Rays_IDA_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ON1_Photo_RAW_I.exe (
-    echo "ON1_Photo_RAW_I.exe" exists.
+    echo "ON1_Photo_RAW_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ON1_Photo_RAW_I.exe" does not exist.
+    echo "ON1_Photo_RAW_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PlayerFab_I.exe (
-    echo "PlayerFab_I.exe" exists.
+    echo "PlayerFab_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PlayerFab_I.exe" does not exist.
+    echo "PlayerFab_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist StreamFab_I.exe (
-    echo "StreamFab_I.exe" exists.
+    echo "StreamFab_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "StreamFab_I.exe" does not exist.
+    echo "StreamFab_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Avid_Pro_Tools_I.lnk (
-    echo "Avid_Pro_Tools_I.lnk" exists.
+    echo "Avid_Pro_Tools_I.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Avid_Pro_Tools_I.lnk" does not exist.
+    echo "Avid_Pro_Tools_I.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Photoline_I.exe (
-    echo "Photoline_I.exe" exists.
+    echo "Photoline_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Photoline_I.exe" does not exist.
+    echo "Photoline_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Blender_I.msi (
+    echo "Blender_I.msi" [38;2;0;255;0mexists[0m.
+) else (
+    echo "Blender_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DaVinci_Resolve_I.dat (
-    echo "DaVinci_Resolve_I.dat" exists.
+    echo "DaVinci_Resolve_I.dat" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DaVinci_Resolve_I.dat" does not exist.
+    echo "DaVinci_Resolve_I.dat" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DaVinci_Resolve_I.exe (
-    echo "DaVinci_Resolve_I.exe" exists.
+    echo "DaVinci_Resolve_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DaVinci_Resolve_I.exe" does not exist.
+    echo "DaVinci_Resolve_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Remocapp_Studio_I.exe (
-    echo "Remocapp_Studio_I.exe" exists.
+    echo "Remocapp_Studio_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Remocapp_Studio_I.exe" does not exist.
+    echo "Remocapp_Studio_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Rokoko_Studio_I.exe (
-    echo "Rokoko_Resolve_I.exe" exists.
+    echo "Rokoko_Resolve_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rokoko_Resolve_I.exe" does not exist.
+    echo "Rokoko_Resolve_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30921,59 +32494,59 @@ echo InvokeGames Shortcut Section
 echo.
 echo.
 if exist Steam_Games_Launcher_I.exe (
-    echo "Steam_Games_Launcher_I.exe" exists.
+    echo "Steam_Games_Launcher_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Steam_Games_Launcher_I.exe" does not exist.
+    echo "Steam_Games_Launcher_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Epic_Games_Launcher_I.msi (
-    echo "Epic_Games_Launcher_I.msi" exists.
+    echo "Epic_Games_Launcher_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Epic_Games_Launcher_I.msi" does not exist.
+    echo "Epic_Games_Launcher_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Ubisoft_Connect_I.exe (
-    echo "Ubisoft_Connect_I.exe" exists.
+    echo "Ubisoft_Connect_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Ubisoft_Connect_I.exe" does not exist.
+    echo "Ubisoft_Connect_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Electronic_Arts_Launcher_I.exe (
-    echo "Electronic_Arts_Launcher_I.exe" exists.
+    echo "Electronic_Arts_Launcher_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Electronic_Arts_Launcher_I.exe" does not exist.
+    echo "Electronic_Arts_Launcher_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GOG_Galaxy_Launcher_I.exe (
-    echo "GOG_Galaxy_Launcher_I.exe" exists.
+    echo "GOG_Galaxy_Launcher_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GOG_Galaxy_Launcher_I.exe" does not exist.
+    echo "GOG_Galaxy_Launcher_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist BlueStacks_I.exe (
-    echo "BlueStacks_I.exe" exists.
+    echo "BlueStacks_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "BlueStacks_I.exe" does not exist.
+    echo "BlueStacks_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Arena_I.exe (
-    echo "Arena_I.exe" exists.
+    echo "Arena_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Arena_I.exe" does not exist.
+    echo "Arena_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Go_I.exe (
-    echo "Go_I.exe" exists.
+    echo "Go_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Go_I.exe" does not exist.
+    echo "Go_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Go_I.msi (
-    echo "Go_I.msi" exists.
+    echo "Go_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Go_I.msi" does not exist.
+    echo "Go_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Rise_of_Legends_I.lnk (
-    echo "Rise_of_Legends_I.lnk" exists.
+    echo "Rise_of_Legends_I.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rise_of_Legends_I.lnk" does not exist.
+    echo "Rise_of_Legends_I.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
-if exist WindowsGamesForWindows11_10_8_I.exe (
-    echo "WindowsGamesForWindows11_10_8_I.exe" exists.
+if exist Windows7GamesForWindows11_10_8_I.exe (
+    echo "Windows7GamesForWindows11_10_8_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WindowsGamesForWindows11_10_8_I.exe" does not exist.
+    echo "Windows7GamesForWindows11_10_8_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -30981,89 +32554,89 @@ echo InvokeStandardArchiver Shortcut Section
 echo.
 echo.
 if exist WinRAR_I.exe (
-    echo "WinRAR_I.exe" exists.
+    echo "WinRAR_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinRAR_I.exe" does not exist.
+    echo "WinRAR_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PeaZip_I.exe (
-    echo "PeaZip_I.exe" exists.
+    echo "PeaZip_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PeaZip_I.exe" does not exist.
+    echo "PeaZip_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bandizip_I.exe (
-    echo "Bandizip_I.exe" exists.
+    echo "Bandizip_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bandizip_I.exe" does not exist.
+    echo "Bandizip_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ALZip_I.exe (
-    echo "ALZip_I.exe" exists.
+    echo "ALZip_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ALZip_I.exe" does not exist.
+    echo "ALZip_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerArchiver_I.exe (
-    echo "PowerArchiver_I.exe" exists.
+    echo "PowerArchiver_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerArchiver_I.exe" does not exist.
+    echo "PowerArchiver_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Forensic_Toolkit_I.lnk (
-    echo "Forensic_Toolkit_I.lnk" exists.
+    echo "Forensic_Toolkit_I.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Forensic_Toolkit_I.lnk" does not exist.
+    echo "Forensic_Toolkit_I.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist FTK_Language_I.lnk (
-    echo "FTK_Language_I.lnk" exists.
+    echo "FTK_Language_I.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "FTK_Language_I.lnk" does not exist.
+    echo "FTK_Language_I.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Passware_Kit_I.msi (
-    echo "Passware_Kit_I.msi" exists.
+    echo "Passware_Kit_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Passware_Kit_I.msi" does not exist.
+    echo "Passware_Kit_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JRiver_Media_Center_I.exe (
-    echo "JRiver_Media_Center_I.exe" exists.
+    echo "JRiver_Media_Center_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JRiver_Media_Center_I.exe" does not exist.
+    echo "JRiver_Media_Center_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerISO_I.exe (
-    echo "PowerISO_I.exe" exists.
+    echo "PowerISO_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerISO_I.exe" does not exist.
+    echo "PowerISO_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UltraISO_I.exe (
-    echo "UltraISO_I.exe" exists.
+    echo "UltraISO_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UltraISO_I.exe" does not exist.
+    echo "UltraISO_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Adobe_Acrobat_I.lnk (
-    echo "Adobe_Acrobat_I.lnk" exists.
+    echo "Adobe_Acrobat_I.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Adobe_Acrobat_I.lnk" does not exist.
+    echo "Adobe_Acrobat_I.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Calibre_I.msi (
-    echo "Calibre_I.msi" exists.
+    echo "Calibre_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Calibre_I.msi" does not exist.
+    echo "Calibre_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DVDFab_I.exe (
-    echo "DVDFab_I.exe" exists.
+    echo "DVDFab_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DVDFab_I.exe" does not exist.
+    echo "DVDFab_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UniFab_I.exe (
-    echo "UniFab_I.exe" exists.
+    echo "UniFab_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UniFab_I.exe" does not exist.
+    echo "UniFab_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IsoBuster_I.exe (
-    echo "IsoBuster_I.exe" exists.
+    echo "IsoBuster_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IsoBuster_I.exe" does not exist.
+    echo "IsoBuster_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Game_Extractor_I.exe (
-    echo "Game_Extractor_I.exe" exists.
+    echo "Game_Extractor_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Game_Extractor_I.exe" does not exist.
+    echo "Game_Extractor_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31071,29 +32644,29 @@ echo InvokeLegacyArchiver Shortcut Section
 echo.
 echo.
 if exist WinZip_I.msi (
-    echo "WinZip_I.msi" exists.
+    echo "WinZip_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_I.msi" does not exist.
+    echo "WinZip_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Resource_Tuner_I.exe (
-    echo "Resource_Tuner_I.exe" exists.
+    echo "Resource_Tuner_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Resource_Tuner_I.exe" does not exist.
+    echo "Resource_Tuner_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinAce_I.exe (
-    echo "WinAce_I.exe" exists.
+    echo "WinAce_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinAce_I.exe" does not exist.
+    echo "WinAce_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IZArc_I.exe (
-    echo "IZArc_I.exe" exists.
+    echo "IZArc_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IZArc_I.exe" does not exist.
+    echo "IZArc_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist B1_Manager_I.exe (
-    echo "B1_Manager_I.exe" exists.
+    echo "B1_Manager_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "B1_Manager_I.exe" does not exist.
+    echo "B1_Manager_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31101,84 +32674,99 @@ echo InvokeOther Shortcut Section
 echo.
 echo.
 if exist OpenMPT_I.exe (
-    echo "OpenMPT_I.exe" exists.
+    echo "OpenMPT_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OpenMPT_I.exe" does not exist.
+    echo "OpenMPT_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TreeSize_I.exe (
-    echo "TreeSize_I.exe" exists.
+    echo "TreeSize_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TreeSize_I.exe" does not exist.
+    echo "TreeSize_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Minitab_I.exe (
-    echo "Minitab_I.exe" exists.
+    echo "Minitab_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Minitab_I.exe" does not exist.
+    echo "Minitab_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist jGRASP_I.exe (
-    echo "jGRASP_I.exe" exists.
+    echo "jGRASP_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "jGRASP_I.exe" does not exist.
+    echo "jGRASP_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_I.exe (
-    echo "Eclipse_I.exe" exists.
+    echo "Eclipse_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_I.exe" does not exist.
+    echo "Eclipse_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Signal_I.exe (
-    echo "Signal_I.exe" exists.
+    echo "Signal_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Signal_I.exe" does not exist.
+    echo "Signal_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TI-Nspire_CX_CAS_Student_Software_I.exe (
-    echo "TI-Nspire_CX_CAS_Student_Software_I.exe" exists.
+    echo "TI-Nspire_CX_CAS_Student_Software_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TI-Nspire_CX_CAS_Student_Software_I.exe" does not exist.
+    echo "TI-Nspire_CX_CAS_Student_Software_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe (
-    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe" exists.
+    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe" does not exist.
+    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Maple_I.exe (
-    echo "Maple_I.exe" exists.
+    echo "Maple_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Maple_I.exe" does not exist.
+    echo "Maple_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dist (
-    echo "dist" exists.
+    echo "dist" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dist" does not exist.
+    echo "dist" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Maple_Flow_I.exe (
-    echo "Maple_Flow_I.exe" exists.
+    echo "Maple_Flow_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Maple_Flow_I.exe" does not exist.
+    echo "Maple_Flow_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Wallpaper_Engine_I.exe (
+    echo "Wallpaper_Engine_I.exe" [38;2;0;255;0mexists[0m.
+) else (
+    echo "Wallpaper_Engine_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Telerik_I.msi (
-    echo "Telerik_I.msi" exists.
+    echo "Telerik_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Telerik_I.msi" does not exist.
+    echo "Telerik_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Audials_One_I.exe (
-    echo "Audials_One_I.exe" exists.
+    echo "Audials_One_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Audials_One_I.exe" does not exist.
+    echo "Audials_One_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Proton_I.exe (
-    echo "Proton_I.exe" exists.
+    echo "Proton_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Proton_I.exe" does not exist.
+    echo "Proton_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mullvad_VPN_I.exe (
-    echo "Mullvad_VPN_I.exe" exists.
+    echo "Mullvad_VPN_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mullvad_VPN_I.exe" does not exist.
+    echo "Mullvad_VPN_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist NordVPN_I.exe (
+    echo "NordVPN_I.exe" [38;2;0;255;0mexists[0m.
+) else (
+    echo "NordVPN_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist OpenVPN_I.msi (
+    echo "OpenVPN_I.msi" [38;2;0;255;0mexists[0m.
+) else (
+    echo "OpenVPN_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Portmaster_I.exe (
-    echo "Portmaster_I.exe" exists.
+    echo "Portmaster_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Portmaster_I.exe" does not exist.
+    echo "Portmaster_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31186,59 +32774,59 @@ echo InvokeKeys Shortcut Section
 echo.
 echo.
 if exist Agent_DVR_I.exe (
-    echo "Agent_DVR_I.exe" exists.
+    echo "Agent_DVR_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Agent_DVR_I.exe" does not exist.
+    echo "Agent_DVR_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cisdem_App_Crypt_I.exe (
-    echo "Cisdem_App_Crypt_I.exe" exists.
+    echo "Cisdem_App_Crypt_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cisdem_App_Crypt_I.exe" does not exist.
+    echo "Cisdem_App_Crypt_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist QFX_Key_Scrambler_I.exe (
-    echo "QFX_Key_Scrambler_I.exe" exists.
+    echo "QFX_Key_Scrambler_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "QFX_Key_Scrambler_I.exe" does not exist.
+    echo "QFX_Key_Scrambler_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ReShade_I.exe (
-    echo "ReShade_I.exe" exists.
+    echo "ReShade_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ReShade_I.exe" does not exist.
+    echo "ReShade_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ReShade_I_Addons.exe (
-    echo "ReShade_I_Addons.exe" exists.
+    echo "ReShade_I_Addons.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ReShade_I_Addons.exe" does not exist.
+    echo "ReShade_I_Addons.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cheat_Engine_I.exe (
-    echo "Cheat_Engine_I.exe" exists.
+    echo "Cheat_Engine_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cheat_Engine_I.exe" does not exist.
+    echo "Cheat_Engine_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Process_Hacker_I.exe (
-    echo "Process_Hacker_I.exe" exists.
+    echo "Process_Hacker_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Process_Hacker_I.exe" does not exist.
+    echo "Process_Hacker_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WooGLE_I.exe (
-    echo "WooGLE_I.exe" exists.
+    echo "WooGLE_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WooGLE_I.exe" does not exist.
+    echo "WooGLE_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist NMSSaveEditor_I.exe (
-    echo "NMSSaveEditor_I.exe" exists.
+    echo "NMSSaveEditor_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "NMSSaveEditor_I.exe" does not exist.
+    echo "NMSSaveEditor_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PalworldSavePal_I.msi (
-    echo "PalworldSavePal_I.msi" exists.
+    echo "PalworldSavePal_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PalworldSavePal_I.msi" does not exist.
+    echo "PalworldSavePal_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KeePass_I.exe (
-    echo "KeePass_I.exe" exists.
+    echo "KeePass_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KeePass_I.exe" does not exist.
+    echo "KeePass_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31246,9 +32834,9 @@ echo InvokePortable Shortcut Section
 echo.
 echo.
 if exist AutoHotkey_UX_I.exe (
-    echo "AutoHotkey_UX_I.exe" exists.
+    echo "AutoHotkey_UX_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoHotkey_UX_I.exe" does not exist.
+    echo "AutoHotkey_UX_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31256,19 +32844,19 @@ echo Other Installers
 echo.
 echo.
 if exist CreateInstall_I.exe (
-    echo "CreateInstall_I.exe" exists.
+    echo "CreateInstall_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CreateInstall_I.exe" does not exist.
+    echo "CreateInstall_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
-if exist Advanced_Installer_I.exe (
-    echo "Advanced_Installer_I.exe" exists.
+if exist Advanced_Installer_I.msi (
+    echo "Advanced_Installer_I.msi" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Advanced_Installer_I.exe" does not exist.
+    echo "Advanced_Installer_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Inno_Setup_I.exe (
-    echo "Inno_Setup_I.exe" exists.
+    echo "Inno_Setup_I.exe" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Inno_Setup_I.exe" does not exist.
+    echo "Inno_Setup_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
@@ -31280,39 +32868,39 @@ echo InvokeAuxiliaryCommands Shortcut Section:
 echo.
 echo.
 if exist Davy_Jones_OS_R.lnk (
-    echo "Davy_Jones_OS_R.lnk" exists.
+    echo "Davy_Jones_OS_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Davy_Jones_OS_R.lnk" does not exist.
+    echo "Davy_Jones_OS_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Instream_Applications.lnk (
-    echo "Instream_Applications.lnk" exists.
+    echo "Instream_Applications.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Instream_Applications.lnk" does not exist.
+    echo "Instream_Applications.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Instream_Sample_Applications.lnk (
-    echo "Instream_Sample_Applications.lnk" exists.
+    echo "Instream_Sample_Applications.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Instream_Sample_Applications.lnk" does not exist.
+    echo "Instream_Sample_Applications.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Root_Directory_R.lnk (
-    echo "Root_Directory_R.lnk" exists.
+    echo "Root_Directory_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Root_Directory_R.lnk" does not exist.
+    echo "Root_Directory_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Sample_Applications.lnk (
-    echo "Sample_Applications.lnk" exists.
+    echo "Sample_Applications.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Sample_Applications.lnk" does not exist.
+    echo "Sample_Applications.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Stealth_Applications.lnk (
-    echo "Stealth_Applications.lnk" exists.
+    echo "Stealth_Applications.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Stealth_Applications.lnk" does not exist.
+    echo "Stealth_Applications.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Unstealth_Applications.lnk (
-    echo "Unstealth_Applications.lnk" exists.
+    echo "Unstealth_Applications.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Unstealth_Applications.lnk" does not exist.
+    echo "Unstealth_Applications.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31320,124 +32908,124 @@ echo InvokeAlert Shortcut Section
 echo.
 echo.
 if exist HitmanPro_A.lnk (
-    echo "HitmanPro_A" exists.
+    echo "HitmanPro_A" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "HitmanPro_A" does not exist.
+    echo "HitmanPro_A" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist HitmanPro_R.lnk (
-    echo "HitmanPro_R" exists.
+    echo "HitmanPro_R" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "HitmanPro_R" does not exist.
+    echo "HitmanPro_R" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist HitmanPro_O.lnk (
-    echo "HitmanPro_O.lnk" exists.
+    echo "HitmanPro_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "HitmanPro_O.lnk" does not exist.
+    echo "HitmanPro_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ESET_Online_Scanner_A.lnk (
-    echo "ESET_Online_Scanner_A.lnk" exists.
+    echo "ESET_Online_Scanner_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ESET_Online_Scanner_A.lnk" does not exist.
+    echo "ESET_Online_Scanner_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ESET_Online_Scanner_R.lnk (
-    echo "ESET_Online_Scanner_R.lnk" exists.
+    echo "ESET_Online_Scanner_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ESET_Online_Scanner_R.lnk" does not exist.
+    echo "ESET_Online_Scanner_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ESET_Online_Scanner_O.lnk (
-    echo "ESET_Online_Scanner_O.lnk" exists.
+    echo "ESET_Online_Scanner_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ESET_Online_Scanner_O.lnk" does not exist.
+    echo "ESET_Online_Scanner_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MWB_ADWcleaner_A.lnk (
-    echo "MWB_ADWcleaner_A.lnk" exists.
+    echo "MWB_ADWcleaner_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MWB_ADWcleaner_A.lnk" does not exist.
+    echo "MWB_ADWcleaner_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MWB_ADWcleaner_R.lnk (
-    echo "MWB_ADWcleaner_R.lnk" exists.
+    echo "MWB_ADWcleaner_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MWB_ADWcleaner_R.lnk" does not exist.
+    echo "MWB_ADWcleaner_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MWB_ADWcleaner_O.lnk (
-    echo "MWB_ADWcleaner_O.lnk" exists.
+    echo "MWB_ADWcleaner_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MWB_ADWcleaner_O.lnk" does not exist.
+    echo "MWB_ADWcleaner_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Norton_Power_Eraser_A.lnk (
-    echo "Norton_Power_Eraser_A.lnk" exists.
+    echo "Norton_Power_Eraser_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Norton_Power_Eraser_A.lnk" does not exist.
+    echo "Norton_Power_Eraser_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Norton_Power_Eraser_R.lnk (
-    echo "Norton_Power_Eraser_R.lnk" exists.
+    echo "Norton_Power_Eraser_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Norton_Power_Eraser_R.lnk" does not exist.
+    echo "Norton_Power_Eraser_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Norton_Power_Eraser_O.lnk (
-    echo "Norton_Power_Eraser_O.lnk" exists.
+    echo "Norton_Power_Eraser_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Norton_Power_Eraser_O.lnk" does not exist.
+    echo "Norton_Power_Eraser_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Stinger_A.lnk (
-    echo "Stinger_A.lnk" exists.
+    echo "Stinger_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Stinger_A.lnk" does not exist.
+    echo "Stinger_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Stinger_R.lnk (
-    echo "Stinger_R.lnk" exists.
+    echo "Stinger_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Stinger_R.lnk" does not exist.
+    echo "Stinger_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Stinger_O.lnk (
-    echo "Stinger_O.lnk" exists.
+    echo "Stinger_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Stinger_O.lnk" does not exist.
+    echo "Stinger_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KART_A.lnk (
-    echo "KART_A.lnk" exists.
+    echo "KART_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KART_A.lnk" does not exist.
+    echo "KART_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KART_R.lnk (
-    echo "KART_R.lnk" exists.
+    echo "KART_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KART_R.lnk" does not exist.
+    echo "KART_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KART_O.lnk (
-    echo "KART_O.lnk" exists.
+    echo "KART_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KART_O.lnk" does not exist.
+    echo "KART_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KVRT_A.lnk (
-    echo "KVRT_A.lnk" exists.
+    echo "KVRT_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KVRT_A.lnk" does not exist.
+    echo "KVRT_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KVRT_R.lnk (
-    echo "KVRT_R.lnk" exists.
+    echo "KVRT_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KVRT_R.lnk" does not exist.
+    echo "KVRT_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KVRT_O.lnk (
-    echo "KVRT_O.lnk" exists.
+    echo "KVRT_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KVRT_O.lnk" does not exist.
+    echo "KVRT_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Revo_Uninstaller_A.lnk (
-    echo "Revo_Uninstaller_A.lnk" exists.
+    echo "Revo_Uninstaller_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Revo_Uninstaller_A.lnk" does not exist.
+    echo "Revo_Uninstaller_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Revo_Uninstaller_R.lnk (
-    echo "Revo_Uninstaller_R.lnk" exists.
+    echo "Revo_Uninstaller_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Revo_Uninstaller_R.lnk" does not exist.
+    echo "Revo_Uninstaller_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Revo_Uninstaller_O.lnk (
-    echo "Revo_Uninstaller_O.lnk" exists.
+    echo "Revo_Uninstaller_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Revo_Uninstaller_O.lnk" does not exist.
+    echo "Revo_Uninstaller_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31445,139 +33033,139 @@ echo InvokeEmergencyAntivirus Shortcut Section
 echo.
 echo.
 if exist HitmanPro.Alert_A.lnk (
-    echo "HitmanPro.Alert_A.lnk" exists.
+    echo "HitmanPro.Alert_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "HitmanPro.Alert_A.lnk" does not exist.
+    echo "HitmanPro.Alert_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist HitmanPro.Alert_R.lnk (
-    echo "HitmanPro.Alert_R.lnk" exists.
+    echo "HitmanPro.Alert_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "HitmanPro.Alert_R.lnk" does not exist.
+    echo "HitmanPro.Alert_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist HitmanPro.Alert_O.lnk (
-    echo "HitmanPro.Alert_O.lnk" exists.
+    echo "HitmanPro.Alert_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "HitmanPro.Alert_O.lnk" does not exist.
+    echo "HitmanPro.Alert_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ESET_NOD32_A.lnk (
-    echo "ESET_NOD32_A.lnk" exists.
+    echo "ESET_NOD32_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ESET_NOD32_A.lnk" does not exist.
+    echo "ESET_NOD32_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ESET_NOD32_R.lnk (
-    echo "ESET_NOD32_R.lnk" exists.
+    echo "ESET_NOD32_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ESET_NOD32_R.lnk" does not exist.
+    echo "ESET_NOD32_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ESET_NOD32_O.lnk (
-    echo "ESET_NOD32_O.lnk" exists.
+    echo "ESET_NOD32_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ESET_NOD32_O.lnk" does not exist.
+    echo "ESET_NOD32_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Malwarebytes_A.lnk (
-    echo "Malwarebytes_A.lnk" exists.
+    echo "Malwarebytes_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Malwarebytes_A.lnk" does not exist.
+    echo "Malwarebytes_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Malwarebytes_R.lnk (
-    echo "Malwarebytes_R.lnk" exists.
+    echo "Malwarebytes_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Malwarebytes_R.lnk" does not exist.
+    echo "Malwarebytes_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Malwarebytes_O.lnk (
-    echo "Malwarebytes_O.lnk" exists.
+    echo "Malwarebytes_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Malwarebytes_O.lnk" does not exist.
+    echo "Malwarebytes_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitdefender_A.lnk (
-    echo "Bitdefender_A.lnk" exists.
+    echo "Bitdefender_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitdefender_A.lnk" does not exist.
+    echo "Bitdefender_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitdefender_R.lnk (
-    echo "Bitdefender_R.lnk" exists.
+    echo "Bitdefender_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitdefender_R.lnk" does not exist.
+    echo "Bitdefender_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitdefender_O.lnk (
-    echo "Bitdefender_O.lnk" exists.
+    echo "Bitdefender_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitdefender_O.lnk" does not exist.
+    echo "Bitdefender_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Avast_A.lnk (
-    echo "Avast_A.lnk" exists.
+    echo "Avast_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Avast_A.lnk" does not exist.
+    echo "Avast_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Avast_R.lnk (
-    echo "Avast_R.lnk" exists.
+    echo "Avast_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Avast_R.lnk" does not exist.
+    echo "Avast_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Avast_O.lnk (
-    echo "Avast_O.lnk" exists.
+    echo "Avast_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Avast_O.lnk" does not exist.
+    echo "Avast_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist EmsisoftEmergencyKit_A.lnk (
-    echo "EmsisoftEmergencyKit_A.lnk" exists.
+    echo "EmsisoftEmergencyKit_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "EmsisoftEmergencyKit_A.lnk" does not exist.
+    echo "EmsisoftEmergencyKit_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist EmsisoftEmergencyKit_R.lnk (
-    echo "EmsisoftEmergencyKit_R.lnk" exists.
+    echo "EmsisoftEmergencyKit_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "EmsisoftEmergencyKit_R.lnk" does not exist.
+    echo "EmsisoftEmergencyKit_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist EmsisoftEmergencyKit_O.lnk (
-    echo "EmsisoftEmergencyKit_O.lnk" exists.
+    echo "EmsisoftEmergencyKit_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "EmsisoftEmergencyKit_O.lnk" does not exist.
+    echo "EmsisoftEmergencyKit_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CCleaner_A.lnk (
-    echo "CCleaner_A.lnk" exists.
+    echo "CCleaner_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CCleaner_A.lnk" does not exist.
+    echo "CCleaner_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CCleaner_R.lnk (
-    echo "CCleaner_R.lnk" exists.
+    echo "CCleaner_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CCleaner_R.lnk" does not exist.
+    echo "CCleaner_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CCleaner_O.lnk (
-    echo "CCleaner_O.lnk" exists.
+    echo "CCleaner_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CCleaner_O.lnk" does not exist.
+    echo "CCleaner_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Recuva_A.lnk (
-    echo "Recuva_A.lnk" exists.
+    echo "Recuva_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Recuva_A.lnk" does not exist.
+    echo "Recuva_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Recuva_R.lnk (
-    echo "Recuva_R.lnk" exists.
+    echo "Recuva_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Recuva_R.lnk" does not exist.
+    echo "Recuva_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Recuva_O.lnk (
-    echo "Recuva_O.lnk" exists.
+    echo "Recuva_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Recuva_O.lnk" does not exist.
+    echo "Recuva_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Speccy_A.lnk (
-    echo "Speccy_A.lnk" exists.
+    echo "Speccy_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Speccy_A.lnk" does not exist.
+    echo "Speccy_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Speccy_R.lnk (
-    echo "Speccy_R.lnk" exists.
+    echo "Speccy_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Speccy_R.lnk" does not exist.
+    echo "Speccy_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Speccy_O.lnk (
-    echo "Speccy_O.lnk" exists.
+    echo "Speccy_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Speccy_O.lnk" does not exist.
+    echo "Speccy_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31585,109 +33173,104 @@ echo InvokeBackground Shortcut Section
 echo.
 echo.
 if exist 7-ZipFM_A.lnk (
-    echo "7-ZipFM_A.lnk" exists.
+    echo "7-ZipFM_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "7-ZipFM_A.lnk" does not exist.
+    echo "7-ZipFM_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist 7-ZipFM_R.lnk (
-    echo "7-ZipFM_R.lnk" exists.
+    echo "7-ZipFM_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "7-ZipFM_R.lnk" does not exist.
+    echo "7-ZipFM_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist 7-ZipFM_O.lnk (
-    echo "7-ZipFM_O.lnk" exists.
+    echo "7-ZipFM_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "7-ZipFM_O.lnk" does not exist.
+    echo "7-ZipFM_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Flow_Launcher_A.lnk (
-    echo "Flow_Launcher_A.lnk" exists.
+    echo "Flow_Launcher_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Flow_Launcher_A.lnk" does not exist.
+    echo "Flow_Launcher_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Flow_Launcher_R.lnk (
-    echo "Flow_Launcher_R.lnk" exists.
+    echo "Flow_Launcher_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Flow_Launcher_R.lnk" does not exist.
+    echo "Flow_Launcher_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Directory_Opus_A.lnk (
-    echo "Directory_Opus_A.lnk" exists.
+    echo "Directory_Opus_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Directory_Opus_A.lnk" does not exist.
+    echo "Directory_Opus_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Directory_Opus_R.lnk (
-    echo "Directory_Opus_R.lnk" exists.
+    echo "Directory_Opus_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Directory_Opus_R.lnk" does not exist.
+    echo "Directory_Opus_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Directory_Opus_O.lnk (
-    echo "Directory_Opus_O.lnk" exists.
+    echo "Directory_Opus_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Directory_Opus_O.lnk" does not exist.
+    echo "Directory_Opus_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Opera_Browser_A.lnk (
-    echo "Opera_Browser_A.lnk" exists.
+    echo "Opera_Browser_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Opera_Browser_A.lnk" does not exist.
+    echo "Opera_Browser_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Opera_Browser_R.lnk (
-    echo "Opera_Browser_R.lnk" exists.
+    echo "Opera_Browser_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Opera_Browser_R.lnk" does not exist.
-)
-if exist Opera_Browser_O.lnk (
-    echo "Opera_Browser_O.lnk" exists.
-) else (
-    echo "Opera_Browser_O.lnk" does not exist.
+    echo "Opera_Browser_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UltraSearch_A.lnk (
-    echo "UltraSearch_A.lnk" exists.
+    echo "UltraSearch_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UltraSearch_A.lnk" does not exist.
+    echo "UltraSearch_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UltraSearch_R.lnk (
-    echo "UltraSearch_R.lnk" exists.
+    echo "UltraSearch_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UltraSearch_R.lnk" does not exist.
+    echo "UltraSearch_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UltraSearch_O.lnk (
-    echo "UltraSearch_O.lnk" exists.
+    echo "UltraSearch_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UltraSearch_O.lnk" does not exist.
+    echo "UltraSearch_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WireGuard_A.lnk (
-    echo "WireGuard_A.lnk" exists.
+    echo "WireGuard_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WireGuard_A.lnk" does not exist.
+    echo "WireGuard_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WireGuard_R.lnk (
-    echo "WireGuard_R.lnk" exists.
+    echo "WireGuard_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WireGuard_R.lnk" does not exist.
+    echo "WireGuard_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Notepad_A.lnk (
-    echo "Notepad_A.lnk" exists.
+    echo "Notepad_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Notepad_A.lnk" does not exist.
+    echo "Notepad_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Notepad_R.lnk (
-    echo "Notepad_R.lnk" exists.
+    echo "Notepad_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Notepad_R.lnk" does not exist.
+    echo "Notepad_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Notepad++_A.lnk (
-    echo "Notepad++_A.lnk" exists.
+    echo "Notepad++_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Notepad++_A.lnk" does not exist.
+    echo "Notepad++_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Notepad++_R.lnk (
-    echo "Notepad++_R.lnk" exists.
+    echo "Notepad++_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Notepad++_R.lnk" does not exist.
+    echo "Notepad++_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Notepad++_O.lnk (
-    echo "Notepad++_O.lnk" exists.
+    echo "Notepad++_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Notepad++_O.lnk" does not exist.
+    echo "Notepad++_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31695,169 +33278,169 @@ echo InvokeNetwork Shortcut Section
 echo.
 echo.
 if exist GitHub_A.lnk (
-    echo "GitHub_A.lnk" exists.
+    echo "GitHub_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GitHub_A.lnk" does not exist.
+    echo "GitHub_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GitHub_R.lnk (
-    echo "GitHub_R.lnk" exists.
+    echo "GitHub_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GitHub_R.lnk" does not exist.
+    echo "GitHub_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GitHub_Fork_A.lnk (
-    echo "GitHub_Fork_A.lnk" exists.
+    echo "GitHub_Fork_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GitHub_Fork_A.lnk" does not exist.
+    echo "GitHub_Fork_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GitHub_Fork_R.lnk (
-    echo "GitHub_Fork_R.lnk" exists.
+    echo "GitHub_Fork_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GitHub_Fork_R.lnk" does not exist.
+    echo "GitHub_Fork_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitvise_SSH_Client_A.lnk (
-    echo "Bitvise_SSH_Client_A.lnk" exists.
+    echo "Bitvise_SSH_Client_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitvise_SSH_Client_A.lnk" does not exist.
+    echo "Bitvise_SSH_Client_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitvise_SSH_Server_A.lnk (
-    echo "Bitvise_SSH_Server_A.lnk" exists.
+    echo "Bitvise_SSH_Server_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitvise_SSH_Server_A.lnk" does not exist.
+    echo "Bitvise_SSH_Server_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitvise_SSH_Client_R.lnk (
-    echo "Bitvise_SSH_Client_R.lnk" exists.
+    echo "Bitvise_SSH_Client_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitvise_SSH_Client_R.lnk" does not exist.
+    echo "Bitvise_SSH_Client_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitvise_SSH_Server_R.lnk (
-    echo "Bitvise_SSH_Server_R.lnk" exists.
+    echo "Bitvise_SSH_Server_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitvise_SSH_Server_R.lnk" does not exist.
+    echo "Bitvise_SSH_Server_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitvise_SSH_Client_O.lnk (
-    echo "Bitvise_SSH_Client_O.lnk" exists.
+    echo "Bitvise_SSH_Client_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitvise_SSH_Client_O.lnk" does not exist.
+    echo "Bitvise_SSH_Client_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bitvise_SSH_Server_O.lnk (
-    echo "Bitvise_SSH_Server_O.lnk" exists.
+    echo "Bitvise_SSH_Server_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bitvise_SSH_Server_O.lnk" does not exist.
+    echo "Bitvise_SSH_Server_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PuTTY_A.lnk (
-    echo "PuTTY_A.lnk" exists.
+    echo "PuTTY_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PuTTY_A.lnk" does not exist.
+    echo "PuTTY_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PuTTY_R.lnk (
-    echo "PuTTY_R.lnk" exists.
+    echo "PuTTY_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PuTTY_R.lnk" does not exist.
+    echo "PuTTY_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist SecureCRT_A.lnk (
-    echo "SecureCRT_A.lnk" exists.
+    echo "SecureCRT_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "SecureCRT_A.lnk" does not exist.
+    echo "SecureCRT_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist SecureFX_A.lnk (
-    echo "SecureFX_A.lnk" exists.
+    echo "SecureFX_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "SecureFX_A.lnk" does not exist.
+    echo "SecureFX_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist SecureCRT_R.lnk (
-    echo "SecureCRT_R.lnk" exists.
+    echo "SecureCRT_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "SecureCRT_R.lnk" does not exist.
+    echo "SecureCRT_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist SecureFX_R.lnk (
-    echo "SecureFX_R.lnk" exists.
+    echo "SecureFX_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "SecureFX_R.lnk" does not exist.
+    echo "SecureFX_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Xming_A.lnk (
-    echo "Xming_A.lnk" exists.
+    echo "Xming_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Xming_A.lnk" does not exist.
+    echo "Xming_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist XLaunch_A.lnk (
-    echo "XLaunch_A.lnk" exists.
+    echo "XLaunch_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "XLaunch_A.lnk" does not exist.
+    echo "XLaunch_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Xming_R.lnk (
-    echo "Xming_R.lnk" exists.
+    echo "Xming_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Xming_R.lnk" does not exist.
+    echo "Xming_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist XLaunch_R.lnk (
-    echo "XLaunch_R.lnk" exists.
+    echo "XLaunch_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "XLaunch_R.lnk" does not exist.
+    echo "XLaunch_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Xming_O.lnk (
-    echo "Xming_O.lnk" exists.
+    echo "Xming_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Xming_O.lnk" does not exist.
+    echo "Xming_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Wireshark_A.lnk (
-    echo "Wireshark_A.lnk" exists.
+    echo "Wireshark_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Wireshark_A.lnk" does not exist.
+    echo "Wireshark_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Wireshark_R.lnk (
-    echo "Wireshark_R.lnk" exists.
+    echo "Wireshark_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Wireshark_R.lnk" does not exist.
+    echo "Wireshark_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Wireshark_O.lnk (
-    echo "Wireshark_O.lnk" exists.
+    echo "Wireshark_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Wireshark_O.lnk" does not exist.
+    echo "Wireshark_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TraceX_HWID_Spoofer_R.lnk (
-    echo "TraceX_HWID_Spoofer_R" exists.
+    echo "TraceX_HWID_Spoofer_R" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TraceX_HWID_Spoofer_R" does not exist.
+    echo "TraceX_HWID_Spoofer_R" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Freegate_IP_Spoofer_A.lnk (
-    echo "Freegate_IP_Spoofer_A" exists.
+    echo "Freegate_IP_Spoofer_A" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Freegate_IP_Spoofer_A" does not exist.
+    echo "Freegate_IP_Spoofer_A" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Freegate_IP_Spoofer_R.lnk (
-    echo "Freegate_IP_Spoofer_R" exists.
+    echo "Freegate_IP_Spoofer_R" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Freegate_IP_Spoofer_R" does not exist.
+    echo "Freegate_IP_Spoofer_R" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Technitium_DNS_Server_A.lnk (
-    echo "Technitium_DNS_Server_A" exists.
+    echo "Technitium_DNS_Server_A" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Technitium_DNS_Server_A" does not exist.
+    echo "Technitium_DNS_Server_A" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Technitium_DNS_Server_R.lnk (
-    echo "Technitium_DNS_Server_R" exists.
+    echo "Technitium_DNS_Server_R" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Technitium_DNS_Server_R" does not exist.
+    echo "Technitium_DNS_Server_R" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Technitium_Mesh_P2P_Messager_R.lnk (
-    echo "Technitium_Mesh_P2P_Messager_A" exists.
+    echo "Technitium_Mesh_P2P_Messager_A" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Technitium_Mesh_P2P_Messager_A" does not exist.
+    echo "Technitium_Mesh_P2P_Messager_A" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Technitium_Mesh_P2P_Messager_R.lnk (
-    echo "Technitium_Mesh_P2P_Messager_R" exists.
+    echo "Technitium_Mesh_P2P_Messager_R" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Technitium_Mesh_P2P_Messager_R" does not exist.
+    echo "Technitium_Mesh_P2P_Messager_R" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Technitium_MAC_Spoofer_A.lnk (
-    echo "Technitium_MAC_Spoofer_A" exists.
+    echo "Technitium_MAC_Spoofer_A" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Technitium_MAC_Spoofer_A" does not exist.
+    echo "Technitium_MAC_Spoofer_A" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Technitium_MAC_Spoofer_R.lnk (
-    echo "Technitium_MAC_Spoofer_R" exists.
+    echo "Technitium_MAC_Spoofer_R" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Technitium_MAC_Spoofer_R" does not exist.
+    echo "Technitium_MAC_Spoofer_R" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31865,129 +33448,129 @@ echo InvokeInternetTools Shortcut Section
 echo.
 echo.
 if exist Internet_Download_Manager_A.lnk (
-    echo "Internet_Download_Manager_A.lnk" exists.
+    echo "Internet_Download_Manager_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Internet_Download_Manager_A.lnk" does not exist.
+    echo "Internet_Download_Manager_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Internet_Download_Manager_R.lnk (
-    echo "Internet_Download_Manager_R.lnk" exists.
+    echo "Internet_Download_Manager_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Internet_Download_Manager_R.lnk" does not exist.
+    echo "Internet_Download_Manager_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Internet_Download_Manager_O.lnk (
-    echo "Internet_Download_Manager_O.lnk" exists.
+    echo "Internet_Download_Manager_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Internet_Download_Manager_O.lnk" does not exist.
+    echo "Internet_Download_Manager_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Tor_Browser_A.lnk (
-    echo "Tor_Browser_A.lnk" exists.
+    echo "Tor_Browser_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Tor_Browser_A.lnk" does not exist.
+    echo "Tor_Browser_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Tor_Browser_R.lnk (
-    echo "Tor_Browser_R.lnk" exists.
+    echo "Tor_Browser_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Tor_Browser_R.lnk" does not exist.
+    echo "Tor_Browser_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mullvad_Browser_A.lnk (
-    echo "Mullvad_Browser_A.lnk" exists.
+    echo "Mullvad_Browser_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mullvad_Browser_A.lnk" does not exist.
+    echo "Mullvad_Browser_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mullvad_Browser_R.lnk (
-    echo "Mullvad_Browser_R.lnk" exists.
+    echo "Mullvad_Browser_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mullvad_Browser_R.lnk" does not exist.
+    echo "Mullvad_Browser_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mullvad_Browser_O.lnk (
-    echo "Mullvad_Browser_O.lnk" exists.
+    echo "Mullvad_Browser_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mullvad_Browser_O.lnk" does not exist.
+    echo "Mullvad_Browser_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist LibreWolf_Browser_A.lnk (
-    echo "LibreWolf_Browser_A.lnk" exists.
+    echo "LibreWolf_Browser_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "LibreWolf_Browser_A.lnk" does not exist.
+    echo "LibreWolf_Browser_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist LibreWolf_Browser_R.lnk (
-    echo "LibreWolf_Browser_R.lnk" exists.
+    echo "LibreWolf_Browser_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "LibreWolf_Browser_R.lnk" does not exist.
+    echo "LibreWolf_Browser_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist LibreWolf_Browser_O.lnk (
-    echo "LibreWolf_Browser_O.lnk" exists.
+    echo "LibreWolf_Browser_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "LibreWolf_Browser_O.lnk" does not exist.
+    echo "LibreWolf_Browser_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Firefox_Browser_A.lnk (
-    echo "Firefox_Browser_A.lnk" exists.
+    echo "Firefox_Browser_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Firefox_Browser_A.lnk" does not exist.
+    echo "Firefox_Browser_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Firefox_Browser_R.lnk (
-    echo "Firefox_Browser_R.lnk" exists.
+    echo "Firefox_Browser_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Firefox_Browser_R.lnk" does not exist.
+    echo "Firefox_Browser_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Brave_Browser_A.lnk (
-    echo "Brave_Browser_A.lnk" exists.
+    echo "Brave_Browser_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Brave_Browser_A.lnk" does not exist.
+    echo "Brave_Browser_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Brave_Browser_R.lnk (
-    echo "Brave_Browser_R.lnk" exists.
+    echo "Brave_Browser_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Brave_Browser_R.lnk" does not exist.
+    echo "Brave_Browser_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Edge_Browser_A.lnk (
-    echo "Edge_Browser_A.lnk" exists.
+    echo "Edge_Browser_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Edge_Browser_A.lnk" does not exist.
+    echo "Edge_Browser_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Edge_Browser_R.lnk (
-    echo "Edge_Browser_R.lnk" exists.
+    echo "Edge_Browser_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Edge_Browser_R.lnk" does not exist.
+    echo "Edge_Browser_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Chrome_Browser_A.lnk (
-    echo "Chrome_Browser_A.lnk" exists.
+    echo "Chrome_Browser_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Chrome_Browser_A.lnk" does not exist.
+    echo "Chrome_Browser_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Chrome_Browser_R.lnk (
-    echo "Chrome_Browser_R.lnk" exists.
+    echo "Chrome_Browser_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Chrome_Browser_R.lnk" does not exist.
+    echo "Chrome_Browser_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Google_Earth_Pro_A.lnk (
-    echo "Google_Earth_Pro_A.lnk" exists.
+    echo "Google_Earth_Pro_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Google_Earth_Pro_A.lnk" does not exist.
+    echo "Google_Earth_Pro_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Google_Earth_Pro_R.lnk (
-    echo "Google_Earth_Pro_R.lnk" exists.
+    echo "Google_Earth_Pro_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Google_Earth_Pro_R.lnk" does not exist.
+    echo "Google_Earth_Pro_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Google_Earth_Pro_O.lnk (
-    echo "Google_Earth_Pro_O.lnk" exists.
+    echo "Google_Earth_Pro_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Google_Earth_Pro_O.lnk" does not exist.
+    echo "Google_Earth_Pro_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist qBittorrent_A.lnk (
-    echo "qBittorrent_A.lnk" exists.
+    echo "qBittorrent_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "qBittorrent_A.lnk" does not exist.
+    echo "qBittorrent_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist qBittorrent_R.lnk (
-    echo "qBittorrent_R.lnk" exists.
+    echo "qBittorrent_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "qBittorrent_R.lnk" does not exist.
+    echo "qBittorrent_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist qBittorrent_O.lnk (
-    echo "qBittorrent_O.lnk" exists.
+    echo "qBittorrent_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "qBittorrent_O.lnk" does not exist.
+    echo "qBittorrent_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -31995,134 +33578,134 @@ echo InvokeMicrosoft Shortcut Section
 echo.
 echo.
 if exist Visual_Studio_A.lnk (
-    echo "Visual_Studio_A.lnk" exists.
+    echo "Visual_Studio_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Visual_Studio_A.lnk" does not exist.
+    echo "Visual_Studio_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Visual_Studio_R.lnk (
-    echo "Visual_Studio_R.lnk" exists.
+    echo "Visual_Studio_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Visual_Studio_R.lnk" does not exist.
+    echo "Visual_Studio_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Visual_Studio_S.lnk (
-    echo "Visual_Studio_S.lnk" exists.
+    echo "Visual_Studio_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Visual_Studio_S.lnk" does not exist.
+    echo "Visual_Studio_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Visual_Studio_Code_A.lnk (
-    echo "Visual_Studio_Code_A.lnk" exists.
+    echo "Visual_Studio_Code_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Visual_Studio_Code_A.lnk" does not exist.
+    echo "Visual_Studio_Code_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Visual_Studio_Code_R.lnk (
-    echo "Visual_Studio_Code_R.lnk" exists.
+    echo "Visual_Studio_Code_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Visual_Studio_Code_R.lnk" does not exist.
+    echo "Visual_Studio_Code_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Visual_Studio_Code_O.lnk (
-    echo "Visual_Studio_Code_O.lnk" exists.
+    echo "Visual_Studio_Code_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Visual_Studio_Code_O.lnk" does not exist.
+    echo "Visual_Studio_Code_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Word_A.lnk (
-    echo "Word_A.lnk" exists.
+    echo "Word_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Word_A.lnk" does not exist.
+    echo "Word_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Word_R.lnk (
-    echo "Word_R.lnk" exists.
+    echo "Word_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Word_R.lnk" does not exist.
+    echo "Word_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerPoint_A.lnk (
-    echo "PowerPoint_A.lnk" exists.
+    echo "PowerPoint_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerPoint_A.lnk" does not exist.
+    echo "PowerPoint_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerPoint_R.lnk (
-    echo "PowerPoint_R.lnk" exists.
+    echo "PowerPoint_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerPoint_R.lnk" does not exist.
+    echo "PowerPoint_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Excel_A.lnk (
-    echo "Excel_A.lnk" exists.
+    echo "Excel_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Excel_A.lnk" does not exist.
+    echo "Excel_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Excel_R.lnk (
-    echo "Excel_R.lnk" exists.
+    echo "Excel_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Excel_R.lnk" does not exist.
+    echo "Excel_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Access_A.lnk (
-    echo "Access_A.lnk" exists.
+    echo "Access_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Access_A.lnk" does not exist.
+    echo "Access_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Access_R.lnk (
-    echo "Access_R.lnk" exists.
+    echo "Access_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Access_R.lnk" does not exist.
+    echo "Access_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Publisher_A.lnk (
-    echo "Publisher_A.lnk" exists.
+    echo "Publisher_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Publisher_A.lnk" does not exist.
+    echo "Publisher_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Publisher_R.lnk (
-    echo "Publisher_R.lnk" exists.
+    echo "Publisher_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Publisher_R.lnk" does not exist.
+    echo "Publisher_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist OneNote_A.lnk (
-    echo "OneNote_A.lnk" exists.
+    echo "OneNote_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OneNote_A.lnk" does not exist.
+    echo "OneNote_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist OneNote_R.lnk (
-    echo "OneNote_R.lnk" exists.
+    echo "OneNote_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OneNote_R.lnk" does not exist.
+    echo "OneNote_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist OneDrive_A.lnk (
-    echo "OneDrive_A.lnk" exists.
+    echo "OneDrive_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OneDrive_A.lnk" does not exist.
+    echo "OneDrive_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerBI_A.lnk (
-    echo "PowerBI_A.lnk" exists.
+    echo "PowerBI_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerBI_A.lnk" does not exist.
+    echo "PowerBI_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerBI_R.lnk (
-    echo "PowerBI_R.lnk" exists.
+    echo "PowerBI_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerBI_R.lnk" does not exist.
+    echo "PowerBI_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist OneDrive_R.lnk (
-    echo "OneDrive_R.lnk" exists.
+    echo "OneDrive_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OneDrive_R.lnk" does not exist.
+    echo "OneDrive_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Outlook_A.lnk (
-    echo "Outlook_A.lnk" exists.
+    echo "Outlook_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Outlook_A.lnk" does not exist.
+    echo "Outlook_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Outlook_R.lnk (
-    echo "Outlook_R.lnk" exists.
+    echo "Outlook_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Outlook_R.lnk" does not exist.
+    echo "Outlook_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Teams_A.lnk (
-    echo "Teams_A.lnk" exists.
+    echo "Teams_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Teams_A.lnk" does not exist.
+    echo "Teams_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Teams_R.lnk (
-    echo "Teams_R.lnk" exists.
+    echo "Teams_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Teams_R.lnk" does not exist.
+    echo "Teams_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -32130,119 +33713,119 @@ echo InvokeCoding Shortcut Section
 echo.
 echo.
 if exist 010_Editor_A.lnk (
-    echo "010_Editor_A.lnk" exists.
+    echo "010_Editor_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "010_Editor_A.lnk" does not exist.
+    echo "010_Editor_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist 010_Editor_R.lnk (
-    echo "010_Editor_R.lnk" exists.
+    echo "010_Editor_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "010_Editor_R.lnk" does not exist.
+    echo "010_Editor_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist 010_Editor_O.lnk (
-    echo "010_Editor_O.lnk" exists.
+    echo "010_Editor_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "010_Editor_O.lnk" does not exist.
+    echo "010_Editor_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MATLAB_A.lnk (
-    echo "MATLAB_A.lnk" exists.
+    echo "MATLAB_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MATLAB_A.lnk" does not exist.
+    echo "MATLAB_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MATLAB_R.lnk (
-    echo "MATLAB_R.lnk" exists.
+    echo "MATLAB_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MATLAB_R.lnk" does not exist.
+    echo "MATLAB_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GUI_Octave_A.lnk (
-    echo "GUI_Octave_A.lnk" exists.
+    echo "GUI_Octave_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GUI_Octave_A.lnk" does not exist.
+    echo "GUI_Octave_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GUI_Octave_R.lnk (
-    echo "GUI_Octave_R.lnk" exists.
+    echo "GUI_Octave_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GUI_Octave_R.lnk" does not exist.
+    echo "GUI_Octave_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CLI_Octave_A.lnk (
-    echo "CLI_Octave_A.lnk" exists.
+    echo "CLI_Octave_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CLI_Octave_A.lnk" does not exist.
+    echo "CLI_Octave_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CLI_Octave_R.lnk (
-    echo "CLI_Octave_R.lnk" exists.
+    echo "CLI_Octave_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CLI_Octave_R.lnk" does not exist.
+    echo "CLI_Octave_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Octave_O.lnk (
-    echo "Octave_O.lnk" exists.
+    echo "Octave_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Octave_O.lnk" does not exist.
+    echo "Octave_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Metasploit_A.lnk (
-    echo "Metasploit_A.lnk" exists.
+    echo "Metasploit_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Metasploit_A.lnk" does not exist.
+    echo "Metasploit_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Metasploit_R.lnk (
-    echo "Metasploit_R.lnk" exists.
+    echo "Metasploit_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Metasploit_R.lnk" does not exist.
+    echo "Metasploit_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Metasploit_O.lnk (
-    echo "Metasploit_O.lnk" exists.
+    echo "Metasploit_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Metasploit_O.lnk" does not exist.
+    echo "Metasploit_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cygwin_A.lnk (
-    echo "Cygwin_A.lnk" exists.
+    echo "Cygwin_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cygwin_A.lnk" does not exist.
+    echo "Cygwin_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cygwin_R.lnk (
-    echo "Cygwin_R.lnk" exists.
+    echo "Cygwin_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cygwin_R.lnk" does not exist.
+    echo "Cygwin_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cygwin_O.lnk (
-    echo "Cygwin_O.lnk" exists.
+    echo "Cygwin_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cygwin_O.lnk" does not exist.
+    echo "Cygwin_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Python_A.lnk (
-    echo "Python_A.lnk" exists.
+    echo "Python_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Python_A.lnk" does not exist.
+    echo "Python_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Python_R.lnk (
-    echo "Python_R.lnk" exists.
+    echo "Python_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Python_R.lnk" does not exist.
+    echo "Python_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerShell_A.lnk (
-    echo "PowerShell_A.lnk" exists.
+    echo "PowerShell_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerShell_A.lnk" does not exist.
+    echo "PowerShell_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerShell_R.lnk (
-    echo "PowerShell_R.lnk" exists.
+    echo "PowerShell_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerShell_R.lnk" does not exist.
+    echo "PowerShell_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Command_Prompt_A.lnk (
-    echo "Command_Prompt_A.lnk" exists.
+    echo "Command_Prompt_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Command_Prompt_A.lnk" does not exist.
+    echo "Command_Prompt_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Command_Prompt_R.lnk (
-    echo "Command_Prompt_R.lnk" exists.
+    echo "Command_Prompt_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Command_Prompt_R.lnk" does not exist.
+    echo "Command_Prompt_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CLI_Directory.txt (
-    echo "CLI_Directory.txt" exists.
+    echo "CLI_Directory.txt" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CLI_Directory.txt" does not exist.
+    echo "CLI_Directory.txt" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -32250,224 +33833,224 @@ echo InvokeJetBrains Shortcut Section
 echo.
 echo.
 if exist Rider_A.lnk (
-    echo "Rider_A.lnk" exists.
+    echo "Rider_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rider_A.lnk" does not exist.
+    echo "Rider_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Rider_R.lnk (
-    echo "Rider_R.lnk" exists.
+    echo "Rider_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rider_R.lnk" does not exist.
+    echo "Rider_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist RustRover_A.lnk (
-    echo "RustRover_A.lnk" exists.
+    echo "RustRover_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "RustRover_A.lnk" does not exist.
+    echo "RustRover_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist RustRover_R.lnk (
-    echo "RustRover_R.lnk" exists.
+    echo "RustRover_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "RustRover_R.lnk" does not exist.
+    echo "RustRover_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WebStorm_A.lnk (
-    echo "WebStorm_A.lnk" exists.
+    echo "WebStorm_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WebStorm_A.lnk" does not exist.
+    echo "WebStorm_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WebStorm_R.lnk (
-    echo "WebStorm_R.lnk" exists.
+    echo "WebStorm_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WebStorm_R.lnk" does not exist.
+    echo "WebStorm_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotPeek_A.lnk (
-    echo "dotPeek_A.lnk" exists.
+    echo "dotPeek_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotPeek_A.lnk" does not exist.
+    echo "dotPeek_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotPeek_R.lnk (
-    echo "dotPeek_R.lnk" exists.
+    echo "dotPeek_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotPeek_R.lnk" does not exist.
+    echo "dotPeek_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotCover_A.lnk (
-    echo "dotCover_A.lnk" exists.
+    echo "dotCover_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotCover_A.lnk" does not exist.
+    echo "dotCover_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotCover_R.lnk (
-    echo "dotCover_R.lnk" exists.
+    echo "dotCover_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotCover_R.lnk" does not exist.
+    echo "dotCover_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotMemory_A.lnk (
-    echo "dotMemory_A.lnk" exists.
+    echo "dotMemory_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotMemory_A.lnk" does not exist.
+    echo "dotMemory_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotMemory_R.lnk (
-    echo "dotMemory_R.lnk" exists.
+    echo "dotMemory_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotMemory_R.lnk" does not exist.
+    echo "dotMemory_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotTrace_A.lnk (
-    echo "dotTrace_A.lnk" exists.
+    echo "dotTrace_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotTrace_A.lnk" does not exist.
+    echo "dotTrace_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dotTrace_R.lnk (
-    echo "dotTrace_R.lnk" exists.
+    echo "dotTrace_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dotTrace_R.lnk" does not exist.
+    echo "dotTrace_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Aqua_A.lnk (
-    echo "Aqua_A.lnk" exists.
+    echo "Aqua_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Aqua_A.lnk" does not exist.
+    echo "Aqua_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Aqua_R.lnk (
-    echo "Aqua_R.lnk" exists.
+    echo "Aqua_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Aqua_R.lnk" does not exist.
+    echo "Aqua_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ReSharper_A.lnk (
-    echo "ReSharper_A.lnk" exists.
+    echo "ReSharper_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ReSharper_A.lnk" does not exist.
+    echo "ReSharper_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ReSharper_R.lnk (
-    echo "ReSharper_R.lnk" exists.
+    echo "ReSharper_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ReSharper_R.lnk" does not exist.
+    echo "ReSharper_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Resharper_Cpp_A.lnk (
-    echo "ReSharper_Cpp_A.lnk" exists.
+    echo "ReSharper_Cpp_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ReSharper_Cpp_A.lnk" does not exist.
+    echo "ReSharper_Cpp_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Resharper_Cpp_R.lnk (
-    echo "ReSharper_Cpp_R.lnk" exists.
+    echo "ReSharper_Cpp_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ReSharper_Cpp_R.lnk" does not exist.
+    echo "ReSharper_Cpp_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CLion_A.lnk (
-    echo "CLion_A.lnk" exists.
+    echo "CLion_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CLion_A.lnk" does not exist.
+    echo "CLion_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CLion_R.lnk (
-    echo "CLion_R.lnk" exists.
+    echo "CLion_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CLion_R.lnk" does not exist.
+    echo "CLion_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DataGrip_A.lnk (
-    echo "DataGrip_A.lnk" exists.
+    echo "DataGrip_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DataGrip_A.lnk" does not exist.
+    echo "DataGrip_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DataGrip_R.lnk (
-    echo "DataGrip_R.lnk" exists.
+    echo "DataGrip_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DataGrip_R.lnk" does not exist.
+    echo "DataGrip_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DataSpell_A.lnk (
-    echo "DataSpell_A.lnk" exists.
+    echo "DataSpell_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DataSpell_A.lnk" does not exist.
+    echo "DataSpell_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DataSpell_R.lnk (
-    echo "DataSpell_R.lnk" exists.
+    echo "DataSpell_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DataSpell_R.lnk" does not exist.
+    echo "DataSpell_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PyCharm_A.lnk (
-    echo "PyCharm_A.lnk" exists.
+    echo "PyCharm_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PyCharm_A.lnk" does not exist.
+    echo "PyCharm_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PyCharm_R.lnk (
-    echo "PyCharm_R.lnk" exists.
+    echo "PyCharm_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PyCharm_R.lnk" does not exist.
+    echo "PyCharm_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IntelliJIDEA_A.lnk (
-    echo "IntelliJIDEA_A.lnk" exists.
+    echo "IntelliJIDEA_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IntelliJIDEA_A.lnk" does not exist.
+    echo "IntelliJIDEA_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IntelliJIDEA_R.lnk (
-    echo "IntelliJIDEA_R.lnk" exists.
+    echo "IntelliJIDEA_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IntelliJIDEA_R.lnk" does not exist.
+    echo "IntelliJIDEA_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PhpStorm_A.lnk (
-    echo "PhpStorm_A.lnk" exists.
+    echo "PhpStorm_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PhpStorm_A.lnk" does not exist.
+    echo "PhpStorm_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PhpStorm_R.lnk (
-    echo "PhpStorm_R.lnk" exists.
+    echo "PhpStorm_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PhpStorm_R.lnk" does not exist.
+    echo "PhpStorm_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GoLand_A.lnk (
-    echo "GoLand_A.lnk" exists.
+    echo "GoLand_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GoLand_A.lnk" does not exist.
+    echo "GoLand_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GoLand_R.lnk (
-    echo "GoLand_R.lnk" exists.
+    echo "GoLand_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GoLand_R.lnk" does not exist.
+    echo "GoLand_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist RubyMine_A.lnk (
-    echo "RubyMine_A.lnk" exists.
+    echo "RubyMine_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "RubyMine_A.lnk" does not exist.
+    echo "RubyMine_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist RubyMine_R.lnk (
-    echo "RubyMine_R.lnk" exists.
+    echo "RubyMine_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "RubyMine_R.lnk" does not exist.
+    echo "RubyMine_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Gateway_A.lnk (
-    echo "Gateway_A.lnk" exists.
+    echo "Gateway_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Gateway_A.lnk" does not exist.
+    echo "Gateway_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Gateway_R.lnk (
-    echo "Gateway_R.lnk" exists.
+    echo "Gateway_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Gateway_R.lnk" does not exist.
+    echo "Gateway_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MetaProgrammingSystem_A.lnk (
-    echo "MetaProgrammingSystem_A.lnk" exists.
+    echo "MetaProgrammingSystem_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MetaProgrammingSystem_A.lnk" does not exist.
+    echo "MetaProgrammingSystem_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist MetaProgrammingSystem_R.lnk (
-    echo "MetaProgrammingSystem_R.lnk" exists.
+    echo "MetaProgrammingSystem_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "MetaProgrammingSystem_R.lnk" does not exist.
+    echo "MetaProgrammingSystem_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Toolbox_A.lnk (
-    echo "Toolbox_A.lnk" exists.
+    echo "Toolbox_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Toolbox_A.lnk" does not exist.
+    echo "Toolbox_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Toolbox_R.lnk (
-    echo "Toolbox_R.lnk" exists.
+    echo "Toolbox_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Toolbox_R.lnk" does not exist.
+    echo "Toolbox_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Writerside_A.lnk (
-    echo "Writerside_A.lnk" exists.
+    echo "Writerside_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Writerside_A.lnk" does not exist.
+    echo "Writerside_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Writerside_R.lnk (
-    echo "Writerside_R.lnk" exists.
+    echo "Writerside_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Writerside_R.lnk" does not exist.
+    echo "Writerside_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -32475,129 +34058,129 @@ echo InvokeSandbox Shortcut Section
 echo.
 echo.
 if exist VMware_Workstation_A.lnk (
-    echo "VMware_Workstation_A.lnk" exists.
+    echo "VMware_Workstation_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "VMware_Workstation_A.lnk" does not exist.
+    echo "VMware_Workstation_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist VMware_Workstation_R.lnk (
-    echo "VMware_Workstation_R.lnk" exists.
+    echo "VMware_Workstation_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "VMware_Workstation_R.lnk" does not exist.
+    echo "VMware_Workstation_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Docker_Desktop_A.lnk (
-    echo "Docker_Desktop_A.lnk" exists.
+    echo "Docker_Desktop_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Docker_Desktop_A.lnk" does not exist.
+    echo "Docker_Desktop_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Docker_Desktop_R.lnk (
-    echo "Docker_Desktop_R.lnk" exists.
+    echo "Docker_Desktop_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Docker_Desktop_R.lnk" does not exist.
+    echo "Docker_Desktop_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Docker_Desktop_O.lnk (
-    echo "Docker_Desktop_O.lnk" exists.
+    echo "Docker_Desktop_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Docker_Desktop_O.lnk" does not exist.
+    echo "Docker_Desktop_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Amiga_Forever_A.lnk (
-    echo "Amiga_Forever_A.lnk" exists.
+    echo "Amiga_Forever_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Amiga_Forever_A.lnk" does not exist.
+    echo "Amiga_Forever_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Amiga_Forever_R.lnk (
-    echo "Amiga_Forever_R.lnk" exists.
+    echo "Amiga_Forever_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Amiga_Forever_R.lnk" does not exist.
+    echo "Amiga_Forever_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Pure_Data_A.lnk (
-    echo "Pure_Data_A.lnk" exists.
+    echo "Pure_Data_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Pure_Data_A.lnk" does not exist.
+    echo "Pure_Data_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Pure_Data_R.lnk (
-    echo "Pure_Data_R.lnk" exists.
+    echo "Pure_Data_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Pure_Data_R.lnk" does not exist.
+    echo "Pure_Data_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Pure_Data_O.lnk (
-    echo "Pure_Data_O.lnk" exists.
+    echo "Pure_Data_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Pure_Data_O.lnk" does not exist.
+    echo "Pure_Data_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CRYENGINE_Launcher_A.lnk (
-    echo "CRYENGINE_Launcher_A.lnk" exists.
+    echo "CRYENGINE_Launcher_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CRYENGINE_Launcher_A.lnk" does not exist.
+    echo "CRYENGINE_Launcher_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CRYENGINE_Launcher_R.lnk (
-    echo "CRYENGINE_Launcher_R.lnk" exists.
+    echo "CRYENGINE_Launcher_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CRYENGINE_Launcher_R.lnk" does not exist.
+    echo "CRYENGINE_Launcher_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CRYENGINE_Launcher_O.lnk (
-    echo "CRYENGINE_Launcher_O.lnk" exists.
+    echo "CRYENGINE_Launcher_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CRYENGINE_Launcher_O.lnk" does not exist.
+    echo "CRYENGINE_Launcher_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Unity_Hub_A.lnk (
-    echo "Unity_Hub_A.lnk" exists.
+    echo "Unity_Hub_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Unity_Hub_A.lnk" does not exist.
+    echo "Unity_Hub_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Unity_Hub_R.lnk (
-    echo "Unity_Hub_R.lnk" exists.
+    echo "Unity_Hub_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Unity_Hub_R.lnk" does not exist.
+    echo "Unity_Hub_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Unity_Hub_O.lnk (
-    echo "Unity_Hub_O.lnk" exists.
+    echo "Unity_Hub_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Unity_Hub_O.lnk" does not exist.
+    echo "Unity_Hub_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Godot_A.lnk (
-    echo "Godot_A.lnk" exists.
+    echo "Godot_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Godot_A.lnk" does not exist.
+    echo "Godot_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Godot_R.lnk (
-    echo "Godot_R.lnk" exists.
+    echo "Godot_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Godot_R.lnk" does not exist.
+    echo "Godot_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Slic3r_A.lnk (
-    echo "Slic3r_A.lnk" exists.
+    echo "Slic3r_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Slic3r_A.lnk" does not exist.
+    echo "Slic3r_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Slic3r_R.lnk (
-    echo "Slic3r_R.lnk" exists.
+    echo "Slic3r_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Slic3r_R.lnk" does not exist.
+    echo "Slic3r_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PrusaSlicer_A.lnk (
-    echo "PrusaSlicer_A.lnk" exists.
+    echo "PrusaSlicer_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PrusaSlicer_A.lnk" does not exist.
+    echo "PrusaSlicer_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PrusaSlicer_R.lnk (
-    echo "PrusaSlicer_R.lnk" exists.
+    echo "PrusaSlicer_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PrusaSlicer_R.lnk" does not exist.
+    echo "PrusaSlicer_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Prusa_G-code_Viewer_A.lnk (
-    echo "Prusa_G-code_Viewer_A.lnk" exists.
+    echo "Prusa_G-code_Viewer_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Prusa_G-code_Viewer_A.lnk" does not exist.
+    echo "Prusa_G-code_Viewer_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Prusa_G-code_Viewer_R.lnk (
-    echo "Prusa_G-code_Viewer_R.lnk" exists.
+    echo "Prusa_G-code_Viewer_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Prusa_G-code_Viewer_R.lnk" does not exist.
+    echo "Prusa_G-code_Viewer_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Prusa_O.lnk (
-    echo "Prusa_O.lnk" exists.
+    echo "Prusa_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Prusa_O.lnk" does not exist.
+    echo "Prusa_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -32605,139 +34188,139 @@ echo InvokeAutodeskFavorites Shortcut Section
 echo.
 echo.
 if exist AutoCAD_A.lnk (
-    echo "AutoCAD_A.lnk" exists.
+    echo "AutoCAD_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_A.lnk" does not exist.
+    echo "AutoCAD_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_R.lnk (
-    echo "AutoCAD_R.lnk" exists.
+    echo "AutoCAD_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_R.lnk" does not exist.
+    echo "AutoCAD_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_S.lnk (
-    echo "AutoCAD_S.lnk" exists.
+    echo "AutoCAD_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_S.lnk" does not exist.
+    echo "AutoCAD_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_Electrical_A.lnk (
-    echo "AutoCAD_Electrical_A.lnk" exists.
+    echo "AutoCAD_Electrical_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_Electrical_A.lnk" does not exist.
+    echo "AutoCAD_Electrical_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_Electrical_R.lnk (
-    echo "AutoCAD_Electrical_R.lnk" exists.
+    echo "AutoCAD_Electrical_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_Electrical_R.lnk" does not exist.
+    echo "AutoCAD_Electrical_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_Electrical_S.lnk (
-    echo "AutoCAD_Electrical_S.lnk" exists.
+    echo "AutoCAD_Electrical_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_Electrical_S.lnk" does not exist.
+    echo "AutoCAD_Electrical_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_Mechanical_A.lnk (
-    echo "AutoCAD_Mechanical_A.lnk" exists.
+    echo "AutoCAD_Mechanical_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_Mechanical_A.lnk" does not exist.
+    echo "AutoCAD_Mechanical_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_Mechanical_R.lnk (
-    echo "AutoCAD_Mechanical_R.lnk" exists.
+    echo "AutoCAD_Mechanical_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_Mechanical_R.lnk" does not exist.
+    echo "AutoCAD_Mechanical_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoCAD_Mechanical_S.lnk (
-    echo "AutoCAD_Mechanical_S.lnk" exists.
+    echo "AutoCAD_Mechanical_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoCAD_Mechanical_S.lnk" does not exist.
+    echo "AutoCAD_Mechanical_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Solidworks_3D_CAD_Design_A.lnk (
-    echo "Solidworks_3D_CAD_Design_A.lnk" exists.
+    echo "Solidworks_3D_CAD_Design_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Solidworks_3D_CAD_Design_A.lnk" does not exist.
+    echo "Solidworks_3D_CAD_Design_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Solidworks_3D_CAD_Design_R.lnk (
-    echo "Solidworks_3D_CAD_Design_R.lnk" exists.
+    echo "Solidworks_3D_CAD_Design_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Solidworks_3D_CAD_Design_R.lnk" does not exist.
+    echo "Solidworks_3D_CAD_Design_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Solidworks_3D_CAD_Design_S.lnk (
-    echo "Solidworks_3D_CAD_Design_S.lnk" exists.
+    echo "Solidworks_3D_CAD_Design_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Solidworks_3D_CAD_Design_S.lnk" does not exist.
+    echo "Solidworks_3D_CAD_Design_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Fusion_360_A.lnk (
-    echo "Fusion_360_A.lnk" exists.
+    echo "Fusion_360_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Fusion_360_A.lnk" does not exist.
+    echo "Fusion_360_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Fusion_360_R.lnk (
-    echo "Fusion_360_R.lnk" exists.
+    echo "Fusion_360_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Fusion_360_R.lnk" does not exist.
+    echo "Fusion_360_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Fusion_360_S.lnk (
-    echo "Fusion_360_S.lnk" exists.
+    echo "Fusion_360_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Fusion_360_S.lnk" does not exist.
+    echo "Fusion_360_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_Civil_3D_A.lnk (
-    echo "Autodesk_Civil_3D_A.lnk" exists.
+    echo "Autodesk_Civil_3D_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_Civil_3D_A.lnk" does not exist.
+    echo "Autodesk_Civil_3D_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_Civil_3D_R.lnk (
-    echo "Autodesk_Civil_3D_R.lnk" exists.
+    echo "Autodesk_Civil_3D_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_Civil_3D_R.lnk" does not exist.
+    echo "Autodesk_Civil_3D_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_Civil_3D_S.lnk (
-    echo "Autodesk_Civil_3D_S.lnk" exists.
+    echo "Autodesk_Civil_3D_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_Civil_3D_S.lnk" does not exist.
+    echo "Autodesk_Civil_3D_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_FeatureCAM_A.lnk (
-    echo "Autodesk_FeatureCAM_A.lnk" exists.
+    echo "Autodesk_FeatureCAM_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_FeatureCAM_A.lnk" does not exist.
+    echo "Autodesk_FeatureCAM_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_FeatureCAM_R.lnk (
-    echo "Autodesk_FeatureCAM_R.lnk" exists.
+    echo "Autodesk_FeatureCAM_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_FeatureCAM_R.lnk" does not exist.
+    echo "Autodesk_FeatureCAM_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_FeatureCAM_S.lnk (
-    echo "Autodesk_FeatureCAM_S.lnk" exists.
+    echo "Autodesk_FeatureCAM_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_FeatureCAM_S.lnk" does not exist.
+    echo "Autodesk_FeatureCAM_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_Maya_A.lnk (
-    echo "Autodesk_Maya_A.lnk" exists.
+    echo "Autodesk_Maya_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_Maya_A.lnk" does not exist.
+    echo "Autodesk_Maya_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_Maya_R.lnk (
-    echo "Autodesk_Maya_R.lnk" exists.
+    echo "Autodesk_Maya_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_Maya_R.lnk" does not exist.
+    echo "Autodesk_Maya_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Autodesk_Maya_S.lnk (
-    echo "Autodesk_Maya_S.lnk" exists.
+    echo "Autodesk_Maya_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Autodesk_Maya_S.lnk" does not exist.
+    echo "Autodesk_Maya_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Tekla_Structures_A.lnk (
-    echo "Tekla_Structures_A.lnk" exists.
+    echo "Tekla_Structures_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Tekla_Structures_A.lnk" does not exist.
+    echo "Tekla_Structures_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Tekla_Structures_R.lnk (
-    echo "Tekla_Structures_R.lnk" exists.
+    echo "Tekla_Structures_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Tekla_Structures_R.lnk" does not exist.
+    echo "Tekla_Structures_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Tekla_Structures_S.lnk (
-    echo "Tekla_Structures_S.lnk" exists.
+    echo "Tekla_Structures_S.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Tekla_Structures_S.lnk" does not exist.
+    echo "Tekla_Structures_S.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -32745,159 +34328,169 @@ echo InvokeStudio Shortcut Section
 echo.
 echo.
 if exist Android_Studio_A.lnk (
-    echo "Android_Studio_A.lnk" exists.
+    echo "Android_Studio_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Android_Studio_A.lnk" does not exist.
+    echo "Android_Studio_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Android_Studio_R.lnk (
-    echo "Android_Studio_R.lnk" exists.
+    echo "Android_Studio_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Android_Studio_R.lnk" does not exist.
+    echo "Android_Studio_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Android_Studio_O.lnk (
-    echo "Android_Studio_O.lnk" exists.
+    echo "Android_Studio_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Android_Studio_O.lnk" does not exist.
+    echo "Android_Studio_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Hex-Rays_IDA_A.lnk (
-    echo "Hex-Rays_IDA_A.lnk" exists.
+    echo "Hex-Rays_IDA_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Hex-Rays_IDA_A.lnk" does not exist.
+    echo "Hex-Rays_IDA_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Hex-Rays_IDA_R.lnk (
-    echo "Hex-Rays_IDA_R.lnk" exists.
+    echo "Hex-Rays_IDA_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Hex-Rays_IDA_R.lnk" does not exist.
+    echo "Hex-Rays_IDA_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Hex-Rays_IDA_O.lnk (
-    echo "Hex-Rays_IDA_O.lnk" exists.
+    echo "Hex-Rays_IDA_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Hex-Rays_IDA_O.lnk" does not exist.
+    echo "Hex-Rays_IDA_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Ghidra_A.lnk (
-    echo "Ghidra_A.lnk" exists.
+    echo "Ghidra_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Ghidra_A.lnk" does not exist.
+    echo "Ghidra_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Ghidra_R.lnk (
-    echo "Ghidra_R.lnk" exists.
+    echo "Ghidra_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Ghidra_R.lnk" does not exist.
+    echo "Ghidra_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ON1_Photo_RAW_A.lnk (
-    echo "ON1_Photo_RAW_A.lnk" exists.
+    echo "ON1_Photo_RAW_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ON1_Photo_RAW_A.lnk" does not exist.
+    echo "ON1_Photo_RAW_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ON1_Photo_RAW_R.lnk (
-    echo "ON1_Photo_RAW_R.lnk" exists.
+    echo "ON1_Photo_RAW_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ON1_Photo_RAW_R.lnk" does not exist.
+    echo "ON1_Photo_RAW_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PlayerFab_A.lnk (
-    echo "PlayerFab_A.lnk" exists.
+    echo "PlayerFab_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PlayerFab_A.lnk" does not exist.
+    echo "PlayerFab_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PlayerFab_R.lnk (
-    echo "PlayerFab_R.lnk" exists.
+    echo "PlayerFab_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PlayerFab_R.lnk" does not exist.
+    echo "PlayerFab_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PlayerFab_O.lnk (
-    echo "PlayerFab_O.lnk" exists.
+    echo "PlayerFab_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PlayerFab_O.lnk" does not exist.
+    echo "PlayerFab_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist StreamFab_A.lnk (
-    echo "StreamFab_A.lnk" exists.
+    echo "StreamFab_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "StreamFab_A.lnk" does not exist.
+    echo "StreamFab_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist StreamFab_R.lnk (
-    echo "StreamFab_R.lnk" exists.
+    echo "StreamFab_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "StreamFab_R.lnk" does not exist.
+    echo "StreamFab_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist StreamFab_O.lnk (
-    echo "StreamFab_O.lnk" exists.
+    echo "StreamFab_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "StreamFab_O.lnk" does not exist.
+    echo "StreamFab_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Avid_Pro_Tools_A.lnk (
-    echo "Avid_Pro_Tools_A.lnk" exists.
+    echo "Avid_Pro_Tools_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Avid_Pro_Tools_A.lnk" does not exist.
+    echo "Avid_Pro_Tools_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Avid_Pro_Tools_R.lnk (
-    echo "Avid_Pro_Tools_R.lnk" exists.
+    echo "Avid_Pro_Tools_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Avid_Pro_Tools_R.lnk" does not exist.
+    echo "Avid_Pro_Tools_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Avid_Pro_Tools_O.lnk (
-    echo "Avid_Pro_Tools_O.lnk" exists.
+    echo "Avid_Pro_Tools_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Avid_Pro_Tools_O.lnk" does not exist.
+    echo "Avid_Pro_Tools_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Photoline_A.lnk (
-    echo "Photoline_A.lnk" exists.
+    echo "Photoline_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Photoline_A.lnk" does not exist.
+    echo "Photoline_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Photoline_R.lnk (
-    echo "Photoline_R.lnk" exists.
+    echo "Photoline_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Photoline_R.lnk" does not exist.
+    echo "Photoline_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Photoline_O.lnk (
-    echo "Photoline_O.lnk" exists.
+    echo "Photoline_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Photoline_O.lnk" does not exist.
+    echo "Photoline_O.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Blender_A.lnk (
+    echo "Blender_A.lnk" [38;2;0;255;0mexists[0m.
+) else (
+    echo "Blender_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Blender_R.lnk (
+    echo "Blender_R.lnk" [38;2;0;255;0mexists[0m.
+) else (
+    echo "Blender_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DaVinci_Resolve_A.lnk (
-    echo "DaVinci_Resolve_A.lnk" exists.
+    echo "DaVinci_Resolve_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DaVinci_Resolve_A.lnk" does not exist.
+    echo "DaVinci_Resolve_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DaVinci_Resolve_R.lnk (
-    echo "DaVinci_Resolve_R.lnk" exists.
+    echo "DaVinci_Resolve_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DaVinci_Resolve_R.lnk" does not exist.
+    echo "DaVinci_Resolve_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DaVinci_Resolve_O.lnk (
-    echo "DaVinci_Resolve_O.lnk" exists.
+    echo "DaVinci_Resolve_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DaVinci_Resolve_O.lnk" does not exist.
+    echo "DaVinci_Resolve_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Remocapp_Studio_A.lnk (
-    echo "Remocapp_Studio_A.lnk" exists.
+    echo "Remocapp_Studio_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Remocapp_Studio_A.lnk" does not exist.
+    echo "Remocapp_Studio_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Remocapp_Studio_R.lnk (
-    echo "Remocapp_Studio_R.lnk" exists.
+    echo "Remocapp_Studio_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Remocapp_Studio_R.lnk" does not exist.
+    echo "Remocapp_Studio_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Remocapp_Studio_O.lnk (
-    echo "Remocapp_Studio_O.lnk" exists.
+    echo "Remocapp_Studio_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Remocapp_Studio_O.lnk" does not exist.
+    echo "Remocapp_Studio_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Rokoko_Studio_A.lnk (
-    echo "Rokoko_Studio_A.lnk" exists.
+    echo "Rokoko_Studio_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rokoko_Studio_A.lnk" does not exist.
+    echo "Rokoko_Studio_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Rokoko_Studio_R.lnk (
-    echo "Rokoko_Studio_R.lnk" exists.
+    echo "Rokoko_Studio_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rokoko_Studio_R.lnk" does not exist.
+    echo "Rokoko_Studio_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Rokoko_Studio_O.lnk (
-    echo "Rokoko_Studio_O.lnk" exists.
+    echo "Rokoko_Studio_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rokoko_Studio_O.lnk" does not exist.
+    echo "Rokoko_Studio_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -32905,214 +34498,214 @@ echo InvokeGames Shortcut Section
 echo.
 echo.
 if exist Steam_Games_Launcher_A.lnk (
-    echo "Steam_Games_Launcher_A.lnk" exists.
+    echo "Steam_Games_Launcher_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Steam_Games_Launcher_A.lnk" does not exist.
+    echo "Steam_Games_Launcher_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Steam_Games_Launcher_R.lnk (
-    echo "Steam_Games_Launcher_R.lnk" exists.
+    echo "Steam_Games_Launcher_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Steam_Games_Launcher_R.lnk" does not exist.
+    echo "Steam_Games_Launcher_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Steam_Games_Launcher_O.lnk (
-    echo "Steam_Games_Launcher_O.lnk" exists.
+    echo "Steam_Games_Launcher_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Steam_Games_Launcher_O.lnk" does not exist.
+    echo "Steam_Games_Launcher_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Epic_Games_Launcher_A.lnk (
-    echo "Epic_Games_Launcher_A.lnk" exists.
+    echo "Epic_Games_Launcher_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Epic_Games_Launcher_A.lnk" does not exist.
+    echo "Epic_Games_Launcher_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Epic_Games_Launcher_R.lnk (
-    echo "Epic_Games_Launcher_R.lnk" exists.
+    echo "Epic_Games_Launcher_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Epic_Games_Launcher_R.lnk" does not exist.
+    echo "Epic_Games_Launcher_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Ubisoft_Connect_A.lnk (
-    echo "Ubisoft_Connect_A.lnk" exists.
+    echo "Ubisoft_Connect_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Ubisoft_Connect_A.lnk" does not exist.
+    echo "Ubisoft_Connect_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Ubisoft_Connect_R.lnk (
-    echo "Ubisoft_Connect_R.lnk" exists.
+    echo "Ubisoft_Connect_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Ubisoft_Connect_R.lnk" does not exist.
+    echo "Ubisoft_Connect_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Ubisoft_Connect_O.lnk (
-    echo "Ubisoft_Connect_O.lnk" exists.
+    echo "Ubisoft_Connect_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Ubisoft_Connect_O.lnk" does not exist.
+    echo "Ubisoft_Connect_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Electronic_Arts_Launcher_A.lnk (
-    echo "Electronic_Arts_Launcher_A.lnk" exists.
+    echo "Electronic_Arts_Launcher_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Electronic_Arts_Launcher_A.lnk" does not exist.
+    echo "Electronic_Arts_Launcher_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Electronic_Arts_Launcher_R.lnk (
-    echo "Electronic_Arts_Launcher_R.lnk" exists.
+    echo "Electronic_Arts_Launcher_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Electronic_Arts_Launcher_R.lnk" does not exist.
+    echo "Electronic_Arts_Launcher_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GOG_Galaxy_Launcher_A.lnk (
-    echo "GOG_Galaxy_Launcher_A.lnk" exists.
+    echo "GOG_Galaxy_Launcher_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GOG_Galaxy_Launcher_A.lnk" does not exist.
+    echo "GOG_Galaxy_Launcher_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GOG_Galaxy_Launcher_R.lnk (
-    echo "GOG_Galaxy_Launcher_R.lnk" exists.
+    echo "GOG_Galaxy_Launcher_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GOG_Galaxy_Launcher_R.lnk" does not exist.
+    echo "GOG_Galaxy_Launcher_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GOG_Galaxy_Launcher_O.lnk (
-    echo "GOG_Galaxy_Launcher_O.lnk" exists.
+    echo "GOG_Galaxy_Launcher_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "GOG_Galaxy_Launcher_O.lnk" does not exist.
+    echo "GOG_Galaxy_Launcher_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist BlueStacks_A.lnk (
-    echo "BlueStacks_A.lnk" exists.
+    echo "BlueStacks_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "BlueStacks_A.lnk" does not exist.
+    echo "BlueStacks_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist BlueStacks_R.lnk (
-    echo "BlueStacks_R.lnk" exists.
+    echo "BlueStacks_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "BlueStacks_R.lnk" does not exist.
+    echo "BlueStacks_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist BlueStacks_O.lnk (
-    echo "BlueStacks_O.lnk" exists.
+    echo "BlueStacks_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "BlueStacks_O.lnk" does not exist.
+    echo "BlueStacks_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Arena_A.lnk (
-    echo "Arena_A.lnk" exists.
+    echo "Arena_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Arena_A.lnk" does not exist.
+    echo "Arena_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Arena_R.lnk (
-    echo "Arena_R.lnk" exists.
+    echo "Arena_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Arena_R.lnk" does not exist.
+    echo "Arena_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Arena_O.lnk (
-    echo "Arena_O.lnk" exists.
+    echo "Arena_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Arena_O.lnk" does not exist.
+    echo "Arena_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Go_A.lnk (
-    echo "Go_A.lnk" exists.
+    echo "Go_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Go_A.lnk" does not exist.
+    echo "Go_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Go_R.lnk (
-    echo "Go_R.lnk" exists.
+    echo "Go_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Go_R.lnk" does not exist.
+    echo "Go_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist InkBall_A.lnk (
-    echo "InkBall_A.lnk" exists.
+    echo "InkBall_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "InkBall_A.lnk" does not exist.
+    echo "InkBall_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist InkBall_R.lnk (
-    echo "InkBall_R.lnk" exists.
+    echo "InkBall_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "InkBall_R.lnk" does not exist.
+    echo "InkBall_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Rise_of_Legends_A.lnk (
-    echo "Rise_of_Legends_A.lnk" exists.
+    echo "Rise_of_Legends_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rise_of_Legends_A.lnk" does not exist.
+    echo "Rise_of_Legends_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Rise_of_Legends_R.lnk (
-    echo "Rise_of_Legends_R.lnk" exists.
+    echo "Rise_of_Legends_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Rise_of_Legends_R.lnk" does not exist.
+    echo "Rise_of_Legends_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist FreeCell_A.lnk (
-    echo "FreeCell_A.lnk" exists.
+    echo "FreeCell_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "FreeCell_A.lnk" does not exist.
+    echo "FreeCell_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist FreeCell_R.lnk (
-    echo "FreeCell_R.lnk" exists.
+    echo "FreeCell_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "FreeCell_R.lnk" does not exist.
+    echo "FreeCell_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Hearts_A.lnk (
-    echo "Hearts_A.lnk" exists.
+    echo "Hearts_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Hearts_A.lnk" does not exist.
+    echo "Hearts_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Hearts_R.lnk (
-    echo "Hearts_R.lnk" exists.
+    echo "Hearts_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Hearts_R.lnk" does not exist.
+    echo "Hearts_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Minesweeper_A.lnk (
-    echo "Minesweeper_A.lnk" exists.
+    echo "Minesweeper_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Minesweeper_A.lnk" does not exist.
+    echo "Minesweeper_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Minesweeper_R.lnk (
-    echo "Minesweeper_R.lnk" exists.
+    echo "Minesweeper_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Minesweeper_R.lnk" does not exist.
+    echo "Minesweeper_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mahjong_Titans_A.lnk (
-    echo "Mahjong_Titans_A.lnk" exists.
+    echo "Mahjong_Titans_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mahjong_Titans_A.lnk" does not exist.
+    echo "Mahjong_Titans_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mahjong_Titans_R.lnk (
-    echo "Mahjong_Titans_R.lnk" exists.
+    echo "Mahjong_Titans_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mahjong_Titans_R.lnk" does not exist.
+    echo "Mahjong_Titans_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Chess_Titans_A.lnk (
-    echo "Chess_Titans_A.lnk" exists.
+    echo "Chess_Titans_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Chess_Titans_A.lnk" does not exist.
+    echo "Chess_Titans_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Chess_Titans_R.lnk (
-    echo "Chess_Titans_R.lnk" exists.
+    echo "Chess_Titans_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Chess_Titans_R.lnk" does not exist.
+    echo "Chess_Titans_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Purble_Place_A.lnk (
-    echo "Purble_Place_A.lnk" exists.
+    echo "Purble_Place_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Purble_Place_A.lnk" does not exist.
+    echo "Purble_Place_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Purble_Place_R.lnk (
-    echo "Purble_Place_R.lnk" exists.
+    echo "Purble_Place_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Purble_Place_R.lnk" does not exist.
+    echo "Purble_Place_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Solitaire_A.lnk (
-    echo "Solitaire_A.lnk" exists.
+    echo "Solitaire_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Solitaire_A.lnk" does not exist.
+    echo "Solitaire_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Solitaire_R.lnk (
-    echo "Solitaire_R.lnk" exists.
+    echo "Solitaire_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Solitaire_R.lnk" does not exist.
+    echo "Solitaire_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Spider_Solitaire_A.lnk (
-    echo "Spider_Solitaire_A.lnk" exists.
+    echo "Spider_Solitaire_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Spider_Solitaire_A.lnk" does not exist.
+    echo "Spider_Solitaire_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Spider_Solitaire_R.lnk (
-    echo "Spider_Solitaire_R.lnk" exists.
+    echo "Spider_Solitaire_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Spider_Solitaire_R.lnk" does not exist.
+    echo "Spider_Solitaire_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WindowsGamesForWindows11_10_8_O.lnk (
-    echo "WindowsGamesForWindows11_10_8_O.lnk" exists.
+    echo "WindowsGamesForWindows11_10_8_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WindowsGamesForWindows11_10_8_O.lnk" does not exist.
+    echo "WindowsGamesForWindows11_10_8_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -33120,234 +34713,234 @@ echo InvokeStandardArchiver Shortcut Section
 echo.
 echo.
 if exist WinRAR_A.lnk (
-    echo "WinRAR_A.lnk" exists.
+    echo "WinRAR_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinRAR_A.lnk" does not exist.
+    echo "WinRAR_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinRAR_R.lnk (
-    echo "WinRAR_R.lnk" exists.
+    echo "WinRAR_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinRAR_R.lnk" does not exist.
+    echo "WinRAR_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinRAR_O.lnk (
-    echo "WinRAR_O.lnk" exists.
+    echo "WinRAR_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinRAR_O.lnk" does not exist.
+    echo "WinRAR_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PeaZip_A.lnk (
-    echo "PeaZip_A.lnk" exists.
+    echo "PeaZip_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PeaZip_A.lnk" does not exist.
+    echo "PeaZip_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PeaZip_R.lnk (
-    echo "PeaZip_R.lnk" exists.
+    echo "PeaZip_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PeaZip_R.lnk" does not exist.
+    echo "PeaZip_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PeaZip_O.lnk (
-    echo "PeaZip_O.lnk" exists.
+    echo "PeaZip_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PeaZip_O.lnk" does not exist.
+    echo "PeaZip_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bandizip_A.lnk (
-    echo "Bandizip_A.lnk" exists.
+    echo "Bandizip_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bandizip_A.lnk" does not exist.
+    echo "Bandizip_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bandizip_R.lnk (
-    echo "Bandizip_R.lnk" exists.
+    echo "Bandizip_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bandizip_R.lnk" does not exist.
+    echo "Bandizip_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Bandizip_O.lnk (
-    echo "Bandizip_O.lnk" exists.
+    echo "Bandizip_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Bandizip_O.lnk" does not exist.
+    echo "Bandizip_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ALZip_A.lnk (
-    echo "ALZip_A.lnk" exists.
+    echo "ALZip_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ALZip_A.lnk" does not exist.
+    echo "ALZip_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ALZip_R.lnk (
-    echo "ALZip_R.lnk" exists.
+    echo "ALZip_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ALZip_R.lnk" does not exist.
+    echo "ALZip_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ALZip_O.lnk (
-    echo "ALZip_O.lnk" exists.
+    echo "ALZip_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ALZip_O.lnk" does not exist.
+    echo "ALZip_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerArchiver_A.lnk (
-    echo "PowerArchiver_A.lnk" exists.
+    echo "PowerArchiver_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerArchiver_A.lnk" does not exist.
+    echo "PowerArchiver_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerArchiver_R.lnk (
-    echo "PowerArchiver_R.lnk" exists.
+    echo "PowerArchiver_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerArchiver_R.lnk" does not exist.
+    echo "PowerArchiver_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerArchiver_O.lnk (
-    echo "PowerArchiver_O.lnk" exists.
+    echo "PowerArchiver_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerArchiver_O.lnk" does not exist.
+    echo "PowerArchiver_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Forensic_Toolkit_A.lnk (
-    echo "Forensic_Toolkit_A.lnk" exists.
+    echo "Forensic_Toolkit_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Forensic_Toolkit_A.lnk" does not exist.
+    echo "Forensic_Toolkit_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Forensic_Toolkit_R.lnk (
-    echo "Forensic_Toolkit_R.lnk" exists.
+    echo "Forensic_Toolkit_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Forensic_Toolkit_R.lnk" does not exist.
+    echo "Forensic_Toolkit_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist FTK_Language_A.lnk (
-    echo "FTK_Language_A.lnk" exists.
+    echo "FTK_Language_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "FTK_Language_A.lnk" does not exist.
+    echo "FTK_Language_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist FTK_Language_R.lnk (
-    echo "FTK_Language_R.lnk" exists.
+    echo "FTK_Language_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "FTK_Language_R.lnk" does not exist.
+    echo "FTK_Language_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Passware_Kit_A.lnk (
-    echo "Passware_Kit_A.lnk" exists.
+    echo "Passware_Kit_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Passware_Kit_A.lnk" does not exist.
+    echo "Passware_Kit_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Passware_Kit_R.lnk (
-    echo "Passware_Kit_R.lnk" exists.
+    echo "Passware_Kit_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Passware_Kit_R.lnk" does not exist.
+    echo "Passware_Kit_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JRiver_Media_Center_A.lnk (
-    echo "JRiver_Media_Center_A.lnk" exists.
+    echo "JRiver_Media_Center_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JRiver_Media_Center_A.lnk" does not exist.
+    echo "JRiver_Media_Center_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JRiver_Media_Center_R.lnk (
-    echo "JRiver_Media_Center_R.lnk" exists.
+    echo "JRiver_Media_Center_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JRiver_Media_Center_R.lnk" does not exist.
+    echo "JRiver_Media_Center_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JRiver_Media_Center_O.lnk (
-    echo "JRiver_Media_Center_O.lnk" exists.
+    echo "JRiver_Media_Center_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JRiver_Media_Center_O.lnk" does not exist.
+    echo "JRiver_Media_Center_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerISO_A.lnk (
-    echo "PowerISO_A.lnk" exists.
+    echo "PowerISO_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerISO_A.lnk" does not exist.
+    echo "PowerISO_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerISO_R.lnk (
-    echo "PowerISO_R.lnk" exists.
+    echo "PowerISO_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerISO_R.lnk" does not exist.
+    echo "PowerISO_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PowerISO_O.lnk (
-    echo "PowerISO_O.lnk" exists.
+    echo "PowerISO_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PowerISO_O.lnk" does not exist.
+    echo "PowerISO_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UltraISO_A.lnk (
-    echo "UltraISO_A.lnk" exists.
+    echo "UltraISO_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UltraISO_A.lnk" does not exist.
+    echo "UltraISO_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UltraISO_R.lnk (
-    echo "UltraISO_R.lnk" exists.
+    echo "UltraISO_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UltraISO_R.lnk" does not exist.
+    echo "UltraISO_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UltraISO_O.lnk (
-    echo "UltraISO_O.lnk" exists.
+    echo "UltraISO_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UltraISO_O.lnk" does not exist.
+    echo "UltraISO_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Adobe_Acrobat_A.lnk (
-    echo "Adobe_Acrobat_A.lnk" exists.
+    echo "Adobe_Acrobat_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Adobe_Acrobat_A.lnk" does not exist.
+    echo "Adobe_Acrobat_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Adobe_Acrobat_R.lnk (
-    echo "Adobe_Acrobat_R.lnk" exists.
+    echo "Adobe_Acrobat_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Adobe_Acrobat_R.lnk" does not exist.
+    echo "Adobe_Acrobat_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Calibre_A.lnk (
-    echo "Calibre_A.lnk" exists.
+    echo "Calibre_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Calibre_A.lnk" does not exist.
+    echo "Calibre_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Calibre_R.lnk (
-    echo "Calibre_R.lnk" exists.
+    echo "Calibre_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Calibre_R.lnk" does not exist.
+    echo "Calibre_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DVDFab_A.lnk (
-    echo "DVDFab_A.lnk" exists.
+    echo "DVDFab_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DVDFab_A.lnk" does not exist.
+    echo "DVDFab_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DVDFab_R.lnk (
-    echo "DVDFab_R.lnk" exists.
+    echo "DVDFab_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DVDFab_R.lnk" does not exist.
+    echo "DVDFab_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist DVDFab_O.lnk (
-    echo "DVDFab_O.lnk" exists.
+    echo "DVDFab_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "DVDFab_O.lnk" does not exist.
+    echo "DVDFab_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UniFab_A.lnk (
-    echo "UniFab_A.lnk" exists.
+    echo "UniFab_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UniFab_A.lnk" does not exist.
+    echo "UniFab_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UniFab_R.lnk (
-    echo "UniFab_R.lnk" exists.
+    echo "UniFab_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UniFab_R.lnk" does not exist.
+    echo "UniFab_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist UniFab_O.lnk (
-    echo "UniFab_O.lnk" exists.
+    echo "UniFab_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "UniFab_O.lnk" does not exist.
+    echo "UniFab_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IsoBuster_A.lnk (
-    echo "IsoBuster_A.lnk" exists.
+    echo "IsoBuster_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IsoBuster_A.lnk" does not exist.
+    echo "IsoBuster_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IsoBuster_R.lnk (
-    echo "IsoBuster_R.lnk" exists.
+    echo "IsoBuster_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IsoBuster_R.lnk" does not exist.
+    echo "IsoBuster_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IsoBuster_O.lnk (
-    echo "IsoBuster_O.lnk" exists.
+    echo "IsoBuster_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IsoBuster_O.lnk" does not exist.
+    echo "IsoBuster_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Game_Extractor_A.lnk (
-    echo "Game_Extractor_A.lnk" exists.
+    echo "Game_Extractor_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Game_Extractor_A.lnk" does not exist.
+    echo "Game_Extractor_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Game_Extractor_R.lnk (
-    echo "Game_Extractor_R.lnk" exists.
+    echo "Game_Extractor_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Game_Extractor_R.lnk" does not exist.
+    echo "Game_Extractor_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Game_Extractor_O.lnk (
-    echo "Game_Extractor_O.lnk" exists.
+    echo "Game_Extractor_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Game_Extractor_O.lnk" does not exist.
+    echo "Game_Extractor_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -33355,134 +34948,134 @@ echo InvokeLegacyArchiver Shortcut Section
 echo.
 echo.
 if exist WinZip_Archiver_A.lnk (
-    echo "WinZip_Archiver_A.lnk" exists.
+    echo "WinZip_Archiver_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_Archiver_A.lnk" does not exist.
+    echo "WinZip_Archiver_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_Archiver_R.lnk (
-    echo "WinZip_Archiver_R.lnk" exists.
+    echo "WinZip_Archiver_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_Archiver_R.lnk" does not exist.
+    echo "WinZip_Archiver_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_Image_Manager_A.lnk (
-    echo "WinZip_Image_Manager_A.lnk" exists.
+    echo "WinZip_Image_Manager_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_Image_Manager_A.lnk" does not exist.
+    echo "WinZip_Image_Manager_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_Image_Manager_R.lnk (
-    echo "WinZip_Image_Manager_R.lnk" exists.
+    echo "WinZip_Image_Manager_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_Image_Manager_R.lnk" does not exist.
+    echo "WinZip_Image_Manager_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_PDF_Express_A.lnk (
-    echo "WinZip_PDF_Express_A.lnk" exists.
+    echo "WinZip_PDF_Express_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_PDF_Express_A.lnk" does not exist.
+    echo "WinZip_PDF_Express_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_PDF_Express_R.lnk (
-    echo "WinZip_PDF_Express_R.lnk" exists.
+    echo "WinZip_PDF_Express_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_PDF_Express_R.lnk" does not exist.
+    echo "WinZip_PDF_Express_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_Duplicate_File_Finder_A.lnk (
-    echo "WinZip_Duplicate_File_Finder_A.lnk" exists.
+    echo "WinZip_Duplicate_File_Finder_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_Duplicate_File_Finder_A.lnk" does not exist.
+    echo "WinZip_Duplicate_File_Finder_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_Duplicate_File_Finder_R.lnk (
-    echo "WinZip_Duplicate_File_Finder_R.lnk" exists.
+    echo "WinZip_Duplicate_File_Finder_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_Duplicate_File_Finder_R.lnk" does not exist.
+    echo "WinZip_Duplicate_File_Finder_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_SafeShare_A.lnk (
-    echo "WinZip_SafeShare_A.lnk" exists.
+    echo "WinZip_SafeShare_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_SafeShare_A.lnk" does not exist.
+    echo "WinZip_SafeShare_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_SafeShare_R.lnk (
-    echo "WinZip_SafeShare_R.lnk" exists.
+    echo "WinZip_SafeShare_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_SafeShare_R.lnk" does not exist.
+    echo "WinZip_SafeShare_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_Secure_Backup_A.lnk (
-    echo "WinZip_Secure_Backup_A.lnk" exists.
+    echo "WinZip_Secure_Backup_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_Secure_Backup_A.lnk" does not exist.
+    echo "WinZip_Secure_Backup_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_Secure_Backup_R.lnk (
-    echo "WinZip_Secure_Backup_R.lnk" exists.
+    echo "WinZip_Secure_Backup_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_Secure_Backup_R.lnk" does not exist.
+    echo "WinZip_Secure_Backup_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinZip_O.lnk (
-    echo "WinZip_O.lnk" exists.
+    echo "WinZip_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinZip_O.lnk" does not exist.
+    echo "WinZip_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PE_Explorer_A.lnk (
-    echo "PE_Explorer_A.lnk" exists.
+    echo "PE_Explorer_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PE_Explorer_A.lnk" does not exist.
+    echo "PE_Explorer_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PE_Explorer_R.lnk (
-    echo "PE_Explorer_R.lnk" exists.
+    echo "PE_Explorer_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PE_Explorer_R.lnk" does not exist.
+    echo "PE_Explorer_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Resource_Tuner_A.lnk (
-    echo "Resource_Tuner_A.lnk" exists.
+    echo "Resource_Tuner_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Resource_Tuner_A.lnk" does not exist.
+    echo "Resource_Tuner_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Resource_Tuner_R.lnk (
-    echo "Resource_Tuner_R.lnk" exists.
+    echo "Resource_Tuner_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Resource_Tuner_R.lnk" does not exist.
+    echo "Resource_Tuner_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Resource_Tuner_O.lnk (
-    echo "Resource_Tuner_O.lnk" exists.
+    echo "Resource_Tuner_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Resource_Tuner_O.lnk" does not exist.
+    echo "Resource_Tuner_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinAce_A.lnk (
-    echo "WinAce_A.lnk" exists.
+    echo "WinAce_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinAce_A.lnk" does not exist.
+    echo "WinAce_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WinAce_R.lnk (
-    echo "WinAce_R.lnk" exists.
+    echo "WinAce_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WinAce_R.lnk" does not exist.
+    echo "WinAce_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IZArc_A.lnk (
-    echo "IZArc_A.lnk" exists.
+    echo "IZArc_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IZArc_A.lnk" does not exist.
+    echo "IZArc_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IZArc_R.lnk (
-    echo "IZArc_R.lnk" exists.
+    echo "IZArc_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IZArc_R.lnk" does not exist.
+    echo "IZArc_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IZArc_O.lnk (
-    echo "IZArc_O.lnk" exists.
+    echo "IZArc_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IZArc_O.lnk" does not exist.
+    echo "IZArc_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist B1_Manager_A.lnk (
-    echo "B1_Manager_A.lnk" exists.
+    echo "B1_Manager_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "B1_Manager_A.lnk" does not exist.
+    echo "B1_Manager_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist B1_Manager_R.lnk (
-    echo "B1_Manager_R.lnk" exists.
+    echo "B1_Manager_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "B1_Manager_R.lnk" does not exist.
+    echo "B1_Manager_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist B1_Manager_O.lnk (
-    echo "B1_Manager_O.lnk" exists.
+    echo "B1_Manager_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "B1_Manager_O.lnk" does not exist.
+    echo "B1_Manager_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -33490,344 +35083,374 @@ echo InvokeOther Shortcut Section
 echo.
 echo.
 if exist Windows_Tools_R.lnk (
-    echo "Windows_Tools_R.lnk" exists.
+    echo "Windows_Tools_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Windows_Tools_R.lnk" does not exist.
+    echo "Windows_Tools_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Windows-System-drivers-etc_R.lnk (
-    echo "Windows-System-drivers-etc_R.lnk" exists.
+    echo "Windows-System-drivers-etc_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Windows-System-drivers-etc_R.lnk" does not exist.
+    echo "Windows-System-drivers-etc_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist SystemInternals_R.lnk (
-    echo "SystemInternals_R.lnk" exists.
+    echo "SystemInternals_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "SystemInternals_R.lnk" does not exist.
+    echo "SystemInternals_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist OpenMPT_A.lnk (
-    echo "OpenMPT_A.lnk" exists.
+    echo "OpenMPT_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OpenMPT_A.lnk" does not exist.
+    echo "OpenMPT_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist OpenMPT_R.lnk (
-    echo "OpenMPT_R.lnk" exists.
+    echo "OpenMPT_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OpenMPT_R.lnk" does not exist.
+    echo "OpenMPT_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist OpenMPT_O.lnk (
-    echo "OpenMPT_O.lnk" exists.
+    echo "OpenMPT_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OpenMPT_O.lnk" does not exist.
+    echo "OpenMPT_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TreeSize_A.lnk (
-    echo "TreeSize_A.lnk" exists.
+    echo "TreeSize_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TreeSize_A.lnk" does not exist.
+    echo "TreeSize_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TreeSize_R.lnk (
-    echo "TreeSize_R.lnk" exists.
+    echo "TreeSize_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TreeSize_R.lnk" does not exist.
+    echo "TreeSize_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TreeSize_O.lnk (
-    echo "TreeSize_O.lnk" exists.
+    echo "TreeSize_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TreeSize_O.lnk" does not exist.
+    echo "TreeSize_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Minitab_A.lnk (
-    echo "Minitab_A.lnk" exists.
+    echo "Minitab_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Minitab_A.lnk" does not exist.
+    echo "Minitab_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Minitab_R.lnk (
-    echo "Minitab_R.lnk" exists.
+    echo "Minitab_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Minitab_R.lnk" does not exist.
+    echo "Minitab_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist jGRASP_A.lnk (
-    echo "jGRASP_A.lnk" exists.
+    echo "jGRASP_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "jGRASP_A.lnk" does not exist.
+    echo "jGRASP_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist jGRASP_R.lnk (
-    echo "jGRASP_R.lnk" exists.
+    echo "jGRASP_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "jGRASP_R.lnk" does not exist.
+    echo "jGRASP_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist jGRASP_O.lnk (
-    echo "jGRASP_O.lnk" exists.
+    echo "jGRASP_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "jGRASP_O.lnk" does not exist.
+    echo "jGRASP_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Java_A.lnk (
-    echo "Eclipse_IDE_Java_A.lnk" exists.
+    echo "Eclipse_IDE_Java_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Java_A.lnk" does not exist.
+    echo "Eclipse_IDE_Java_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Enterprise_Java_and_Web_A.lnk (
-    echo "Eclipse_IDE_Enterprise_Java_and_Web_A.lnk" exists.
+    echo "Eclipse_IDE_Enterprise_Java_and_Web_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Enterprise_Java_and_Web_A.lnk" does not exist.
+    echo "Eclipse_IDE_Enterprise_Java_and_Web_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_C_and_Cpp_A.lnk (
-    echo "Eclipse_IDE_C_and_Cpp_A.lnk" exists.
+    echo "Eclipse_IDE_C_and_Cpp_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_C_and_Cpp_A.lnk" does not exist.
+    echo "Eclipse_IDE_C_and_Cpp_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Embedded_C_and_Cpp_A.lnk (
-    echo "Eclipse_IDE_Embedded_C_and_Cpp_A.lnk" exists.
+    echo "Eclipse_IDE_Embedded_C_and_Cpp_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Embedded_C_and_Cpp_A.lnk" does not exist.
+    echo "Eclipse_IDE_Embedded_C_and_Cpp_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_PHP_A.lnk (
-    echo "Eclipse_IDE_PHP_A.lnk" exists.
+    echo "Eclipse_IDE_PHP_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_PHP_A.lnk" does not exist.
+    echo "Eclipse_IDE_PHP_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Eclipse_Committers_A.lnk (
-    echo "Eclipse_IDE_Eclipse_Committers_A.lnk" exists.
+    echo "Eclipse_IDE_Eclipse_Committers_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Eclipse_Committers_A.lnk" does not exist.
+    echo "Eclipse_IDE_Eclipse_Committers_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Java_and_DSL_A.lnk (
-    echo "Eclipse_IDE_Java_and_DSL_A.lnk" exists.
+    echo "Eclipse_IDE_Java_and_DSL_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Java_and_DSL_A.lnk" does not exist.
+    echo "Eclipse_IDE_Java_and_DSL_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_RCP_and_RAP_A.lnk (
-    echo "Eclipse_IDE_RCP_and_RAP_A.lnk" exists.
+    echo "Eclipse_IDE_RCP_and_RAP_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_RCP_and_RAP_A.lnk" does not exist.
+    echo "Eclipse_IDE_RCP_and_RAP_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_Modeling_Tools_A.lnk (
-    echo "Eclipse_Modeling_Tools_A.lnk" exists.
+    echo "Eclipse_Modeling_Tools_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_Modeling_Tools_A.lnk" does not exist.
+    echo "Eclipse_Modeling_Tools_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Scout_A.lnk (
-    echo "Eclipse_IDE_Scout_A.lnk" exists.
+    echo "Eclipse_IDE_Scout_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Scout_A.lnk" does not exist.
+    echo "Eclipse_IDE_Scout_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Java_R.lnk (
-    echo "Eclipse_IDE_Java_R.lnk" exists.
+    echo "Eclipse_IDE_Java_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Java_R.lnk" does not exist.
+    echo "Eclipse_IDE_Java_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Enterprise_Java_and_Web_R.lnk (
-    echo "Eclipse_IDE_Enterprise_Java_and_Web_R.lnk" exists.
+    echo "Eclipse_IDE_Enterprise_Java_and_Web_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Enterprise_Java_and_Web_R.lnk" does not exist.
+    echo "Eclipse_IDE_Enterprise_Java_and_Web_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_C_and_Cpp_R.lnk (
-    echo "Eclipse_IDE_C_and_Cpp_R.lnk" exists.
+    echo "Eclipse_IDE_C_and_Cpp_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_C_and_Cpp_R.lnk" does not exist.
+    echo "Eclipse_IDE_C_and_Cpp_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Embedded_C_and_Cpp_R.lnk (
-    echo "Eclipse_IDE_Embedded_C_and_Cpp_R.lnk" exists.
+    echo "Eclipse_IDE_Embedded_C_and_Cpp_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Embedded_C_and_Cpp_R.lnk" does not exist.
+    echo "Eclipse_IDE_Embedded_C_and_Cpp_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_PHP_R.lnk (
-    echo "Eclipse_IDE_PHP_R.lnk" exists.
+    echo "Eclipse_IDE_PHP_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_PHP_R.lnk" does not exist.
+    echo "Eclipse_IDE_PHP_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Eclipse_Committers_R.lnk (
-    echo "Eclipse_IDE_Eclipse_Committers_R.lnk" exists.
+    echo "Eclipse_IDE_Eclipse_Committers_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Eclipse_Committers_R.lnk" does not exist.
+    echo "Eclipse_IDE_Eclipse_Committers_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Java_and_DSL_R.lnk (
-    echo "Eclipse_IDE_Java_and_DSL_R.lnk" exists.
+    echo "Eclipse_IDE_Java_and_DSL_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Java_and_DSL_R.lnk" does not exist.
+    echo "Eclipse_IDE_Java_and_DSL_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_RCP_and_RAP_R.lnk (
-    echo "Eclipse_IDE_RCP_and_RAP_R.lnk" exists.
+    echo "Eclipse_IDE_RCP_and_RAP_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_RCP_and_RAP_R.lnk" does not exist.
+    echo "Eclipse_IDE_RCP_and_RAP_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_Modeling_Tools_R.lnk (
-    echo "Eclipse_Modeling_Tools_R.lnk" exists.
+    echo "Eclipse_Modeling_Tools_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_Modeling_Tools_R.lnk" does not exist.
+    echo "Eclipse_Modeling_Tools_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Eclipse_IDE_Scout_R.lnk (
-    echo "Eclipse_IDE_Scout_R.lnk" exists.
+    echo "Eclipse_IDE_Scout_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Eclipse_IDE_Scout_R.lnk" does not exist.
+    echo "Eclipse_IDE_Scout_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Signal_A.lnk (
-    echo "Signal_A.lnk" exists.
+    echo "Signal_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Signal_A.lnk" does not exist.
+    echo "Signal_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Signal_R.lnk (
-    echo "Signal_R.lnk" exists.
+    echo "Signal_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Signal_R.lnk" does not exist.
+    echo "Signal_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Signal_O.lnk (
-    echo "Signal_O.lnk" exists.
+    echo "Signal_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Signal_O.lnk" does not exist.
+    echo "Signal_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TI-Nspire_CX_CAS_Student_Software_A.lnk (
-    echo "TI-Nspire_CX_CAS_Student_Software_A.lnk" exists.
+    echo "TI-Nspire_CX_CAS_Student_Software_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TI-Nspire_CX_CAS_Student_Software_A.lnk" does not exist.
+    echo "TI-Nspire_CX_CAS_Student_Software_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TI-Nspire_CX_CAS_Student_Software_R.lnk (
-    echo "TI-Nspire_CX_CAS_Student_Software_R.lnk" exists.
+    echo "TI-Nspire_CX_CAS_Student_Software_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TI-Nspire_CX_CAS_Student_Software_R.lnk" does not exist.
+    echo "TI-Nspire_CX_CAS_Student_Software_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TI-Nspire_CX_Premium_Teacher_Software_A.lnk (
-    echo "TI-Nspire_CX_Premium_Teacher_Software_A.lnk" exists.
+    echo "TI-Nspire_CX_Premium_Teacher_Software_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TI-Nspire_CX_Premium_Teacher_Software_A.lnk" does not exist.
+    echo "TI-Nspire_CX_Premium_Teacher_Software_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TI-Nspire_CX_Premium_Teacher_Software_R.lnk (
-    echo "TI-Nspire_CX_Premium_Teacher_Software_R.lnk" exists.
+    echo "TI-Nspire_CX_Premium_Teacher_Software_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TI-Nspire_CX_Premium_Teacher_Software_R.lnk" does not exist.
+    echo "TI-Nspire_CX_Premium_Teacher_Software_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk (
-    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk" exists.
+    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk" does not exist.
+    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk (
-    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk" exists.
+    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk" does not exist.
+    echo "TI-Nspire_CX_CAS_Premium_Teacher_Software_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Maple_A.lnk (
-    echo "Maple_A.lnk" exists.
+    echo "Maple_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Maple_A.lnk" does not exist.
+    echo "Maple_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Maple_R.lnk (
-    echo "Maple_R.lnk" exists.
+    echo "Maple_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Maple_R.lnk" does not exist.
+    echo "Maple_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Maple_Flow_A.lnk (
-    echo "Maple_Flow_A.lnk" exists.
+    echo "Maple_Flow_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Maple_Flow_A.lnk" does not exist.
+    echo "Maple_Flow_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Maple_Flow_R.lnk (
-    echo "Maple_Flow_R.lnk" exists.
+    echo "Maple_Flow_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Maple_Flow_R.lnk" does not exist.
+    echo "Maple_Flow_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Wallpaper_Engine_A.lnk (
+    echo "Wallpaper_Engine_A.lnk" [38;2;0;255;0mexists[0m.
+) else (
+    echo "Wallpaper_Engine_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Wallpaper_Engine_R.lnk (
+    echo "Wallpaper_Engine_R.lnk" [38;2;0;255;0mexists[0m.
+) else (
+    echo "Wallpaper_Engine_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Telerik_Test_Studio_A.lnk (
-    echo "Telerik_Test_Studio_A.lnk" exists.
+    echo "Telerik_Test_Studio_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Telerik_Test_Studio_A.lnk" does not exist.
+    echo "Telerik_Test_Studio_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Telerik_Test_Studio_APIs_A.lnk (
-    echo "Telerik_Test_Studio_APIs_A.lnk" exists.
+    echo "Telerik_Test_Studio_APIs_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Telerik_Test_Studio_APIs_A.lnk" does not exist.
+    echo "Telerik_Test_Studio_APIs_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Telerik_Test_Studio_R.lnk (
-    echo "Telerik_Test_Studio_R.lnk" exists.
+    echo "Telerik_Test_Studio_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Telerik_Test_Studio_R.lnk" does not exist.
+    echo "Telerik_Test_Studio_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Telerik_Test_Studio_APIs_R.lnk (
-    echo "Telerik_Test_Studio_APIs_R.lnk" exists.
+    echo "Telerik_Test_Studio_APIs_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Telerik_Test_Studio_APIs_R.lnk" does not exist.
+    echo "Telerik_Test_Studio_APIs_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Audials_One_A.lnk (
-    echo "Audials_One_A.lnk" exists.
+    echo "Audials_One_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Audials_One_A.lnk" does not exist.
+    echo "Audials_One_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Audials_One_R.lnk (
-    echo "Audials_One_R.lnk" exists.
+    echo "Audials_One_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Audials_One_R.lnk" does not exist.
+    echo "Audials_One_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Proton_VPN_A.lnk (
-    echo "Proton_VPN_A.lnk" exists.
+    echo "Proton_VPN_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Proton_VPN_A.lnk" does not exist.
+    echo "Proton_VPN_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Proton_VPN_R.lnk (
-    echo "Proton_VPN_R.lnk" exists.
+    echo "Proton_VPN_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Proton_VPN_R.lnk" does not exist.
+    echo "Proton_VPN_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Proton_Drive_A.lnk (
-    echo "Proton_Drive_A.lnk" exists.
+    echo "Proton_Drive_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Proton_Drive_A.lnk" does not exist.
+    echo "Proton_Drive_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Proton_Drive_R.lnk (
-    echo "Proton_Drive_R.lnk" exists.
+    echo "Proton_Drive_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Proton_Drive_R.lnk" does not exist.
+    echo "Proton_Drive_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Proton_O.lnk (
-    echo "Proton_O.lnk" exists.
+    echo "Proton_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Proton_O.lnk" does not exist.
+    echo "Proton_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mullvad_VPN_A.lnk (
-    echo "Mullvad_VPN_A.lnk" exists.
+    echo "Mullvad_VPN_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mullvad_VPN_A.lnk" does not exist.
+    echo "Mullvad_VPN_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mullvad_VPN_R.lnk (
-    echo "Mullvad_VPN_R.lnk" exists.
+    echo "Mullvad_VPN_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mullvad_VPN_R.lnk" does not exist.
+    echo "Mullvad_VPN_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Mullvad_VPN_O.lnk (
-    echo "Mullvad_VPN_O.lnk" exists.
+    echo "Mullvad_VPN_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Mullvad_VPN_O.lnk" does not exist.
+    echo "Mullvad_VPN_O.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist NordVPN_A.lnk (
+    echo "NordVPN_A.lnk" [38;2;0;255;0mexists[0m.
+) else (
+    echo "NordVPN_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist NordVPN_R.lnk (
+    echo "NordVPN_R.lnk" [38;2;0;255;0mexists[0m.
+) else (
+    echo "NordVPN_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist OpenVPN_A.lnk (
+    echo "OpenVPN_A.lnk" [38;2;0;255;0mexists[0m.
+) else (
+    echo "OpenVPN_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist OpenVPN_R.lnk (
+    echo "OpenVPN_R.lnk" [38;2;0;255;0mexists[0m.
+) else (
+    echo "OpenVPN_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Portmaster_A.lnk (
-    echo "Portmaster_A.lnk" exists.
+    echo "Portmaster_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Portmaster_A.lnk" does not exist.
+    echo "Portmaster_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Portmaster_R.lnk (
-    echo "Portmaster_R.lnk" exists.
+    echo "Portmaster_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Portmaster_R.lnk" does not exist.
+    echo "Portmaster_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Portmaster_O.lnk (
-    echo "Portmaster_O.lnk" exists.
+    echo "Portmaster_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Portmaster_O.lnk" does not exist.
+    echo "Portmaster_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Character_Map_A.lnk (
-    echo "Character_Map_A.lnk" exists.
+    echo "Character_Map_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Character_Map_A.lnk" does not exist.
+    echo "Character_Map_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Character_Map_R.lnk (
-    echo "Character_Map_R.lnk" exists.
+    echo "Character_Map_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Character_Map_R.lnk" does not exist.
+    echo "Character_Map_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Paint_A.lnk (
-    echo "Paint_A.lnk" exists.
+    echo "Paint_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Paint_A.lnk" does not exist.
+    echo "Paint_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Paint_R.lnk (
-    echo "Paint_R.lnk" exists.
+    echo "Paint_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Paint_R.lnk" does not exist.
+    echo "Paint_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -33835,144 +35458,144 @@ echo InvokeKeys Shortcut Section
 echo.
 echo.
 if exist Agent_DVR_A.lnk (
-    echo "Agent_DVR_A.lnk" exists.
+    echo "Agent_DVR_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Agent_DVR_A.lnk" does not exist.
+    echo "Agent_DVR_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Agent_DVR_R.lnk (
-    echo "Agent_DVR_R.lnk" exists.
+    echo "Agent_DVR_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Agent_DVR_R.lnk" does not exist.
+    echo "Agent_DVR_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cisdem_App_Crypt_A.lnk (
-    echo "Cisdem_App_Crypt_A.lnk" exists.
+    echo "Cisdem_App_Crypt_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cisdem_App_Crypt_A.lnk" does not exist.
+    echo "Cisdem_App_Crypt_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cisdem_App_Crypt_R.lnk (
-    echo "Cisdem_App_Crypt_R.lnk" exists.
+    echo "Cisdem_App_Crypt_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cisdem_App_Crypt_R.lnk" does not exist.
+    echo "Cisdem_App_Crypt_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cisdem_App_Crypt_O.lnk (
-    echo "Cisdem_App_Crypt_O.lnk" exists.
+    echo "Cisdem_App_Crypt_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cisdem_App_Crypt_O.lnk" does not exist.
+    echo "Cisdem_App_Crypt_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist QFX_Key_Scrambler_A.lnk (
-    echo "QFX_Key_Scrambler_A.lnk" exists.
+    echo "QFX_Key_Scrambler_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "QFX_Key_Scrambler_A.lnk" does not exist.
+    echo "QFX_Key_Scrambler_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist QFX_Key_Scrambler_R.lnk (
-    echo "QFX_Key_Scrambler_R.lnk" exists.
+    echo "QFX_Key_Scrambler_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "QFX_Key_Scrambler_R.lnk" does not exist.
+    echo "QFX_Key_Scrambler_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist QFX_Key_Scrambler_O.lnk (
-    echo "QFX_Key_Scrambler_O.lnk" exists.
+    echo "QFX_Key_Scrambler_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "QFX_Key_Scrambler_O.lnk" does not exist.
+    echo "QFX_Key_Scrambler_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cheat_Engine_A.lnk (
-    echo "Cheat_Engine_A.lnk" exists.
+    echo "Cheat_Engine_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cheat_Engine_A.lnk" does not exist.
+    echo "Cheat_Engine_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cheat_Engine_R.lnk (
-    echo "Cheat_Engine_R.lnk" exists.
+    echo "Cheat_Engine_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cheat_Engine_R.lnk" does not exist.
+    echo "Cheat_Engine_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cheat_Engine_O.lnk (
-    echo "Cheat_Engine_O.lnk" exists.
+    echo "Cheat_Engine_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cheat_Engine_O.lnk" does not exist.
+    echo "Cheat_Engine_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Process_Hacker_A.lnk (
-    echo "Process_Hacker_A.lnk" exists.
+    echo "Process_Hacker_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Process_Hacker_A.lnk" does not exist.
+    echo "Process_Hacker_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Process_Hacker_R.lnk (
-    echo "Process_Hacker_R.lnk" exists.
+    echo "Process_Hacker_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Process_Hacker_R.lnk" does not exist.
+    echo "Process_Hacker_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Process_Hacker_O.lnk (
-    echo "Process_Hacker_O.lnk" exists.
+    echo "Process_Hacker_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Process_Hacker_O.lnk" does not exist.
+    echo "Process_Hacker_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WooGLE_A.lnk (
-    echo "WooGLE_A.lnk" exists.
+    echo "WooGLE_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WooGLE_A.lnk" does not exist.
+    echo "WooGLE_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WooGLE_R.lnk (
-    echo "WooGLE_R.lnk" exists.
+    echo "WooGLE_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WooGLE_R.lnk" does not exist.
+    echo "WooGLE_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist WooGLE_O.lnk (
-    echo "WooGLE_O.lnk" exists.
+    echo "WooGLE_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "WooGLE_O.lnk" does not exist.
+    echo "WooGLE_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Level_Juicer_A.lnk (
-    echo "Level_Juicer_A.lnk" exists.
+    echo "Level_Juicer_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Level_Juicer_A.lnk" does not exist.
+    echo "Level_Juicer_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Level_Juicer_R.lnk (
-    echo "Level_Juicer_R.lnk" exists.
+    echo "Level_Juicer_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Level_Juicer_R.lnk" does not exist.
+    echo "Level_Juicer_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist RoL_Big_Archiver_A.lnk (
-    echo "RoL_Big_Archiver_A.lnk" exists.
+    echo "RoL_Big_Archiver_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "RoL_Big_Archiver_A.lnk" does not exist.
+    echo "RoL_Big_Archiver_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist RoL_Big_Archiver_R.lnk (
-    echo "RoL_Big_Archiver_R.lnk" exists.
+    echo "RoL_Big_Archiver_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "RoL_Big_Archiver_R.lnk" does not exist.
+    echo "RoL_Big_Archiver_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist NMSSaveEditor_A.lnk (
-    echo "NMSSaveEditor_A.lnk" exists.
+    echo "NMSSaveEditor_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "NMSSaveEditor_A.lnk" does not exist.
+    echo "NMSSaveEditor_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist NMSSaveEditor_R.lnk (
-    echo "NMSSaveEditor_R.lnk" exists.
+    echo "NMSSaveEditor_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "NMSSaveEditor_R.lnk" does not exist.
+    echo "NMSSaveEditor_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PalworldSavePal_A.lnk (
-    echo "PalworldSavePal_A.lnk" exists.
+    echo "PalworldSavePal_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PalworldSavePal_A.lnk" does not exist.
+    echo "PalworldSavePal_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PalworldSavePal_R.lnk (
-    echo "PalworldSavePal_R.lnk" exists.
+    echo "PalworldSavePal_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PalworldSavePal_R.lnk" does not exist.
+    echo "PalworldSavePal_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KeePass_A.lnk (
-    echo "KeePass_A.lnk" exists.
+    echo "KeePass_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KeePass_A.lnk" does not exist.
+    echo "KeePass_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KeePass_R.lnk (
-    echo "KeePass_R.lnk" exists.
+    echo "KeePass_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KeePass_R.lnk" does not exist.
+    echo "KeePass_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist KeePass_O.lnk (
-    echo "KeePass_O.lnk" exists.
+    echo "KeePass_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "KeePass_O.lnk" does not exist.
+    echo "KeePass_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -33980,169 +35603,169 @@ echo InvokePortable Shortcut Section
 echo.
 echo.
 if exist dnSpy_x32_A.lnk (
-    echo "dnSpy_x32_A.lnk" exists.
+    echo "dnSpy_x32_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dnSpy_x32_A.lnk" does not exist.
+    echo "dnSpy_x32_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dnSpy_x32_R.lnk (
-    echo "dnSpy_x32_R.lnk" exists.
+    echo "dnSpy_x32_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dnSpy_x32_R.lnk" does not exist.
+    echo "dnSpy_x32_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dnSpy_x64_A.lnk (
-    echo "dnSpy_x64_A.lnk" exists.
+    echo "dnSpy_x64_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dnSpy_x64_A.lnk" does not exist.
+    echo "dnSpy_x64_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dnSpy_x64_R.lnk (
-    echo "dnSpy_x64_R.lnk" exists.
+    echo "dnSpy_x64_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dnSpy_x64_R.lnk" does not exist.
+    echo "dnSpy_x64_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dnSpy_NET_A.lnk (
-    echo "dnSpy_NET_A.lnk" exists.
+    echo "dnSpy_NET_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dnSpy_NET_A.lnk" does not exist.
+    echo "dnSpy_NET_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist dnSpy_NET_R.lnk (
-    echo "dnSpy_NET_R.lnk" exists.
+    echo "dnSpy_NET_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "dnSpy_NET_R.lnk" does not exist.
+    echo "dnSpy_NET_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ILSpy_A.lnk (
-    echo "ILSpy_A.lnk" exists.
+    echo "ILSpy_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ILSpy_A.lnk" does not exist.
+    echo "ILSpy_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist ILSpy_R.lnk (
-    echo "ILSpy_R.lnk" exists.
+    echo "ILSpy_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "ILSpy_R.lnk" does not exist.
+    echo "ILSpy_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Il2CppInspector_A.lnk (
-    echo "Il2CppInspector_A.lnk" exists.
+    echo "Il2CppInspector_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Il2CppInspector_A.lnk" does not exist.
+    echo "Il2CppInspector_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Il2CppInspector_R.lnk (
-    echo "Il2CppInspector_R.lnk" exists.
+    echo "Il2CppInspector_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Il2CppInspector_R.lnk" does not exist.
+    echo "Il2CppInspector_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PEiD_A.lnk (
-    echo "PEiD_A.lnk" exists.
+    echo "PEiD_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PEiD_A.lnk" does not exist.
+    echo "PEiD_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist PEiD_R.lnk (
-    echo "PEiD_R.lnk" exists.
+    echo "PEiD_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "PEiD_R.lnk" does not exist.
+    echo "PEiD_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Odin_A.lnk (
-    echo "Odin_A.lnk" exists.
+    echo "Odin_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Odin_A.lnk" does not exist.
+    echo "Odin_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Odin_R.lnk (
-    echo "Odin_R.lnk" exists.
+    echo "Odin_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Odin_R.lnk" does not exist.
+    echo "Odin_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist OOSU10_A.lnk (
-    echo "OOSU10_A.lnk" exists.
+    echo "OOSU10_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OOSU10_A.lnk" does not exist.
+    echo "OOSU10_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist OOSU10_R.lnk (
-    echo "OOSU10_R.lnk" exists.
+    echo "OOSU10_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "OOSU10_R.lnk" does not exist.
+    echo "OOSU10_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist F2KO_BAT2EXE_A.lnk (
-    echo "F2KO_BAT2EXE_A.lnk" exists.
+    echo "F2KO_BAT2EXE_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "F2KO_BAT2EXE_A.lnk" does not exist.
+    echo "F2KO_BAT2EXE_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist F2KO_BAT2EXE_R.lnk (
-    echo "F2KO_BAT2EXE_R.lnk" exists.
+    echo "F2KO_BAT2EXE_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "F2KO_BAT2EXE_R.lnk" does not exist.
+    echo "F2KO_BAT2EXE_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cutter_A.lnk (
-    echo "Cutter_A.lnk" exists.
+    echo "Cutter_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cutter_A.lnk" does not exist.
+    echo "Cutter_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Cutter_R.lnk (
-    echo "Cutter_R.lnk" exists.
+    echo "Cutter_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Cutter_R.lnk" does not exist.
+    echo "Cutter_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JD_GUI_A.lnk (
-    echo "JD_GUI_A.lnk" exists.
+    echo "JD_GUI_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JD_GUI_A.lnk" does not exist.
+    echo "JD_GUI_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JD_GUI_R.lnk (
-    echo "JD_GUI_R.lnk" exists.
+    echo "JD_GUI_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JD_GUI_R.lnk" does not exist.
+    echo "JD_GUI_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JavaSnoop_A.lnk (
-    echo "JavaSnoop_A.lnk" exists.
+    echo "JavaSnoop_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JavaSnoop_A.lnk" does not exist.
+    echo "JavaSnoop_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist JavaSnoop_R.lnk (
-    echo "JavaSnoop_R.lnk" exists.
+    echo "JavaSnoop_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "JavaSnoop_R.lnk" does not exist.
+    echo "JavaSnoop_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist x64dbg_A.lnk (
-    echo "x64dbg_A.lnk" exists.
+    echo "x64dbg_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "x64dbg_A.lnk" does not exist.
+    echo "x64dbg_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist x64dbg_R.lnk (
-    echo "x64dbg_R.lnk" exists.
+    echo "x64dbg_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "x64dbg_R.lnk" does not exist.
+    echo "x64dbg_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoHotkey_UX_A.lnk (
-    echo "AutoHotkey_UX_A.lnk" exists.
+    echo "AutoHotkey_UX_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoHotkey_UX_A.lnk" does not exist.
+    echo "AutoHotkey_UX_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoHotkey_UX_R.lnk (
-    echo "AutoHotkey_UX_R.lnk" exists.
+    echo "AutoHotkey_UX_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoHotkey_UX_R.lnk" does not exist.
+    echo "AutoHotkey_UX_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist AutoHotkey_UX_O.lnk (
-    echo "AutoHotkey_UX_O.lnk" exists.
+    echo "AutoHotkey_UX_O.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "AutoHotkey_UX_O.lnk" does not exist.
+    echo "AutoHotkey_UX_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist SARDU_A.lnk (
-    echo "SARDU_A.lnk" exists.
+    echo "SARDU_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "SARDU_A.lnk" does not exist.
+    echo "SARDU_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist SARDU_R.lnk (
-    echo "SARDU_R.lnk" exists.
+    echo "SARDU_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "SARDU_R.lnk" does not exist.
+    echo "SARDU_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Drive_Scanner_A.lnk (
-    echo "Drive_Scanner_A.lnk" exists.
+    echo "Drive_Scanner_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Drive_Scanner_A.lnk" does not exist.
+    echo "Drive_Scanner_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Drive_Scanner_R.lnk (
-    echo "Drive_Scanner_R.lnk" exists.
+    echo "Drive_Scanner_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Drive_Scanner_R.lnk" does not exist.
+    echo "Drive_Scanner_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -34150,796 +35773,825 @@ echo Other Shortcuts
 echo.
 echo.
 if exist CreateInstall_A.lnk (
-    echo "CreateInstall_A.lnk" exists.
+    echo "CreateInstall_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CreateInstall_A.lnk" does not exist.
+    echo "CreateInstall_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist CreateInstall_R.lnk (
-    echo "CreateInstall_R.lnk" exists.
+    echo "CreateInstall_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "CreateInstall_R.lnk" does not exist.
+    echo "CreateInstall_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IExpress_A.lnk (
-    echo "IExpress_A.lnk" exists.
+    echo "IExpress_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IExpress_A.lnk" does not exist.
+    echo "IExpress_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist IExpress_R.lnk (
-    echo "IExpress_R.lnk" exists.
+    echo "IExpress_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "IExpress_R.lnk" does not exist.
+    echo "IExpress_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Advanced_Installer_A.lnk (
-    echo "Advanced_Installer_A.lnk" exists.
+    echo "Advanced_Installer_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Advanced_Installer_A.lnk" does not exist.
+    echo "Advanced_Installer_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Advanced_Installer_R.lnk (
-    echo "Advanced_Installer_R.lnk" exists.
+    echo "Advanced_Installer_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Advanced_Installer_R.lnk" does not exist.
+    echo "Advanced_Installer_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Inno_Setup_A.lnk (
-    echo "Inno_Setup_A.lnk" exists.
+    echo "Inno_Setup_A.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Inno_Setup_A.lnk" does not exist.
+    echo "Inno_Setup_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Inno_Setup_R.lnk (
-    echo "Inno_Setup_R.lnk" exists.
+    echo "Inno_Setup_R.lnk" [38;2;0;255;0mexists[0m.
 ) else (
-    echo "Inno_Setup_R.lnk" does not exist.
+    echo "Inno_Setup_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof
 :Tree
 echo.
-echo (Main Menu {search engine})                              (Always use letter "O" in place of number Zero for searches)
-echo                                          [separate]
-echo (Main Menu {alphabetized}) ╔═════════════(InvokeBackground {0-9; 1 page})        (Use dash "-" instead of "SPACEBAR")
-echo                            ║  [separate]
-echo                    ╔═══╬╬══╩══(InvokeAlert         {0-8; 1 page})══╦════════(InvokeEmergencyAntivirus  {0-9; 1 page})
-echo                    ║                                               ║ ┌──────────────────────────────────────────────┐
-echo                    ╠══════════(InvokeInternetTools {0-9; 1 page})  ║ │All scanners and antiviruses must be stored in│
-echo                    ║                                               ╚═╡the form of installer packages and should not │
-echo                    ╠══════════════(InvokeMicrosoft {0-9; 1 page})    │be installed until when temporarily needed.   │
-echo                    ║                                                 └──────────────────────────────────────────────┘
-echo                    ╠═════════════════(InvokeCoding {0-8; 1 page})═══════════(InvokeJetBrains          {0-7; 3 pages})
-echo                    ║
-echo                    ╠════════════════(InvokeSandbox {0-8; 1 page})═══════════(InvokeEngineeringTools    {0-9; 1 page})
-echo                    ║
-echo (Main Menu {root})═╬═(Executable CLI Commands for Davy Jones {∞})  ╔════════(InvokeKeys {0-9; 1 page})
-echo                    ║                                               ║
-echo                    ╠═════════════════(InvokeStudio {0-9; 1 page})  ║ 
-echo                    ║                                               ║ ┌──────────────────────────────────────────────┐
-echo                    ╠═════════════════(InvokeGames {0-8; 2 pages})  ║ │Keys are used to either crack certain programs│
-echo                    ║                                               ╠═╡repeatedly, store keys, or edit game files.   │
-echo                    ╠══════(InvokeStandardArchiver {0-8; 2 pages})  ║ │Portables can be used on any PC without Admin.│
-echo                    ║                                               ║ └──────────────────────────────────────────────┘
-echo                    ╠═════════(InvokeLegacyArchiver {0-9; 1 page})  ║ 
-echo                    ║                                               ║
-echo                    ╚═══╬╬══╦═════════(InvokeOther {0-7; 3 pages})══╩════════(InvokePortable {0-8; 2 pages})
-echo                            ╚═════════════(InvokeNetwork {0-9; 1 page})   [separate]
-echo    ╬╬ = Never use the number zero ("0") for a menu section, or else you will encounter unfortunate technical glitches.
+echo [38;2;255;255;255m(Main Menu {search engine})                              (Always use letter "O" in place of number Zero for searches)[0m
+echo [38;2;255;255;255m                                         [separate][0m
+echo [38;2;255;255;255m(Main Menu {alphabetized}) ╔═════════════(InvokeBackground {0-9; 1 page})        (Use dash "-" instead of "SPACEBAR")[0m
+echo [38;2;230;255;230m                           ║  [separate][0m
+echo [38;2;230;255;230m                   ╔═══╬╬══╩══(InvokeAlert         {0-8; 1 page})══╦════════(InvokeEmergencyAntivirus  {0-9; 1 page})[0m
+echo [38;2;204;255;204m                   ║                                               ║ ┌──────────────────────────────────────────────┐[0m
+echo [38;2;179;255;179m                   ╠══════════(InvokeInternetTools {0-9; 1 page})  ║ │All scanners and antiviruses must be stored in│[0m
+echo [38;2;153;255;153m                   ║                                               ╚═╡the form of installer packages and should not │[0m
+echo [38;2;128;255;128m                   ╠══════════════(InvokeMicrosoft {0-9; 1 page})    │be installed until when temporarily needed.   │[0m
+echo [38;2;102;255;102m                   ║                                                 └──────────────────────────────────────────────┘[0m
+echo [38;2;77;255;77m                   ╠═════════════════(InvokeCoding {0-8; 1 page})═══════════(InvokeJetBrains          {0-7; 3 pages})[0m
+echo [38;2;51;255;51m                   ║[0m
+echo [38;2;26;255;26m                   ╠════════════════(InvokeSandbox {0-8; 1 page})═══════════(InvokeEngineeringTools    {0-9; 1 page})[0m
+echo [38;2;26;255;26m                   ║[0m
+echo [38;2;0;255;0m(Main Menu {root})═╬═(Executable CLI Commands for Davy Jones {∞})  ╔════════(InvokeKeys {0-9; 1 page})[0m
+echo [38;2;26;255;26m                   ║                                               ║[0m
+echo [38;2;26;255;26m                   ╠═════════════════(InvokeStudio {0-9; 1 page})  ║[0m
+echo [38;2;51;255;51m                   ║                                               ║ ┌──────────────────────────────────────────────┐[0m
+echo [38;2;77;255;77m                   ╠═════════════════(InvokeGames {0-8; 2 pages})  ║ │Keys are used to either crack certain programs│[0m
+echo [38;2;102;255;102m                   ║                                               ╠═╡repeatedly, store keys, or edit game files.   │[0m
+echo [38;2;128;255;128m                   ╠══════(InvokeStandardArchiver {0-8; 2 pages})  ║ │Portables can be used on any PC without Admin.│[0m
+echo [38;2;153;255;153m                   ║                                               ║ └──────────────────────────────────────────────┘[0m
+echo [38;2;179;255;179m                   ╠═════════(InvokeLegacyArchiver {0-9; 1 page})  ║[0m
+echo [38;2;204;255;204m                   ║                                               ║[0m
+echo [38;2;230;255;230m                   ╚═══╬╬══╦═════════(InvokeOther {0-7; 3 pages})══╩════════(InvokePortable {0-8; 2 pages})[0m
+echo [38;2;230;255;230m                           ╚═════════════(InvokeNetwork {0-9; 1 page})   [separate][0m
+echo [38;2;255;255;255m   ╬╬ = Never use the number zero ("0") for a menu section, or else you will encounter unfortunate technical glitches.[0m
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof
 :Wordsort
-echo O1O-Editor-A
-echo O1O-Editor-R
-echo O1O-Editor-I
-echo O1O-Editor-O
-echo 7-ZipFM-A
-echo 7-ZipFM-R
-echo 7-ZipFM-I
-echo 7-ZipFM-O
-echo Access-A
-echo Access-R
-echo Adobe-Acrobat-A
-echo Adobe-Acrobat-R
-echo Adobe-Acrobat-I
-echo Advanced-Installer-A
-echo Advanced-Installer-R
-echo Advanced-Installer-I
-echo ADWcleaner-A
-echo ADWcleaner-R
-echo ADWcleaner-I
-echo ADWcleaner-O
-echo Agent-DVR-A
-echo Agent-DVR-R
-echo Agent-DVR-I
-echo ALZip-A
-echo ALZip-R
-echo ALZip-I
-echo ALZip-O
-echo Amiga-Forever-A
-echo Amiga-Forever-R
-echo Amiga-Forever-I
-echo Android-Studio-A
-echo Android-Studio-R
-echo Android-Studio-I
-echo Android-Studio-O
-echo Aqua-A
-echo Aqua-R
-echo Aqua-I
-echo Arena-A
-echo Arena-R
-echo Arena-I
-echo Arena-O
-echo Audials-One-A
-echo Audials-One-R
-echo Audials-One-I
-echo AutoCAD-A
-echo AutoCAD-R
-echo AutoCAD-I
-echo AutoCAD-OfflineHelp-I
-echo AutoCAD-S
-echo AutoCAD-Electrical-A
-echo AutoCAD-Electrical-R
-echo AutoCAD-Electrical-I
-echo AutoCAD-Electrical-S
-echo AutoCAD-Mechanical-A
-echo AutoCAD-Mechanical-R
-echo AutoCAD-Mechanical-I
-echo AutoCAD-Mechanical-S
-echo Autodesk-Civil-3D-A
-echo Autodesk-Civil-3D-R
-echo Autodesk-Civil-3D-I
-echo Autodesk-Civil-3D-S
-echo Autodesk-FeatureCAM-A
-echo Autodesk-FeatureCAM-R
-echo Autodesk-FeatureCAM-I
-echo Autodesk-FeatureCAM-S
-echo Autodesk-Fusion-36O-A
-echo Autodesk-Fusion-36O-R
-echo Autodesk-Fusion-36O-I
-echo Autodesk-Fusion-36O-S
-echo Autodesk-Maya-A
-echo Autodesk-Maya-R
-echo Autodesk-Maya-I
-echo Autodesk-Maya-S
-echo AutoHotkey-UX-A
-echo AutoHotkey-UX-R
-echo AutoHotkey-UX-I
-echo AutoHotkey-UX-O
-echo Avast-A
-echo Avast-R
-echo Avast-I
-echo Avast-O
-echo Avid-Pro-Tools-A
-echo Avid-Pro-Tools-R
-echo Avid-Pro-Tools-I
-echo Avid-Pro-Tools-O
-echo B1-Manager-A
-echo B1-Manager-R
-echo B1-Manager-I
-echo B1-Manager-O
-echo Bandizip-A
-echo Bandizip-R
-echo Bandizip-I
-echo Bandizip-O
-echo Bitdefender-A
-echo Bitdefender-R
-echo Bitdefender-I
-echo Bitdefender-O
-echo Bitvise-A
-echo Bitvise-R
-echo Bitvise-I
-echo Bitvise-O
-echo BlueStacks-A
-echo BlueStacks-R
-echo BlueStacks-I
-echo BlueStacks-O
-echo Brave-Browser-A
-echo Brave-Browser-R
-echo Brave-Browser-I
-echo Calibre-A
-echo Calibre-R
-echo Calibre-I
-echo CCleaner-A
-echo CCleaner-R
-echo CCleaner-I
-echo CCleaner-O
-echo Character-Map-A
-echo Character-Map-R
-echo Cheat-Engine-A
-echo Cheat-Engine-R
-echo Cheat-Engine-I
-echo Cheat-Engine-O
-echo Chess-Titans-A
-echo Chess-Titans-R
-echo Chrome-Browser-A
-echo Chrome-Browser-R
-echo Chrome-Browser-I
-echo Cisdem-App-Crypt-A
-echo Cisdem-App-Crypt-R
-echo Cisdem-App-Crypt-I
-echo Cisdem-App-Crypt-O
-echo CLI-Directory
-echo CLI-Octave-A
-echo CLI-Octave-R
-echo CLion-A
-echo CLion-R
-echo CLion-I
-echo Command-Prompt-A
-echo Command-Prompt-R
-echo CreateInstall-A
-echo CreateInstall-R
-echo CreateInstall-I
-echo CRYENGINE-Launcher-A
-echo CRYENGINE-Launcher-R
-echo CRYENGINE-Launcher-I
-echo CRYENGINE-Launcher-O
-echo Cutter-A
-echo Cutter-R
-echo Cygwin-A
-echo Cygwin-R
-echo Cygwin-I
-echo Cygwin-O
-echo DataGrip-A
-echo DataGrip-R
-echo DataGrip-I
-echo DataSpell-A
-echo DataSpell-R
-echo DataSpell-I
-echo DaVinci-Resolve-A
-echo DaVinci-Resolve-R
-echo DaVinci-Resolve-I
-echo DaVinci-Resolve-O
-echo Directory-Opus-A
-echo Directory-Opus-R
-echo Directory-Opus-I
-echo Directory-Opus-O
-echo dnSpy-x32-A
-echo dnSpy-x32-R
-echo dnSpy-x64-A
-echo dnSpy-x64-R
-echo dnSpy-NET-A
-echo dnSpy-NET-R
-echo Docker-Desktop-A
-echo Docker-Desktop-R
-echo Docker-Desktop-I
-echo Docker-Desktop-O
-echo dotPeek-A
-echo dotPeek-R
-echo dotPeek-I
-echo dotCover-A
-echo dotCover-R
-echo dotCover-I
-echo dotMemory-A
-echo dotMemory-R
-echo dotMemory-I
-echo dotTrace-A
-echo dotTrace-R
-echo dotTrace-I
-echo dotUltimate-I
-echo Drive-Scanner-A
-echo Drive-Scanner-R
-echo DVDFab-A
-echo DVDFab-R
-echo DVDFab-I
-echo DVDFab-O
-echo Eclipse-I
-echo Eclipse-IDE-C-and-Cpp-A
-echo Eclipse-IDE-C-and-Cpp-R
-echo Eclipse-IDE-Eclipse-Committers-A
-echo Eclipse-IDE-Eclipse-Committers-R
-echo Eclipse-IDE-Embedded-C-and-Cpp-A
-echo Eclipse-IDE-Embedded-C-and-Cpp-R
-echo Eclipse-IDE-Enterprise-Java-and-Web-A
-echo Eclipse-IDE-Enterprise-Java-and-Web-R
-echo Eclipse-IDE-Java-A
-echo Eclipse-IDE-Java-R
-echo Eclipse-IDE-Java-and-DSL-A
-echo Eclipse-IDE-Java-and-DSL-R
-echo Eclipse-IDE-PHP-A
-echo Eclipse-IDE-PHP-R
-echo Eclipse-IDE-RCP-and-RAP-A
-echo Eclipse-IDE-RCP-and-RAP-R
-echo Eclipse-IDE-Scout-A
-echo Eclipse-IDE-Scout-R
-echo Eclipse-Modeling-Tools-A
-echo Eclipse-Modeling-Tools-R
-echo Edge-Browser-A
-echo Edge-Browser-R
-echo Edge-Browser-I
-echo Electronic-Arts-Launcher-A
-echo Electronic-Arts-Launcher-R
-echo Electronic-Arts-Launcher-I
-echo EmsisoftEmergencyKit-A
-echo EmsisoftEmergencyKit-R
-echo EmsisoftEmergencyKit-I
-echo EmsisoftEmergencyKit-O
-echo Epic-Games-Launcher-A
-echo Epic-Games-Launcher-R
-echo Epic-Games-Launcher-I
-echo ESET-NOD32-A
-echo ESET-NOD32-R
-echo ESET-NOD32-I
-echo ESET-NOD32-O
-echo ESET-Online-Scanner-A
-echo ESET-Online-Scanner-R
-echo ESET-Online-Scanner-I
-echo ESET-Online-Scanner-O
-echo Excel-A
-echo Excel-R
-echo F2KO-BAT2EXE-A
-echo F2KO-BAT2EXE-R
-echo Firefox-Browser-A
-echo Firefox-Browser-R
-echo Firefox-Browser-I
-echo Flow-Launcher-A
-echo Flow-Launcher-R
-echo Flow-Launcher-I
-echo Forensic-Toolkit-A
-echo Forensic-Toolkit-R
-echo Forensic-Toolkit-I
-echo FTK-Language-A
-echo FTK-Language-R
-echo FTK-Language-I
-echo FreeCell-A
-echo FreeCell-R
-echo Freegate-A
-echo Freegate-R
-echo Game-Extractor-A
-echo Game-Extractor-R
-echo Game-Extractor-I
-echo Game-Extractor-O
-echo Gateway-A
-echo Gateway-R
-echo Gateway-I
-echo Ghidra-A
-echo Ghidra-R
-echo GitHub-A
-echo GitHub-R
-echo GitHub-I
-echo GitHub-Fork-A
-echo GitHub-Fork-R
-echo GitHub-Fork-I
-echo Go-Board-Game-A
-echo Go-Board-Game-R
-echo Go-Board-Game-I
-echo Go-Board-Game-I
-echo Godot-A
-echo Godot-R
-echo Good-Old-Games-A
-echo Good-Old-Games-R
-echo Good-Old-Games-I
-echo Good-Old-Games-O
-echo GoLand-A
-echo GoLand-R
-echo GoLand-I
-echo Google-Earth-Pro-A
-echo Google-Earth-Pro-R
-echo Google-Earth-Pro-I
-echo Google-Earth-Pro-O
-echo GUI-Octave-A
-echo GUI-Octave-R
-echo Hearts-A
-echo Hearts-R
-echo Hex-Rays-IDA-A
-echo Hex-Rays-IDA-R
-echo Hex-Rays-IDA-I
-echo Hex-Rays-IDA-O
-echo HitmanPro-A
-echo HitmanPro-R
-echo HitmanPro-I
-echo HitmanPro-O
-echo HitmanPro.Alert-A
-echo HitmanPro.Alert-R
-echo HitmanPro.Alert-I
-echo HitmanPro.Alert-O
-echo IExpress-A
-echo IExpress-R
-echo Internet-Download-Manager-R
-echo Internet-Download-Manager-I
-echo Internet-Download-Manager-O
-echo ILSpy-A
-echo ILSpy-R
-echo Il2CppInspector-A
-echo Il2CppInspector-R
-echo Inkball-A
-echo Inkball-R
-echo Inno-Setup-A
-echo Inno-Setup-R
-echo Inno-Setup-I
-echo IntelliJIDEA-A
-echo IntelliJIDEA-R
-echo IntelliJIDEA-I
-echo IsoBuster-A
-echo IsoBuster-R
-echo IsoBuster-I
-echo IsoBuster-O
-echo IZArc-A
-echo IZArc-R
-echo IZArc-I
-echo IZArc-O
-echo JavaSnoop-A
-echo JavaSnoop-R
-echo JD-GUI-A
-echo JD-GUI-R
-echo JDK-I
-echo jGRASP-A
-echo jGRASP-R
-echo jGRASP-I
-echo jGRASP-O
-echo JRE-I
-echo JRiver-Media-Center-A
-echo JRiver-Media-Center-R
-echo JRiver-Media-Center-I
-echo JRiver-Media-Center-O
-echo KART-A
-echo KART-R
-echo KART-I
-echo KART-O
-echo KeePass-A
-echo KeePass-R
-echo KeePass-I
-echo KeePass-O
-echo KVRT-A
-echo KVRT-R
-echo KVRT-I
-echo KVRT-O
-echo Level-Juicer-A
-echo Level-Juicer-R
-echo LibreWolf-Browser-A
-echo LibreWolf-Browser-R
-echo LibreWolf-Browser-I
-echo LibreWolf-Browser-O
-echo Mahjong-Titans-A
-echo Mahjong-Titans-R
-echo Malwarebytes-A
-echo Malwarebytes-R
-echo Malwarebytes-I
-echo Malwarebytes-O
-echo Maple-A
-echo Maple-R
-echo Maple-I
-echo Maple-Flow-A
-echo Maple-Flow-R
-echo Maple-Flow-I
-echo MATLAB-A
-echo MATLAB-R
-echo MATLAB-I
-echo MetaProgrammingSystem-A
-echo MetaProgrammingSystem-R
-echo MetaProgrammingSystem-I
-echo Metasploit-A
-echo Metasploit-R
-echo Metasploit-I
-echo Metasploit-O
-echo Microsoft365-I
-echo Minesweeper-A
-echo Minesweeper-R
-echo Minitab-A
-echo Minitab-R
-echo Minitab-I
-echo Mullvad-Browser-A
-echo Mullvad-Browser-R
-echo Mullvad-Browser-I
-echo Mullvad-Browser-O
-echo Mullvad-VPN-A
-echo Mullvad-VPN-R
-echo Mullvad-VPN-I
-echo Mullvad-VPN-O
-echo NMSSaveEditor-A
-echo NMSSaveEditor-R
-echo NMSSaveEditor-I
-echo Notepad-A
-echo Notepad-R
-echo Notepad++-A
-echo Notepad++-R
-echo Notepad++-I
-echo Notepad++-O
-echo Norton-Power-Eraser-A
-echo Norton-Power-Eraser-R
-echo Norton-Power-Eraser-I
-echo Norton-Power-Eraser-O
-echo Octave-I
-echo Octave-O
-echo Odin-A
-echo Odin-R
-echo ON1-Photo-RAW-A
-echo ON1-Photo-RAW-R
-echo ON1-Photo-RAW-I
-echo OneNote-A
-echo OneNote-R
-echo OneDrive-A
-echo OneDrive-R
-echo OOSU1O-A
-echo OOSU1O-R
-echo OpenMPT-A
-echo OpenMPT-R
-echo OpenMPT-I
-echo OpenMPT-O
-echo Opera-Browser-A
-echo Opera-Browser-R
-echo Opera-Browser-I
-echo Opera-Browser-O
-echo Outlook-A
-echo Outlook-R
-echo Paint-A
-echo Paint-R
-echo PalworldSavePal-A
-echo PalworldSavePal-R
-echo PalworldSavePal-I
-echo Passware-Kit-A
-echo Passware-Kit-R
-echo Passware-Kit-I
-echo PeaZip-A
-echo PeaZip-R
-echo PeaZip-I
-echo PeaZip-O
-echo PE-Explorer-A
-echo PE-Explorer-R
-echo PEiD-A
-echo PEiD-R
-echo Photoline-A
-echo Photoline-R
-echo Photoline-I
-echo Photoline-O
-echo PhpStorm-A
-echo PhpStorm-R
-echo PhpStorm-I
-echo Piriform-I
-echo PlayerFab-A
-echo PlayerFab-R
-echo PlayerFab-I
-echo PlayerFab-O
-echo Portmaster-A
-echo Portmaster-R
-echo Portmaster-I
-echo Portmaster-O
-echo PowerArchiver-A
-echo PowerArchiver-R
-echo PowerArchiver-I
-echo PowerArchiver-O
-echo PowerBI-A
-echo PowerBI-R
-echo PowerBI-I
-echo PowerISO-A
-echo PowerISO-R
-echo PowerISO-I
-echo PowerISO-O
-echo PowerPoint-A
-echo PowerPoint-R
-echo PowerShell-A
-echo PowerShell-R
-echo PowerShell-I
-echo Process-Hacker-A
-echo Process-Hacker-R
-echo Process-Hacker-I
-echo Process-Hacker-O
-echo Proton-VPN-A
-echo Proton-VPN-R
-echo Proton-Drive-A
-echo Proton-Drive-R
-echo Proton-I
-echo Proton-O
-echo PrusaSlicer-A
-echo PrusaSlicer-R
-echo Prusa-G-code-Viewer-A
-echo Prusa-G-code-Viewer-R
-echo Prusa-I
-echo Prusa-O
-echo Publisher-A
-echo Publisher-R
-echo Purble-Place-A
-echo Purble-Place-R
-echo Pure-Data-A
-echo Pure-Data-R
-echo Pure-Data-I
-echo Pure-Data-O
-echo PuTTY-A
-echo PuTTY-R
-echo PuTTY-I
-echo PyCharm-A
-echo PyCharm-R
-echo PyCharm-I
-echo Python-A
-echo Python-R
-echo Python-I
-echo qBittorrent-A
-echo qBittorrent-R
-echo qBittorrent-I
-echo qBittorrent-O
-echo QFX-Key-Scrambler-A
-echo QFX-Key-Scrambler-R
-echo QFX-Key-Scrambler-I
-echo QFX-Key-Scrambler-O
-echo Recuva-A
-echo Recuva-R
-echo Recuva-I
-echo Recuva-O
-echo Remocapp-Studio-A
-echo Remocapp-Studio-R
-echo Remocapp-Studio-I
-echo Remocapp-Studio-O
-echo ReShade-I
-echo ReShade-U
-echo ReSharper-A
-echo ReSharper-R
-echo ReSharper-I
-echo Resharper-Cpp-A
-echo Resharper-Cpp-R
-echo Resharper-Cpp-I
-echo Resource-Tuner-A
-echo Resource-Tuner-R
-echo Resource-Tuner-I
-echo Resource-Tuner-O
-echo Revo-Uninstaller-A
-echo Revo-Uninstaller-R
-echo Revo-Uninstaller-I
-echo Revo-Uninstaller-O
-echo Rider-A
-echo Rider-R
-echo Rider-I
-echo Rise-of-Legends-A
-echo Rise-of-Legends-R
-echo Rise-of-Legends-I
-echo RoL-Big-Archiver-A
-echo RoL-Big-Archiver-R
-echo Rokoko-Studio-A
-echo Rokoko-Studio-R
-echo Rokoko-Studio-I
-echo Rokoko-Studio-O
-echo RubyMine-A
-echo RubyMine-R
-echo RubyMine-I
-echo RustRover-A
-echo RustRover-R
-echo RustRover-I
-echo Samsung-Driver-I
-echo SARDU-A
-echo SARDU-R
-echo SecureCRT-A
-echo SecureCRT-R
-echo SecureCRT-I
-echo Signal-A
-echo Signal-R
-echo Signal-I
-echo Signal-O
-echo Slic3r-A
-echo Slic3r-R
-echo SolidWorks-3D-CAD-Design-A
-echo SolidWorks-3D-CAD-Design-R
-echo SolidWorks-3D-CAD-Design-I
-echo SolidWorks-3D-CAD-Design-S
-echo Solitaire-A
-echo Solitaire-R
-echo Speccy-A
-echo Speccy-R
-echo Speccy-I
-echo Speccy-O
-echo Spider-Solitaire-A
-echo Spider-Solitaire-R
-echo Steam-Games-Launcher-A
-echo Steam-Games-Launcher-R
-echo Steam-Games-Launcher-I
-echo Steam-Games-Launcher-O
-echo Stinger-A
-echo Stinger-R
-echo Stinger-I
-echo Stinger-O
-echo StreamFab-A
-echo StreamFab-R
-echo StreamFab-I
-echo StreamFab-O
-echo System-Internals-R
-echo Teams-A
-echo Teams-R
-echo Technitium-A
-echo Technitium-R
-echo Technitium-I
-echo Tekla-Structures-A
-echo Tekla-Structures-R
-echo Tekla-Structures-I
-echo Tekla-Structures-S
-echo Telerik-Test-Studio-A
-echo Telerik-Test-Studio-R
-echo Telerik-Test-Studio-APIs-A
-echo Telerik-Test-Studio-APIs-R
-echo Telerik-I
-echo TI-Nspire-CX-Premium-Teacher-Software-A
-echo TI-Nspire-CX-Premium-Teacher-Software-R
-echo TI-Nspire-CX-CAS-Premium-Teacher-Software-A
-echo TI-Nspire-CX-CAS-Premium-Teacher-Software-R
-echo TI-Nspire-CX-CAS-Premium-Teacher-Software-I
-echo TI-Nspire-CX-CAS-Student-Software-A
-echo TI-Nspire-CX-CAS-Student-Software-R
-echo TI-Nspire-CX-CAS-Student-Software-I
-echo Toolbox-A
-echo Toolbox-R
-echo Toolbox-I
-echo Tor-Browser-A
-echo Tor-Browser-R
-echo Tor-Browser-I
-echo TraceX-R
-echo TreeSize-A
-echo TreeSize-R
-echo TreeSize-I
-echo TreeSize-O
-echo Ubisoft-Connect-A
-echo Ubisoft-Connect-R
-echo Ubisoft-Connect-I
-echo Ubisoft-Connect-O
-echo UltraISO-A
-echo UltraISO-R
-echo UltraISO-I
-echo UltraISO-O
-echo UltraSearch-A
-echo UltraSearch-R
-echo UltraSearch-I
-echo UltraSearch-O
-echo UniFab-A
-echo UniFab-R
-echo UniFab-I
-echo UniFab-O
-echo Unity-Hub-A
-echo Unity-Hub-R
-echo Unity-Hub-I
-echo Unity-Hub-O
-echo Visual-Studio-A
-echo Visual-Studio-R
-echo Visual-Studio-I
-echo Visual-Studio-S
-echo Visual-Studio-Code-A
-echo Visual-Studio-Code-R
-echo Visual-Studio-Code-I
-echo Visual-Studio-Code-O
-echo VMware-Workstation-A
-echo VMware-Workstation-R
-echo VMware-Workstation-I
-echo WebStorm-A
-echo WebStorm-R
-echo WebStorm-I
-echo WinAce-A
-echo WinAce-R
-echo WinAce-I
-echo Windows7GamesForWindows11-1O-8-I
-echo Windows7GamesForWindows11-1O-8-O
-echo Windows-Tools-R
-echo Windows-System32-drivers-etc-R
-echo WinRAR-A
-echo WinRAR-R
-echo WinRAR-I
-echo WinRAR-O
-echo WinZip-Archiver-A
-echo WinZip-Archiver-R
-echo WinZip-Duplicate-File-Finder-A
-echo WinZip-Duplicate-File-Finder-R
-echo WinZip-Image-Manager-A
-echo WinZip-Image-Manager-R
-echo WinZip-PDF-Express-A
-echo WinZip-PDF-Express-R
-echo WinZip-SafeShare-A
-echo WinZip-SafeShare-R
-echo WinZip-Secure-Backup-A
-echo WinZip-Secure-Backup-R
-echo WinZip-I
-echo WinZip-O
-echo WireGuard-A
-echo WireGuard-R
-echo WireGuard-I
-echo Wireshark-A
-echo Wireshark-R
-echo Wireshark-I
-echo Wireshark-O
-echo WooGLE-A
-echo WooGLE-R
-echo WooGLE-I
-echo WooGLE-O
-echo Word-A
-echo Word-R
-echo Writerside-A
-echo Writerside-R
-echo Writerside-I
-echo x64dbg-A
-echo x64dbg-R
-echo Xming-A
-echo Xming-R
-echo Xming-I
-echo Xming-O
+echo [38;2;128;128;128mColor Legend:[0m
+echo.
+echo [38;2;0;0;255mBlue = Admin [A][0m
+echo.
+echo [38;2;0;255;0mGreen = Run [R][0m
+echo.
+echo [38;2;255;255;0mYellow = Install [I][0m
+echo.
+echo [38;2;255;0;0mRed = Uninstall [O][0m
+echo.
+echo [38;2;0;255;255mCyan = Setup [S][0m
+echo.
+echo [38;2;255;0;255mPink = Other [U][0m
+echo.
+echo [38;2;255;255;255mWhite = CLI Directory[0m
+echo.
+echo [38;2;128;128;128mWord Searchable Commands:[0m
+echo.
+echo [38;2;0;0;255mO1O-Editor-A[0m
+echo [38;2;0;255;0mO1O-Editor-R[0m
+echo [38;2;255;255;0mO1O-Editor-I[0m
+echo [38;2;255;0;0mO1O-Editor-O[0m
+echo [38;2;0;0;255m7-Zip-FM-A[0m
+echo [38;2;0;255;0m7-Zip-FM-R[0m
+echo [38;2;255;255;0m7-Zip-FM-I[0m
+echo [38;2;255;0;0m7-Zip-FM-O[0m
+echo [38;2;0;0;255mAccess-A[0m
+echo [38;2;0;255;0mAccess-R[0m
+echo [38;2;0;0;255mAdobe-Acrobat-A[0m
+echo [38;2;0;255;0mAdobe-Acrobat-R[0m
+echo [38;2;255;255;0mAdobe-Acrobat-I[0m
+echo [38;2;0;0;255mAdvanced-Installer-A[0m
+echo [38;2;0;255;0mAdvanced-Installer-R[0m
+echo [38;2;255;255;0mAdvanced-Installer-I[0m
+echo [38;2;0;0;255mADWcleaner-A[0m
+echo [38;2;0;255;0mADWcleaner-R[0m
+echo [38;2;255;255;0mADWcleaner-I[0m
+echo [38;2;255;0;0mADWcleaner-O[0m
+echo [38;2;0;0;255mAgent-DVR-A[0m
+echo [38;2;0;255;0mAgent-DVR-R[0m
+echo [38;2;255;255;0mAgent-DVR-I[0m
+echo [38;2;0;0;255mALZip-A[0m
+echo [38;2;0;255;0mALZip-R[0m
+echo [38;2;255;255;0mALZip-I[0m
+echo [38;2;255;0;0mALZip-O[0m
+echo [38;2;0;0;255mAmiga-Forever-A[0m
+echo [38;2;0;255;0mAmiga-Forever-R[0m
+echo [38;2;255;255;0mAmiga-Forever-I[0m
+echo [38;2;0;0;255mAndroid-Studio-A[0m
+echo [38;2;0;255;0mAndroid-Studio-R[0m
+echo [38;2;255;255;0mAndroid-Studio-I[0m
+echo [38;2;255;0;0mAndroid-Studio-O[0m
+echo [38;2;0;0;255mAqua-A[0m
+echo [38;2;0;255;0mAqua-R[0m
+echo [38;2;255;255;0mAqua-I[0m
+echo [38;2;0;0;255mArena-A[0m
+echo [38;2;0;255;0mArena-R[0m
+echo [38;2;255;255;0mArena-I[0m
+echo [38;2;255;0;0mArena-O[0m
+echo [38;2;0;0;255mAudials-One-A[0m
+echo [38;2;0;255;0mAudials-One-R[0m
+echo [38;2;255;255;0mAudials-One-I[0m
+echo [38;2;0;0;255mAutoCAD-A[0m
+echo [38;2;0;255;0mAutoCAD-R[0m
+echo [38;2;255;255;0mAutoCAD-I[0m
+echo [38;2;255;255;0mAutoCAD-OfflineHelp-I[0m
+echo [38;2;0;255;255mAutoCAD-S[0m
+echo [38;2;0;0;255mAutoCAD-Electrical-A[0m
+echo [38;2;0;255;0mAutoCAD-Electrical-R[0m
+echo [38;2;255;255;0mAutoCAD-Electrical-I[0m
+echo [38;2;0;255;255mAutoCAD-Electrical-S[0m
+echo [38;2;0;0;255mAutoCAD-Mechanical-A[0m
+echo [38;2;0;255;0mAutoCAD-Mechanical-R[0m
+echo [38;2;255;255;0mAutoCAD-Mechanical-I[0m
+echo [38;2;0;255;255mAutoCAD-Mechanical-S[0m
+echo [38;2;0;0;255mAutodesk-Civil-3D-A[0m
+echo [38;2;0;255;0mAutodesk-Civil-3D-R[0m
+echo [38;2;255;255;0mAutodesk-Civil-3D-I[0m
+echo [38;2;0;255;255mAutodesk-Civil-3D-S[0m
+echo [38;2;0;0;255mAutodesk-FeatureCAM-A[0m
+echo [38;2;0;255;0mAutodesk-FeatureCAM-R[0m
+echo [38;2;255;255;0mAutodesk-FeatureCAM-I[0m
+echo [38;2;0;255;255mAutodesk-FeatureCAM-S[0m
+echo [38;2;0;0;255mAutodesk-Fusion-36O-A[0m
+echo [38;2;0;255;0mAutodesk-Fusion-36O-R[0m
+echo [38;2;255;255;0mAutodesk-Fusion-36O-I[0m
+echo [38;2;0;255;255mAutodesk-Fusion-36O-S[0m
+echo [38;2;0;0;255mAutodesk-Maya-A[0m
+echo [38;2;0;255;0mAutodesk-Maya-R[0m
+echo [38;2;255;255;0mAutodesk-Maya-I[0m
+echo [38;2;0;255;255mAutodesk-Maya-S[0m
+echo [38;2;0;0;255mAutoHotkey-UX-A[0m
+echo [38;2;0;255;0mAutoHotkey-UX-R[0m
+echo [38;2;255;255;0mAutoHotkey-UX-I[0m
+echo [38;2;255;0;0mAutoHotkey-UX-O[0m
+echo [38;2;0;0;255mAvast-A[0m
+echo [38;2;0;255;0mAvast-R[0m
+echo [38;2;255;255;0mAvast-I[0m
+echo [38;2;255;0;0mAvast-O[0m
+echo [38;2;0;0;255mAvid-Pro-Tools-A[0m
+echo [38;2;0;255;0mAvid-Pro-Tools-R[0m
+echo [38;2;255;255;0mAvid-Pro-Tools-I[0m
+echo [38;2;255;0;0mAvid-Pro-Tools-O[0m
+echo [38;2;0;0;255mB1-Manager-A[0m
+echo [38;2;0;255;0mB1-Manager-R[0m
+echo [38;2;255;255;0mB1-Manager-I[0m
+echo [38;2;255;0;0mB1-Manager-O[0m
+echo [38;2;0;0;255mBandizip-A[0m
+echo [38;2;0;255;0mBandizip-R[0m
+echo [38;2;255;255;0mBandizip-I[0m
+echo [38;2;255;0;0mBandizip-O[0m
+echo [38;2;0;0;255mBitdefender-A[0m
+echo [38;2;0;255;0mBitdefender-R[0m
+echo [38;2;255;255;0mBitdefender-I[0m
+echo [38;2;255;0;0mBitdefender-O[0m
+echo [38;2;0;0;255mBitvise-A[0m
+echo [38;2;0;255;0mBitvise-R[0m
+echo [38;2;255;255;0mBitvise-I[0m
+echo [38;2;255;0;0mBitvise-O[0m
+echo [38;2;0;0;255mBlender-A[0m
+echo [38;2;0;255;0mBlender-R[0m
+echo [38;2;255;255;0mBlender-I[0m
+echo [38;2;0;0;255mBlueStacks-A[0m
+echo [38;2;0;255;0mBlueStacks-R[0m
+echo [38;2;255;255;0mBlueStacks-I[0m
+echo [38;2;255;0;0mBlueStacks-O[0m
+echo [38;2;0;0;255mBrave-Browser-A[0m
+echo [38;2;0;255;0mBrave-Browser-R[0m
+echo [38;2;255;255;0mBrave-Browser-I[0m
+echo [38;2;0;0;255mCalibre-A[0m
+echo [38;2;0;255;0mCalibre-R[0m
+echo [38;2;255;255;0mCalibre-I[0m
+echo [38;2;0;0;255mCCleaner-A[0m
+echo [38;2;0;255;0mCCleaner-R[0m
+echo [38;2;255;255;0mCCleaner-I[0m
+echo [38;2;255;0;0mCCleaner-O[0m
+echo [38;2;0;0;255mCharacter-Map-A[0m
+echo [38;2;0;255;0mCharacter-Map-R[0m
+echo [38;2;0;0;255mCheat-Engine-A[0m
+echo [38;2;0;255;0mCheat-Engine-R[0m
+echo [38;2;255;255;0mCheat-Engine-I[0m
+echo [38;2;255;0;0mCheat-Engine-O[0m
+echo [38;2;0;0;255mChess-Titans-A[0m
+echo [38;2;0;255;0mChess-Titans-R[0m
+echo [38;2;0;0;255mChrome-Browser-A[0m
+echo [38;2;0;255;0mChrome-Browser-R[0m
+echo [38;2;255;255;0mChrome-Browser-I[0m
+echo [38;2;0;0;255mCisdem-App-Crypt-A[0m
+echo [38;2;0;255;0mCisdem-App-Crypt-R[0m
+echo [38;2;255;255;0mCisdem-App-Crypt-I[0m
+echo [38;2;255;0;0mCisdem-App-Crypt-O[0m
+echo [38;2;255;255;255mCLI-Directory[0m
+echo [38;2;0;0;255mCLI-Octave-A[0m
+echo [38;2;0;255;0mCLI-Octave-R[0m
+echo [38;2;0;0;255mCLion-A[0m
+echo [38;2;0;255;0mCLion-R[0m
+echo [38;2;255;255;0mCLion-I[0m
+echo [38;2;0;0;255mCommand-Prompt-A[0m
+echo [38;2;0;255;0mCommand-Prompt-R[0m
+echo [38;2;0;0;255mCreateInstall-A[0m
+echo [38;2;0;255;0mCreateInstall-R[0m
+echo [38;2;255;255;0mCreateInstall-I[0m
+echo [38;2;0;0;255mCRYENGINE-Launcher-A[0m
+echo [38;2;0;255;0mCRYENGINE-Launcher-R[0m
+echo [38;2;255;255;0mCRYENGINE-Launcher-I[0m
+echo [38;2;255;0;0mCRYENGINE-Launcher-O[0m
+echo [38;2;0;0;255mCutter-A[0m
+echo [38;2;0;255;0mCutter-R[0m
+echo [38;2;0;0;255mCygwin-A[0m
+echo [38;2;0;255;0mCygwin-R[0m
+echo [38;2;255;255;0mCygwin-I[0m
+echo [38;2;255;0;0mCygwin-O[0m
+echo [38;2;0;0;255mDataGrip-A[0m
+echo [38;2;0;255;0mDataGrip-R[0m
+echo [38;2;255;255;0mDataGrip-I[0m
+echo [38;2;0;0;255mDataSpell-A[0m
+echo [38;2;0;255;0mDataSpell-R[0m
+echo [38;2;255;255;0mDataSpell-I[0m
+echo [38;2;0;0;255mDaVinci-Resolve-A[0m
+echo [38;2;0;255;0mDaVinci-Resolve-R[0m
+echo [38;2;255;255;0mDaVinci-Resolve-I[0m
+echo [38;2;255;0;0mDaVinci-Resolve-O[0m
+echo [38;2;0;0;255mDirectory-Opus-A[0m
+echo [38;2;0;255;0mDirectory-Opus-R[0m
+echo [38;2;255;255;0mDirectory-Opus-I[0m
+echo [38;2;255;0;0mDirectory-Opus-O[0m
+echo [38;2;0;0;255mdnSpy-x32-A[0m
+echo [38;2;0;255;0mdnSpy-x32-R[0m
+echo [38;2;0;0;255mdnSpy-x64-A[0m
+echo [38;2;0;255;0mdnSpy-x64-R[0m
+echo [38;2;0;0;255mdnSpy-NET-A[0m
+echo [38;2;0;255;0mdnSpy-NET-R[0m
+echo [38;2;0;0;255mDocker-Desktop-A[0m
+echo [38;2;0;255;0mDocker-Desktop-R[0m
+echo [38;2;255;255;0mDocker-Desktop-I[0m
+echo [38;2;255;0;0mDocker-Desktop-O[0m
+echo [38;2;0;0;255mdotPeek-A[0m
+echo [38;2;0;255;0mdotPeek-R[0m
+echo [38;2;255;255;0mdotPeek-I[0m
+echo [38;2;0;0;255mdotCover-A[0m
+echo [38;2;0;255;0mdotCover-R[0m
+echo [38;2;255;255;0mdotCover-I[0m
+echo [38;2;0;0;255mdotMemory-A[0m
+echo [38;2;0;255;0mdotMemory-R[0m
+echo [38;2;255;255;0mdotMemory-I[0m
+echo [38;2;0;0;255mdotTrace-A[0m
+echo [38;2;0;255;0mdotTrace-R[0m
+echo [38;2;255;255;0mdotTrace-I[0m
+echo [38;2;255;255;0mdotUltimate-I[0m
+echo [38;2;0;0;255mDrive-Scanner-A[0m
+echo [38;2;0;255;0mDrive-Scanner-R[0m
+echo [38;2;0;0;255mDVDFab-A[0m
+echo [38;2;0;255;0mDVDFab-R[0m
+echo [38;2;255;255;0mDVDFab-I[0m
+echo [38;2;255;0;0mDVDFab-O[0m
+echo [38;2;255;255;0mEclipse-I[0m
+echo [38;2;0;0;255mEclipse-IDE-C-and-Cpp-A[0m
+echo [38;2;0;255;0mEclipse-IDE-C-and-Cpp-R[0m
+echo [38;2;0;0;255mEclipse-IDE-Eclipse-Committers-A[0m
+echo [38;2;0;255;0mEclipse-IDE-Eclipse-Committers-R[0m
+echo [38;2;0;0;255mEclipse-IDE-Embedded-C-and-Cpp-A[0m
+echo [38;2;0;255;0mEclipse-IDE-Embedded-C-and-Cpp-R[0m
+echo [38;2;0;0;255mEclipse-IDE-Enterprise-Java-and-Web-A[0m
+echo [38;2;0;255;0mEclipse-IDE-Enterprise-Java-and-Web-R[0m
+echo [38;2;0;0;255mEclipse-IDE-Java-A[0m
+echo [38;2;0;255;0mEclipse-IDE-Java-R[0m
+echo [38;2;0;0;255mEclipse-IDE-Java-and-DSL-A[0m
+echo [38;2;0;255;0mEclipse-IDE-Java-and-DSL-R[0m
+echo [38;2;0;0;255mEclipse-IDE-PHP-A[0m
+echo [38;2;0;255;0mEclipse-IDE-PHP-R[0m
+echo [38;2;0;0;255mEclipse-IDE-RCP-and-RAP-A[0m
+echo [38;2;0;255;0mEclipse-IDE-RCP-and-RAP-R[0m
+echo [38;2;0;0;255mEclipse-IDE-Scout-A[0m
+echo [38;2;0;255;0mEclipse-IDE-Scout-R[0m
+echo [38;2;0;0;255mEclipse-Modeling-Tools-A[0m
+echo [38;2;0;255;0mEclipse-Modeling-Tools-R[0m
+echo [38;2;0;0;255mEdge-Browser-A[0m
+echo [38;2;0;255;0mEdge-Browser-R[0m
+echo [38;2;255;255;0mEdge-Browser-I[0m
+echo [38;2;0;0;255mElectronic-Arts-Launcher-A[0m
+echo [38;2;0;255;0mElectronic-Arts-Launcher-R[0m
+echo [38;2;255;255;0mElectronic-Arts-Launcher-I[0m
+echo [38;2;0;0;255mEmsisoftEmergencyKit-A[0m
+echo [38;2;0;255;0mEmsisoftEmergencyKit-R[0m
+echo [38;2;255;255;0mEmsisoftEmergencyKit-I[0m
+echo [38;2;255;0;0mEmsisoftEmergencyKit-O[0m
+echo [38;2;0;0;255mEpic-Games-Launcher-A[0m
+echo [38;2;0;255;0mEpic-Games-Launcher-R[0m
+echo [38;2;255;255;0mEpic-Games-Launcher-I[0m
+echo [38;2;0;0;255mESET-NOD32-A[0m
+echo [38;2;0;255;0mESET-NOD32-R[0m
+echo [38;2;255;255;0mESET-NOD32-I[0m
+echo [38;2;255;0;0mESET-NOD32-O[0m
+echo [38;2;0;0;255mESET-Online-Scanner-A[0m
+echo [38;2;0;255;0mESET-Online-Scanner-R[0m
+echo [38;2;255;255;0mESET-Online-Scanner-I[0m
+echo [38;2;255;0;0mESET-Online-Scanner-O[0m
+echo [38;2;0;0;255mExcel-A[0m
+echo [38;2;0;255;0mExcel-R[0m
+echo [38;2;0;0;255mF2KO-BAT2EXE-A[0m
+echo [38;2;0;255;0mF2KO-BAT2EXE-R[0m
+echo [38;2;0;0;255mFirefox-Browser-A[0m
+echo [38;2;0;255;0mFirefox-Browser-R[0m
+echo [38;2;255;255;0mFirefox-Browser-I[0m
+echo [38;2;0;0;255mFlow-Launcher-A[0m
+echo [38;2;0;255;0mFlow-Launcher-R[0m
+echo [38;2;255;255;0mFlow-Launcher-I[0m
+echo [38;2;0;0;255mForensic-Toolkit-A[0m
+echo [38;2;0;255;0mForensic-Toolkit-R[0m
+echo [38;2;255;255;0mForensic-Toolkit-I[0m
+echo [38;2;0;0;255mFTK-Language-A[0m
+echo [38;2;0;255;0mFTK-Language-R[0m
+echo [38;2;255;255;0mFTK-Language-I[0m
+echo [38;2;0;0;255mFreeCell-A[0m
+echo [38;2;0;255;0mFreeCell-R[0m
+echo [38;2;0;0;255mFreegate-A[0m
+echo [38;2;0;255;0mFreegate-R[0m
+echo [38;2;0;0;255mGame-Extractor-A[0m
+echo [38;2;0;255;0mGame-Extractor-R[0m
+echo [38;2;255;255;0mGame-Extractor-I[0m
+echo [38;2;255;0;0mGame-Extractor-O[0m
+echo [38;2;0;0;255mGateway-A[0m
+echo [38;2;0;255;0mGateway-R[0m
+echo [38;2;255;255;0mGateway-I[0m
+echo [38;2;0;0;255mGhidra-A[0m
+echo [38;2;0;255;0mGhidra-R[0m
+echo [38;2;0;0;255mGitHub-A[0m
+echo [38;2;0;255;0mGitHub-R[0m
+echo [38;2;255;255;0mGitHub-I[0m
+echo [38;2;0;0;255mGitHub-Fork-A[0m
+echo [38;2;0;255;0mGitHub-Fork-R[0m
+echo [38;2;255;255;0mGitHub-Fork-I[0m
+echo [38;2;0;0;255mGo-Board-Game-A[0m
+echo [38;2;0;255;0mGo-Board-Game-R[0m
+echo [38;2;255;255;0mGo-Board-Game-IE[0m
+echo [38;2;255;255;0mGo-Board-Game-IM[0m
+echo [38;2;0;0;255mGodot-A[0m
+echo [38;2;0;255;0mGodot-R[0m
+echo [38;2;0;0;255mGood-Old-Games-A[0m
+echo [38;2;0;255;0mGood-Old-Games-R[0m
+echo [38;2;255;255;0mGood-Old-Games-I[0m
+echo [38;2;255;0;0mGood-Old-Games-O[0m
+echo [38;2;0;0;255mGoLand-A[0m
+echo [38;2;0;255;0mGoLand-R[0m
+echo [38;2;255;255;0mGoLand-I[0m
+echo [38;2;0;0;255mGoogle-Earth-Pro-A[0m
+echo [38;2;0;255;0mGoogle-Earth-Pro-R[0m
+echo [38;2;255;255;0mGoogle-Earth-Pro-I[0m
+echo [38;2;255;0;0mGoogle-Earth-Pro-O[0m
+echo [38;2;0;0;255mGUI-Octave-A[0m
+echo [38;2;0;255;0mGUI-Octave-R[0m
+echo [38;2;0;0;255mHearts-A[0m
+echo [38;2;0;255;0mHearts-R[0m
+echo [38;2;0;0;255mHex-Rays-IDA-A[0m
+echo [38;2;0;255;0mHex-Rays-IDA-R[0m
+echo [38;2;255;255;0mHex-Rays-IDA-I[0m
+echo [38;2;255;0;0mHex-Rays-IDA-O[0m
+echo [38;2;0;0;255mHitmanPro-A[0m
+echo [38;2;0;255;0mHitmanPro-R[0m
+echo [38;2;255;255;0mHitmanPro-I[0m
+echo [38;2;255;0;0mHitmanPro-O[0m
+echo [38;2;0;0;255mHitmanPro.Alert-A[0m
+echo [38;2;0;255;0mHitmanPro.Alert-R[0m
+echo [38;2;255;255;0mHitmanPro.Alert-I[0m
+echo [38;2;255;0;0mHitmanPro.Alert-O[0m
+echo [38;2;0;0;255mIExpress-A[0m
+echo [38;2;0;255;0mIExpress-R[0m
+echo [38;2;0;0;255mInternet-Download-Manager-A[0m
+echo [38;2;0;255;0mInternet-Download-Manager-R[0m
+echo [38;2;255;255;0mInternet-Download-Manager-I[0m
+echo [38;2;255;0;0mInternet-Download-Manager-O[0m
+echo [38;2;0;0;255mILSpy-A[0m
+echo [38;2;0;255;0mILSpy-R[0m
+echo [38;2;0;0;255mIl2CppInspector-A[0m
+echo [38;2;0;255;0mIl2CppInspector-R[0m
+echo [38;2;0;0;255mInkball-A[0m
+echo [38;2;0;255;0mInkball-R[0m
+echo [38;2;0;0;255mInno-Setup-A[0m
+echo [38;2;0;255;0mInno-Setup-R[0m
+echo [38;2;255;255;0mInno-Setup-I[0m
+echo [38;2;0;0;255mIntelliJIDEA-A[0m
+echo [38;2;0;255;0mIntelliJIDEA-R[0m
+echo [38;2;255;255;0mIntelliJIDEA-I[0m
+echo [38;2;0;0;255mIsoBuster-A[0m
+echo [38;2;0;255;0mIsoBuster-R[0m
+echo [38;2;255;255;0mIsoBuster-I[0m
+echo [38;2;255;0;0mIsoBuster-O[0m
+echo [38;2;0;0;255mIZArc-A[0m
+echo [38;2;0;255;0mIZArc-R[0m
+echo [38;2;255;255;0mIZArc-I[0m
+echo [38;2;255;0;0mIZArc-O[0m
+echo [38;2;0;0;255mJavaSnoop-A[0m
+echo [38;2;0;255;0mJavaSnoop-R[0m
+echo [38;2;0;0;255mJD-GUI-A[0m
+echo [38;2;0;255;0mJD-GUI-R[0m
+echo [38;2;255;255;0mJDK-I[0m
+echo [38;2;0;0;255mjGRASP-A[0m
+echo [38;2;0;255;0mjGRASP-R[0m
+echo [38;2;255;255;0mjGRASP-I[0m
+echo [38;2;255;0;0mjGRASP-O[0m
+echo [38;2;255;255;0mJRE-I[0m
+echo [38;2;0;0;255mJRiver-Media-Center-A[0m
+echo [38;2;0;255;0mJRiver-Media-Center-R[0m
+echo [38;2;255;255;0mJRiver-Media-Center-I[0m
+echo [38;2;255;0;0mJRiver-Media-Center-O[0m
+echo [38;2;0;0;255mKART-A[0m
+echo [38;2;0;255;0mKART-R[0m
+echo [38;2;255;255;0mKART-I[0m
+echo [38;2;255;0;0mKART-O[0m
+echo [38;2;0;0;255mKeePass-A[0m
+echo [38;2;0;255;0mKeePass-R[0m
+echo [38;2;255;255;0mKeePass-I[0m
+echo [38;2;255;0;0mKeePass-O[0m
+echo [38;2;0;0;255mKVRT-A[0m
+echo [38;2;0;255;0mKVRT-R[0m
+echo [38;2;255;255;0mKVRT-I[0m
+echo [38;2;255;0;0mKVRT-O[0m
+echo [38;2;0;0;255mLevel-Juicer-A[0m
+echo [38;2;0;255;0mLevel-Juicer-R[0m
+echo [38;2;0;0;255mLibreWolf-Browser-A[0m
+echo [38;2;0;255;0mLibreWolf-Browser-R[0m
+echo [38;2;255;255;0mLibreWolf-Browser-I[0m
+echo [38;2;255;0;0mLibreWolf-Browser-O[0m
+echo [38;2;0;0;255mMahjong-Titans-A[0m
+echo [38;2;0;255;0mMahjong-Titans-R[0m
+echo [38;2;0;0;255mMalwarebytes-A[0m
+echo [38;2;0;255;0mMalwarebytes-R[0m
+echo [38;2;255;255;0mMalwarebytes-I[0m
+echo [38;2;255;0;0mMalwarebytes-O[0m
+echo [38;2;0;0;255mMaple-A[0m
+echo [38;2;0;255;0mMaple-R[0m
+echo [38;2;255;255;0mMaple-I[0m
+echo [38;2;0;0;255mMaple-Flow-A[0m
+echo [38;2;0;255;0mMaple-Flow-R[0m
+echo [38;2;255;255;0mMaple-Flow-I[0m
+echo [38;2;0;0;255mMATLAB-A[0m
+echo [38;2;0;255;0mMATLAB-R[0m
+echo [38;2;255;255;0mMATLAB-I[0m
+echo [38;2;0;0;255mMetaProgrammingSystem-A[0m
+echo [38;2;0;255;0mMetaProgrammingSystem-R[0m
+echo [38;2;255;255;0mMetaProgrammingSystem-I[0m
+echo [38;2;0;0;255mMetasploit-A[0m
+echo [38;2;0;255;0mMetasploit-R[0m
+echo [38;2;255;255;0mMetasploit-I[0m
+echo [38;2;255;0;0mMetasploit-O[0m
+echo [38;2;255;255;0mMicrosoft365-I[0m
+echo [38;2;0;0;255mMinesweeper-A[0m
+echo [38;2;0;255;0mMinesweeper-R[0m
+echo [38;2;0;0;255mMinitab-A[0m
+echo [38;2;0;255;0mMinitab-R[0m
+echo [38;2;255;255;0mMinitab-I[0m
+echo [38;2;0;0;255mMullvad-Browser-A[0m
+echo [38;2;0;255;0mMullvad-Browser-R[0m
+echo [38;2;255;255;0mMullvad-Browser-I[0m
+echo [38;2;255;0;0mMullvad-Browser-O[0m
+echo [38;2;0;0;255mMullvad-VPN-A[0m
+echo [38;2;0;255;0mMullvad-VPN-R[0m
+echo [38;2;255;255;0mMullvad-VPN-I[0m
+echo [38;2;255;0;0mMullvad-VPN-O[0m
+echo [38;2;0;0;255mNMSSaveEditor-A[0m
+echo [38;2;0;255;0mNMSSaveEditor-R[0m
+echo [38;2;255;255;0mNMSSaveEditor-I[0m
+echo [38;2;0;0;255mNotepad-A[0m
+echo [38;2;0;255;0mNotepad-R[0m
+echo [38;2;0;0;255mNotepad++-A[0m
+echo [38;2;0;255;0mNotepad++-R[0m
+echo [38;2;255;255;0mNotepad++-I[0m
+echo [38;2;255;0;0mNotepad++-O[0m
+echo [38;2;0;0;255mNorton-Power-Eraser-A[0m
+echo [38;2;0;255;0mNorton-Power-Eraser-R[0m
+echo [38;2;255;255;0mNorton-Power-Eraser-I[0m
+echo [38;2;255;0;0mNorton-Power-Eraser-O[0m
+echo [38;2;0;0;255mOctave-CLI-A[0m
+echo [38;2;0;255;0mOctave-CLI-R[0m
+echo [38;2;0;0;255mOctave-GUI-A[0m
+echo [38;2;0;255;0mOctave-GUI-R[0m
+echo [38;2;255;255;0mOctave-I[0m
+echo [38;2;255;0;0mOctave-O[0m
+echo [38;2;0;0;255mOdin-A[0m
+echo [38;2;0;255;0mOdin-R[0m
+echo [38;2;0;0;255mON1-Photo-RAW-A[0m
+echo [38;2;0;255;0mON1-Photo-RAW-R[0m
+echo [38;2;255;255;0mON1-Photo-RAW-I[0m
+echo [38;2;0;0;255mOneNote-A[0m
+echo [38;2;0;255;0mOneNote-R[0m
+echo [38;2;0;0;255mOneDrive-A[0m
+echo [38;2;0;255;0mOneDrive-R[0m
+echo [38;2;0;0;255mOOSU1O-A[0m
+echo [38;2;0;255;0mOOSU1O-R[0m
+echo [38;2;0;0;255mOpenMPT-A[0m
+echo [38;2;0;255;0mOpenMPT-R[0m
+echo [38;2;255;255;0mOpenMPT-I[0m
+echo [38;2;255;0;0mOpenMPT-O[0m
+echo [38;2;0;0;255mOpera-Browser-A[0m
+echo [38;2;0;255;0mOpera-Browser-R[0m
+echo [38;2;255;255;0mOpera-Browser-I[0m
+echo [38;2;255;0;0mOpera-Browser-O[0m
+echo [38;2;0;0;255mOutlook-A[0m
+echo [38;2;0;255;0mOutlook-R[0m
+echo [38;2;0;0;255mPaint-A[0m
+echo [38;2;0;255;0mPaint-R[0m
+echo [38;2;0;0;255mPalworldSavePal-A[0m
+echo [38;2;0;255;0mPalworldSavePal-R[0m
+echo [38;2;255;255;0mPalworldSavePal-I[0m
+echo [38;2;0;0;255mPassware-Kit-A[0m
+echo [38;2;0;255;0mPassware-Kit-R[0m
+echo [38;2;255;255;0mPassware-Kit-I[0m
+echo [38;2;0;0;255mPeaZip-A[0m
+echo [38;2;0;255;0mPeaZip-R[0m
+echo [38;2;255;255;0mPeaZip-I[0m
+echo [38;2;255;0;0mPeaZip-O[0m
+echo [38;2;0;0;255mPE-Explorer-A[0m
+echo [38;2;0;255;0mPE-Explorer-R[0m
+echo [38;2;0;0;255mPEiD-A[0m
+echo [38;2;0;255;0mPEiD-R[0m
+echo [38;2;0;0;255mPhotoline-A[0m
+echo [38;2;0;255;0mPhotoline-R[0m
+echo [38;2;255;255;0mPhotoline-I[0m
+echo [38;2;255;0;0mPhotoline-O[0m
+echo [38;2;0;0;255mPhpStorm-A[0m
+echo [38;2;0;255;0mPhpStorm-R[0m
+echo [38;2;255;255;0mPhpStorm-I[0m
+echo [38;2;255;255;0mPiriform-I[0m
+echo [38;2;0;0;255mPlayerFab-A[0m
+echo [38;2;0;255;0mPlayerFab-R[0m
+echo [38;2;255;255;0mPlayerFab-I[0m
+echo [38;2;255;0;0mPlayerFab-O[0m
+echo [38;2;0;0;255mPortmaster-A[0m
+echo [38;2;0;255;0mPortmaster-R[0m
+echo [38;2;255;255;0mPortmaster-I[0m
+echo [38;2;255;0;0mPortmaster-O[0m
+echo [38;2;0;0;255mPowerArchiver-A[0m
+echo [38;2;0;255;0mPowerArchiver-R[0m
+echo [38;2;255;255;0mPowerArchiver-I[0m
+echo [38;2;255;0;0mPowerArchiver-O[0m
+echo [38;2;0;0;255mPowerBI-A[0m
+echo [38;2;0;255;0mPowerBI-R[0m
+echo [38;2;255;255;0mPowerBI-I[0m
+echo [38;2;0;0;255mPowerISO-A[0m
+echo [38;2;0;255;0mPowerISO-R[0m
+echo [38;2;255;255;0mPowerISO-I[0m
+echo [38;2;255;0;0mPowerISO-O[0m
+echo [38;2;0;0;255mPowerPoint-A[0m
+echo [38;2;0;255;0mPowerPoint-R[0m
+echo [38;2;0;0;255mPowerShell-A[0m
+echo [38;2;0;255;0mPowerShell-R[0m
+echo [38;2;255;255;0mPowerShell-I[0m
+echo [38;2;0;0;255mProcess-Hacker-A[0m
+echo [38;2;0;255;0mProcess-Hacker-R[0m
+echo [38;2;255;255;0mProcess-Hacker-I[0m
+echo [38;2;255;0;0mProcess-Hacker-O[0m
+echo [38;2;0;0;255mProton-VPN-A[0m
+echo [38;2;0;255;0mProton-VPN-R[0m
+echo [38;2;0;0;255mProton-Drive-A[0m
+echo [38;2;0;255;0mProton-Drive-R[0m
+echo [38;2;255;255;0mProton-I[0m
+echo [38;2;255;0;0mProton-O[0m
+echo [38;2;0;0;255mPrusaSlicer-A[0m
+echo [38;2;0;255;0mPrusaSlicer-R[0m
+echo [38;2;0;0;255mPrusa-G-code-Viewer-A[0m
+echo [38;2;0;255;0mPrusa-G-code-Viewer-R[0m
+echo [38;2;255;255;0mPrusa-I[0m
+echo [38;2;255;0;0mPrusa-O[0m
+echo [38;2;0;0;255mPublisher-A[0m
+echo [38;2;0;255;0mPublisher-R[0m
+echo [38;2;0;0;255mPurble-Place-A[0m
+echo [38;2;0;255;0mPurble-Place-R[0m
+echo [38;2;0;0;255mPure-Data-A[0m
+echo [38;2;0;255;0mPure-Data-R[0m
+echo [38;2;255;255;0mPure-Data-I[0m
+echo [38;2;255;0;0mPure-Data-O[0m
+echo [38;2;0;0;255mPuTTY-A[0m
+echo [38;2;0;255;0mPuTTY-R[0m
+echo [38;2;255;255;0mPuTTY-I[0m
+echo [38;2;0;0;255mPyCharm-A[0m
+echo [38;2;0;255;0mPyCharm-R[0m
+echo [38;2;255;255;0mPyCharm-I[0m
+echo [38;2;0;0;255mPython-A[0m
+echo [38;2;0;255;0mPython-R[0m
+echo [38;2;255;255;0mPython-I[0m
+echo [38;2;0;0;255mqBittorrent-A[0m
+echo [38;2;0;255;0mqBittorrent-R[0m
+echo [38;2;255;255;0mqBittorrent-I[0m
+echo [38;2;255;0;0mqBittorrent-O[0m
+echo [38;2;0;0;255mQFX-Key-Scrambler-A[0m
+echo [38;2;0;255;0mQFX-Key-Scrambler-R[0m
+echo [38;2;255;255;0mQFX-Key-Scrambler-I[0m
+echo [38;2;255;0;0mQFX-Key-Scrambler-O[0m
+echo [38;2;0;0;255mRecuva-A[0m
+echo [38;2;0;255;0mRecuva-R[0m
+echo [38;2;255;255;0mRecuva-I[0m
+echo [38;2;255;0;0mRecuva-O[0m
+echo [38;2;0;0;255mRemocapp-Studio-A[0m
+echo [38;2;0;255;0mRemocapp-Studio-R[0m
+echo [38;2;255;255;0mRemocapp-Studio-I[0m
+echo [38;2;255;0;0mRemocapp-Studio-O[0m
+echo [38;2;255;255;0mReShade-I[0m
+echo [38;2;255;0;255mReShade-U[0m
+echo [38;2;0;0;255mReSharper-A[0m
+echo [38;2;0;255;0mReSharper-R[0m
+echo [38;2;255;255;0mReSharper-I[0m
+echo [38;2;0;0;255mResharper-Cpp-A[0m
+echo [38;2;0;255;0mResharper-Cpp-R[0m
+echo [38;2;255;255;0mResharper-Cpp-I[0m
+echo [38;2;0;0;255mResource-Tuner-A[0m
+echo [38;2;0;255;0mResource-Tuner-R[0m
+echo [38;2;255;255;0mResource-Tuner-I[0m
+echo [38;2;255;0;0mResource-Tuner-O[0m
+echo [38;2;0;0;255mRevo-Uninstaller-A[0m
+echo [38;2;0;255;0mRevo-Uninstaller-R[0m
+echo [38;2;255;255;0mRevo-Uninstaller-I[0m
+echo [38;2;255;0;0mRevo-Uninstaller-O[0m
+echo [38;2;0;0;255mRider-A[0m
+echo [38;2;0;255;0mRider-R[0m
+echo [38;2;255;255;0mRider-I[0m
+echo [38;2;0;0;255mRise-of-Legends-A[0m
+echo [38;2;0;255;0mRise-of-Legends-R[0m
+echo [38;2;255;255;0mRise-of-Legends-I[0m
+echo [38;2;0;0;255mRoL-Big-Archiver-A[0m
+echo [38;2;0;255;0mRoL-Big-Archiver-R[0m
+echo [38;2;0;0;255mRokoko-Studio-A[0m
+echo [38;2;0;255;0mRokoko-Studio-R[0m
+echo [38;2;255;255;0mRokoko-Studio-I[0m
+echo [38;2;255;0;0mRokoko-Studio-O[0m
+echo [38;2;0;0;255mRubyMine-A[0m
+echo [38;2;0;255;0mRubyMine-R[0m
+echo [38;2;255;255;0mRubyMine-I[0m
+echo [38;2;0;0;255mRustRover-A[0m
+echo [38;2;0;255;0mRustRover-R[0m
+echo [38;2;255;255;0mRustRover-I[0m
+echo [38;2;255;255;0mSamsung-Driver-I[0m
+echo [38;2;0;0;255mSARDU-A[0m
+echo [38;2;0;255;0mSARDU-R[0m
+echo [38;2;0;0;255mSecureCRT-A[0m
+echo [38;2;0;255;0mSecureCRT-R[0m
+echo [38;2;255;255;0mSecureCRT-I[0m
+echo [38;2;0;0;255mSignal-A[0m
+echo [38;2;0;255;0mSignal-R[0m
+echo [38;2;255;255;0mSignal-I[0m
+echo [38;2;255;0;0mSignal-O[0m
+echo [38;2;0;0;255mSlic3r-A[0m
+echo [38;2;0;255;0mSlic3r-R[0m
+echo [38;2;0;0;255mSolidWorks-3D-CAD-Design-A[0m
+echo [38;2;0;255;0mSolidWorks-3D-CAD-Design-R[0m
+echo [38;2;255;255;0mSolidWorks-3D-CAD-Design-I[0m
+echo [38;2;0;255;255mSolidWorks-3D-CAD-Design-S[0m
+echo [38;2;0;0;255mSolitaire-A[0m
+echo [38;2;0;255;0mSolitaire-R[0m
+echo [38;2;0;0;255mSpeccy-A[0m
+echo [38;2;0;255;0mSpeccy-R[0m
+echo [38;2;255;255;0mSpeccy-I[0m
+echo [38;2;255;0;0mSpeccy-O[0m
+echo [38;2;0;0;255mSpider-Solitaire-A[0m
+echo [38;2;0;255;0mSpider-Solitaire-R[0m
+echo [38;2;0;0;255mSteam-Games-Launcher-A[0m
+echo [38;2;0;255;0mSteam-Games-Launcher-R[0m
+echo [38;2;255;255;0mSteam-Games-Launcher-I[0m
+echo [38;2;255;0;0mSteam-Games-Launcher-O[0m
+echo [38;2;0;0;255mStinger-A[0m
+echo [38;2;0;255;0mStinger-R[0m
+echo [38;2;255;255;0mStinger-I[0m
+echo [38;2;255;0;0mStinger-O[0m
+echo [38;2;0;0;255mStreamFab-A[0m
+echo [38;2;0;255;0mStreamFab-R[0m
+echo [38;2;255;255;0mStreamFab-I[0m
+echo [38;2;255;0;0mStreamFab-O[0m
+echo [38;2;0;255;0mSystem-Internals-R[0m
+echo [38;2;0;0;255mTeams-A[0m
+echo [38;2;0;255;0mTeams-R[0m
+echo [38;2;0;0;255mTechnitium-A[0m
+echo [38;2;0;255;0mTechnitium-R[0m
+echo [38;2;255;255;0mTechnitium-I[0m
+echo [38;2;0;0;255mTekla-Structures-A[0m
+echo [38;2;0;255;0mTekla-Structures-R[0m
+echo [38;2;255;255;0mTekla-Structures-I[0m
+echo [38;2;0;255;255mTekla-Structures-S[0m
+echo [38;2;0;0;255mTelerik-Test-Studio-A[0m
+echo [38;2;0;255;0mTelerik-Test-Studio-R[0m
+echo [38;2;0;0;255mTelerik-Test-Studio-APIs-A[0m
+echo [38;2;0;255;0mTelerik-Test-Studio-APIs-R[0m
+echo [38;2;255;255;0mTelerik-I[0m
+echo [38;2;0;0;255mTI-Nspire-CX-Premium-Teacher-Software-A[0m
+echo [38;2;0;255;0mTI-Nspire-CX-Premium-Teacher-Software-R[0m
+echo [38;2;0;0;255mTI-Nspire-CX-CAS-Premium-Teacher-Software-A[0m
+echo [38;2;0;255;0mTI-Nspire-CX-CAS-Premium-Teacher-Software-R[0m
+echo [38;2;255;255;0mTI-Nspire-CX-CAS-Premium-Teacher-Software-I[0m
+echo [38;2;0;0;255mTI-Nspire-CX-CAS-Student-Software-A[0m
+echo [38;2;0;255;0mTI-Nspire-CX-CAS-Student-Software-R[0m
+echo [38;2;255;255;0mTI-Nspire-CX-CAS-Student-Software-I[0m
+echo [38;2;0;0;255mToolbox-A[0m
+echo [38;2;0;255;0mToolbox-R[0m
+echo [38;2;255;255;0mToolbox-I[0m
+echo [38;2;0;0;255mTor-Browser-A[0m
+echo [38;2;0;255;0mTor-Browser-R[0m
+echo [38;2;255;255;0mTor-Browser-I[0m
+echo [38;2;0;255;0mTraceX-R[0m
+echo [38;2;0;0;255mTreeSize-A[0m
+echo [38;2;0;255;0mTreeSize-R[0m
+echo [38;2;255;255;0mTreeSize-I[0m
+echo [38;2;255;0;0mTreeSize-O[0m
+echo [38;2;0;0;255mUbisoft-Connect-A[0m
+echo [38;2;0;255;0mUbisoft-Connect-R[0m
+echo [38;2;255;255;0mUbisoft-Connect-I[0m
+echo [38;2;255;0;0mUbisoft-Connect-O[0m
+echo [38;2;0;0;255mUltraISO-A[0m
+echo [38;2;0;255;0mUltraISO-R[0m
+echo [38;2;255;255;0mUltraISO-I[0m
+echo [38;2;255;0;0mUltraISO-O[0m
+echo [38;2;0;0;255mUltraSearch-A[0m
+echo [38;2;0;255;0mUltraSearch-R[0m
+echo [38;2;255;255;0mUltraSearch-I[0m
+echo [38;2;255;0;0mUltraSearch-O[0m
+echo [38;2;0;0;255mUniFab-A[0m
+echo [38;2;0;255;0mUniFab-R[0m
+echo [38;2;255;255;0mUniFab-I[0m
+echo [38;2;255;0;0mUniFab-O[0m
+echo [38;2;0;0;255mUnity-Hub-A[0m
+echo [38;2;0;255;0mUnity-Hub-R[0m
+echo [38;2;255;255;0mUnity-Hub-I[0m
+echo [38;2;255;0;0mUnity-Hub-O[0m
+echo [38;2;0;0;255mVisual-Studio-A[0m
+echo [38;2;0;255;0mVisual-Studio-R[0m
+echo [38;2;255;255;0mVisual-Studio-I[0m
+echo [38;2;0;255;255mVisual-Studio-S[0m
+echo [38;2;0;0;255mVisual-Studio-Code-A[0m
+echo [38;2;0;255;0mVisual-Studio-Code-R[0m
+echo [38;2;255;255;0mVisual-Studio-Code-I[0m
+echo [38;2;255;0;0mVisual-Studio-Code-O[0m
+echo [38;2;0;0;255mVMware-Workstation-A[0m
+echo [38;2;0;255;0mVMware-Workstation-R[0m
+echo [38;2;255;255;0mVMware-Workstation-I[0m
+echo [38;2;0;0;255mWallpaper-Engine-A[0m
+echo [38;2;0;255;0mWallpaper-Engine-R[0m
+echo [38;2;255;255;0mWallpaper-Engine-I[0m
+echo [38;2;0;0;255mWebStorm-A[0m
+echo [38;2;0;255;0mWebStorm-R[0m
+echo [38;2;255;255;0mWebStorm-I[0m
+echo [38;2;0;0;255mWinAce-A[0m
+echo [38;2;0;255;0mWinAce-R[0m
+echo [38;2;255;255;0mWinAce-I[0m
+echo [38;2;255;255;0mWindows7GamesForWindows11-1O-8-I[0m
+echo [38;2;255;0;0mWindows7GamesForWindows11-1O-8-O[0m
+echo [38;2;0;255;0mWindows-Tools-R[0m
+echo [38;2;0;255;0mWindows-System32-drivers-etc-R[0m
+echo [38;2;0;0;255mWinRAR-A[0m
+echo [38;2;0;255;0mWinRAR-R[0m
+echo [38;2;255;255;0mWinRAR-I[0m
+echo [38;2;255;0;0mWinRAR-O[0m
+echo [38;2;0;0;255mWinZip-Archiver-A[0m
+echo [38;2;0;255;0mWinZip-Archiver-R[0m
+echo [38;2;0;0;255mWinZip-Duplicate-File-Finder-A[0m
+echo [38;2;0;255;0mWinZip-Duplicate-File-Finder-R[0m
+echo [38;2;0;0;255mWinZip-Image-Manager-A[0m
+echo [38;2;0;255;0mWinZip-Image-Manager-R[0m
+echo [38;2;0;0;255mWinZip-PDF-Express-A[0m
+echo [38;2;0;255;0mWinZip-PDF-Express-R[0m
+echo [38;2;0;0;255mWinZip-SafeShare-A[0m
+echo [38;2;0;255;0mWinZip-SafeShare-R[0m
+echo [38;2;0;0;255mWinZip-Secure-Backup-A[0m
+echo [38;2;0;255;0mWinZip-Secure-Backup-R[0m
+echo [38;2;255;255;0mWinZip-I[0m
+echo [38;2;255;0;0mWinZip-O[0m
+echo [38;2;0;0;255mWireGuard-A[0m
+echo [38;2;0;255;0mWireGuard-R[0m
+echo [38;2;255;255;0mWireGuard-I[0m
+echo [38;2;0;0;255mWireshark-A[0m
+echo [38;2;0;255;0mWireshark-R[0m
+echo [38;2;255;255;0mWireshark-I[0m
+echo [38;2;255;0;0mWireshark-O[0m
+echo [38;2;0;0;255mWooGLE-A[0m
+echo [38;2;0;255;0mWooGLE-R[0m
+echo [38;2;255;255;0mWooGLE-I[0m
+echo [38;2;255;0;0mWooGLE-O[0m
+echo [38;2;0;0;255mWord-A[0m
+echo [38;2;0;255;0mWord-R[0m
+echo [38;2;0;0;255mWriterside-A[0m
+echo [38;2;0;255;0mWriterside-R[0m
+echo [38;2;255;255;0mWriterside-I[0m
+echo [38;2;0;0;255mx64dbg-A[0m
+echo [38;2;0;255;0mx64dbg-R[0m
+echo [38;2;0;0;255mXming-A[0m
+echo [38;2;0;255;0mXming-R[0m
+echo [38;2;255;255;0mXming-I[0m
+echo [38;2;255;0;0mXming-O[0m
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
 goto :eof

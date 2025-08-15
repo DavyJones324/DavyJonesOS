@@ -1,3 +1,14 @@
+Patch 1.0.8
+
+* Added Blender to the list of Video Editing/Motion Capture Studios, including shortcuts.
+* Relocated the Maple program prompts from menu 9b, making way for adding Wallpaper Engine to Menu 9b.
+* Added color coding for easier tracking of the shortcuts and installers that either do exist or are currently missing.
+* Added color coding and legend for the "wordsort" command.
+* Added various other QOL color coding.
+* The additional linked batch scripts executed to launch Visual Studio Code and Godot Engine are now minimized. Reminders included.
+* Further refined the search engine to accept both acronyms and text commands, including specification boundaries.
+* Various other issues fixed.
+
 Patch 1.0.7
 
 * Added a new network menu to the Davy Jones OS Batch Script.
