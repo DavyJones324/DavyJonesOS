@@ -22331,12 +22331,12 @@ if /I %input% EQU +- cls&goto start9a
 cls&goto startPaintNETpromptDialerMode
 :menuPaintNETprompt
 echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: 
-echo     Software Type: 
+echo  Author/Developer: formerly under Rick Brewster; now under dotPDN, LLC
+echo     Software Type: General-Purpose Raster Graphics Editor Program
 echo          Category: Freeware
-echo      License Type: Proprietary
-echo           Website: 
-echo  Founded/Released: 
+echo      License Type: CCANCND-2.5; "Crystal" and "Oxygen" icon sets under LGPL; other sets under Custom license
+echo           Website: https://getpaint.net/
+echo  Founded/Released: 05/06/2004
 echo         Publicity: Public
 echo            Status: Active
 echo    Current Update: 
