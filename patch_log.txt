@@ -1,3 +1,24 @@
+Patch 1.0.9
+
+* Added Battle.net and its shortcuts to the list of other game platforms.
+* Added the Workspace menu to the auxiliary commands and to the help section. "Workspace" includes the following programs:
+   * Discord (with shortcuts)
+   * WhatsApp
+   * Zoom (with shortcuts)
+   * Wire
+   * TeamSpeak
+   * TeamViewer
+   * UltraViewer
+   * AnyDesk
+   * RemotePC
+   * HelpWire
+  NOTE: This command is not the same thing as Google Workspace and should be treated as such.
+* Added three other paint programs, Paint.NET, Clip Studio Paint, and Rebelle, in menu 9c that are similar to Windows Paint.
+* Added the correct amount of spacing and visuals for all exit prompts.
+* Added the exit codes for the extra batch scripts meant to open Visual Studio Code and Godot Engine.
+* Optimized and organized the bookmarks.
+* Other bug fixes.
+
 Patch 1.0.8
 
 * Added Blender to the list of Video Editing/Motion Capture Studios, including shortcuts.
