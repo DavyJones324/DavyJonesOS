@@ -1,3 +1,12 @@
+Patch 1.1.0
+
+* Added the program yEd to menu 9b in the batch script, including shortcuts, and reorganized the TI-Nspire software placements.
+* Added ChemDraw and ChemOffice to menu 9c, including some shortcuts, alongside the other paint programs. The 64-bit shortcuts will be
+  enabled by default. However, both 32-bit and 64-bit shortcut backups will be included here.
+* Removed a useless Google Earth Pro uninstall shortcut from the Remote Manifold folder.
+* This is the last patch before I become inactive for a very long time.
+* An easter egg along with some final bug fixes have been implemented for that matter.
+
 Patch 1.0.9
 
 * Added Battle.net and its shortcuts to the list of other game platforms.
