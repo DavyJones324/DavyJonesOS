@@ -1,3 +1,23 @@
+Patch 1.1.1
+
+* Added Revo Registry Cleaner to the Alert menu alongside Revo Uninstaller.
+* Added Defraggler to the list, but it can only be searched for in the search engine and is not associated with any menu.
+* Added QuickLook to the Background menu alongside Flow Launcher.
+* Reworked the Installer menu, and added new installer manufacturing/utility programs to the list. These programs include:
+   * InstallAware
+   * InstalledPackagesView
+   * InstallShield
+   * Nullsoft Scripted Install System (NSIS)
+   * WiX Toolset
+* Added LogViewer, Universal Viewer, Advanced Renamer, and Attribute Changer to the Coding menu alongside 010 Editor, now named as
+  Universal Viewers/Editors.
+* Reworked the entire JetBrains menu to now include 2 pages instead of 3; JetBrains Aqua and Writerside have been removed due to policy.
+* Added RoboDK to the Sandbox menu alongside the Slic3r Tools menu, now renamed as Robot Utilities.
+* Polished the Engineering Tools menu for a couple of listed programs.
+* Added Dependency Walker and PowerToys to the Portable menu and compressed the dnSpy options from that menu to a simpler selection.
+* Main menu and alphabetical menu screens now presents more displayable options.
+* Additional bug fixes.
+
 Patch 1.1.0
 
 * Added the program yEd to menu 9b in the batch script, including shortcuts, and reorganized the TI-Nspire software placements.
