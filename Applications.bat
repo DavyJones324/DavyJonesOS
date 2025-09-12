@@ -35262,7 +35262,7 @@ echo           Website: https://github.com/DavyJones324/DavyJonesOS
 echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Inactive
-echo    Current Update: 1.1.1  
+echo    Current Update: 1.1.1
 echo        Patch Date: 09/12/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 ^& 11. No administrator privilages required.
