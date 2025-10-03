@@ -1,3 +1,45 @@
+Patch 1.1.2
+
+* Addd a new auxiliary command which allows the user to temporarily change the call directory to a different installed drive from the
+  default C-Drive. This temporary call directory will not be saved upon exiting the batch script.
+* Added new auxiliary commands and shortcuts that allow the batch script to open new places such as AppData, Desktop, Documents,
+  Downloads, Home, Music, Pictures, and Videos folders.
+* Added a list of various compiler tools, both old and new, to the Background menu. The full list is displayed in that section.
+* Removed JDK and JRE installers from the compatibility list, as they should be used as a reference point, not as a way to execute
+  compiler tool installation.
+* Added BabelPad and ImHex to the Background menu alongside Notepad and Notepad++.
+* Added WinCompose to the Background menu alongside QuickLook and Flow Launcher.
+* Improved the PuTTY menu to include some programs that came with the installer, as well as a couple of additional experimental programs.
+  PuTTY programs that can only be executed via command prompt are named PLink, PSCP, and PSFTP.
+* Added Supremo to the Workspace menu alongside TeamSpeak.
+* Added Binary Ninja to Menu 5 alongside Hex-Rays IDA.
+* Added the Serif Affinity trio to Menu 5 alongside ON1 Photo RAW, which now has the remaining ON1 software included as a suite.
+* Added Asperite to Menu 5 alongside Photoline.
+* Added a list of other file management programs alongside Calibre that can handle DRM, EPUB, Kindle, Audible, PDF, Music, and Videos:
+   * Alfa Reader & eBooks Manager
+   * NoteBurner Suite
+   * Epubor Suite
+   * TunePat Suite
+   * A list of other programs with names starting with "Any".
+* Added Soundpad to Menu 9a alongside OpenMPT.
+* Added CreamInstaller to the Keys menu alongside ReShade, which includes an important warning to read before use.
+* Added GlassWire to Menu 9c alongside Portmaster.
+* Relocated OpenVPN to the Background menu alongside Wireguard.
+* Added Surfshark to Menu 9c alongside other VPNs.
+* Added Astrill VPN to Menu 9c alongside other VPNs, but with an important note attached meant for a specific group of scammers.
+* Added BabelMap to Menu 9c alongside Character Map.
+* Added Krita to Menu 9c alongside the other paint programs.
+* Added and adjusted additional lines of code to change the priority of dialer input execution from shortest strings to longest.
+  For string fragments, the opposite will be true instead - from longest strings to shortest. Word strings are organized alphabetically.
+  This results in the program being optimized, but the code structure is obfuscated for human reading purposes.
+* The alphabetical template will now come with its own separate dialer functions and search engine. Think of it like formatting a brain,
+  but with coding. This makes it so the batch script doesn't lag as much when executing commands from any menu. Additionally, the Alpha,
+  Beta, Gamma, and Menu commands will now change the startup setting of the Applications shortcut.
+* Additional bug fixes.
+* This will be the last major patch associated with the main menu, including with my 3 new built-in alphabetical templates. From now on,
+  only maintenance patches will be released for any future undiscovered bugs this batch program may have. Code away with the alphabetical
+  templates in peace, and see what other programs you can add into the script!
+
 Patch 1.1.1
 
 * Added Revo Registry Cleaner to the Alert menu alongside Revo Uninstaller.
