@@ -51732,7 +51732,7 @@ echo    Current Update: 1.1.2
 echo        Patch Date: 10/03/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 ^& 11. No administrator privilages required.
-echo                 +: Art Design taken from "https:\\patorjk.com". Dot Art does not show for Windows 10.
+echo                 +: Art Design taken from https:\\patorjk.com. Dot Art does not show for Windows 10.
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
@@ -58585,7 +58585,7 @@ echo.
 echo.
 echo Lines used: 60,000 (10/03/2025)
 echo.
-echo Size on file: ~3.17 MB (~3,247 KB, or 3,325,306 bytes)
+echo Size on file: ~3.17 MB (~3,247 KB, or 3,325,304 bytes)
 echo.
 echo Size on Disk: ~3.18 MB (~3,264 KB, or 3,342,336 bytes)
 echo.
