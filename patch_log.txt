@@ -8,7 +8,7 @@ Patch 1.1.2
 * Removed JDK and JRE installers from the compatibility list, as they should be used as a reference point, not as a way to execute
   compiler tool installation.
 * Added BabelPad and ImHex to the Background menu alongside Notepad and Notepad++.
-* Added WinCompose to the Background menu alongside QuickLook and Flow Launcher.
+* Added WinCompose and Wise Auto Shutdown to the Background menu alongside QuickLook and Flow Launcher.
 * Improved the PuTTY menu to include some programs that came with the installer, as well as a couple of additional experimental programs.
   PuTTY programs that can only be executed via command prompt are named PLink, PSCP, and PSFTP.
 * Added Supremo to the Workspace menu alongside TeamSpeak.

@@ -1771,6 +1771,7 @@ if /I %input% EQU 2Y cls&goto startPythonVersionPromptSubDialerMode
 if /I %input% EQU 3Q cls&goto startQuickLookPromptSubDialerMode
 if /I %input% EQU 3F cls&goto startFlowLauncherPromptSubDialerMode
 if /I %input% EQU 3C cls&goto startWinComposePromptSubDialerMode
+if /I %input% EQU 3W cls&goto startWiseAutoShutdownPromptSubDialerMode
 if /I %input% EQU 4I start Samsung_Driver_I.exe&set input=Background-4I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5A start Directory_Opus_A.lnk&set input=Background-5A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5R start Directory_Opus_R.lnk&set input=Background-5R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -1802,6 +1803,10 @@ if /I %input% EQU 3CA start WinCompose_A.lnk&set input=Background-9CA&&goto star
 if /I %input% EQU 3CR start WinCompose_R.lnk&set input=Background-9CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3CI start WinCompose_I.exe&set input=Background-9CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3CO start WinCompose_O.lnk&set input=Background-9CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3WA start Wise_Auto_Shutdown_A.lnk&set input=Background-3WA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3WR start Wise_Auto_Shutdown_R.lnk&set input=Background-3WR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3WI start Wise_Auto_Shutdown_I.exe&set input=Background-3WI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3WO start Wise_Auto_Shutdown_O.lnk&set input=Background-3WO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8WO cls&set input=Background-8O&goto startUninstallationInstructions
 if /I %input% EQU 8WA start WireGuard_A.lnk&set input=Background-8A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 8WR start WireGuard_R.lnk&set input=Background-8R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2588,6 +2593,8 @@ call :menuQuickFlow
 if /I %input% EQU 0 cls&goto startBackground
 if /I %input% EQU Q cls&goto startQuickLookPrompt1
 if /I %input% EQU F cls&goto startFlowLauncherPrompt1
+if /I %input% EQU C cls&goto startWinComposePrompt1
+if /I %input% EQU W cls&goto startWiseAutoShutdownPrompt1
 if /I %input% EQU -+ cls&goto startBackground
 if /I %input% EQU +- cls&goto startBackground
 call :menuAuxiliaryCommands
@@ -2602,6 +2609,8 @@ call :menuQuickFlow
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU Q cls&goto startQuickLookPrompt2
 if /I %input% EQU F cls&goto startFlowLauncherPrompt2
+if /I %input% EQU C cls&goto startWinComposePrompt2
+if /I %input% EQU W cls&goto startWiseAutoShutdownPrompt2
 if /I %input% EQU -+ cls&goto startBackground
 if /I %input% EQU +- cls&goto startBackground
 call :menuAuxiliaryCommands
@@ -2621,12 +2630,12 @@ echo         Publicity: Public
 echo            Status: Active
 echo    Current Update: 
 echo        Patch Date: 
-echo  Target Filenames: QuickLook_R.lnk, QuickLook_I.exe, QuickLook_O.lnk, Flow_Launcher_R.lnk, Flow_Launcher_I.exe,
-echo                 +: WinCompose_R.lnk, WinCompose_I.exe, WinCompose_O.lnk
+echo  Target Filenames: QuickLook_{R/O}.lnk, QuickLook_I.exe, Flow_Launcher_R.lnk, Flow_Launcher_I.exe,
+echo                 +: WinCompose_{R/O}.lnk, WinCompose_I.exe, Wise_Auto_Shutdown_{R/O}.lnk, Wise_Auto_Shutdown_I.exe
 echo   Additional Info: 
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
-echo Input the letter for QuickLook/Flow Launcher/WinCompose ("Q/F/C"). Input zero ("0") to cancel.
+echo Input the letter for QuickLook/Flow Launcher/WinCompose/Wise Auto Shutdown ("Q/F/C/W"). Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuQuickFlow
@@ -2635,6 +2644,7 @@ if /I %input% EQU 0 goto :eof
 if /I %input% EQU Q goto :eof
 if /I %input% EQU F goto :eof
 if /I %input% EQU C goto :eof
+if /I %input% EQU W goto :eof
 if /I %input% EQU QA start QuickLook_A.lnk&set input=Background-3QA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU QR start QuickLook_R.lnk&set input=Background-3QR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU QI start QuickLook_I.exe&set input=Background-3QI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -2647,6 +2657,10 @@ if /I %input% EQU CA start WinCompose_A.lnk&set input=Background-3CA&&goto start
 if /I %input% EQU CR start WinCompose_R.lnk&set input=Background-3CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CI start WinCompose_I.exe&set input=Background-3CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CO start WinCompose_O.lnk&set input=Background-3CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WA start Wise_Auto_Shutdown_A.lnk&set input=Background-3WA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WR start Wise_Auto_Shutdown_R.lnk&set input=Background-3WR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WI start Wise_Auto_Shutdown_I.exe&set input=Background-3WI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU WO start Wise_Auto_Shutdown_O.lnk&set input=Background-3WO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startQuickLookPrompt1
 call :banner
@@ -2875,6 +2889,82 @@ if /I %input% EQU A start WinCompose_A.lnk&set input=Background-3CA&&goto startP
 if /I %input% EQU R start WinCompose_R.lnk&set input=Background-3CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU I start WinCompose_I.exe&set input=Background-3CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start WinCompose_O.lnk&set input=Background-3CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startWiseAutoShutdownPrompt1
+call :banner
+call :menuWiseAutoShutdownPrompt
+call :menuWiseAutoShutdown
+if /I %input% EQU 0 cls&goto startQuickFlowPrompt
+if /I %input% EQU -+ cls&goto startBackground
+if /I %input% EQU +- cls&goto startBackground
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startWiseAutoShutdownPrompt1
+:startWiseAutoShutdownPrompt2
+call :banner
+call :menuWiseAutoShutdownPrompt
+call :menuWiseAutoShutdown
+if /I %input% EQU 0 cls&goto startQuickFlowPromptDialerMode
+if /I %input% EQU -+ cls&goto startBackground
+if /I %input% EQU +- cls&goto startBackground
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startWiseAutoShutdownPrompt2
+:startWiseAutoShutdownPromptSubDialerMode
+call :banner
+call :menuWiseAutoShutdownPrompt
+call :menuWiseAutoShutdown
+if /I %input% EQU 0 cls&goto startBackground
+if /I %input% EQU -+ cls&goto startBackground
+if /I %input% EQU +- cls&goto startBackground
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startWiseAutoShutdownPromptSubDialerMode
+:startWiseAutoShutdownPromptDialerMode
+call :banner
+call :menuWiseAutoShutdownPrompt
+call :menuWiseAutoShutdown
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startBackground
+if /I %input% EQU +- cls&goto startBackground
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startWiseAutoShutdownPromptDialerMode
+:menuWiseAutoShutdownPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: WiseCleaner
+echo     Software Type: Desktop Power Setting Scheduler
+echo          Category: Freeware
+echo      License Type: Proprietary
+echo           Website: https://www.wisecleaner.com/
+echo  Founded/Released: 2006
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Wise_Auto_Shutdown_R.lnk, Wise_Auto_Shutdown_I.exe, Wise_Auto_Shutdown_O.lnk
+echo   Additional Info: Wise Auto Shutdown runs in the background.
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Wise Auto Shutdown ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuWiseAutoShutdown
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU A start Wise_Auto_Shutdown_A.lnk&set input=Background-3WA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Wise_Auto_Shutdown_R.lnk&set input=Background-3WR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Wise_Auto_Shutdown_I.exe&set input=Background-3WI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Wise_Auto_Shutdown_O.lnk&set input=Background-3WO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startSamsungDriverPrompt
 call :banner
@@ -45024,6 +45114,7 @@ if /I %input% EQU background-2Y cls&goto startPythonVersionPromptDialerMode
 if /I %input% EQU background-3Q cls&goto startQuickLookPromptDialerMode
 if /I %input% EQU background-3F cls&goto startFlowLauncherPromptDialerMode
 if /I %input% EQU background-3C cls&goto startWinComposePromptDialerMode
+if /I %input% EQU background-3W cls&goto startWiseAutoShutdownPromptDialerMode
 if /I %input% EQU background-4I start Samsung_Driver_I.exe&set input=Background-4I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-5A start Directory_Opus_A.lnk&set input=Background-5A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-5R start Directory_Opus_R.lnk&set input=Background-5R&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -45192,6 +45283,10 @@ if /I %input% EQU background-3CA start WinCompose_A.lnk&set input=Background-3CA
 if /I %input% EQU background-3CR start WinCompose_R.lnk&set input=Background-3CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-3CI start WinCompose_I.exe&set input=Background-3CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-3CO start WinCompose_O.lnk&set input=Background-3CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU background-3WA start Wise_Auto_Shutdown_A.lnk&set input=Background-3WA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU background-3WR start Wise_Auto_Shutdown_R.lnk&set input=Background-3WR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU background-3WI start Wise_Auto_Shutdown_I.exe&set input=Background-3WI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU background-3WO start Wise_Auto_Shutdown_O.lnk&set input=Background-3WO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-8WA start WireGuard_A.lnk&set input=Background-8WA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-8WR start WireGuard_R.lnk&set input=Background-8WR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU background-8WI start WireGuard_I.exe&set input=Background-8WI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -49220,6 +49315,24 @@ if /I %input% EQU Wireshark-A start Wireshark_A.lnk&set input=Network-6A&&goto s
 if /I %input% EQU Wireshark-R start Wireshark_R.lnk&set input=Network-6R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Wireshark-I start Wireshark_I.exe&set input=Network-6I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Wireshark-O start Wireshark_O.lnk&set input=Network-6O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise- cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-A start Wise_Auto_Shutdown_A.lnk&set input=Background-3WA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-R start Wise_Auto_Shutdown_R.lnk&set input=Background-3WR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-I start Wise_Auto_Shutdown_I.exe&set input=Background-3WI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-O start Wise_Auto_Shutdown_O.lnk&set input=Background-3WO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-Auto cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto- cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto-A start Wise_Auto_Shutdown_A.lnk&set input=Background-3WA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-Auto-R start Wise_Auto_Shutdown_R.lnk&set input=Background-3WR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-Auto-I start Wise_Auto_Shutdown_I.exe&set input=Background-3WI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-Auto-O start Wise_Auto_Shutdown_O.lnk&set input=Background-3WO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-Auto-Shutdown cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto-Shutdown- cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto-Shutdown-A start Wise_Auto_Shutdown_A.lnk&set input=Background-3WA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-Auto-Shutdown-R start Wise_Auto_Shutdown_R.lnk&set input=Background-3WR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-Auto-Shutdown-I start Wise_Auto_Shutdown_I.exe&set input=Background-3WI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Wise-Auto-Shutdown-O start Wise_Auto_Shutdown_O.lnk&set input=Background-3WO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU WiX cls&goto startWiXtoolsetPromptDialerMode
 if /I %input% EQU WiX- cls&goto startWiXtoolsetPromptDialerMode
 if /I %input% EQU WiX-A start CLI_Directory.txt&set input=Installer-5A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -50982,6 +51095,15 @@ if /I %input% EQU WireGu cls&goto startWireGuardPromptDialerMode
 if /I %input% EQU Wireshar cls&goto startWiresharkPromptDialerMode
 if /I %input% EQU Wiresha cls&goto startWiresharkPromptDialerMode
 if /I %input% EQU Wiresh cls&goto startWiresharkPromptDialerMode
+if /I %input% EQU Wise-Auto-Shutdow cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto-Shutdo cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto-Shutd cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto-Shut cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto-Shu cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto-Sh cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Auto-S cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Aut cls&goto startWiseAutoShutdownPromptDialerMode
+if /I %input% EQU Wise-Au cls&goto startWiseAutoShutdownPromptDialerMode
 if /I %input% EQU WiX-Toolse cls&goto startWiXtoolsetPromptDialerMode
 if /I %input% EQU WiX-Tools cls&goto startWiXtoolsetPromptDialerMode
 if /I %input% EQU WiX-Tool cls&goto startWiXtoolsetPromptDialerMode
@@ -52092,6 +52214,11 @@ if exist WinCompose_I.exe (
     echo "WinCompose_I.exe" [38;2;0;255;0mcurrently exists[0m.
 ) else (
     echo "WinCompose_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Wise_Auto_Shutdown_I.exe (
+    echo "Wise_Auto_Shutdown_I.exe" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Wise_Auto_Shutdown_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Samsung_Driver_I.exe (
     echo "Samsung_Driver_I.exe" [38;2;0;255;0mcurrently exists[0m.
@@ -54010,6 +54137,21 @@ if exist WinCompose_O.lnk (
     echo "WinCompose_O.lnk" [38;2;0;255;0mcurrently exists[0m.
 ) else (
     echo "WinCompose_O.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Wise_Auto_Shutdown_A.lnk (
+    echo "Wise_Auto_Shutdown_A.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Wise_Auto_Shutdown_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Wise_Auto_Shutdown_R.lnk (
+    echo "Wise_Auto_Shutdown_R.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Wise_Auto_Shutdown_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Wise_Auto_Shutdown_O.lnk (
+    echo "Wise_Auto_Shutdown_O.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Wise_Auto_Shutdown_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Directory_Opus_A.lnk (
     echo "Directory_Opus_A.lnk" [38;2;0;255;0mcurrently exists[0m.
@@ -58444,157 +58586,11 @@ echo.
 goto :eof
 :Size
 echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
 echo Lines used: 60,000 (10/03/2025)
 echo.
-echo Size on file: ~3.17 MB (~3,247 KB, or 3,325,304 bytes)
+echo Size on file: ~3.17 MB (~3,255 KB, or 3,333,362 bytes)
 echo.
 echo Size on Disk: ~3.18 MB (~3,264 KB, or 3,342,336 bytes)
-echo.
-echo Display: A whole lot of space above^^!
-echo.
-echo.
-echo.
-echo.
-echo.
 echo.
 echo.
 echo.
@@ -59857,6 +59853,10 @@ echo [38;2;0;0;255mWireshark-A[0m
 echo [38;2;0;255;0mWireshark-R[0m
 echo [38;2;255;255;0mWireshark-I[0m
 echo [38;2;255;0;0mWireshark-O[0m
+echo [38;2;0;0;255mWise-Auto-Shutdown-A[0m
+echo [38;2;0;255;0mWise-Auto-Shutdown-R[0m
+echo [38;2;255;255;0mWise-Auto-Shutdown-I[0m
+echo [38;2;255;0;0mWise-Auto-Shutdown-O[0m
 echo [38;2;0;0;255mWiX-Toolset-A[0m
 echo [38;2;0;255;0mWiX-Toolset-R[0m
 echo [38;2;255;255;0mWiX-Toolset-I[0m
