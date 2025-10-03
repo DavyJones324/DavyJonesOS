@@ -51732,7 +51732,7 @@ echo    Current Update: 1.1.2
 echo        Patch Date: 10/03/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 ^& 11. No administrator privilages required.
-echo                 +: Art Design taken from https:\\patorjk.com. Dot Art does not show for Windows 10.
+echo                 +: Art Design taken from https://patorjk.com. Dot Art does not show for Windows 10.
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
 powershell -command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('^+{Home}');}"
