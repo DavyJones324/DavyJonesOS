@@ -31243,7 +31243,7 @@ echo        [38;2;153;255;153m╠═══2) Cisdem AppCrypt                 �
 echo        [38;2;128;255;128m║                                      ⠀⠀⠀⠀⠀⣴⣾⣿⣿⣿⣿⢁⣾⣿⣿⣿⣿⣿⣿⡿⢁⣾⣿⣿⣿⠁[0m
 echo        [38;2;102;255;102m╠════3) QFX KeyScrambler               ⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇[0m
 echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠳⣤⣙⠟⠛⢻⠿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣇⠘⠉⠀⢸⠀⢀⣠[0m
-echo        [38;2;51;255;51m╠═════4) Reshade/DLC Unlocker          ⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿[0m
+echo        [38;2;51;255;51m╠═════4) Reshade/CreamInstaller        ⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣶⣄⡈⠉⠀⠀⢸⡇⠀⠀⠉⠂⠀⣿⣿⣿⣧[0m
 echo        [38;2;0;255;0m╠══════5) Cheat Engine / Process Hacker⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣷⣤⣀⣸⣧⣠⣤⣴⣶⣾⣿⣿⣿⡿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇[0m
@@ -31598,7 +31598,7 @@ call :menuReShadeAndUnlockerPrompt
 call :menuReShadeAndUnlocker
 if /I %input% EQU 0 cls&goto start9bAlt
 if /I %input% EQU E cls&goto startReShadePrompt1
-if /I %input% EQU D cls&goto startCreamInstallerPrompt1
+if /I %input% EQU C cls&goto startCreamInstallerPrompt1
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 call :menuAuxiliaryCommands
@@ -31612,7 +31612,7 @@ call :menuReShadeAndUnlockerPrompt
 call :menuReShadeAndUnlocker
 if /I %input% EQU 0 cls&goto start9a
 if /I %input% EQU E cls&goto startReShadePrompt2
-if /I %input% EQU D cls&goto startCreamInstallerPrompt2
+if /I %input% EQU C cls&goto startCreamInstallerPrompt2
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 call :menuAuxiliaryCommands
@@ -31626,7 +31626,7 @@ call :menuReShadeAndUnlockerPrompt
 call :menuReShadeAndUnlocker
 if /I %input% EQU 0 cls&goto start9b
 if /I %input% EQU E cls&goto startReShadePrompt3
-if /I %input% EQU D cls&goto startCreamInstallerPrompt3
+if /I %input% EQU C cls&goto startCreamInstallerPrompt3
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 call :menuAuxiliaryCommands
@@ -31640,7 +31640,7 @@ call :menuReShadeAndUnlockerPrompt
 call :menuReShadeAndUnlocker
 if /I %input% EQU 0 cls&goto start9c
 if /I %input% EQU E cls&goto startReShadePrompt4
-if /I %input% EQU D cls&goto startCreamInstallerPrompt4
+if /I %input% EQU C cls&goto startCreamInstallerPrompt4
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 call :menuAuxiliaryCommands
@@ -31654,7 +31654,7 @@ call :menuReShadeAndUnlockerPrompt
 call :menuReShadeAndUnlocker
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU E cls&goto startReShadePrompt5
-if /I %input% EQU D cls&goto startCreamInstallerPrompt5
+if /I %input% EQU C cls&goto startCreamInstallerPrompt5
 if /I %input% EQU -+ cls&goto start9a
 if /I %input% EQU +- cls&goto start9a
 call :menuAuxiliaryCommands
@@ -31679,14 +31679,14 @@ echo   Additional Info:
 echo                 +: 
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
-echo Input the letter for ReShade/DLC Unlocker (R/C). Input zero ("0") to cancel.
+echo Input the letter for ReShade/CreamInstaller (R/C). Input zero ("0") to cancel.
 echo.
 goto :eof
 :menuReShadeAndUnlocker
 set /P input=%BS%
 if /I %input% EQU 0 goto :eof
 if /I %input% EQU E goto :eof
-if /I %input% EQU D goto :eof
+if /I %input% EQU C goto :eof
 if /I %input% EQU RI start ReShade_I.exe&set input=9874RI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU RU start ReShade_I_Addons.exe&set input=9874RU&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CA start CreamInstaller_A.lnk&set input=9874CA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -58588,7 +58588,7 @@ goto :eof
 echo.
 echo Lines used: 60,000 (10/03/2025)
 echo.
-echo Size on file: ~3.17 MB (~3,255 KB, or 3,333,362 bytes)
+echo Size on file: ~3.17 MB (~3,255 KB, or 3,333,364 bytes)
 echo.
 echo Size on Disk: ~3.18 MB (~3,264 KB, or 3,342,336 bytes)
 echo.
