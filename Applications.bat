@@ -3359,7 +3359,7 @@ call :menuSearchEngineFragments
 cls&goto startOpenVPNpromptDialerMode
 :menuOpenVPNprompt
 echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: formerly under James Yonan; now under OpenVPN project / OpenVPN Inc.
+echo  Author/Developer: formerly under James Yonan; now under OpenVPN project/OpenVPN Inc.
 echo     Software Type: Programmable VPN
 echo          Category: Freeware
 echo      License Type: GNU GPL v2.0
@@ -31245,13 +31245,13 @@ echo        [38;2;102;255;102m╠════3) QFX KeyScrambler               
 echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠳⣤⣙⠟⠛⢻⠿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣇⠘⠉⠀⢸⠀⢀⣠[0m
 echo        [38;2;51;255;51m╠═════4) Reshade/CreamInstaller        ⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣶⣄⡈⠉⠀⠀⢸⡇⠀⠀⠉⠂⠀⣿⣿⣿⣧[0m
-echo        [38;2;0;255;0m╠══════5) Cheat Engine / Process Hacker⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣷⣤⣀⣸⣧⣠⣤⣴⣶⣾⣿⣿⣿⡿[0m
+echo        [38;2;0;255;0m╠══════5) Cheat Engine/Process Hacker  ⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣷⣤⣀⣸⣧⣠⣤⣴⣶⣾⣿⣿⣿⡿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇[0m
 echo        [38;2;51;255;51m╠═══════6) WoG Editors 1 ^& 2         ⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠛⠉[0m
 echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉[0m
 echo        [38;2;102;255;102m╠════════7) RoL Big Archiver[0m
 echo        [38;2;128;255;128m║[0m
-echo        [38;2;153;255;153m╠═════════8) NMS Save Editor / Palworld Save Pal[0m
+echo        [38;2;153;255;153m╠═════════8) NMS Save Editor/Palworld Save Pal[0m
 echo        [38;2;179;255;179m║[0m
 echo        [38;2;204;255;204m╚╦═════════9) KeePass Manager[0m
 echo        [38;2;230;255;230m ║[0m
@@ -58588,7 +58588,7 @@ goto :eof
 echo.
 echo Lines used: 60,000 (10/03/2025)
 echo.
-echo Size on file: ~3.17 MB (~3,255 KB, or 3,333,364 bytes)
+echo Size on file: ~3.17 MB (~3,255 KB, or 3,333,360 bytes)
 echo.
 echo Size on Disk: ~3.18 MB (~3,264 KB, or 3,342,336 bytes)
 echo.
