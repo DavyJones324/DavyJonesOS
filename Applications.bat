@@ -40253,10 +40253,50 @@ goto :eof
 :menuDefraggler
 set /P input=%BS%
 if /I %input% EQU 0 goto :eof
-if /I %input% EQU A start DefragglerI.lnk&set input=Defraggler-A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start DefragglerI.lnk&set input=Defraggler-R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU I start DefragglerI.exe&set input=Defraggler-I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O start DefragglerI.lnk&set input=Defraggler-O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU A start Defraggler_I.lnk&set input=Defraggler-A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Defraggler_I.lnk&set input=Defraggler-R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Defraggler_I.exe&set input=Defraggler-I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Defraggler_I.lnk&set input=Defraggler-O&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startNASMpromptDialerMode
+call :banner
+call :menuNASMprompt
+call :menuNASM
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto startMain
+if /I %input% EQU +- cls&goto startMain
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startNASMpromptDialerMode
+:menuNASMprompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo           Authors: Simon Tatham, Julian Hall
+echo        Developers: H. Peter Anvin, Chang Seok Bae, Jim Kukunas, Frank B. Kotler, Cyrill Gorcunov
+echo     Software Type: Assembler and Disassembler for the Intel x86 Architecture
+echo          Category: Freeware
+echo      License Type: BSD 2-clause
+echo           Website: https://www.nasm.us/
+echo  Founded/Released: 10/1996
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: NASM_R.lnk, NASM_I.exe, NASM_O.lnk
+echo   Additional Info: Netwide Assembler is only found via the search engine.
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Netwide Assembler ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuNASM
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU A start NASM_A.lnk&set input=NASM-A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start NASM_R.lnk&set input=NASM-R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start NASM_I.exe&set input=NASM-I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start NASM_O.lnk&set input=NASM-O&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
 :startPiriformPromptDialerMode
 call :banner
@@ -48554,6 +48594,12 @@ if /I %input% EQU MWB-ADWcleaner cls&goto startMWBadwCleanerPromptDialerMode
 if /I %input% EQU MWB-ADWcleaner- cls&goto startMWBadwCleanerPromptDialerMode
 if /I %input% EQU MWB-ADWcleaner-A start MWB_ADWcleaner_A.lnk&set input=Alert-3A&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU MWB-ADWcleaner-R start MWB_ADWcleaner_R.lnk&set input=Alert-3R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NASM cls&goto startNASMpromptDialerMode
+if /I %input% EQU NASM- cls&goto startNASMpromptDialerMode
+if /I %input% EQU NASM-A start NASM_A.lnk&set input=NASM-A&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NASM-R start NASM_R.lnk&set input=NASM-R&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NASM-I start NASM_I.exe&set input=NASM-I&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU NASM-O start NASM_O.lnk&set input=NASM-O&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU NMS cls&goto startNMSSaveEditorPromptDialerMode
 if /I %input% EQU NMS- cls&goto startNMSSaveEditorPromptDialerMode
 if /I %input% EQU NMS-A start NMSSaveEditor_A.lnk&set input=9878NA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -53531,6 +53577,11 @@ if exist PowerShell_I.msi (
 ) else (
     echo "PowerShell_I.msi" [38;2;255;0;0mdoes not exist[0m.
 )
+if exist NASM_I.exe (
+    echo "NASM_I.exe" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "NASM_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
 echo.
 echo.
 echo.
@@ -56138,6 +56189,21 @@ if exist CLI_Directory.txt (
     echo "CLI_Directory.txt" [38;2;0;255;0mcurrently exists[0m.
 ) else (
     echo "CLI_Directory.txt" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist NASM_A.lnk (
+    echo "NASM_A.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "NASM_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist NASM_R.lnk (
+    echo "NASM_R.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "NASM_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist NASM_O.lnk (
+    echo "NASM_O.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "NASM_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 echo.
 echo.
@@ -59597,16 +59663,26 @@ echo come for you. If you are reading this, you have found my message.[0m
 echo.
 echo.
 echo.
+echo.
+echo.
+echo.
+echo.
+echo.
 echo Screen is empty. Nothing to see here. Press on.
+echo.
+echo.
+echo.
+echo.
+echo.
 echo.
 goto :eof
 :Size
 echo.
-echo Lines used: 61,020 (10/03/2025)
+echo Lines used: 61,100 (10/03/2025)
 echo.
-echo Size on file: ~3.22 MB (~3,302 KB, or 3,381,351 bytes)
+echo Size on file: ~3.22 MB (~3,305 KB, or 3,384,623 bytes)
 echo.
-echo Size on Disk: ~3.22 MB (~3,304 KB, or 3,383,296 bytes)
+echo Size on Disk: ~3.23 MB (~3,308 KB, or 3,387,392 bytes)
 echo.
 goto :eof
 :: Tree Section
@@ -60355,6 +60431,10 @@ echo [38;2;0;0;255mMullvad-VPN-A[0m
 echo [38;2;0;255;0mMullvad-VPN-R[0m
 echo [38;2;255;255;0mMullvad-VPN-I[0m
 echo [38;2;255;0;0mMullvad-VPN-O[0m
+echo [38;2;0;0;255mNASM-A[0m
+echo [38;2;0;255;0mNASM-R[0m
+echo [38;2;255;255;0mNASM-I[0m
+echo [38;2;255;0;0mNASM-O[0m
 echo [38;2;0;0;255mNMSSaveEditor-A[0m
 echo [38;2;0;255;0mNMSSaveEditor-R[0m
 echo [38;2;255;255;0mNMSSaveEditor-I[0m

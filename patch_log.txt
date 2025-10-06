@@ -2,6 +2,7 @@ Patch 1.1.2.1
 
 * As a final surprise parting gift before actual maintainence mode, I have added Atom Editor, Pulsar Editor, Sublime Text Editor, and Vim
   Editor to Menu 3, all while merging MATLAB with Octave.
+* Also added the Netwide Assembler (NASM) to the search engine results.
 
 Patch 1.1.2
 
