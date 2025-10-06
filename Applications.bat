@@ -3394,7 +3394,6 @@ if /I %input% EQU M cls&goto startNotepadPrompt1
 if /I %input% EQU P cls&goto startNotepadPlusPlusPrompt1
 if /I %input% EQU B cls&goto startBabelPadPrompt1
 if /I %input% EQU H cls&goto startImHexPrompt1
-if /I %input% EQU C cls&goto startWinComposePrompt1
 if /I %input% EQU -+ cls&goto startBackground
 if /I %input% EQU +- cls&goto startBackground
 call :menuAuxiliaryCommands
@@ -3411,7 +3410,6 @@ if /I %input% EQU M cls&goto startNotepadPrompt2
 if /I %input% EQU P cls&goto startNotepadPlusPlusPrompt2
 if /I %input% EQU B cls&goto startBabelPadPrompt2
 if /I %input% EQU H cls&goto startImHexPrompt2
-if /I %input% EQU C cls&goto startWinComposePrompt2
 if /I %input% EQU -+ cls&goto startBackground
 if /I %input% EQU +- cls&goto startBackground
 call :menuAuxiliaryCommands
@@ -58588,9 +58586,11 @@ goto :eof
 echo.
 echo Lines used: 60,000 (10/03/2025)
 echo.
-echo Size on file: ~3.17 MB (~3,255 KB, or 3,333,360 bytes)
+echo Size on file: ~3.17 MB (~3,255 KB, or 3,333,268 bytes)
 echo.
 echo Size on Disk: ~3.18 MB (~3,264 KB, or 3,342,336 bytes)
+echo.
+echo.
 echo.
 echo.
 echo.
