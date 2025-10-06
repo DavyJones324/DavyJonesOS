@@ -8802,9 +8802,9 @@ echo        [38;2;255;255;255m╔═0) Go Back                          ⠀ ⠀
 echo        [38;2;230;255;230m║                                      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣾⣿⡟[0m
 echo        [38;2;204;255;204m╠══1) Universal Viewers/Editors        ⠀⠀⠀⠀⠀⠀⠀⠂⠉⡇⠀⠀⠀⢰⣿⣿⣿⣿⣧⠀⠀⢀⣄⣀[0m
 echo        [38;2;179;255;179m║                                      ⠀⠀⠀⠀⠀⠀⢠⣶⣶⣷⠀⠀⠀⠸⠟⠁⠀⡇⠀⠀⠀⠀⠀⢹[0m
-echo        [38;2;153;255;153m╠═══2) MATLAB                          ⠀⠀⠀⠀⠀⠀⠘⠟⢹⣋⣀⡀⢀⣤⣶⣿⣿⣿⣿⣿⡿⠛⣠⣼⣿⡟[0m
+echo        [38;2;153;255;153m╠═══2) Webpage Text Editors            ⠀⠀⠀⠀⠀⠀⠘⠟⢹⣋⣀⡀⢀⣤⣶⣿⣿⣿⣿⣿⡿⠛⣠⣼⣿⡟[0m
 echo        [38;2;128;255;128m║                                      ⠀⠀⠀⠀⠀⣴⣾⣿⣿⣿⣿⢁⣾⣿⣿⣿⣿⣿⣿⡿⢁⣾⣿⣿⣿⠁[0m
-echo        [38;2;102;255;102m╠════3) GNU Octave                     ⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇[0m
+echo        [38;2;102;255;102m╠════3) MATLAB ^& GNU Octave            ⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇[0m
 echo        [38;2;77;255;77m║                                      ⠀⠀⠀⠳⣤⣙⠟⠛⢻⠿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣇⠘⠉⠀⢸⠀⢀⣠[0m
 echo        [38;2;51;255;51m╠═════4) Metasploit                    ⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿[0m
 echo        [38;2;26;255;26m║                                      ⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣶⣄⡈⠉⠀⠀⢸⡇⠀⠀⠉⠂⠀⣿⣿⣿⣧[0m
@@ -8828,8 +8828,8 @@ if /I %input% EQU + cls&goto start4
 if /I %input% EQU ++ cls&goto start5
 if /I %input% EQU +++ cls&goto start6a
 if /I %input% EQU 1 cls&goto start010UniversalPrompt
-if /I %input% EQU 2 cls&goto startMATLABprompt
-if /I %input% EQU 3 cls&goto startOctavePrompt
+if /I %input% EQU 2 cls&goto startWebsiteTextEditorPrompt
+if /I %input% EQU 3 cls&goto startMATLABandOctavePrompt
 if /I %input% EQU 4 cls&goto startMetasploitPrompt
 if /I %input% EQU 5 cls&goto startCygwinPrompt
 if /I %input% EQU 6 cls&goto startPythonPrompt
@@ -8841,13 +8841,15 @@ if /I %input% EQU 1L cls&goto startLogViewerPromptSubDialerMode
 if /I %input% EQU 1U cls&goto startUniversalViewerPromptSubDialerMode
 if /I %input% EQU 1F cls&goto startAdvancedRenamerPromptSubDialerMode
 if /I %input% EQU 1C cls&goto startAttributeChangerPromptSubDialerMode
-if /I %input% EQU 2A start MATLAB_A.lnk&set input=32A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2R start MATLAB_R.lnk&set input=32R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2I start MATLAB_I.lnk&set input=32I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 2O cls&set input=32O&goto startUninstallationInstructions
+if /I %input% EQU 2A cls&goto startAtomPromptSubDialerMode
+if /I %input% EQU 2P cls&goto startPulsarPromptSubDialerMode
+if /I %input% EQU 2S cls&goto startSublimeTextPromptSubDialerMode
+if /I %input% EQU 2V cls&goto startVimEditorPromptSubDialerMode
 if /I %input% EQU 3G cls&goto startGUIOctavePromptSubDialerMode
 if /I %input% EQU 3C cls&goto startCLIOctavePromptSubDialerMode
+if /I %input% EQU 3M cls&goto startMATLABpromptSubDialerMode
 if /I %input% EQU 4A cls&goto startMetasploitRunAdminPromptSubDialerMode
+if /I %input% EQU 4R cls&goto startMetasploitRunPromptSubDialerMode
 if /I %input% EQU 4I start Metasploit_I.msi&set input=34I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4O start Metasploit_O.lnk&set input=34O&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 5A cls&goto startCygwinRunAdminPromptSubDialerMode
@@ -8891,6 +8893,19 @@ if /I %input% EQU 1CA start Attribute_Changer_A.lnk&set input=31CA&&goto startPr
 if /I %input% EQU 1CR start Attribute_Changer_R.lnk&set input=31CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1CI start Attribute_Changer_I.exe&set input=31CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 1CO start Attribute_Changer_O.lnk&set input=31CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2AA start Atom_A.lnk&set input=32AA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2AR start Atom_R.lnk&set input=32AR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2AI start Atom_I.exe&set input=32AI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2AO cls&set input=32AO&goto startUninstallationInstructions
+if /I %input% EQU 2PA start Pulsar_A.lnk&set input=32PA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2PR start Pulsar_R.lnk&set input=32PR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2PI start Pulsar_I.exe&set input=32PI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2PO start Pulsar_O.lnk&set input=32PO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2SA start Sublime_Text_A.lnk&set input=32SA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2SR start Sublime_Text_R.lnk&set input=32SR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2SI start Sublime_Text_I.exe&set input=32SI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2SO start Sublime_Text_O.lnk&set input=32SO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2VI start Vim_I.exe&set input=32VI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3GA start GUI_Octave_A.lnk&set input=33GA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3GR start GUI_Octave_R.lnk&set input=33GR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3GI start Octave_I.exe&set input=33GI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -8899,10 +8914,13 @@ if /I %input% EQU 3CA cls&goto startCLIOctaveRunAdminPromptSubDialerMode
 if /I %input% EQU 3CR cls&goto startCLIOctaveRunPromptSubDialerMode
 if /I %input% EQU 3CI start Octave_I.exe&set input=33CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3CO start Octave_O.lnk&set input=33CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3MA start MATLAB_A.lnk&set input=33MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3MR start MATLAB_R.lnk&set input=33MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3MI start MATLAB_I.lnk&set input=33MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3MO cls&set input=33MO&goto startUninstallationInstructions
 if /I %input% EQU 4A1 start CLI_Directory.txt&set input=34A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4AY start Metasploit_A.lnk&set input=34AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU 4AN start Metasploit_A.lnk&set input=34AN&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 4R cls&goto startMetasploitRunPromptSubDialerMode
 if /I %input% EQU 4R1 start CLI_Directory.txt&set input=34R1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 4RY start Metasploit_R.lnk&set input=34RY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU 4RN start Metasploit_R.lnk&set input=34RN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -8971,6 +8989,14 @@ if /I %input% EQU 995 cls&goto startPhpStormPromptDeepSubDialerMode
 if /I %input% EQU 996 cls&goto startGoLandPromptDeepSubDialerMode
 if /I %input% EQU 997 cls&goto startDataGripPromptDeepSubDialerMode
 if /I %input% EQU 998 cls&goto startDataSpellPromptDeepSubDialerMode
+if /I %input% EQU 2VA1 start Vim_Beginner_A.lnk&set input=32VA1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2VA2 start Vim_Advanced_A.lnk&set input=32VA2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2VA3 start Vim_Read-Only_A.lnk&set input=32VA3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2VR1 start Vim_Beginner_R.lnk&set input=32VR1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2VR2 start Vim_Advanced_R.lnk&set input=32VR2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2VR3 start Vim_Read-Only_R.lnk&set input=32VR3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2VOG start Vim_GUI_O.lnk&set input=32VOG&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2VOC start Vim_CLI_O.lnk&set input=32VOC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3CA1 start CLI_Directory.txt&set input=33CA1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 3CAY start CLI_Octave_A.lnk&set input=33CAY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU 3CAN start CLI_Octave_A.lnk&set input=33CAN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9481,10 +9507,115 @@ if /I %input% EQU R start Attribute_Changer_R.lnk&set input=31CR&&goto startPreE
 if /I %input% EQU I start Attribute_Changer_I.exe&set input=31CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU O start Attribute_Changer_O.lnk&set input=31CO&&goto startPreExitPrompt||goto startFailedExitPrompt
 goto :eof
-:startMATLABprompt
+:startWebsiteTextEditorPrompt
 call :banner
-call :menuMATLABprompt
-call :menuMATLAB
+call :menuWebsiteTextEditorPrompt
+call :menuWebsiteTextEditor
+if /I %input% EQU 0 cls&goto start3
+if /I %input% EQU A cls&goto startAtomPrompt1
+if /I %input% EQU P cls&goto startPulsarPrompt1
+if /I %input% EQU S cls&goto startSublimeTextPrompt1
+if /I %input% EQU V cls&goto startVimEditorPrompt1
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startWebsiteTextEditorPrompt
+:startWebsiteTextEditorPromptDialerMode
+call :banner
+call :menuWebsiteTextEditorPrompt
+call :menuWebsiteTextEditor
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU A cls&goto startAtomPrompt2
+if /I %input% EQU P cls&goto startPulsarPrompt2
+if /I %input% EQU S cls&goto startSublimeTextPrompt2
+if /I %input% EQU V cls&goto startVimEditorPrompt2
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startWebsiteTextEditorPromptDialerMode
+:menuWebsiteTextEditorPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Depends
+echo     Software Type: Depends
+echo          Category: Depends
+echo      License Type: Depends
+echo           Website: Depends
+echo  Founded/Released: Depends
+echo         Publicity: Depends
+echo            Status: Depends
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: 
+echo                 +: 
+echo   Additional Info: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the letter for Atom/Pulsar/Sublime Text/Vim Editor ("A/P/S/V"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuWebsiteTextEditor
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU A goto :eof
+if /I %input% EQU P goto :eof
+if /I %input% EQU S goto :eof
+if /I %input% EQU V goto :eof
+if /I %input% EQU AA start Atom_A.lnk&set input=32AA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AR start Atom_R.lnk&set input=32AR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AI start Atom_I.exe&set input=32AI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU AO cls&set input=32AO&goto startUninstallationInstructions
+if /I %input% EQU PA start Pulsar_A.lnk&set input=32PA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PR start Pulsar_R.lnk&set input=32PR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PI start Pulsar_I.exe&set input=32PI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU PO start Pulsar_O.lnk&set input=32PO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SA start Sublime_Text_A.lnk&set input=32SA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SR start Sublime_Text_R.lnk&set input=32SR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SI start Sublime_Text_I.exe&set input=32SI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU SO start Sublime_Text_O.lnk&set input=32SO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VI start Vim_I.exe&set input=32VI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VA1 start Vim_Beginner_A.lnk&set input=32VA1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VA2 start Vim_Advanced_A.lnk&set input=32VA2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VA3 start Vim_Read-Only_A.lnk&set input=32VA3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VR1 start Vim_Beginner_R.lnk&set input=32VR1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VR2 start Vim_Advanced_R.lnk&set input=32VR2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VR3 start Vim_Read-Only_R.lnk&set input=32VR3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VOG start Vim_GUI_O.lnk&set input=32VOG&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU VOC start Vim_CLI_O.lnk&set input=32VOC&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startAtomPrompt1
+call :banner
+call :menuAtomPrompt
+call :menuAtom
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPrompt
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startAtomPrompt1
+:startAtomPrompt2
+call :banner
+call :menuAtomPrompt
+call :menuAtom
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startAtomPrompt2
+:startAtomPromptSubDialerMode
+call :banner
+call :menuAtomPrompt
+call :menuAtom
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
@@ -9492,11 +9623,11 @@ call :menuAuxiliaryCommands
 call :menuAuxiliaryFragments
 call :menuSearchEngine
 call :menuSearchEngineFragments
-cls&goto startMATLABprompt
-:startMATLABpromptDialerMode
+cls&goto startAtomPromptSubDialerMode
+:startAtomPromptDialerMode
 call :banner
-call :menuMATLABprompt
-call :menuMATLAB
+call :menuAtomPrompt
+call :menuAtom
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
@@ -9504,41 +9635,659 @@ call :menuAuxiliaryCommands
 call :menuAuxiliaryFragments
 call :menuSearchEngine
 call :menuSearchEngineFragments
-cls&goto startMATLABpromptDialerMode
+cls&goto startAtomPromptDialerMode
+:menuAtomPrompt
 echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: MathWorks
-echo     Software Type: Multi-Paradigm Programming Language ^& Numeric Computing Environment
-echo          Category: Commercialware
-echo      License Type: Proprietary
-echo           Website: https://www.mathworks.com/products/matlab.html
-echo  Founded/Released: 1984
+echo  Author/Developer: Atom
+echo     Software Type: Original HTML, CSS, and JS Webpage Text Editor based on the Electron Framework
+echo          Category: Freeware
+echo      License Type: MIT License
+echo           Website: https://atom-editor.cc/
+echo  Founded/Released: 02/26/2014
 echo         Publicity: Public
-echo            Status: Active
-echo    Current Update: 
-echo        Patch Date: 
-echo  Target Filenames: MATLAB_R.lnk, MATLAB_I.lnk
+echo            Status: Discontinued
+echo    Current Update: 1.63.1
+echo        Patch Date: 11/23/2022
+echo  Target Filenames: Atom_R.lnk, Atom_I.exe, Atom_O.lnk
 echo   Additional Info: 
 echo                 +: 
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
-echo Would you like to run/install/uninstall MATLAB ("R/I/O")? Input zero ("0") to cancel.
+echo Would you like to run/install/uninstall Atom ("R/I/O")? Input zero ("0") to cancel.
 echo.
 goto :eof
-:menuMATLAB
+:menuAtom
 set /P input=%BS%
 if /I %input% EQU 0 goto :eof
-if /I %input% EQU A start MATLAB_A.lnk&set input=32A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU R start MATLAB_R.lnk&set input=32R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU I start MATLAB_I.lnk&set input=32I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU O cls&set input=32O&goto startUninstallationInstructions
+if /I %input% EQU A start Atom_A.lnk&set input=32AA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Atom_R.lnk&set input=32AR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Atom_I.exe&set input=32AI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=32AO&goto startUninstallationInstructions
 goto :eof
-:startOctavePrompt
+:startPulsarPrompt1
 call :banner
-call :menuOctavePrompt
-call :menuOctave
+call :menuPulsarPrompt
+call :menuPulsar
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPrompt
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startPulsarPrompt1
+:startPulsarPrompt2
+call :banner
+call :menuPulsarPrompt
+call :menuPulsar
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startPulsarPrompt2
+:startPulsarPromptSubDialerMode
+call :banner
+call :menuPulsarPrompt
+call :menuPulsar
+if /I %input% EQU 0 cls&goto start3
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startPulsarPromptSubDialerMode
+:startPulsarPromptDialerMode
+call :banner
+call :menuPulsarPrompt
+call :menuPulsar
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startPulsarPromptDialerMode
+:menuPulsarPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Pulsar-Edit
+echo     Software Type: Continuation of Atom's HTML, CSS, and JS Webpage Text Editor based on the Electron Framework
+echo          Category: Freeware
+echo      License Type: MIT License
+echo           Website: https://pulsar-edit.dev/
+echo  Founded/Released: 12/15/2022
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Pulsar_R.lnk, Pulsar_I.exe, Pulsar_O.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Pulsar ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuPulsar
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU A start Pulsar_A.lnk&set input=32PA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Pulsar_R.lnk&set input=32PR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Pulsar_I.exe&set input=32PI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Pulsar_O.lnk&set input=32PO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startSublimeTextPrompt1
+call :banner
+call :menuSublimeTextPrompt
+call :menuSublimeText
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPrompt
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startSublimeTextPrompt1
+:startSublimeTextPrompt2
+call :banner
+call :menuSublimeTextPrompt
+call :menuSublimeText
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startSublimeTextPrompt2
+:startSublimeTextPromptSubDialerMode
+call :banner
+call :menuSublimeTextPrompt
+call :menuSublimeText
+if /I %input% EQU 0 cls&goto start3
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startSublimeTextPromptSubDialerMode
+:startSublimeTextPromptDialerMode
+call :banner
+call :menuSublimeTextPrompt
+call :menuSublimeText
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startSublimeTextPromptDialerMode
+:menuSublimeTextPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Jon Skinner, Sublime HQ
+echo     Software Type: Fast and Efficient Text, Webpage, and Source Code Editor for Many Languages
+echo          Category: Shareware
+echo      License Type: Proprietary
+echo           Website: https://www.sublimetext.com/
+echo  Founded/Released: 01/18/2008
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Sublime_Text_R.lnk, Sublime_Text_I.exe, Sublime_Text_O.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Sublime Text ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuSublimeText
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU A start Sublime_Text_A.lnk&set input=32SA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start Sublime_Text_R.lnk&set input=32SR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start Sublime_Text_I.exe&set input=32SI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O start Sublime_Text_O.lnk&set input=32SO&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startVimEditorPrompt1
+call :banner
+call :menuVimEditorPrompt
+call :menuVimEditor
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPrompt
+if /I %input% EQU A cls&goto startVimEditorRunAdminPromptA
+if /I %input% EQU R cls&goto startVimEditorRunPromptA
+if /I %input% EQU O cls&goto startVimEditorUninstallPromptA
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorPrompt1
+:startVimEditorPrompt2
+call :banner
+call :menuVimEditorPrompt
+call :menuVimEditor
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPromptDialerMode
+if /I %input% EQU A cls&goto startVimEditorRunAdminPromptB
+if /I %input% EQU R cls&goto startVimEditorRunPromptB
+if /I %input% EQU O cls&goto startVimEditorUninstallPromptB
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorPrompt2
+:startVimEditorPromptSubDialerMode
+call :banner
+call :menuVimEditorPrompt
+call :menuVimEditor
+if /I %input% EQU 0 cls&goto start3
+if /I %input% EQU A cls&goto startVimEditorRunAdminPromptC
+if /I %input% EQU R cls&goto startVimEditorRunPromptC
+if /I %input% EQU O cls&goto startVimEditorUninstallPromptC
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorPromptSubDialerMode
+:startVimEditorPromptDialerMode
+call :banner
+call :menuVimEditorPrompt
+call :menuVimEditor
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU A cls&goto startVimEditorRunAdminPromptD
+if /I %input% EQU R cls&goto startVimEditorRunPromptD
+if /I %input% EQU O cls&goto startVimEditorUninstallPromptD
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorPromptDialerMode
+:menuVimEditorPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Bram Moolenaar
+echo     Software Type: CLI-based Advanced Text Editor
+echo          Category: Freeware
+echo      License Type: Vim License
+echo           Website: https://www.vim.org/
+echo  Founded/Released: 11/02/1991
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Vim_Beginner_R.lnk, Vim_Advanced_R.lnk, Vim_Read-Only_R.lnk, Vim_I.exe, Vim_CLI_O.lnk, Vim_GUI_O.lnk
+echo   Additional Info: Vim Editor requires training to use; it is not easy to use. Nevertheless, Vim Editor offers the
+echo                 +: highest functionality of any text editor.
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall Vim Editor ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuVimEditor
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU A goto :eof
+if /I %input% EQU R goto :eof
+if /I %input% EQU O goto :eof
+if /I %input% EQU I start Vim_I.exe&set input=32VI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU A1 start Vim_Beginner_A.lnk&set input=32VA1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU A2 start Vim_Advanced_A.lnk&set input=32VA2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU A3 start Vim_Read-Only_A.lnk&set input=32VA3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R1 start Vim_Beginner_R.lnk&set input=32VR1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R2 start Vim_Advanced_R.lnk&set input=32VR2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R3 start Vim_Read-Only_R.lnk&set input=32VR3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU OG start Vim_GUI_O.lnk&set input=32VOG&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU OC start Vim_CLI_O.lnk&set input=32VOC&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startVimEditorRunAdminPromptA
+call :banner
+call :menuVimEditorRunAdminPrompt
+call :menuVimEditorRunAdmin
+if /I %input% EQU 0 cls&goto startVimEditorPrompt1
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunAdminPromptA
+:startVimEditorRunAdminPromptB
+call :banner
+call :menuVimEditorRunAdminPrompt
+call :menuVimEditorRunAdmin
+if /I %input% EQU 0 cls&goto startVimEditorPrompt2
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunAdminPromptB
+:startVimEditorRunAdminPromptC
+call :banner
+call :menuVimEditorRunAdminPrompt
+call :menuVimEditorRunAdmin
+if /I %input% EQU 0 cls&goto startVimEditorPromptSubDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunAdminPromptC
+:startVimEditorRunAdminPromptD
+call :banner
+call :menuVimEditorRunAdminPrompt
+call :menuVimEditorRunAdmin
+if /I %input% EQU 0 cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunAdminPromptD
+:startVimEditorRunAdminPrompt1
+call :banner
+call :menuVimEditorRunAdminPrompt
+call :menuVimEditorRunAdmin
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPrompt
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunAdminPrompt1
+:startVimEditorRunAdminPrompt2
+call :banner
+call :menuVimEditorRunAdminPrompt
+call :menuVimEditorRunAdmin
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunAdminPrompt2
+:startVimEditorRunAdminPromptSubDialerMode
+call :banner
+call :menuVimEditorRunAdminPrompt
+call :menuVimEditorRunAdmin
+if /I %input% EQU 0 cls&goto start3
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunAdminPromptSubDialerMode
+:startVimEditorRunAdminPromptDialerMode
+call :banner
+call :menuVimEditorRunAdminPrompt
+call :menuVimEditorRunAdmin
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunAdminPromptDialerMode
+:menuVimEditorRunAdminPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Bram Moolenaar
+echo     Software Type: CLI-based Advanced Text Editor
+echo          Category: Freeware
+echo      License Type: Vim License
+echo           Website: https://www.vim.org/
+echo  Founded/Released: 11/02/1991
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Vim_Beginner_A.lnk, Vim_Advanced_A.lnk, Vim_Read-Only_A.lnk
+echo   Additional Info: Vim Editor requires training to use; it is not easy to use. Nevertheless, Vim Editor offers the
+echo                 +: highest functionality of any text editor.
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the number for Vim Editor Beginner/Advanced/Read-Only ("1/2/3"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuVimEditorRunAdmin
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU 1 start Vim_Beginner_A.lnk&set input=32VA1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2 start Vim_Advanced_A.lnk&set input=32VA2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3 start Vim_Read-Only_A.lnk&set input=32VA3&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startVimEditorRunPromptA
+call :banner
+call :menuVimEditorRunPrompt
+call :menuVimEditorRun
+if /I %input% EQU 0 cls&goto startVimEditorPrompt1
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunPromptA
+:startVimEditorRunPromptB
+call :banner
+call :menuVimEditorRunPrompt
+call :menuVimEditorRun
+if /I %input% EQU 0 cls&goto startVimEditorPrompt2
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunPromptB
+:startVimEditorRunPromptC
+call :banner
+call :menuVimEditorRunPrompt
+call :menuVimEditorRun
+if /I %input% EQU 0 cls&goto startVimEditorPromptSubDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunPromptC
+:startVimEditorRunPromptD
+call :banner
+call :menuVimEditorRunPrompt
+call :menuVimEditorRun
+if /I %input% EQU 0 cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunPromptD
+:startVimEditorRunPrompt1
+call :banner
+call :menuVimEditorRunPrompt
+call :menuVimEditorRun
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPrompt
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunPrompt1
+:startVimEditorRunPrompt2
+call :banner
+call :menuVimEditorRunPrompt
+call :menuVimEditorRun
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunPrompt2
+:startVimEditorRunPromptSubDialerMode
+call :banner
+call :menuVimEditorRunPrompt
+call :menuVimEditorRun
+if /I %input% EQU 0 cls&goto start3
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunPromptSubDialerMode
+:startVimEditorRunPromptDialerMode
+call :banner
+call :menuVimEditorRunPrompt
+call :menuVimEditorRun
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorRunPromptDialerMode
+:menuVimEditorRunPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Bram Moolenaar
+echo     Software Type: CLI-based Advanced Text Editor
+echo          Category: Freeware
+echo      License Type: Vim License
+echo           Website: https://www.vim.org/
+echo  Founded/Released: 11/02/1991
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Vim_Beginner_R.lnk, Vim_Advanced_R.lnk, Vim_Read-Only_R.lnk
+echo   Additional Info: Vim Editor requires training to use; it is not easy to use. Nevertheless, Vim Editor offers the
+echo                 +: highest functionality of any text editor.
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the number for Vim Editor Beginner/Advanced/Read-Only ("1/2/3"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuVimEditorRun
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU 1 start Vim_Beginner_R.lnk&set input=32VR1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 2 start Vim_Advanced_R.lnk&set input=32VR2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 3 start Vim_Read-Only_R.lnk&set input=32VR3&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startVimEditorUninstallPromptA
+call :banner
+call :menuVimEditorUninstallPrompt
+call :menuVimEditorUninstall
+if /I %input% EQU 0 cls&goto startVimEditorPrompt1
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorUninstallPromptA
+:startVimEditorUninstallPromptB
+call :banner
+call :menuVimEditorUninstallPrompt
+call :menuVimEditorUninstall
+if /I %input% EQU 0 cls&goto startVimEditorPrompt2
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorUninstallPromptB
+:startVimEditorUninstallPromptC
+call :banner
+call :menuVimEditorUninstallPrompt
+call :menuVimEditorUninstall
+if /I %input% EQU 0 cls&goto startVimEditorPromptSubDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorUninstallPromptC
+:startVimEditorUninstallPromptD
+call :banner
+call :menuVimEditorUninstallPrompt
+call :menuVimEditorUninstall
+if /I %input% EQU 0 cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorUninstallPromptD
+:startVimEditorUninstallPrompt1
+call :banner
+call :menuVimEditorUninstallPrompt
+call :menuVimEditorUninstall
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPrompt
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorUninstallPrompt1
+:startVimEditorUninstallPrompt2
+call :banner
+call :menuVimEditorUninstallPrompt
+call :menuVimEditorUninstall
+if /I %input% EQU 0 cls&goto startWebsiteTextEditorPromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorUninstallPrompt2
+:startVimEditorUninstallPromptSubDialerMode
+call :banner
+call :menuVimEditorUninstallPrompt
+call :menuVimEditorUninstall
+if /I %input% EQU 0 cls&goto start3
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorUninstallPromptSubDialerMode
+:startVimEditorUninstallPromptDialerMode
+call :banner
+call :menuVimEditorUninstallPrompt
+call :menuVimEditorUninstall
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startVimEditorUninstallPromptDialerMode
+:menuVimEditorUninstallPrompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: Bram Moolenaar
+echo     Software Type: CLI-based Advanced Text Editor
+echo          Category: Freeware
+echo      License Type: Vim License
+echo           Website: https://www.vim.org/
+echo  Founded/Released: 11/02/1991
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: Vim_CLI_O.lnk, Vim_GUI_O.lnk
+echo   Additional Info: Vim Editor requires training to use; it is not easy to use. Nevertheless, Vim Editor offers the
+echo                 +: highest functionality of any text editor.
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Input the letter to uninstall Vim Editor with GUI/CLI ("G/C"). Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuVimEditorUninstall
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU G start Vim_GUI_O.lnk&set input=32VOG&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU C start Vim_CLI_O.lnk&set input=32VOC&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startMATLABandOctavePrompt
+call :banner
+call :menuMATLABandOctavePrompt
+call :menuMATLABandOctave
 if /I %input% EQU 0 cls&goto start3
 if /I %input% EQU G cls&goto startGUIOctavePrompt1
 if /I %input% EQU C cls&goto startCLIOctavePrompt1
+if /I %input% EQU M cls&goto startMATLABprompt1
 if /I %input% EQU CA cls&goto startCLIOctaveRunAdminPrompt1
 if /I %input% EQU CR cls&goto startCLIOctaveRunPrompt1
 if /I %input% EQU -+ cls&goto start3
@@ -9547,14 +10296,15 @@ call :menuAuxiliaryCommands
 call :menuAuxiliaryFragments
 call :menuSearchEngine
 call :menuSearchEngineFragments
-cls&goto startOctavePrompt
-:startOctavePromptDialerMode
+cls&goto startMATLABandOctavePrompt
+:startMATLABandOctavePromptDialerMode
 call :banner
-call :menuOctavePrompt
-call :menuOctave
+call :menuMATLABandOctavePrompt
+call :menuMATLABandOctave
 if /I %input% EQU 0 cls&goto startMain
 if /I %input% EQU G cls&goto startGUIOctavePrompt2
 if /I %input% EQU C cls&goto startCLIOctavePrompt2
+if /I %input% EQU M cls&goto startMATLABprompt2
 if /I %input% EQU CA cls&goto startCLIOctaveRunAdminPrompt2
 if /I %input% EQU CR cls&goto startCLIOctaveRunPrompt2
 if /I %input% EQU -+ cls&goto start3
@@ -9563,32 +10313,33 @@ call :menuAuxiliaryCommands
 call :menuAuxiliaryFragments
 call :menuSearchEngine
 call :menuSearchEngineFragments
-cls&goto startOctavePromptDialerMode
-:menuOctavePrompt
+cls&goto startMATLABandOctavePromptDialerMode
+:menuMATLABandOctavePrompt
 echo ------------------------------------------------------------------------------------------------------------------------
-echo  Author/Developer: John W. Eaton ^& others
-echo     Software Type: Scientific Programming Language ^& Numeric Computer Environment - a MATLAB clone
-echo          Category: Freeware
-echo      License Type: GNU GPL v3.0
-echo           Website: https://octave.org/
-echo  Founded/Released: 01/04/1993
-echo         Publicity: Public
-echo            Status: Active
+echo  Author/Developer: Depends
+echo     Software Type: Depends
+echo          Category: Depends
+echo      License Type: Depends
+echo           Website: Depends
+echo  Founded/Released: Depends
+echo         Publicity: Depends
+echo            Status: Depends
 echo    Current Update: 
 echo        Patch Date: 
 echo  Target Filenames: CLI_Directory.txt, CLI_Octave_A.lnk, CLI_Octave_R.lnk, GUI_Octave_R.lnk, Octave_I.exe, Octave_O.lnk
+echo                 +: MATLAB_R.lnk, MATLAB_I.lnk
 echo   Additional Info: 
-echo                 +: 
 echo ------------------------------------------------------------------------------------------------------------------------
 echo.
-echo Input the Octave interface (GUI/CLI) you wish to run at the time ("G/C"). Input zero ("0") to cancel.
+echo Input the Octave interface (GUI/CLI) you wish to run at the time, or try MATLAB ("G/C/M"). Input zero ("0") to cancel.
 echo.
 goto :eof
-:menuOctave
+:menuMATLABandOctave
 set /P input=%BS%
 if /I %input% EQU 0 goto :eof
 if /I %input% EQU G goto :eof
 if /I %input% EQU C goto :eof
+if /I %input% EQU M goto :eof
 if /I %input% EQU CA goto :eof
 if /I %input% EQU CR goto :eof
 if /I %input% EQU GA start GUI_Octave_A.lnk&set input=33GA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -9603,12 +10354,16 @@ if /I %input% EQU CRY start CLI_Octave_R.lnk&set input=33CRY&&goto InvokeCLIdire
 if /I %input% EQU CRN start CLI_Octave_R.lnk&set input=33CRN&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CI start Octave_I.exe&set input=33CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU CO start Octave_O.lnk&set input=33CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MA start MATLAB_A.lnk&set input=33MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MR start MATLAB_R.lnk&set input=33MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MI start MATLAB_I.lnk&set input=33MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU MO cls&set input=33MO&goto startUninstallationInstructions
 goto :eof
 :startGUIOctavePrompt1
 call :banner
 call :menuGUIOctavePrompt
 call :menuGUIOctave
-if /I %input% EQU 0 cls&goto startOctavePrompt
+if /I %input% EQU 0 cls&goto startMATLABandOctavePrompt
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
 call :menuAuxiliaryCommands
@@ -9620,7 +10375,7 @@ cls&goto startGUIOctavePrompt1
 call :banner
 call :menuGUIOctavePrompt
 call :menuGUIOctave
-if /I %input% EQU 0 cls&goto startOctavePromptDialerMode
+if /I %input% EQU 0 cls&goto startMATLABandOctavePromptDialerMode
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
 call :menuAuxiliaryCommands
@@ -9684,7 +10439,7 @@ goto :eof
 call :banner
 call :menuCLIOctavePrompt
 call :menuCLIOctave
-if /I %input% EQU 0 cls&goto startOctavePrompt
+if /I %input% EQU 0 cls&goto startMATLABandOctavePrompt
 if /I %input% EQU A cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode1
 if /I %input% EQU R cls&goto startCLIOctaveRunPromptDeepSubDialerMode1
 if /I %input% EQU -+ cls&goto start3
@@ -9698,7 +10453,7 @@ cls&goto startCLIOctavePrompt1
 call :banner
 call :menuCLIOctavePrompt
 call :menuCLIOctave
-if /I %input% EQU 0 cls&goto startOctavePromptDialerMode
+if /I %input% EQU 0 cls&goto startMATLABandOctavePromptDialerMode
 if /I %input% EQU A cls&goto startCLIOctaveRunAdminPromptDeepSubDialerMode2
 if /I %input% EQU R cls&goto startCLIOctaveRunPromptDeepSubDialerMode2
 if /I %input% EQU -+ cls&goto start3
@@ -9774,7 +10529,7 @@ goto :eof
 call :banner
 call :menuCLIOctaveRunAdminPrompt
 call :menuCLIOctaveRunAdmin
-if /I %input% EQU 0 cls&goto startOctavePrompt
+if /I %input% EQU 0 cls&goto startMATLABandOctavePrompt
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
 call :menuAuxiliaryCommands
@@ -9786,7 +10541,7 @@ cls&goto startCLIOctaveRunAdminPrompt1
 call :banner
 call :menuCLIOctaveRunAdminPrompt
 call :menuCLIOctaveRunAdmin
-if /I %input% EQU 0 cls&goto startOctavePromptDialerMode
+if /I %input% EQU 0 cls&goto startMATLABandOctavePromptDialerMode
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
 call :menuAuxiliaryCommands
@@ -9882,7 +10637,7 @@ goto :eof
 call :banner
 call :menuCLIOctaveRunPrompt
 call :menuCLIOctaveRun
-if /I %input% EQU 0 cls&goto startOctavePrompt
+if /I %input% EQU 0 cls&goto startMATLABandOctavePrompt
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
 call :menuAuxiliaryCommands
@@ -9894,7 +10649,7 @@ cls&goto startCLIOctaveRunPrompt1
 call :banner
 call :menuCLIOctaveRunPrompt
 call :menuCLIOctaveRun
-if /I %input% EQU 0 cls&goto startOctavePromptDialerMode
+if /I %input% EQU 0 cls&goto startMATLABandOctavePromptDialerMode
 if /I %input% EQU -+ cls&goto start3
 if /I %input% EQU +- cls&goto start3
 call :menuAuxiliaryCommands
@@ -9985,6 +10740,82 @@ if /I %input% EQU 0 goto :eof
 if /I %input% EQU 1 start CLI_Directory.txt&set input=33CR1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Y start CLI_Octave_R.lnk&set input=33CRY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU N start CLI_Octave_R.lnk&set input=33CRN&&goto startPreExitPrompt||goto startFailedExitPrompt
+goto :eof
+:startMATLABprompt1
+call :banner
+call :menuMATLABprompt
+call :menuMATLAB
+if /I %input% EQU 0 cls&goto startMATLABandOctavePrompt
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startMATLABprompt1
+:startMATLABprompt2
+call :banner
+call :menuMATLABprompt
+call :menuMATLAB
+if /I %input% EQU 0 cls&goto startMATLABandOctavePromptDialerMode
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startMATLABprompt2
+:startMATLABpromptSubDialerMode
+call :banner
+call :menuMATLABprompt
+call :menuMATLAB
+if /I %input% EQU 0 cls&goto start3
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startMATLABpromptSubDialerMode
+:startMATLABpromptDialerMode
+call :banner
+call :menuMATLABprompt
+call :menuMATLAB
+if /I %input% EQU 0 cls&goto startMain
+if /I %input% EQU -+ cls&goto start3
+if /I %input% EQU +- cls&goto start3
+call :menuAuxiliaryCommands
+call :menuAuxiliaryFragments
+call :menuSearchEngine
+call :menuSearchEngineFragments
+cls&goto startMATLABpromptDialerMode
+:menuMATLABprompt
+echo ------------------------------------------------------------------------------------------------------------------------
+echo  Author/Developer: MathWorks
+echo     Software Type: Multi-Paradigm Programming Language ^& Numeric Computing Environment
+echo          Category: Commercialware
+echo      License Type: Proprietary
+echo           Website: https://www.mathworks.com/products/matlab.html
+echo  Founded/Released: 1984
+echo         Publicity: Public
+echo            Status: Active
+echo    Current Update: 
+echo        Patch Date: 
+echo  Target Filenames: MATLAB_R.lnk, MATLAB_I.lnk
+echo   Additional Info: 
+echo                 +: 
+echo ------------------------------------------------------------------------------------------------------------------------
+echo.
+echo Would you like to run/install/uninstall MATLAB ("R/I/O")? Input zero ("0") to cancel.
+echo.
+goto :eof
+:menuMATLAB
+set /P input=%BS%
+if /I %input% EQU 0 goto :eof
+if /I %input% EQU A start MATLAB_A.lnk&set input=33MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU R start MATLAB_R.lnk&set input=33MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU I start MATLAB_I.lnk&set input=33MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU O cls&set input=33MO&goto startUninstallationInstructions
 goto :eof
 :startMetasploitPrompt
 call :banner
@@ -43311,8 +44142,8 @@ if /I %input% EQU 27 cls&goto startPublisherPromptDialerMode
 if /I %input% EQU 28 cls&goto startOneNotePromptDialerMode
 if /I %input% EQU 29 cls&goto startOtherMicrosoftToolsPromptDialerMode
 if /I %input% EQU 31 cls&goto start010UniversalPromptDialerMode
-if /I %input% EQU 32 cls&goto startMATLABpromptDialerMode
-if /I %input% EQU 33 cls&goto startOctavePromptDialerMode
+if /I %input% EQU 32 cls&goto startWebsiteTextEditorPromptDialerMode
+if /I %input% EQU 33 cls&goto startMATLABandOctavePromptDialerMode
 if /I %input% EQU 34 cls&goto startMetasploitPromptDialerMode
 if /I %input% EQU 35 cls&goto startCygwinPromptDialerMode
 if /I %input% EQU 36 cls&goto startPythonPromptDialerMode
@@ -43449,12 +44280,13 @@ if /I %input% EQU 31L cls&goto startLogViewerPromptDialerMode
 if /I %input% EQU 31U cls&goto startUniversalViewerPromptDialerMode
 if /I %input% EQU 31F cls&goto startAdvancedRenamerPromptDialerMode
 if /I %input% EQU 31C cls&goto startAttributeChangerPromptDialerMode
-if /I %input% EQU 32A start MATLAB_A.lnk&set input=32A&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 32R start MATLAB_R.lnk&set input=32R&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 32I start MATLAB_I.lnk&set input=32I&&goto startPreExitPrompt||goto startFailedExitPrompt
-if /I %input% EQU 32O cls&set input=32O&goto startUninstallationInstructions
+if /I %input% EQU 32A cls&goto startAtomPromptDialerMode
+if /I %input% EQU 32P cls&goto startPulsarPromptDialerMode
+if /I %input% EQU 32S cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU 32V cls&goto startVimEditorPromptDialerMode
 if /I %input% EQU 33G cls&goto startGUIOctavePromptDialerMode
 if /I %input% EQU 33C cls&goto startCLIOctavePromptDialerMode
+if /I %input% EQU 33M cls&goto startMATLABpromptDialerMode
 if /I %input% EQU 34A cls&goto startMetasploitRunAdminPromptDialerMode
 if /I %input% EQU 34R cls&goto startMetasploitRunPromptDialerMode
 if /I %input% EQU 34I start Metasploit_I.msi&set input=34I&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -43737,6 +44569,19 @@ if /I %input% EQU 31CA start Attribute_Changer_A.lnk&set input=31CA&&goto startP
 if /I %input% EQU 31CR start Attribute_Changer_R.lnk&set input=31CR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 31CI start Attribute_Changer_I.exe&set input=31CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 31CO start Attribute_Changer_O.lnk&set input=31CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32AA start Atom_A.lnk&set input=32AA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32AR start Atom_R.lnk&set input=32AR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32AI start Atom_I.exe&set input=32AI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32AO cls&set input=32AO&goto startUninstallationInstructions
+if /I %input% EQU 32PA start Pulsar_A.lnk&set input=32PA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32PR start Pulsar_R.lnk&set input=32PR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32PI start Pulsar_I.exe&set input=32PI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32PO start Pulsar_O.lnk&set input=32PO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32SA start Sublime_Text_A.lnk&set input=32SA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32SR start Sublime_Text_R.lnk&set input=32SR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32SI start Sublime_Text_I.exe&set input=32SI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32SO start Sublime_Text_O.lnk&set input=32SO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32VI start Vim_I.exe&set input=32VI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 33GA start GUI_Octave_A.lnk&set input=33GA&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 33GR start GUI_Octave_R.lnk&set input=33GR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 33GI start Octave_I.exe&set input=33GI&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -43745,6 +44590,10 @@ if /I %input% EQU 33CA cls&goto startCLIOctaveRunAdminPromptDialerMode
 if /I %input% EQU 33CR cls&goto startCLIOctaveRunPromptDialerMode
 if /I %input% EQU 33CI start Octave_I.exe&set input=33CI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 33CO start Octave_O.lnk&set input=33CO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 33MA start MATLAB_A.lnk&set input=33MA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 33MR start MATLAB_R.lnk&set input=33MR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 33MI start MATLAB_I.lnk&set input=33MI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 33MO cls&set input=33MO&goto startUninstallationInstructions
 if /I %input% EQU 34A1 start CLI_Directory.txt&set input=34A1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 34AY start Metasploit_A.lnk&set input=34AY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU 34AN start Metasploit_A.lnk&set input=34AN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -44111,6 +44960,14 @@ if /I %input% EQU 9976 cls&goto startPEiDpromptDialerMode
 if /I %input% EQU 9977 cls&goto startOdinPromptDialerMode
 if /I %input% EQU 9978 cls&goto startOOSU10PromptDialerMode
 if /I %input% EQU 9979 cls&goto start9cAltB
+if /I %input% EQU 32VA1 start Vim_Beginner_A.lnk&set input=32VA1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32VA2 start Vim_Advanced_A.lnk&set input=32VA2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32VA3 start Vim_Read-Only_A.lnk&set input=32VA3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32VR1 start Vim_Beginner_R.lnk&set input=32VR1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32VR2 start Vim_Advanced_R.lnk&set input=32VR2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32VR3 start Vim_Read-Only_R.lnk&set input=32VR3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32VOG start Vim_GUI_O.lnk&set input=32VOG&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU 32VOC start Vim_CLI_O.lnk&set input=32VOC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 33CA1 start CLI_Directory.txt&set input=33CA1&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU 33CAY start CLI_Octave_A.lnk&set input=33CAY&&goto InvokeCLIdirectory||goto startFailedExitPrompt
 if /I %input% EQU 33CAN start CLI_Octave_A.lnk&set input=33CAN&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -45864,6 +46721,12 @@ if /I %input% EQU Astrill-VPN-A start Astrill_VPN_A.lnk&set input=993AA&&goto st
 if /I %input% EQU Astrill-VPN-R start Astrill_VPN_R.lnk&set input=993AR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Astrill-VPN-I start Astrill_VPN_I.exe&set input=993AI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Astrill-VPN-O start Astrill_VPN_O.lnk&set input=993AO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Atom cls&goto startAtomPromptDialerMode
+if /I %input% EQU Atom- cls&goto startAtomPromptDialerMode
+if /I %input% EQU Atom-A start Atom_A.lnk&set input=32AA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Atom-R start Atom_R.lnk&set input=32AR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Atom-I start Atom_I.exe&set input=32AI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Atom-O cls&set input=32AO&goto startUninstallationInstructions
 if /I %input% EQU Attribute cls&goto startAttributeChangerPromptDialerMode
 if /I %input% EQU Attribute- cls&goto startAttributeChangerPromptDialerMode
 if /I %input% EQU Attribute-A start Attribute_Changer_A.lnk&set input=31CA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -48259,6 +49122,14 @@ if /I %input% EQU Publisher-A start Publisher_A.lnk&set input=27A&&goto startPre
 if /I %input% EQU Publisher-R start Publisher_R.lnk&set input=27R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Publisher-I start Microsoft365_I.exe&set input=27I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Publisher-O cls&set input=27O&goto startUninstallationInstructions
+if /I %input% EQU Puls cls&goto startPulsarPromptDialerMode
+if /I %input% EQU Pulsa cls&goto startPulsarPromptDialerMode
+if /I %input% EQU Pulsar cls&goto startPulsarPromptDialerMode
+if /I %input% EQU Pulsar- cls&goto startPulsarPromptDialerMode
+if /I %input% EQU Pulsar-A start Pulsar_A.lnk&set input=32PA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Pulsar-R start Pulsar_R.lnk&set input=32PR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Pulsar-I start Pulsar_I.exe&set input=32PI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Pulsar-O start Pulsar_O.lnk&set input=32PO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Purble cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purble- cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purble-A start Purble_Place_A.lnk&set input=696A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -48708,6 +49579,18 @@ if /I %input% EQU StreamFab-A start StreamFab_A.lnk&set input=56A&&goto startPre
 if /I %input% EQU StreamFab-R start StreamFab_R.lnk&set input=56R&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU StreamFab-I start StreamFab_I.exe&set input=56I&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU StreamFab-O start StreamFab_O.lnk&set input=56O&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Sublime cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU Sublime- cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU Sublime-A start Sublime_Text_A.lnk&set input=32SA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Sublime-R start Sublime_Text_R.lnk&set input=32SR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Sublime-I start Sublime_Text_I.exe&set input=32SI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Sublime-O start Sublime_Text_O.lnk&set input=32SO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Sublime-Text cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU Sublime-Text- cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU Sublime-Text-A start Sublime_Text_A.lnk&set input=32SA&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Sublime-Text-R start Sublime_Text_R.lnk&set input=32SR&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Sublime-Text-I start Sublime_Text_I.exe&set input=32SI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Sublime-Text-O start Sublime_Text_O.lnk&set input=32SO&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Supremo cls&goto startSupremoPromptDialerMode
 if /I %input% EQU Supremo- cls&goto startSupremoPromptDialerMode
 if /I %input% EQU Supremo-A start Supremo_A.lnk&set input=Workspace-5SA&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -49102,6 +49985,31 @@ if /I %input% EQU Universal-Viewer-A start Universal_Viewer_A.lnk&set input=31UA
 if /I %input% EQU Universal-Viewer-R start Universal_Viewer_R.lnk&set input=31UR&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Universal-Viewer-I start Universal_Viewer_I.exe&set input=31UI&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Universal-Viewer-O start Universal_Viewer_O.lnk&set input=31UO&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU Vim- cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU Vim-A cls&goto startVimEditorRunAdminPromptDialerMode
+if /I %input% EQU Vim-R cls&goto startVimEditorRunPromptDialerMode
+if /I %input% EQU Vim-I start Vim_I.exe&set input=32VI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-O cls&goto startVimEditorUninstallPromptDialerMode
+if /I %input% EQU Vim-A1 start Vim_Beginner_A.lnk&set input=32VA1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-A2 start Vim_Advanced_A.lnk&set input=32VA2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-A3 start Vim_Read-Only_A.lnk&set input=32VA3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-R1 start Vim_Beginner_R.lnk&set input=32VR1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-R2 start Vim_Advanced_R.lnk&set input=32VR2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-R3 start Vim_Read-Only_R.lnk&set input=32VR3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-OG start Vim_GUI_O.lnk&set input=32VOG&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-OC start Vim_CLI_O.lnk&set input=32VOC&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-Editor cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU Vim-Editor- cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU Vim-Editor-I start Vim_I.exe&set input=32VI&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-Editor-A1 start Vim_Beginner_A.lnk&set input=32VA1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-Editor-A2 start Vim_Advanced_A.lnk&set input=32VA2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-Editor-A3 start Vim_Read-Only_A.lnk&set input=32VA3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-Editor-R1 start Vim_Beginner_R.lnk&set input=32VR1&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-Editor-R2 start Vim_Advanced_R.lnk&set input=32VR2&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-Editor-R3 start Vim_Read-Only_R.lnk&set input=32VR3&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-Editor-OG start Vim_GUI_O.lnk&set input=32VOG&&goto startPreExitPrompt||goto startFailedExitPrompt
+if /I %input% EQU Vim-Editor-OC start Vim_CLI_O.lnk&set input=32VOC&&goto startPreExitPrompt||goto startFailedExitPrompt
 if /I %input% EQU Visual cls&goto startVisualStudioPromptDialerMode
 if /I %input% EQU Visual- cls&goto startVisualStudioPromptDialerMode
 if /I %input% EQU Visual-A start Visual_Studio_A.lnk&set input=21A&&goto startPreExitPrompt||goto startFailedExitPrompt
@@ -50560,6 +51468,8 @@ if /I %input% EQU Publish cls&goto startPublisherPromptDialerMode
 if /I %input% EQU Publis cls&goto startPublisherPromptDialerMode
 if /I %input% EQU Publi cls&goto startPublisherPromptDialerMode
 if /I %input% EQU Publ cls&goto startPublisherPromptDialerMode
+if /I %input% EQU Pulsa cls&goto startPulsarPromptDialerMode
+if /I %input% EQU Puls cls&goto startPulsarPromptDialerMode
 if /I %input% EQU Purble-Plac cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purble-Pla cls&goto startPurblePlacePromptDialerMode
 if /I %input% EQU Purble-Pl cls&goto startPurblePlacePromptDialerMode
@@ -50783,6 +51693,12 @@ if /I %input% EQU Stin cls&goto startStingerPromptDialerMode
 if /I %input% EQU StreamFa cls&goto startStreamFabPromptDialerMode
 if /I %input% EQU Strea cls&goto startStreamFabPromptDialerMode
 if /I %input% EQU Stre cls&goto startStreamFabPromptDialerMode
+if /I %input% EQU Sublime-Tex cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU Sublime-Te cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU Sublime-T cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU Sublim cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU Subli cls&goto startSublimeTextPromptDialerMode
+if /I %input% EQU Subl cls&goto startSublimeTextPromptDialerMode
 if /I %input% EQU Suprem cls&goto startSupremoPromptDialerMode
 if /I %input% EQU Supre cls&goto startSupremoPromptDialerMode
 if /I %input% EQU Supr cls&goto startSupremoPromptDialerMode
@@ -50937,6 +51853,11 @@ if /I %input% EQU Univers cls&goto startUniversalViewerPromptDialerMode
 if /I %input% EQU Univer cls&goto startUniversalViewerPromptDialerMode
 if /I %input% EQU Unive cls&goto startUniversalViewerPromptDialerMode
 if /I %input% EQU Univ cls&goto startUniversalViewerPromptDialerMode
+if /I %input% EQU Vim-Edito cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU Vim-Edit cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU Vim-Edi cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU Vim-Ed cls&goto startVimEditorPromptDialerMode
+if /I %input% EQU Vim-E cls&goto startVimEditorPromptDialerMode
 if /I %input% EQU Visual-Studio-Cod cls&goto startVisualStudioCodePromptDialerMode
 if /I %input% EQU Visual-Studio-Co cls&goto startVisualStudioCodePromptDialerMode
 if /I %input% EQU Visual-Studio-C cls&goto startVisualStudioCodePromptDialerMode
@@ -51848,8 +52769,8 @@ echo           Website: https://github.com/DavyJones324/DavyJonesOS
 echo  Founded/Released: 04/18/2025
 echo         Publicity: Public
 echo            Status: Inactive
-echo    Current Update: 1.1.2
-echo        Patch Date: 10/03/2025
+echo    Current Update: 1.1.2.1
+echo        Patch Date: 10/06/2025
 echo  Target Filenames: Applications.bat
 echo   Additional Info: Compatible with Windows 10 ^& 11. No administrator privilages required.
 echo                 +: Art Design taken from https://patorjk.com. Dot Art does not show for Windows 10.
@@ -52560,15 +53481,35 @@ if exist Attribute_Changer_I.exe (
 ) else (
     echo "Attribute_Changer_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
-if exist MATLAB_I.lnk (
-    echo "MATLAB_I.lnk" [38;2;0;255;0mcurrently exists[0m.
+if exist Atom_I.exe (
+    echo "Atom_I.exe" [38;2;0;255;0mcurrently exists[0m.
 ) else (
-    echo "MATLAB_I.lnk" [38;2;255;0;0mdoes not exist[0m.
+    echo "Atom_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Pulsar_I.exe (
+    echo "Pulsar_I.exe" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Pulsar_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Sublime_Text_I.exe (
+    echo "Sublime_Text_I.exe" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Sublime_Text_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Vim_I.exe (
+    echo "Vim_I.exe" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Vim_I.exe" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Octave_I.exe (
     echo "Octave_I.exe" [38;2;0;255;0mcurrently exists[0m.
 ) else (
     echo "Octave_I.exe" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist MATLAB_I.lnk (
+    echo "MATLAB_I.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "MATLAB_I.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Metasploit_I.msi (
     echo "Metasploit_I.msi" [38;2;0;255;0mcurrently exists[0m.
@@ -55023,15 +55964,85 @@ if exist Attribute_Changer_O.lnk (
 ) else (
     echo "Attribute_Changer_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
-if exist MATLAB_A.lnk (
-    echo "MATLAB_A.lnk" [38;2;0;255;0mcurrently exists[0m.
+if exist Atom_A.lnk (
+    echo "Atom_A.lnk" [38;2;0;255;0mcurrently exists[0m.
 ) else (
-    echo "MATLAB_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+    echo "Atom_A.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
-if exist MATLAB_R.lnk (
-    echo "MATLAB_R.lnk" [38;2;0;255;0mcurrently exists[0m.
+if exist Atom_R.lnk (
+    echo "Atom_R.lnk" [38;2;0;255;0mcurrently exists[0m.
 ) else (
-    echo "MATLAB_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+    echo "Atom_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Pulsar_A.lnk (
+    echo "Pulsar_A.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Pulsar_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Pulsar_R.lnk (
+    echo "Pulsar_R.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Pulsar_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Pulsar_O.lnk (
+    echo "Pulsar_O.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Pulsar_O.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Sublime_Text_A.lnk (
+    echo "Sublime_Text_A.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Sublime_Text_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Sublime_Text_R.lnk (
+    echo "Sublime_Text_R.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Sublime_Text_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Sublime_Text_O.lnk (
+    echo "Sublime_Text_O.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Sublime_Text_O.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Vim_Beginner_A.lnk (
+    echo "Vim_Beginner_A.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Vim_Beginner_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Vim_Advanced_A.lnk (
+    echo "Vim_Advanced_A.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Vim_Advanced_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Vim_Read-Only_A.lnk (
+    echo "Vim_Read-Only_A.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Vim_Read-Only_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Vim_Beginner_R.lnk (
+    echo "Vim_Beginner_R.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Vim_Beginner_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Vim_Advanced_R.lnk (
+    echo "Vim_Advanced_R.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Vim_Advanced_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Vim_Read-Only_R.lnk (
+    echo "Vim_Read-Only_R.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Vim_Read-Only_R.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Vim_GUI_O.lnk (
+    echo "Vim_GUI_O.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Vim_GUI_O.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist Vim_CLI_O.lnk (
+    echo "Vim_CLI_O.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "Vim_CLI_O.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist GUI_Octave_A.lnk (
     echo "GUI_Octave_A.lnk" [38;2;0;255;0mcurrently exists[0m.
@@ -55057,6 +56068,16 @@ if exist Octave_O.lnk (
     echo "Octave_O.lnk" [38;2;0;255;0mcurrently exists[0m.
 ) else (
     echo "Octave_O.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist MATLAB_A.lnk (
+    echo "MATLAB_A.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "MATLAB_A.lnk" [38;2;255;0;0mdoes not exist[0m.
+)
+if exist MATLAB_R.lnk (
+    echo "MATLAB_R.lnk" [38;2;0;255;0mcurrently exists[0m.
+) else (
+    echo "MATLAB_R.lnk" [38;2;255;0;0mdoes not exist[0m.
 )
 if exist Metasploit_A.lnk (
     echo "Metasploit_A.lnk" [38;2;0;255;0mcurrently exists[0m.
@@ -58576,37 +59597,16 @@ echo come for you. If you are reading this, you have found my message.[0m
 echo.
 echo.
 echo.
-echo.
-echo.
-echo.
 echo Screen is empty. Nothing to see here. Press on.
 echo.
 goto :eof
 :Size
 echo.
-echo Lines used: 60,000 (10/03/2025)
+echo Lines used: 61,020 (10/03/2025)
 echo.
-echo Size on file: ~3.17 MB (~3,255 KB, or 3,333,268 bytes)
+echo Size on file: ~3.22 MB (~3,302 KB, or 3,381,351 bytes)
 echo.
-echo Size on Disk: ~3.18 MB (~3,264 KB, or 3,342,336 bytes)
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
+echo Size on Disk: ~3.22 MB (~3,304 KB, or 3,383,296 bytes)
 echo.
 goto :eof
 :: Tree Section
@@ -58804,6 +59804,9 @@ echo [38;2;0;0;255mAstrill-VPN-A[0m
 echo [38;2;0;255;0mAstrill-VPN-R[0m
 echo [38;2;255;255;0mAstrill-VPN-I[0m
 echo [38;2;255;0;0mAstrill-VPN-O[0m
+echo [38;2;0;0;255mAtom-A[0m
+echo [38;2;0;255;0mAtom-R[0m
+echo [38;2;255;255;0mAtom-I[0m
 echo [38;2;0;0;255mAttribute-Changer-A[0m
 echo [38;2;0;255;0mAttribute-Changer-R[0m
 echo [38;2;255;255;0mAttribute-Changer-I[0m
@@ -59527,6 +60530,10 @@ echo [38;2;0;0;255mPTerm-A[0m
 echo [38;2;0;255;0mPTerm-R[0m
 echo [38;2;0;0;255mPublisher-A[0m
 echo [38;2;0;255;0mPublisher-R[0m
+echo [38;2;0;0;255mPulsar-A[0m
+echo [38;2;0;255;0mPulsar-R[0m
+echo [38;2;255;255;0mPulsar-I[0m
+echo [38;2;255;0;0mPulsar-O[0m
 echo [38;2;0;0;255mPurble-Place-A[0m
 echo [38;2;0;255;0mPurble-Place-R[0m
 echo [38;2;0;0;255mPure-Data-A[0m
@@ -59651,6 +60658,10 @@ echo [38;2;0;0;255mStreamFab-A[0m
 echo [38;2;0;255;0mStreamFab-R[0m
 echo [38;2;255;255;0mStreamFab-I[0m
 echo [38;2;255;0;0mStreamFab-O[0m
+echo [38;2;0;0;255mSublime-Text-A[0m
+echo [38;2;0;255;0mSublime-Text-R[0m
+echo [38;2;255;255;0mSublime-Text-I[0m
+echo [38;2;255;0;0mSublime-Text-O[0m
 echo [38;2;0;0;255mSupremo-A[0m
 echo [38;2;0;255;0mSupremo-R[0m
 echo [38;2;255;255;0mSupremo-I[0m
@@ -59792,6 +60803,15 @@ echo [38;2;0;0;255mUniversal-Viewer-A[0m
 echo [38;2;0;255;0mUniversal-Viewer-R[0m
 echo [38;2;255;255;0mUniversal-Viewer-I[0m
 echo [38;2;255;0;0mUniversal-Viewer-O[0m
+echo [38;2;0;0;255mVim-Beginner-A[0m
+echo [38;2;0;0;255mVim-Advanced-A[0m
+echo [38;2;0;0;255mVim-Read-Only-A[0m
+echo [38;2;0;255;0mVim-Beginner-R[0m
+echo [38;2;0;255;0mVim-Advanced-R[0m
+echo [38;2;0;255;0mVim-Read-Only-R[0m
+echo [38;2;255;255;0mVim-I[0m
+echo [38;2;255;0;0mVim-GUI-O[0m
+echo [38;2;255;0;0mVim-CLI-O[0m
 echo [38;2;0;0;255mVisual-Studio-A[0m
 echo [38;2;0;255;0mVisual-Studio-R[0m
 echo [38;2;255;255;0mVisual-Studio-I[0m
