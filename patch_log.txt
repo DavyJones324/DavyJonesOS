@@ -1,3 +1,24 @@
+Patch 1.2.0
+
+* Added a new CLI option called "CreateSetPathTemplate" in the "CLI_GUI_Options" folder and added the associated template.
+* Reworked PuTTY, WiX Toolset, Java, PowerShell, and Python to adapt when operating from within the folder CLI_Tools.
+* Added a new CLI menu for the auxiliary commands, including programs that either utilize command prompts or attempt to emulate them.
+* Added GitHub CLI, John the Ripper, Hashcat, ClamAV, Cdrtools, Radare2, The Unarchiver, Wifade, Cpp2IL, Apktool, Cmder, MobaSSH,
+  MobaXterm, ConEmu, MBIN Compiler, and the Frankenstein Folder, meant for implementing other CLI Commands from the same folder, to the
+  CLI menu.
+* Moved the Netwide Assembler (NASM) to the CLI menu.
+* Added GitHub Bash to the GitHub Tools section from the Network Menu.
+* Added Phoenix Code to Menu 3 alongside the other Webpage Editor Tools.
+* Added GameMaker to Menu 4, replacing it with Pure Data.
+* Added JEB Decompiler to Menu 5 alongside Ghidra. The associated batch booting scripts from both Ghidra and JEB Decompiler will start
+  minimized, leaving the actual programs to pop up when their booting gets finalized.
+* Relocated Pure Data to Menu 5 alongside Asperite and Photoline.
+* Added REAPER, Ableton Live, FL Studio, and Cubase to Menu 5 alongside Avid Pro Tools.
+* Added NMS Modding Station to Menu 9bAlt (InvokeKeys) alongside RoL BIG Archiver.
+* Added Malcat to Menu 9cAltB (InvokePortable) alongside Cutter.
+* Optimized batch script so that interpreting user input requires fewer parsed lines to output the correct result, making it much faster.
+* Fixed a major issue with shortcut-overwriting script capability.
+
 Patch 1.1.2.1
 
 * As a final surprise parting gift before actual maintainence mode, I have added Atom Editor, Pulsar Editor, Sublime Text Editor, and Vim
