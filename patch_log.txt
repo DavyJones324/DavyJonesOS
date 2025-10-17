@@ -1,10 +1,6 @@
 Patch 1.2.0.1
 
-* Added Quick Batch File Compiler to Menu 9cAltB (InvokePortable) alongside F2KO Bat 2 Exe. The current maximum compilation limit for
-  these types of programs is exactly 10,234 lines of code. Any further and the batch script cannot be compiled to EXE format. This is
-  now considered a confirmed bug associated with these compiler programs, according to me, and is the sole responsibility of the other
-  batch compiler software developers to fix.
-
+* Added Quick Batch File Compiler to Menu 9cAltB (InvokePortable) alongside F2KO Bat 2 Exe.
 Patch 1.2.0
 
 * Added a new CLI option called "CreateSetPathTemplate" in the "CLI_GUI_Options" folder and added the associated template.
