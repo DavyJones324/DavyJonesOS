@@ -1,3 +1,9 @@
+Patch 1.2.0.2
+
+* Added Miniforge, Intel oneAPI Compiler, and Node.js to Menu 3 alongside the Command Terminal.
+* Added Advanced Bat to Exe to Menu 9cAltB (InvokePortable) alongside the other Batch Compilers.
+* Added the HTML Compiler to the search engine.
+
 Patch 1.2.0.1
 
 * Added Quick Batch File Compiler to Menu 9cAltB (InvokePortable) alongside F2KO Bat 2 Exe.
