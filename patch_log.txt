@@ -1,3 +1,11 @@
+Patch 1.2.0.3
+
+* Added Clang/LLVM to the CLI menu alongside NASM.
+* Moved Signal from Menu 9a to the Workspace menu alongside WhatsApp.
+* Added RAD Studio to Menu 9a to take the place of Signal.
+* Added Slack to the Workspace menu alongside Zoom.
+* Fixed an issue which caused the Batch Script to generate unnecessary lines of code when running Signal.
+
 Patch 1.2.0.2
 
 * Added Miniforge, Intel oneAPI Compiler, and Node.js to Menu 3 alongside the Command Terminal.
