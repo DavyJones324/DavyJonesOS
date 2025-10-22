@@ -1,3 +1,8 @@
+Patch 1.2.0.4
+
+* Added Samsung Magician to the Background menu alongside Samsung Driver. SamKEY, however, will not be endorsed by me due to being a scam.
+* Added Total Commander to the Background menu alongside Directory Opus.
+
 Patch 1.2.0.3
 
 * Added Clang/LLVM to the CLI menu alongside NASM.
