@@ -1,3 +1,10 @@
+Patch 1.2.0.5
+
+* Grouped together CCleaner, Recuva, and Speccy within the AlertAlt menu.
+* Added Disk Drill to the AlertAlt menu.
+* Relocated Defraggler to the AlertAlt menu from the search engine.
+* Relocated HTML Compiler to Menu 3 from the search engine.
+
 Patch 1.2.0.4
 
 * Added Samsung Magician to the Background menu alongside Samsung Driver. SamKEY, however, will not be endorsed by me due to being a scam.
