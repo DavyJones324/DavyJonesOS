@@ -4,6 +4,7 @@ Patch 1.2.0.5
 * Added Disk Drill to the AlertAlt menu.
 * Relocated Defraggler to the AlertAlt menu from the search engine.
 * Relocated HTML Compiler to Menu 3 from the search engine.
+* Replaced NMS Modding Station with two Portable Tools called HGPAKTool and AMUMSS in Menu 9bAlt (InvokeKeys).
 
 Patch 1.2.0.4
 
