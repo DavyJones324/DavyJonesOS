@@ -5,6 +5,7 @@ Patch 1.2.0.5
 * Relocated Defraggler to the AlertAlt menu from the search engine.
 * Relocated HTML Compiler to Menu 3 from the search engine.
 * Replaced NMS Modding Station with two Portable Tools called HGPAKTool and AMUMSS in Menu 9bAlt (InvokeKeys).
+* Replaced Dependency Walker with WinDepends, a rewrite of Dependency Walker. Old site will be displayed for reference purposes.
 
 Patch 1.2.0.4
 
