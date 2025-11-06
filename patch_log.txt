@@ -1,6 +1,6 @@
 Patch 1.2.0.9
 
-* Added OBS Studio to Menu 5 alongside Asperite, Photoline, and Pure Data.
+* Added OBS Studio, Camtasia, and Snagit to Menu 5 alongside Asperite, Photoline, and Pure Data.
 
 Patch 1.2.0.8
 
