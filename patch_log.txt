@@ -1,3 +1,7 @@
+Patch 1.2.0.9
+
+* Added OBS Studio to Menu 5 alongside Asperite, Photoline, and Pure Data.
+
 Patch 1.2.0.8
 
 * Added the Comparisons command, which displays the various wikis that are used to compare most programs.
