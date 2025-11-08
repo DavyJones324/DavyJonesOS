@@ -1,3 +1,7 @@
+Patch 1.2.1.0
+
+* Added the Plugin command for a list of compatible plugins and other helpful topics. More will follow!
+
 Patch 1.2.0.9
 
 * Added OBS Studio, Camtasia, and Snagit to Menu 5 alongside Asperite, Photoline, and Pure Data.
