@@ -349,14 +349,11 @@ goto :eof
 :setPythonShortcutAdminReplacement15
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '15'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt15
 echo The script will now exit.
 echo.
@@ -373,14 +370,11 @@ goto :eof
 :setPythonShortcutAdminReplacement23
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '23'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt23
 echo The script will now exit.
 echo.
@@ -397,14 +391,11 @@ goto :eof
 :setPythonShortcutAdminReplacement24
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '24'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt24
 echo The script will now exit.
 echo.
@@ -421,14 +412,11 @@ goto :eof
 :setPythonShortcutAdminReplacement25
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '25'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt25
 echo The script will now exit.
 echo.
@@ -445,14 +433,11 @@ goto :eof
 :setPythonShortcutAdminReplacement26
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '26'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt26
 echo The script will now exit.
 echo.
@@ -469,14 +454,11 @@ goto :eof
 :setPythonShortcutAdminReplacement27
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '27'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt27
 echo The script will now exit.
 echo.
@@ -493,14 +475,11 @@ goto :eof
 :setPythonShortcutAdminReplacement30
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '30'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt30
 echo The script will now exit.
 echo.
@@ -517,14 +496,11 @@ goto :eof
 :setPythonShortcutAdminReplacement31
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '31'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt31
 echo The script will now exit.
 echo.
@@ -541,14 +517,11 @@ goto :eof
 :setPythonShortcutAdminReplacement32
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '32'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt32
 echo The script will now exit.
 echo.
@@ -565,14 +538,11 @@ goto :eof
 :setPythonShortcutAdminReplacement33
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '33'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt33
 echo The script will now exit.
 echo.
@@ -589,14 +559,11 @@ goto :eof
 :setPythonShortcutAdminReplacement34
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '34'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt34
 echo The script will now exit.
 echo.
@@ -613,14 +580,11 @@ goto :eof
 :setPythonShortcutAdminReplacement35
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '35'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt35
 echo The script will now exit.
 echo.
@@ -637,14 +601,11 @@ goto :eof
 :setPythonShortcutAdminReplacement36
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '36'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt36
 echo The script will now exit.
 echo.
@@ -661,14 +622,11 @@ goto :eof
 :setPythonShortcutAdminReplacement37
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '37'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt37
 echo The script will now exit.
 echo.
@@ -685,14 +643,11 @@ goto :eof
 :setPythonShortcutAdminReplacement38
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '38'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt38
 echo The script will now exit.
 echo.
@@ -709,14 +664,11 @@ goto :eof
 :setPythonShortcutAdminReplacement39
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '39'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt39
 echo The script will now exit.
 echo.
@@ -733,14 +685,11 @@ goto :eof
 :setPythonShortcutAdminReplacement310
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '310'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt310
 echo The script will now exit.
 echo.
@@ -757,14 +706,11 @@ goto :eof
 :setPythonShortcutAdminReplacement311
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '311'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt311
 echo The script will now exit.
 echo.
@@ -781,14 +727,11 @@ goto :eof
 :setPythonShortcutAdminReplacement312
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '312'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt312
 echo The script will now exit.
 echo.
@@ -805,14 +748,11 @@ goto :eof
 :setPythonShortcutAdminReplacement313
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '313'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt313
 echo The script will now exit.
 echo.
@@ -829,14 +769,11 @@ goto :eof
 :setPythonShortcutAdminReplacement314
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
 $Shortcut.Arguments = '314'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPythonMainPrompt314
 echo The script will now exit.
 echo.
@@ -888,7 +825,7 @@ goto :eof
 :setPythonShortcutReplacement15
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "15" >> %SCRIPT%
@@ -911,7 +848,7 @@ goto :eof
 :setPythonShortcutReplacement23
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "23" >> %SCRIPT%
@@ -934,7 +871,7 @@ goto :eof
 :setPythonShortcutReplacement24
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "24" >> %SCRIPT%
@@ -957,7 +894,7 @@ goto :eof
 :setPythonShortcutReplacement25
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "25" >> %SCRIPT%
@@ -980,7 +917,7 @@ goto :eof
 :setPythonShortcutReplacement26
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "26" >> %SCRIPT%
@@ -1003,7 +940,7 @@ goto :eof
 :setPythonShortcutReplacement27
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "27" >> %SCRIPT%
@@ -1026,7 +963,7 @@ goto :eof
 :setPythonShortcutReplacement30
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "30" >> %SCRIPT%
@@ -1049,7 +986,7 @@ goto :eof
 :setPythonShortcutReplacement31
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "31" >> %SCRIPT%
@@ -1072,7 +1009,7 @@ goto :eof
 :setPythonShortcutReplacement32
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "32" >> %SCRIPT%
@@ -1095,7 +1032,7 @@ goto :eof
 :setPythonShortcutReplacement33
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "33" >> %SCRIPT%
@@ -1118,7 +1055,7 @@ goto :eof
 :setPythonShortcutReplacement34
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "34" >> %SCRIPT%
@@ -1141,7 +1078,7 @@ goto :eof
 :setPythonShortcutReplacement35
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "35" >> %SCRIPT%
@@ -1164,7 +1101,7 @@ goto :eof
 :setPythonShortcutReplacement36
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "36" >> %SCRIPT%
@@ -1187,7 +1124,7 @@ goto :eof
 :setPythonShortcutReplacement37
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "37" >> %SCRIPT%
@@ -1210,7 +1147,7 @@ goto :eof
 :setPythonShortcutReplacement38
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "38" >> %SCRIPT%
@@ -1233,7 +1170,7 @@ goto :eof
 :setPythonShortcutReplacement39
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "39" >> %SCRIPT%
@@ -1256,7 +1193,7 @@ goto :eof
 :setPythonShortcutReplacement310
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "310" >> %SCRIPT%
@@ -1279,7 +1216,7 @@ goto :eof
 :setPythonShortcutReplacement311
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "311" >> %SCRIPT%
@@ -1302,7 +1239,7 @@ goto :eof
 :setPythonShortcutReplacement312
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "312" >> %SCRIPT%
@@ -1325,7 +1262,7 @@ goto :eof
 :setPythonShortcutReplacement313
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "313" >> %SCRIPT%
@@ -1348,7 +1285,7 @@ goto :eof
 :setPythonShortcutReplacement314
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Python_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "" >> %SCRIPT%

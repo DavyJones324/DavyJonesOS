@@ -57,14 +57,11 @@ goto :eof
 :setPowerShellShortcutAdminReplacement6
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\PowerShell_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\PowerShell.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pwshpath.bat'; ^
 $Shortcut.Arguments = '6'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\PowerShell_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\PowerShell_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPowerShellMainPrompt6
 echo The script will now exit.
 echo.
@@ -81,14 +78,11 @@ goto :eof
 :setPowerShellShortcutAdminReplacement7
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\PowerShell_A.lnk'); ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\PowerShell.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Python\pwshpath.bat'; ^
 $Shortcut.Arguments = ''; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\PowerShell_A.lnk'); ^
-$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\PowerShell_A.lnk', $bytes);
+$Shortcut.Save();
 call :startPowerShellMainPrompt7
 echo The script will now exit.
 echo.
@@ -121,7 +115,7 @@ goto :eof
 :setPowerShellShortcutReplacement6
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\PowerShell_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\PowerShell.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\PowerShell\pwshpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "6" >> %SCRIPT%
@@ -144,7 +138,7 @@ goto :eof
 :setPowerShellShortcutReplacement7
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\PowerShell_R.lnk" >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\Desktop\PowerShell.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\CLI_Tools\PowerShell\pwshpath.bat" >> %SCRIPT%
 echo oLink.Arguments = "" >> %SCRIPT%
