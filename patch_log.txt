@@ -1,3 +1,19 @@
+Patch 1.3.0.0
+
+* Added XZ to the CLI menu alongside The Unarchiver.
+* Added the GnuWin32 CLI menu, which will replace the Other CLI Utilities section. Bzip2, Gzip, and Tar CLI Tools are added for reference.
+* Added new functionality for how to configure install options as well as manage the given uninstall options for the GnuWin32 section.
+  More programs may be added from both the GNU and SourceForge websites so they can be run with the included GnuWin32 path manager.
+* GnuWin32 and the Frankenstein folder options have swapped places (GnuWin32 is now Option 8, Frankenstein Folder is now Option 9)
+* Added the Ruby Programming Language to the Versions section, as well as in Menu 3 alongside Python.
+* Added the Java Version Manager, the PowerShell Version Manager, the Ruby Version Manager, and, most importantly, the Python Version
+  Manager, to Davy Jones OS. More will come soon!
+* Reworked the Background menu and Menu 3 to reflect these changes (Metasploit/Cygwin is Option 4{M/C}, Java is Option 5,
+  PowerShell is Option 6, and Python is Option 7).
+* Added new shortcuts to the pre-installed version of PowerShell 5.1, including its associated ISE environment.
+* Adjusted the shortcut changing feature to now work as an admin.
+* Added the WinBoard Chess Program to Menu 6a alongside Chess Arena, which includes the chess engine add-on called GNU Chess.
+
 Patch 1.2.1.0
 
 * Added the Plugin command for a list of compatible plugins and other helpful topics. More will follow!
