@@ -1,3 +1,13 @@
+Patch 1.3.0.1
+
+* Added MinGW to the CLI menu alongside Clang/LLVM, NASM, and Objconv.
+* Added the SQL Server Management Studio (SSMS) to Menu 2, taking the original place of Microsoft Visual Studio Code (Option 2).
+  Microsoft Visual Studio and Microsoft Visual Studio Code now share the same spot (Option 1).
+* Added the Go and Rust programming languages to Menu 3 alongside, respectively, the Java Developer Kit and PowerShell.
+  No version managers are needed for these added programming languages for now. In the future, version managers will be added to these
+  programming languages to compensate for their upcoming different major versions.
+* Added a clear coding definition for the general programming language Go (Go) vs the board game Go (Go_Board_Game).
+
 Patch 1.3.0.0
 
 * Added XZ to the CLI menu alongside The Unarchiver.
