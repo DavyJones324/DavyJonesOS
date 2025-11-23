@@ -3,6 +3,7 @@ Patch 1.3.0.2
 * Added a Status Redirecting Section for auxiliary redirection purposes.
 * Fixed an major issue where the auxiliary commands do not work when invoking them with one of the three alphabetized search engines.
 * Fixed issues with Compiler Tool prompts.
+* Fixed an issue with the Java Version Manager.
 
 Patch 1.3.0.1
 
