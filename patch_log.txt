@@ -1,3 +1,13 @@
+Patch 1.3.0.3
+
+* Added the Chromium Browser to Menu 1 alongside Google Chrome and Google Earth.
+* Added the option to operate a Nightly Version of Firefox on menu 1. This includes the ability for Firefox to open private browsers.
+* Added the ability to open private browsers on LibreWolf.
+* Relocated qBittorrent to the other Download Managers (Option 1). In its place, Playwright is added with installation instructions and a
+  hint of all possibilities regarding Web Crawlers and Scrapers. On top of this, ParseHub and Octoparse will also be added.
+* Fixed an issue regarding the prompts of Supremo and TeamSpeak.
+* Fixed an issue regarding command run-off on certain prompts.
+
 Patch 1.3.0.2
 
 * Added a Status Redirecting Section for auxiliary redirection purposes.
