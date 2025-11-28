@@ -1,6 +1,7 @@
 Patch 1.3.0.4
 
 * Added a VM auxiliary command for displaying a brief list of VM ISOs for curiosity purposes (URLs not included at the moment).
+* Added the ability to invoke hidden shortcuts through the Display screen.
 * Relocated Sophos HitmanPro.Alert to be next to the traditional HitmanPro scanner. Added Aura Antivirus in its place.
 * Added Resource Hacker and Cerbero Suite to the Background Menu alongside Notepad, Notepad++, BabelPad, and ImHex.
 * Added Belkasoft Evidence Center and Magnet Forensics software to Menu 7a alongside Forensic Toolkit.
