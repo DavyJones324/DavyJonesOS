@@ -33,13 +33,7 @@ if "%1"=="18" (
 ) else (
     call :startRubyMainPrompt34
 )
-:checkAdmin
-net session > nul 2>&1
-if %errorlevel% == 0 (
-    goto menuAdminOptions
-) else (
-    goto menuOptions
-)
+goto menuOptions
 :startRubyMainPrompt18
 @set path=C:\CLI_Tools\Ruby\Ruby18\bin;%path%
 set RB_EXE="C:\CLI_Tools\Ruby\Ruby18\bin\ruby.exe"
@@ -190,350 +184,6 @@ echo.
 echo Options: bundle, erb, gem, irb, racc, rake, rbs, rdoc, ri, ridk, ruby, setrbvars, typeprof
 echo.
 goto :eof
-:menuAdminOptions
-Set input=0
-echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
-echo.
-echo Version Options: 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 30, 31, 32, 33, 34
-set /P input=%BS%
-if /I %input% EQU 0 goto startComspec
-if /I %input% EQU 18 call :checkAdminRubyPath18
-if /I %input% EQU 19 call :checkAdminRubyPath19
-if /I %input% EQU 20 call :checkAdminRubyPath20
-if /I %input% EQU 21 call :checkAdminRubyPath21
-if /I %input% EQU 22 call :checkAdminRubyPath22
-if /I %input% EQU 23 call :checkAdminRubyPath23
-if /I %input% EQU 24 call :checkAdminRubyPath24
-if /I %input% EQU 25 call :checkAdminRubyPath25
-if /I %input% EQU 26 call :checkAdminRubyPath26
-if /I %input% EQU 27 call :checkAdminRubyPath27
-if /I %input% EQU 30 call :checkAdminRubyPath30
-if /I %input% EQU 31 call :checkAdminRubyPath31
-if /I %input% EQU 32 call :checkAdminRubyPath32
-if /I %input% EQU 33 call :checkAdminRubyPath33
-if /I %input% EQU 34 call :checkAdminRubyPath34
-if /I %input% EQU about goto startAbout
-if /I %input% EQU cls cls&goto startRubyShortcutRedirectManager
-if /I %input% EQU exit goto exitBatchProgram
-echo.
-echo Invalid selection. Please try again.
-echo.
-goto menuAdminOptions
-:checkAdminRubyPath18
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby18\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement18
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement18
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '18'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt18
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath19
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby19\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement19
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement19
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '19'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt19
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath20
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby20\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement20
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement20
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '20'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt20
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath21
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby21\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement21
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement21
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '21'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt21
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath22
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby22\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement22
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement22
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '22'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt22
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath23
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby23\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement23
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement23
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '23'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt23
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath24
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby24\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement24
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement24
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '24'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt24
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath25
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby25\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement25
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement25
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '25'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt25
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath26
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby26\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement26
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement26
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '26'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt26
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath27
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby27\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement27
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement27
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '27'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt27
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath30
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby30\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement30
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement30
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '30'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt30
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath31
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby31\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement31
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement31
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '31'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt31
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath32
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby32\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement32
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement32
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '32'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt32
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath33
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby33\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement33
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement33
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = '33'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt33
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminRubyPath34
-echo.
-if exist C:\CLI_Tools\Ruby\Ruby34\bin\ruby.exe (
-    goto setRubyShortcutAdminReplacement34
-) else (
-    echo The selected Ruby version does not exist.
-)
-goto :eof
-:setRubyShortcutAdminReplacement34
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
-$Shortcut.Arguments = ''; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startRubyMainPrompt34
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
 :menuOptions
 Set input=0
 echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
@@ -572,15 +222,13 @@ if exist C:\CLI_Tools\Ruby\Ruby18\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement18
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "18" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '18'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt18
 echo The script will now exit.
 echo.
@@ -595,15 +243,13 @@ if exist C:\CLI_Tools\Ruby\Ruby19\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement19
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "19" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '19'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt19
 echo The script will now exit.
 echo.
@@ -618,15 +264,13 @@ if exist C:\CLI_Tools\Ruby\Ruby20\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement20
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "20" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '20'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt20
 echo The script will now exit.
 echo.
@@ -641,15 +285,13 @@ if exist C:\CLI_Tools\Ruby\Ruby21\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement21
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "21" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '21'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt21
 echo The script will now exit.
 echo.
@@ -664,15 +306,13 @@ if exist C:\CLI_Tools\Ruby\Ruby22\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement22
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "22" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '22'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt22
 echo The script will now exit.
 echo.
@@ -687,15 +327,13 @@ if exist C:\CLI_Tools\Ruby\Ruby23\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement23
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "23" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '23'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt23
 echo The script will now exit.
 echo.
@@ -710,15 +348,13 @@ if exist C:\CLI_Tools\Ruby\Ruby24\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement24
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "24" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '24'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt24
 echo The script will now exit.
 echo.
@@ -733,15 +369,13 @@ if exist C:\CLI_Tools\Ruby\Ruby25\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement25
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "25" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '25'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt25
 echo The script will now exit.
 echo.
@@ -756,15 +390,13 @@ if exist C:\CLI_Tools\Ruby\Ruby26\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement26
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "26" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '26'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt26
 echo The script will now exit.
 echo.
@@ -779,15 +411,13 @@ if exist C:\CLI_Tools\Ruby\Ruby27\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement27
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "27" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '27'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt27
 echo The script will now exit.
 echo.
@@ -802,15 +432,13 @@ if exist C:\CLI_Tools\Ruby\Ruby30\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement30
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "30" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '30'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt30
 echo The script will now exit.
 echo.
@@ -825,15 +453,13 @@ if exist C:\CLI_Tools\Ruby\Ruby31\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement31
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "31" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '31'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt31
 echo The script will now exit.
 echo.
@@ -848,15 +474,13 @@ if exist C:\CLI_Tools\Ruby\Ruby32\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement32
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "32" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '32'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt32
 echo The script will now exit.
 echo.
@@ -871,15 +495,13 @@ if exist C:\CLI_Tools\Ruby\Ruby33\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement33
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "33" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '33'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt33
 echo The script will now exit.
 echo.
@@ -894,15 +516,13 @@ if exist C:\CLI_Tools\Ruby\Ruby34\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement34
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Ruby.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Ruby.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = ''; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt34
 echo The script will now exit.
 echo.

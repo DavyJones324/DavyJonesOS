@@ -45,13 +45,7 @@ if "%1"=="15" (
 ) else (
     call :startPythonMainPrompt314
 )
-:checkAdmin
-net session > nul 2>&1
-if %errorlevel% == 0 (
-    goto menuAdminOptions
-) else (
-    goto menuOptions
-)
+goto menuOptions
 :startPythonMainPrompt15
 @set path=C:\CLI_Tools\Python\Python15;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python15\python.exe"
@@ -303,482 +297,6 @@ echo.
 echo Options: python, python_d, python3.14t, python3.14t_d
 echo.
 goto :eof
-:menuAdminOptions
-Set input=0
-echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
-echo.
-echo Version Options: 15, 23, 24, 25, 26, 27, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 310, 311, 312, 313, 314
-set /P input=%BS%
-if /I %input% EQU 0 goto startComspec
-if /I %input% EQU 15 call :checkAdminPythonPath15
-if /I %input% EQU 23 call :checkAdminPythonPath23
-if /I %input% EQU 24 call :checkAdminPythonPath24
-if /I %input% EQU 25 call :checkAdminPythonPath25
-if /I %input% EQU 26 call :checkAdminPythonPath26
-if /I %input% EQU 27 call :checkAdminPythonPath27
-if /I %input% EQU 30 call :checkAdminPythonPath30
-if /I %input% EQU 31 call :checkAdminPythonPath31
-if /I %input% EQU 32 call :checkAdminPythonPath32
-if /I %input% EQU 33 call :checkAdminPythonPath33
-if /I %input% EQU 34 call :checkAdminPythonPath34
-if /I %input% EQU 35 call :checkAdminPythonPath35
-if /I %input% EQU 36 call :checkAdminPythonPath36
-if /I %input% EQU 37 call :checkAdminPythonPath37
-if /I %input% EQU 38 call :checkAdminPythonPath38
-if /I %input% EQU 39 call :checkAdminPythonPath39
-if /I %input% EQU 310 call :checkAdminPythonPath310
-if /I %input% EQU 311 call :checkAdminPythonPath311
-if /I %input% EQU 312 call :checkAdminPythonPath312
-if /I %input% EQU 313 call :checkAdminPythonPath313
-if /I %input% EQU 314 call :checkAdminPythonPath314
-if /I %input% EQU about goto startAbout
-if /I %input% EQU cls cls&goto startPythonShortcutRedirectManager
-if /I %input% EQU exit goto exitBatchProgram
-echo.
-echo Invalid selection. Please try again.
-echo.
-goto menuAdminOptions
-:checkAdminPythonPath15
-echo.
-if exist C:\CLI_Tools\Python\Python15\python.exe (
-    goto setPythonShortcutAdminReplacement15
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement15
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '15'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt15
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath23
-echo.
-if exist C:\CLI_Tools\Python\Python23\python.exe (
-    goto setPythonShortcutAdminReplacement23
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement23
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '23'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt23
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath24
-echo.
-if exist C:\CLI_Tools\Python\Python24\python.exe (
-    goto setPythonShortcutAdminReplacement24
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement24
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '24'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt24
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath25
-echo.
-if exist C:\CLI_Tools\Python\Python25\python.exe (
-    goto setPythonShortcutAdminReplacement25
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement25
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '25'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt25
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath26
-echo.
-if exist C:\CLI_Tools\Python\Python26\python.exe (
-    goto setPythonShortcutAdminReplacement26
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement26
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '26'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt26
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath27
-echo.
-if exist C:\CLI_Tools\Python\Python27\python.exe (
-    goto setPythonShortcutAdminReplacement27
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement27
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '27'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt27
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath30
-echo.
-if exist C:\CLI_Tools\Python\Python30\python.exe (
-    goto setPythonShortcutAdminReplacement30
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement30
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '30'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt30
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath31
-echo.
-if exist C:\CLI_Tools\Python\Python31\python.exe (
-    goto setPythonShortcutAdminReplacement31
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement31
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '31'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt31
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath32
-echo.
-if exist C:\CLI_Tools\Python\Python32\python.exe (
-    goto setPythonShortcutAdminReplacement32
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement32
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '32'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt32
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath33
-echo.
-if exist C:\CLI_Tools\Python\Python33\python.exe (
-    goto setPythonShortcutAdminReplacement33
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement33
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '33'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt33
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath34
-echo.
-if exist C:\CLI_Tools\Python\Python34\python.exe (
-    goto setPythonShortcutAdminReplacement34
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement34
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '34'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt34
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath35
-echo.
-if exist C:\CLI_Tools\Python\Python35\python.exe (
-    goto setPythonShortcutAdminReplacement35
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement35
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '35'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt35
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath36
-echo.
-if exist C:\CLI_Tools\Python\Python36\python.exe (
-    goto setPythonShortcutAdminReplacement36
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement36
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '36'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt36
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath37
-echo.
-if exist C:\CLI_Tools\Python\Python37\python.exe (
-    goto setPythonShortcutAdminReplacement37
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement37
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '37'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt37
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath38
-echo.
-if exist C:\CLI_Tools\Python\Python38\python.exe (
-    goto setPythonShortcutAdminReplacement38
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement38
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '38'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt38
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath39
-echo.
-if exist C:\CLI_Tools\Python\Python39\python.exe (
-    goto setPythonShortcutAdminReplacement39
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement39
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '39'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt39
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath310
-echo.
-if exist C:\CLI_Tools\Python\Python310\python.exe (
-    goto setPythonShortcutAdminReplacement310
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement310
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '310'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt310
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath311
-echo.
-if exist C:\CLI_Tools\Python\Python311\python.exe (
-    goto setPythonShortcutAdminReplacement311
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement311
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '311'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt311
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath312
-echo.
-if exist C:\CLI_Tools\Python\Python312\python.exe (
-    goto setPythonShortcutAdminReplacement312
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement312
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '312'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt312
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath313
-echo.
-if exist C:\CLI_Tools\Python\Python313\python.exe (
-    goto setPythonShortcutAdminReplacement313
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement313
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '313'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt313
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPythonPath314
-echo.
-if exist C:\CLI_Tools\Python\Python314\python.exe (
-    goto setPythonShortcutAdminReplacement314
-) else (
-    echo The selected Python version does not exist.
-)
-goto :eof
-:setPythonShortcutAdminReplacement314
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
-$Shortcut.Arguments = '314'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPythonMainPrompt314
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
 :menuOptions
 Set input=0
 echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
@@ -823,15 +341,13 @@ if exist C:\CLI_Tools\Python\Python15\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement15
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "15" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '15'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt15
 echo The script will now exit.
 echo.
@@ -846,15 +362,13 @@ if exist C:\CLI_Tools\Python\Python23\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement23
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "23" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '23'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt23
 echo The script will now exit.
 echo.
@@ -869,15 +383,13 @@ if exist C:\CLI_Tools\Python\Python24\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement24
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "24" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '24'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt24
 echo The script will now exit.
 echo.
@@ -892,15 +404,13 @@ if exist C:\CLI_Tools\Python\Python25\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement25
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "25" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '25'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt25
 echo The script will now exit.
 echo.
@@ -915,15 +425,13 @@ if exist C:\CLI_Tools\Python\Python26\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement26
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "26" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '26'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt26
 echo The script will now exit.
 echo.
@@ -938,15 +446,13 @@ if exist C:\CLI_Tools\Python\Python27\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement27
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "27" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '27'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt27
 echo The script will now exit.
 echo.
@@ -961,15 +467,13 @@ if exist C:\CLI_Tools\Python\Python30\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement30
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "30" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '30'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt30
 echo The script will now exit.
 echo.
@@ -984,15 +488,13 @@ if exist C:\CLI_Tools\Python\Python31\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement31
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "31" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '31'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt31
 echo The script will now exit.
 echo.
@@ -1007,15 +509,13 @@ if exist C:\CLI_Tools\Python\Python32\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement32
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "32" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '32'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt32
 echo The script will now exit.
 echo.
@@ -1030,15 +530,13 @@ if exist C:\CLI_Tools\Python\Python33\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement33
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "33" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '33'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt33
 echo The script will now exit.
 echo.
@@ -1053,15 +551,13 @@ if exist C:\CLI_Tools\Python\Python34\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement34
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "34" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '34'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt34
 echo The script will now exit.
 echo.
@@ -1076,15 +572,13 @@ if exist C:\CLI_Tools\Python\Python35\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement35
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "35" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '35'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt35
 echo The script will now exit.
 echo.
@@ -1099,15 +593,13 @@ if exist C:\CLI_Tools\Python\Python36\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement36
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "36" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '36'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt36
 echo The script will now exit.
 echo.
@@ -1122,15 +614,13 @@ if exist C:\CLI_Tools\Python\Python37\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement37
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "37" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '37'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt37
 echo The script will now exit.
 echo.
@@ -1145,15 +635,13 @@ if exist C:\CLI_Tools\Python\Python38\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement38
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "38" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '38'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt38
 echo The script will now exit.
 echo.
@@ -1168,15 +656,13 @@ if exist C:\CLI_Tools\Python\Python39\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement39
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "39" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '39'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt39
 echo The script will now exit.
 echo.
@@ -1191,15 +677,13 @@ if exist C:\CLI_Tools\Python\Python310\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement310
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "310" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '310'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt310
 echo The script will now exit.
 echo.
@@ -1214,15 +698,13 @@ if exist C:\CLI_Tools\Python\Python311\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement311
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "311" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '311'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt311
 echo The script will now exit.
 echo.
@@ -1237,15 +719,13 @@ if exist C:\CLI_Tools\Python\Python312\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement312
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "312" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '312'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt312
 echo The script will now exit.
 echo.
@@ -1260,15 +740,13 @@ if exist C:\CLI_Tools\Python\Python313\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement313
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "313" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = '313'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt313
 echo The script will now exit.
 echo.
@@ -1283,15 +761,13 @@ if exist C:\CLI_Tools\Python\Python314\python.exe (
 )
 goto :eof
 :setPythonShortcutReplacement314
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\Python.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Python\pythonpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\Python.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pythonpath.bat'; ^
+$Shortcut.Arguments = ''; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPythonMainPrompt314
 echo The script will now exit.
 echo.

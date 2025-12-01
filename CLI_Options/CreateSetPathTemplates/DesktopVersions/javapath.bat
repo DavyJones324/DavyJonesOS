@@ -41,13 +41,7 @@ if "%1"=="7" (
 ) else (
     call :startJavaMainPrompt25
 )
-:checkAdmin
-net session > nul 2>&1
-if %errorlevel% == 0 (
-    goto menuAdminOptions
-) else (
-    goto menuOptions
-)
+goto menuOptions
 :startJavaMainPrompt7
 @set path=C:\CLI_Tools\Java\jdk-7\bin;%path%
 set JAVA_EXE="C:\CLI_Tools\Java\jdk-7\bin\java.exe"
@@ -295,438 +289,6 @@ echo jfr, jhsdb, jimage, jinfo, jlink, jmap, jmod, jnativescan, jpackage, jrunsc
 echo keytool, kinit, klist, ktab, rmiregistry, serialver
 echo.
 goto :eof
-:menuAdminOptions
-Set input=0
-echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
-echo.
-echo Version Options: 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25
-set /P input=%BS%
-if /I %input% EQU 0 goto startComspec
-if /I %input% EQU 7 call :checkAdminJavaPath7
-if /I %input% EQU 8 call :checkAdminJavaPath8
-if /I %input% EQU 9 call :checkAdminJavaPath9
-if /I %input% EQU 10 call :checkAdminJavaPath10
-if /I %input% EQU 11 call :checkAdminJavaPath11
-if /I %input% EQU 12 call :checkAdminJavaPath12
-if /I %input% EQU 13 call :checkAdminJavaPath13
-if /I %input% EQU 14 call :checkAdminJavaPath14
-if /I %input% EQU 15 call :checkAdminJavaPath15
-if /I %input% EQU 16 call :checkAdminJavaPath16
-if /I %input% EQU 17 call :checkAdminJavaPath17
-if /I %input% EQU 18 call :checkAdminJavaPath18
-if /I %input% EQU 19 call :checkAdminJavaPath19
-if /I %input% EQU 20 call :checkAdminJavaPath20
-if /I %input% EQU 21 call :checkAdminJavaPath21
-if /I %input% EQU 22 call :checkAdminJavaPath22
-if /I %input% EQU 23 call :checkAdminJavaPath23
-if /I %input% EQU 24 call :checkAdminJavaPath24
-if /I %input% EQU 25 call :checkAdminJavaPath25
-if /I %input% EQU about goto startAbout
-if /I %input% EQU cls cls&goto startJavaShortcutRedirectManager
-if /I %input% EQU exit goto exitBatchProgram
-echo.
-echo Invalid selection. Please try again.
-echo.
-goto menuAdminOptions
-:checkAdminJavaPath7
-echo.
-if exist C:\CLI_Tools\Java\jdk-7\bin\java.exe (
-    goto setJavaShortcutAdminReplacement7
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement7
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '7'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt7
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath8
-echo.
-if exist C:\CLI_Tools\Java\jdk-8\bin\java.exe (
-    goto setJavaShortcutAdminReplacement8
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement8
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '8'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt8
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath9
-echo.
-if exist C:\CLI_Tools\Java\jdk-9\bin\java.exe (
-    goto setJavaShortcutAdminReplacement9
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement9
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '9'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt9
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath10
-echo.
-if exist C:\CLI_Tools\Java\jdk-10\bin\java.exe (
-    goto setJavaShortcutAdminReplacement10
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement10
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '10'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt10
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath11
-echo.
-if exist C:\CLI_Tools\Java\jdk-11\bin\java.exe (
-    goto setJavaShortcutAdminReplacement11
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement11
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '11'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt11
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath12
-echo.
-if exist C:\CLI_Tools\Java\jdk-12\bin\java.exe (
-    goto setJavaShortcutAdminReplacement12
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement12
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '12'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt12
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath13
-echo.
-if exist C:\CLI_Tools\Java\jdk-13\bin\java.exe (
-    goto setJavaShortcutAdminReplacement13
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement13
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '13'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt13
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath14
-echo.
-if exist C:\CLI_Tools\Java\jdk-14\bin\java.exe (
-    goto setJavaShortcutAdminReplacement14
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement14
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '14'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt14
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath15
-echo.
-if exist C:\CLI_Tools\Java\jdk-15\bin\java.exe (
-    goto setJavaShortcutAdminReplacement15
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement15
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '15'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt15
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath16
-echo.
-if exist C:\CLI_Tools\Java\jdk-16\bin\java.exe (
-    goto setJavaShortcutAdminReplacement16
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement16
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '16'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt16
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath17
-echo.
-if exist C:\CLI_Tools\Java\jdk-17\bin\java.exe (
-    goto setJavaShortcutAdminReplacement17
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement17
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '17'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt17
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath18
-echo.
-if exist C:\CLI_Tools\Java\jdk-18\bin\java.exe (
-    goto setJavaShortcutAdminReplacement18
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement18
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '18'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt18
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath19
-echo.
-if exist C:\CLI_Tools\Java\jdk-19\bin\java.exe (
-    goto setJavaShortcutAdminReplacement19
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement19
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '19'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt19
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath20
-echo.
-if exist C:\CLI_Tools\Java\jdk-20\bin\java.exe (
-    goto setJavaShortcutAdminReplacement20
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement20
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '20'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt20
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath21
-echo.
-if exist C:\CLI_Tools\Java\jdk-21\bin\java.exe (
-    goto setJavaShortcutAdminReplacement21
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement21
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '21'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt21
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath22
-echo.
-if exist C:\CLI_Tools\Java\jdk-22\bin\java.exe (
-    goto setJavaShortcutAdminReplacement22
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement22
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '22'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt22
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath23
-echo.
-if exist C:\CLI_Tools\Java\jdk-23\bin\java.exe (
-    goto setJavaShortcutAdminReplacement23
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement23
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '23'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt23
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath24
-echo.
-if exist C:\CLI_Tools\Java\jdk-24\bin\java.exe (
-    goto setJavaShortcutAdminReplacement24
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement24
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '24'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt24
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminJavaPath25
-echo.
-if exist C:\CLI_Tools\Java\jdk-25\bin\java.exe (
-    goto setJavaShortcutAdminReplacement25
-) else (
-    echo The selected Java version does not exist.
-)
-goto :eof
-:setJavaShortcutAdminReplacement25
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = '25'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startJavaMainPrompt25
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
 :menuOptions
 Set input=0
 echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
@@ -769,15 +331,13 @@ if exist C:\CLI_Tools\Java\jdk-7\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement7
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "7" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '7'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt7
 echo The script will now exit.
 echo.
@@ -792,15 +352,13 @@ if exist C:\CLI_Tools\Java\jdk-8\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement8
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "8" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '8'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt8
 echo The script will now exit.
 echo.
@@ -815,15 +373,13 @@ if exist C:\CLI_Tools\Java\jdk-9\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement9
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "9" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '9'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt9
 echo The script will now exit.
 echo.
@@ -838,15 +394,13 @@ if exist C:\CLI_Tools\Java\jdk-10\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement10
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "10" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '10'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt10
 echo The script will now exit.
 echo.
@@ -861,15 +415,13 @@ if exist C:\CLI_Tools\Java\jdk-11\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement11
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "11" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '11'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt11
 echo The script will now exit.
 echo.
@@ -884,15 +436,13 @@ if exist C:\CLI_Tools\Java\jdk-12\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement12
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "12" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '12'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt12
 echo The script will now exit.
 echo.
@@ -907,15 +457,13 @@ if exist C:\CLI_Tools\Java\jdk-13\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement13
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "13" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '13'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt13
 echo The script will now exit.
 echo.
@@ -930,15 +478,13 @@ if exist C:\CLI_Tools\Java\jdk-14\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement14
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "14" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '14'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt14
 echo The script will now exit.
 echo.
@@ -953,15 +499,13 @@ if exist C:\CLI_Tools\Java\jdk-15\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement15
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "15" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '15'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt15
 echo The script will now exit.
 echo.
@@ -976,15 +520,13 @@ if exist C:\CLI_Tools\Java\jdk-16\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement16
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "16" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '16'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt16
 echo The script will now exit.
 echo.
@@ -999,15 +541,13 @@ if exist C:\CLI_Tools\Java\jdk-17\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement17
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "17" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '17'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt17
 echo The script will now exit.
 echo.
@@ -1022,15 +562,13 @@ if exist C:\CLI_Tools\Java\jdk-18\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement18
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "18" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '18'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt18
 echo The script will now exit.
 echo.
@@ -1045,15 +583,13 @@ if exist C:\CLI_Tools\Java\jdk-19\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement19
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "19" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '19'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt19
 echo The script will now exit.
 echo.
@@ -1068,15 +604,13 @@ if exist C:\CLI_Tools\Java\jdk-20\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement20
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "20" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '20'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt20
 echo The script will now exit.
 echo.
@@ -1091,15 +625,13 @@ if exist C:\CLI_Tools\Java\jdk-21\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement21
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "21" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '21'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt21
 echo The script will now exit.
 echo.
@@ -1114,15 +646,13 @@ if exist C:\CLI_Tools\Java\jdk-22\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement22
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "22" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '22'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt22
 echo The script will now exit.
 echo.
@@ -1137,15 +667,13 @@ if exist C:\CLI_Tools\Java\jdk-23\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement23
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "23" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '23'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt23
 echo The script will now exit.
 echo.
@@ -1160,15 +688,13 @@ if exist C:\CLI_Tools\Java\jdk-24\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement24
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "24" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '24'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt24
 echo The script will now exit.
 echo.
@@ -1183,15 +709,13 @@ if exist C:\CLI_Tools\Java\jdk-25\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement25
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\JDK.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "25" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\JDK.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = ''; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt25
 echo The script will now exit.
 echo.

@@ -7,13 +7,7 @@ if "%1"=="6" (
 ) else (
     call :startPowerShellMainPrompt7
 )
-:checkAdmin
-net session > nul 2>&1
-if %errorlevel% == 0 (
-    goto menuAdminOptions
-) else (
-    goto menuOptions
-)
+goto menuOptions
 :startPowerShellMainPrompt6
 @set path=C:\CLI_Tools\PowerShell\6;%path%
 echo Current version of PowerShell is:
@@ -30,64 +24,6 @@ echo.
 echo Options: createdump, pwsh
 echo.
 goto :eof
-:menuAdminOptions
-Set input=0
-echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
-echo.
-echo Version Options: 6, 7
-set /P input=%BS%
-if /I %input% EQU 0 goto startComspec
-if /I %input% EQU 6 call :checkAdminPowerShellPath6
-if /I %input% EQU 7 call :checkAdminPowerShellPath7
-if /I %input% EQU about goto startAbout
-if /I %input% EQU cls cls&goto startPowerShellShortcutRedirectManager
-if /I %input% EQU exit goto exitBatchProgram
-echo.
-echo Invalid selection. Please try again.
-echo.
-goto menuAdminOptions
-:checkAdminPowerShellPath6
-echo.
-if exist C:\CLI_Tools\PowerShell\6\pwsh.exe (
-    goto setPowerShellShortcutAdminReplacement6
-) else (
-    echo The selected PowerShell version does not exist.
-)
-goto :eof
-:setPowerShellShortcutAdminReplacement6
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\PowerShell.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pwshpath.bat'; ^
-$Shortcut.Arguments = '6'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPowerShellMainPrompt6
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
-:checkAdminPowerShellPath7
-echo.
-if exist C:\CLI_Tools\PowerShell\7\pwsh.exe (
-    goto setPowerShellShortcutAdminReplacement7
-) else (
-    echo The selected PowerShell version does not exist.
-)
-goto :eof
-:setPowerShellShortcutAdminReplacement7
-powershell -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\PowerShell.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pwshpath.bat'; ^
-$Shortcut.Arguments = ''; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Save();
-call :startPowerShellMainPrompt7
-echo The script will now exit.
-echo.
-pause
-goto exitBatchProgram
 :menuOptions
 Set input=0
 echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
@@ -113,15 +49,13 @@ if exist C:\CLI_Tools\PowerShell\6\pwsh.exe (
 )
 goto :eof
 :setPowerShellShortcutReplacement6
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\PowerShell.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\PowerShell\pwshpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "6" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\PowerShell.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pwshpath.bat'; ^
+$Shortcut.Arguments = '6'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPowerShellMainPrompt6
 echo The script will now exit.
 echo.
@@ -136,15 +70,13 @@ if exist C:\CLI_Tools\PowerShell\7\pwsh.exe (
 )
 goto :eof
 :setPowerShellShortcutReplacement7
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\Desktop\PowerShell.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\PowerShell\pwshpath.bat" >> %SCRIPT%
-echo oLink.Arguments = "" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\PowerShell.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Python\pwshpath.bat'; ^
+$Shortcut.Arguments = ''; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startPowerShellMainPrompt7
 echo The script will now exit.
 echo.
