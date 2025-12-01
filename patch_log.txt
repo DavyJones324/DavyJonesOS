@@ -1,3 +1,16 @@
+Patch 1.3.0.5
+
+* Added RustDesk to the Workspace menu alongside AnyDesk.
+* Added ScreenConnect to the Workspace menu alongside RemotePC.
+* VbsEdit, made by Adersoft, is not able to be added to the Davy Jones OS script due to VBScript's deprecation as a scripting language
+  by its namesake creator, Microsoft. Both Adersoft and VbsEdit have become honorable mentions due to the fact that I would have
+  incorporated them into the batch script launcher if VBS weren't in the process of being phased out. Visual Basic (.NET), on the other
+  hand, remains supported by Microsoft to this day. (Website: https://www.vbsedit.com/; Trialware, Proprietary; Adersoft 2001-2025.)
+* Added VLC Media Player to Menu 5 alongside Asperite, OBS, Camtasia, Snagit, Photoline, and Pure Data.
+* Removed the outdated VBScript components for shortcut replacement, making way for utilizing the PowerShell components for non-admin use.
+* Replaced VBScript components for shortcut replacement from the specialized Version Managers with the proper PowerShell components.
+* Fixed a hexadecimal issue where the byte "0D" does not come before some of the "0A" bytes to make the official [ENTER] character pair.
+
 Patch 1.3.0.4
 
 * Added a VM auxiliary command for displaying a brief list of VM ISOs for curiosity purposes (URLs not included at the moment).
