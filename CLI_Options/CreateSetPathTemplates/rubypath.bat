@@ -617,15 +617,13 @@ if exist C:\CLI_Tools\Ruby\Ruby18\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement18
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "18" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '18'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt18
 echo The script will now exit.
 echo.
@@ -640,15 +638,13 @@ if exist C:\CLI_Tools\Ruby\Ruby19\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement19
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "19" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '19'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt19
 echo The script will now exit.
 echo.
@@ -663,15 +659,13 @@ if exist C:\CLI_Tools\Ruby\Ruby20\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement20
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "20" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '20'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt20
 echo The script will now exit.
 echo.
@@ -686,15 +680,13 @@ if exist C:\CLI_Tools\Ruby\Ruby21\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement21
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "21" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '21'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt21
 echo The script will now exit.
 echo.
@@ -709,15 +701,13 @@ if exist C:\CLI_Tools\Ruby\Ruby22\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement22
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "22" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '22'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt22
 echo The script will now exit.
 echo.
@@ -732,15 +722,13 @@ if exist C:\CLI_Tools\Ruby\Ruby23\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement23
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "23" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '23'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt23
 echo The script will now exit.
 echo.
@@ -755,15 +743,13 @@ if exist C:\CLI_Tools\Ruby\Ruby24\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement24
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "24" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '24'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt24
 echo The script will now exit.
 echo.
@@ -778,15 +764,13 @@ if exist C:\CLI_Tools\Ruby\Ruby25\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement25
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "25" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '25'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt25
 echo The script will now exit.
 echo.
@@ -801,15 +785,13 @@ if exist C:\CLI_Tools\Ruby\Ruby26\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement26
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "26" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '26'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt26
 echo The script will now exit.
 echo.
@@ -824,15 +806,13 @@ if exist C:\CLI_Tools\Ruby\Ruby27\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement27
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "27" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '27'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt27
 echo The script will now exit.
 echo.
@@ -847,15 +827,13 @@ if exist C:\CLI_Tools\Ruby\Ruby30\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement30
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "30" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '30'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt30
 echo The script will now exit.
 echo.
@@ -870,15 +848,13 @@ if exist C:\CLI_Tools\Ruby\Ruby31\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement31
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "31" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '31'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt31
 echo The script will now exit.
 echo.
@@ -893,15 +869,13 @@ if exist C:\CLI_Tools\Ruby\Ruby32\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement32
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "32" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '32'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt32
 echo The script will now exit.
 echo.
@@ -916,15 +890,13 @@ if exist C:\CLI_Tools\Ruby\Ruby33\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement33
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "33" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '33'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt33
 echo The script will now exit.
 echo.
@@ -939,15 +911,13 @@ if exist C:\CLI_Tools\Ruby\Ruby34\bin\ruby.exe (
 )
 goto :eof
 :setRubyShortcutReplacement34
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Ruby\rubypath.bat" >> %SCRIPT%
-echo oLink.Arguments = "" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = ''; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startRubyMainPrompt34
 echo The script will now exit.
 echo.

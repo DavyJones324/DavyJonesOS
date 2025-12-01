@@ -826,15 +826,13 @@ if exist C:\CLI_Tools\Java\jdk-7\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement7
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "7" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '7'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt7
 echo The script will now exit.
 echo.
@@ -849,15 +847,13 @@ if exist C:\CLI_Tools\Java\jdk-8\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement8
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "8" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '8'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt8
 echo The script will now exit.
 echo.
@@ -872,15 +868,13 @@ if exist C:\CLI_Tools\Java\jdk-9\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement9
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "9" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '9'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt9
 echo The script will now exit.
 echo.
@@ -895,15 +889,13 @@ if exist C:\CLI_Tools\Java\jdk-10\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement10
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "10" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '10'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt10
 echo The script will now exit.
 echo.
@@ -918,15 +910,13 @@ if exist C:\CLI_Tools\Java\jdk-11\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement11
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "11" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '11'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt11
 echo The script will now exit.
 echo.
@@ -941,15 +931,13 @@ if exist C:\CLI_Tools\Java\jdk-12\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement12
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "12" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '12'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt12
 echo The script will now exit.
 echo.
@@ -964,15 +952,13 @@ if exist C:\CLI_Tools\Java\jdk-13\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement13
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "13" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '13'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt13
 echo The script will now exit.
 echo.
@@ -987,15 +973,13 @@ if exist C:\CLI_Tools\Java\jdk-14\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement14
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "14" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '14'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt14
 echo The script will now exit.
 echo.
@@ -1010,15 +994,13 @@ if exist C:\CLI_Tools\Java\jdk-15\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement15
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "15" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '15'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt15
 echo The script will now exit.
 echo.
@@ -1033,15 +1015,13 @@ if exist C:\CLI_Tools\Java\jdk-16\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement16
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "16" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '16'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt16
 echo The script will now exit.
 echo.
@@ -1056,15 +1036,13 @@ if exist C:\CLI_Tools\Java\jdk-17\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement17
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "17" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '17'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt17
 echo The script will now exit.
 echo.
@@ -1079,15 +1057,13 @@ if exist C:\CLI_Tools\Java\jdk-18\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement18
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "18" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '18'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt18
 echo The script will now exit.
 echo.
@@ -1102,15 +1078,13 @@ if exist C:\CLI_Tools\Java\jdk-19\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement19
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "19" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '19'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt19
 echo The script will now exit.
 echo.
@@ -1125,15 +1099,13 @@ if exist C:\CLI_Tools\Java\jdk-20\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement20
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "20" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '20'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt20
 echo The script will now exit.
 echo.
@@ -1148,15 +1120,13 @@ if exist C:\CLI_Tools\Java\jdk-21\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement21
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "21" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '21'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt21
 echo The script will now exit.
 echo.
@@ -1171,15 +1141,13 @@ if exist C:\CLI_Tools\Java\jdk-22\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement22
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "22" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '22'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt22
 echo The script will now exit.
 echo.
@@ -1194,15 +1162,13 @@ if exist C:\CLI_Tools\Java\jdk-23\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement23
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "23" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '23'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt23
 echo The script will now exit.
 echo.
@@ -1217,15 +1183,13 @@ if exist C:\CLI_Tools\Java\jdk-24\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement24
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "24" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = '24'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt24
 echo The script will now exit.
 echo.
@@ -1240,15 +1204,13 @@ if exist C:\CLI_Tools\Java\jdk-25\bin\java.exe (
 )
 goto :eof
 :setJavaShortcutReplacement25
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\CLI_Tools\Java\javapath.bat" >> %SCRIPT%
-echo oLink.Arguments = "25" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = ''; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
 call :startJavaMainPrompt25
 echo The script will now exit.
 echo.
