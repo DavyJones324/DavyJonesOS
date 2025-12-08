@@ -1,3 +1,9 @@
+Patch 1.4.0.0
+
+* Reworked the shortcut execution schematic so that it forces the error message if one or more of the required files for execution are
+  missing from the call directory. No need for an additional missing shortcut prompt. Fixed nearly all issues regarding input error.
+* Added the Redgate Suite of programs to Menu 9a alongside RAD Studio.
+
 Patch 1.3.0.5
 
 * Added the Blitz auxiliary command specifically to pull up the pre-exit prompt from the unstealthed menu.
