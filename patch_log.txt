@@ -1,3 +1,24 @@
+Patch 1.5.0.0
+
+* Repurposed the instructions for the "-+" and "+-" commands to strictly allow the user to trace the selected program back to its menu
+  placement for informative purposes.
+* Added the ability to use the Asterisk ("*") symbol in place of the "Blitz" command, including for the Instream menu.
+* Added the ability to use the Forward Slash ("/") symbol in place of the "Open" command, including for the Instream menu.
+* Added the ability to use the Backward Slash ("\") symbol in place of the "Root" command, including for the Instream menu.
+* Added the ability to open the Recycle Bin via an auxiliary command. The only issue is that the shortcut needs to be added manually.
+* Added the ShieldApps Suite to the AlertAlt menu to take the place of Defraggler, which is now relocated to the CCleaner Bundle section.
+* Added Essential NetTools, SmartWhois, CommView, Capsa, and X-NetStat to the Network menu alongside Wireshark.
+* Added OpManager, NetFlow Analyzer, WhatsUp Gold, and Network Performance Monitorto Menu 9b alongside Telerik Test Studio.
+* Added the Stargate Suite as well as Windhawk, ExplorerPatcher, and Rainmeter to Menu 9b alongside Wallpaper Engine.
+* Added the ShieldApps VPN to Menu 9c alongside the Other VPN section.
+* Added AIDA64 to the InvokePortable menu alongside SARDU.
+* Added Snappy Driver Installer Origin (SDIO) to the InvokePortable menu alongside Drive Scanner.
+* Obfuscation Code still works. It has to be coded differently. Try this: "FF FE" + "3E 6E 75 6C" (new) + "26 63 6C 73 0D 0A"
+  Result: "FF FE 3E 6E 75 6C 26 63 6C 73 0D 0A" (The "3E 6E 75 6C" hex sequence translates into the ">nul" code block for batch script.)
+* Fixed issues in the hidden Display menu functions that includes allowing the user to invoke the wrong commands from the Instream menu.
+* Fixed an issue which prevented the auxiliary commands from jumping to the correct pre-exit menu when executed from an alphabetical menu.
+* Fixed an issue where the instream pre-exit prompts caused the user to get stuck in a loop.
+
 Patch 1.4.0.0
 
 * Reworked the shortcut execution schematic so that it forces the error message if one or more of the required files for execution are
