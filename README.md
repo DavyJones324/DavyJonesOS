@@ -20,8 +20,8 @@ FILENAME_S = Setup Shortcut
 
 Example Sequence from Main Menu: 9879[A/R/I/O], hit "ENTER"
 
-Obfuscation Code: [FF FE 26 63 6C 73 0D 0A]
-(optional, but can either be added or is usually found on the first 8 characters of the Batch Script)
+Obfuscation Code: [FF FE 3E 6E 75 6C 26 63 6C 73 0D 0A]
+(optional, but can either be added or is usually found on the first 12 characters of the Batch Script)
 
 For convenience in using the Davy Jones OS Launcher, every run shortcut associated with a program, excluding those that open folders, will come with a matching admin shortcut for certain actions that require administrator privilages. To run a program as an administrator, instead of pressing the "R" key for Davy Jones OS input, use the "A" key instead. The "A" key will not be labled on the screen prompt except for programs that use a console screen. Keep in mind that you can only type commands on the batch script menu when you are not operating a program in full screen mode. As for the installer package, which is labeled with the "I" tag, you can store whatever patch you want to keep and utilize in your "Remote_Manifold" folder. It doesn't have to be the newest patch, but you can use it to store an older patch that can be made unavailable due to various circumstances.
 
