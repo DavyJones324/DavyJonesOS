@@ -4,7 +4,9 @@ Patch 1.5.0.1
 * Added FadCrypt to the InvokeKeys menu alongside Cisdem AppCrypt. File names with "Cisdem_App_Crypt" in the batch script now start with
  "AppCrypt" in their names.
 * Added Ghostpress and KeyShield to the InvokeKeys menu alongside QFX KeyScrambler. File names with "QFX_Key_Scrambler" in the batch
- script now start with "KeyScrambler" in their names.
+  script now start with "KeyScrambler" in their names.
+* Added System Informer as the successor to Process Hacker into the InvokeKeys menu alongside Cheat Engine. Process Hacker will still be
+  included in the list.
 
 Patch 1.5.0.0
 
