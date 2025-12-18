@@ -1,3 +1,11 @@
+Patch 1.5.0.1
+
+* Added Blue Iris to the InvokeKeys menu alongside Agent DVR.
+* Added FadCrypt to the InvokeKeys menu alongside Cisdem AppCrypt. File names with "Cisdem_App_Crypt" in the batch script now start with
+ "AppCrypt" in their names.
+* Added Ghostpress and KeyShield to the InvokeKeys menu alongside QFX KeyScrambler. File names with "QFX_Key_Scrambler" in the batch
+ script now start with "KeyScrambler" in their names.
+
 Patch 1.5.0.0
 
 * Repurposed the instructions for the "-+" and "+-" commands to strictly allow the user to trace the selected program back to its menu
@@ -8,8 +16,8 @@ Patch 1.5.0.0
 * Added the ability to open the Recycle Bin via an auxiliary command. The only issue is that the shortcut needs to be added manually.
 * Added the ShieldApps Suite to the AlertAlt menu to take the place of Defraggler, which is now relocated to the CCleaner Bundle section.
 * Added Essential NetTools, SmartWhois, CommView, Capsa, and X-NetStat to the Network menu alongside Wireshark.
-* Added OpManager, NetFlow Analyzer, WhatsUp Gold, and Network Performance Monitorto Menu 9b alongside Telerik Test Studio.
-* Added the Stargate Suite as well as Windhawk, ExplorerPatcher, and Rainmeter to Menu 9b alongside Wallpaper Engine.
+* Added OpManager, NetFlow Analyzer, WhatsUp Gold, and Network Performance Monitor to Menu 9b alongside Telerik Test Studio.
+* Added the Stardock Suite as well as Windhawk, ExplorerPatcher, and Rainmeter to Menu 9b alongside Wallpaper Engine.
 * Added the ShieldApps VPN to Menu 9c alongside the Other VPN section.
 * Added AIDA64 to the InvokePortable menu alongside SARDU.
 * Added Snappy Driver Installer Origin (SDIO) to the InvokePortable menu alongside Drive Scanner.
