@@ -1,3 +1,21 @@
+Path 1.6.0.0
+
+* Added the ability to call upon the Registry Editor either by its name or by entering "." as the first character.
+* Merged the Kaspersky Anti-Ransomware/Virus Removal Tools to Option 6 in the Alert menu. Relocated Emsisoft Emergency Kit from Option 6
+  in the AlertAlt menu to Option 7 in the Alert menu.
+* Added the option to add custom malware scanners, antiviruses, and endpoint security suites to Option 6 in the AlertAlt menu.
+* Merged John the Ripper and Hashcat from Option 2,3 to Option 2 in the CLI menu. Added RainbowCrack to Option 3 in the CLI menu.
+* Added Aircrack-ng to the MoreCLI menu alongside WiFade.
+* Added Endpoint Status Checker, RegEditX, and Intercepter-NG to the Network menu alongside Freegate IP Spoofer.
+* Renamed System Internals to its actual name, "Sysinternals".
+* Added a new label called Riskware for all third-party Task Managers, including Sysinternals, due to their nature of being turned against
+  their users by unforeseen hackers if they are pre-installed.
+* Added the Adobe Studio Suite and the Gilisoft Studio Suite to Menu 5 alongside Affinity and ON1.
+* Added the Gilisoft Utilities Suite to Menu 7b alongside the Ebook and DRM Managers section.
+* Added NetSpot to Menu 9b alongside the Network Monitoring Suites.
+* Added Medusa to Menu 9c alongside Audials One.
+* Added simplewall to Menu 9c alongside Glasswire and Portmaster.
+
 Patch 1.5.0.1
 
 * Added Blue Iris to the InvokeKeys menu alongside Agent DVR.
