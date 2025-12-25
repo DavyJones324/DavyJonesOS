@@ -1,4 +1,9 @@
-Path 1.6.0.0
+Patch 1.6.0.1
+
+* Added Registry Finder, Regshot, and RegCool to the Network menu alongside Freegate IP Spoofer, Endpoint Status Checker, RegEditX, and
+  Intercepter-NG. 
+
+Patch 1.6.0.0
 
 * Added the ability to call upon the Registry Editor either by its name or by entering "." as the first character.
 * Merged the Kaspersky Anti-Ransomware/Virus Removal Tools to Option 6 in the Alert menu. Relocated Emsisoft Emergency Kit from Option 6
