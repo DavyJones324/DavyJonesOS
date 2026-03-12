@@ -1,3 +1,10 @@
+Patch 1.7.0.0
+
+* Optimized the post-execution screen after executing commands while also displaying the forbidden character list.
+* Added Telegram to the Workspace menu alongside WhatsApp and Signal.
+* At Menu 4, relocated Docker Desktop to Option 1 alongside other Virtual Machine Software and Amiga Forever to Option 2. Added the libGDX
+  framework game engine to Option 3 in that menu.
+
 Patch 1.6.0.1
 
 * Added Registry Finder, Regshot, and RegCool to the Network menu alongside Freegate IP Spoofer, Endpoint Status Checker, RegEditX, and
