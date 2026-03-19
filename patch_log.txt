@@ -1,3 +1,12 @@
+Patch 1.7.0.1
+
+* At the Workspace menu, relocated the Wire software at Option 4 to be next to HelpWire and added Seraph Secure to take its former place.
+* At the Network menu, relocated Bitvise and SecureCRT to Option 5 alongside Xming and relocated PuTTY to Option 4. Added Gobuster,
+  Burp Suite, and Zed Attack Proxy (ZAP) to Option 2 and WinUtil to Option 3 to take over these formerly occupied places.
+* Added Bytecode Viewer, CFR, Procyon, and Threadtear to Menu 9cAltB alongside Java GUI Decompiler.
+* Fixed an issue with the Bitvise menu prompt looping to the wrong menu at times.
+* Fixed an issue where the batch script did not accept "JD-GUI" as valid input.
+
 Patch 1.7.0.0
 
 * Optimized the post-execution screen after executing commands while also displaying the forbidden character list.
