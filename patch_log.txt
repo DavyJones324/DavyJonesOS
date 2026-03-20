@@ -1,3 +1,8 @@
+Patch 1.7.0.2
+
+* Added the capability for Metasploit users to install via an EXE file.
+* Fixed an issue which caused the Metasploit and Cygwin menus to not open properly from a specific instance when executed.
+
 Patch 1.7.0.1
 
 * At the Workspace menu, relocated the Wire software at Option 4 to be next to HelpWire and added Seraph Secure to take its former place.
