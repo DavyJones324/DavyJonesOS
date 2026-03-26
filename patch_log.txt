@@ -1,3 +1,14 @@
+Patch 1.7.0.3
+
+* Added the capability for a custom banner to be shown instead with the help of coding.
+* Added alignment to the displayed octal numbers on the main menu.
+* Added an option for Regshot Advanced to be included alongside the original Regshot with the "A" key.
+* Added TortoiseSVN to the Network menu alongside PuTTY.
+* Added Windows SDK/WDK to Option 1 of the InvokeMicrosoft menu alongstde Visual Studio and VS Code.
+* Fixed PuTTY and Bitvise/SecureCRT/Xming menu prompts not working correctly as well as allowing PuTTY uninstallation via its
+  corresponding installer.
+* Fixed a minor issue regarding a Emsisoft Emergency Kit menu prompt.
+
 Patch 1.7.0.2
 
 * Added the capability for Metasploit users to install via an EXE file.
