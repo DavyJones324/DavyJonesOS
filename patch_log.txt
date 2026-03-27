@@ -1,3 +1,10 @@
+Patch 1.7.0.4
+
+* Added the capability for Brave browser users to implement the Nightly version.
+* Added the capability for Microsoft Edge/Google Chrome browser users to implement either the Official, Beta, Developer, or Canary
+  versions.
+* Fixed an issue that caused the input "Microsoft-Edge" to not redirect to the Microsoft Edge browser menu.
+
 Patch 1.7.0.3
 
 * Added the capability for a custom banner to be shown instead with the help of coding.
