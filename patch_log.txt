@@ -1,3 +1,9 @@
+Patch 1.7.0.5
+
+* Added Nmap/Zenmap to the Network menu alongside WinUtil.
+* Added Maltego to Menu 7a alongside the Forensics Analysis Suites. Compressed the Forensic Toolkit/Language options as though they were
+  a single unit.
+
 Patch 1.7.0.4
 
 * Added the capability for Brave browser users to implement the Nightly version.
