@@ -1,3 +1,15 @@
+Patch 1.7.0.6
+
+* Replaced the placeholders for the Endpoint Defense Selection prompt in the AlertAlt menu to make way for the actual selections:
+  CrowdStrike, SentinelOne, ThreatLocker, and Microsoft Defender Endpoint Security.
+* Added MemProcFS and Velociraptor to the CLI Tools menu alongside Cdrtools.
+* Added Rizin to the CLI Tools menu alongside Radare2.
+* Added PE Bear, PPEE, and ProcDOT to Menu 9cAltA alongside PEiD.
+* Added OORegEditor to Menu 9cAltA alongside OOSU10.
+* Fixed the XZ CLI Tool not showing up on the associated menu and showing the incorrect menu prompts.
+* Fixed the partial "Cdr" input not implementing properly from the alphabetized templates.
+* Fixed PEiD's License Type showing as "N/A" and gave it the proper information.
+
 Patch 1.7.0.5
 
 * Added Nmap/Zenmap to the Network menu alongside WinUtil.
