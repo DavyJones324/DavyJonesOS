@@ -1,3 +1,11 @@
+Patch 1.7.1.0
+
+* Enhanced visuals for the main menu.
+* Added the entire Pavel's Tools suite to Menu 8 alongside Resource Tuner (NOTE: This replaces the standalone PE Explorer option from the
+  same category with the Pavel's Tools catalogue but does not remove it completely.
+* Added a Paymentware command to separate the freeware from software that have their own payment conditions in one screen.
+* Updated various pieces of info and fixed some miscellaneous bugs with the search feature.
+
 Patch 1.7.0.6
 
 * Replaced the placeholders for the Endpoint Defense Selection prompt in the AlertAlt menu to make way for the actual selections:
