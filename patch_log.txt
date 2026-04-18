@@ -1,3 +1,53 @@
+Patch 1.8.0.0
+
+* Added a brand-new menu selection called Omega with new software selections for Physics, Astrophysics, Chemistry, Biology, Molecular
+  Modeling, Mathematics, and Dashcam Viewing. The full list is as follows:
+   * Wolfram Mathematica
+   * Gaussian/GaussView, Schrödinger Suite, and PyMOL
+   * KingDraw, ChemDraw (Relocated from Menu 9c), and DWISM
+   * Siril and Stellarium
+   * Dashcam Viewer
+   * iBioSim, AutoDock GPU, and AutoDock Vina
+   * Cytoscape, ChimeraX, Serial Cloner, and VCell Rel
+   * SnapGene and Geneious Prime
+   * CLC Genomics Workbench
+* Added a brand-new menu sub-selection called WorkspaceAlt with new software related to Remote Access. The full list is as follows:
+   * Anyplace Control
+   * NX (NoMachine)
+   * Parsec
+   * Splashtop
+   * ThinLinc
+   * Xpra/Veyon
+   * Real/Ultra/Tight/Turbo/TigerVNC
+   * Wire/HelpWire (relocated here from the original Workspace menu)
+   * NetSupport Manager
+* Added MassTube to the Background menu alongside 7-Zip.
+* Added THC Hydra to the CLI menu alongside RainbowCrack.
+* Added PEASS-ng to the MoreCLI menu alongside Aircrack-ng and Wifade.
+* Reorganized Cpp2IL and Apktool as well as Cmder and ConEmu into two option groups.
+* Added Snort, Gophish, and Mimikatz to the MoreCLI menu to take the former placement of Apktool.
+* Added ffuf, Gitleaks, GitRob, and TruffleHog to the MoreCLI menu to take the former placement of Cmder.
+* Added ISXPM, InnoExtractor, Inno Script Studio, and Inno Unpacker to the Installer menu alongside Inno Setup.
+* Added install4j to the Installer menu alongside NSIS.
+* Added Setup Creator and MSI to EXE Creator to the Installer menu alongside CreateInstall.
+* Added SSE Setup to the Installer menu alongside InstallShield.
+* Added Setup Factory to the Installer menu alongside Advanced Installer.
+* Added BloodHound to the Network menu alongside WinUtil, Nmap, and WMT.
+* Added TURNt to the Network menu alongside PuTTY and TortoiseSVN.
+* Added Cain & Abel, Advanced IP Scanner, and Acunetix Web Vulnerability Scanner to the Network menu alongside TraceX HWID Spoofer.
+* Added AirDroid to the Workspace menu alongside TeamSpeak and Supremo.
+* Added AnyViewer to the Workspace menu alongside TeamViewer and UltraViewer.
+* Added Remote Utilities to the Workspace menu alongside RemotePC and ScreenConnect.
+* Added perfino to Menu 4 alongside the other Virtual Machine Software.
+* Added Xgpro and Minipro to Menu 4 alongside Amiga Forever.
+* Added exe4j to Menu 9cAltA alongside the other Java Utilities.
+* Added JProfiler to Menu 9cAltA alongside JavaSnoop.
+* Added CopyQ and Ditto to Menu 9cAltB alongside AutoHotkey UX.
+* Added an easter egg for future hackers.
+* Added new comparison data from Wikipedia as well as a reference to the OpenStax textbook library.
+* Additionally added a brief list of websites that mention hacker tools.
+* Miscelaneous bug fixes.
+
 Patch 1.7.1.0
 
 * Enhanced visuals for the main menu.
