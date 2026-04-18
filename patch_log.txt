@@ -38,7 +38,7 @@ Patch 1.8.0.0
 * Added AirDroid to the Workspace menu alongside TeamSpeak and Supremo.
 * Added AnyViewer to the Workspace menu alongside TeamViewer and UltraViewer.
 * Added Remote Utilities to the Workspace menu alongside RemotePC and ScreenConnect.
-* Added perfino to Menu 4 alongside the other Virtual Machine Software.
+* Added perfino and QEMU to Menu 4 alongside the other Virtual Machine Software.
 * Added Xgpro and Minipro to Menu 4 alongside Amiga Forever.
 * Added exe4j to Menu 9cAltA alongside the other Java Utilities.
 * Added JProfiler to Menu 9cAltA alongside JavaSnoop.
