@@ -52,7 +52,7 @@ goto :eof
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
 $Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\PowerShell.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pwshpath.bat'; ^
+$Shortcut.TargetPath = 'CLI_Tools\PowerShell\pwshpath.bat'; ^
 $Shortcut.Arguments = '6'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
 $Shortcut.Save();
@@ -73,7 +73,7 @@ goto :eof
 powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
 $Shortcut = $WshShell.CreateShortcut('C:\Users\%USERNAME%\Desktop\PowerShell.lnk'); ^
-$Shortcut.TargetPath = 'CLI_Tools\Python\pwshpath.bat'; ^
+$Shortcut.TargetPath = 'CLI_Tools\PowerShell\pwshpath.bat'; ^
 $Shortcut.Arguments = ''; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
 $Shortcut.Save();
