@@ -1,3 +1,15 @@
+Patch 1.8.0.1
+
+* Added an additional three different sizes of the same batch script, ranging from fastest (smallest) to slowest (biggest) optimization.
+  Sorry, "Uni.bat"! I have just now beaten you for the biggest size batch script despite your malicious nature!
+* Updated Readme to showcase how these different sizes work and what happens when a batch script becomes too big to run normally.
+* Added CMake to the CLI menu alongside GitHub CLI, followed by a compatible version manager for CMake developers.
+* Added the option to trigger Command Prompt options by inputting "CMD" from the main menu.
+* Added Qalculate! to Menu 9b alongside Yed Graph Editor.
+* Added AES Crypt to Menu 9bAlt alongside the File and Disk Encryption software in Option 9 (renamed from "Password Managers")
+* Added the Profile shortcut to the Davy Jones OS script to allow it to open the User Profile folder on command.
+* Updated the Java and Ruby version managers with the latest versions from their respective platforms.
+
 Patch 1.8.0.0
 
 * Added a brand-new menu selection called Omega with new software selections for Physics, Astrophysics, Chemistry, Biology, Molecular

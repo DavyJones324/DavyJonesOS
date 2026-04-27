@@ -1,5 +1,4 @@
 @echo off
-Title Ruby
 SetLocal EnableDelayedExpansion
 :startRubyShortcutRedirectManager
 if "%1"=="18" (
@@ -30,8 +29,10 @@ if "%1"=="18" (
     call :startRubyMainPrompt32
 ) else if "%1"=="33" (
     call :startRubyMainPrompt33
-) else (
+) else if "%1"=="34" (
     call :startRubyMainPrompt34
+) else (
+    call :startRubyMainPrompt40
 )
 goto startComspec
 :startRubyMainPrompt18
@@ -177,6 +178,16 @@ goto :eof
 :startRubyMainPrompt34
 @set path=C:\CLI_Tools\Ruby\Ruby34\bin;%path%
 set RB_EXE="C:\CLI_Tools\Ruby\Ruby34\bin\ruby.exe"
+set RB_PROGRAM_PATH="C:\CLI_Tools\Ruby\Ruby_Programs
+echo Current version of Ruby is:
+ruby -v
+echo.
+echo Options: bundle, erb, gem, irb, racc, rake, rbs, rdoc, ri, ridk, ruby, setrbvars, typeprof
+echo.
+goto :eof
+:startRubyMainPrompt40
+@set path=C:\CLI_Tools\Ruby\Ruby40\bin;%path%
+set RB_EXE="C:\CLI_Tools\Ruby\Ruby40\bin\ruby.exe"
 set RB_PROGRAM_PATH="C:\CLI_Tools\Ruby\Ruby_Programs
 echo Current version of Ruby is:
 ruby -v

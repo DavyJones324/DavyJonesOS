@@ -37,8 +37,10 @@ if "%1"=="7" (
     call :startJavaMainPrompt23
 ) else if "%1"=="24" (
     call :startJavaMainPrompt24
-) else (
+) else if "%1"=="25" (
     call :startJavaMainPrompt25
+) else (
+    call :startJavaMainPrompt26
 )
 goto startComspec
 :startJavaMainPrompt7
@@ -278,6 +280,19 @@ goto :eof
 :startJavaMainPrompt25
 @set path=C:\CLI_Tools\Java\jdk-25\bin;%path%
 set JAVA_EXE="C:\CLI_Tools\Java\jdk-25\bin\java.exe"
+echo Current version of JDK is:
+java -version
+echo.
+echo Main Options: java, javac, javaw, jshell
+echo.
+echo Additional Options: jabswitch, jaccesswalker, jar, jarsigner, javadoc, javap, jcmd, jconsole, jdb, jdeprscan, jdeps,
+echo jfr, jhsdb, jimage, jinfo, jlink, jmap, jmod, jnativescan, jpackage, jrunscript, jstack, jstat, jstatd, jwebserver,
+echo keytool, kinit, klist, ktab, rmiregistry, serialver
+echo.
+goto :eof
+:startJavaMainPrompt26
+@set path=C:\CLI_Tools\Java\jdk-26\bin;%path%
+set JAVA_EXE="C:\CLI_Tools\Java\jdk-26\bin\java.exe"
 echo Current version of JDK is:
 java -version
 echo.

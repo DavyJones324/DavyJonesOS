@@ -38,8 +38,10 @@ if "%1"=="7" (
     call :startJavaMainPrompt23
 ) else if "%1"=="24" (
     call :startJavaMainPrompt24
-) else (
+) else if "%1"=="25" (
     call :startJavaMainPrompt25
+) else (
+    call :startJavaMainPrompt26
 )
 :checkAdmin
 net session > nul 2>&1
@@ -295,11 +297,24 @@ echo jfr, jhsdb, jimage, jinfo, jlink, jmap, jmod, jnativescan, jpackage, jrunsc
 echo keytool, kinit, klist, ktab, rmiregistry, serialver
 echo.
 goto :eof
+:startJavaMainPrompt26
+@set path=C:\CLI_Tools\Java\jdk-26\bin;%path%
+set JAVA_EXE="C:\CLI_Tools\Java\jdk-26\bin\java.exe"
+echo Current version of JDK is:
+java -version
+echo.
+echo Main Options: java, javac, javaw, jshell
+echo.
+echo Additional Options: jabswitch, jaccesswalker, jar, jarsigner, javadoc, javap, jcmd, jconsole, jdb, jdeprscan, jdeps,
+echo jfr, jhsdb, jimage, jinfo, jlink, jmap, jmod, jnativescan, jpackage, jrunscript, jstack, jstat, jstatd, jwebserver,
+echo keytool, kinit, klist, ktab, rmiregistry, serialver
+echo.
+goto :eof
 :menuAdminOptions
 Set input=0
 echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
 echo.
-echo Version Options: 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25
+echo Version Options: 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26
 set /P input=%BS%
 if /I %input% EQU 0 goto startComspec
 if /I %input% EQU 7 call :checkAdminJavaPath7
@@ -321,6 +336,7 @@ if /I %input% EQU 22 call :checkAdminJavaPath22
 if /I %input% EQU 23 call :checkAdminJavaPath23
 if /I %input% EQU 24 call :checkAdminJavaPath24
 if /I %input% EQU 25 call :checkAdminJavaPath25
+if /I %input% EQU 26 call :checkAdminJavaPath26
 if /I %input% EQU about goto startAbout
 if /I %input% EQU cls cls&goto startJavaShortcutRedirectManager
 if /I %input% EQU exit goto exitBatchProgram
@@ -784,11 +800,35 @@ echo The script will now exit.
 echo.
 pause
 goto exitBatchProgram
+:checkAdminJavaPath26
+echo.
+if exist C:\CLI_Tools\Java\jdk-26\bin\java.exe (
+    goto setJavaShortcutAdminReplacement26
+) else (
+    echo The selected Java version does not exist.
+)
+goto :eof
+:setJavaShortcutAdminReplacement26
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_A.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = ''; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save(); ^
+$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_A.lnk'); ^
+$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
+[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_A.lnk', $bytes);
+call :startJavaMainPrompt26
+echo The script will now exit.
+echo.
+pause
+goto exitBatchProgram
 :menuOptions
 Set input=0
 echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
 echo.
-echo Version Options: 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25
+echo Version Options: 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26
 set /P input=%BS%
 if /I %input% EQU 0 goto startComspec
 if /I %input% EQU 7 call :checkJavaPath7
@@ -810,6 +850,7 @@ if /I %input% EQU 22 call :checkJavaPath22
 if /I %input% EQU 23 call :checkJavaPath23
 if /I %input% EQU 24 call :checkJavaPath24
 if /I %input% EQU 25 call :checkJavaPath25
+if /I %input% EQU 26 call :checkJavaPath26
 if /I %input% EQU about goto startAbout
 if /I %input% EQU cls cls&goto startJavaShortcutRedirectManager
 if /I %input% EQU exit goto exitBatchProgram
@@ -1208,10 +1249,31 @@ powershell -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
 $Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
 $Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
-$Shortcut.Arguments = ''; ^
+$Shortcut.Arguments = '25'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
 $Shortcut.Save();
 call :startJavaMainPrompt25
+echo The script will now exit.
+echo.
+pause
+goto exitBatchProgram
+:checkJavaPath26
+echo.
+if exist C:\CLI_Tools\Java\jdk-26\bin\java.exe (
+    goto setJavaShortcutReplacement26
+) else (
+    echo The selected Java version does not exist.
+)
+goto :eof
+:setJavaShortcutReplacement26
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\JDK_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Java\javapath.bat'; ^
+$Shortcut.Arguments = ''; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
+call :startJavaMainPrompt26
 echo The script will now exit.
 echo.
 pause
