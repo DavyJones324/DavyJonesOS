@@ -32,6 +32,8 @@ if "%1"=="18" (
     call :startRubyMainPrompt33
 ) else if "%1"=="34" (
     call :startRubyMainPrompt34
+) else if "%1"=="35" (
+    call :startRubyMainPrompt35
 ) else (
     call :startRubyMainPrompt40
 )
@@ -192,6 +194,16 @@ echo.
 echo Options: bundle, erb, gem, irb, racc, rake, rbs, rdoc, ri, ridk, ruby, setrbvars, typeprof
 echo.
 goto :eof
+:startRubyMainPrompt35
+@set path=C:\CLI_Tools\Ruby\Ruby35\bin;%path%
+set RB_EXE="C:\CLI_Tools\Ruby\Ruby35\bin\ruby.exe"
+set RB_PROGRAM_PATH="C:\CLI_Tools\Ruby\Ruby_Programs
+echo Current version of Ruby is:
+ruby -v
+echo.
+echo Options: bundle, erb, gem, irb, racc, rake, rbs, rdoc, ri, ridk, ruby, setrbvars, typeprof
+echo.
+goto :eof
 :startRubyMainPrompt40
 @set path=C:\CLI_Tools\Ruby\Ruby40\bin;%path%
 set RB_EXE="C:\CLI_Tools\Ruby\Ruby40\bin\ruby.exe"
@@ -206,7 +218,7 @@ goto :eof
 Set input=0
 echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
 echo.
-echo Version Options: 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 30, 31, 32, 33, 34, 40
+echo Version Options: 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 30, 31, 32, 33, 34, 35, 40
 set /P input=%BS%
 if /I %input% EQU 0 goto startComspec
 if /I %input% EQU 18 call :checkAdminRubyPath18
@@ -224,6 +236,7 @@ if /I %input% EQU 31 call :checkAdminRubyPath31
 if /I %input% EQU 32 call :checkAdminRubyPath32
 if /I %input% EQU 33 call :checkAdminRubyPath33
 if /I %input% EQU 34 call :checkAdminRubyPath34
+if /I %input% EQU 35 call :checkAdminRubyPath35
 if /I %input% EQU 40 call :checkAdminRubyPath40
 if /I %input% EQU about goto startAbout
 if /I %input% EQU cls cls&goto startRubyShortcutRedirectManager
@@ -592,6 +605,30 @@ echo The script will now exit.
 echo.
 pause
 goto exitBatchProgram
+:checkAdminRubyPath35
+echo.
+if exist C:\CLI_Tools\Ruby\Ruby35\bin\ruby.exe (
+    goto setRubyShortcutAdminReplacement35
+) else (
+    echo The selected Ruby version does not exist.
+)
+goto :eof
+:setRubyShortcutAdminReplacement35
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_A.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '35'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save(); ^
+$bytes = [System.IO.File]::ReadAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_A.lnk'); ^
+$bytes[0x15] = $bytes[0x15] -bor 0x20; ^
+[System.IO.File]::WriteAllBytes('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_A.lnk', $bytes);
+call :startRubyMainPrompt35
+echo The script will now exit.
+echo.
+pause
+goto exitBatchProgram
 :checkAdminRubyPath40
 echo.
 if exist C:\CLI_Tools\Ruby\Ruby40\bin\ruby.exe (
@@ -620,7 +657,7 @@ goto exitBatchProgram
 Set input=0
 echo Press [ENTER] to activate COMSPEC, or enter the version number you want to start with (Requires manual restart).
 echo.
-echo Version Options: 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 30, 31, 32, 33, 34, 40
+echo Version Options: 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 30, 31, 32, 33, 34, 35, 40
 set /P input=%BS%
 if /I %input% EQU 0 goto startComspec
 if /I %input% EQU 18 call :checkRubyPath18
@@ -638,6 +675,7 @@ if /I %input% EQU 31 call :checkRubyPath31
 if /I %input% EQU 32 call :checkRubyPath32
 if /I %input% EQU 33 call :checkRubyPath33
 if /I %input% EQU 34 call :checkRubyPath34
+if /I %input% EQU 35 call :checkRubyPath35
 if /I %input% EQU 40 call :checkRubyPath40
 if /I %input% EQU about goto startAbout
 if /I %input% EQU cls cls&goto startRubyShortcutRedirectManager
@@ -957,6 +995,27 @@ $Shortcut.Arguments = '34'; ^
 $Shortcut.WorkingDirectory = '%~dp0'; ^
 $Shortcut.Save();
 call :startRubyMainPrompt34
+echo The script will now exit.
+echo.
+pause
+goto exitBatchProgram
+:checkRubyPath35
+echo.
+if exist C:\CLI_Tools\Ruby\Ruby35\bin\ruby.exe (
+    goto setRubyShortcutReplacement35
+) else (
+    echo The selected Ruby version does not exist.
+)
+goto :eof
+:setRubyShortcutReplacement35
+powershell -Command ^
+$WshShell = New-Object -ComObject WScript.Shell; ^
+$Shortcut = $WshShell.CreateShortcut('C:\CLI_Tools\Davy_Jones_OS\Remote_Manifold\Ruby_R.lnk'); ^
+$Shortcut.TargetPath = 'CLI_Tools\Ruby\rubypath.bat'; ^
+$Shortcut.Arguments = '35'; ^
+$Shortcut.WorkingDirectory = '%~dp0'; ^
+$Shortcut.Save();
+call :startRubyMainPrompt35
 echo The script will now exit.
 echo.
 pause

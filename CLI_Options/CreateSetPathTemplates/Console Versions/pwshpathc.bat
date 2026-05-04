@@ -1,5 +1,4 @@
 @echo off
-Title PowerShell
 SetLocal EnableDelayedExpansion
 :startPowerShellShortcutRedirectManager
 if "%1"=="6" (

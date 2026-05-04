@@ -31,6 +31,8 @@ if "%1"=="18" (
     call :startRubyMainPrompt33
 ) else if "%1"=="34" (
     call :startRubyMainPrompt34
+) else if "%1"=="35" (
+    call :startRubyMainPrompt35
 ) else (
     call :startRubyMainPrompt40
 )
@@ -178,6 +180,16 @@ goto :eof
 :startRubyMainPrompt34
 @set path=C:\CLI_Tools\Ruby\Ruby34\bin;%path%
 set RB_EXE="C:\CLI_Tools\Ruby\Ruby34\bin\ruby.exe"
+set RB_PROGRAM_PATH="C:\CLI_Tools\Ruby\Ruby_Programs
+echo Current version of Ruby is:
+ruby -v
+echo.
+echo Options: bundle, erb, gem, irb, racc, rake, rbs, rdoc, ri, ridk, ruby, setrbvars, typeprof
+echo.
+goto :eof
+:startRubyMainPrompt35
+@set path=C:\CLI_Tools\Ruby\Ruby35\bin;%path%
+set RB_EXE="C:\CLI_Tools\Ruby\Ruby35\bin\ruby.exe"
 set RB_PROGRAM_PATH="C:\CLI_Tools\Ruby\Ruby_Programs
 echo Current version of Ruby is:
 ruby -v

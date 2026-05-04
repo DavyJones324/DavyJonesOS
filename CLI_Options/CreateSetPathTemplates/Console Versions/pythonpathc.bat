@@ -1,5 +1,4 @@
 @echo off
-Title Python
 SetLocal EnableDelayedExpansion
 :startPythonShortcutRedirectManager
 if "%1"=="15" (
@@ -42,13 +41,17 @@ if "%1"=="15" (
     call :startPythonMainPrompt312
 ) else if "%1"=="313" (
     call :startPythonMainPrompt313
-) else (
+) else if "%1"=="314" (
     call :startPythonMainPrompt314
+) else (
+    call :startPythonMainPrompt315
 )
 goto startComspec
 :startPythonMainPrompt15
 @set path=C:\CLI_Tools\Python\Python15;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python15\python.exe"
+set PY_PIP_PATH=""
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python15\Tools\Scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python15\Tools\idle"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python15\Lib\
@@ -61,6 +64,8 @@ goto :eof
 :startPythonMainPrompt23
 @set path=C:\CLI_Tools\Python\Python23;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python23\python.exe"
+set PY_PIP_PATH=""
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python23\Tools\Scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python23\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python23\Lib\
@@ -72,6 +77,8 @@ goto :eof
 :startPythonMainPrompt24
 @set path=C:\CLI_Tools\Python\Python24;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python24\python.exe"
+set PY_PIP_PATH=""
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python24\Tools\Scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python24\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python24\Lib\
@@ -84,6 +91,8 @@ goto :eof
 :startPythonMainPrompt25
 @set path=C:\CLI_Tools\Python\Python25;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python25\python.exe"
+set PY_PIP_PATH=""
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python25\Tools\Scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python25\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python25\Lib\
@@ -96,6 +105,8 @@ goto :eof
 :startPythonMainPrompt26
 @set path=C:\CLI_Tools\Python\Python26;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python26\python.exe"
+set PY_PIP_PATH=""
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python26\Tools\Scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python26\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python26\Lib\
@@ -108,6 +119,8 @@ goto :eof
 :startPythonMainPrompt27
 @set path=C:\CLI_Tools\Python\Python27;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python27\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python27\Scripts"
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python27\Tools\scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python27\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python27\Lib\
@@ -120,6 +133,8 @@ goto :eof
 :startPythonMainPrompt30
 @set path=C:\CLI_Tools\Python\Python30;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python30\python.exe"
+set PY_PIP_PATH=""
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python30\Tools\Scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python30\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python30\Lib\
@@ -132,6 +147,8 @@ goto :eof
 :startPythonMainPrompt31
 @set path=C:\CLI_Tools\Python\Python31;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python31\python.exe"
+set PY_PIP_PATH=""
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python31\Tools\Scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python31\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python31\Lib\
@@ -144,6 +161,8 @@ goto :eof
 :startPythonMainPrompt32
 @set path=C:\CLI_Tools\Python\Python32;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python32\python.exe"
+set PY_PIP_PATH=""
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python32\Tools\Scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python32\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python32\Lib\
@@ -156,6 +175,8 @@ goto :eof
 :startPythonMainPrompt33
 @set path=C:\CLI_Tools\Python\Python33;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python33\python.exe"
+set PY_PIP_PATH=""
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python33\Tools\Scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python33\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python33\Lib\
@@ -168,6 +189,8 @@ goto :eof
 :startPythonMainPrompt34
 @set path=C:\CLI_Tools\Python\Python34;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python34\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python34\Scripts"
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python34\Tools\scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python34\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python34\Lib\
@@ -180,6 +203,8 @@ goto :eof
 :startPythonMainPrompt35
 @set path=C:\CLI_Tools\Python\Python35;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python35\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python35\Scripts"
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python35\Tools\scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python35\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python35\Lib\
@@ -192,6 +217,8 @@ goto :eof
 :startPythonMainPrompt36
 @set path=C:\CLI_Tools\Python\Python36;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python36\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python36\Scripts"
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python36\Tools\scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python36\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python36\Lib\
@@ -204,6 +231,8 @@ goto :eof
 :startPythonMainPrompt37
 @set path=C:\CLI_Tools\Python\Python37;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python37\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python37\Scripts"
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python37\Tools\scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python37\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python37\Lib\
@@ -216,6 +245,8 @@ goto :eof
 :startPythonMainPrompt38
 @set path=C:\CLI_Tools\Python\Python38;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python38\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python38\Scripts"
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python38\Tools\scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python38\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python38\Lib\
@@ -228,6 +259,8 @@ goto :eof
 :startPythonMainPrompt39
 @set path=C:\CLI_Tools\Python\Python39;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python39\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python39\Scripts"
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python39\Tools\scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python39\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python39\Lib\
@@ -240,6 +273,8 @@ goto :eof
 :startPythonMainPrompt310
 @set path=C:\CLI_Tools\Python\Python310;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python310\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python310\Scripts"
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python310\Tools\scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python310\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python310\Lib\
@@ -252,6 +287,8 @@ goto :eof
 :startPythonMainPrompt311
 @set path=C:\CLI_Tools\Python\Python311;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python311\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python311\Scripts"
+set PY_SCRIPTS_PATH="C:\CLI_Tools\Python\Python311\Tools\scripts"
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python311\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python311\Lib\
@@ -264,6 +301,8 @@ goto :eof
 :startPythonMainPrompt312
 @set path=C:\CLI_Tools\Python\Python312;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python312\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python312\Scripts"
+set PY_SCRIPTS_PATH=""
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python312\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python312\Lib\
@@ -276,6 +315,8 @@ goto :eof
 :startPythonMainPrompt313
 @set path=C:\CLI_Tools\Python\Python313;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python313\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python313\Scripts"
+set PY_SCRIPTS_PATH=""
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python313\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python313\Lib\
@@ -288,6 +329,8 @@ goto :eof
 :startPythonMainPrompt314
 @set path=C:\CLI_Tools\Python\Python314;%path%
 set PY_EXE="C:\CLI_Tools\Python\Python314\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python314\Scripts"
+set PY_SCRIPTS_PATH=""
 set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
 set PY_IDLE_PATH="C:\CLI_Tools\Python\Python314\Lib\idlelib"
 set PY_LIB_PATH="C:\CLI_Tools\Python\Python314\Lib\
@@ -295,6 +338,19 @@ echo Current version of Python is:
 python --version
 echo.
 echo Options: python, python_d, python3.14t, python3.14t_d
+goto :eof
+:startPythonMainPrompt315
+@set path=C:\CLI_Tools\Python\Python315;%path%
+set PY_EXE="C:\CLI_Tools\Python\Python315\python.exe"
+set PY_PIP_PATH="C:\CLI_Tools\Python\Python315\Scripts"
+set PY_SCRIPTS_PATH=""
+set PY_PROGRAM_PATH="C:\CLI_Tools\Python\Python_Programs
+set PY_IDLE_PATH="C:\CLI_Tools\Python\Python315\Lib\idlelib"
+set PY_LIB_PATH="C:\CLI_Tools\Python\Python315\Lib\
+echo Current version of Python is:
+python --version
+echo.
+echo Options: python, python_d, python3.15t, python3.15t_d
 echo.
 goto :eof
 :startComspec
@@ -305,7 +361,7 @@ echo 3. python "C:\CLI_Tools\Python\Python_Programs\PROGRAM_NAME\SCRIPT_NAME.py"
 echo.
 echo Current Command Settings:
 echo For  RUN: %PY_EXE% %PY_PROGRAM_PATH% + \ProgramName\ScriptName.py"
-echo For  PIP: python -m pip (Available in v2.7 and v3.4-v3.14)
+echo For  PIP: python -m pip (Available in v2.7 and v3.4-v3.15)
 echo For IDLE: %PY_IDLE_PATH%\idle.bat" (Note: For v1.5.2, "idle.bat" does not work.)
 echo For  LIB: %PY_LIB_PATH% + ScriptName.py"
 echo.

@@ -1,3 +1,14 @@
+Patch 1.8.0.2
+
+* Added the Version prompt for CMake in the Background menu.
+* Added HexAlter, JDiff, JPtch, NirCmd, SFK, and ModMii to the MoreCLI menu alongside MBIN Compiler.
+* Added Hex Editor Neo to Menu 3 alongside 010 Editor and all of the other universal Software.
+* Added Neovim, PSPad and TextPad to Menu 3 alongside the other Webpage Editors.
+* Added AutoIt and SciTE to menu 9cAltB alongside AutoHotkey UX, CopyQ, ad Ditto.
+* Updated info for the many different types of programming methods.
+* Added commands for opening the "Platform", "Users", "CLI_Tools", "ProgramData", "Program Files", and "Program Files (x86)" folders.
+* Fixed the AES Crypt screen containing incomplete info.
+
 Patch 1.8.0.1
 
 * Added an additional three different sizes of the same batch script, ranging from fastest (smallest) to slowest (biggest) optimization.
