@@ -1,3 +1,12 @@
+Patch 1.8.0.3
+
+* Added Motorola Driver to the Background menu alongside Samsung Driver and Samsung Magician.
+* Added Strawberry Perl to the CLI menu alongside LLVM, MinGW, NASM, and Objconv.
+* Updated references to MinGW and added notes regarding the Chocolatey installation instructions for the latest versions.
+* Added the "S" option for older installations of MinGW that come directly from the EXE installer.
+* Added Blankflash to Menu 9cAltA alongside Odin.
+* Added a command for opening the "System32" folder.
+
 Patch 1.8.0.2
 
 * Added the Version prompt for CMake in the Background menu.
