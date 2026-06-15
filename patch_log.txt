@@ -1,3 +1,13 @@
+Patch 1.9.0.0
+
+* Added SuperF4, Key Remapper, and SharpKeys to the Background menu alongside the Advanced File Managers.
+* Added Netcat to the Network menu alongside WinUtil, NMap, WMT, and Bloodhound.
+* Reworked Menu 5 by rearranging a select number of categories regarding Options 1, 2, 7, 8, and 9.
+* Added Relyze to the new Menu 5 alongside Android Studio, Hex-Rays IDA, and Binary Ninja.
+* Added Symetrix Composer and Jupiter, Dynacord SoniCUE, Biamp Tesira, Q-SYS Designer, and Xilica Designer to Menu 5 under Option 9.
+* Added iCUE to Menu 6a alongside the other Game Boosters.
+* Included references to some default functional System32 executable commands.
+
 Patch 1.8.0.3
 
 * Added Motorola Driver to the Background menu alongside Samsung Driver and Samsung Magician.
