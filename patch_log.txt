@@ -1,3 +1,10 @@
+Patch 1.9.0.1
+
+* Added FileZilla and SmartFTP to the MoreCLI menu alongside Mobatek Software.
+* Added a disclaimer for developers who want to develop macros using either the Razer Synapse and Corsair iCUE software.
+* Improved the runtime method when starting up Wireshark via the DavyJonesOS Launcher and added an optional helper script for it.
+* Fixed a minor bug with the MobaXterm uninstallation prompt.
+
 Patch 1.9.0.0
 
 * Added SuperF4, Key Remapper, and SharpKeys to the Background menu alongside the Advanced File Managers.
