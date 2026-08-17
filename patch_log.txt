@@ -1,3 +1,13 @@
+Patch 1.9.0.2
+
+* Added MicroSIP and Brie Solo (formerly called X-Lite) to the Workspace menu alongside Zoom and Slack.
+* Added a warning to developers that want to use either MicroSIP or Brie Solo for work-related errands.
+* Relocated the NetSupport Manager prompt menu from Option 9 to Option 1 alongside Anyplace Control.
+* Added the VovSoft suite, Ollama, Jan, AnythingLLM, LM Studio, and Bionic to Option 9 of the WorkspaceAlt menu.
+* Added the Navicat Suite to Menu 2 alongside the SQL Server Management Studio.
+* Fixed issues with the Frankenstein Folder prompt and the MobaXterm installer execution method.
+* Other minor bug fixes.
+
 Patch 1.9.0.1
 
 * Added FileZilla and SmartFTP to the MoreCLI menu alongside Mobatek Software.
